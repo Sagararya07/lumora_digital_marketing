@@ -259,6 +259,17 @@ app.get('/api/content', async (req, res) => {
   }
 });
 
+app.get('/api/partner-logos', async (_req, res) => {
+  try {
+    const result = await pool.query(
+      'SELECT * FROM partner_logos WHERE is_active = true ORDER BY sort_order ASC NULLS LAST, created_at DESC'
+    );
+    res.json({ success: true, logos: result.rows });
+  } catch {
+    res.json({ success: true, logos: [] });
+  }
+});
+
 // Leads
 app.get('/api/leads', async (req, res) => {
   try {
@@ -544,7 +555,7 @@ app.delete('/api/pages/:id', async (req, res) => {
 // Generic Admin CMS Updates
 app.get('/api/admin/table/:tableName', async (req, res) => {
   const { tableName } = req.params;
-  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience'];
+  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {
@@ -560,7 +571,7 @@ app.put('/api/admin/table/:tableName/:id', async (req, res) => {
   const updates = req.body;
   
   // Whitelist tables to prevent SQL injection
-  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience'];
+  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos'];
   if (!allowedTables.includes(tableName)) {
     return res.status(403).json({ error: 'Invalid table name' });
   }
@@ -586,7 +597,7 @@ app.post('/api/admin/table/:tableName', async (req, res) => {
   const { tableName } = req.params;
   const data = req.body;
   
-  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience'];
+  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {
@@ -607,7 +618,7 @@ app.post('/api/admin/table/:tableName', async (req, res) => {
 
 app.delete('/api/admin/table/:tableName/:id', async (req, res) => {
   const { tableName, id } = req.params;
-  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience'];
+  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {

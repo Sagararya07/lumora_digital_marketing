@@ -136,6 +136,18 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
   },
+  partner_logos: {
+    label: 'Trusted Partner & Client Logos',
+    canCreate: true,
+    canDelete: true,
+    fields: [
+      { key: 'name', label: 'Company / Brand Name', type: 'text', colSpan: 2 },
+      { key: 'logo_url', label: 'Company Logo Image URL', type: 'text', colSpan: 2 },
+      { key: 'website_url', label: 'Company Website (Optional)', type: 'text' },
+      { key: 'sort_order', label: 'Sort Order', type: 'number' },
+      { key: 'is_active', label: 'Active in Marquee', type: 'boolean' },
+    ],
+  },
 };
 
 export const SECTION_SETTINGS = [

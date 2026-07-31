@@ -165,6 +165,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         { id: 'process_steps', label: 'Our Process', icon: Layers },
         { id: 'industries', label: 'Industries', icon: MapPin },
         { id: 'faqs', label: 'FAQs', icon: MessageSquare },
+        { id: 'partner_logos', label: 'Client Brand Logos', icon: Globe },
       ],
     },
     {
