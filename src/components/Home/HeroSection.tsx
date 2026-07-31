@@ -54,7 +54,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* CTA Buttons */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2">
-              {/* Primary Pill Button: #2563EB → #7C3AED */}
+              {/* Primary Pill Button */}
               <button
                 onClick={() => {
                   if (onNavigateToServices) {
@@ -119,7 +119,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           </div>
 
-          {/* Right Column: 100% Transparent Vector Lumora Star Emblem with Orbital Swirl Rings */}
+          {/* Right Column: User Uploaded Lumora Star Logo with Orbital Swirl Rings */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             <div className="w-full max-w-[520px] aspect-square relative flex items-center justify-center">
               
@@ -131,12 +131,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Central Soft Light Beam */}
               <div className="absolute inset-10 rounded-full bg-gradient-to-tr from-[#38BDF8]/20 via-[#7C3AED]/20 to-[#FBBF24]/20 blur-3xl" />
 
-              {/* 100% Transparent Vector Lumora Star Logo (NO White Background Card) */}
+              {/* Exact User Uploaded Lumora Star Logo */}
               <div className="relative z-10 transform scale-110 hover:scale-115 transition-transform duration-700">
                 <img
-                  src="/lumora-logo.svg"
+                  src="/lumora-logo.png"
                   alt="Lumora Star Radiant Emblem"
-                  className="w-full max-w-[420px] h-auto object-contain pointer-events-none drop-shadow-md"
+                  className="w-full max-w-[420px] h-auto object-contain pointer-events-none mix-blend-multiply"
                 />
               </div>
 

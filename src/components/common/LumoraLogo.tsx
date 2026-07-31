@@ -20,11 +20,11 @@ export const LumoraLogo: React.FC<LumoraLogoProps> = ({
 
   return (
     <div className={`inline-flex items-center shrink-0 cursor-pointer ${className}`}>
-      {/* 100% Transparent Seamless Vector Lumora Logo (Glowing Star + LUMORA Text) */}
+      {/* Exact User Uploaded Lumora Logo Image */}
       <img
-        src="/lumora-logo.svg"
+        src="/lumora-logo.png"
         alt="Lumora Logo"
-        className={`${sizeClasses[size]} w-auto object-contain transition-all duration-300 hover:scale-105 filter drop-shadow-xs`}
+        className={`${sizeClasses[size]} w-auto object-contain transition-all duration-300 hover:scale-105 mix-blend-multiply`}
       />
     </div>
   );
