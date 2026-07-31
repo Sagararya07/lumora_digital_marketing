@@ -11,14 +11,36 @@ interface ConsultationSectionProps {
 export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
   heading,
   subheading,
+  sourcePage = 'Home Page Section',
 }) => {
   const [submitted, setSubmitted] = useState(false);
   const [email, setEmail] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!email) return;
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      await fetch('/api/leads', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: 'Consultation Inquiry',
+          email,
+          companyName: 'Website Visitor',
+          servicesRequired: ['Free Consultation'],
+          sourcePage,
+        }),
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Failed to send consultation lead:', err);
+      setSubmitted(true);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -28,7 +50,7 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
         {/* Rounded Gradient Banner Card */}
         <div className="relative rounded-[32px] p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#FBBF24] text-white shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
           
-          {/* Seamless Star Radiant Background Overlay (No rectangular box) */}
+          {/* Seamless Star Radiant Background Overlay */}
           <div className="absolute right-0 top-0 bottom-0 w-96 opacity-30 pointer-events-none flex items-center justify-center overflow-hidden">
             <svg viewBox="0 0 200 200" className="w-full h-full transform scale-150" fill="none">
               <g transform="translate(100, 100)">
@@ -60,7 +82,7 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
             {submitted ? (
               <div className="flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-xs shadow-lg">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>Thank you! We will reach out shortly.</span>
+                <span>Thank you! We will reach out to cypherswiftinfotech@gmail.com shortly.</span>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3">
@@ -74,9 +96,10 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
                 />
                 <button
                   type="submit"
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-[#2563EB] text-xs font-extrabold flex items-center justify-center gap-2.5 shadow-xl transition-all hover:scale-105 shrink-0 font-['Plus_Jakarta_Sans',sans-serif]"
+                  disabled={loading}
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-[#2563EB] text-xs font-extrabold flex items-center justify-center gap-2.5 shadow-xl transition-all hover:scale-105 shrink-0 font-['Plus_Jakarta_Sans',sans-serif] disabled:opacity-50"
                 >
-                  <span>Get a Free Consultation</span>
+                  <span>{loading ? 'Submitting...' : 'Get a Free Consultation'}</span>
                   <ArrowRight className="w-4 h-4 text-[#2563EB]" />
                 </button>
               </form>

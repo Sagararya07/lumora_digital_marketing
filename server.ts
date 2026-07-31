@@ -4,6 +4,7 @@ import { createServer as createViteServer } from 'vite';
 import { GoogleGenAI } from '@google/genai';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
+import nodemailer from 'nodemailer';
 import { 
   SiteContent, 
   LeadSubmission, 
@@ -281,6 +282,77 @@ app.get('/api/leads', async (req, res) => {
   }
 });
 
+// Email Notification Helper targeting cypherswiftinfotech@gmail.com
+const sendLeadEmailNotification = async (leadData: {
+  name: string;
+  companyName?: string;
+  email: string;
+  phone?: string;
+  servicesRequired?: any;
+  budget?: string;
+  message?: string;
+  sourcePage?: string;
+}) => {
+  const targetEmail = 'cypherswiftinfotech@gmail.com';
+
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: Number(process.env.SMTP_PORT) || 587,
+    secure: process.env.SMTP_SECURE === 'true',
+    auth: {
+      user: process.env.SMTP_USER || process.env.GMAIL_USER || '',
+      pass: process.env.SMTP_PASS || process.env.GMAIL_PASS || '',
+    },
+  });
+
+  const servicesStr = Array.isArray(leadData.servicesRequired)
+    ? leadData.servicesRequired.join(', ')
+    : leadData.servicesRequired || 'General Strategy';
+
+  const htmlContent = `
+    <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px; border: 1px solid #e5e7eb; border-radius: 10px;">
+      <h2 style="color: #2563eb; margin-bottom: 5px;">🔥 New Consultation Lead Received!</h2>
+      <p style="color: #6b7280; font-size: 14px; margin-top: 0;">A new lead has been submitted on Lumora Website.</p>
+      <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 15px 0;" />
+      
+      <table style="width: 100%; font-size: 14px; border-collapse: collapse;">
+        <tr><td style="padding: 8px 0; font-weight: bold; color: #111827; width: 35%;">Full Name:</td><td style="color: #374151;">${leadData.name || 'N/A'}</td></tr>
+        <tr><td style="padding: 8px 0; font-weight: bold; color: #111827;">Company Name:</td><td style="color: #374151;">${leadData.companyName || 'N/A'}</td></tr>
+        <tr><td style="padding: 8px 0; font-weight: bold; color: #111827;">Work Email:</td><td style="color: #2563eb;">${leadData.email}</td></tr>
+        <tr><td style="padding: 8px 0; font-weight: bold; color: #111827;">Phone Number:</td><td style="color: #374151;">${leadData.phone || 'N/A'}</td></tr>
+        <tr><td style="padding: 8px 0; font-weight: bold; color: #111827;">Services Needed:</td><td style="color: #374151;">${servicesStr}</td></tr>
+        <tr><td style="padding: 8px 0; font-weight: bold; color: #111827;">Budget Range:</td><td style="color: #374151;">${leadData.budget || 'N/A'}</td></tr>
+        <tr><td style="padding: 8px 0; font-weight: bold; color: #111827;">Source Page:</td><td style="color: #374151;">${leadData.sourcePage || 'Website Form'}</td></tr>
+        <tr><td style="padding: 8px 0; font-weight: bold; color: #111827;">Submitted At:</td><td style="color: #374151;">${new Date().toLocaleString()}</td></tr>
+      </table>
+
+      ${
+        leadData.message
+          ? `<div style="margin-top: 15px; padding: 12px; background-color: #f8fafc; border-radius: 8px;">
+               <strong style="color: #111827;">Message / Business Requirements:</strong>
+               <p style="margin: 5px 0 0 0; color: #4b5563; font-size: 13px;">${leadData.message}</p>
+             </div>`
+          : ''
+      }
+
+      <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 20px 0 10px 0;" />
+      <p style="font-size: 11px; color: #9ca3af; text-align: center;">This notification was automatically sent by Lumora Lead Management System to <strong>${targetEmail}</strong>.</p>
+    </div>
+  `;
+
+  try {
+    await transporter.sendMail({
+      from: `"Lumora Lead Alert" <${process.env.SMTP_USER || 'no-reply@lumora.ai'}>`,
+      to: targetEmail,
+      subject: `🔥 New Lead Submission: ${leadData.name || leadData.email} (${servicesStr})`,
+      html: htmlContent,
+    });
+    console.log(`[Email Notification] Successfully sent lead alert email to ${targetEmail}`);
+  } catch (err: any) {
+    console.warn(`[Email Notification Note] Form lead saved to Admin DB. Email alert note: ${err.message}`);
+  }
+};
+
 app.post('/api/leads', async (req, res) => {
   const { name, companyName, email, phone, servicesRequired, message } = req.body;
   try {
@@ -288,10 +360,13 @@ app.post('/api/leads', async (req, res) => {
     const result = await pool.query(
       `INSERT INTO consultation_submissions (name, company, email, phone, services_required, message, status, is_read, created_at)
        VALUES ($1, $2, $3, $4, $5, $6, 'new', false, NOW()) RETURNING *`,
-      [name, companyName || 'N/A', email, phone, srv || 'General', message || '']
+      [name || 'Website Visitor', companyName || 'N/A', email, phone || 'N/A', srv || 'General Strategy', message || '']
     );
 
-    res.json({ success: true, message: 'Consultation request submitted.' });
+    // Trigger email notification to cypherswiftinfotech@gmail.com
+    sendLeadEmailNotification(req.body);
+
+    res.json({ success: true, message: 'Consultation request submitted successfully.' });
   } catch (err: any) {
     res.status(500).json({ error: 'Failed to submit lead', details: err.message });
   }

@@ -85,6 +85,22 @@ h1, h2, h3, h4, h5, h6, .heading-font {
   animation: spinSlow 25s linear infinite;
 }
 
+/* Infinite Left-Scrolling Marquee Ticker */
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
 /* Buttons */
 .btn-primary {
   background: var(--gradient-cta);
