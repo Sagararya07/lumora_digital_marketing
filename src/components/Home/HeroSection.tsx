@@ -32,7 +32,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <div className="lg:col-span-7 space-y-8">
             
             {/* Top Badge */}
-            <div className="inline-flex items-center gap-2 text-[#7C3AED] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-purple-50/80 backdrop-blur-md shadow-xs">
+            <div className="inline-flex items-center gap-2 text-[#7C3AED] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-purple-50/80 backdrop-blur-md shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
               <span>AI-POWERED GROWTH. MEASURABLE RESULTS.</span>
             </div>
 
@@ -64,16 +64,16 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     el?.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#1D4ED8] hover:to-[#6D28D9] text-white text-sm font-extrabold flex items-center justify-center gap-2.5 shadow-xl shadow-blue-500/20 transition-all hover:scale-105"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#1D4ED8] hover:to-[#6D28D9] text-white text-sm font-extrabold flex items-center justify-center gap-2.5 shadow-xl shadow-blue-500/20 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
               >
                 <span>Explore Solutions</span>
                 <ArrowRight className="w-4 h-4 text-white" />
               </button>
 
-              {/* Secondary Outlined Pill Button: Transparent with #2563EB border */}
+              {/* Secondary Outlined Pill Button */}
               <button
                 onClick={openConsultationModal}
-                className="px-8 py-4 rounded-full border-2 border-[#2563EB]/40 bg-purple-50/40 hover:bg-[#2563EB] hover:text-white text-purple-900 text-sm font-extrabold flex items-center justify-center gap-2.5 transition-all group"
+                className="px-8 py-4 rounded-full border-2 border-[#2563EB]/40 bg-purple-50/40 hover:bg-[#2563EB] hover:text-white text-purple-900 text-sm font-extrabold flex items-center justify-center gap-2.5 transition-all group font-['Plus_Jakarta_Sans',sans-serif]"
               >
                 <span className="group-hover:text-white transition-colors">Book a Strategy Call</span>
                 <Calendar className="w-4 h-4 text-[#7C3AED] group-hover:text-white transition-colors" />
@@ -119,11 +119,11 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
           </div>
 
-          {/* Right Column: Large Radiant Lumora Star Burst Graphic with Orbital Swirl Rings */}
+          {/* Right Column: 100% Transparent Vector Lumora Star Emblem with Orbital Swirl Rings */}
           <div className="lg:col-span-5 relative flex items-center justify-center">
             <div className="w-full max-w-[520px] aspect-square relative flex items-center justify-center">
               
-              {/* Orbital Glowing Swirl Rings */}
+              {/* Orbital Swirl Rings */}
               <div className="absolute inset-0 rounded-full border border-purple-200/60 animate-spin-slow" />
               <div className="absolute inset-6 rounded-full border border-blue-200/80 rotate-45" />
               <div className="absolute inset-14 rounded-full border border-pink-200/60 -rotate-45" />
@@ -131,12 +131,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Central Soft Light Beam */}
               <div className="absolute inset-10 rounded-full bg-gradient-to-tr from-[#38BDF8]/20 via-[#7C3AED]/20 to-[#FBBF24]/20 blur-3xl" />
 
-              {/* Lumora Logo Star Image with Multiply Blend for Clean Background Integration */}
-              <div className="relative z-10 transform scale-125 hover:scale-130 transition-transform duration-700">
+              {/* 100% Transparent Vector Lumora Star Logo (NO White Background Card) */}
+              <div className="relative z-10 transform scale-110 hover:scale-115 transition-transform duration-700">
                 <img
-                  src="/lumora-logo.png"
+                  src="/lumora-logo.svg"
                   alt="Lumora Star Radiant Emblem"
-                  className="w-full max-w-[380px] h-auto object-contain mix-blend-multiply pointer-events-none"
+                  className="w-full max-w-[420px] h-auto object-contain pointer-events-none drop-shadow-md"
                 />
               </div>
 
