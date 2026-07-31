@@ -54,7 +54,7 @@ export const WhoShouldUseSection: React.FC<WhoShouldUseProps> = ({ items, openCo
   };
 
   return (
-    <section id="who-should-use-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-[#F8FAFC] border-b border-[#E5E7EB]">
+    <section id="who-should-use-section" className="pt-20 sm:pt-28 pb-16 sm:pb-20 bg-[#F8FAFC] border-b border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
