@@ -14,7 +14,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       title: 'REQUIREMENT ANALYSIS',
       desc: 'Deep-dive discovery to align on business objectives, target buyer personas, and growth KPIs.',
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-32 sm:h-40 object-contain drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#38BDF8" />
@@ -42,7 +42,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       title: 'STRATEGY PLANNING',
       desc: 'Crafting a custom multi-channel acquisition roadmap and ROI budget allocation strategy.',
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(167,139,250,0.5)]" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-32 sm:h-40 object-contain drop-shadow-[0_0_8px_rgba(167,139,250,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient2" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#A855F7" />
@@ -66,7 +66,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       title: 'CAMPAIGN SETUP',
       desc: 'Building ad structures, tracking pixels, conversion funnels, and CRM routing automation.',
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-32 sm:h-40 object-contain drop-shadow-[0_0_8px_rgba(244,63,94,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient3" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#F43F5E" />
@@ -89,7 +89,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       title: 'CONTENT CREATION',
       desc: 'Designing high-converting ad copy, landing pages, email templates, and brand graphics.',
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-32 sm:h-40 object-contain drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient4" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#10B981" />
@@ -114,7 +114,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       title: 'CAMPAIGN LAUNCH',
       desc: 'Deploying campaigns across search, social networks, display, and email channels live.',
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-32 sm:h-40 object-contain drop-shadow-[0_0_8px_rgba(234,179,8,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient5" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#EAB308" />
@@ -137,7 +137,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       title: 'A/B OPTIMIZATION',
       desc: 'A/B testing ad creatives, bidding strategies, and funnel copy to drive down cost-per-lead.',
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(14,165,233,0.5)]" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-32 sm:h-40 object-contain drop-shadow-[0_0_8px_rgba(14,165,233,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient6" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#0EA5E9" />
@@ -158,7 +158,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       title: 'REPORTING & ANALYTICS',
       desc: 'Transparent weekly lead attribution reporting and real-time dashboard analytics access.',
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(217,70,239,0.5)]" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-32 sm:h-40 object-contain drop-shadow-[0_0_8px_rgba(217,70,239,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient7" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#D946EF" />
@@ -179,7 +179,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       title: 'GROWTH SCALING',
       desc: 'Re-allocating budget into winning channels and expanding market reach globally.',
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-32 sm:h-40 object-contain drop-shadow-[0_0_8px_rgba(16,185,129,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient8" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#10B981" />
@@ -224,98 +224,105 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
           </p>
         </div>
 
-        {/* Energetic Snake Layout */}
-        <div className="space-y-12 lg:space-y-0 lg:flex lg:flex-col lg:gap-8 relative pb-20">
+        {/* Vertical Winding Timeline / Up-to-Down Snake Path */}
+        <div className="relative max-w-4xl mx-auto px-2">
           
-          {/* Row 1 (Steps 1 to 4) - Moves Right */}
-          <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-between w-full">
-            {processFlow.slice(0, 4).map((item, idx) => (
-              <div 
-                key={idx} 
-                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-[220px]
-                ${idx % 2 === 0 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
-              >
-                {/* Glowing Step Number Badge */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#38BDF8] to-[#818CF8] flex items-center justify-center text-white font-black text-xl shadow-[0_0_15px_rgba(56,189,248,0.6)] transform group-hover:rotate-12 transition-transform duration-300 z-20">
-                  {item.num}
-                </div>
+          <div className="flex flex-col gap-10 sm:gap-16">
+            {processFlow.map((item, idx) => {
+              const isLeftNode = idx % 2 === 0;
+              const isLast = idx === processFlow.length - 1;
 
-                {/* Meaningful Illustration */}
-                <div className="w-full max-w-[140px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex-grow flex items-center justify-center min-h-[140px]">
-                  {item.illustration}
-                </div>
+              return (
+                <div key={idx} className="relative flex items-center min-h-[220px] sm:min-h-[250px] w-full">
+                  
+                  {/* The Connecting Dashed Line (S-Curve) */}
+                  {!isLast && (
+                    <div className="absolute top-[50%] left-0 w-full h-[calc(100%+2.5rem)] sm:h-[calc(100%+4rem)] z-0 pointer-events-none">
+                      <svg width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 100 100">
+                        {isLeftNode ? (
+                          <path 
+                            d="M 25 0 C 25 50, 75 50, 75 100" 
+                            stroke="#CBD5E1" 
+                            strokeWidth="1.5" 
+                            strokeDasharray="3 3" 
+                            fill="none" 
+                            vectorEffect="non-scaling-stroke" 
+                          />
+                        ) : (
+                          <path 
+                            d="M 75 0 C 75 50, 25 50, 25 100" 
+                            stroke="#CBD5E1" 
+                            strokeWidth="1.5" 
+                            strokeDasharray="3 3" 
+                            fill="none" 
+                            vectorEffect="non-scaling-stroke" 
+                          />
+                        )}
+                      </svg>
+                    </div>
+                  )}
 
-                {/* Snake Connector Line Desktop (Right Arrow) */}
-                {idx < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 right-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
-                )}
-                
-                {/* Floating Sky Cloud Popup (Hidden until hover, no layout shift) */}
-                <div className="absolute bottom-[95%] left-1/2 w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
-                  
-                  {/* Cloud Tail Pointer */}
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
-                  
-                  <div className="relative z-10 text-center">
-                    <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
-                      {item.desc}
-                    </p>
+                  {/* Row Content Container */}
+                  <div className="w-full relative z-10 flex items-center justify-between">
+                    
+                    {/* LEFT COLUMN */}
+                    <div className="w-1/2 flex justify-center items-center p-2 sm:p-6">
+                      {isLeftNode ? (
+                        // Node Circle
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white border-4 border-[#38BDF8] flex items-center justify-center shadow-[0_0_20px_rgba(56,189,248,0.2)] z-10 relative">
+                          <span className="text-xl sm:text-2xl font-black text-[#111827]">{item.num}</span>
+                          {/* Inner glowing dot */}
+                          <div className="absolute inset-2 rounded-full border border-[#38BDF8] opacity-30"></div>
+                        </div>
+                      ) : (
+                        // Node Card (Hover for Text)
+                        <div className="w-full max-w-[280px] flex flex-col items-center justify-center relative p-6 sm:p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] group cursor-pointer h-[200px] sm:h-[220px]">
+                          <div className="w-full max-w-[140px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex-grow flex items-center justify-center">
+                            {item.illustration}
+                          </div>
+                          {/* Hover Cloud Tooltip */}
+                          <div className="absolute bottom-[95%] left-1/2 w-[240px] sm:w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
+                            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
+                            <div className="relative z-10 text-center">
+                              <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">{item.title}</h3>
+                              <p className="text-xs text-[#6B7280] leading-relaxed font-medium">{item.desc}</p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* RIGHT COLUMN */}
+                    <div className="w-1/2 flex justify-center items-center p-2 sm:p-6">
+                      {!isLeftNode ? (
+                        // Node Circle
+                        <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-full bg-white border-4 border-[#818CF8] flex items-center justify-center shadow-[0_0_20px_rgba(129,140,248,0.2)] z-10 relative">
+                          <span className="text-xl sm:text-2xl font-black text-[#111827]">{item.num}</span>
+                          <div className="absolute inset-2 rounded-full border border-[#818CF8] opacity-30"></div>
+                        </div>
+                      ) : (
+                        // Node Card (Hover for Text)
+                        <div className="w-full max-w-[280px] flex flex-col items-center justify-center relative p-6 sm:p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] group cursor-pointer h-[200px] sm:h-[220px]">
+                          <div className="w-full max-w-[140px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex-grow flex items-center justify-center">
+                            {item.illustration}
+                          </div>
+                          {/* Hover Cloud Tooltip */}
+                          <div className="absolute bottom-[95%] left-1/2 w-[240px] sm:w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
+                            <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
+                            <div className="relative z-10 text-center">
+                              <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">{item.title}</h3>
+                              <p className="text-xs text-[#6B7280] leading-relaxed font-medium">{item.desc}</p>
+                            </div>
+                          </div>
+                        </div>
+                      )}
+                    </div>
+
                   </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
-
-          {/* S-Curve Connector between Row 1 and Row 2 (Desktop only) */}
-          <div className="hidden lg:flex justify-end w-full px-[8%] relative py-8">
-             <div className="w-20 h-16 border-r-4 border-b-4 border-dashed border-slate-300 rounded-br-3xl transform translate-x-4"></div>
-          </div>
-
-          {/* Row 2 (Steps 5 to 8) - Reverses Left to create Snake shape */}
-          <div className="flex flex-col lg:flex-row-reverse gap-6 lg:gap-8 justify-between w-full">
-            {processFlow.slice(4, 8).map((item, idx) => (
-              <div 
-                key={idx + 4} 
-                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-[220px]
-                ${idx % 2 === 1 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
-              >
-                {/* Glowing Step Number Badge */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#A855F7] to-[#EC4899] flex items-center justify-center text-white font-black text-xl shadow-[0_0_15px_rgba(168,85,247,0.6)] transform group-hover:-rotate-12 transition-transform duration-300 z-20">
-                  {item.num}
-                </div>
-
-                {/* Meaningful Illustration */}
-                <div className="w-full max-w-[140px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex-grow flex items-center justify-center min-h-[140px]">
-                  {item.illustration}
-                </div>
-
-                {/* Snake Connector Line Desktop (Left Arrow - Because flex-row-reverse, the visual left is DOM right side) */}
-                {idx < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 left-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
-                )}
-                
-                {/* Floating Sky Cloud Popup (Hidden until hover, no layout shift) */}
-                <div className="absolute bottom-[95%] left-1/2 w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
-                  
-                  {/* Cloud Tail Pointer */}
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
-                  
-                  <div className="relative z-10 text-center">
-                    <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
         </div>
 
       </div>
