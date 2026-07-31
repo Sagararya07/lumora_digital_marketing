@@ -96,7 +96,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
         </div>
 
         {/* Zig-Zag Alternating Layout */}
-        <div className="space-y-24 sm:space-y-32">
+        <div className="space-y-16 sm:space-y-24">
           {displayItems.slice(0, 6).map((item, idx) => {
             const fallback = mockSolutions[idx % mockSolutions.length];
             const title = item.title || fallback.title;
@@ -108,7 +108,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
             return (
               <div 
                 key={item.id || idx} 
-                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}
+                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 lg:gap-16 items-center`}
               >
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2 relative group">
@@ -116,7 +116,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
                   <img 
                     src={image} 
                     alt={title} 
-                    className="w-full aspect-[4/3] object-cover rounded-[2rem] shadow-[0_20px_50px_rgb(0,0,0,0.08)] transform group-hover:-translate-y-2 transition-all duration-500 border border-slate-100"
+                    className="w-full aspect-video object-cover rounded-[2rem] shadow-[0_20px_50px_rgb(0,0,0,0.08)] transform group-hover:-translate-y-2 transition-all duration-500 border border-slate-100"
                   />
                   {/* Decorative element behind image */}
                   <div className={`absolute -bottom-6 ${isEven ? '-right-6' : '-left-6'} w-24 h-24 bg-blue-100 rounded-3xl -z-10 opacity-50`} />
