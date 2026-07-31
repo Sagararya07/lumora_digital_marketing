@@ -95,28 +95,41 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
           <div className="space-y-5">
             
             {/* Top Overview Featured Card */}
-            <div className="p-6 sm:p-7 rounded-3xl bg-gradient-to-r from-blue-50/80 via-white to-purple-50/40 border border-blue-100 shadow-md relative overflow-hidden">
-              <div className="absolute left-0 top-0 bottom-0 w-2 bg-gradient-to-b from-blue-600 to-purple-600" />
-              <p className="text-slate-700 text-base sm:text-lg leading-relaxed font-medium pl-2">
-                <strong className="text-slate-900 font-extrabold">Digital marketing</strong> is the targeted, data-backed strategy of promoting brands across search, social, and digital channels to convert international digital attention into scalable pipeline revenue.
-              </p>
+            <div className="p-8 rounded-3xl bg-white border border-slate-200 shadow-[0_20px_50px_rgba(0,0,0,0.04)] relative overflow-hidden group hover:border-blue-300 transition-colors duration-300">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-600 via-purple-500 to-emerald-500" />
+              <div className="absolute -right-10 -top-10 w-40 h-40 bg-blue-50 rounded-full blur-3xl group-hover:bg-blue-100 transition-colors duration-500" />
+              
+              <div className="relative z-10 flex flex-col sm:flex-row gap-6 items-start">
+                <div className="shrink-0 w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-50 to-indigo-50 border border-blue-100 flex items-center justify-center shadow-inner">
+                  <Globe2 className="w-7 h-7 text-blue-600" />
+                </div>
+                <div>
+                  <h3 className="text-sm font-bold text-blue-600 uppercase tracking-wider mb-2">Core Definition</h3>
+                  <p className="text-slate-700 text-lg sm:text-xl leading-relaxed font-medium">
+                    <strong className="text-slate-900 font-black">Digital marketing</strong> is the targeted, data-backed strategy of promoting brands across search, social, and digital channels to convert international digital attention into scalable pipeline revenue.
+                  </p>
+                </div>
+              </div>
             </div>
 
             {/* Key Pillar Cards */}
-            <div className="space-y-4">
-              {content.keyPillars.slice(0, 3).map((pillar, idx) => {
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              {content.keyPillars.slice(0, 4).map((pillar, idx) => {
                 const style = pillarStyles[idx % pillarStyles.length];
                 return (
                   <div 
                     key={idx} 
-                    className={`p-5 sm:p-6 rounded-2xl ${style.bg} border border-slate-200/80 shadow-sm hover:shadow-xl hover:-translate-y-0.5 transition-all duration-300 group flex items-start gap-4`}
+                    className={`p-6 rounded-2xl bg-white border border-slate-100 shadow-[0_8px_30px_rgba(0,0,0,0.03)] hover:shadow-[0_20px_40px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 group flex flex-col gap-4 relative overflow-hidden`}
                   >
-                    <div className={`w-12 h-12 shrink-0 rounded-2xl ${style.iconBg} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform`}>
+                    <div className={`absolute top-0 right-0 w-24 h-24 rounded-bl-full opacity-10 group-hover:scale-150 transition-transform duration-700 ${style.iconBg}`} />
+                    
+                    <div className={`w-12 h-12 shrink-0 rounded-xl ${style.iconBg} flex items-center justify-center shadow-lg shadow-current/20 group-hover:scale-110 transition-transform`}>
                       {getPillarIcon(pillar.icon)}
                     </div>
-                    <div className="flex-1 min-w-0">
-                      <h4 className={`font-extrabold text-slate-900 text-base group-hover:${style.accentColor} transition-colors`}>{pillar.title}</h4>
-                      <p className="text-xs sm:text-sm text-slate-600 mt-1 leading-relaxed font-normal">{pillar.desc}</p>
+                    
+                    <div className="relative z-10">
+                      <h4 className={`font-black text-slate-900 text-base sm:text-lg mb-2 group-hover:${style.accentColor} transition-colors`}>{pillar.title}</h4>
+                      <p className="text-sm text-slate-500 leading-relaxed font-medium">{pillar.desc}</p>
                     </div>
                   </div>
                 );
