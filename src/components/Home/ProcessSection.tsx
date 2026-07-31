@@ -1,9 +1,5 @@
 import React from 'react';
-import { 
-  Sparkles, 
-  ArrowRight,
-  MousePointerClick
-} from 'lucide-react';
+import { Sparkles, ArrowRight } from 'lucide-react';
 
 interface ProcessProps {
   steps?: any[];
@@ -12,158 +8,190 @@ interface ProcessProps {
 
 export const ProcessSection: React.FC<ProcessProps> = () => {
 
-  const processStages = [
+  const processFlow = [
     {
-      num: '01',
-      title: '1. Requirement Analysis',
-      subtitle: 'Discovery & Personas',
+      num: '1',
+      title: 'REQUIREMENT ANALYSIS',
       desc: 'Deep-dive discovery to align on business objectives, target buyer personas, and growth KPIs.',
-      sketchDiagram: (
-        <svg viewBox="0 0 200 140" className="w-full h-36 object-contain" fill="none">
-          {/* Hand-drawn sketch style Magnifying Glass & Personas */}
-          <circle cx="90" cy="60" r="38" stroke="#1E293B" strokeWidth="2.5" strokeDasharray="60 2" fill="#F8FAFC" />
-          <path d="M118 88 L155 125" stroke="#1E293B" strokeWidth="5" strokeLinecap="round" />
-          {/* Sketched Persona Head & Body */}
-          <circle cx="90" cy="50" r="10" stroke="#2563EB" strokeWidth="2.5" fill="none" />
-          <path d="M72 74 C72 62 108 62 108 74" stroke="#2563EB" strokeWidth="2.5" fill="none" strokeLinecap="round" />
-          {/* Hand-Drawn Doodle Arrow & KPI Tag */}
-          <path d="M135 40 Q 155 30, 160 50" stroke="#7C3AED" strokeWidth="2" fill="none" strokeDasharray="3 3" />
-          <rect x="135" y="48" width="38" height="18" rx="4" stroke="#7C3AED" strokeWidth="2" fill="#F3E8FF" />
-          <text x="154" y="60" textAnchor="middle" fontSize="9" fontWeight="900" fill="#7C3AED" fontFamily="sans-serif">KPIs</text>
+      // Hand-sketched Analyst looking through magnifying glass at thought bubbles
+      illustration: (
+        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+          {/* Hand-drawn Analyst Head & Body Sketch */}
+          <path d="M50 75 C45 60 55 45 70 45 C85 45 95 60 90 75" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
+          <circle cx="70" cy="35" r="14" stroke="#0F172A" strokeWidth="2.5" />
+          <path d="M64 32 C66 30 74 30 76 32" stroke="#0F172A" strokeWidth="2" /> {/* Eyes */}
+          <path d="M65 42 C70 46 75 46 80 42" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" /> {/* Smile */}
+          {/* Hand-sketched Magnifying Glass */}
+          <circle cx="105" cy="75" r="16" stroke="#0F172A" strokeWidth="3" />
+          <path d="M117 87 L138 108" stroke="#0F172A" strokeWidth="4" strokeLinecap="round" />
+          <path d="M98 70 L112 80" stroke="#0F172A" strokeWidth="1.5" /> {/* Lens reflection */}
+          {/* Thought Cloud Bubbles */}
+          <circle cx="35" cy="30" r="10" stroke="#0F172A" strokeWidth="2" strokeDasharray="3 2" />
+          <text x="35" y="34" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#0F172A">1</text>
+          <circle cx="55" cy="18" r="12" stroke="#0F172A" strokeWidth="2" strokeDasharray="3 2" />
+          <text x="55" y="22" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#0F172A">3</text>
+          <circle cx="85" cy="14" r="11" stroke="#0F172A" strokeWidth="2" strokeDasharray="3 2" />
+          <text x="85" y="18" textAnchor="middle" fontSize="11" fontWeight="bold" fill="#0F172A">6</text>
+          {/* Ground Sketch Line */}
+          <path d="M10 120 L150 120" stroke="#0F172A" strokeWidth="2" strokeDasharray="5 4" />
         </svg>
       ),
     },
     {
-      num: '02',
-      title: '2. Strategy Planning',
-      subtitle: 'Funnel & Budget Roadmap',
+      num: '2',
+      title: 'STRATEGY PLANNING',
       desc: 'Crafting a custom multi-channel acquisition roadmap and ROI budget allocation strategy.',
-      sketchDiagram: (
-        <svg viewBox="0 0 200 140" className="w-full h-36 object-contain" fill="none">
-          {/* Hand-Drawn Sketch Funnel */}
-          <polygon points="35,22 165,22 125,65 75,65" stroke="#1E293B" strokeWidth="2.5" fill="#F1F5F9" strokeLinejoin="round" />
-          <polygon points="75,70 125,70 108,102 92,102" stroke="#7C3AED" strokeWidth="2.5" fill="#F3E8FF" strokeLinejoin="round" />
-          {/* Sketched Flow Arrow Down */}
-          <path d="M100 28 L100 58 M95 50 L100 58 L105 50" stroke="#2563EB" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-          {/* Dollar Coins Doodle */}
-          <circle cx="160" cy="95" r="14" stroke="#F59E0B" strokeWidth="2.5" fill="#FEF3C7" />
-          <text x="160" y="99" textAnchor="middle" fontSize="12" fontWeight="900" fill="#D97706">$</text>
+      // Hand-sketched Strategist at laptop with funnel blueprint
+      illustration: (
+        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+          {/* Hand-sketched Strategist Character */}
+          <circle cx="55" cy="40" r="14" stroke="#0F172A" strokeWidth="2.5" />
+          <path d="M49 37 C51 35 59 35 61 37" stroke="#0F172A" strokeWidth="2" />
+          <path d="M50 47 C55 51 60 51 65 47" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" />
+          <path d="M35 85 C30 70 40 55 55 55 C70 55 80 70 75 85" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
+          {/* Hand-drawn Laptop Sketch */}
+          <polygon points="70,85 135,85 145,110 60,110" stroke="#0F172A" strokeWidth="2.5" strokeLinejoin="round" />
+          <rect x="75" y="55" width="55" height="30" rx="3" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
+          {/* Funnel Sketch on Screen */}
+          <polygon points="85,62 120,62 108,74 97,74" stroke="#0F172A" strokeWidth="1.5" />
+          <polygon points="97,75 108,75 104,82 101,82" stroke="#0F172A" strokeWidth="1.5" />
+          {/* Motion Lines */}
+          <path d="M25 65 Q20 75 25 85" stroke="#0F172A" strokeWidth="1.5" strokeLinecap="round" />
+          {/* Ground Line */}
+          <path d="M10 120 L150 120" stroke="#0F172A" strokeWidth="2" strokeDasharray="5 4" />
         </svg>
       ),
     },
     {
-      num: '03',
-      title: '3. Campaign Setup',
-      subtitle: 'Pixels & CRM Automation',
+      num: '3',
+      title: 'CAMPAIGN SETUP',
       desc: 'Building ad structures, tracking pixels, conversion funnels, and CRM routing automation.',
-      sketchDiagram: (
-        <svg viewBox="0 0 200 140" className="w-full h-36 object-contain" fill="none">
-          {/* Hand-Drawn Gear Sketch */}
-          <g transform="translate(80, 65)">
-            <circle cx="0" cy="0" r="26" stroke="#1E293B" strokeWidth="2.5" fill="#F8FAFC" />
-            <circle cx="0" cy="0" r="10" stroke="#EC4899" strokeWidth="2.5" fill="none" />
-            <path d="M-4 -30 L4 -30 L4 30 L-4 30 Z M-30 -4 L30 -4 L30 4 L-30 4 Z" fill="#1E293B" opacity="0.15" />
-          </g>
-          {/* Hand-Drawn Pixel Tag */}
-          <rect x="120" y="30" width="50" height="26" rx="6" stroke="#EC4899" strokeWidth="2.5" fill="#FCE7F3" />
-          <text x="145" y="47" textAnchor="middle" fontSize="10" fontWeight="900" fill="#EC4899">PIXEL</text>
-          {/* Wire Doodles */}
-          <path d="M106 65 C120 65, 120 43, 120 43" stroke="#EC4899" strokeWidth="2" strokeDasharray="3 3" fill="none" />
+      // Hand-sketched Tech Engineer with headset & gears
+      illustration: (
+        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+          {/* Hand-sketched Character with Headset */}
+          <circle cx="80" cy="40" r="15" stroke="#0F172A" strokeWidth="2.5" />
+          <path d="M65 40 C65 25 95 25 95 40" stroke="#0F172A" strokeWidth="3" fill="none" /> {/* Headset Band */}
+          <circle cx="65" cy="40" r="4" fill="#0F172A" /> {/* Earpiece */}
+          <path d="M65 40 Q 60 55 75 52" stroke="#0F172A" strokeWidth="2" fill="none" /> {/* Mic */}
+          <path d="M60 85 C55 70 65 55 80 55 C95 55 105 70 100 85" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
+          {/* Hand-drawn Gear Doodles */}
+          <circle cx="35" cy="45" r="12" stroke="#0F172A" strokeWidth="2" strokeDasharray="4 2" />
+          <circle cx="125" cy="50" r="14" stroke="#0F172A" strokeWidth="2" strokeDasharray="4 2" />
+          <path d="M125 32 L125 68 M107 50 L143 50" stroke="#0F172A" strokeWidth="1.5" />
+          {/* Ground Line */}
+          <path d="M10 120 L150 120" stroke="#0F172A" strokeWidth="2" strokeDasharray="5 4" />
         </svg>
       ),
     },
     {
-      num: '04',
-      title: '4. Content Creation',
-      subtitle: 'High-Converting Ads & Copy',
+      num: '4',
+      title: 'CONTENT CREATION',
       desc: 'Designing high-converting ad copy, landing pages, email templates, and brand graphics.',
-      sketchDiagram: (
-        <svg viewBox="0 0 200 140" className="w-full h-36 object-contain" fill="none">
-          {/* Hand-Drawn Ad Canvas Artboard Sketch */}
-          <rect x="35" y="22" width="130" height="95" rx="8" stroke="#1E293B" strokeWidth="2.5" fill="#FFFFFF" />
-          <rect x="45" y="32" width="50" height="40" rx="4" stroke="#F59E0B" strokeWidth="2" fill="#FEF3C7" />
-          {/* Hand-Drawn Pencil Doodle */}
-          <path d="M150 25 L165 10 L175 20 L160 35 Z" stroke="#D97706" strokeWidth="2" fill="#FFFBEB" />
-          {/* Sketched Text Lines */}
-          <path d="M105 38 L150 38 M105 48 L140 48 M105 58 L145 58" stroke="#1E293B" strokeWidth="2.5" strokeLinecap="round" />
-          {/* CTA Button Sketch */}
-          <rect x="45" y="85" width="110" height="22" rx="11" fill="#F59E0B" />
-          <text x="100" y="99" textAnchor="middle" fontSize="9" fontWeight="900" fill="#FFFFFF">CLICK HERE</text>
+      // Hand-sketched Delivery Truck with "FREE / GROW"
+      illustration: (
+        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+          {/* Hand-drawn Delivery Truck Sketch */}
+          <rect x="25" y="45" width="75" height="50" rx="4" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
+          <path d="M100 60 L125 60 L135 75 L135 95 L100 95 Z" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
+          <rect x="106" y="65" width="16" height="12" stroke="#0F172A" strokeWidth="2" />
+          {/* Wheels */}
+          <circle cx="45" cy="98" r="11" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
+          <circle cx="45" cy="98" r="4" fill="#0F172A" />
+          <circle cx="115" cy="98" r="11" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
+          <circle cx="115" cy="98" r="4" fill="#0F172A" />
+          {/* Hand-sketched "FREE" Text on Truck */}
+          <text x="62" y="76" textAnchor="middle" fontSize="16" fontWeight="900" fill="#0F172A" fontFamily="sans-serif">FREE</text>
+          <path d="M35 81 C60 85 65 85 88 81" stroke="#0F172A" strokeWidth="2" />
+          {/* Speed Motion Lines */}
+          <path d="M5 55 L18 55 M2 68 L15 68 M7 80 L20 80" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" />
+          {/* Ground Line */}
+          <path d="M10 120 L150 120" stroke="#0F172A" strokeWidth="2" strokeDasharray="5 4" />
         </svg>
       ),
     },
     {
-      num: '05',
-      title: '5. Campaign Launch',
-      subtitle: 'Live Multi-Channel Blast',
+      num: '5',
+      title: 'CAMPAIGN LAUNCH',
       desc: 'Deploying campaigns across search, social networks, display, and email channels live.',
-      sketchDiagram: (
-        <svg viewBox="0 0 200 140" className="w-full h-36 object-contain" fill="none">
-          {/* Hand-Drawn Rocket Sketch */}
-          <g transform="translate(100, 68) rotate(-45)">
-            <path d="M0 -38 C16 -12 16 22 0 38 C-16 22 -16 -12 0 -38 Z" stroke="#1E293B" strokeWidth="2.5" fill="#FFE4E6" />
-            <circle cx="0" cy="-6" r="8" stroke="#F43F5E" strokeWidth="2" fill="#FFFFFF" />
-            {/* Thrust Smoke Doodles */}
-            <path d="M-6 38 C-12 52 0 60 0 65 C0 60 12 52 6 38" stroke="#F43F5E" strokeWidth="2" fill="#FEF2F2" />
-          </g>
-          {/* Hand-Drawn Stars */}
-          <path d="M45 35 L48 42 L55 43 L50 48 L51 55 L45 51 L39 55 L40 48 L35 43 L42 42 Z" stroke="#F59E0B" strokeWidth="1.5" fill="#FEF3C7" />
-          <path d="M155 40 L157 45 L162 46 L158 50 L159 55 L155 52 L151 55 L152 50 L148 46 L153 45 Z" stroke="#7C3AED" strokeWidth="1.5" fill="#F3E8FF" />
+      // Hand-sketched Character unpacking a gift growth box
+      illustration: (
+        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+          {/* Hand-sketched Character */}
+          <circle cx="110" cy="40" r="14" stroke="#0F172A" strokeWidth="2.5" />
+          <path d="M104 37 C106 35 114 35 116 37" stroke="#0F172A" strokeWidth="2" />
+          <path d="M105 47 C110 51 115 51 120 47" stroke="#0F172A" strokeWidth="2" strokeLinecap="round" />
+          {/* Party Hat */}
+          <polygon points="105,26 115,10 125,26" stroke="#0F172A" strokeWidth="2" fill="#FFFFFF" />
+          {/* Box Sketch */}
+          <rect x="40" y="70" width="55" height="45" rx="4" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
+          <path d="M35 70 L98 70 M67.5 70 L67.5 115" stroke="#0F172A" strokeWidth="2.5" />
+          {/* Arms holding box */}
+          <path d="M95 55 Q 85 75 70 70" stroke="#0F172A" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          <path d="M125 55 Q 120 85 95 90" stroke="#0F172A" strokeWidth="2.5" fill="none" strokeLinecap="round" />
+          {/* Ground Line */}
+          <path d="M10 120 L150 120" stroke="#0F172A" strokeWidth="2" strokeDasharray="5 4" />
         </svg>
       ),
     },
     {
-      num: '06',
-      title: '6. A/B Optimization',
-      subtitle: 'Split Testing & Low CAC',
+      num: '6',
+      title: 'A/B OPTIMIZATION',
       desc: 'A/B testing ad creatives, bidding strategies, and funnel copy to drive down cost-per-lead.',
-      sketchDiagram: (
-        <svg viewBox="0 0 200 140" className="w-full h-36 object-contain" fill="none">
-          {/* Hand-Drawn A vs B Sketch Boxes */}
-          <rect x="35" y="35" width="55" height="55" rx="10" stroke="#059669" strokeWidth="2.5" fill="#ECFDF5" />
-          <text x="62.5" y="70" textAnchor="middle" fontSize="22" fontWeight="900" fill="#059669">A</text>
-          
-          <rect x="110" y="35" width="55" height="55" rx="10" stroke="#0D9488" strokeWidth="2.5" fill="#CCFBF1" />
-          <text x="137.5" y="70" textAnchor="middle" fontSize="22" fontWeight="900" fill="#0D9488">B</text>
-          
-          {/* Hand-Drawn Winner Crown / Arrow */}
-          <path d="M110 30 L137.5 15 L165 30" stroke="#059669" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-          <circle cx="137.5" cy="15" r="4" fill="#059669" />
+      // Hand-sketched Split Test Balancer & Flasks
+      illustration: (
+        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+          {/* Hand-drawn Scale Balancer */}
+          <path d="M80 30 L80 100 M40 45 L120 45" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
+          <polygon points="80,25 75,35 85,35" stroke="#0F172A" strokeWidth="2" fill="#0F172A" />
+          {/* Option A Flask */}
+          <path d="M35 45 L35 70 L25 90 L55 90 L45 70 L45 45 Z" stroke="#0F172A" strokeWidth="2" fill="#FFFFFF" />
+          <text x="40" y="82" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#0F172A">A</text>
+          {/* Option B Flask */}
+          <path d="M115 45 L115 70 L105 90 L135 90 L125 70 L125 45 Z" stroke="#0F172A" strokeWidth="2" fill="#FFFFFF" />
+          <text x="120" y="82" textAnchor="middle" fontSize="12" fontWeight="bold" fill="#0F172A">B</text>
+          {/* Ground Line */}
+          <path d="M10 120 L150 120" stroke="#0F172A" strokeWidth="2" strokeDasharray="5 4" />
         </svg>
       ),
     },
     {
-      num: '07',
-      title: '7. Reporting & Analytics',
-      subtitle: 'Real-Time ROI Dashboard',
+      num: '7',
+      title: 'REPORTING & ANALYTICS',
       desc: 'Transparent weekly lead attribution reporting and real-time dashboard analytics access.',
-      sketchDiagram: (
-        <svg viewBox="0 0 200 140" className="w-full h-36 object-contain" fill="none">
-          {/* Hand-Drawn Bar Chart & Sketched Growth Line */}
-          <rect x="40" y="75" width="22" height="40" rx="4" stroke="#1E293B" strokeWidth="2" fill="#E0F2FE" />
-          <rect x="75" y="55" width="22" height="60" rx="4" stroke="#1E293B" strokeWidth="2" fill="#BAE6FD" />
-          <rect x="110" y="35" width="22" height="80" rx="4" stroke="#1E293B" strokeWidth="2" fill="#38BDF8" />
-          <rect x="145" y="18" width="22" height="97" rx="4" stroke="#1E293B" strokeWidth="2" fill="#2563EB" />
-          {/* Sketched Rising Arrow Line */}
-          <path d="M35 80 Q 95 40, 160 12" stroke="#F59E0B" strokeWidth="3" fill="none" strokeLinecap="round" />
-          <polygon points="165,10 152,12 160,20" fill="#F59E0B" />
+      // Hand-sketched Chart & Rising Growth Line
+      illustration: (
+        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+          {/* Sketched Axis */}
+          <path d="M30 30 L30 110 L140 110" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
+          {/* Sketched Bar Columns */}
+          <rect x="42" y="80" width="16" height="30" stroke="#0F172A" strokeWidth="2" />
+          <rect x="68" y="65" width="16" height="45" stroke="#0F172A" strokeWidth="2" />
+          <rect x="94" y="45" width="16" height="65" stroke="#0F172A" strokeWidth="2" />
+          <rect x="120" y="25" width="16" height="85" stroke="#0F172A" strokeWidth="2" />
+          {/* Upward Line Doodle */}
+          <path d="M30 90 Q 80 50, 138 20" stroke="#0F172A" strokeWidth="2.5" strokeDasharray="4 2" fill="none" />
+          {/* Ground Line */}
+          <path d="M10 120 L150 120" stroke="#0F172A" strokeWidth="2" strokeDasharray="5 4" />
         </svg>
       ),
     },
     {
-      num: '08',
-      title: '8. Growth Scaling',
-      subtitle: 'Global Market Expansion',
+      num: '8',
+      title: 'GROWTH SCALING',
       desc: 'Re-allocating budget into winning channels and expanding market reach globally.',
-      sketchDiagram: (
-        <svg viewBox="0 0 200 140" className="w-full h-36 object-contain" fill="none">
-          {/* Hand-Drawn Network Globe Sketch */}
-          <circle cx="100" cy="65" r="40" stroke="#1E293B" strokeWidth="2.5" fill="#F0F9FF" />
-          <ellipse cx="100" cy="65" rx="40" ry="16" stroke="#2563EB" strokeWidth="1.5" fill="none" strokeDasharray="4 2" />
-          <ellipse cx="100" cy="65" rx="16" ry="40" stroke="#2563EB" strokeWidth="1.5" fill="none" strokeDasharray="4 2" />
-          {/* Gold Star Badge Doodle */}
-          <circle cx="145" cy="35" r="18" stroke="#D97706" strokeWidth="2" fill="#FEF3C7" />
-          <text x="145" y="39" textAnchor="middle" fontSize="9" fontWeight="900" fill="#D97706">10x</text>
+      // Hand-sketched 10x Scale Trophy & Global Star
+      illustration: (
+        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+          {/* Sketched Trophy Cup */}
+          <path d="M55 35 L105 35 L95 75 L65 75 Z" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
+          <path d="M80 75 L80 100 M65 100 L95 100" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
+          <path d="M45 42 Q 35 55 55 60" stroke="#0F172A" strokeWidth="2" fill="none" />
+          <path d="M115 42 Q 125 55 105 60" stroke="#0F172A" strokeWidth="2" fill="none" />
+          {/* Hand-drawn 10x Banner */}
+          <text x="80" y="58" textAnchor="middle" fontSize="14" fontWeight="900" fill="#0F172A" fontFamily="sans-serif">10X</text>
+          {/* Ground Line */}
+          <path d="M10 120 L150 120" stroke="#0F172A" strokeWidth="2" strokeDasharray="5 4" />
         </svg>
       ),
     },
@@ -176,16 +204,16 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
           
-          {/* Top Eyebrow Badge */}
+          {/* Eyebrow Badge */}
           <div>
             <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
               <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" />
-              <span>HOW WE WORK</span>
+              <span>HOW IT WORKS</span>
             </span>
           </div>
 
           {/* Main Title */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             A Proven Process for{' '}
             <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent">
               Predictable Growth
@@ -194,56 +222,78 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg text-[#6B7280] font-normal leading-relaxed">
-            Hover or touch any stage below to reveal the strategic workflow details.
+            From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.
           </p>
 
         </div>
 
-        {/* Hand-Drawn Sketch Visual Process Cards Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-          {processStages.map((stage, idx) => (
-            <div
-              key={idx}
-              className="group relative p-6 sm:p-7 rounded-3xl bg-[#F8FAFC] border-2 border-dashed border-[#CBD5E1] hover:border-solid hover:border-[#2563EB] hover:bg-white shadow-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between cursor-pointer overflow-hidden min-h-[360px]"
-            >
-              {/* Header: Stage Number & Subtitle */}
-              <div className="flex items-center justify-between mb-2 z-10">
-                <span className="text-[10px] font-extrabold px-3 py-1 rounded-full bg-blue-50 text-[#2563EB] border border-blue-200 font-['Plus_Jakarta_Sans',sans-serif]">
-                  {stage.subtitle}
-                </span>
-                <span className="text-xs font-black text-slate-400 font-['Plus_Jakarta_Sans',sans-serif]">
-                  Step {stage.num}
-                </span>
-              </div>
+        {/* Hand-Drawn Open Horizontal Process Flow (NO BOX CARDS!) */}
+        <div className="space-y-16">
+          
+          {/* Row 1: Steps 1 to 4 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative">
+            {processFlow.slice(0, 4).map((item, idx) => (
+              <div key={idx} className="flex flex-col items-center text-center group cursor-pointer">
+                
+                {/* Hand-Drawn Sketch Illustration */}
+                <div className="w-full mb-4 transform group-hover:scale-105 transition-transform duration-300">
+                  {item.illustration}
+                </div>
 
-              {/* Hand-Drawn Sketch Visual Diagram Graphic */}
-              <div className="my-auto py-2 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 z-10">
-                {stage.sketchDiagram}
-              </div>
-
-              {/* Stage Title */}
-              <div className="pt-3 border-t border-slate-200 z-10">
-                <h3 className="text-base font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors flex items-center justify-between">
-                  <span>{stage.title}</span>
-                  <MousePointerClick className="w-4 h-4 text-[#2563EB] opacity-60 group-hover:opacity-0 transition-opacity shrink-0 ml-1" />
+                {/* Hand-sketched Step Title */}
+                <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors mb-2 uppercase">
+                  {item.num}. {item.title}
                 </h3>
 
-                {/* Default Hint Badge (Visible before hover) */}
-                <div className="mt-2 group-hover:hidden transition-all duration-300 flex items-center gap-1.5 text-[11px] font-extrabold text-[#2563EB]">
-                  <span>Hover / Touch for details</span>
-                  <ArrowRight className="w-3.5 h-3.5" />
-                </div>
+                {/* Description */}
+                <p className="text-xs text-[#6B7280] leading-relaxed font-normal max-w-xs">
+                  {item.desc}
+                </p>
 
-                {/* Paragraph Description — Hidden by Default, REVEALED ON CURSOR TOUCH/HOVER */}
-                <div className="opacity-0 max-h-0 overflow-hidden group-hover:opacity-100 group-hover:max-h-40 transition-all duration-500 ease-in-out mt-0 group-hover:mt-2">
-                  <p className="text-xs text-[#475569] leading-relaxed font-normal bg-blue-50/60 p-3 rounded-xl border border-blue-100">
-                    {stage.desc}
-                  </p>
-                </div>
+                {/* Hand-drawn Curved Arrow Connector to next step (Desktop) */}
+                {idx < 3 && (
+                  <div className="hidden lg:block absolute top-16 right-[-24px] translate-x-1/2 z-10 pointer-events-none">
+                    <svg width="45" height="25" viewBox="0 0 45 25" fill="none">
+                      <path d="M5 12 Q 22 2, 38 12 M32 6 L40 12 L33 18" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                )}
               </div>
+            ))}
+          </div>
 
-            </div>
-          ))}
+          {/* Row 2: Steps 5 to 8 */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative pt-8 border-t border-dashed border-slate-200">
+            {processFlow.slice(4, 8).map((item, idx) => (
+              <div key={idx + 4} className="flex flex-col items-center text-center group cursor-pointer">
+                
+                {/* Hand-Drawn Sketch Illustration */}
+                <div className="w-full mb-4 transform group-hover:scale-105 transition-transform duration-300">
+                  {item.illustration}
+                </div>
+
+                {/* Hand-sketched Step Title */}
+                <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors mb-2 uppercase">
+                  {item.num}. {item.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-xs text-[#6B7280] leading-relaxed font-normal max-w-xs">
+                  {item.desc}
+                </p>
+
+                {/* Hand-drawn Curved Arrow Connector to next step (Desktop) */}
+                {idx < 3 && (
+                  <div className="hidden lg:block absolute top-16 right-[-24px] translate-x-1/2 z-10 pointer-events-none">
+                    <svg width="45" height="25" viewBox="0 0 45 25" fill="none">
+                      <path d="M5 12 Q 22 2, 38 12 M32 6 L40 12 L33 18" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
         </div>
 
       </div>
