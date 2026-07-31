@@ -15,16 +15,16 @@ export const LumoraLogo: React.FC<LumoraLogoProps> = ({
     sm: 'h-8 sm:h-9',
     md: 'h-10 sm:h-12',
     lg: 'h-14 sm:h-16',
-    xl: 'h-24 sm:h-32',
+    xl: 'h-24 sm:h-28',
   };
 
   return (
-    <div className={`inline-flex items-center gap-2 ${className}`}>
-      {/* Exact User Uploaded Lumora Logo Image with Seamless Blend */}
+    <div className={`inline-flex items-center shrink-0 cursor-pointer ${className}`}>
+      {/* 100% Transparent Seamless Vector Lumora Logo (Glowing Star + LUMORA Text) */}
       <img
-        src="/lumora-logo.png"
+        src="/lumora-logo.svg"
         alt="Lumora Logo"
-        className={`${sizeClasses[size]} w-auto object-contain transition-all duration-300 hover:scale-105 mix-blend-multiply dark:mix-blend-normal rounded-lg`}
+        className={`${sizeClasses[size]} w-auto object-contain transition-all duration-300 hover:scale-105 filter drop-shadow-xs`}
       />
     </div>
   );
