@@ -197,7 +197,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
   ];
 
   return (
-    <section id="our-process-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-[#0F172A] relative overflow-hidden">
+    <section id="our-process-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-slate-50 relative overflow-hidden">
       
       {/* Energetic Background Glows */}
       <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#38BDF8] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-pulse"></div>
@@ -208,18 +208,18 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <div>
-            <span className="inline-flex items-center gap-2 text-white font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-white/20 bg-white/10 shadow-xs backdrop-blur-md font-['Plus_Jakarta_Sans',sans-serif]">
-              <Sparkles className="w-3.5 h-3.5 text-[#38BDF8] animate-spin-slow" />
+            <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs backdrop-blur-md font-['Plus_Jakarta_Sans',sans-serif]">
+              <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-spin-slow" />
               <span>HOW IT WORKS</span>
             </span>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             A Proven Process for{' '}
-            <span className="bg-gradient-to-r from-[#38BDF8] via-[#818CF8] to-[#C084FC] bg-clip-text text-transparent drop-shadow-lg">
+            <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent drop-shadow-sm">
               Predictable Growth
             </span>
           </h2>
-          <p className="text-base sm:text-lg text-slate-300 font-normal leading-relaxed">
+          <p className="text-base sm:text-lg text-[#6B7280] font-normal leading-relaxed">
             From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.
           </p>
         </div>
@@ -232,7 +232,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
             {processFlow.slice(0, 4).map((item, idx) => (
               <div 
                 key={idx} 
-                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.3)] transition-all duration-500 hover:scale-110 hover:bg-white/10 hover:border-white/30 hover:z-50 group cursor-pointer lg:w-[23%] 
+                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-500 hover:scale-110 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] 
                 ${idx % 2 === 0 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
               >
                 {/* Glowing Step Number Badge */}
@@ -247,15 +247,15 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
 
                 {/* Snake Connector Line Desktop (Right Arrow) */}
                 {idx < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 right-[-2.5rem] w-8 border-t-4 border-dashed border-white/20 z-0"></div>
+                  <div className="hidden lg:block absolute top-1/2 right-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
                 )}
                 
                 {/* Text Content - Hidden until hover */}
                 <div className="w-full text-center h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 overflow-hidden group-hover:mt-6 z-10">
-                  <h3 className="text-base font-black text-white tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
+                  <h3 className="text-base font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-300 leading-relaxed font-medium">
+                  <p className="text-sm text-[#6B7280] leading-relaxed font-medium">
                     {item.desc}
                   </p>
                 </div>
@@ -265,7 +265,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
 
           {/* S-Curve Connector between Row 1 and Row 2 (Desktop only) */}
           <div className="hidden lg:flex justify-end w-full px-[8%] relative py-8">
-             <div className="w-20 h-16 border-r-4 border-b-4 border-dashed border-white/20 rounded-br-3xl transform translate-x-4"></div>
+             <div className="w-20 h-16 border-r-4 border-b-4 border-dashed border-slate-300 rounded-br-3xl transform translate-x-4"></div>
           </div>
 
           {/* Row 2 (Steps 5 to 8) - Reverses Left to create Snake shape */}
@@ -273,7 +273,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
             {processFlow.slice(4, 8).map((item, idx) => (
               <div 
                 key={idx + 4} 
-                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white/5 backdrop-blur-lg border border-white/10 shadow-[0_0_30px_rgba(0,0,0,0.3)] transition-all duration-500 hover:scale-110 hover:bg-white/10 hover:border-white/30 hover:z-50 group cursor-pointer lg:w-[23%] 
+                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-500 hover:scale-110 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] 
                 ${idx % 2 === 1 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
               >
                 {/* Glowing Step Number Badge */}
@@ -288,15 +288,15 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
 
                 {/* Snake Connector Line Desktop (Left Arrow - Because flex-row-reverse, the visual left is DOM right side) */}
                 {idx < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 left-[-2.5rem] w-8 border-t-4 border-dashed border-white/20 z-0"></div>
+                  <div className="hidden lg:block absolute top-1/2 left-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
                 )}
                 
                 {/* Text Content - Hidden until hover */}
                 <div className="w-full text-center h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-500 overflow-hidden group-hover:mt-6 z-10">
-                  <h3 className="text-base font-black text-white tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
+                  <h3 className="text-base font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-slate-300 leading-relaxed font-medium">
+                  <p className="text-sm text-[#6B7280] leading-relaxed font-medium">
                     {item.desc}
                   </p>
                 </div>
