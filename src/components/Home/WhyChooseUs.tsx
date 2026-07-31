@@ -1,15 +1,19 @@
 import React from 'react';
 import { 
-  CheckCircle2, 
   ArrowRight, 
-  Zap,
   Sparkles,
   Award,
   TrendingUp,
   Bot,
   BarChart3,
   UserCheck,
-  ShieldCheck
+  ShieldCheck,
+  Zap,
+  Globe,
+  Database,
+  Cpu,
+  Layers,
+  CheckCircle2
 } from 'lucide-react';
 
 interface WhyChooseUsProps {
@@ -26,98 +30,94 @@ const whyChoosePoints = [
   { title: 'Dedicated Account Manager', desc: 'Direct access to your senior growth strategist with 24/7 dedicated support.', icon: <UserCheck className="w-4 h-4 text-[#10B981]" /> },
 ];
 
+const ecosystemIntegrations = [
+  { name: 'Google Ads AI', tag: 'Search & PMax', icon: 'https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg', color: 'bg-blue-50 border-blue-200' },
+  { name: 'Meta Ads Engine', tag: 'FB & Insta Leads', icon: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg', color: 'bg-indigo-50 border-indigo-200' },
+  { name: 'HubSpot CRM', tag: 'Auto Routing', icon: 'https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg', color: 'bg-orange-50 border-orange-200' },
+  { name: 'Salesforce', tag: 'Enterprise CRM', icon: 'https://upload.wikimedia.org/wikipedia/commons/f/f9/Salesforce.com_logo.svg', color: 'bg-sky-50 border-sky-200' },
+  { name: 'LinkedIn B2B', tag: 'Executive Outreach', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png', color: 'bg-blue-50 border-blue-200' },
+  { name: 'WhatsApp Bot', tag: '24/7 Lead Qual', icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg', color: 'bg-emerald-50 border-emerald-200' },
+  { name: 'Zapier Engine', tag: '3000+ App Sync', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Zapier_logo.svg', color: 'bg-amber-50 border-amber-200' },
+  { name: 'Stripe Funnels', tag: 'Instant Checkout', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg', color: 'bg-purple-50 border-purple-200' },
+  { name: 'Predictive ROAS AI', tag: 'LTV & CAC Models', icon: <Cpu className="w-6 h-6 text-[#7C3AED]" />, color: 'bg-purple-50 border-purple-200' },
+];
+
 export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal }) => {
   return (
-    <section id="why-choose-us-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-[#F8FAFC] border-y border-[#E5E7EB]">
+    <section id="why-choose-us-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-[#F8FAFC] border-y border-[#E5E7EB] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Column: AI Growth Dashboard White Card */}
+          {/* Left Column: Creative Staggered 3D Floating Ecosystem Integration Cloud */}
           <div className="lg:col-span-6 relative">
             
-            {/* Background Glow */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-3xl blur-2xl pointer-events-none" />
+            {/* Background Ambient Radial Glow */}
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[550px] h-[550px] rounded-full bg-gradient-to-tr from-blue-500/10 via-purple-500/15 to-amber-500/10 blur-[140px] pointer-events-none" />
 
-            <div className="relative rounded-3xl bg-white p-6 sm:p-8 border border-[#E5E7EB] shadow-2xl">
-              
-              {/* Card Header */}
-              <div className="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded-xl bg-blue-50 flex items-center justify-center text-[#2563EB]">
-                    <Zap className="w-4 h-4" />
-                  </div>
-                  <span className="font-extrabold text-sm text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
-                    AI Growth Dashboard
-                  </span>
-                </div>
-                <span className="text-[10px] font-extrabold uppercase tracking-wider text-emerald-600 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200 flex items-center gap-1">
-                  <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" /> Live
+            <div className="relative z-10 p-2">
+              <div className="text-center sm:text-left mb-6">
+                <span className="text-[10px] font-extrabold uppercase tracking-widest text-[#2563EB] bg-blue-50 px-3 py-1 rounded-full border border-blue-200 font-['Plus_Jakarta_Sans',sans-serif]">
+                  NATIVE MARKETING INTEGRATIONS
                 </span>
+                <h3 className="text-xl sm:text-2xl font-extrabold text-[#111827] mt-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                  Seamless Marketing & CRM Ecosystem
+                </h3>
               </div>
 
-              {/* 4 Metric Cards (2x2 Grid) */}
-              <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mb-6">
-                
-                <div className="p-3.5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
-                  <span className="text-[10px] text-[#6B7280] font-bold uppercase">Visitors</span>
-                  <p className="text-base font-extrabold text-[#111827] mt-1">125.6K</p>
-                  <span className="text-[10px] font-bold text-emerald-600">+23.4%</span>
-                </div>
+              {/* Staggered 3-Column 3D Floating Grid */}
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3.5 sm:gap-4">
+                {ecosystemIntegrations.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className={`p-4 rounded-2xl bg-white border border-[#E5E7EB] shadow-md hover:shadow-2xl hover:-translate-y-2.5 transition-all duration-300 group flex flex-col justify-between relative overflow-hidden ${
+                      idx % 3 === 1 ? 'sm:translate-y-4' : idx % 3 === 2 ? 'sm:translate-y-8' : ''
+                    }`}
+                  >
+                    {/* Top Status Dot */}
+                    <div className="flex items-center justify-between mb-3">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+                      <span className="text-[9px] font-bold uppercase tracking-wider text-slate-400 font-['Plus_Jakarta_Sans',sans-serif]">
+                        {item.tag}
+                      </span>
+                    </div>
 
-                <div className="p-3.5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
-                  <span className="text-[10px] text-[#6B7280] font-bold uppercase">Leads</span>
-                  <p className="text-base font-extrabold text-[#111827] mt-1">8.42K</p>
-                  <span className="text-[10px] font-bold text-emerald-600">+31.2%</span>
-                </div>
+                    {/* Logo Graphic or Icon */}
+                    <div className="h-10 flex items-center justify-center mb-2 group-hover:scale-110 transition-transform">
+                      {typeof item.icon === 'string' ? (
+                        <img
+                          src={item.icon}
+                          alt={item.name}
+                          className="max-h-7 max-w-[90px] object-contain filter drop-shadow-xs"
+                        />
+                      ) : (
+                        item.icon
+                      )}
+                    </div>
 
-                <div className="p-3.5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
-                  <span className="text-[10px] text-[#6B7280] font-bold uppercase">Meetings</span>
-                  <p className="text-base font-extrabold text-[#111827] mt-1">1.28K</p>
-                  <span className="text-[10px] font-bold text-emerald-600">+28.7%</span>
-                </div>
-
-                <div className="p-3.5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
-                  <span className="text-[10px] text-[#6B7280] font-bold uppercase">Revenue</span>
-                  <p className="text-base font-extrabold text-[#111827] mt-1">₹3.6Cr</p>
-                  <span className="text-[10px] font-bold text-emerald-600">+42.5%</span>
-                </div>
-
+                    {/* App Name */}
+                    <span className="text-xs font-extrabold text-[#111827] text-center font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors truncate">
+                      {item.name}
+                    </span>
+                  </div>
+                ))}
               </div>
 
-              {/* Purple Line Chart Graphic */}
-              <div className="p-5 rounded-2xl bg-gradient-to-r from-purple-500/5 via-blue-500/5 to-purple-500/5 border border-purple-100 relative overflow-hidden">
-                <div className="flex justify-between items-center mb-3">
-                  <span className="text-xs font-bold text-[#7C3AED]">Revenue Growth Curve</span>
-                  <span className="text-xs font-extrabold text-white bg-[#7C3AED] px-2.5 py-0.5 rounded-full shadow-xs">
-                    +42.5% Revenue Growth
-                  </span>
+              {/* Bottom Ecosystem Badge */}
+              <div className="mt-12 sm:mt-14 p-4 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E5E7EB] shadow-lg flex items-center justify-between gap-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-xl bg-purple-50 text-[#7C3AED] border border-purple-200 flex items-center justify-center shrink-0">
+                    <Database className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h4 className="text-xs font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
+                      Real-Time Webhook & API Sync
+                    </h4>
+                    <p className="text-[11px] text-[#6B7280]">Connects with your existing tech stack instantly.</p>
+                  </div>
                 </div>
-
-                {/* SVG Curve Line Graphic */}
-                <svg viewBox="0 0 400 100" className="w-full h-20 overflow-visible" fill="none">
-                  <path
-                    d="M0,80 Q50,40 100,60 T200,30 T300,50 T400,10"
-                    stroke="url(#purpleGrad)"
-                    strokeWidth="4"
-                    fill="none"
-                  />
-                  <path
-                    d="M0,80 Q50,40 100,60 T200,30 T300,50 T400,10 L400,100 L0,100 Z"
-                    fill="url(#purpleFill)"
-                    opacity="0.15"
-                  />
-                  <defs>
-                    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-                      <stop offset="0%" stopColor="#2563EB" />
-                      <stop offset="50%" stopColor="#7C3AED" />
-                      <stop offset="100%" stopColor="#EC4899" />
-                    </linearGradient>
-                    <linearGradient id="purpleFill" x1="0%" y1="0%" x2="0%" y2="100%">
-                      <stop offset="0%" stopColor="#7C3AED" />
-                      <stop offset="100%" stopColor="#7C3AED" stopOpacity="0" />
-                    </linearGradient>
-                  </defs>
-                </svg>
+                <span className="hidden sm:inline-flex text-[10px] font-extrabold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-full shrink-0">
+                  100% Automated
+                </span>
               </div>
 
             </div>
@@ -145,7 +145,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal 
             {/* 6 Feature Points Checklist */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
               {whyChoosePoints.map((item, i) => (
-                <div key={i} className="p-3.5 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex items-start gap-3">
+                <div key={i} className="p-3.5 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs flex items-start gap-3 hover:border-[#2563EB] transition-colors">
                   <div className="w-7 h-7 rounded-xl bg-blue-50 border border-blue-100 flex items-center justify-center shrink-0 mt-0.5">
                     {item.icon}
                   </div>
