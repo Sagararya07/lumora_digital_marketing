@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { X, ArrowRight, Home, Info, FolderDot, Zap, MessageSquare } from 'lucide-react';
 import { LumoraLogo } from '../common/LumoraLogo';
 import { DynamicPage } from '../../types';
@@ -24,20 +25,23 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   setIsOpenMobile,
   activeDynamicSlug,
 }) => {
+  const navigate = useNavigate();
+
   const navItems = [
-    { id: 'home', label: 'Home', icon: Home },
-    { id: 'what-is-digital-marketing', label: 'About', icon: Info },
-    { id: 'achievements-section', label: 'Portfolio', icon: FolderDot },
-    { id: 'why-choose-us-section', label: 'Rnd', icon: Zap },
-    { id: 'consultation', label: 'Get a Consultation', icon: MessageSquare },
+    { id: 'home', path: '/', label: 'Home', icon: Home },
+    { id: 'about', path: '/about', label: 'About', icon: Info },
+    { id: 'portfolio', path: '/portfolio', label: 'Portfolio', icon: FolderDot },
+    { id: 'rnd', path: '/rnd', label: 'Rnd', icon: Zap },
+    { id: 'get-a-consultation', path: '/get-a-consultation', label: 'Get a Consultation', icon: MessageSquare },
   ];
 
-  const handleNavClick = (id: string) => {
-    if (id === 'consultation') {
-      openConsultationModal();
+  const handleNavClick = (item: { id: string; path: string }) => {
+    if (item.path === '/') {
+      navigate('/');
     } else {
-      setCurrentTab(id);
+      navigate(item.path);
     }
+    window.scrollTo({ top: 0, behavior: 'smooth' });
     setIsOpenMobile(false);
   };
 
@@ -62,7 +66,8 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
         <div className="px-6 py-6 border-b border-[#E5E7EB] flex items-center justify-between">
           <button
             onClick={() => {
-              setCurrentTab('home');
+              navigate('/');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
               setIsOpenMobile(false);
             }}
             className="flex items-center gap-2 focus:outline-none"
@@ -86,13 +91,13 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
           </div>
           
           {navItems.map((item) => {
-            const isActive = activeDynamicSlug === null && currentTab === item.id;
+            const isActive = activeDynamicSlug === item.id || (activeDynamicSlug === null && item.id === 'home');
             const ItemIcon = item.icon;
             return (
               <button
                 key={item.id}
                 id={`nav-item-${item.id}`}
-                onClick={() => handleNavClick(item.id)}
+                onClick={() => handleNavClick(item)}
                 className={`w-full text-left px-5 py-3.5 rounded-2xl text-sm font-extrabold transition-all flex items-center justify-between font-['Plus_Jakarta_Sans',sans-serif] ${
                   isActive
                     ? 'text-[#2563EB] bg-blue-50 border border-blue-200 shadow-xs'
@@ -114,7 +119,8 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
           <button
             onClick={() => {
               setIsOpenMobile(false);
-              openConsultationModal();
+              navigate('/get-a-consultation');
+              window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
             className="w-full py-4 px-4 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 hover:scale-105 transition-all font-['Plus_Jakarta_Sans',sans-serif]"
           >

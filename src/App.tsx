@@ -25,6 +25,11 @@ import { LegalModal } from './components/Modals/LegalModal';
 import { DynamicPageViewer } from './components/DynamicPage/DynamicPageViewer';
 import { AdminDashboard } from './components/Admin/AdminDashboard';
 
+import { AboutPage } from './components/Pages/AboutPage';
+import { PortfolioPage } from './components/Pages/PortfolioPage';
+import { RndPage } from './components/Pages/RndPage';
+import { ConsultationPage } from './components/Pages/ConsultationPage';
+
 import { initialSiteContent, initialDynamicPages } from './data/initialData';
 import { SiteContent, DynamicPage, ServiceItem, AchievementItem } from './types';
 import { useTheme } from './hooks/useTheme';
@@ -109,7 +114,7 @@ export function App() {
   return (
     <div className="min-h-screen bg-white text-slate-900 font-['Inter',sans-serif] selection:bg-[#2563EB] selection:text-white transition-colors duration-300">
       
-      {/* 1. Left Navigation Menu Drawer (Clickable Icon opens menu) */}
+      {/* 1. Left Navigation Menu Drawer */}
       {!isAdminRoute && (
         <LeftSidebar
           currentTab={location.pathname === '/' ? 'home' : (activeDynamicSlug || 'admin')}
@@ -127,7 +132,7 @@ export function App() {
 
       <div className="flex flex-col min-h-screen transition-all">
         
-        {/* 2. Top Horizontal Header (Dynamic Pages dropdown + Lead Generation page link) */}
+        {/* 2. Top Horizontal Header */}
         {!isAdminRoute && (
           <TopHeader
             onOpenMobileNav={() => setIsOpenMobileNav(true)}
@@ -155,7 +160,48 @@ export function App() {
                 onRefreshContent={fetchSiteContent}
               />
             } />
+
+            {/* Dedicated Full Pages for Menu Drawer Options */}
+            <Route path="/about" element={
+              <AboutPage
+                siteContent={siteContent}
+                onGoHome={handleGoHome}
+                openConsultationModal={() => setIsConsultationModalOpen(true)}
+              />
+            } />
+
+            <Route path="/portfolio" element={
+              <PortfolioPage
+                siteContent={siteContent}
+                onGoHome={handleGoHome}
+                openConsultationModal={() => setIsConsultationModalOpen(true)}
+                onSelectCaseStudy={(cs) => setSelectedCaseStudy(cs)}
+              />
+            } />
+
+            <Route path="/rnd" element={
+              <RndPage
+                siteContent={siteContent}
+                onGoHome={handleGoHome}
+                openConsultationModal={() => setIsConsultationModalOpen(true)}
+              />
+            } />
+
+            <Route path="/get-a-consultation" element={
+              <ConsultationPage
+                siteContent={siteContent}
+                onGoHome={handleGoHome}
+              />
+            } />
+
+            <Route path="/consultation" element={
+              <ConsultationPage
+                siteContent={siteContent}
+                onGoHome={handleGoHome}
+              />
+            } />
             
+            {/* Dynamic CMS Page Renderer */}
             <Route path="/:slug" element={
               <DynamicPageWrapper 
                 dynamicPages={dynamicPages} 
@@ -167,6 +213,7 @@ export function App() {
               />
             } />
 
+            {/* Home Page */}
             <Route path="/" element={
               <div>
                 {/* Section 1: Hero Section */}
@@ -248,38 +295,39 @@ export function App() {
                 {/* Section 11: Footer */}
                 <Footer
                   contactInfo={siteContent.contactInfo}
-                  socialLinks={siteContent.socialLinks}
-                  footerTagline={siteContent.siteMeta?.footerTagline}
-                  services={siteContent.services}
+                  onOpenConsultation={() => setIsConsultationModalOpen(true)}
                   onOpenLegalModal={(type) => setLegalModalType(type)}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
-                  onGoHome={handleGoHome}
+                  dynamicPages={dynamicPages}
                   onSelectDynamicPage={handleSelectDynamicPage}
                 />
               </div>
             } />
           </Routes>
         </main>
-
       </div>
 
-      {/* Global Interactive Modals */}
+      {/* Interactive Global Modals */}
       <ConsultationModal
         isOpen={isConsultationModalOpen}
         onClose={() => setIsConsultationModalOpen(false)}
-        sourcePage={activeDynamicSlug ? `Page: /${activeDynamicSlug}` : 'Header / Hero Button'}
       />
 
       <ServiceDetailModal
         service={selectedService}
         onClose={() => setSelectedService(null)}
-        openConsultationModal={() => setIsConsultationModalOpen(true)}
+        openConsultationModal={() => {
+          setSelectedService(null);
+          setIsConsultationModalOpen(true);
+        }}
       />
 
       <CaseStudyModal
         caseStudy={selectedCaseStudy}
         onClose={() => setSelectedCaseStudy(null)}
-        openConsultationModal={() => setIsConsultationModalOpen(true)}
+        openConsultationModal={() => {
+          setSelectedCaseStudy(null);
+          setIsConsultationModalOpen(true);
+        }}
       />
 
       <LegalModal
@@ -291,31 +339,41 @@ export function App() {
   );
 }
 
-// Helper component for dynamic page route
-function DynamicPageWrapper({ dynamicPages, onGoHome, siteContent, setIsConsultationModalOpen, onOpenLegalModal, onSelectDynamicPage }: {
+const DynamicPageWrapper: React.FC<{
   dynamicPages: DynamicPage[];
   onGoHome: () => void;
   siteContent: SiteContent;
   setIsConsultationModalOpen: (open: boolean) => void;
   onOpenLegalModal: (type: 'privacy' | 'terms' | 'refund') => void;
   onSelectDynamicPage: (slug: string) => void;
-}) {
-  const { slug } = useParams();
-  const navigate = useNavigate();
+}> = ({
+  dynamicPages,
+  onGoHome,
+  siteContent,
+  setIsConsultationModalOpen,
+  onOpenLegalModal,
+  onSelectDynamicPage,
+}) => {
+  const { slug } = useParams<{ slug: string }>();
   const page = dynamicPages.find((p) => p.slug === slug);
 
-  React.useEffect(() => {
-    if (!page) {
-      navigate('/', { replace: true });
-    }
-  }, [page, navigate]);
-
   if (!page) {
-    return null;
+    return (
+      <div className="min-h-[70vh] flex flex-col items-center justify-center p-8 text-center bg-[#F8FAFC]">
+        <h1 className="text-4xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">Page Not Found (404)</h1>
+        <p className="text-[#6B7280] mt-2 text-sm font-normal">The page &quot;/{slug}&quot; does not exist or has been unpublished.</p>
+        <button
+          onClick={onGoHome}
+          className="mt-6 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white font-extrabold text-xs shadow-lg shadow-blue-500/20"
+        >
+          Return to Agency Homepage
+        </button>
+      </div>
+    );
   }
 
   return (
-    <>
+    <div>
       <DynamicPageViewer
         page={page}
         onGoHome={onGoHome}
@@ -326,16 +384,13 @@ function DynamicPageWrapper({ dynamicPages, onGoHome, siteContent, setIsConsulta
       />
       <Footer
         contactInfo={siteContent.contactInfo}
-        socialLinks={siteContent.socialLinks}
-        footerTagline={siteContent.siteMeta?.footerTagline}
-        services={siteContent.services}
+        onOpenConsultation={() => setIsConsultationModalOpen(true)}
         onOpenLegalModal={onOpenLegalModal}
-        openConsultationModal={() => setIsConsultationModalOpen(true)}
-        onGoHome={onGoHome}
+        dynamicPages={dynamicPages}
         onSelectDynamicPage={onSelectDynamicPage}
       />
-    </>
+    </div>
   );
-}
+};
 
 export default App;
