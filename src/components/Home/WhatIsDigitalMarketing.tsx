@@ -100,30 +100,19 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
               Digital Marketing?
             </span>
           </h2>
-          <p className="text-lg sm:text-xl text-slate-500 font-medium max-w-2xl mx-auto leading-relaxed">
-            {content.subtitle}
-          </p>
+          <div className="max-w-3xl mx-auto bg-white/50 backdrop-blur-sm p-6 rounded-3xl border border-white shadow-[0_4px_20px_rgb(0,0,0,0.03)]">
+            <p className="text-lg sm:text-xl text-slate-600 font-medium leading-relaxed">
+              <strong className="text-slate-800 font-bold text-xl sm:text-2xl block mb-2">{content.subtitle}</strong>
+              Digital marketing is the targeted, data-backed strategy of promoting brands across search, social, and digital channels to convert international digital attention into scalable pipeline revenue.
+            </p>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
           {/* LEFT: Romantic Flowing Content but original colors */}
-          <div className="lg:col-span-7 space-y-8">
+          <div className="lg:col-span-6 space-y-8">
             
-            {/* The Engine of Growth Card - Soft curves & warm shadows */}
-            <div className="p-8 sm:p-10 rounded-[3rem] bg-white/70 backdrop-blur-xl border border-white shadow-[0_10px_40px_rgb(0,0,0,0.04)] relative overflow-hidden group hover:shadow-[0_10px_50px_rgb(0,0,0,0.08)] transition-all duration-700">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-purple-50/50 opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
-              
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-lg shadow-blue-500/20 mb-8 relative z-10 transform group-hover:scale-105 transition-transform duration-500">
-                <Globe2 className="w-8 h-8 text-white" />
-              </div>
-              
-              <p className="text-slate-600 text-lg sm:text-xl leading-relaxed font-medium relative z-10">
-                <strong className="text-slate-800 font-extrabold text-2xl sm:text-3xl block mb-3 font-['Plus_Jakarta_Sans',sans-serif]">The Engine of Growth.</strong>
-                Digital marketing is the targeted, data-backed strategy of promoting brands across search, social, and digital channels to convert international digital attention into scalable pipeline revenue.
-              </p>
-            </div>
-
             {/* Key Pillars - Vertical elegant stack to handle any odd/even number beautifully */}
             <div className="flex flex-col gap-4">
               {content.keyPillars.slice(0, 4).map((pillar, idx) => {
@@ -159,7 +148,7 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
           </div>
 
           {/* RIGHT: Romantic Soft 3D Funnel Cards - Original colors */}
-          <div className="lg:col-span-5 relative perspective-2000 flex flex-col gap-6 items-center justify-center romantic-wrapper py-10 lg:pl-10">
+          <div className="lg:col-span-6 relative perspective-2000 flex flex-col gap-6 items-center justify-center romantic-wrapper py-10 lg:pl-10">
             
             {/* Soft 3D Floating Funnel Card 1 */}
             <div className="w-full max-w-sm preserve-3d animate-romantic-3d-1 romantic-inner transition-transform duration-700">
