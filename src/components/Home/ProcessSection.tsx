@@ -1,5 +1,6 @@
-import React from 'react';
-import { Sparkles, ArrowRight } from 'lucide-react';
+import React, { useRef } from 'react';
+import { Sparkles } from 'lucide-react';
+import { motion, useScroll, useTransform } from 'motion/react';
 
 interface ProcessProps {
   steps?: any[];
@@ -7,6 +8,16 @@ interface ProcessProps {
 }
 
 export const ProcessSection: React.FC<ProcessProps> = () => {
+  const targetRef = useRef<HTMLDivElement>(null);
+  
+  // Track vertical scroll within this tall container
+  const { scrollYProgress } = useScroll({
+    target: targetRef,
+  });
+
+  // Map 0-1 vertical scroll to 0% to -87.5% horizontal translation. 
+  // 8 items = 1/8 = 12.5% per item. To show the last item we need to translate by 7 * 12.5 = 87.5%.
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "-87.5%"]);
 
   const processFlow = [
     {
@@ -15,7 +26,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       desc: 'Deep-dive discovery to align on business objectives, target buyer personas, and growth KPIs.',
       // Hand-sketched Analyst looking through magnifying glass at thought bubbles
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-48 object-contain" fill="none">
           {/* Hand-drawn Analyst Head & Body Sketch */}
           <path d="M50 75 C45 60 55 45 70 45 C85 45 95 60 90 75" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
           <circle cx="70" cy="35" r="14" stroke="#0F172A" strokeWidth="2.5" />
@@ -43,7 +54,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       desc: 'Crafting a custom multi-channel acquisition roadmap and ROI budget allocation strategy.',
       // Hand-sketched Strategist at laptop with funnel blueprint
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-48 object-contain" fill="none">
           {/* Hand-sketched Strategist Character */}
           <circle cx="55" cy="40" r="14" stroke="#0F172A" strokeWidth="2.5" />
           <path d="M49 37 C51 35 59 35 61 37" stroke="#0F172A" strokeWidth="2" />
@@ -68,7 +79,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       desc: 'Building ad structures, tracking pixels, conversion funnels, and CRM routing automation.',
       // Hand-sketched Tech Engineer with headset & gears
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-48 object-contain" fill="none">
           {/* Hand-sketched Character with Headset */}
           <circle cx="80" cy="40" r="15" stroke="#0F172A" strokeWidth="2.5" />
           <path d="M65 40 C65 25 95 25 95 40" stroke="#0F172A" strokeWidth="3" fill="none" /> {/* Headset Band */}
@@ -90,7 +101,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       desc: 'Designing high-converting ad copy, landing pages, email templates, and brand graphics.',
       // Hand-sketched Delivery Truck with "FREE / GROW"
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-48 object-contain" fill="none">
           {/* Hand-drawn Delivery Truck Sketch */}
           <rect x="25" y="45" width="75" height="50" rx="4" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
           <path d="M100 60 L125 60 L135 75 L135 95 L100 95 Z" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
@@ -116,7 +127,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       desc: 'Deploying campaigns across search, social networks, display, and email channels live.',
       // Hand-sketched Character unpacking a gift growth box
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-48 object-contain" fill="none">
           {/* Hand-sketched Character */}
           <circle cx="110" cy="40" r="14" stroke="#0F172A" strokeWidth="2.5" />
           <path d="M104 37 C106 35 114 35 116 37" stroke="#0F172A" strokeWidth="2" />
@@ -140,7 +151,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       desc: 'A/B testing ad creatives, bidding strategies, and funnel copy to drive down cost-per-lead.',
       // Hand-sketched Split Test Balancer & Flasks
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-48 object-contain" fill="none">
           {/* Hand-drawn Scale Balancer */}
           <path d="M80 30 L80 100 M40 45 L120 45" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
           <polygon points="80,25 75,35 85,35" stroke="#0F172A" strokeWidth="2" fill="#0F172A" />
@@ -161,7 +172,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       desc: 'Transparent weekly lead attribution reporting and real-time dashboard analytics access.',
       // Hand-sketched Chart & Rising Growth Line
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-48 object-contain" fill="none">
           {/* Sketched Axis */}
           <path d="M30 30 L30 110 L140 110" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
           {/* Sketched Bar Columns */}
@@ -182,7 +193,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
       desc: 'Re-allocating budget into winning channels and expanding market reach globally.',
       // Hand-sketched 10x Scale Trophy & Global Star
       illustration: (
-        <svg viewBox="0 0 160 140" className="w-full h-36 object-contain" fill="none">
+        <svg viewBox="0 0 160 140" className="w-full h-48 object-contain" fill="none">
           {/* Sketched Trophy Cup */}
           <path d="M55 35 L105 35 L95 75 L65 75 Z" stroke="#0F172A" strokeWidth="2.5" fill="#FFFFFF" />
           <path d="M80 75 L80 100 M65 100 L95 100" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" />
@@ -198,104 +209,61 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
   ];
 
   return (
-    <section id="our-process-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section ref={targetRef} id="our-process-section" className="relative h-[600vh] bg-[#F8FAFC]">
+      <div className="sticky top-0 h-screen flex flex-col items-center justify-center overflow-hidden">
         
-        {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-          
-          {/* Eyebrow Badge */}
-          <div>
-            <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+        {/* Fixed Section Header (stays in place while scrolling) */}
+        <div className="absolute top-10 w-full text-center max-w-3xl mx-auto px-4 z-10 pointer-events-none">
+          <div className="mb-4">
+            <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/90 backdrop-blur-sm shadow-sm font-['Plus_Jakarta_Sans',sans-serif]">
               <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" />
               <span>HOW IT WORKS</span>
             </span>
           </div>
-
-          {/* Main Title */}
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+          <h2 className="text-3xl md:text-5xl font-black text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] drop-shadow-sm">
             A Proven Process for{' '}
             <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent">
               Predictable Growth
             </span>
           </h2>
-
-          {/* Subtitle */}
-          <p className="text-base sm:text-lg text-[#6B7280] font-normal leading-relaxed">
-            From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.
+          <p className="mt-4 text-base md:text-lg text-[#6B7280] font-normal leading-relaxed max-w-2xl mx-auto">
+            Scroll to uncover our multi-channel methodology. Hover over each phase to reveal the strategic details.
           </p>
-
         </div>
 
-        {/* Hand-Drawn Open Horizontal Process Flow (NO BOX CARDS!) */}
-        <div className="space-y-16">
-          
-          {/* Row 1: Steps 1 to 4 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative">
-            {processFlow.slice(0, 4).map((item, idx) => (
-              <div key={idx} className="flex flex-col items-center text-center group cursor-pointer">
+        {/* Horizontal Scroll Track */}
+        <div className="flex items-center h-full pt-32 pb-10 w-full overflow-hidden relative z-20 pointer-events-auto">
+          <motion.div style={{ x }} className="flex h-full items-center">
+            {processFlow.map((item, idx) => (
+              <div key={idx} className="w-screen flex-shrink-0 flex justify-center items-center px-4">
                 
-                {/* Hand-Drawn Sketch Illustration */}
-                <div className="w-full mb-4 transform group-hover:scale-105 transition-transform duration-300">
-                  {item.illustration}
-                </div>
-
-                {/* Hand-sketched Step Title */}
-                <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors mb-2 uppercase">
-                  {item.num}. {item.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-xs text-[#6B7280] leading-relaxed font-normal max-w-xs">
-                  {item.desc}
-                </p>
-
-                {/* Hand-drawn Curved Arrow Connector to next step (Desktop) */}
-                {idx < 3 && (
-                  <div className="hidden lg:block absolute top-16 right-[-24px] translate-x-1/2 z-10 pointer-events-none">
-                    <svg width="45" height="25" viewBox="0 0 45 25" fill="none">
-                      <path d="M5 12 Q 22 2, 38 12 M32 6 L40 12 L33 18" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
+                {/* Organic Card Container */}
+                <div className="relative group w-full max-w-[500px] sm:max-w-[550px] aspect-square blob-shape blob-shape-hover-flatten bg-white shadow-xl border border-slate-200 flex flex-col items-center justify-center p-12 cursor-pointer transition-all duration-700 hover:shadow-[0_20px_50px_rgba(37,99,235,0.15)]">
+                  
+                  {/* Step Number Badge */}
+                  <div className="absolute top-10 left-10 w-12 h-12 rounded-full bg-[#111827] text-white flex items-center justify-center font-black text-xl z-20 shadow-lg transform group-hover:scale-110 transition-transform">
+                    {item.num}
                   </div>
-                )}
+
+                  {/* Illustration (Fades on hover) */}
+                  <div className="w-full h-full flex items-center justify-center transition-all duration-700 group-hover:scale-95 group-hover:opacity-10">
+                    {item.illustration}
+                  </div>
+
+                  {/* Hover Reveal Text */}
+                  <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-10 opacity-0 group-hover:opacity-100 transition-all duration-500 translate-y-8 group-hover:translate-y-0 pointer-events-none">
+                    <h3 className="text-3xl font-black text-[#111827] mb-4 uppercase tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">{item.title}</h3>
+                    <p className="text-lg text-[#6B7280] leading-relaxed">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                </div>
               </div>
             ))}
-          </div>
-
-          {/* Row 2: Steps 5 to 8 */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12 relative pt-8 border-t border-dashed border-slate-200">
-            {processFlow.slice(4, 8).map((item, idx) => (
-              <div key={idx + 4} className="flex flex-col items-center text-center group cursor-pointer">
-                
-                {/* Hand-Drawn Sketch Illustration */}
-                <div className="w-full mb-4 transform group-hover:scale-105 transition-transform duration-300">
-                  {item.illustration}
-                </div>
-
-                {/* Hand-sketched Step Title */}
-                <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors mb-2 uppercase">
-                  {item.num}. {item.title}
-                </h3>
-
-                {/* Description */}
-                <p className="text-xs text-[#6B7280] leading-relaxed font-normal max-w-xs">
-                  {item.desc}
-                </p>
-
-                {/* Hand-drawn Curved Arrow Connector to next step (Desktop) */}
-                {idx < 3 && (
-                  <div className="hidden lg:block absolute top-16 right-[-24px] translate-x-1/2 z-10 pointer-events-none">
-                    <svg width="45" height="25" viewBox="0 0 45 25" fill="none">
-                      <path d="M5 12 Q 22 2, 38 12 M32 6 L40 12 L33 18" stroke="#0F172A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
-                    </svg>
-                  </div>
-                )}
-              </div>
-            ))}
-          </div>
-
+          </motion.div>
         </div>
-
+        
       </div>
     </section>
   );
