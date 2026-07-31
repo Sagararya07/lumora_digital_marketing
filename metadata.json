@@ -1,0 +1,6 @@
+{
+  "name": "Cypher Swift - Digital Marketing Agency",
+  "description": "High-converting international digital marketing agency platform featuring dynamic page management, custom SEO tools, lead generation engines, and administrative controls.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
