@@ -37,8 +37,8 @@ const industryGradients = [
 export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openConsultationModal }) => {
   const { visibleItems, expanded, toggle, hiddenCount, shouldShowButton } = useViewMore(industries, 3, { initialRows: 2 });
 
-  const getIndustryIcon = (iconName: string) => {
-    const cls = "w-6 h-6 text-white";
+  const getIndustryIcon = (iconName: string, isWatermark = false) => {
+    const cls = isWatermark ? "w-full h-full" : "w-6 h-6 text-white";
     switch (iconName) {
       case 'HeartPulse': return <HeartPulse className={cls} />;
       case 'Building2': return <Building2 className={cls} />;
@@ -89,22 +89,38 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {visibleItems.map((ind, idx) => {
             const gradient = industryGradients[idx % industryGradients.length];
+            // Extract the first color for the accent line and shadows (e.g. 'blue-500' from 'from-blue-500')
+            const accentColorMatch = gradient.match(/from-([a-z]+-[0-9]+)/);
+            const accentColorClass = accentColorMatch ? `bg-${accentColorMatch[1]}` : 'bg-blue-500';
+            const shadowColorClass = accentColorMatch ? `shadow-${accentColorMatch[1].split('-')[0]}-500/20` : 'shadow-blue-500/20';
+
             return (
               <div
                 key={ind.id}
                 id={`industry-card-${ind.id}`}
                 onClick={openConsultationModal}
-                className="p-8 rounded-[2rem] bg-white border border-[#E5E7EB] hover:border-[#2563EB]/30 cursor-pointer group flex flex-col justify-between transition-all duration-500 shadow-sm hover:shadow-2xl hover:shadow-blue-500/10 hover:-translate-y-2 relative"
+                className="p-8 rounded-[2rem] bg-gradient-to-br from-white to-slate-50/50 border border-[#E5E7EB] hover:border-transparent cursor-pointer group flex flex-col justify-between transition-all duration-500 shadow-sm hover:shadow-2xl hover:-translate-y-2 relative overflow-hidden"
               >
-                <div>
+                {/* Animated Accent Line */}
+                <div className={`absolute left-0 top-1/2 -translate-y-1/2 w-1 h-0 group-hover:h-24 ${accentColorClass} rounded-r-full transition-all duration-500 ease-out`} />
+                
+                {/* Background Watermark Icon */}
+                <div className="absolute -bottom-6 -right-6 w-40 h-40 opacity-[0.02] group-hover:opacity-[0.05] group-hover:scale-110 group-hover:-rotate-12 transition-all duration-700 pointer-events-none text-slate-900">
+                  {getIndustryIcon(ind.iconName, true)}
+                </div>
+
+                <div className="relative z-10">
                   <div className="flex items-center justify-between mb-8">
                     {/* Icon Block with Brand Gradients */}
-                    <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500`}>
-                      {getIndustryIcon(ind.iconName)}
+                    <div className="relative">
+                      <div className={`absolute inset-0 bg-gradient-to-br ${gradient} blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500`} />
+                      <div className={`relative w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500 z-10`}>
+                        {getIndustryIcon(ind.iconName)}
+                      </div>
                     </div>
                     {/* Arrow */}
-                    <div className="w-10 h-10 rounded-full bg-[#F8FAFC] group-hover:bg-blue-50 flex items-center justify-center transition-colors border border-slate-100 group-hover:border-blue-100">
-                      <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#2563EB] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                    <div className={`w-10 h-10 rounded-full bg-slate-50 group-hover:bg-white flex items-center justify-center transition-all duration-500 border border-slate-100 group-hover:border-transparent group-hover:shadow-lg ${shadowColorClass} z-10`}>
+                      <ArrowUpRight className="w-5 h-5 text-slate-400 group-hover:text-[#111827] group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
                     </div>
                   </div>
 
@@ -117,9 +133,11 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
                   </p>
                 </div>
 
-                <div className="mt-auto pt-4 border-t border-slate-100 flex items-center justify-between transition-colors">
-                  <span className="text-[#94A3B8] font-bold uppercase text-[10px] tracking-wider font-['Plus_Jakarta_Sans',sans-serif]">Case Result:</span>
-                  <span className="font-extrabold text-[#2563EB] text-sm truncate ml-2 group-hover:text-[#1D4ED8]">{ind.caseStudyHighlight}</span>
+                <div className="mt-auto pt-5 border-t border-slate-100 flex items-center justify-between transition-colors relative z-10">
+                  <span className="text-[#94A3B8] font-bold uppercase text-[10px] tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">Case Result:</span>
+                  <span className={`inline-flex font-extrabold text-[#2563EB] text-sm truncate ml-2 group-hover:text-white px-3 py-1.5 rounded-full transition-colors duration-500 group-hover:bg-gradient-to-r ${gradient}`}>
+                    {ind.caseStudyHighlight}
+                  </span>
                 </div>
               </div>
             );
