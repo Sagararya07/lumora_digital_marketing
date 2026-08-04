@@ -49,8 +49,8 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
           
           {/* Top Eyebrow Badge */}
           <div>
-            <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" />
+            <span className="inline-flex items-center gap-2 text-[#5B8EE2] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-[#F2F6FC]/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+              <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2] animate-pulse" />
               <span>GOT QUESTIONS?</span>
             </span>
           </div>
@@ -58,7 +58,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             Frequently Asked{' '}
-            <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
@@ -80,7 +80,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               placeholder="Search questions (e.g. leads, pricing, timelines)..."
-              className="w-full pl-11 pr-10 py-3.5 bg-white border border-slate-200 rounded-2xl text-xs sm:text-sm text-[#111827] placeholder-slate-400 focus:outline-none focus:border-[#2563EB] focus:ring-4 focus:ring-blue-100 transition-all shadow-xs font-medium"
+              className="w-full pl-11 pr-10 py-3.5 bg-white border border-slate-200 rounded-2xl text-xs sm:text-sm text-[#111827] placeholder-slate-400 focus:outline-none focus:border-[#5B8EE2] focus:ring-4 focus:ring-blue-100 transition-all shadow-xs font-medium"
             />
             {searchQuery && (
               <button 
@@ -101,8 +101,8 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-5 py-2.5 rounded-full text-xs font-extrabold transition-all duration-300 font-['Plus_Jakarta_Sans',sans-serif] ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white shadow-md shadow-blue-500/25'
-                    : 'bg-[#F8FAFC] text-slate-600 hover:text-[#111827] border border-[#E5E7EB] hover:border-[#2563EB]'
+                    ? 'bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white shadow-md shadow-blue-500/25'
+                    : 'bg-[#F8FAFC] text-slate-600 hover:text-[#111827] border border-[#E5E7EB] hover:border-[#5B8EE2]'
                 }`}
               >
                 <span>{cat}</span>
@@ -123,22 +123,22 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
                   id={`faq-item-${faq.id}`}
                   className={`rounded-2xl border transition-all duration-300 overflow-hidden ${
                     isOpen 
-                      ? 'bg-gradient-to-br from-blue-50/50 via-white to-purple-50/20 border-[#2563EB] shadow-lg' 
-                      : 'bg-white border-[#E5E7EB] shadow-xs hover:border-[#2563EB]'
+                      ? 'bg-gradient-to-br from-blue-50/50 via-white to-purple-50/20 border-[#5B8EE2] shadow-lg' 
+                      : 'bg-white border-[#E5E7EB] shadow-xs hover:border-[#5B8EE2]'
                   }`}
                 >
                   <button
                     onClick={() => toggleFaq(faq.id)}
-                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-extrabold text-sm sm:text-base text-[#111827] hover:text-[#2563EB] transition-colors font-['Plus_Jakarta_Sans',sans-serif]"
+                    className="w-full p-5 sm:p-6 text-left flex items-center justify-between gap-4 font-extrabold text-sm sm:text-base text-[#111827] hover:text-[#5B8EE2] transition-colors font-['Plus_Jakarta_Sans',sans-serif]"
                   >
                     <div className="flex items-center gap-3.5">
                       <div className={`w-2.5 h-2.5 rounded-full flex-shrink-0 transition-all ${
-                        isOpen ? 'bg-[#2563EB] scale-110 shadow-sm' : 'bg-slate-300 scale-75'
+                        isOpen ? 'bg-[#5B8EE2] scale-110 shadow-sm' : 'bg-slate-300 scale-75'
                       }`} />
                       <span>{faq.question}</span>
                     </div>
                     <div className={`w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-300 flex-shrink-0 ${
-                      isOpen ? 'bg-[#2563EB] text-white rotate-180 shadow-md' : 'bg-slate-100 text-slate-500'
+                      isOpen ? 'bg-[#5B8EE2] text-white rotate-180 shadow-md' : 'bg-slate-100 text-slate-500'
                     }`}>
                       <ChevronDown className="w-4 h-4" />
                     </div>
@@ -148,7 +148,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
                     isOpen ? 'max-h-[500px] opacity-100' : 'max-h-0 opacity-0'
                   }`}>
                     <div className="px-6 pb-6 pt-3 text-xs sm:text-sm text-[#6B7280] leading-relaxed border-t border-blue-100 font-normal">
-                      <div className="pl-4 border-l-2 border-[#2563EB]/40">
+                      <div className="pl-4 border-l-2 border-[#5B8EE2]/40">
                         {faq.answer}
                       </div>
                     </div>
@@ -171,7 +171,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
               <p className="text-sm text-slate-500 font-medium">No matching questions found.</p>
               <button
                 onClick={openConsultationModal}
-                className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white text-xs font-bold shadow-md shadow-blue-500/20"
+                className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white text-xs font-bold shadow-md shadow-blue-500/20"
               >
                 <span>Ask Our Strategy Team Directly</span>
               </button>
@@ -192,7 +192,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
           <button
             id="faq-talk-expert-btn"
             onClick={openConsultationModal}
-            className="px-7 py-4 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#1D4ED8] hover:to-[#6D28D9] text-white text-xs sm:text-sm font-extrabold flex items-center gap-2.5 flex-shrink-0 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif] z-10"
+            className="px-7 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-xs sm:text-sm font-extrabold flex items-center gap-2.5 flex-shrink-0 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif] z-10"
           >
             <MessageSquare className="w-4 h-4 text-white" />
             <span>Talk to an Expert</span>

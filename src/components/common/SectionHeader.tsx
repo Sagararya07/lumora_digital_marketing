@@ -33,8 +33,8 @@ export const SectionHeader: React.FC<SectionHeaderProps> = ({
       {eyebrow && (
         <span className={`inline-flex items-center gap-2 text-xs font-extrabold uppercase tracking-widest px-4 py-2 rounded-full border shadow-sm mb-4 ${
           dark 
-            ? 'bg-blue-500/10 border-blue-500/20 text-blue-400' 
-            : 'bg-blue-50 border-blue-100 text-blue-600'
+            ? 'bg-[#729EE6]/10 border-[#729EE6]/20 text-blue-400' 
+            : 'bg-[#F2F6FC] border-blue-100 text-[#5B8EE2]'
         }`}>
           <Sparkles className="w-3.5 h-3.5 animate-pulse" />
           <span>{eyebrow}</span>

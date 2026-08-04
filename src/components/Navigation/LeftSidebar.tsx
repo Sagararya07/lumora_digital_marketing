@@ -58,7 +58,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
       {/* Side Menu Drawer Container */}
       <aside
         id="left-sidebar-navigation"
-        className={`fixed top-0 left-0 bottom-0 w-[300px] sm:w-[340px] z-50 bg-white text-[#111827] shadow-2xl flex flex-col transition-transform duration-300 ease-in-out border-r border-[#E5E7EB] ${
+        className={`fixed top-0 left-0 bottom-0 w-[260px] sm:w-[280px] z-50 bg-white text-[#111827] shadow-2xl flex flex-col transition-transform duration-300 ease-in-out border-r border-[#E5E7EB] ${
           isOpenMobile ? 'translate-x-0' : '-translate-x-full'
         }`}
       >
@@ -100,12 +100,12 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
                 onClick={() => handleNavClick(item)}
                 className={`w-full text-left px-5 py-3.5 rounded-2xl text-sm font-extrabold transition-all flex items-center justify-between font-['Plus_Jakarta_Sans',sans-serif] ${
                   isActive
-                    ? 'text-[#2563EB] bg-blue-50 border border-blue-200 shadow-xs'
-                    : 'text-[#111827] hover:text-[#2563EB] hover:bg-slate-50'
+                    ? 'text-[#5B8EE2] bg-[#F2F6FC] border border-blue-200 shadow-xs'
+                    : 'text-[#111827] hover:text-[#5B8EE2] hover:bg-slate-50'
                 }`}
               >
                 <div className="flex items-center gap-3">
-                  <ItemIcon className={`w-4 h-4 ${isActive ? 'text-[#2563EB]' : 'text-slate-400'}`} />
+                  <ItemIcon className={`w-4 h-4 ${isActive ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
                   <span>{item.label}</span>
                 </div>
                 <ArrowRight className="w-3.5 h-3.5 opacity-50" />
@@ -122,7 +122,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
               navigate('/get-a-consultation');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="w-full py-4 px-4 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 hover:scale-105 transition-all font-['Plus_Jakarta_Sans',sans-serif]"
+            className="w-full py-4 px-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 hover:scale-105 transition-all font-['Plus_Jakarta_Sans',sans-serif]"
           >
             <span>Book a Strategy Call</span>
           </button>

@@ -29,7 +29,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
 
         {/* Header */}
         <div className="flex items-center gap-3 pb-4 border-b border-slate-100">
-          <div className="p-2 rounded-xl bg-blue-50 text-blue-600 border border-blue-100">
+          <div className="p-2 rounded-xl bg-[#F2F6FC] text-[#5B8EE2] border border-blue-100">
             {type === 'privacy' && <ShieldCheck className="w-6 h-6" />}
             {type === 'terms' && <FileText className="w-6 h-6" />}
             {type === 'refund' && <RefreshCw className="w-6 h-6" />}
@@ -103,7 +103,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
         <div className="pt-4 border-t border-slate-100 flex justify-end">
           <button
             onClick={onClose}
-            className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-200"
+            className="px-5 py-2 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-200"
           >
             I Understand & Agree
           </button>

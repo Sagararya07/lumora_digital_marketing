@@ -22,6 +22,7 @@ export interface ServiceItem {
   deliverables: string[];
   recommendedFor: string;
   badge?: string;
+  imageUrl?: string;
 }
 
 export interface WhoShouldUseItem {
@@ -30,6 +31,7 @@ export interface WhoShouldUseItem {
   description: string;
   iconName: string;
   benefits: string[];
+  imageUrl?: string;
 }
 
 export interface AchievementItem {
@@ -42,6 +44,7 @@ export interface AchievementItem {
     value: string;
     change: string;
   }[];
+  image_url?: string;
   challenge: string;
   solution: string;
   results: string;
@@ -59,6 +62,7 @@ export interface ProcessStep {
   duration: string;
   iconName: string;
   keyOutputs: string[];
+  imageUrl?: string;
 }
 
 export interface IndustryItem {
@@ -67,6 +71,7 @@ export interface IndustryItem {
   description: string;
   iconName: string;
   caseStudyHighlight: string;
+  imageUrl?: string;
 }
 
 export interface FAQItem {
@@ -86,6 +91,35 @@ export interface TestimonialItem {
   avatar?: string;
 }
 
+export interface TrustedLogo {
+  id: string;
+  name: string;
+  image_url: string;
+}
+
+export interface CaseStudyItem {
+  id: string;
+  title: string;
+  category: string;
+  description: string;
+  image_url: string;
+}
+
+export interface AboutCardItem {
+  id: string;
+  title: string;
+  description: string;
+  iconName?: string;
+}
+
+export interface RndModuleItem {
+  id: string;
+  title: string;
+  description: string;
+  badge: string;
+  image_url?: string;
+}
+
 export interface HeroContent {
   badgeText: string;
   headlineMain: string;
@@ -103,13 +137,13 @@ export interface WhatIsDigitalContent {
   subtitle: string;
   descriptionParagraph1: string;
   descriptionParagraph2: string;
-  keyPillars: { title: string; desc: string; icon: string }[];
+  keyPillars: { title: string; desc: string; icon: string; imageUrl?: string }[];
 }
 
 export interface WhyChooseContent {
   title: string;
   subtitle: string;
-  points: { id: string; title: string; description: string; icon: string }[];
+  points: { id: string; title: string; description: string; icon: string; imageUrl?: string }[];
 }
 
 export interface SiteContent {
@@ -123,6 +157,14 @@ export interface SiteContent {
   industries: IndustryItem[];
   faqs: FAQItem[];
   testimonials?: TestimonialItem[];
+  trustedLogos?: TrustedLogo[];
+  caseStudiesList?: CaseStudyItem[];
+  aboutMissionCards?: AboutCardItem[];
+  aboutCorePillars?: AboutCardItem[];
+  aboutHero?: {
+    background_image: string;
+  };
+  rndModules?: RndModuleItem[];
   contactInfo: {
     phone: string;
     whatsapp: string;
@@ -162,11 +204,43 @@ export interface SEOMetadata {
 
 export interface DynamicPageSection {
   id: string;
-  type: 'hero' | 'text-media' | 'services' | 'lead-form' | 'faq' | 'case-study' | 'custom-html';
+  type: 'hero' | 'text-media' | 'services' | 'services-grid' | 'overview' | 'lead-form' | 'faq' | 'case-study' | 'custom-html';
   title: string;
   content: string;
   mediaUrl?: string;
   bullets?: string[];
+  cards?: {
+    id: string;
+    title: string;
+    description: string;
+    iconUrl?: string;
+    iconName?: string;
+    linkUrl?: string;
+  }[];
+  caseStudy?: {
+    clientName: string;
+    metrics: { label: string; value: string }[];
+    challenge: string;
+    solution: string;
+  };
+  caseStudies?: {
+    id: string;
+    title: string;
+    description: string;
+    bgImageUrl?: string;
+    points: {
+      id: string;
+      title: string;
+      iconName?: string;
+    }[];
+  }[];
+  capabilities?: {
+    list: string[];
+    techStack: {
+      category: string;
+      items: string[];
+    }[];
+  };
 }
 
 export interface DynamicPage {

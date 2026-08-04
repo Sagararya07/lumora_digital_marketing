@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { 
   ArrowLeft, 
   CheckCircle2, 
@@ -6,12 +6,17 @@ import {
   Code2, 
   MapPin,
   Target,
-  ArrowRight
+  ArrowRight,
+  BarChart3,
+  Route,
+  Workflow,
+  X
 } from 'lucide-react';
 import { DynamicPage } from '../../types';
 import { ConsultationSection } from '../Home/ConsultationSection';
 import { useViewMore } from '../../hooks/useViewMore';
 import { ViewMoreButton } from '../common/ViewMoreButton';
+import { ParticleMorph } from './ParticleMorph';
 
 interface DynamicPageViewerProps {
   page: DynamicPage;
@@ -36,6 +41,9 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
   consultationHeading,
   consultationSubheading,
 }) => {
+  const [activeModalStudy, setActiveModalStudy] = useState<any>(null);
+  const [showAllCaseStudies, setShowAllCaseStudies] = useState(false);
+
   // Trigger intersection observer on mount/update for this page's reveals
   useEffect(() => {
     const revealElements = document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale');
@@ -100,81 +108,67 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
   return (
     <div className="min-h-screen bg-[#F8FAFC] text-[#111827] pb-0">
       
-      {/* Top Breadcrumb & SEO Bar */}
-      <div className="sticky top-20 z-30 bg-white/90 backdrop-blur-md border-b border-[#E5E7EB] py-3 px-4 sm:px-8 shadow-xs">
-        <div className="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4 text-xs font-['Plus_Jakarta_Sans',sans-serif]">
-          <button
-            onClick={onGoHome}
-            className="flex items-center gap-1.5 text-[#6B7280] hover:text-[#2563EB] font-bold transition-colors group"
-          >
-            <ArrowLeft className="w-3.5 h-3.5 text-[#2563EB] group-hover:-translate-x-0.5 transition-transform" />
-            <span>Back to Lumora Main Home</span>
-          </button>
 
-          <div className="flex items-center gap-3 text-[11px] text-[#6B7280]">
-            <span className="hidden sm:flex items-center gap-1 font-mono text-[#2563EB] font-semibold bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">
-              <Code2 className="w-3.5 h-3.5" /> /{page.slug}
-            </span>
-            {page.cityName && (
-              <span className="flex items-center gap-1 bg-slate-100 px-2 py-0.5 rounded-full text-slate-700 font-bold border border-slate-200">
-                <MapPin className="w-3 h-3 text-rose-500" /> 
-                {page.cityName}, {page.countryName || 'Global'}
-              </span>
-            )}
-            <span className="bg-emerald-50 text-emerald-700 border border-emerald-200 px-2.5 py-0.5 rounded-full font-extrabold flex items-center gap-1">
-              <CheckCircle2 className="w-3 h-3 text-emerald-600" /> Live Published Page
-            </span>
-          </div>
-        </div>
-      </div>
 
-      {/* Dynamic Hero Section - 100% Premium Light Theme */}
+      {/* Dynamic Hero Section - 3D Particle Theme */}
       <section className="relative overflow-hidden pt-20 pb-24 px-4 sm:px-8 bg-gradient-to-b from-blue-50/70 via-white to-slate-50 border-b border-[#E5E7EB]">
         
         {/* Background Mesh Orbs */}
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-30 blur-[140px] pointer-events-none bg-blue-500/20" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none bg-purple-500/20" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-30 blur-[140px] pointer-events-none bg-[#729EE6]/20 z-0" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none bg-purple-500/20 z-0" />
 
-        <div className="max-w-4xl mx-auto text-center space-y-8 relative z-10">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-blue-50 border border-blue-200 text-[#2563EB] text-xs font-extrabold uppercase tracking-widest shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-            <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" />
-            <span>{page.cityName ? `${page.cityName} Growth Strategy` : 'Specialized Resource Page'}</span>
+        <div className="max-w-7xl mx-auto relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-8">
+          
+          {/* Left Content Area */}
+          <div className="w-full lg:w-[55%] space-y-8 text-center lg:text-left z-10">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#F2F6FC] border border-blue-200 text-[#5B8EE2] text-xs font-extrabold uppercase tracking-widest shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+              <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2] animate-pulse" />
+              <span>{page.cityName ? `${page.cityName} Growth Strategy` : 'Specialized Resource Page'}</span>
+            </div>
+
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] leading-[1.15] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+              {leadingTitle ? `${leadingTitle} ` : ''}
+              <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+                {highlightTitle}
+              </span>
+            </h1>
+
+            <p className="text-base sm:text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+              {replacePlaceholders(page.seo?.metaDescription || '')}
+            </p>
+
+            <div className="pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+              <button
+                onClick={openConsultationModal}
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
+              >
+                <span>Get Lead Generation Proposal</span>
+                <ArrowRight className="w-4 h-4" />
+              </button>
+              <button
+                onClick={onGoHome}
+                className="px-8 py-4 rounded-full bg-white hover:bg-slate-50 border border-[#E5E7EB] text-[#111827] text-sm font-extrabold transition-all shadow-xs w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
+              >
+                Explore Agency Home
+              </button>
+            </div>
           </div>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] leading-[1.15] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
-            {leadingTitle ? `${leadingTitle} ` : ''}
-            <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent">
-              {highlightTitle}
-            </span>
-          </h1>
-
-          <p className="text-base sm:text-lg text-[#6B7280] max-w-2xl mx-auto leading-relaxed font-normal">
-            {replacePlaceholders(page.seo?.metaDescription || '')}
-          </p>
-
-          <div className="pt-6 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <button
-              onClick={openConsultationModal}
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#1D4ED8] hover:to-[#6D28D9] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
-            >
-              <span>Get Lead Generation Proposal</span>
-              <ArrowRight className="w-4 h-4" />
-            </button>
-            <button
-              onClick={onGoHome}
-              className="px-8 py-4 rounded-full bg-white hover:bg-slate-50 border border-[#E5E7EB] text-[#111827] text-sm font-extrabold transition-all shadow-xs w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
-            >
-              Explore Agency Home
-            </button>
+          {/* Right 3D Canvas Area */}
+          <div className="w-full lg:w-[45%] h-[400px] lg:h-[500px] relative rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-500/10 border border-white/60 bg-gradient-to-br from-blue-50/50 via-white/40 to-purple-50/50 backdrop-blur-xl group">
+            {/* The absolute inset-0 in ParticleMorph will fill this relative container */}
+            <ParticleMorph />
+            
+            {/* Inner glow/shadow for premium feel */}
+            <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[3rem] pointer-events-none z-10" />
           </div>
+
         </div>
       </section>
 
       {/* Page Rendered Section Blocks */}
-      <section className="max-w-5xl mx-auto px-4 sm:px-8 py-16 sm:py-24 space-y-10">
+      <div className="w-full pb-20">
         {visibleSections.map((sec, idx) => {
-          const gradient = sectionGradients[idx % sectionGradients.length];
-
           const secTitle = replacePlaceholders(sec.title);
           const secWords = secTitle.trim().split(' ');
           let leadingSec = '';
@@ -184,12 +178,187 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
             leadingSec = secWords.join(' ');
           }
 
+          if (sec.type === 'text-media' || sec.type === 'overview') {
+            return (
+              <section key={sec.id} className="relative max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-28 overflow-hidden">
+                {/* Decorative Background Element */}
+                <div className="absolute top-1/2 -left-32 w-64 h-64 bg-blue-100 rounded-full mix-blend-multiply filter blur-[80px] opacity-60 pointer-events-none" />
+                <div className="absolute top-1/2 -right-32 w-80 h-80 bg-rose-100 rounded-full mix-blend-multiply filter blur-[100px] opacity-60 pointer-events-none" />
+
+                <div className="flex flex-col items-center gap-8 relative z-10 max-w-4xl mx-auto text-center">
+                  <div className="w-full space-y-8">
+                    <div className="inline-flex items-center justify-center gap-3">
+                       <span className="w-8 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hidden sm:block" />
+                       <div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-extrabold text-lg tracking-widest uppercase font-['Plus_Jakarta_Sans',sans-serif]">
+                         Overview
+                       </div>
+                       <span className="w-8 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hidden sm:block" />
+                    </div>
+                    <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-[#0f172a] leading-[1.15] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+                      {leadingSec ? `${leadingSec} ` : ''}
+                      <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-rose-600 bg-clip-text text-transparent">
+                        {highlightSec}
+                      </span>
+                    </h2>
+                    <div>
+                      <p className="text-[#4B5563] text-lg sm:text-xl leading-relaxed font-medium">
+                        {replacePlaceholders(sec.content)}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (sec.type === 'services-grid' || sec.type === 'services') {
+            return (
+              <section key={sec.id} className="bg-slate-50 border-y border-[#E5E7EB] py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden">
+                <div className="max-w-7xl mx-auto relative z-10">
+                  
+                  {/* Top Section: Title & Content */}
+                  <div className="mb-12 lg:mb-16 max-w-3xl">
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight mb-6">
+                      {secTitle}
+                    </h2>
+                    <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6" />
+                    <p className="text-[#4B5563] text-lg leading-relaxed">
+                      {replacePlaceholders(sec.content)}
+                    </p>
+                  </div>
+
+                  <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
+                    
+                    {/* Left Panel: Large Image */}
+                    <div className="w-full lg:w-1/2 relative h-[400px] lg:h-[600px] rounded-[2rem] overflow-hidden shadow-2xl border border-[#E5E7EB] group">
+                      <img 
+                        src={sec.mediaUrl || "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"} 
+                        alt={secTitle} 
+                        className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-[#0B1026]/40 to-transparent"></div>
+                    </div>
+
+                    {/* Right Panel: Horizontal Cards List */}
+                    <div className="w-full lg:w-1/2 flex flex-col gap-4">
+                      {sec.cards?.map((card) => (
+                        <div key={card.id} className="group bg-white rounded-xl sm:rounded-2xl border border-[#E5E7EB] p-4 sm:p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 flex items-center gap-4 sm:gap-6 cursor-pointer">
+                          
+                          {/* Square Icon Container */}
+                          <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
+                            {card.iconName === 'BarChart3' && <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
+                            {card.iconName === 'Target' && <Target className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
+                            {card.iconName === 'Sparkles' && <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
+                            {card.iconName === 'Route' && <Route className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
+                            {card.iconName === 'Workflow' && <Workflow className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
+                            {!card.iconName && card.iconUrl && <img src={card.iconUrl} alt="icon" className="w-full h-full object-contain drop-shadow-sm" />}
+                          </div>
+                          
+                          {/* Title Only */}
+                          <div className="flex-1">
+                             <h3 className="text-lg sm:text-xl font-bold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] leading-snug tracking-tight group-hover:text-[#5B8EE2] transition-colors m-0">
+                               {card.title}
+                             </h3>
+                          </div>
+                          
+                        </div>
+                      ))}
+                    </div>
+                    
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (sec.type === 'case-study') {
+            return (
+              <section key={sec.id} className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-24 space-y-24">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight mb-16">
+                  {secTitle}
+                </h2>
+                
+                {sec.caseStudies && (() => {
+                  const visibleStudies = showAllCaseStudies ? sec.caseStudies : sec.caseStudies.slice(0, 2);
+                  return (
+                    <>
+                      {visibleStudies.map((study, studyIdx) => {
+                        const isEven = studyIdx % 2 === 0;
+                        const fallbackImages = [
+                          '1557838923-2985c318be48',
+                          '1460925895917-afdab827c52f',
+                          '1551288049-bebda4e38f71',
+                          '1432888117247-2b0e6dfa0698'
+                        ];
+                        const imgUrl = study.bgImageUrl || `https://images.unsplash.com/photo-${fallbackImages[studyIdx % fallbackImages.length]}?q=80&w=1200&auto=format&fit=crop`;
+                        
+                        return (
+                          <div key={study.id} className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-12 lg:gap-20 items-center`}>
+                            {/* Points Grid Panel */}
+                            <div className="flex-1 w-full p-6 sm:p-10 rounded-[2.5rem] border border-[#E5E7EB] shadow-inner relative overflow-hidden group min-h-[300px]">
+                              <img src={imgUrl} alt="background" className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                              <div className="absolute inset-0 bg-slate-900/30 transition-all duration-300 group-hover:bg-slate-900/40"></div>
+                              <div className="relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                {study.points.map((pt, ptIdx) => (
+                                  <div 
+                                    key={pt.id} 
+                                    className={`flex items-center gap-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${ptIdx === 0 ? 'border-blue-400 shadow-blue-100 ring-1 ring-blue-400/50' : 'border-white/50 hover:border-blue-200'}`}
+                                  >
+                                    <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${ptIdx === 0 ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-md' : 'bg-slate-100 text-slate-500'}`}>
+                                      <CheckCircle2 className="w-5 h-5" />
+                                    </div>
+                                    <span className="text-sm font-semibold text-slate-800 leading-snug">{pt.title}</span>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                            
+                            {/* Details Panel */}
+                            <div className="flex-1 space-y-6">
+                              <h3 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+                                {study.title}
+                              </h3>
+                              <p className="text-[#4B5563] text-lg leading-relaxed">
+                                {study.description}
+                              </p>
+                              <button
+                                onClick={() => setActiveModalStudy({ ...study, imgUrl })}
+                                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-sm font-extrabold gap-2 transition-all hover:scale-105 shadow-xl shadow-blue-500/25 font-['Plus_Jakarta_Sans',sans-serif]"
+                              >
+                                <span>Read More</span>
+                                <ArrowRight className="w-4 h-4" />
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      })}
+                      
+                      {sec.caseStudies.length > 2 && (
+                        <div className="flex justify-center mt-12">
+                          <button
+                            onClick={() => setShowAllCaseStudies(!showAllCaseStudies)}
+                            className="px-8 py-3 rounded-full border border-[#5B8EE2]/30 bg-[#F2F6FC]/50 hover:bg-[#5B8EE2] hover:text-white text-[#5B8EE2] text-sm font-extrabold flex items-center justify-center gap-2 transition-all group/btn shadow-xs font-['Plus_Jakarta_Sans',sans-serif]"
+                          >
+                            <span>{showAllCaseStudies ? 'View Less' : 'View More Case Studies'}</span>
+                            <ArrowRight className={`w-4 h-4 text-[#5B8EE2] group-hover/btn:text-white transition-transform ${showAllCaseStudies ? '-rotate-90' : 'rotate-90'}`} />
+                          </button>
+                        </div>
+                      )}
+                    </>
+                  );
+                })()}
+              </section>
+            );
+          }
+
+          // Fallback legacy renderer
+          const gradient = sectionGradients[idx % sectionGradients.length];
+
           return (
             <div
               key={sec.id}
-              className="p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:shadow-2xl hover:-translate-y-1 hover:border-[#2563EB] transition-all duration-300 group relative overflow-hidden"
+              className="max-w-5xl mx-auto p-8 sm:p-10 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs hover:shadow-2xl hover:-translate-y-1 hover:border-[#5B8EE2] transition-all duration-300 group relative overflow-hidden mb-10"
             >
-              {/* Top Gradient Accent Bar */}
               <div className={`absolute top-0 left-0 right-0 h-1.5 bg-gradient-to-r ${gradient}`} />
               
               <div>
@@ -197,9 +366,9 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                   <div className={`w-12 h-12 rounded-2xl bg-gradient-to-br ${gradient} shadow-md flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform text-white`}>
                     <Target className="w-6 h-6 text-white" />
                   </div>
-                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] tracking-tight group-hover:text-[#2563EB] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] tracking-tight group-hover:text-[#5B8EE2] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
                     {leadingSec ? `${leadingSec} ` : ''}
-                    <span className="bg-gradient-to-r from-[#2563EB] to-[#7C3AED] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] bg-clip-text text-transparent">
                       {highlightSec}
                     </span>
                   </h2>
@@ -211,14 +380,14 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
 
                 {sec.bullets && sec.bullets.length > 0 && (
                   <div className="p-6 sm:p-7 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
-                    <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#2563EB] mb-4 flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif]">
-                      <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" /> Key Deliverables & Strategy Focus
+                    <h4 className="text-xs font-extrabold uppercase tracking-wider text-[#5B8EE2] mb-4 flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif]">
+                      <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2]" /> Key Deliverables & Strategy Focus
                     </h4>
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       {sec.bullets.map((b, bIdx) => (
                         <div key={bIdx} className="flex items-start gap-3">
-                          <div className={`mt-0.5 w-5 h-5 rounded-full bg-blue-50 text-[#2563EB] flex items-center justify-center shrink-0 border border-blue-100`}>
-                            <CheckCircle2 className="w-3.5 h-3.5 text-[#2563EB]" />
+                          <div className={`mt-0.5 w-5 h-5 rounded-full bg-[#F2F6FC] text-[#5B8EE2] flex items-center justify-center shrink-0 border border-blue-100`}>
+                            <CheckCircle2 className="w-3.5 h-3.5 text-[#5B8EE2]" />
                           </div>
                           <span className="text-sm font-semibold text-[#111827] leading-snug">{replacePlaceholders(b)}</span>
                         </div>
@@ -232,14 +401,16 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
         })}
 
         {shouldShowButton && (
-          <ViewMoreButton
-            expanded={expanded}
-            onToggle={toggle}
-            hiddenCount={hiddenCount}
-            label="View More Sections"
-          />
+          <div className="flex justify-center mt-12 pb-12">
+            <ViewMoreButton
+              expanded={expanded}
+              onToggle={toggle}
+              hiddenCount={hiddenCount}
+              label="View More Sections"
+            />
+          </div>
         )}
-      </section>
+      </div>
 
       {/* Embedded Lead Consultation Form */}
       <div className="border-t border-[#E5E7EB]">
@@ -250,6 +421,70 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
           sourcePage={`Dynamic Page: /${page.slug}`}
         />
       </div>
+
+      {/* Case Study Read More Modal */}
+      {activeModalStudy && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 backdrop-blur-md bg-slate-900/60 transition-opacity">
+          <div className="relative w-full max-w-5xl h-[85vh] sm:h-[80vh] bg-white rounded-[2rem] sm:rounded-[3rem] overflow-hidden flex flex-col md:flex-row shadow-2xl shadow-blue-900/20">
+            {/* Close Button */}
+            <button
+              onClick={() => setActiveModalStudy(null)}
+              className="absolute top-4 right-4 sm:top-6 sm:right-6 z-20 w-10 h-10 bg-slate-100 hover:bg-slate-200 rounded-full flex items-center justify-center text-slate-600 transition-colors shadow-sm"
+            >
+              <X className="w-5 h-5" />
+            </button>
+            
+            {/* Left/Top Image (Fixed) */}
+            <div className="w-full md:w-1/2 h-64 md:h-full relative shrink-0">
+              <img src={activeModalStudy.imgUrl} alt={activeModalStudy.title} className="w-full h-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-slate-900/20" />
+            </div>
+
+            {/* Right/Bottom Content (Scrollable) */}
+            <div className="w-full md:w-1/2 h-[calc(100%-16rem)] md:h-full overflow-y-auto p-8 sm:p-12 pb-20">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#F2F6FC] border border-blue-100 text-[#5B8EE2] text-xs font-extrabold uppercase tracking-widest mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
+                <Sparkles className="w-3.5 h-3.5" />
+                <span>Case Study</span>
+              </div>
+              <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mb-6 tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
+                {activeModalStudy.title}
+              </h3>
+              <p className="text-[#4B5563] text-lg leading-relaxed mb-10">
+                {activeModalStudy.description}
+              </p>
+
+              {/* Extended Details (simulated) */}
+              <div className="space-y-8">
+                <div>
+                  <h4 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+                    Strategic Initiatives
+                  </h4>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {activeModalStudy.points.map((pt: any) => (
+                      <div key={pt.id} className="flex items-start gap-3 p-4 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB]">
+                        <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center text-[#5B8EE2] mt-0.5">
+                          <CheckCircle2 className="w-4 h-4" />
+                        </div>
+                        <div>
+                          <span className="text-sm font-bold text-slate-800 leading-snug">{pt.title}</span>
+                          <p className="text-xs text-slate-500 mt-1">Targeted delivery and implementation of {pt.title.toLowerCase()}.</p>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
+                  <h4 className="text-lg font-bold text-slate-800 mb-2 font-['Plus_Jakarta_Sans',sans-serif]">Results & Impact</h4>
+                  <p className="text-slate-600 text-sm leading-relaxed">
+                    By implementing the strategic initiatives outlined above, the campaign significantly out-performed initial KPIs. Our team was able to orchestrate a data-driven approach that connected {activeModalStudy.title.toLowerCase()} directly to the core business objectives, generating sustainable pipeline and measurable brand equity.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
 
     </div>
   );

@@ -6,7 +6,7 @@ interface ProcessProps {
   openConsultationModal?: () => void;
 }
 
-export const ProcessSection: React.FC<ProcessProps> = () => {
+export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
 
   const processFlow = [
     {
@@ -17,7 +17,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
         <svg viewBox="0 0 160 140" className="w-full h-40 object-contain drop-shadow-[0_0_8px_rgba(56,189,248,0.5)]" fill="none">
           <defs>
             <linearGradient id="hypeGradient1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#38BDF8" />
+              <stop offset="0%" stopColor="#8CB4F5" />
               <stop offset="100%" stopColor="#818CF8" />
             </linearGradient>
           </defs>
@@ -200,7 +200,7 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
     <section id="our-process-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-slate-50 relative overflow-hidden">
       
       {/* Energetic Background Glows */}
-      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#38BDF8] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-pulse"></div>
+      <div className="absolute top-1/4 left-0 w-96 h-96 bg-[#8CB4F5] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-pulse"></div>
       <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-[#A855F7] rounded-full mix-blend-screen filter blur-[150px] opacity-20 pointer-events-none animate-pulse" style={{ animationDelay: '2s' }}></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -208,14 +208,14 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-4">
           <div>
-            <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs backdrop-blur-md font-['Plus_Jakarta_Sans',sans-serif]">
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-spin-slow" />
+            <span className="inline-flex items-center gap-2 text-[#5B8EE2] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-[#F2F6FC]/80 shadow-xs backdrop-blur-md font-['Plus_Jakarta_Sans',sans-serif]">
+              <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2] animate-spin-slow" />
               <span>HOW IT WORKS</span>
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             A Proven Process for{' '}
-            <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent drop-shadow-sm">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent drop-shadow-sm">
               Predictable Growth
             </span>
           </h2>
@@ -229,20 +229,25 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
           
           {/* Row 1 (Steps 1 to 4) - Moves Right */}
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-between w-full">
-            {processFlow.slice(0, 4).map((item, idx) => (
+            {(steps?.length > 0 ? steps : processFlow).slice(0, 4).map((dbItem: any, idx: number) => {
+              const item = processFlow[idx % processFlow.length];
+              const title = dbItem.title || item.title;
+              const desc = dbItem.description || dbItem.desc || item.desc;
+              const imageUrl = dbItem.imageUrl;
+              return (
               <div 
                 key={idx} 
                 className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-[220px]
                 ${idx % 2 === 0 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
               >
                 {/* Glowing Step Number Badge */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#38BDF8] to-[#818CF8] flex items-center justify-center text-white font-black text-xl shadow-[0_0_15px_rgba(56,189,248,0.6)] transform group-hover:rotate-12 transition-transform duration-300 z-20">
+                <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#8CB4F5] to-[#818CF8] flex items-center justify-center text-white font-black text-xl shadow-[0_0_15px_rgba(56,189,248,0.6)] transform group-hover:rotate-12 transition-transform duration-300 z-20">
                   {item.num}
                 </div>
 
                 {/* Meaningful Illustration */}
                 <div className="w-full max-w-[140px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex-grow flex items-center justify-center min-h-[140px]">
-                  {item.illustration}
+                  {imageUrl ? <img src={imageUrl} alt={title} className="w-full h-full object-contain" /> : item.illustration}
                 </div>
 
                 {/* Snake Connector Line Desktop (Right Arrow) */}
@@ -258,15 +263,15 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
                   
                   <div className="relative z-10 text-center">
                     <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
-                      {item.title}
+                      {title}
                     </h3>
                     <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
-                      {item.desc}
+                      {desc}
                     </p>
                   </div>
                 </div>
               </div>
-            ))}
+            )})}
           </div>
 
           {/* S-Curve Connector between Row 1 and Row 2 (Desktop only) */}
@@ -274,11 +279,17 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
              <div className="w-20 h-16 border-r-4 border-b-4 border-dashed border-slate-300 rounded-br-3xl transform translate-x-4"></div>
           </div>
 
-          {/* Row 2 (Steps 5 to 8) - Reverses Left to create Snake shape */}
+          {/* Row 2 (Steps 8 to 5) - Moves Left (Reversed for Snake effect) */}
           <div className="flex flex-col lg:flex-row-reverse gap-6 lg:gap-8 justify-between w-full">
-            {processFlow.slice(4, 8).map((item, idx) => (
+            {[...(steps?.length > 0 ? steps : processFlow).slice(4, 8)].reverse().map((dbItem: any, reverseIdx: number) => {
+              const idx = 7 - reverseIdx;
+              const item = processFlow[idx % processFlow.length];
+              const title = dbItem.title || item.title;
+              const desc = dbItem.description || dbItem.desc || item.desc;
+              const imageUrl = dbItem.imageUrl;
+              return (
               <div 
-                key={idx + 4} 
+                key={idx} 
                 className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-[220px]
                 ${idx % 2 === 1 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
               >
@@ -289,11 +300,11 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
 
                 {/* Meaningful Illustration */}
                 <div className="w-full max-w-[140px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex-grow flex items-center justify-center min-h-[140px]">
-                  {item.illustration}
+                  {imageUrl ? <img src={imageUrl} alt={title} className="w-full h-full object-contain" /> : item.illustration}
                 </div>
 
                 {/* Snake Connector Line Desktop (Left Arrow - Because flex-row-reverse, the visual left is DOM right side) */}
-                {idx < 3 && (
+                {reverseIdx < 3 && (
                   <div className="hidden lg:block absolute top-1/2 left-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
                 )}
                 
@@ -305,15 +316,15 @@ export const ProcessSection: React.FC<ProcessProps> = () => {
                   
                   <div className="relative z-10 text-center">
                     <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
-                      {item.title}
+                      {title}
                     </h3>
                     <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
-                      {item.desc}
+                      {desc}
                     </p>
                   </div>
                 </div>
               </div>
-            ))}
+            )})}
           </div>
 
         </div>

@@ -5,6 +5,8 @@ import { GoogleGenAI } from '@google/genai';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
+import { v2 as cloudinary } from 'cloudinary';
+import multer from 'multer';
 import { 
   SiteContent, 
   LeadSubmission, 
@@ -26,6 +28,60 @@ const app = express();
 const PORT = 3000;
 
 app.use(express.json({ limit: '10mb' }));
+
+// Cloudinary Configuration
+cloudinary.config({
+  cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_API_KEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// Multer setup for in-memory uploads
+const storage = multer.memoryStorage();
+const upload = multer({ storage });
+
+// Image Upload Route
+app.post('/api/upload', upload.single('image'), async (req, res) => {
+  try {
+    if (!req.file) {
+      return res.status(400).json({ error: 'No file uploaded' });
+    }
+
+    // Convert buffer to base64
+    const b64 = Buffer.from(req.file.buffer).toString('base64');
+    const dataURI = `data:${req.file.mimetype};base64,${b64}`;
+
+    // Upload to Cloudinary
+    const result = await cloudinary.uploader.upload(dataURI, {
+      folder: 'lumora_website',
+      resource_type: 'auto',
+    });
+
+    res.json({
+      url: result.secure_url,
+      public_id: result.public_id,
+    });
+  } catch (error) {
+    console.error('Cloudinary upload error:', error);
+    res.status(500).json({ error: 'Failed to upload image' });
+  }
+});
+
+// Image Delete Route
+app.delete('/api/upload', async (req, res) => {
+  try {
+    const { public_id } = req.body;
+    if (!public_id) {
+      return res.status(400).json({ error: 'public_id is required' });
+    }
+
+    const result = await cloudinary.uploader.destroy(public_id);
+    res.json({ success: true, result });
+  } catch (error) {
+    console.error('Cloudinary delete error:', error);
+    res.status(500).json({ error: 'Failed to delete image' });
+  }
+});
 
 // PostgreSQL Connection Pool
 const pool = new Pool({
@@ -60,7 +116,13 @@ async function getSiteContent(): Promise<SiteContent> {
     whatIsContentRes,
     whoShouldUseRes,
     siteSettingsRes,
-    testimonialsRes
+    testimonialsRes,
+    trustedLogosRes,
+    caseStudiesRes,
+    aboutMissionCardsRes,
+    aboutCorePillarsRes,
+    aboutHeroRes,
+    rndModulesRes
   ] = await Promise.all([
     pool.query('SELECT * FROM hero_section WHERE is_active = true LIMIT 1'),
     pool.query('SELECT * FROM services WHERE is_active = true ORDER BY sort_order'),
@@ -72,7 +134,13 @@ async function getSiteContent(): Promise<SiteContent> {
     pool.query('SELECT * FROM digital_marketing_content WHERE is_active = true ORDER BY sort_order'),
     pool.query('SELECT * FROM target_audience WHERE is_active = true ORDER BY sort_order'),
     pool.query('SELECT key, value FROM site_settings'),
-    pool.query('SELECT * FROM testimonials WHERE is_active = true ORDER BY sort_order')
+    pool.query('SELECT * FROM testimonials WHERE is_active = true ORDER BY sort_order'),
+    pool.query('SELECT * FROM trusted_logos ORDER BY created_at ASC'),
+    pool.query('SELECT * FROM case_studies ORDER BY created_at ASC'),
+    pool.query('SELECT * FROM about_mission_cards WHERE is_active = true ORDER BY sort_order'),
+    pool.query('SELECT * FROM about_core_pillars WHERE is_active = true ORDER BY sort_order'),
+    pool.query('SELECT * FROM about_hero_section LIMIT 1'),
+    pool.query('SELECT * FROM rnd_modules WHERE is_active = true ORDER BY sort_order')
   ]);
 
   const settingsMap: Record<string, string> = {};
@@ -124,7 +192,8 @@ async function getSiteContent(): Promise<SiteContent> {
     keyPillars: pillarRows.map(r => ({
       title: r.title,
       desc: r.content,
-      icon: r.icon
+      icon: r.icon,
+      imageUrl: r.image_url
     }))
   };
 
@@ -142,7 +211,8 @@ async function getSiteContent(): Promise<SiteContent> {
       id: r.id.toString(),
       title: r.title,
       description: r.description,
-      icon: r.icon
+      icon: r.icon,
+      imageUrl: r.image_url
     }))
   };
 
@@ -155,7 +225,8 @@ async function getSiteContent(): Promise<SiteContent> {
     features: r.short_description ? r.short_description.split('.').filter(Boolean).slice(0, 4).map((s: string) => s.trim()) : ['Strategy', 'Execution', 'Reporting'],
     deliverables: ['Monthly Reports', 'Performance Dashboard', 'Strategy Sessions'],
     recommendedFor: r.is_featured ? 'High-Growth Brands' : 'Growing Businesses',
-    badge: r.is_featured ? 'Featured' : undefined
+    badge: r.is_featured ? 'Featured' : undefined,
+    imageUrl: r.image_url
   }));
 
   const whoShouldUse: WhoShouldUseItem[] = whoShouldUseRes.rows.map(r => ({
@@ -163,7 +234,8 @@ async function getSiteContent(): Promise<SiteContent> {
     title: r.name,
     description: r.description,
     iconName: r.icon,
-    benefits: r.description ? r.description.split(',').map((s: string) => s.trim()).slice(0, 3) : ['Growth', 'Scale', 'ROI']
+    benefits: r.description ? r.description.split(',').map((s: string) => s.trim()).slice(0, 3) : ['Growth', 'Scale', 'ROI'],
+    imageUrl: r.image_url
   }));
 
   const achievements: AchievementItem[] = achievementsRes.rows.map(r => ({
@@ -175,6 +247,7 @@ async function getSiteContent(): Promise<SiteContent> {
     challenge: r.short_description || 'Scaling revenue in a competitive market.',
     solution: r.short_description || '',
     results: r.full_details || r.short_description || '',
+    image_url: r.image_url || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
     testimonial: { quote: r.full_details?.slice(0, 120) || 'Outstanding results delivered.', author: r.title, role: 'Client Partner' }
   }));
 
@@ -184,7 +257,8 @@ async function getSiteContent(): Promise<SiteContent> {
     description: r.description,
     duration: `Step ${r.step_number}`,
     iconName: r.icon,
-    keyOutputs: [r.title, 'Strategy Document', 'Performance Report']
+    keyOutputs: [r.title, 'Strategy Document', 'Performance Report'],
+    imageUrl: r.image_url
   }));
 
   const industries: IndustryItem[] = industriesRes.rows.map(r => ({
@@ -192,7 +266,8 @@ async function getSiteContent(): Promise<SiteContent> {
     name: r.name,
     description: r.description,
     iconName: r.icon,
-    caseStudyHighlight: r.description?.slice(0, 60) || 'Proven industry results'
+    caseStudyHighlight: r.description?.slice(0, 60) || 'Proven industry results',
+    imageUrl: r.image_url
   }));
 
   const faqs: FAQItem[] = faqsRes.rows.map(r => ({
@@ -212,6 +287,46 @@ async function getSiteContent(): Promise<SiteContent> {
     avatar: r.avatar,
   }));
 
+  const trustedLogos = trustedLogosRes.rows.map(r => ({
+    id: r.id.toString(),
+    name: r.name,
+    image_url: r.image_url,
+  }));
+
+  const caseStudiesList = caseStudiesRes.rows.map(r => ({
+    id: r.id.toString(),
+    title: r.title,
+    category: r.category,
+    description: r.description,
+    image_url: r.image_url,
+  }));
+
+  const aboutMissionCards = aboutMissionCardsRes.rows.map(r => ({
+    id: r.id.toString(),
+    title: r.title,
+    description: r.description,
+    iconName: r.icon_name,
+  }));
+
+  const aboutCorePillars = aboutCorePillarsRes.rows.map(r => ({
+    id: r.id.toString(),
+    title: r.title,
+    description: r.description,
+    iconName: r.icon_name,
+  }));
+
+  const aboutHero = aboutHeroRes.rows[0] ? {
+    background_image: aboutHeroRes.rows[0].background_image
+  } : undefined;
+
+  const rndModules = rndModulesRes.rows.map(r => ({
+    id: r.id.toString(),
+    title: r.title,
+    description: r.description,
+    badge: r.badge,
+    image_url: r.image_url
+  }));
+
   return {
     hero,
     whatIs,
@@ -223,6 +338,12 @@ async function getSiteContent(): Promise<SiteContent> {
     industries,
     faqs,
     testimonials,
+    trustedLogos,
+    caseStudiesList,
+    aboutMissionCards,
+    aboutCorePillars,
+    aboutHero,
+    rndModules,
     contactInfo: {
       phone: settingsMap['phone'] || settingsMap['contact_phone'] || '+91 999 888 7766',
       whatsapp: settingsMap['whatsapp'] || settingsMap['contact_whatsapp'] || '+91 999 888 7766',
@@ -285,7 +406,7 @@ app.get('/api/leads', async (req, res) => {
       message: r.message,
       submittedAt: r.created_at,
       status: r.status,
-      sourcePage: 'Home'
+      sourcePage: r.source_page || 'Unknown'
     }));
     res.json({ success: true, leads: mapped });
   } catch (err: any) {
@@ -365,13 +486,13 @@ const sendLeadEmailNotification = async (leadData: {
 };
 
 app.post('/api/leads', async (req, res) => {
-  const { name, companyName, email, phone, servicesRequired, message } = req.body;
+  const { name, companyName, email, phone, servicesRequired, message, sourcePage } = req.body;
   try {
     const srv = Array.isArray(servicesRequired) ? servicesRequired.join(', ') : servicesRequired;
     const result = await pool.query(
-      `INSERT INTO consultation_submissions (name, company, email, phone, services_required, message, status, is_read, created_at)
-       VALUES ($1, $2, $3, $4, $5, $6, 'new', false, NOW()) RETURNING *`,
-      [name || 'Website Visitor', companyName || 'N/A', email, phone || 'N/A', srv || 'General Strategy', message || '']
+      `INSERT INTO consultation_submissions (name, company, email, phone, services_required, message, status, is_read, created_at, source_page)
+       VALUES ($1, $2, $3, $4, $5, $6, 'new', false, NOW(), $7) RETURNING *`,
+      [name || 'Website Visitor', companyName || 'N/A', email, phone || 'N/A', srv || 'General Strategy', message || '', sourcePage || 'Unknown']
     );
 
     // Trigger email notification to cypherswiftinfotech@gmail.com
@@ -555,11 +676,15 @@ app.delete('/api/pages/:id', async (req, res) => {
 // Generic Admin CMS Updates
 app.get('/api/admin/table/:tableName', async (req, res) => {
   const { tableName } = req.params;
-  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos'];
+  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'about_hero_section', 'rnd_modules'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {
-    const result = await pool.query(`SELECT * FROM ${tableName} ORDER BY sort_order ASC NULLS LAST, created_at DESC`);
+    let orderClause = 'ORDER BY created_at DESC';
+    if (!['hero_section', 'about_hero_section'].includes(tableName)) {
+      orderClause = 'ORDER BY sort_order ASC NULLS LAST, created_at DESC';
+    }
+    const result = await pool.query(`SELECT * FROM ${tableName} ${orderClause}`);
     res.json({ success: true, data: result.rows });
   } catch (err: any) {
     res.status(500).json({ error: `Failed to fetch from ${tableName}`, details: err.message });
@@ -568,10 +693,23 @@ app.get('/api/admin/table/:tableName', async (req, res) => {
 
 app.put('/api/admin/table/:tableName/:id', async (req, res) => {
   const { tableName, id } = req.params;
-  const updates = req.body;
+  const updates = { ...req.body };
+  delete updates.id;
+  delete updates.created_at;
+  delete updates.updated_at;
+  if (tableName !== 'case_studies' && tableName !== 'trusted_logos') {
+    delete updates.image_public_id;
+  }
+  
+  if (updates.hasOwnProperty('slug') && !updates.slug) {
+    const rawTitle = updates.title || updates.name || '';
+    if (rawTitle) {
+      updates.slug = rawTitle.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    }
+  }
   
   // Whitelist tables to prevent SQL injection
-  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos'];
+  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'about_hero_section', 'rnd_modules'];
   if (!allowedTables.includes(tableName)) {
     return res.status(403).json({ error: 'Invalid table name' });
   }
@@ -595,9 +733,22 @@ app.put('/api/admin/table/:tableName/:id', async (req, res) => {
 
 app.post('/api/admin/table/:tableName', async (req, res) => {
   const { tableName } = req.params;
-  const data = req.body;
+  const data = { ...req.body };
+  delete data.id;
+  delete data.created_at;
+  delete data.updated_at;
+  if (tableName !== 'case_studies' && tableName !== 'trusted_logos') {
+    delete data.image_public_id;
+  }
   
-  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos'];
+  if (data.hasOwnProperty('slug') && !data.slug) {
+    const rawTitle = data.title || data.name || '';
+    if (rawTitle) {
+      data.slug = rawTitle.toString().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)+/g, '');
+    }
+  }
+  
+  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'rnd_modules'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {
@@ -618,7 +769,7 @@ app.post('/api/admin/table/:tableName', async (req, res) => {
 
 app.delete('/api/admin/table/:tableName/:id', async (req, res) => {
   const { tableName, id } = req.params;
-  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos'];
+  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'rnd_modules'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {
@@ -631,6 +782,180 @@ app.delete('/api/admin/table/:tableName/:id', async (req, res) => {
 
 app.post('/api/ai/generate', async (req, res) => {
   res.json({ success: true, result: 'AI generated content' });
+});
+
+// ==========================================
+// Admin CRUD Routes for Home Page Sections
+// ==========================================
+
+// --- Trusted Logos ---
+app.get('/api/trusted-logos', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM trusted_logos ORDER BY created_at ASC');
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.post('/api/trusted-logos', async (req, res) => {
+  try {
+    const { name, image_url, image_public_id } = req.body;
+    const result = await pool.query(
+      'INSERT INTO trusted_logos (name, image_url, image_public_id) VALUES ($1, $2, $3) RETURNING *',
+      [name, image_url, image_public_id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.put('/api/trusted-logos/:id', async (req, res) => {
+  try {
+    const { name, image_url, image_public_id } = req.body;
+    const result = await pool.query(
+      'UPDATE trusted_logos SET name=$1, image_url=$2, image_public_id=$3 WHERE id=$4 RETURNING *',
+      [name, image_url, image_public_id, req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.delete('/api/trusted-logos/:id', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM trusted_logos WHERE id=$1', [req.params.id]);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+// --- Case Studies ---
+app.get('/api/case-studies', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM case_studies ORDER BY created_at ASC');
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.post('/api/case-studies', async (req, res) => {
+  try {
+    const { title, category, description, image_url, image_public_id } = req.body;
+    const result = await pool.query(
+      'INSERT INTO case_studies (title, category, description, image_url, image_public_id) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [title, category, description, image_url, image_public_id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.put('/api/case-studies/:id', async (req, res) => {
+  try {
+    const { title, category, description, image_url, image_public_id } = req.body;
+    const result = await pool.query(
+      'UPDATE case_studies SET title=$1, category=$2, description=$3, image_url=$4, image_public_id=$5 WHERE id=$6 RETURNING *',
+      [title, category, description, image_url, image_public_id, req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.delete('/api/case-studies/:id', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM case_studies WHERE id=$1', [req.params.id]);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+// --- Industries ---
+app.get('/api/industries', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM industries ORDER BY sort_order ASC');
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.post('/api/industries', async (req, res) => {
+  try {
+    const { name, icon, description, sort_order, is_active } = req.body;
+    const result = await pool.query(
+      'INSERT INTO industries (name, icon, description, sort_order, is_active) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [name, icon, description, sort_order, is_active]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.put('/api/industries/:id', async (req, res) => {
+  try {
+    const { name, icon, description, sort_order, is_active } = req.body;
+    const result = await pool.query(
+      'UPDATE industries SET name=$1, icon=$2, description=$3, sort_order=$4, is_active=$5 WHERE id=$6 RETURNING *',
+      [name, icon, description, sort_order, is_active, req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.delete('/api/industries/:id', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM industries WHERE id=$1', [req.params.id]);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+// --- Testimonials ---
+app.get('/api/testimonials', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM testimonials ORDER BY sort_order ASC');
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.post('/api/testimonials', async (req, res) => {
+  try {
+    const { name, company, role, avatar, content, rating, is_featured, sort_order, is_active } = req.body;
+    const result = await pool.query(
+      'INSERT INTO testimonials (name, company, role, avatar, content, rating, is_featured, sort_order, is_active) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
+      [name, company, role, avatar, content, rating, is_featured, sort_order, is_active]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.put('/api/testimonials/:id', async (req, res) => {
+  try {
+    const { name, company, role, avatar, content, rating, is_featured, sort_order, is_active } = req.body;
+    const result = await pool.query(
+      'UPDATE testimonials SET name=$1, company=$2, role=$3, avatar=$4, content=$5, rating=$6, is_featured=$7, sort_order=$8, is_active=$9 WHERE id=$10 RETURNING *',
+      [name, company, role, avatar, content, rating, is_featured, sort_order, is_active, req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.delete('/api/testimonials/:id', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM testimonials WHERE id=$1', [req.params.id]);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+// --- FAQs ---
+app.get('/api/faqs', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM faqs ORDER BY sort_order ASC');
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.post('/api/faqs', async (req, res) => {
+  try {
+    const { question, answer, category, sort_order, is_active } = req.body;
+    const result = await pool.query(
+      'INSERT INTO faqs (question, answer, category, sort_order, is_active) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [question, answer, category, sort_order, is_active]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.put('/api/faqs/:id', async (req, res) => {
+  try {
+    const { question, answer, category, sort_order, is_active } = req.body;
+    const result = await pool.query(
+      'UPDATE faqs SET question=$1, answer=$2, category=$3, sort_order=$4, is_active=$5 WHERE id=$6 RETURNING *',
+      [question, answer, category, sort_order, is_active, req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.delete('/api/faqs/:id', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM faqs WHERE id=$1', [req.params.id]);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
 });
 
 async function startServer() {

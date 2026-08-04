@@ -1,9 +1,9 @@
 import React from 'react';
-import { X, Trophy, Globe, TrendingUp, Quote, CheckCircle2, ArrowRight } from 'lucide-react';
-import { AchievementItem } from '../../types';
+import { X, ArrowRight, TrendingUp } from 'lucide-react';
+import { CaseStudyItem } from '../../types';
 
 interface CaseStudyModalProps {
-  caseStudy: AchievementItem | null;
+  caseStudy: CaseStudyItem | null;
   onClose: () => void;
   openConsultationModal: () => void;
 }
@@ -16,85 +16,60 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
   if (!caseStudy) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/60 backdrop-blur-sm overflow-y-auto">
-      <div className="relative w-full max-w-2xl rounded-2xl bg-white border border-slate-200 shadow-2xl p-6 sm:p-8 space-y-6">
+    <div className="fixed inset-0 z-[60] flex items-center justify-center p-4 sm:p-6 bg-slate-900/60 backdrop-blur-sm overflow-hidden">
+      <div className="relative w-full max-w-5xl h-[85vh] md:h-[75vh] rounded-3xl bg-white shadow-2xl flex flex-col md:flex-row overflow-hidden border border-slate-200">
         
-        {/* Close Button */}
+        {/* Close Button - absolute on top right of the whole modal */}
         <button
           onClick={onClose}
-          className="absolute top-4 right-4 p-2 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors"
+          className="absolute top-4 right-4 z-10 p-2.5 bg-white/90 backdrop-blur hover:bg-white text-slate-600 hover:text-slate-900 rounded-full shadow-md transition-colors border border-slate-200 hover:scale-105"
         >
           <X className="w-5 h-5" />
         </button>
 
-        {/* Header */}
-        <div className="space-y-2">
-          <div className="flex items-center gap-2 text-xs font-bold text-blue-600">
-            <Trophy className="w-4 h-4" />
-            <span>Case Study Breakdown • {caseStudy.industry}</span>
+        {/* Left Side: Sticky Image */}
+        <div className="md:w-[45%] h-56 md:h-full relative shrink-0 bg-slate-100">
+          <img
+            src={caseStudy.image_url}
+            alt={caseStudy.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-transparent to-transparent"></div>
+          <div className="absolute bottom-6 left-6 right-6">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-[#5B8EE2] text-white text-[10px] font-extrabold uppercase tracking-wider shadow-lg">
+              <TrendingUp className="w-3.5 h-3.5" />
+              {caseStudy.category}
+            </span>
           </div>
-          <h3 className="text-2xl font-black text-slate-900">{caseStudy.clientName}</h3>
-          <p className="text-xs text-slate-500 flex items-center gap-1 font-normal">
-            <Globe className="w-3.5 h-3.5" /> Region: {caseStudy.location}
-          </p>
         </div>
 
-        {/* Metrics Display */}
-        <div className="grid grid-cols-3 gap-3 p-4 rounded-xl bg-slate-50 border border-slate-100 text-center">
-          {caseStudy.metrics.map((m, idx) => (
-            <div key={idx}>
-              <p className="text-xl font-black text-emerald-600">{m.value}</p>
-              <p className="text-[10px] text-slate-500 uppercase tracking-wider font-bold">{m.label}</p>
-              <p className="text-[10px] text-blue-600 font-semibold">{m.change}</p>
+        {/* Right Side: Scrollable Content */}
+        <div className="md:w-[55%] flex flex-col h-full bg-white">
+          <div className="flex-1 overflow-y-auto p-8 sm:p-12 custom-scrollbar">
+            <h3 className="text-3xl sm:text-4xl font-black text-slate-900 leading-tight mb-8 font-['Plus_Jakarta_Sans',sans-serif]">
+              {caseStudy.title}
+            </h3>
+            
+            <div className="prose prose-slate max-w-none">
+              <p className="whitespace-pre-wrap text-slate-600 leading-[1.8] font-normal text-sm sm:text-base">
+                {caseStudy.description}
+              </p>
             </div>
-          ))}
-        </div>
-
-        {/* Challenge, Solution, Results */}
-        <div className="space-y-4 text-xs sm:text-sm text-slate-600 font-normal">
-          <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-            <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider text-rose-600">The Challenge</h4>
-            <p className="leading-relaxed">{caseStudy.challenge}</p>
           </div>
 
-          <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-            <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider text-blue-600">Our Strategy & Execution</h4>
-            <p className="leading-relaxed">{caseStudy.solution}</p>
+          {/* Action Footer (Sticky at bottom of right side) */}
+          <div className="p-6 sm:px-12 sm:py-8 border-t border-slate-100 bg-slate-50 shrink-0">
+            <button
+              onClick={() => {
+                onClose();
+                openConsultationModal();
+              }}
+              className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:opacity-90 text-white text-sm font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 transition-all"
+            >
+              <span>Get Similar Results For Your Business</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
-
-          <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-1">
-            <h4 className="font-bold text-slate-900 text-xs uppercase tracking-wider text-emerald-600">Quantifiable Results</h4>
-            <p className="leading-relaxed">{caseStudy.results}</p>
-          </div>
-        </div>
-
-        {/* Testimonial Quote */}
-        <div className="p-4 rounded-xl bg-blue-50/50 border border-blue-100 text-xs italic text-slate-700 flex items-start gap-3">
-          <Quote className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-          <div>
-            <p className="mb-2">"{caseStudy.testimonial.quote}"</p>
-            <p className="font-bold text-slate-900 not-italic">— {caseStudy.testimonial.author}, {caseStudy.testimonial.role}</p>
-          </div>
-        </div>
-
-        {/* Action Button */}
-        <div className="flex items-center justify-end gap-3 pt-2 border-t border-slate-100">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:text-slate-900 text-xs font-semibold"
-          >
-            Close
-          </button>
-          <button
-            onClick={() => {
-              onClose();
-              openConsultationModal();
-            }}
-            className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-200 flex items-center gap-1.5 transition-all"
-          >
-            <span>Achieve Similar Growth for Your Business</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
         </div>
 
       </div>

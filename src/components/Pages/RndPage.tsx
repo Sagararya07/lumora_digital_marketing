@@ -44,19 +44,19 @@ export const RndPage: React.FC<RndPageProps> = ({
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-24 px-4 sm:px-8 bg-gradient-to-b from-purple-50/70 via-white to-slate-50 border-b border-[#E5E7EB]">
         <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-30 blur-[140px] pointer-events-none bg-purple-500/20" />
-        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none bg-blue-500/20" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none bg-[#729EE6]/20" />
 
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <div>
-            <span className="inline-flex items-center gap-2 text-[#7C3AED] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-purple-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-              <BrainCircuit className="w-3.5 h-3.5 text-[#7C3AED] animate-pulse" />
+            <span className="inline-flex items-center gap-2 text-[#D6A67B] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-purple-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+              <BrainCircuit className="w-3.5 h-3.5 text-[#D6A67B] animate-pulse" />
               <span>RESEARCH & DEVELOPMENT LAB</span>
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
             AI-Driven Marketing Infrastructure &{' '}
-            <span className="bg-gradient-to-r from-[#7C3AED] via-[#2563EB] to-[#38BDF8] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#D6A67B] via-[#5B8EE2] to-[#8CB4F5] bg-clip-text text-transparent">
               Predictive Intelligence
             </span>
           </h1>
@@ -68,7 +68,7 @@ export const RndPage: React.FC<RndPageProps> = ({
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={openConsultationModal}
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#2563EB] hover:from-[#6D28D9] hover:to-[#1D4ED8] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-purple-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#D6A67B] to-[#5B8EE2] hover:from-[#C29367] hover:to-[#4676C2] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-purple-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
             >
               <span>Explore AI Platform Architecture</span>
               <ArrowRight className="w-4 h-4" />
@@ -88,8 +88,8 @@ export const RndPage: React.FC<RndPageProps> = ({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           
           <div className="text-center max-w-3xl mx-auto mb-16 space-y-4">
-            <span className="inline-flex items-center gap-2 text-[#7C3AED] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-purple-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-              <Sparkles className="w-3.5 h-3.5 text-[#7C3AED]" />
+            <span className="inline-flex items-center gap-2 text-[#D6A67B] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-purple-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+              <Sparkles className="w-3.5 h-3.5 text-[#D6A67B]" />
               <span>R&D MODULES</span>
             </span>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
@@ -101,53 +101,37 @@ export const RndPage: React.FC<RndPageProps> = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                title: 'Predictive Buyer Journey Engine',
-                desc: 'Simulates conversion probabilities across 10,000+ audience pathways before allocating live media spend.',
-                badge: 'Machine Learning',
-                icon: BrainCircuit,
-                gradient: 'from-purple-500 to-indigo-600',
-              },
-              {
-                title: 'Automated Multi-Touch Attribution',
-                desc: 'Tracks every user touchpoint across search, social, and email to allocate budget to high-converting channels.',
-                badge: 'Real-Time Data',
-                icon: BarChart3,
-                gradient: 'from-blue-500 to-cyan-600',
-              },
-              {
-                title: 'Autonomous AI Lead Qualification',
-                desc: 'Interactive AI chatbots and automated scoring sequences verify intent before handing off leads to sales teams.',
-                badge: 'Automation',
-                icon: Bot,
-                gradient: 'from-pink-500 to-rose-600',
-              },
-              {
-                title: 'Creative Resonance Computer Vision',
-                desc: 'AI visual analysis evaluates ad creative elements (colors, copy layout, imagery) against historic ROAS benchmarks.',
-                badge: 'Computer Vision',
-                icon: Cpu,
-                gradient: 'from-emerald-500 to-teal-600',
-              },
-            ].map((module, i) => (
-              <div key={i} className="p-8 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#7C3AED] shadow-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
+            {(siteContent.rndModules || []).map((module, i) => {
+              const gradients = [
+                'from-purple-500 to-indigo-600',
+                'from-blue-500 to-cyan-600',
+                'from-pink-500 to-rose-600',
+                'from-emerald-500 to-teal-600',
+              ];
+              const gradient = gradients[i % gradients.length];
+              return (
+              <div key={module.id || i} className="p-8 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#D6A67B] shadow-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 group">
                 <div className="flex items-center justify-between mb-6">
-                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${module.gradient} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform`}>
-                    <module.icon className="w-7 h-7 text-white" />
+                  <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center text-white shadow-md group-hover:scale-110 transition-transform`}>
+                    {module.image_url ? (
+                      <img src={module.image_url} alt={module.title} className="w-7 h-7 object-contain brightness-0 invert" />
+                    ) : (
+                      <BrainCircuit className="w-7 h-7 text-white" />
+                    )}
                   </div>
-                  <span className="text-[10px] font-black uppercase tracking-widest text-[#7C3AED] bg-purple-50 px-3 py-1 rounded-full border border-purple-200 font-['Plus_Jakarta_Sans',sans-serif]">
+                  <span className="text-[10px] font-black uppercase tracking-widest text-[#D6A67B] bg-purple-50 px-3 py-1 rounded-full border border-purple-200 font-['Plus_Jakarta_Sans',sans-serif]">
                     {module.badge}
                   </span>
                 </div>
-                <h3 className="text-xl font-extrabold text-[#111827] mb-3 font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#7C3AED] transition-colors">
+                <h3 className="text-xl font-extrabold text-[#111827] mb-3 font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#D6A67B] transition-colors">
                   {module.title}
                 </h3>
                 <p className="text-sm text-[#6B7280] leading-relaxed font-normal">
-                  {module.desc}
+                  {module.description}
                 </p>
               </div>
-            ))}
+              );
+            })}
           </div>
 
         </div>
@@ -160,8 +144,8 @@ export const RndPage: React.FC<RndPageProps> = ({
           <div className="p-8 sm:p-12 rounded-3xl bg-gradient-to-br from-purple-50/80 via-white to-blue-50/80 border border-purple-200/80 shadow-2xl space-y-8 relative overflow-hidden">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Sliders className="w-5 h-5 text-[#7C3AED]" />
-                <span className="text-xs font-extrabold uppercase tracking-widest text-[#7C3AED] font-['Plus_Jakarta_Sans',sans-serif]">
+                <Sliders className="w-5 h-5 text-[#D6A67B]" />
+                <span className="text-xs font-extrabold uppercase tracking-widest text-[#D6A67B] font-['Plus_Jakarta_Sans',sans-serif]">
                   INTERACTIVE R&D SIMULATOR
                 </span>
               </div>
@@ -181,7 +165,7 @@ export const RndPage: React.FC<RndPageProps> = ({
                 <select
                   value={industryType}
                   onChange={(e) => setIndustryType(e.target.value)}
-                  className="w-full p-3 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#7C3AED] focus:outline-none shadow-xs"
+                  className="w-full p-3 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#D6A67B] focus:outline-none shadow-xs"
                 >
                   <option value="SaaS">B2B SaaS & IT</option>
                   <option value="Healthcare">Healthcare & Medical</option>
@@ -224,12 +208,12 @@ export const RndPage: React.FC<RndPageProps> = ({
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
               <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs">
                 <span className="text-[10px] font-bold text-[#6B7280] uppercase tracking-wider block">Estimated Qualified Leads</span>
-                <p className="text-2xl font-black text-[#7C3AED] mt-1 font-['Plus_Jakarta_Sans',sans-serif]">{estimatedLeads} Leads/mo</p>
+                <p className="text-2xl font-black text-[#D6A67B] mt-1 font-['Plus_Jakarta_Sans',sans-serif]">{estimatedLeads} Leads/mo</p>
               </div>
 
               <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs">
                 <span className="text-[10px] font-bold text-[#6B7280] uppercase tracking-wider block">Estimated Cost / Lead</span>
-                <p className="text-2xl font-black text-[#2563EB] mt-1 font-['Plus_Jakarta_Sans',sans-serif]">${estimatedCostPerLead}</p>
+                <p className="text-2xl font-black text-[#5B8EE2] mt-1 font-['Plus_Jakarta_Sans',sans-serif]">${estimatedCostPerLead}</p>
               </div>
 
               <div className="p-5 rounded-2xl bg-white border border-[#E5E7EB] shadow-xs">
@@ -241,7 +225,7 @@ export const RndPage: React.FC<RndPageProps> = ({
             <div className="pt-2 text-center">
               <button
                 onClick={openConsultationModal}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#7C3AED] to-[#2563EB] text-white text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-purple-500/25 hover:scale-105 transition-all font-['Plus_Jakarta_Sans',sans-serif] mx-auto"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#D6A67B] to-[#5B8EE2] text-white text-xs sm:text-sm font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-purple-500/25 hover:scale-105 transition-all font-['Plus_Jakarta_Sans',sans-serif] mx-auto"
               >
                 <span>Request Custom AI Architecture Call</span>
                 <ArrowRight className="w-4 h-4" />

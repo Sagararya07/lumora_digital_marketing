@@ -32,8 +32,8 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
           
           {/* Top Eyebrow Badge */}
           <div>
-            <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" />
+            <span className="inline-flex items-center gap-2 text-[#5B8EE2] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-[#F2F6FC]/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+              <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2] animate-pulse" />
               <span>CLIENT VALIDATION</span>
             </span>
           </div>
@@ -41,7 +41,7 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             What Growth Leaders Say About{' '}
-            <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
               Lumora
             </span>
           </h2>
@@ -58,7 +58,7 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
           {visible.map((t, idx) => (
             <div 
               key={`${t.id}-${idx}`} 
-              className="p-8 sm:p-9 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB] shadow-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group"
+              className="p-8 sm:p-9 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#5B8EE2] shadow-xs hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 flex flex-col justify-between group"
             >
               <div>
                 {/* 5 Golden Stars */}
@@ -68,7 +68,7 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
                   ))}
                 </div>
 
-                <Quote className="w-8 h-8 text-[#2563EB]/20 mb-4" />
+                <Quote className="w-8 h-8 text-[#5B8EE2]/20 mb-4" />
                 <p className="text-sm sm:text-base text-[#111827] leading-relaxed italic font-normal mb-6">
                   &ldquo;{t.content}&rdquo;
                 </p>
@@ -76,11 +76,11 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
 
               {/* Author Footer (Ample Bottom Padding) */}
               <div className="flex items-center gap-4 pt-6 border-t border-slate-100 mt-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#2563EB] to-[#7C3AED] flex items-center justify-center text-white text-base font-extrabold shadow-md shrink-0 font-['Plus_Jakarta_Sans',sans-serif]">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5B8EE2] to-[#D6A67B] flex items-center justify-center text-white text-base font-extrabold shadow-md shrink-0 font-['Plus_Jakarta_Sans',sans-serif]">
                   {t.name.charAt(0)}
                 </div>
                 <div>
-                  <p className="text-base font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors">
+                  <p className="text-base font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#5B8EE2] transition-colors">
                     {t.name}
                   </p>
                   <p className="text-xs text-[#6B7280] font-medium mt-0.5">
@@ -98,10 +98,10 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
           <div className="flex items-center justify-center gap-4 mt-12">
             <button 
               onClick={prev} 
-              className="p-3 rounded-full border border-[#E5E7EB] bg-white hover:border-[#2563EB] hover:bg-blue-50 text-[#111827] transition-all shadow-xs" 
+              className="p-3 rounded-full border border-[#E5E7EB] bg-white hover:border-[#5B8EE2] hover:bg-[#F2F6FC] text-[#111827] transition-all shadow-xs" 
               aria-label="Previous"
             >
-              <ChevronLeft className="w-5 h-5 text-[#2563EB]" />
+              <ChevronLeft className="w-5 h-5 text-[#5B8EE2]" />
             </button>
             
             <div className="flex gap-2">
@@ -109,7 +109,7 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
                 <button
                   key={i}
                   onClick={() => setActive(i)}
-                  className={`h-2.5 rounded-full transition-all ${i === active ? 'bg-[#2563EB] w-8' : 'bg-slate-300 w-2.5'}`}
+                  className={`h-2.5 rounded-full transition-all ${i === active ? 'bg-[#5B8EE2] w-8' : 'bg-slate-300 w-2.5'}`}
                   aria-label={`Go to testimonial ${i + 1}`}
                 />
               ))}
@@ -117,10 +117,10 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
 
             <button 
               onClick={next} 
-              className="p-3 rounded-full border border-[#E5E7EB] bg-white hover:border-[#2563EB] hover:bg-blue-50 text-[#111827] transition-all shadow-xs" 
+              className="p-3 rounded-full border border-[#E5E7EB] bg-white hover:border-[#5B8EE2] hover:bg-[#F2F6FC] text-[#111827] transition-all shadow-xs" 
               aria-label="Next"
             >
-              <ChevronRight className="w-5 h-5 text-[#2563EB]" />
+              <ChevronRight className="w-5 h-5 text-[#5B8EE2]" />
             </button>
           </div>
         )}

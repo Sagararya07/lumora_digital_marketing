@@ -28,20 +28,20 @@ export const ViewMoreButton: React.FC<ViewMoreButtonProps> = ({
         onClick={onToggle}
         className={`group inline-flex items-center gap-2.5 px-8 py-3.5 rounded-2xl text-sm font-bold transition-all border ${
           isDark
-            ? 'bg-white/5 hover:bg-white/10 text-white border-white/15 hover:border-blue-500/40'
+            ? 'bg-white/5 hover:bg-white/10 text-white border-white/15 hover:border-[#729EE6]/40'
             : 'bg-white hover:bg-slate-50 text-slate-700 border-slate-200 hover:border-blue-300 shadow-sm hover:shadow-md'
         }`}
       >
         {expanded ? (
           <>
-            <ChevronUp className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-blue-600'}`} />
+            <ChevronUp className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-[#5B8EE2]'}`} />
             <span>Show Less</span>
           </>
         ) : (
           <>
-            <ChevronDown className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-blue-600'} group-hover:translate-y-0.5 transition-transform`} />
+            <ChevronDown className={`w-4 h-4 ${isDark ? 'text-blue-400' : 'text-[#5B8EE2]'} group-hover:translate-y-0.5 transition-transform`} />
             <span>{label || `View More`}</span>
-            <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${isDark ? 'bg-blue-500/20 text-blue-300' : 'bg-blue-50 text-blue-600'}`}>
+            <span className={`text-xs font-bold px-2 py-0.5 rounded-full ${isDark ? 'bg-[#729EE6]/20 text-[#AEC7F0]' : 'bg-[#F2F6FC] text-[#5B8EE2]'}`}>
               +{hiddenCount}
             </span>
           </>

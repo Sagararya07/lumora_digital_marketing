@@ -1,6 +1,6 @@
-import { SiteContent, DynamicPage } from '../types';
 
-export const initialSiteContent: SiteContent = {
+
+const initialSiteContent = {
   hero: {
     badgeText: 'Local | National and Global Reach',
     headlineMain: 'Grow Your Business with Local, National & Global',
@@ -17,7 +17,7 @@ export const initialSiteContent: SiteContent = {
     subtitle: 'The Engine of Modern Global Business Scaling',
     descriptionParagraph1: 'Digital marketing is the targeted, data-backed strategy of promoting products, services, and brands through electronic channels like search engines, social media, paid advertising networks, and email workflows.',
     descriptionParagraph2: 'At Lumora, we transcend standard advertising. We combine algorithmic audience targeting, AI-enhanced campaign optimization, and creative brand storytelling to convert international digital attention into scalable pipeline revenue.',
-    keyPillars: [
+    keyPillars
       {
         title: 'Precision Data Analytics',
         desc: 'Track every dollar spent down to individual user acquisition touchpoints with full conversion attribution.',
@@ -38,7 +38,7 @@ export const initialSiteContent: SiteContent = {
   whyChoose: {
     title: 'Why Choose Lumora?',
     subtitle: 'Built for High-Growth Enterprises, SMEs & Ambitious Brands',
-    points: [
+    points
       {
         id: 'p1',
         title: '10+ Years Industry Experience',
@@ -77,15 +77,15 @@ export const initialSiteContent: SiteContent = {
       }
     ]
   },
-  services: [
+  services
     {
       id: 'social-media-marketing',
       title: 'Social Media Marketing',
       shortDescription: 'Build brand authority, engage target demographics, and turn social channels into lead engines on Meta, LinkedIn, and X.',
       fullDescription: 'Our Social Media Marketing service drives organic community engagement paired with high-conversion paid social campaigns across Facebook, Instagram, LinkedIn, YouTube, and X. We handle content creation, short-form video reels, influencer partnerships, and audience retargeting.',
       iconName: 'Share2',
-      features: ['Custom Visual & Video Content', 'Community Management 24/7', 'LinkedIn Executive Thought Leadership', 'Audience Retargeting Pixel Funnels'],
-      deliverables: ['Monthly Content Calendar', '1080p Video Reels & Motion Graphics', 'Bi-weekly Performance Analytics', 'Paid Social Ad Management'],
+      features'Custom Visual & Video Content', 'Community Management 24/7', 'LinkedIn Executive Thought Leadership', 'Audience Retargeting Pixel Funnels'],
+      deliverables'Monthly Content Calendar', '1080p Video Reels & Motion Graphics', 'Bi-weekly Performance Analytics', 'Paid Social Ad Management'],
       recommendedFor: 'B2B & B2C brands looking for viral brand equity and direct consumer lead capture.',
       badge: 'High Conversion'
     },
@@ -95,8 +95,8 @@ export const initialSiteContent: SiteContent = {
       shortDescription: 'Dominate Google organic search results with technical SEO, keyword architecture, and authority backlink building.',
       fullDescription: 'Our international SEO strategy drives sustainable high-intent organic traffic. We conduct deep site audits, resolve technical indexation barriers, produce authoritative long-form content, and build white-hat niche backlink profiles that outperform competitors.',
       iconName: 'Search',
-      features: ['Technical Core Web Vitals Audits', 'International & Multi-Regional SEO', 'High-Domain Backlink Acquisition', 'Schema & Structured Data Markup'],
-      deliverables: ['Custom Keyword Matrix', 'On-Page Content Optimization', 'Monthly Keyword Rank Tracking', 'Link Building Acquisition Reports'],
+      features'Technical Core Web Vitals Audits', 'International & Multi-Regional SEO', 'High-Domain Backlink Acquisition', 'Schema & Structured Data Markup'],
+      deliverables'Custom Keyword Matrix', 'On-Page Content Optimization', 'Monthly Keyword Rank Tracking', 'Link Building Acquisition Reports'],
       recommendedFor: 'Businesses aiming to build long-term organic acquisition funnels with zero per-click ad cost.',
       badge: 'Organic Scale'
     },
@@ -106,8 +106,8 @@ export const initialSiteContent: SiteContent = {
       shortDescription: 'Data-driven paid ads on Google Ads, Bing, and Programmatic Display engineered for strict Target CPA and ROAS.',
       fullDescription: 'Maximize every advertising dollar. Our performance marketing unit creates hyper-targeted Search, Shopping, and Display campaigns that capture high-intent buyers right when they are ready to transact.',
       iconName: 'Target',
-      features: ['Google Search & PPC Management', 'Programmatic Native & Display', 'AI Keyword Bidding Rules', 'Negative Keyword Shielding'],
-      deliverables: ['High-Converting Landing Pages', 'Ad Copy Variant Testing', 'Live Conversion Attribution', 'ROAS & CPA Dashboards'],
+      features'Google Search & PPC Management', 'Programmatic Native & Display', 'AI Keyword Bidding Rules', 'Negative Keyword Shielding'],
+      deliverables'High-Converting Landing Pages', 'Ad Copy Variant Testing', 'Live Conversion Attribution', 'ROAS & CPA Dashboards'],
       recommendedFor: 'E-commerce stores and lead-gen businesses needing immediate predictable pipeline growth.',
       badge: 'Max ROAS'
     },
@@ -117,8 +117,8 @@ export const initialSiteContent: SiteContent = {
       shortDescription: 'Capture pre-qualified B2B and B2C sales inquiries directly into your CRM with multi-step interactive lead funnels.',
       fullDescription: 'Turn anonymous website visitors into sales-ready leads. We construct high-converting lead magnets, interactive quiz funnels, calendar booking integrations, and automated lead verification systems.',
       iconName: 'UserPlus',
-      features: ['Interactive Quiz & Assessment Funnels', 'Instant SMS & Email Lead Notifications', 'CRM Synchronization (HubSpot, Salesforce)', 'Pre-Qualification Screening Forms'],
-      deliverables: ['Custom Multi-step Lead Funnel', 'A/B Testing Framework', 'Verified Sales-Ready Leads', 'Automated Lead Nurturing Email Sequence'],
+      features'Interactive Quiz & Assessment Funnels', 'Instant SMS & Email Lead Notifications', 'CRM Synchronization (HubSpot, Salesforce)', 'Pre-Qualification Screening Forms'],
+      deliverables'Custom Multi-step Lead Funnel', 'A/B Testing Framework', 'Verified Sales-Ready Leads', 'Automated Lead Nurturing Email Sequence'],
       recommendedFor: 'High-ticket service providers, IT firms, Real Estate agencies, and B2B SaaS companies.',
       badge: 'Top Choice'
     },
@@ -128,8 +128,8 @@ export const initialSiteContent: SiteContent = {
       shortDescription: 'Re-engage 98% of lost website traffic across display, social, and search networks with dynamic personalized offers.',
       fullDescription: 'Most visitors leave without converting on their first touch. Our multi-platform retargeting campaigns stay top-of-mind, displaying tailored ads based on exact user behavior and product pages viewed.',
       iconName: 'RotateCcw',
-      features: ['Dynamic Product Retargeting', 'Sequential Ad Storytelling', 'Cross-Device Tracking Pixels', 'Custom Audience Exclusion Rules'],
-      deliverables: ['Custom Retargeting Ad Creatives', 'Frequency Cap Controls', 'Abandoned Cart Recovery Funnels', 'Cost-per-Acquisition Audits'],
+      features'Dynamic Product Retargeting', 'Sequential Ad Storytelling', 'Cross-Device Tracking Pixels', 'Custom Audience Exclusion Rules'],
+      deliverables'Custom Retargeting Ad Creatives', 'Frequency Cap Controls', 'Abandoned Cart Recovery Funnels', 'Cost-per-Acquisition Audits'],
       recommendedFor: 'Brands looking to maximize conversion rates from existing marketing spend.',
       badge: 'High Conversion'
     },
@@ -139,8 +139,8 @@ export const initialSiteContent: SiteContent = {
       shortDescription: 'End-to-end paid campaign strategy spanning video ads, native networks, and international media placements.',
       fullDescription: 'Scale across global borders with localized ad creatives, multi-currency budget strategies, and high-impact YouTube video campaigns that command attention and drive buyer action.',
       iconName: 'Megaphone',
-      features: ['YouTube Video Ad Production', 'Native Sponsored Content Placements', 'Multi-Language Ad Translation', 'Geofencing & Hyper-Local Targeting'],
-      deliverables: ['Omnichannel Campaign Setup', 'Localized Ad Creatives', 'Cross-Channel Attribution Model', 'Weekly Executive Summaries'],
+      features'YouTube Video Ad Production', 'Native Sponsored Content Placements', 'Multi-Language Ad Translation', 'Geofencing & Hyper-Local Targeting'],
+      deliverables'Omnichannel Campaign Setup', 'Localized Ad Creatives', 'Cross-Channel Attribution Model', 'Weekly Executive Summaries'],
       recommendedFor: 'Enterprises expanding into new national or international geographical territories.',
       badge: 'Global Scale'
     },
@@ -150,8 +150,8 @@ export const initialSiteContent: SiteContent = {
       shortDescription: 'Identify, segment, and infiltrate high-value niche consumer demographics with behavioral intelligence.',
       fullDescription: 'Stop wasting ad budget on generic impressions. We analyze buyer personas, purchase intent indicators, and competitor audiences to laser-target customer profiles most likely to buy.',
       iconName: 'Crosshair',
-      features: ['In-Depth Buyer Persona Mapping', 'Psychographic & Behavioral Targeting', 'Competitor Audience Interception', 'Lookalike Audience Modeling'],
-      deliverables: ['Target Market Analysis Report', 'Custom Audience Segment Exports', 'Funnel Alignment Matrix', 'Audience Penetration Metrics'],
+      features'In-Depth Buyer Persona Mapping', 'Psychographic & Behavioral Targeting', 'Competitor Audience Interception', 'Lookalike Audience Modeling'],
+      deliverables'Target Market Analysis Report', 'Custom Audience Segment Exports', 'Funnel Alignment Matrix', 'Audience Penetration Metrics'],
       recommendedFor: 'Niche brands and specialized product offerings aiming for high relevance.',
       badge: 'Precision'
     },
@@ -161,63 +161,63 @@ export const initialSiteContent: SiteContent = {
       shortDescription: 'Amplify brand trust through authentic creator partnerships, sponsored unboxings, and viral social campaigns.',
       fullDescription: 'Connect with respected industry voices and high-engagement creators in tech, lifestyle, finance, and B2B sectors. We manage outreach, contract negotiation, content guidelines, and ROI tracking.',
       iconName: 'Users',
-      features: ['Vetted Influencer Matching', 'Contract & Rights Management', 'Campaign Strategy & Briefing', 'Trackable Promo Code Attribution'],
-      deliverables: ['Influencer Roster Selection', 'Co-Branded Content Approval', 'Post-Campaign Engagement Analytics', 'Usage Rights Licensing'],
+      features'Vetted Influencer Matching', 'Contract & Rights Management', 'Campaign Strategy & Briefing', 'Trackable Promo Code Attribution'],
+      deliverables'Influencer Roster Selection', 'Co-Branded Content Approval', 'Post-Campaign Engagement Analytics', 'Usage Rights Licensing'],
       recommendedFor: 'Consumer brands, mobile apps, and lifestyle products seeking instant social validation.',
       badge: 'Viral Authority'
     }
   ],
-  whoShouldUse: [
+  whoShouldUse
     {
       id: 'w1',
       title: 'Startups & Emerging Tech',
       description: 'Rapidly establish product-market validation, generate early adopter signups, and scale investor pitch traction.',
       iconName: 'Rocket',
-      benefits: ['Low CAC User Acquisition', 'Product Launch Buzz', 'Investor Ready Metrics']
+      benefits'Low CAC User Acquisition', 'Product Launch Buzz', 'Investor Ready Metrics']
     },
     {
       id: 'w2',
       title: 'Healthcare & Medical Practice',
       description: 'Attract patient consultations, build trusted provider reputations, and rank high on local map packs.',
       iconName: 'HeartPulse',
-      benefits: ['HIPAA Compliant Funnels', 'High-Intent Patient Leads', 'Local Map Domination']
+      benefits'HIPAA Compliant Funnels', 'High-Intent Patient Leads', 'Local Map Domination']
     },
     {
       id: 'w3',
       title: 'Real Estate & Property Developers',
       description: 'Generate high-net-worth investor inquiries, luxury property buyer leads, and pre-construction bookings.',
       iconName: 'Building2',
-      benefits: ['Virtual Tour Ad Campaigns', 'HNWI Buyer Targeting', 'Direct Broker Inquiries']
+      benefits'Virtual Tour Ad Campaigns', 'HNWI Buyer Targeting', 'Direct Broker Inquiries']
     },
     {
       id: 'w4',
       title: 'E-commerce & Retail Brands',
       description: 'Scale direct-to-consumer sales with Google Shopping feeds, TikTok shop strategy, and automated email flows.',
       iconName: 'ShoppingBag',
-      benefits: ['High Shopping ROAS', 'Abandoned Cart Recovery', 'Repeat Order Retention']
+      benefits'High Shopping ROAS', 'Abandoned Cart Recovery', 'Repeat Order Retention']
     },
     {
       id: 'w5',
       title: 'IT & Software Companies (SaaS)',
       description: 'Drive demo bookings, free trial signups, and enterprise software contract pipelines with LinkedIn B2B ads.',
       iconName: 'Laptop',
-      benefits: ['SQL Lead Generation', 'Demo Booking Engine', 'Whitepaper Gated Downloads']
+      benefits'SQL Lead Generation', 'Demo Booking Engine', 'Whitepaper Gated Downloads']
     },
     {
       id: 'w6',
       title: 'Manufacturing & B2B Enterprises',
       description: 'Expand distributor networks, secure global bulk order RFQs, and position engineering capabilities.',
       iconName: 'Factory',
-      benefits: ['International RFQ Inquiries', 'Supply Chain Visibility', 'Trade Show Amplification']
+      benefits'International RFQ Inquiries', 'Supply Chain Visibility', 'Trade Show Amplification']
     }
   ],
-  achievements: [
+  achievements
     {
       id: 'case-1',
       clientName: 'Apex Cloud Solutions',
       industry: 'B2B SaaS & Cloud Security',
       location: 'United States & Europe',
-      metrics: [
+      metrics
         { label: 'Pipeline Leads', value: '4,820+', change: '+280%' },
         { label: 'Cost Per Lead (CPL)', value: '$34.20', change: '-48%' },
         { label: 'ARR Impact', value: '$2.4M', change: '+310%' }
@@ -236,7 +236,7 @@ export const initialSiteContent: SiteContent = {
       clientName: 'LuxeLiving Realty',
       industry: 'Luxury Real Estate',
       location: 'Dubai & UK',
-      metrics: [
+      metrics
         { label: 'Properties Sold', value: '$48M+', change: '+190%' },
         { label: 'HNWI Buyers Reach', value: '1.2M', change: '+450%' },
         { label: 'Average ROAS', value: '14.2x', change: '+220%' }
@@ -251,14 +251,14 @@ export const initialSiteContent: SiteContent = {
       }
     }
   ],
-  process: [
+  process
     {
       stepNumber: 1,
       title: 'Requirement & Competitor Analysis',
       description: 'We audit your existing digital footprint, study competitor ad strategies, and identify market opportunities.',
       duration: 'Week 1',
       iconName: 'Search',
-      keyOutputs: ['Full SEO & PPC Audit', 'Competitor Keyword Matrix', 'Target Persona Profiles']
+      keyOutputs'Full SEO & PPC Audit', 'Competitor Keyword Matrix', 'Target Persona Profiles']
     },
     {
       stepNumber: 2,
@@ -266,7 +266,7 @@ export const initialSiteContent: SiteContent = {
       description: 'We build a customized omnichannel marketing blueprint detailing channel budgets, KPI benchmarks, and messaging.',
       duration: 'Week 1 - 2',
       iconName: 'Compass',
-      keyOutputs: ['Media Spend Allocation', 'Funnel Architecture Map', 'A/B Testing Hypothesis']
+      keyOutputs'Media Spend Allocation', 'Funnel Architecture Map', 'A/B Testing Hypothesis']
     },
     {
       stepNumber: 3,
@@ -274,7 +274,7 @@ export const initialSiteContent: SiteContent = {
       description: 'Our design and copy team crafts high-converting creatives, video assets, landing pages, and tracking pixels.',
       duration: 'Week 2',
       iconName: 'Palette',
-      keyOutputs: ['Custom Landing Pages', 'Ad Copies & Motion Reels', 'Conversion Attribution Pixels']
+      keyOutputs'Custom Landing Pages', 'Ad Copies & Motion Reels', 'Conversion Attribution Pixels']
     },
     {
       stepNumber: 4,
@@ -282,7 +282,7 @@ export const initialSiteContent: SiteContent = {
       description: 'Campaigns go live across search, social, and programmatic networks under active real-time bidding supervision.',
       duration: 'Week 3 Onward',
       iconName: 'Rocket',
-      keyOutputs: ['Live Google/Meta/LinkedIn Ads', 'Instant Lead Routing', 'Live Client Dashboard']
+      keyOutputs'Live Google/Meta/LinkedIn Ads', 'Instant Lead Routing', 'Live Client Dashboard']
     },
     {
       stepNumber: 5,
@@ -290,10 +290,10 @@ export const initialSiteContent: SiteContent = {
       description: 'We continuously test ad variants, trim non-performing keywords, and reallocate budget to top-converting angles.',
       duration: 'Ongoing',
       iconName: 'TrendingUp',
-      keyOutputs: ['Weekly Ad Refresh', 'CPA Reduction', 'Scalable Budget Expansion']
+      keyOutputs'Weekly Ad Refresh', 'CPA Reduction', 'Scalable Budget Expansion']
     }
   ],
-  industries: [
+  industries
     { id: 'i1', name: 'Healthcare', description: 'Patient acquisition, clinic marketing, and HIPAA-compliant funnels.', iconName: 'HeartPulse', caseStudyHighlight: '240% increase in patient bookings' },
     { id: 'i2', name: 'Real Estate', description: 'HNWI lead acquisition, project launches, and agent branding.', iconName: 'Building2', caseStudyHighlight: '$48M in property transactions' },
     { id: 'i3', name: 'E-commerce', description: 'D2C sales growth, Google Shopping, and retargeting flows.', iconName: 'ShoppingBag', caseStudyHighlight: '8.4x average e-commerce ROAS' },
@@ -301,7 +301,7 @@ export const initialSiteContent: SiteContent = {
     { id: 'i5', name: 'Manufacturing', description: 'International RFQ inquiries and supply chain buyer reach.', iconName: 'Factory', caseStudyHighlight: 'Export contracts across 18 countries' },
     { id: 'i6', name: 'Education & EdTech', description: 'Student enrollment campaigns and course signups.', iconName: 'GraduationCap', caseStudyHighlight: '12,000+ new student signups' }
   ],
-  faqs: [
+  faqs
     {
       id: 'faq-1',
       question: 'How quickly can Lumora launch our digital marketing campaign?',
@@ -336,7 +336,7 @@ export const initialSiteContent: SiteContent = {
   }
 };
 
-export const initialDynamicPages: DynamicPage[] = [
+const initialDynamicPages = [
   {
     "id": "page-lead-generation",
     "slug": "lead-generation",
@@ -355,57 +355,57 @@ export const initialDynamicPages: DynamicPage[] = [
       "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Lead Generation Services\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"High-converting sales lead generation for businesses worldwide.\"}",
       "robotsDirective": "index, follow"
     },
-    "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.730Z",
-    "updatedAt": "2026-08-01T13:27:12.730Z",
-    "sections": [
+    "isPublished",
+    "createdAt": "2026-08-01T12:57:34.675Z",
+    "updatedAt": "2026-08-01T12:57:34.675Z",
+    "sections"
       {
         "id": "sec-overview",
         "type": "overview",
         "title": "Turning Awareness Into Qualified Demand For Your Business.",
         "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel demand generation engine. Cypher Swift delivers Demand Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        "bullets": []
+        "bullets"
       },
       {
         "id": "sec-services",
         "type": "services-grid",
         "title": "Lead Generation Solutions & Services",
         "content": "Explore our specialized products designed for exponential business growth.",
-        "cards": [
+        "cards"
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
+            "title": "Digital Footprint (Digital Business & Platform)",
+            "description": "Digital Footprint is the one-stop place to get the most accurate data about any service you are searching for business growth.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=1&backgroundColor=0f172a",
             "linkUrl": "#"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
+            "title": "World-Tour (App Online Registration)",
+            "description": "World Tour is your go-to app for getting personalized travel plans for any place in the world.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=2&backgroundColor=7c3aed",
             "linkUrl": "#"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
+            "title": "Wealth-Fi (Order Online Food)",
+            "description": "Health is Wealth. With Wealth-Fi, you can get Ayurvedic-inspired healthy food made by certified experts.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=3&backgroundColor=10b981",
             "linkUrl": "#"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
+            "title": "Planfourge Strategy Map",
+            "description": "Advanced strategic planning and roadmap software tailored for fast-moving startups.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=4&backgroundColor=f59e0b",
             "linkUrl": "#"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
+            "title": "Product Roadmap Alignment",
+            "description": "Align your teams and stakeholders with clear, visual product roadmaps and feature prioritization.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=5&backgroundColor=3b82f6",
             "linkUrl": "#"
           }
         ]
@@ -415,123 +415,120 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "How we helped scale a global enterprise.",
-        "caseStudies": [
+        "caseStudies"
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
-            "points": [
+            "title": "Vehicle Fuel Status",
+            "description": "Your customer can view the live level of fuel available with the vehicle. With the help of sensors device connected to the vehicle tank, the tank capacity, the status of fuel can be shown in numerical or graphical value. The status can be seen on the dashboard of mobile application.",
+            "points"
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Vehicle Fuel Status",
+                "iconName": "Fuel"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Mileage Log",
+                "iconName": "FileText"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Estimated Travelling Distance",
+                "iconName": "MapPin"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "Fuel Prices",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "title": "Nearby Fuel Stations",
+                "iconName": "Map"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
+                "title": "Charts & Reports",
+                "iconName": "BarChart2"
               },
               {
                 "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
+                "title": "Mileage Drop Alerts",
+                "iconName": "Bell"
               }
             ]
           },
           {
             "id": "cs-2",
-            "title": "B2B Lead Generation Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated lead generation funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
+            "title": "Real-Time GPS Tracking",
+            "description": "Monitor your fleet in real-time with high-precision GPS tracking. Know exactly where your vehicles are, their current speed, and idle times. Optimize routing on the fly and improve overall fleet productivity with historical path playback.",
+            "points"
               {
                 "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
+                "title": "Live Location Tracking",
+                "iconName": "Navigation"
               },
               {
                 "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
+                "title": "Route Optimization",
+                "iconName": "Map"
               },
               {
                 "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
+                "title": "Geofencing Alerts",
+                "iconName": "AlertTriangle"
               },
               {
                 "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
+                "title": "Speed Monitoring",
+                "iconName": "Activity"
               },
               {
                 "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
+                "title": "Driver Behavior Analysis",
+                "iconName": "Users"
               },
               {
                 "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
+                "title": "Historical Playback",
+                "iconName": "RotateCcw"
               }
             ]
           },
           {
             "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
+            "title": "Automated Maintenance Reminders",
+            "description": "Prevent costly breakdowns before they happen. The system automatically schedules and alerts you for routine maintenance, oil changes, and tire rotations based on actual mileage and engine hours tracking, reducing fleet downtime significantly.",
+            "points"
               {
                 "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
+                "title": "Service Scheduling",
+                "iconName": "Calendar"
               },
               {
                 "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
+                "title": "Engine Diagnostics",
+                "iconName": "Activity"
               },
               {
                 "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
+                "title": "Part Replacement Alerts",
+                "iconName": "Settings"
               },
               {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Cost Tracking",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Mechanic Invoicing",
+                "iconName": "FileText"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Downtime Analysis",
+                "iconName": "BarChart2"
               }
             ]
           }
@@ -557,57 +554,57 @@ export const initialDynamicPages: DynamicPage[] = [
       "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Social Media Marketing\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"High-conversion social media marketing and brand authority.\"}",
       "robotsDirective": "index, follow"
     },
-    "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
-    "sections": [
+    "isPublished",
+    "createdAt": "2026-08-01T12:57:34.676Z",
+    "updatedAt": "2026-08-01T12:57:34.676Z",
+    "sections"
       {
         "id": "sec-overview",
         "type": "overview",
         "title": "Turning Awareness Into Qualified Demand For Your Business.",
         "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel demand generation engine. Cypher Swift delivers Demand Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        "bullets": []
+        "bullets"
       },
       {
         "id": "sec-services",
         "type": "services-grid",
         "title": "Social Media Solutions & Services",
         "content": "Explore our specialized products designed for exponential business growth.",
-        "cards": [
+        "cards"
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
+            "title": "Digital Footprint (Digital Business & Platform)",
+            "description": "Digital Footprint is the one-stop place to get the most accurate data about any service you are searching for business growth.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=1&backgroundColor=0f172a",
             "linkUrl": "#"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
+            "title": "World-Tour (App Online Registration)",
+            "description": "World Tour is your go-to app for getting personalized travel plans for any place in the world.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=2&backgroundColor=7c3aed",
             "linkUrl": "#"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
+            "title": "Wealth-Fi (Order Online Food)",
+            "description": "Health is Wealth. With Wealth-Fi, you can get Ayurvedic-inspired healthy food made by certified experts.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=3&backgroundColor=10b981",
             "linkUrl": "#"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
+            "title": "Planfourge Strategy Map",
+            "description": "Advanced strategic planning and roadmap software tailored for fast-moving startups.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=4&backgroundColor=f59e0b",
             "linkUrl": "#"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
+            "title": "Product Roadmap Alignment",
+            "description": "Align your teams and stakeholders with clear, visual product roadmaps and feature prioritization.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=5&backgroundColor=3b82f6",
             "linkUrl": "#"
           }
         ]
@@ -617,123 +614,120 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "How we helped scale a global enterprise.",
-        "caseStudies": [
+        "caseStudies"
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
-            "points": [
+            "title": "Vehicle Fuel Status",
+            "description": "Your customer can view the live level of fuel available with the vehicle. With the help of sensors device connected to the vehicle tank, the tank capacity, the status of fuel can be shown in numerical or graphical value. The status can be seen on the dashboard of mobile application.",
+            "points"
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Vehicle Fuel Status",
+                "iconName": "Fuel"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Mileage Log",
+                "iconName": "FileText"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Estimated Travelling Distance",
+                "iconName": "MapPin"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "Fuel Prices",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "title": "Nearby Fuel Stations",
+                "iconName": "Map"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
+                "title": "Charts & Reports",
+                "iconName": "BarChart2"
               },
               {
                 "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
+                "title": "Mileage Drop Alerts",
+                "iconName": "Bell"
               }
             ]
           },
           {
             "id": "cs-2",
-            "title": "B2B Lead Generation Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated lead generation funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
+            "title": "Real-Time GPS Tracking",
+            "description": "Monitor your fleet in real-time with high-precision GPS tracking. Know exactly where your vehicles are, their current speed, and idle times. Optimize routing on the fly and improve overall fleet productivity with historical path playback.",
+            "points"
               {
                 "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
+                "title": "Live Location Tracking",
+                "iconName": "Navigation"
               },
               {
                 "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
+                "title": "Route Optimization",
+                "iconName": "Map"
               },
               {
                 "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
+                "title": "Geofencing Alerts",
+                "iconName": "AlertTriangle"
               },
               {
                 "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
+                "title": "Speed Monitoring",
+                "iconName": "Activity"
               },
               {
                 "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
+                "title": "Driver Behavior Analysis",
+                "iconName": "Users"
               },
               {
                 "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
+                "title": "Historical Playback",
+                "iconName": "RotateCcw"
               }
             ]
           },
           {
             "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
+            "title": "Automated Maintenance Reminders",
+            "description": "Prevent costly breakdowns before they happen. The system automatically schedules and alerts you for routine maintenance, oil changes, and tire rotations based on actual mileage and engine hours tracking, reducing fleet downtime significantly.",
+            "points"
               {
                 "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
+                "title": "Service Scheduling",
+                "iconName": "Calendar"
               },
               {
                 "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
+                "title": "Engine Diagnostics",
+                "iconName": "Activity"
               },
               {
                 "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
+                "title": "Part Replacement Alerts",
+                "iconName": "Settings"
               },
               {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Cost Tracking",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Mechanic Invoicing",
+                "iconName": "FileText"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Downtime Analysis",
+                "iconName": "BarChart2"
               }
             ]
           }
@@ -759,57 +753,57 @@ export const initialDynamicPages: DynamicPage[] = [
       "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Search Engine Optimization\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"Technical SEO, content strategy, and high-authority link building.\"}",
       "robotsDirective": "index, follow"
     },
-    "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
-    "sections": [
+    "isPublished",
+    "createdAt": "2026-08-01T12:57:34.676Z",
+    "updatedAt": "2026-08-01T12:57:34.676Z",
+    "sections"
       {
         "id": "sec-overview",
         "type": "overview",
         "title": "Turning Awareness Into Qualified Demand For Your Business.",
         "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel demand generation engine. Cypher Swift delivers Demand Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        "bullets": []
+        "bullets"
       },
       {
         "id": "sec-services",
         "type": "services-grid",
         "title": "SEO Solutions & Services",
         "content": "Explore our specialized products designed for exponential business growth.",
-        "cards": [
+        "cards"
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
+            "title": "Digital Footprint (Digital Business & Platform)",
+            "description": "Digital Footprint is the one-stop place to get the most accurate data about any service you are searching for business growth.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=1&backgroundColor=0f172a",
             "linkUrl": "#"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
+            "title": "World-Tour (App Online Registration)",
+            "description": "World Tour is your go-to app for getting personalized travel plans for any place in the world.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=2&backgroundColor=7c3aed",
             "linkUrl": "#"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
+            "title": "Wealth-Fi (Order Online Food)",
+            "description": "Health is Wealth. With Wealth-Fi, you can get Ayurvedic-inspired healthy food made by certified experts.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=3&backgroundColor=10b981",
             "linkUrl": "#"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
+            "title": "Planfourge Strategy Map",
+            "description": "Advanced strategic planning and roadmap software tailored for fast-moving startups.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=4&backgroundColor=f59e0b",
             "linkUrl": "#"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
+            "title": "Product Roadmap Alignment",
+            "description": "Align your teams and stakeholders with clear, visual product roadmaps and feature prioritization.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=5&backgroundColor=3b82f6",
             "linkUrl": "#"
           }
         ]
@@ -819,123 +813,120 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "How we helped scale a global enterprise.",
-        "caseStudies": [
+        "caseStudies"
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
-            "points": [
+            "title": "Vehicle Fuel Status",
+            "description": "Your customer can view the live level of fuel available with the vehicle. With the help of sensors device connected to the vehicle tank, the tank capacity, the status of fuel can be shown in numerical or graphical value. The status can be seen on the dashboard of mobile application.",
+            "points"
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Vehicle Fuel Status",
+                "iconName": "Fuel"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Mileage Log",
+                "iconName": "FileText"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Estimated Travelling Distance",
+                "iconName": "MapPin"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "Fuel Prices",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "title": "Nearby Fuel Stations",
+                "iconName": "Map"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
+                "title": "Charts & Reports",
+                "iconName": "BarChart2"
               },
               {
                 "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
+                "title": "Mileage Drop Alerts",
+                "iconName": "Bell"
               }
             ]
           },
           {
             "id": "cs-2",
-            "title": "B2B Lead Generation Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated lead generation funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
+            "title": "Real-Time GPS Tracking",
+            "description": "Monitor your fleet in real-time with high-precision GPS tracking. Know exactly where your vehicles are, their current speed, and idle times. Optimize routing on the fly and improve overall fleet productivity with historical path playback.",
+            "points"
               {
                 "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
+                "title": "Live Location Tracking",
+                "iconName": "Navigation"
               },
               {
                 "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
+                "title": "Route Optimization",
+                "iconName": "Map"
               },
               {
                 "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
+                "title": "Geofencing Alerts",
+                "iconName": "AlertTriangle"
               },
               {
                 "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
+                "title": "Speed Monitoring",
+                "iconName": "Activity"
               },
               {
                 "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
+                "title": "Driver Behavior Analysis",
+                "iconName": "Users"
               },
               {
                 "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
+                "title": "Historical Playback",
+                "iconName": "RotateCcw"
               }
             ]
           },
           {
             "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
+            "title": "Automated Maintenance Reminders",
+            "description": "Prevent costly breakdowns before they happen. The system automatically schedules and alerts you for routine maintenance, oil changes, and tire rotations based on actual mileage and engine hours tracking, reducing fleet downtime significantly.",
+            "points"
               {
                 "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
+                "title": "Service Scheduling",
+                "iconName": "Calendar"
               },
               {
                 "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
+                "title": "Engine Diagnostics",
+                "iconName": "Activity"
               },
               {
                 "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
+                "title": "Part Replacement Alerts",
+                "iconName": "Settings"
               },
               {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Cost Tracking",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Mechanic Invoicing",
+                "iconName": "FileText"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Downtime Analysis",
+                "iconName": "BarChart2"
               }
             ]
           }
@@ -961,57 +952,57 @@ export const initialDynamicPages: DynamicPage[] = [
       "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Performance Marketing\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"AI-optimized ad campaigns laser-focused on ROI and conversions.\"}",
       "robotsDirective": "index, follow"
     },
-    "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
-    "sections": [
+    "isPublished",
+    "createdAt": "2026-08-01T12:57:34.676Z",
+    "updatedAt": "2026-08-01T12:57:34.676Z",
+    "sections"
       {
         "id": "sec-overview",
         "type": "overview",
         "title": "Turning Awareness Into Qualified Demand For Your Business.",
         "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel demand generation engine. Cypher Swift delivers Demand Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        "bullets": []
+        "bullets"
       },
       {
         "id": "sec-services",
         "type": "services-grid",
         "title": "Performance Marketing Solutions & Services",
         "content": "Explore our specialized products designed for exponential business growth.",
-        "cards": [
+        "cards"
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
+            "title": "Digital Footprint (Digital Business & Platform)",
+            "description": "Digital Footprint is the one-stop place to get the most accurate data about any service you are searching for business growth.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=1&backgroundColor=0f172a",
             "linkUrl": "#"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
+            "title": "World-Tour (App Online Registration)",
+            "description": "World Tour is your go-to app for getting personalized travel plans for any place in the world.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=2&backgroundColor=7c3aed",
             "linkUrl": "#"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
+            "title": "Wealth-Fi (Order Online Food)",
+            "description": "Health is Wealth. With Wealth-Fi, you can get Ayurvedic-inspired healthy food made by certified experts.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=3&backgroundColor=10b981",
             "linkUrl": "#"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
+            "title": "Planfourge Strategy Map",
+            "description": "Advanced strategic planning and roadmap software tailored for fast-moving startups.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=4&backgroundColor=f59e0b",
             "linkUrl": "#"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
+            "title": "Product Roadmap Alignment",
+            "description": "Align your teams and stakeholders with clear, visual product roadmaps and feature prioritization.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=5&backgroundColor=3b82f6",
             "linkUrl": "#"
           }
         ]
@@ -1021,123 +1012,120 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "How we helped scale a global enterprise.",
-        "caseStudies": [
+        "caseStudies"
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
-            "points": [
+            "title": "Vehicle Fuel Status",
+            "description": "Your customer can view the live level of fuel available with the vehicle. With the help of sensors device connected to the vehicle tank, the tank capacity, the status of fuel can be shown in numerical or graphical value. The status can be seen on the dashboard of mobile application.",
+            "points"
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Vehicle Fuel Status",
+                "iconName": "Fuel"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Mileage Log",
+                "iconName": "FileText"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Estimated Travelling Distance",
+                "iconName": "MapPin"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "Fuel Prices",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "title": "Nearby Fuel Stations",
+                "iconName": "Map"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
+                "title": "Charts & Reports",
+                "iconName": "BarChart2"
               },
               {
                 "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
+                "title": "Mileage Drop Alerts",
+                "iconName": "Bell"
               }
             ]
           },
           {
             "id": "cs-2",
-            "title": "B2B Lead Generation Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated lead generation funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
+            "title": "Real-Time GPS Tracking",
+            "description": "Monitor your fleet in real-time with high-precision GPS tracking. Know exactly where your vehicles are, their current speed, and idle times. Optimize routing on the fly and improve overall fleet productivity with historical path playback.",
+            "points"
               {
                 "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
+                "title": "Live Location Tracking",
+                "iconName": "Navigation"
               },
               {
                 "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
+                "title": "Route Optimization",
+                "iconName": "Map"
               },
               {
                 "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
+                "title": "Geofencing Alerts",
+                "iconName": "AlertTriangle"
               },
               {
                 "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
+                "title": "Speed Monitoring",
+                "iconName": "Activity"
               },
               {
                 "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
+                "title": "Driver Behavior Analysis",
+                "iconName": "Users"
               },
               {
                 "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
+                "title": "Historical Playback",
+                "iconName": "RotateCcw"
               }
             ]
           },
           {
             "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
+            "title": "Automated Maintenance Reminders",
+            "description": "Prevent costly breakdowns before they happen. The system automatically schedules and alerts you for routine maintenance, oil changes, and tire rotations based on actual mileage and engine hours tracking, reducing fleet downtime significantly.",
+            "points"
               {
                 "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
+                "title": "Service Scheduling",
+                "iconName": "Calendar"
               },
               {
                 "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
+                "title": "Engine Diagnostics",
+                "iconName": "Activity"
               },
               {
                 "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
+                "title": "Part Replacement Alerts",
+                "iconName": "Settings"
               },
               {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Cost Tracking",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Mechanic Invoicing",
+                "iconName": "FileText"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Downtime Analysis",
+                "iconName": "BarChart2"
               }
             ]
           }
@@ -1163,57 +1151,57 @@ export const initialDynamicPages: DynamicPage[] = [
       "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Retargeting Marketing\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"Re-engage dropped website visitors across display networks to boost conversion rates.\"}",
       "robotsDirective": "index, follow"
     },
-    "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
-    "sections": [
+    "isPublished",
+    "createdAt": "2026-08-01T12:57:34.676Z",
+    "updatedAt": "2026-08-01T12:57:34.676Z",
+    "sections"
       {
         "id": "sec-overview",
         "type": "overview",
         "title": "Turning Awareness Into Qualified Demand For Your Business.",
         "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel demand generation engine. Cypher Swift delivers Demand Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        "bullets": []
+        "bullets"
       },
       {
         "id": "sec-services",
         "type": "services-grid",
         "title": "Retargeting Solutions & Services",
         "content": "Explore our specialized products designed for exponential business growth.",
-        "cards": [
+        "cards"
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
+            "title": "Digital Footprint (Digital Business & Platform)",
+            "description": "Digital Footprint is the one-stop place to get the most accurate data about any service you are searching for business growth.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=1&backgroundColor=0f172a",
             "linkUrl": "#"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
+            "title": "World-Tour (App Online Registration)",
+            "description": "World Tour is your go-to app for getting personalized travel plans for any place in the world.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=2&backgroundColor=7c3aed",
             "linkUrl": "#"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
+            "title": "Wealth-Fi (Order Online Food)",
+            "description": "Health is Wealth. With Wealth-Fi, you can get Ayurvedic-inspired healthy food made by certified experts.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=3&backgroundColor=10b981",
             "linkUrl": "#"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
+            "title": "Planfourge Strategy Map",
+            "description": "Advanced strategic planning and roadmap software tailored for fast-moving startups.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=4&backgroundColor=f59e0b",
             "linkUrl": "#"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
+            "title": "Product Roadmap Alignment",
+            "description": "Align your teams and stakeholders with clear, visual product roadmaps and feature prioritization.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=5&backgroundColor=3b82f6",
             "linkUrl": "#"
           }
         ]
@@ -1223,123 +1211,120 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "How we helped scale a global enterprise.",
-        "caseStudies": [
+        "caseStudies"
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
-            "points": [
+            "title": "Vehicle Fuel Status",
+            "description": "Your customer can view the live level of fuel available with the vehicle. With the help of sensors device connected to the vehicle tank, the tank capacity, the status of fuel can be shown in numerical or graphical value. The status can be seen on the dashboard of mobile application.",
+            "points"
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Vehicle Fuel Status",
+                "iconName": "Fuel"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Mileage Log",
+                "iconName": "FileText"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Estimated Travelling Distance",
+                "iconName": "MapPin"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "Fuel Prices",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "title": "Nearby Fuel Stations",
+                "iconName": "Map"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
+                "title": "Charts & Reports",
+                "iconName": "BarChart2"
               },
               {
                 "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
+                "title": "Mileage Drop Alerts",
+                "iconName": "Bell"
               }
             ]
           },
           {
             "id": "cs-2",
-            "title": "B2B Lead Generation Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated lead generation funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
+            "title": "Real-Time GPS Tracking",
+            "description": "Monitor your fleet in real-time with high-precision GPS tracking. Know exactly where your vehicles are, their current speed, and idle times. Optimize routing on the fly and improve overall fleet productivity with historical path playback.",
+            "points"
               {
                 "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
+                "title": "Live Location Tracking",
+                "iconName": "Navigation"
               },
               {
                 "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
+                "title": "Route Optimization",
+                "iconName": "Map"
               },
               {
                 "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
+                "title": "Geofencing Alerts",
+                "iconName": "AlertTriangle"
               },
               {
                 "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
+                "title": "Speed Monitoring",
+                "iconName": "Activity"
               },
               {
                 "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
+                "title": "Driver Behavior Analysis",
+                "iconName": "Users"
               },
               {
                 "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
+                "title": "Historical Playback",
+                "iconName": "RotateCcw"
               }
             ]
           },
           {
             "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
+            "title": "Automated Maintenance Reminders",
+            "description": "Prevent costly breakdowns before they happen. The system automatically schedules and alerts you for routine maintenance, oil changes, and tire rotations based on actual mileage and engine hours tracking, reducing fleet downtime significantly.",
+            "points"
               {
                 "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
+                "title": "Service Scheduling",
+                "iconName": "Calendar"
               },
               {
                 "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
+                "title": "Engine Diagnostics",
+                "iconName": "Activity"
               },
               {
                 "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
+                "title": "Part Replacement Alerts",
+                "iconName": "Settings"
               },
               {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Cost Tracking",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Mechanic Invoicing",
+                "iconName": "FileText"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Downtime Analysis",
+                "iconName": "BarChart2"
               }
             ]
           }
@@ -1365,57 +1350,57 @@ export const initialDynamicPages: DynamicPage[] = [
       "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"AI Marketing Automation\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"Smart CRM workflows, automated lead nurturing, and AI chatbots.\"}",
       "robotsDirective": "index, follow"
     },
-    "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
-    "sections": [
+    "isPublished",
+    "createdAt": "2026-08-01T12:57:34.676Z",
+    "updatedAt": "2026-08-01T12:57:34.676Z",
+    "sections"
       {
         "id": "sec-overview",
         "type": "overview",
         "title": "Turning Awareness Into Qualified Demand For Your Business.",
         "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel demand generation engine. Cypher Swift delivers Demand Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-        "bullets": []
+        "bullets"
       },
       {
         "id": "sec-services",
         "type": "services-grid",
         "title": "AI Automation Solutions & Services",
         "content": "Explore our specialized products designed for exponential business growth.",
-        "cards": [
+        "cards"
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
+            "title": "Digital Footprint (Digital Business & Platform)",
+            "description": "Digital Footprint is the one-stop place to get the most accurate data about any service you are searching for business growth.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=1&backgroundColor=0f172a",
             "linkUrl": "#"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
+            "title": "World-Tour (App Online Registration)",
+            "description": "World Tour is your go-to app for getting personalized travel plans for any place in the world.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=2&backgroundColor=7c3aed",
             "linkUrl": "#"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
+            "title": "Wealth-Fi (Order Online Food)",
+            "description": "Health is Wealth. With Wealth-Fi, you can get Ayurvedic-inspired healthy food made by certified experts.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=3&backgroundColor=10b981",
             "linkUrl": "#"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
+            "title": "Planfourge Strategy Map",
+            "description": "Advanced strategic planning and roadmap software tailored for fast-moving startups.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=4&backgroundColor=f59e0b",
             "linkUrl": "#"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
+            "title": "Product Roadmap Alignment",
+            "description": "Align your teams and stakeholders with clear, visual product roadmaps and feature prioritization.",
+            "iconUrl": "https://api.dicebear.com/7.x/shapes/svg?seed=5&backgroundColor=3b82f6",
             "linkUrl": "#"
           }
         ]
@@ -1425,123 +1410,120 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "How we helped scale a global enterprise.",
-        "caseStudies": [
+        "caseStudies"
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
-            "points": [
+            "title": "Vehicle Fuel Status",
+            "description": "Your customer can view the live level of fuel available with the vehicle. With the help of sensors device connected to the vehicle tank, the tank capacity, the status of fuel can be shown in numerical or graphical value. The status can be seen on the dashboard of mobile application.",
+            "points"
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Vehicle Fuel Status",
+                "iconName": "Fuel"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Mileage Log",
+                "iconName": "FileText"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Estimated Travelling Distance",
+                "iconName": "MapPin"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "Fuel Prices",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "title": "Nearby Fuel Stations",
+                "iconName": "Map"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
+                "title": "Charts & Reports",
+                "iconName": "BarChart2"
               },
               {
                 "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
+                "title": "Mileage Drop Alerts",
+                "iconName": "Bell"
               }
             ]
           },
           {
             "id": "cs-2",
-            "title": "B2B Lead Generation Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated lead generation funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
+            "title": "Real-Time GPS Tracking",
+            "description": "Monitor your fleet in real-time with high-precision GPS tracking. Know exactly where your vehicles are, their current speed, and idle times. Optimize routing on the fly and improve overall fleet productivity with historical path playback.",
+            "points"
               {
                 "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
+                "title": "Live Location Tracking",
+                "iconName": "Navigation"
               },
               {
                 "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
+                "title": "Route Optimization",
+                "iconName": "Map"
               },
               {
                 "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
+                "title": "Geofencing Alerts",
+                "iconName": "AlertTriangle"
               },
               {
                 "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
+                "title": "Speed Monitoring",
+                "iconName": "Activity"
               },
               {
                 "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
+                "title": "Driver Behavior Analysis",
+                "iconName": "Users"
               },
               {
                 "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
+                "title": "Historical Playback",
+                "iconName": "RotateCcw"
               }
             ]
           },
           {
             "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
+            "title": "Automated Maintenance Reminders",
+            "description": "Prevent costly breakdowns before they happen. The system automatically schedules and alerts you for routine maintenance, oil changes, and tire rotations based on actual mileage and engine hours tracking, reducing fleet downtime significantly.",
+            "points"
               {
                 "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
+                "title": "Service Scheduling",
+                "iconName": "Calendar"
               },
               {
                 "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
+                "title": "Engine Diagnostics",
+                "iconName": "Activity"
               },
               {
                 "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
+                "title": "Part Replacement Alerts",
+                "iconName": "Settings"
               },
               {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Cost Tracking",
+                "iconName": "DollarSign"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Mechanic Invoicing",
+                "iconName": "FileText"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Downtime Analysis",
+                "iconName": "BarChart2"
               }
             ]
           }
@@ -1550,3 +1532,4 @@ export const initialDynamicPages: DynamicPage[] = [
     ]
   }
 ];
+; module.exports = { initialDynamicPages };

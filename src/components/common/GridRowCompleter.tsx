@@ -34,10 +34,10 @@ export const GridRowCompleter: React.FC<GridRowCompleterProps> = ({
 
   const renderCard = (key: string, visibilityClass: string) => (
     <div key={key} onClick={onClick} className={`${cardClass} ${visibilityClass}`}>
-      <div className="w-12 h-12 rounded-full bg-blue-50 border border-blue-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
-        <ArrowRight className="w-5 h-5 text-blue-600 group-hover:translate-x-1 transition-transform" />
+      <div className="w-12 h-12 rounded-full bg-[#F2F6FC] border border-blue-100 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform shadow-sm">
+        <ArrowRight className="w-5 h-5 text-[#5B8EE2] group-hover:translate-x-1 transition-transform" />
       </div>
-      <h3 className="text-sm font-bold text-slate-700 group-hover:text-blue-600 transition-colors text-center">{label}</h3>
+      <h3 className="text-sm font-bold text-slate-700 group-hover:text-[#5B8EE2] transition-colors text-center">{label}</h3>
       <div className="flex items-center gap-1.5 mt-3 text-[10px] font-bold text-slate-400 uppercase tracking-widest">
         <Sparkles className="w-3 h-3 text-amber-400" />
         <span>Explore All</span>

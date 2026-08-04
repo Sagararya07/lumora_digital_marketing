@@ -39,7 +39,7 @@ export const StatsBar: React.FC = () => (
         {stats.map((stat, i) => (
           <div 
             key={i} 
-            className="p-6 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#2563EB] shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-5 group"
+            className="p-6 rounded-3xl bg-white border border-[#E5E7EB] hover:border-[#5B8EE2] shadow-xs hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex items-center gap-5 group"
           >
             <div className={`w-14 h-14 rounded-2xl flex items-center justify-center shrink-0 ${stat.iconGradient} shadow-md group-hover:scale-110 transition-transform duration-300`}>
               {stat.icon}

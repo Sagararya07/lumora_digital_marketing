@@ -1,4 +1,4 @@
-export type FieldType = 'text' | 'textarea' | 'number' | 'boolean' | 'select';
+export type FieldType = 'text' | 'textarea' | 'number' | 'boolean' | 'select' | 'image';
 
 export interface FieldConfig {
   key: string;
@@ -28,7 +28,7 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'primary_cta_link', label: 'Primary CTA Link', type: 'text' },
       { key: 'secondary_cta', label: 'Secondary CTA Text', type: 'text' },
       { key: 'secondary_cta_link', label: 'Secondary CTA Link', type: 'text' },
-      { key: 'background_image', label: 'Background Image URL', type: 'text', colSpan: 2 },
+      { key: 'background_image', label: 'Background Image', type: 'image', colSpan: 2 },
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
   },
@@ -40,6 +40,7 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'title', label: 'Title', type: 'text', colSpan: 2 },
       { key: 'content', label: 'Content', type: 'textarea', colSpan: 2 },
       { key: 'icon', label: 'Icon (Lucide name)', type: 'text' },
+      { key: 'image_url', label: 'Custom Image (Overrides Icon)', type: 'image' },
       { key: 'sort_order', label: 'Sort Order', type: 'number' },
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
@@ -52,6 +53,7 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'name', label: 'Audience Name', type: 'text', colSpan: 2 },
       { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
       { key: 'icon', label: 'Icon (Lucide name)', type: 'text' },
+      { key: 'image_url', label: 'Custom Image (Overrides Icon)', type: 'image' },
       { key: 'sort_order', label: 'Sort Order', type: 'number' },
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
@@ -65,6 +67,7 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'short_description', label: 'Short Description', type: 'textarea', colSpan: 2 },
       { key: 'full_description', label: 'Full Description', type: 'textarea', colSpan: 2 },
       { key: 'icon', label: 'Icon (Lucide name)', type: 'text' },
+      { key: 'image_url', label: 'Custom Image (Overrides Icon)', type: 'image' },
       { key: 'slug', label: 'URL Slug', type: 'text' },
       { key: 'cta_text', label: 'CTA Text', type: 'text' },
       { key: 'sort_order', label: 'Sort Order', type: 'number' },
@@ -80,6 +83,7 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'title', label: 'Title', type: 'text', colSpan: 2 },
       { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
       { key: 'icon', label: 'Icon (Lucide name)', type: 'text' },
+      { key: 'image_url', label: 'Custom Image (Overrides Icon)', type: 'image' },
       { key: 'sort_order', label: 'Sort Order', type: 'number' },
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
@@ -93,6 +97,7 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'title', label: 'Step Title', type: 'text' },
       { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
       { key: 'icon', label: 'Icon (Lucide name)', type: 'text' },
+      { key: 'image_url', label: 'Custom Image (Overrides Icon)', type: 'image' },
       { key: 'sort_order', label: 'Sort Order', type: 'number' },
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
@@ -105,6 +110,7 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'name', label: 'Industry Name', type: 'text', colSpan: 2 },
       { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
       { key: 'icon', label: 'Icon (Lucide name)', type: 'text' },
+      { key: 'image_url', label: 'Custom Image (Overrides Icon)', type: 'image' },
       { key: 'sort_order', label: 'Sort Order', type: 'number' },
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
@@ -122,13 +128,14 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
     ],
   },
   achievements: {
-    label: 'Case Studies',
+    label: 'Portfolio Cards',
     canCreate: true,
     canDelete: true,
     fields: [
+      { key: 'image_url', label: 'Cover Image URL', type: 'image', colSpan: 2 },
       { key: 'title', label: 'Client / Case Title', type: 'text', colSpan: 2 },
       { key: 'value', label: 'Key Metric Value', type: 'text' },
-      { key: 'category', label: 'Industry / Category', type: 'text' },
+      { key: 'category', label: 'Industry / Category', type: 'select', options: ['Healthcare', 'B2B & IT SaaS', 'Real Estate', 'E-commerce', 'Manufacturing'] },
       { key: 'short_description', label: 'Challenge Summary', type: 'textarea', colSpan: 2 },
       { key: 'full_details', label: 'Results & Testimonial', type: 'textarea', colSpan: 2 },
       { key: 'icon', label: 'Icon (Lucide name)', type: 'text' },
@@ -146,6 +153,77 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'website_url', label: 'Company Website (Optional)', type: 'text' },
       { key: 'sort_order', label: 'Sort Order', type: 'number' },
       { key: 'is_active', label: 'Active in Marquee', type: 'boolean' },
+    ],
+  },
+  trusted_logos: {
+    label: 'Trusted Logos (Images)',
+    canCreate: true,
+    canDelete: true,
+    fields: [
+      { key: 'name', label: 'Company Name', type: 'text', colSpan: 2 },
+      { key: 'image_url', label: 'Logo Image', type: 'image', colSpan: 2 },
+    ],
+  },
+
+  about_mission_cards: {
+    label: 'Mission & Vision Cards',
+    canCreate: true,
+    canDelete: true,
+    fields: [
+      { key: 'title', label: 'Card Title', type: 'text', colSpan: 2 },
+      { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
+      { key: 'icon_name', label: 'Icon (Lucide name)', type: 'text' },
+      { key: 'sort_order', label: 'Sort Order', type: 'number' },
+      { key: 'is_active', label: 'Active', type: 'boolean' },
+    ],
+  },
+  about_core_pillars: {
+    label: 'Core Pillars (What Sets Lumora Apart)',
+    canCreate: true,
+    canDelete: true,
+    fields: [
+      { key: 'title', label: 'Card Title', type: 'text', colSpan: 2 },
+      { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
+      { key: 'icon_name', label: 'Icon (Lucide name)', type: 'text' },
+      { key: 'sort_order', label: 'Sort Order', type: 'number' },
+      { key: 'is_active', label: 'Active', type: 'boolean' },
+    ],
+  },
+  about_hero_section: {
+    label: 'About Page Hero',
+    canCreate: false,
+    canDelete: false,
+    fields: [
+      { key: 'background_image', label: 'Background Image', type: 'image', colSpan: 2 },
+    ],
+  },
+  rnd_modules: {
+    label: 'R&D Modules',
+    canCreate: true,
+    canDelete: true,
+    fields: [
+      { key: 'title', label: 'Module Title', type: 'text', colSpan: 2 },
+      { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
+      { key: 'badge', label: 'Badge Text', type: 'text' },
+      { key: 'image_url', label: 'Upload Icon Image', type: 'image' },
+      { key: 'sort_order', label: 'Sort Order', type: 'number' },
+      { key: 'is_active', label: 'Active', type: 'boolean' },
+    ],
+  },
+  testimonials: {
+    label: 'Testimonials',
+    canCreate: true,
+    canDelete: true,
+    fields: [
+      { key: 'name', label: 'Author Name', type: 'text' },
+      { key: 'company', label: 'Company', type: 'text' },
+      { key: 'role', label: 'Role', type: 'text' },
+      { key: 'avatar', label: 'Avatar Image', type: 'image' },
+      { key: 'content', label: 'Feedback Content', type: 'textarea', colSpan: 2 },
+      { key: 'rating', label: 'Rating (1-5)', type: 'number' },
+      { key: 'is_featured', label: 'Featured', type: 'boolean' },
+      { key: 'sort_order', label: 'Sort Order', type: 'number' },
+      { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
   },
 };

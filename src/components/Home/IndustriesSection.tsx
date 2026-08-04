@@ -26,12 +26,12 @@ interface IndustriesProps {
 }
 
 const industryGradients = [
-  'from-blue-500 to-indigo-600 shadow-blue-500/25',
-  'from-indigo-500 to-purple-600 shadow-indigo-500/25',
-  'from-emerald-500 to-teal-600 shadow-emerald-500/25',
-  'from-cyan-500 to-blue-600 shadow-cyan-500/25',
-  'from-blue-600 to-violet-600 shadow-blue-500/25',
-  'from-teal-400 to-emerald-600 shadow-teal-500/25',
+  'from-[#5B8EE2] to-[#8CB4F5] shadow-blue-500/25',
+  'from-[#D6A67B] to-[#5B8EE2] shadow-orange-500/25',
+  'from-[#8CB4F5] to-[#D6A67B] shadow-blue-400/25',
+  'from-[#5B8EE2] to-[#D6A67B] shadow-blue-500/25',
+  'from-[#D6A67B] to-[#8CB4F5] shadow-orange-500/25',
+  'from-[#5B8EE2] via-[#8CB4F5] to-[#D6A67B] shadow-blue-500/25',
 ];
 
 export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openConsultationModal }) => {
@@ -64,8 +64,8 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
           
           {/* Top Eyebrow Badge */}
           <div>
-            <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" />
+            <span className="inline-flex items-center gap-2 text-[#5B8EE2] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-[#F2F6FC]/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+              <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2] animate-pulse" />
               <span>SECTOR SPECIALIZATION</span>
             </span>
           </div>
@@ -73,7 +73,7 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             Industries{' '}
-            <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
               We Serve
             </span>
           </h2>
@@ -89,10 +89,8 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
           {visibleItems.map((ind, idx) => {
             const gradient = industryGradients[idx % industryGradients.length];
-            // Extract the first color for the accent line and shadows (e.g. 'blue-500' from 'from-blue-500')
-            const accentColorMatch = gradient.match(/from-([a-z]+-[0-9]+)/);
-            const accentColorClass = accentColorMatch ? `bg-${accentColorMatch[1]}` : 'bg-blue-500';
-            const shadowColorClass = accentColorMatch ? `shadow-${accentColorMatch[1].split('-')[0]}-500/20` : 'shadow-blue-500/20';
+            const accentColorClass = idx % 2 === 0 ? 'bg-[#5B8EE2]' : 'bg-[#D6A67B]';
+            const shadowColorClass = idx % 2 === 0 ? 'shadow-blue-500/20' : 'shadow-orange-500/20';
 
             return (
               <div
@@ -114,8 +112,12 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
                     {/* Icon Block with Brand Gradients */}
                     <div className="relative">
                       <div className={`absolute inset-0 bg-gradient-to-br ${gradient} blur-xl opacity-0 group-hover:opacity-40 transition-opacity duration-500`} />
-                      <div className={`relative w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500 z-10`}>
-                        {getIndustryIcon(ind.iconName)}
+                      <div className={`relative w-14 h-14 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shadow-md group-hover:scale-110 transition-transform duration-500 z-10 overflow-hidden`}>
+                        {ind.imageUrl ? (
+                          <img src={ind.imageUrl} alt={ind.name} className="w-full h-full object-cover" />
+                        ) : (
+                          getIndustryIcon(ind.iconName)
+                        )}
                       </div>
                     </div>
                     {/* Arrow */}
@@ -124,7 +126,7 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-extrabold text-[#111827] mb-4 leading-snug group-hover:text-[#2563EB] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
+                  <h3 className="text-2xl font-extrabold text-[#111827] mb-4 leading-snug group-hover:text-[#5B8EE2] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
                     {ind.name}
                   </h3>
 
@@ -135,7 +137,7 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
 
                 <div className="mt-auto pt-5 border-t border-slate-100 flex items-center justify-between transition-colors relative z-10">
                   <span className="text-[#94A3B8] font-bold uppercase text-[10px] tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">Case Result:</span>
-                  <span className={`inline-flex font-extrabold text-[#2563EB] text-sm truncate ml-2 group-hover:text-white px-3 py-1.5 rounded-full transition-colors duration-500 group-hover:bg-gradient-to-r ${gradient}`}>
+                  <span className={`inline-flex font-extrabold text-[#5B8EE2] text-sm truncate ml-2 group-hover:text-white px-3 py-1.5 rounded-full transition-colors duration-500 group-hover:bg-gradient-to-r ${gradient}`}>
                     {ind.caseStudyHighlight}
                   </span>
                 </div>

@@ -4,98 +4,40 @@ import {
   Plus, 
   Trash2, 
   CheckCircle2, 
-  FileText, 
   Globe, 
   Sparkles, 
   Layers, 
-  ArrowRight,
   ExternalLink,
   Check
 } from 'lucide-react';
 import { DynamicPage, DynamicPageSection } from '../../types';
 
-interface LeadGenServicesEditorProps {
+interface DynamicPageEditorProps {
+  pageId: string;
   dynamicPages: DynamicPage[];
   onRefresh: () => void;
   onViewLive: (slug: string) => void;
 }
 
-export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
+export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
+  pageId,
   dynamicPages,
   onRefresh,
   onViewLive,
 }) => {
-  // Locate or initialize the Lead Generation Services page
-  const targetPage = dynamicPages.find(
-    (p) => p.slug === 'lead-generation-services' || p.slug === 'lead-generation'
-  );
+  // Locate the target page by ID
+  const targetPage = dynamicPages.find((p) => String(p.id) === String(pageId));
 
-  const [id, setId] = useState<string>(targetPage?.id || '');
-  const [title, setTitle] = useState<string>(
-    targetPage?.title || 'Lead Generation Services - High Converting B2B & B2C Funnels'
-  );
-  const [slug, setSlug] = useState<string>(
-    targetPage?.slug || 'lead-generation-services'
-  );
-  const [metaTitle, setMetaTitle] = useState<string>(
-    targetPage?.seo?.metaTitle || 'Lead Generation Agency | Scale Qualified Sales Leads | Lumora'
-  );
-  const [metaDescription, setMetaDescription] = useState<string>(
-    targetPage?.seo?.metaDescription ||
-      'Generate pre-qualified B2B and B2C sales inquiries with Lumora’s high-converting lead funnels, targeted ads, and automated CRM routing.'
-  );
-
-  // Editable Section Blocks
-  const [sections, setSections] = useState<DynamicPageSection[]>(
-    targetPage?.sections && targetPage.sections.length > 0
-      ? targetPage.sections
-      : [
-          {
-            id: 'sec-hero-leadgen',
-            type: 'hero',
-            title: 'Accelerate Business Growth with Precision Lead Generation',
-            content:
-              'Stop chasing cold leads. We design multi-step interactive lead funnels and targeted ad campaigns that attract buyers actively looking for your solutions.',
-            bullets: [
-              'Verified Sales-Ready Leads',
-              'Instant CRM & WhatsApp Routing',
-              'A/B Tested Funnel Conversion Architecture',
-              'Multi-Channel Performance Attribution',
-            ],
-          },
-          {
-            id: 'sec-engine-leadgen',
-            type: 'text-media',
-            title: 'Why Our Lead Generation Engine Outperforms Standard Advertising',
-            content:
-              'Most marketing campaigns fail because they drive traffic to static homepages. Lumora builds hyper-segmented landing pages with built-in qualification quizzes, instant scheduling, and real-time lead verification.',
-            bullets: [
-              'Pre-Qualification Questionnaires',
-              'Automated SMS & Email Nurturing Sequences',
-              'Direct Integration with Salesforce & HubSpot',
-              '24/7 AI Lead Verification Bot',
-            ],
-          },
-          {
-            id: 'sec-multichannel-leadgen',
-            type: 'services',
-            title: 'Multi-Channel Acquisition Architecture',
-            content:
-              'We unify Google Search, Meta Paid Ads, LinkedIn B2B Outreach, and Retargeting into a single cohesive lead pipeline.',
-            bullets: [
-              'High-Intent Search Keyword Bidding',
-              'Retargeting Pixel & Display Ad Sequences',
-              'LinkedIn Executive InMail & Content Funnels',
-              'Weekly CPA & ROAS Optimization',
-            ],
-          },
-        ]
-  );
-
+  const [id, setId] = useState<string>('');
+  const [title, setTitle] = useState<string>('');
+  const [slug, setSlug] = useState<string>('');
+  const [metaTitle, setMetaTitle] = useState<string>('');
+  const [metaDescription, setMetaDescription] = useState<string>('');
+  const [sections, setSections] = useState<DynamicPageSection[]>([]);
   const [saving, setSaving] = useState<boolean>(false);
   const [savedSuccess, setSavedSuccess] = useState<boolean>(false);
 
-  // Sync state if dynamicPages change
+  // Sync state if dynamicPages or pageId change
   useEffect(() => {
     if (targetPage) {
       setId(targetPage.id);
@@ -103,9 +45,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
       setSlug(targetPage.slug);
       setMetaTitle(targetPage.seo?.metaTitle || targetPage.title);
       setMetaDescription(targetPage.seo?.metaDescription || '');
-      if (targetPage.sections && targetPage.sections.length > 0) {
-        setSections(targetPage.sections);
-      }
+      setSections(targetPage.sections || []);
     }
   }, [targetPage]);
 
@@ -152,7 +92,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
       id: `sec-custom-${Date.now()}`,
       type: 'text-media',
       title: 'New Custom Strategy Section',
-      content: 'Provide detailed information about this specialized lead generation feature or strategy.',
+      content: 'Provide detailed information about this specialized feature or strategy.',
       bullets: ['High-Value Deliverable Item 1', 'High-Value Deliverable Item 2'],
     };
     setSections([...sections, newSec]);
@@ -177,18 +117,18 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
 
     const payload = {
       title,
-      slug: slug || 'lead-generation-services',
+      slug,
       isPublished: true,
-      pageType: 'service',
+      pageType: targetPage?.pageType || 'service',
       seo: {
         metaTitle: metaTitle || title,
         metaDescription: metaDescription || '',
-        canonicalUrl: `https://lumora.ai/${slug || 'lead-generation-services'}`,
+        canonicalUrl: `https://lumora.ai/${slug}`,
         ogTitle: metaTitle || title,
         ogDescription: metaDescription || '',
         twitterCard: 'summary_large_image',
-        schemaType: 'Service',
-        schemaData: '{}',
+        schemaType: targetPage?.seo?.schemaType || 'Service',
+        schemaData: targetPage?.seo?.schemaData || '{}',
         robotsDirective: 'index, follow',
       },
       sections,
@@ -209,17 +149,16 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
         onRefresh();
         setTimeout(() => setSavedSuccess(false), 4000);
       } else {
-        alert('Saved locally. Refreshing pages state.');
-        onRefresh();
+        alert('Failed to save to database. Check server logs.');
       }
     } catch {
-      onRefresh();
-      setSavedSuccess(true);
-      setTimeout(() => setSavedSuccess(false), 4000);
+      alert('Error connecting to the API.');
     } finally {
       setSaving(false);
     }
   };
+
+  if (!targetPage) return <div className="p-8 text-center text-slate-500">Loading page editor...</div>;
 
   return (
     <div className="bg-white rounded-3xl border border-[#E5E7EB] shadow-xs overflow-hidden">
@@ -228,35 +167,35 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
       <div className="p-6 sm:p-8 border-b border-[#E5E7EB] bg-[#F8FAFC] flex flex-wrap items-center justify-between gap-4">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-[10px] font-black uppercase tracking-widest text-[#2563EB] bg-blue-50 px-3 py-1 rounded-full border border-blue-100 font-['Plus_Jakarta_Sans',sans-serif]">
-              RESOURCES CMS
+            <span className="text-[10px] font-black uppercase tracking-widest text-[#5B8EE2] bg-[#F2F6FC] px-3 py-1 rounded-full border border-blue-100 font-['Plus_Jakarta_Sans',sans-serif]">
+              DYNAMIC PAGE EDITOR
             </span>
-            <span className="text-xs font-bold text-slate-400">/lead-generation-services</span>
+            <span className="text-xs font-bold text-slate-400">/{slug}</span>
           </div>
           <h2 className="text-2xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
-            Lead Generation Services Page Editor
+            {title}
           </h2>
-          <p className="text-xs text-[#6B7280] font-normal">
-            Edit all sections, headings, paragraph content, and key deliverables for the live Lead Generation Services landing page.
+          <p className="text-xs text-[#6B7280] font-normal mt-1">
+            Edit all sections, headings, paragraph content, and key deliverables for this dynamic page.
           </p>
         </div>
 
         <div className="flex items-center gap-3">
           <button
-            onClick={() => onViewLive(slug || 'lead-generation-services')}
-            className="px-4 py-2.5 rounded-full bg-white border border-[#E5E7EB] hover:border-[#2563EB] text-slate-700 hover:text-[#2563EB] text-xs font-extrabold flex items-center gap-2 transition-all shadow-xs"
+            onClick={() => onViewLive(slug)}
+            className="px-4 py-2.5 rounded-full bg-white border border-[#E5E7EB] hover:border-[#5B8EE2] text-slate-700 hover:text-[#5B8EE2] text-xs font-extrabold flex items-center gap-2 transition-all shadow-xs"
           >
-            <ExternalLink className="w-3.5 h-3.5 text-[#2563EB]" />
+            <ExternalLink className="w-3.5 h-3.5 text-[#5B8EE2]" />
             <span>Preview Live Page</span>
           </button>
 
           <button
             onClick={handleSavePage}
             disabled={saving}
-            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#1D4ED8] hover:to-[#6D28D9] text-white text-xs font-extrabold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 disabled:opacity-50"
+            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-xs font-extrabold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 disabled:opacity-50"
           >
             <Save className="w-4 h-4 text-white" />
-            <span>{saving ? 'Saving Changes...' : 'Save Live Page'}</span>
+            <span>{saving ? 'Saving...' : 'Save Live Page'}</span>
           </button>
         </div>
       </div>
@@ -264,7 +203,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
       {savedSuccess && (
         <div className="mx-6 sm:mx-8 mt-6 p-4 bg-emerald-50 border border-emerald-200 rounded-2xl text-emerald-700 text-xs font-bold flex items-center gap-2 animate-in fade-in">
           <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-          <span>Success! Lead Generation Services page has been updated live across the website.</span>
+          <span>Success! The page has been updated live across the website.</span>
         </div>
       )}
 
@@ -274,7 +213,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
         {/* 1. Page Metadata & SEO Setup */}
         <div className="p-6 rounded-3xl bg-[#F8FAFC] border border-[#E5E7EB] space-y-5">
           <div className="flex items-center gap-2 pb-3 border-b border-[#E5E7EB]">
-            <Globe className="w-4 h-4 text-[#2563EB]" />
+            <Globe className="w-4 h-4 text-[#5B8EE2]" />
             <h3 className="font-extrabold text-sm text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
               Page Metadata & SEO Settings
             </h3>
@@ -289,7 +228,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
                 type="text"
                 value={title}
                 onChange={(e) => setTitle(e.target.value)}
-                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#2563EB] focus:outline-none focus:ring-4 focus:ring-blue-100"
+                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100"
                 placeholder="Page Title"
               />
             </div>
@@ -302,8 +241,8 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
                 type="text"
                 value={slug}
                 onChange={(e) => setSlug(e.target.value)}
-                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#2563EB] focus:outline-none focus:ring-4 focus:ring-blue-100"
-                placeholder="lead-generation-services"
+                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100"
+                placeholder="page-slug"
               />
             </div>
 
@@ -315,7 +254,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
                 type="text"
                 value={metaTitle}
                 onChange={(e) => setMetaTitle(e.target.value)}
-                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#2563EB] focus:outline-none focus:ring-4 focus:ring-blue-100"
+                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100"
                 placeholder="SEO Title"
               />
             </div>
@@ -328,7 +267,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
                 rows={2}
                 value={metaDescription}
                 onChange={(e) => setMetaDescription(e.target.value)}
-                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#2563EB] focus:outline-none focus:ring-4 focus:ring-blue-100 leading-relaxed"
+                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100 leading-relaxed"
                 placeholder="SEO Description"
               />
             </div>
@@ -339,7 +278,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
         <div className="space-y-6">
           <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB]">
             <div className="flex items-center gap-2">
-              <Layers className="w-5 h-5 text-[#2563EB]" />
+              <Layers className="w-5 h-5 text-[#5B8EE2]" />
               <h3 className="font-extrabold text-base text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
                 Page Sections & Deliverables ({sections.length} Active Sections)
               </h3>
@@ -347,7 +286,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
 
             <button
               onClick={handleAddSection}
-              className="px-4 py-2 rounded-full bg-blue-50 hover:bg-blue-100 text-[#2563EB] text-xs font-extrabold flex items-center gap-1.5 transition-colors border border-blue-200"
+              className="px-4 py-2 rounded-full bg-[#F2F6FC] hover:bg-blue-100 text-[#5B8EE2] text-xs font-extrabold flex items-center gap-1.5 transition-colors border border-blue-200"
             >
               <Plus className="w-4 h-4" />
               <span>Add New Section</span>
@@ -361,7 +300,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
             >
               <div className="flex items-center justify-between border-b border-[#E5E7EB] pb-3">
                 <div className="flex items-center gap-2">
-                  <span className="w-7 h-7 rounded-full bg-blue-50 border border-blue-200 text-[#2563EB] font-extrabold text-xs flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif]">
+                  <span className="w-7 h-7 rounded-full bg-[#F2F6FC] border border-blue-200 text-[#5B8EE2] font-extrabold text-xs flex items-center justify-center font-['Plus_Jakarta_Sans',sans-serif]">
                     {idx + 1}
                   </span>
                   <span className="font-extrabold text-sm text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
@@ -387,7 +326,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
                   type="text"
                   value={sec.title}
                   onChange={(e) => handleUpdateSectionTitle(idx, e.target.value)}
-                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#2563EB] focus:outline-none"
+                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
                   placeholder="Section Title"
                 />
               </div>
@@ -401,7 +340,7 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
                   rows={3}
                   value={sec.content}
                   onChange={(e) => handleUpdateSectionContent(idx, e.target.value)}
-                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#2563EB] focus:outline-none leading-relaxed"
+                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#5B8EE2] focus:outline-none leading-relaxed"
                   placeholder="Section paragraph description..."
                 />
               </div>
@@ -410,12 +349,12 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
               <div className="pt-2">
                 <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-extrabold text-[#111827] uppercase tracking-wider flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif]">
-                    <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
+                    <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2]" />
                     Key Deliverables & Strategy Focus Items
                   </span>
                   <button
                     onClick={() => handleAddBullet(idx)}
-                    className="text-xs font-extrabold text-[#2563EB] hover:underline flex items-center gap-1"
+                    className="text-xs font-extrabold text-[#5B8EE2] hover:underline flex items-center gap-1"
                   >
                     <Plus className="w-3.5 h-3.5" /> Add Deliverable
                   </button>
@@ -424,14 +363,14 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
                 <div className="space-y-2.5">
                   {(sec.bullets || []).map((bullet, bIdx) => (
                     <div key={bIdx} className="flex items-center gap-2">
-                      <div className="w-6 h-6 rounded-full bg-blue-50 text-[#2563EB] flex items-center justify-center shrink-0 border border-blue-100">
+                      <div className="w-6 h-6 rounded-full bg-[#F2F6FC] text-[#5B8EE2] flex items-center justify-center shrink-0 border border-blue-100">
                         <Check className="w-3.5 h-3.5" />
                       </div>
                       <input
                         type="text"
                         value={bullet}
                         onChange={(e) => handleUpdateBullet(idx, bIdx, e.target.value)}
-                        className="flex-1 p-2.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl text-xs font-semibold text-[#111827] focus:border-[#2563EB] focus:outline-none"
+                        className="flex-1 p-2.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
                         placeholder="Deliverable item text"
                       />
                       <button
@@ -452,15 +391,15 @@ export const LeadGenServicesEditor: React.FC<LeadGenServicesEditorProps> = ({
         {/* Bottom Save CTA Bar */}
         <div className="pt-6 border-t border-[#E5E7EB] flex items-center justify-end gap-4">
           <button
-            onClick={() => onViewLive(slug || 'lead-generation-services')}
-            className="px-6 py-3 rounded-full bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#2563EB] text-[#111827] text-xs font-bold"
+            onClick={() => onViewLive(slug)}
+            className="px-6 py-3 rounded-full bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#5B8EE2] text-[#111827] text-xs font-bold"
           >
             Preview Live Site Page
           </button>
           <button
             onClick={handleSavePage}
             disabled={saving}
-            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#1D4ED8] hover:to-[#6D28D9] text-white text-xs font-extrabold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 disabled:opacity-50"
+            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-xs font-extrabold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 disabled:opacity-50"
           >
             <Save className="w-4 h-4 text-white" />
             <span>{saving ? 'Saving...' : 'Save & Publish Live Page'}</span>

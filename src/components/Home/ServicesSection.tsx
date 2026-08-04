@@ -16,7 +16,7 @@ const mockSolutions = [
     title: 'Social Media Marketing',
     shortDescription: 'Build a powerful brand presence across Instagram, LinkedIn, Facebook, X, and YouTube with high-converting content.',
     icon: <Share2 className="w-6 h-6 text-white" />,
-    gradient: 'text-blue-600',
+    gradient: 'text-[#5B8EE2]',
     tag: '01 / SOCIAL MEDIA',
     image: '/images/services/social_media_marketing_1785498376145.png',
   },
@@ -52,7 +52,7 @@ const mockSolutions = [
     title: 'Retargeting Marketing',
     shortDescription: 'Re-engage dropped website visitors across display networks and social feeds to boost conversion rates.',
     icon: <Repeat className="w-6 h-6 text-white" />,
-    gradient: 'text-purple-600',
+    gradient: 'text-[#D6A67B]',
     tag: '05 / RETARGETING',
     image: '/images/services/retargeting_marketing_1785498428208.png',
   },
@@ -80,13 +80,13 @@ export const ServicesSection: React.FC<ServicesProps> = ({
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20 space-y-6">
           <div className="inline-flex items-center justify-center">
-            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#2563EB] bg-blue-50/80 backdrop-blur-md px-6 py-2.5 rounded-full border border-blue-200 shadow-sm inline-flex items-center gap-2">
-              <Sparkles className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" /> OUR DIGITAL MARKETING SERVICES
+            <span className="text-xs font-bold uppercase tracking-[0.2em] text-[#5B8EE2] bg-[#F2F6FC]/80 backdrop-blur-md px-6 py-2.5 rounded-full border border-blue-200 shadow-sm inline-flex items-center gap-2">
+              <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2] animate-pulse" /> OUR DIGITAL MARKETING SERVICES
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
             AI-Powered Solutions for Every{' '}
-            <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
               Stage of Growth
             </span>
           </h2>
@@ -97,12 +97,13 @@ export const ServicesSection: React.FC<ServicesProps> = ({
 
         {/* Zig-Zag Alternating Layout */}
         <div className="space-y-16 sm:space-y-24">
-          {displayItems.slice(0, 6).map((item, idx) => {
+          {displayItems.map((item, idx) => {
             const fallback = mockSolutions[idx % mockSolutions.length];
             const title = item.title || fallback.title;
             const desc = item.shortDescription || fallback.shortDescription;
-            const image = fallback.image;
-            const tag = fallback.tag;
+            const image = item.image_url || fallback.image;
+            const formattedIdx = String(idx + 1).padStart(2, '0');
+            const tag = `${formattedIdx} / ${title.split(' ')[0].toUpperCase()}`;
             const isEven = idx % 2 === 0;
 
             return (
@@ -138,8 +139,8 @@ export const ServicesSection: React.FC<ServicesProps> = ({
 
                   <div>
                     <button
-                      onClick={() => onSelectService(item as ServiceItem)}
-                      className="group inline-flex items-center gap-2 text-[#2563EB] font-bold text-sm tracking-wide uppercase hover:text-[#1D4ED8] transition-colors"
+                      onClick={() => onSelectService({ ...item, id: fallback.id } as ServiceItem)}
+                      className="group inline-flex items-center gap-2 text-[#5B8EE2] font-bold text-sm tracking-wide uppercase hover:text-[#4676C2] transition-colors"
                     >
                       FULL STRATEGY & DETAILS
                       <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />

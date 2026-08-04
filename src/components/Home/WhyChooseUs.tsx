@@ -21,6 +21,26 @@ interface WhyChooseUsProps {
   openConsultationModal: () => void;
 }
 
+const getWhyChooseIcon = (iconName: string) => {
+  const cls = "w-5 h-5 text-white";
+  switch (iconName) {
+    case 'Award': return <Award className={cls} />;
+    case 'ShieldCheck': return <ShieldCheck className={cls} />;
+    case 'TrendingUp': return <TrendingUp className={cls} />;
+    case 'Bot': return <Bot className={cls} />;
+    case 'BarChart3': return <BarChart3 className={cls} />;
+    case 'UserCheck': return <UserCheck className={cls} />;
+    case 'Zap': return <Zap className={cls} />;
+    case 'Globe': return <Globe className={cls} />;
+    case 'Database': return <Database className={cls} />;
+    case 'Cpu': return <Cpu className={cls} />;
+    case 'Flame': return <Flame className={cls} />;
+    case 'CheckCircle2': return <CheckCircle2 className={cls} />;
+    case 'Sparkles': return <Sparkles className={cls} />;
+    default: return <Award className={cls} />;
+  }
+};
+
 const energeticPoints = [
   { 
     title: 'Industry Experience', 
@@ -77,7 +97,7 @@ const floatingOrbitNodes = [
   { name: 'Zapier Engine', tag: '3000+ App Sync', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Zapier_logo.svg', pos: 'bottom-2 right-16' },
 ];
 
-export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal }) => {
+export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultationModal }) => {
   return (
     <section id="why-choose-us-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-gradient-to-b from-[#F8FAFC] via-white to-blue-50/40 border-y border-[#E5E7EB] overflow-hidden relative">
       
@@ -99,9 +119,9 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal 
               <div className="absolute inset-16 rounded-full border border-pink-300/40 -rotate-45" />
 
               {/* Central Glowing AI Growth Engine Core */}
-              <div className="relative z-20 w-44 h-44 rounded-full bg-gradient-to-br from-[#2563EB] via-[#7C3AED] to-[#EC4899] p-1 shadow-2xl shadow-purple-500/40 transform hover:scale-105 transition-transform duration-500 flex items-center justify-center text-center">
+              <div className="relative z-20 w-44 h-44 rounded-full bg-gradient-to-br from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] p-1 shadow-2xl shadow-purple-500/40 transform hover:scale-105 transition-transform duration-500 flex items-center justify-center text-center">
                 <div className="w-full h-full rounded-full bg-white/95 backdrop-blur-md p-4 flex flex-col items-center justify-center space-y-1">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] flex items-center justify-center text-white shadow-md">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] flex items-center justify-center text-white shadow-md">
                     <Zap className="w-5 h-5 text-white animate-bounce" />
                   </div>
                   <span className="text-xs font-black text-[#111827] uppercase tracking-wider font-['Plus_Jakarta_Sans',sans-serif]">
@@ -117,7 +137,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal 
               {floatingOrbitNodes.map((node, idx) => (
                 <div
                   key={idx}
-                  className={`absolute ${node.pos} z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E5E7EB] shadow-xl hover:shadow-2xl hover:scale-110 hover:border-[#2563EB] transition-all duration-300 group flex items-center gap-2.5 cursor-pointer`}
+                  className={`absolute ${node.pos} z-30 p-2.5 sm:p-3 rounded-2xl bg-white/90 backdrop-blur-md border border-[#E5E7EB] shadow-xl hover:shadow-2xl hover:scale-110 hover:border-[#5B8EE2] transition-all duration-300 group flex items-center gap-2.5 cursor-pointer`}
                 >
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse shrink-0" />
                   {typeof node.icon === 'string' ? (
@@ -126,7 +146,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal 
                     node.icon
                   )}
                   <div className="hidden sm:block text-left">
-                    <p className="text-[11px] font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors leading-tight">
+                    <p className="text-[11px] font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#5B8EE2] transition-colors leading-tight">
                       {node.name}
                     </p>
                     <p className="text-[9px] text-[#6B7280] font-semibold">{node.tag}</p>
@@ -161,8 +181,8 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal 
             
             {/* Top Eyebrow Badge */}
             <div>
-              <span className="inline-flex items-center gap-2 text-[#7C3AED] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-gradient-to-r from-purple-50 via-blue-50 to-pink-50 shadow-xs font-['Plus_Jakarta_Sans',sans-serif] animate-pulse">
-                <Flame className="w-4 h-4 text-[#7C3AED]" />
+              <span className="inline-flex items-center gap-2 text-[#D6A67B] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-gradient-to-r from-purple-50 via-blue-50 to-pink-50 shadow-xs font-['Plus_Jakarta_Sans',sans-serif] animate-pulse">
+                <Flame className="w-4 h-4 text-[#D6A67B]" />
                 <span>UNMATCHED ADVANTAGE</span>
               </span>
             </div>
@@ -171,7 +191,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal 
             <div>
               <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] leading-[1.12] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
                 Why Choose Lumora?{' '}
-                <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#EC4899] bg-clip-text text-transparent block mt-1.5">
+                <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent block mt-1.5">
                   Engineered For Exponential Growth.
                 </span>
               </h2>
@@ -182,37 +202,51 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ openConsultationModal 
 
             {/* 6 Energetic Advantage Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              {energeticPoints.map((item, i) => (
+              {(content?.points?.length > 0 ? content.points : energeticPoints).slice(0, 6).map((item: any, i: number) => {
+                const fallback = energeticPoints[i % energeticPoints.length];
+                const title = item.title || fallback.title;
+                const desc = item.description || fallback.desc;
+                const metric = fallback.metric;
+                const gradient = fallback.gradient;
+                const icon = item.imageUrl ? (
+                  <img src={item.imageUrl} alt={title} className="w-6 h-6 object-cover rounded" />
+                ) : (
+                  <span className="w-5 h-5 text-white flex items-center justify-center">
+                    {item.iconName ? getWhyChooseIcon(item.iconName) : fallback.icon}
+                  </span>
+                );
+
+                return (
                 <div 
                   key={i} 
-                  className="p-4 rounded-3xl bg-white/90 backdrop-blur-md border border-[#E5E7EB] hover:border-[#2563EB] shadow-xs hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between"
+                  className="p-4 rounded-3xl bg-white/90 backdrop-blur-md border border-[#E5E7EB] hover:border-[#5B8EE2] shadow-xs hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between"
                 >
                   <div className="flex items-start justify-between gap-3 mb-3">
-                    <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform`}>
-                      {item.icon}
+                    <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform overflow-hidden relative`}>
+                      {icon}
                     </div>
-                    <span className="text-[9px] font-black uppercase tracking-wider text-[#2563EB] bg-blue-50 px-2.5 py-1 rounded-full border border-blue-100 font-['Plus_Jakarta_Sans',sans-serif]">
-                      {item.metric}
+                    <span className="text-[9px] font-black uppercase tracking-wider text-[#5B8EE2] bg-[#F2F6FC] px-2.5 py-1 rounded-full border border-blue-100 font-['Plus_Jakarta_Sans',sans-serif]">
+                      {metric}
                     </span>
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#2563EB] transition-colors">
-                      {item.title}
+                    <h4 className="text-sm font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#5B8EE2] transition-colors">
+                      {title}
                     </h4>
                     <p className="text-xs text-[#6B7280] font-normal leading-relaxed mt-1">
-                      {item.desc}
+                      {desc}
                     </p>
                   </div>
                 </div>
-              ))}
+              )})}
             </div>
 
             {/* High-Energy Action Button */}
             <div className="pt-4">
               <button
                 onClick={openConsultationModal}
-                className="w-full sm:w-auto px-9 py-4.5 rounded-full bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#EC4899] hover:from-[#1D4ED8] hover:via-[#6D28D9] hover:to-[#DB2777] text-white text-sm font-black flex items-center justify-center gap-3 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
+                className="w-full sm:w-auto px-9 py-4.5 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-sm font-black flex items-center justify-center gap-3 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
               >
                 <span>Unleash Your Growth System</span>
                 <ArrowRight className="w-4 h-4 text-white" />

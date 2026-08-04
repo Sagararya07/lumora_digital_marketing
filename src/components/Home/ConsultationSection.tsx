@@ -48,7 +48,7 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Rounded Gradient Banner Card */}
-        <div className="relative rounded-[32px] p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#FBBF24] text-white shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
+        <div className="relative rounded-[32px] p-8 sm:p-12 lg:p-16 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#FBBF24] text-white shadow-2xl overflow-hidden flex flex-col lg:flex-row items-center justify-between gap-8">
           
           {/* Seamless Star Radiant Background Overlay */}
           <div className="absolute right-0 top-0 bottom-0 w-96 opacity-30 pointer-events-none flex items-center justify-center overflow-hidden">
@@ -97,10 +97,10 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
                 <button
                   type="submit"
                   disabled={loading}
-                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-[#2563EB] text-xs font-extrabold flex items-center justify-center gap-2.5 shadow-xl transition-all hover:scale-105 shrink-0 font-['Plus_Jakarta_Sans',sans-serif] disabled:opacity-50"
+                  className="w-full sm:w-auto px-8 py-4 rounded-full bg-white hover:bg-slate-50 text-[#5B8EE2] text-xs font-extrabold flex items-center justify-center gap-2.5 shadow-xl transition-all hover:scale-105 shrink-0 font-['Plus_Jakarta_Sans',sans-serif] disabled:opacity-50"
                 >
                   <span>{loading ? 'Submitting...' : 'Get a Free Consultation'}</span>
-                  <ArrowRight className="w-4 h-4 text-[#2563EB]" />
+                  <ArrowRight className="w-4 h-4 text-[#5B8EE2]" />
                 </button>
               </form>
             )}

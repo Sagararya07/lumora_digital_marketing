@@ -27,20 +27,20 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
       
       {/* 1. Hero Section */}
       <section className="relative overflow-hidden pt-20 pb-20 px-4 sm:px-8 bg-gradient-to-b from-blue-50/70 via-white to-slate-50 border-b border-[#E5E7EB]">
-        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-30 blur-[140px] pointer-events-none bg-blue-500/20" />
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-30 blur-[140px] pointer-events-none bg-[#729EE6]/20" />
         <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none bg-purple-500/20" />
 
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <div>
-            <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-              <Calendar className="w-3.5 h-3.5 text-[#2563EB] animate-pulse" />
+            <span className="inline-flex items-center gap-2 text-[#5B8EE2] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-[#F2F6FC]/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+              <Calendar className="w-3.5 h-3.5 text-[#5B8EE2] animate-pulse" />
               <span>STRATEGY CONSULTATION BOOKING</span>
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
             Book Your Free 1-on-1 Growth Strategy Session with{' '}
-            <span className="bg-gradient-to-r from-[#2563EB] via-[#7C3AED] to-[#38BDF8] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
               Lumora Experts
             </span>
           </h1>
@@ -62,7 +62,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
               { num: '03', title: 'ROI Revenue Forecast', desc: 'Clear projection of monthly qualified lead volume and expected pipeline return.' },
             ].map((step, i) => (
               <div key={i} className="p-6 rounded-3xl bg-white border border-[#E5E7EB] shadow-xs">
-                <div className="w-8 h-8 rounded-xl bg-blue-50 border border-blue-100 text-[#2563EB] font-extrabold text-xs flex items-center justify-center mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+                <div className="w-8 h-8 rounded-xl bg-[#F2F6FC] border border-blue-100 text-[#5B8EE2] font-extrabold text-xs flex items-center justify-center mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
                   {step.num}
                 </div>
                 <h3 className="text-lg font-extrabold text-[#111827] mb-2 font-['Plus_Jakarta_Sans',sans-serif]">{step.title}</h3>

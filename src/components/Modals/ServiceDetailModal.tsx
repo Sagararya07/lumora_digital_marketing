@@ -6,12 +6,14 @@ interface ServiceDetailModalProps {
   service: ServiceItem | null;
   onClose: () => void;
   openConsultationModal: () => void;
+  onReadMore?: (slug: string) => void;
 }
 
 export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
   service,
   onClose,
-  openConsultationModal
+  openConsultationModal,
+  onReadMore
 }) => {
   if (!service) return null;
 
@@ -30,7 +32,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
         {/* Header */}
         <div className="space-y-2">
           {service.badge && (
-            <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 bg-blue-50 px-2.5 py-0.5 rounded-full border border-blue-100">
+            <span className="text-[10px] font-bold uppercase tracking-wider text-[#5B8EE2] bg-[#F2F6FC] px-2.5 py-0.5 rounded-full border border-blue-100">
               {service.badge}
             </span>
           )}
@@ -43,11 +45,11 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
         {/* Deliverables & Features Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
           <div className="p-4 rounded-xl bg-slate-50 border border-slate-100 space-y-2">
-            <h4 className="text-xs font-bold text-blue-600 uppercase tracking-wider">Key Capabilities</h4>
+            <h4 className="text-xs font-bold text-[#5B8EE2] uppercase tracking-wider">Key Capabilities</h4>
             <ul className="space-y-1.5 text-xs text-slate-700 font-normal">
               {service.features.map((f, idx) => (
                 <li key={idx} className="flex items-start gap-2">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 flex-shrink-0 mt-0.5" />
+                  <CheckCircle2 className="w-3.5 h-3.5 text-[#5B8EE2] flex-shrink-0 mt-0.5" />
                   <span>{f}</span>
                 </li>
               ))}
@@ -68,7 +70,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
         </div>
 
         {/* Recommended For Callout */}
-        <div className="p-4 rounded-xl bg-blue-50/50 border border-blue-100 text-xs text-slate-700">
+        <div className="p-4 rounded-xl bg-[#F2F6FC]/50 border border-blue-100 text-xs text-slate-700">
           <p className="font-bold text-slate-900 mb-1">Recommended Audience:</p>
           <p className="font-normal">{service.recommendedFor}</p>
         </div>
@@ -81,12 +83,25 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
           >
             Close
           </button>
+          
+          {onReadMore && (
+            <button
+              onClick={() => {
+                onClose();
+                onReadMore(service.id);
+              }}
+              className="px-4 py-2 rounded-xl border border-[#5B8EE2] text-[#5B8EE2] hover:bg-[#F2F6FC] text-xs font-bold transition-colors"
+            >
+              Read More
+            </button>
+          )}
+
           <button
             onClick={() => {
               onClose();
               openConsultationModal();
             }}
-            className="px-5 py-2 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-200 flex items-center gap-1.5 transition-all"
+            className="px-5 py-2 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-200 flex items-center gap-1.5 transition-all"
           >
             <span>Request Proposal for {service.title}</span>
             <ArrowRight className="w-3.5 h-3.5" />

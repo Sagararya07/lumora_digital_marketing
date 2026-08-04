@@ -31,8 +31,30 @@ import { RndPage } from './components/Pages/RndPage';
 import { ConsultationPage } from './components/Pages/ConsultationPage';
 
 import { initialSiteContent, initialDynamicPages } from './data/initialData';
-import { SiteContent, DynamicPage, ServiceItem, AchievementItem } from './types';
+import { SiteContent, DynamicPage, ServiceItem, AchievementItem, CaseStudyItem } from './types';
 import { useTheme } from './hooks/useTheme';
+
+class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; error: Error | null }> {
+  constructor(props: { children: React.ReactNode }) {
+    super(props);
+    this.state = { hasError: false, error: null };
+  }
+  static getDerivedStateFromError(error: Error) {
+    return { hasError: true, error };
+  }
+  render() {
+    if (this.state.hasError) {
+      return (
+        <div style={{ padding: '2rem', background: '#fee2e2', color: '#991b1b', fontFamily: 'monospace', height: '100vh', width: '100vw', zIndex: 9999, position: 'fixed' }}>
+          <h2>Something went wrong in the application.</h2>
+          <pre style={{ whiteSpace: 'pre-wrap' }}>{this.state.error?.toString()}</pre>
+          <pre style={{ whiteSpace: 'pre-wrap' }}>{this.state.error?.stack}</pre>
+        </div>
+      );
+    }
+    return this.props.children;
+  }
+}
 
 export function App() {
   const navigate = useNavigate();
@@ -48,8 +70,23 @@ export function App() {
   // Modal States
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState<boolean>(false);
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
-  const [selectedCaseStudy, setSelectedCaseStudy] = useState<AchievementItem | null>(null);
+  const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudyItem | null>(null);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | 'refund' | null>(null);
+
+  const handleSelectCaseStudy = (item: any) => {
+    if (item.clientName) {
+      setSelectedCaseStudy({
+        id: item.id,
+        title: item.clientName,
+        category: item.industry,
+        description: item.results || item.challenge || 'Details coming soon.',
+        image_url: item.image_url || 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80',
+        is_active: true
+      });
+    } else {
+      setSelectedCaseStudy(item);
+    }
+  };
 
   useEffect(() => {
     fetchSiteContent();
@@ -73,7 +110,16 @@ export function App() {
       const res = await fetch('/api/pages');
       const data = await res.json();
       if (res.ok && data.pages) {
-        setDynamicPages(data.pages);
+        const mergedPages = [...initialDynamicPages];
+        data.pages.forEach((dbPage: DynamicPage) => {
+          const idx = mergedPages.findIndex(p => p.slug === dbPage.slug);
+          if (idx >= 0) {
+            mergedPages[idx] = dbPage;
+          } else {
+            mergedPages.push(dbPage);
+          }
+        });
+        setDynamicPages(mergedPages);
       }
     } catch (err) {
       console.error('Failed to load dynamic pages from server:', err);
@@ -112,7 +158,7 @@ export function App() {
   const activeDynamicSlug = location.pathname === '/' || location.pathname === '/admin' ? null : location.pathname.slice(1);
 
   return (
-    <div className="min-h-screen bg-white text-slate-900 font-['Inter',sans-serif] selection:bg-[#2563EB] selection:text-white transition-colors duration-300">
+    <div className="min-h-screen bg-white text-slate-900 font-['Inter',sans-serif] selection:bg-[#5B8EE2] selection:text-white transition-colors duration-300">
       
       {/* 1. Left Navigation Menu Drawer */}
       {!isAdminRoute && (
@@ -151,14 +197,16 @@ export function App() {
         <main className="flex-1">
           <Routes>
             <Route path="/admin/*" element={
-              <AdminDashboard
-                onExitAdmin={() => navigate('/')}
-                siteContent={siteContent}
-                onUpdateSiteContent={(updated) => setSiteContent(updated)}
-                dynamicPages={dynamicPages}
-                onRefreshPages={fetchDynamicPages}
-                onRefreshContent={fetchSiteContent}
-              />
+              <ErrorBoundary>
+                <AdminDashboard
+                  onExitAdmin={() => navigate('/')}
+                  siteContent={siteContent}
+                  onUpdateSiteContent={(updated) => setSiteContent(updated)}
+                  dynamicPages={dynamicPages}
+                  onRefreshPages={fetchDynamicPages}
+                  onRefreshContent={fetchSiteContent}
+                />
+              </ErrorBoundary>
             } />
 
             {/* Dedicated Full Pages for Menu Drawer Options */}
@@ -175,7 +223,7 @@ export function App() {
                 siteContent={siteContent}
                 onGoHome={handleGoHome}
                 openConsultationModal={() => setIsConsultationModalOpen(true)}
-                onSelectCaseStudy={(cs) => setSelectedCaseStudy(cs)}
+                onSelectCaseStudy={handleSelectCaseStudy}
               />
             } />
 
@@ -224,7 +272,7 @@ export function App() {
                 />
 
                 {/* Trusted Brand Logos Bar */}
-                <TrustedLogosBar />
+                <TrustedLogosBar trustedLogos={siteContent.trustedLogos} />
 
                 {/* Section 2: What is Digital Marketing? */}
                 <WhatIsDigitalMarketing
@@ -257,7 +305,8 @@ export function App() {
                 {/* Section 6: Recent Achievements & Case Studies */}
                 <AchievementsSection
                   achievements={siteContent.achievements}
-                  onSelectCaseStudy={(caseStudy) => setSelectedCaseStudy(caseStudy)}
+                  caseStudiesList={siteContent.caseStudiesList}
+                  onSelectCaseStudy={handleSelectCaseStudy}
                   openConsultationModal={() => setIsConsultationModalOpen(true)}
                 />
 
@@ -291,19 +340,22 @@ export function App() {
                   subheading="Book a free consultation with our digital marketing experts and discover the best strategy to grow your business."
                   sourcePage="Home Page Section"
                 />
-
-                {/* Section 11: Footer */}
-                <Footer
-                  contactInfo={siteContent.contactInfo}
-                  onOpenConsultation={() => setIsConsultationModalOpen(true)}
-                  onOpenLegalModal={(type) => setLegalModalType(type)}
-                  dynamicPages={dynamicPages}
-                  onSelectDynamicPage={handleSelectDynamicPage}
-                />
               </div>
             } />
           </Routes>
         </main>
+
+        {!isAdminRoute && (
+          <Footer
+            contactInfo={siteContent.contactInfo}
+            onOpenConsultation={() => setIsConsultationModalOpen(true)}
+            onOpenLegalModal={(type) => setLegalModalType(type)}
+            dynamicPages={dynamicPages}
+            onSelectDynamicPage={handleSelectDynamicPage}
+            onGoHome={handleGoHome}
+            onNavSection={handleNavTabClick}
+          />
+        )}
       </div>
 
       {/* Interactive Global Modals */}
@@ -319,6 +371,7 @@ export function App() {
           setSelectedService(null);
           setIsConsultationModalOpen(true);
         }}
+        onReadMore={(slug) => handleSelectDynamicPage(slug)}
       />
 
       <CaseStudyModal
@@ -364,7 +417,7 @@ const DynamicPageWrapper: React.FC<{
         <p className="text-[#6B7280] mt-2 text-sm font-normal">The page &quot;/{slug}&quot; does not exist or has been unpublished.</p>
         <button
           onClick={onGoHome}
-          className="mt-6 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white font-extrabold text-xs shadow-lg shadow-blue-500/20"
+          className="mt-6 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white font-extrabold text-xs shadow-lg shadow-blue-500/20"
         >
           Return to Agency Homepage
         </button>
@@ -381,13 +434,6 @@ const DynamicPageWrapper: React.FC<{
         contactInfo={siteContent.contactInfo}
         consultationHeading={siteContent.siteMeta?.consultationHeading}
         consultationSubheading={siteContent.siteMeta?.consultationSubheading}
-      />
-      <Footer
-        contactInfo={siteContent.contactInfo}
-        onOpenConsultation={() => setIsConsultationModalOpen(true)}
-        onOpenLegalModal={onOpenLegalModal}
-        dynamicPages={dynamicPages}
-        onSelectDynamicPage={onSelectDynamicPage}
       />
     </div>
   );

@@ -13,12 +13,12 @@ interface WhatIsProps {
 const pillarStyles = [
   { 
     bg: 'bg-white', 
-    iconBg: 'bg-blue-50 text-blue-600', 
+    iconBg: 'bg-[#F2F6FC] text-[#5B8EE2]', 
     border: 'border-[#E5E7EB]'
   },
   { 
     bg: 'bg-white', 
-    iconBg: 'bg-purple-50 text-purple-600', 
+    iconBg: 'bg-[#FDF6F0] text-[#D6A67B]', 
     border: 'border-[#E5E7EB]'
   },
   { 
@@ -75,13 +75,13 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
             </div>
 
             {/* Floating Circular Badge */}
-            <div className="absolute top-[60%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-blue-600 to-indigo-600 rounded-full flex flex-col items-center justify-center text-white shadow-xl z-20 border-4 border-white animate-pulse" style={{ animationDuration: '4s' }}>
+            <div className="absolute top-[60%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-[#5B8EE2] to-[#D6A67B] rounded-full flex flex-col items-center justify-center text-white shadow-xl z-20 border-4 border-white animate-pulse" style={{ animationDuration: '4s' }}>
               <span className="text-3xl font-extrabold leading-none">10X</span>
               <span className="text-[10px] font-bold uppercase tracking-widest mt-1 text-blue-100">ROI PROVEN</span>
             </div>
             
             {/* Decorative background shape */}
-            <div className="absolute -top-10 -left-10 w-40 h-40 bg-blue-50 rounded-full mix-blend-multiply blur-3xl opacity-70 -z-10" />
+            <div className="absolute -top-10 -left-10 w-40 h-40 bg-[#F2F6FC] rounded-full mix-blend-multiply blur-3xl opacity-70 -z-10" />
           </div>
 
           {/* RIGHT: Content Section */}
@@ -89,8 +89,8 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
             
             {/* Eyebrow Tag */}
             <div className="mb-6 inline-flex">
-              <span className="inline-flex items-center gap-2 text-[#2563EB] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-blue-50/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-                <Sparkles className="w-3.5 h-3.5 text-[#2563EB]" />
+              <span className="inline-flex items-center gap-2 text-[#5B8EE2] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-[#F2F6FC]/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
+                <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2]" />
                 <span>About Digital Marketing</span>
               </span>
             </div>
@@ -98,7 +98,7 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
             {/* Main Heading */}
             <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight leading-[1.1] mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
               What is <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-blue-600 via-indigo-600 to-purple-600 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#5B8EE2] via-[#8CB4F5] to-[#D6A67B] bg-clip-text text-transparent">
                 Digital Marketing?
               </span>
             </h2>
@@ -118,8 +118,12 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
                     key={idx} 
                     className={`p-5 rounded-2xl ${style.bg} border ${style.border} shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group flex items-start gap-5`}
                   >
-                    <div className={`w-12 h-12 shrink-0 rounded-xl ${style.iconBg} flex items-center justify-center transition-colors group-hover:bg-blue-600 group-hover:text-white`}>
-                      {getPillarIcon(pillar.icon)}
+                    <div className={`w-12 h-12 shrink-0 rounded-xl ${style.iconBg} flex items-center justify-center transition-colors group-hover:bg-[#5B8EE2] group-hover:text-white overflow-hidden relative`}>
+                      {pillar.imageUrl ? (
+                        <img src={pillar.imageUrl} alt={pillar.title} className="w-full h-full object-cover" />
+                      ) : (
+                        getPillarIcon(pillar.icon)
+                      )}
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-slate-800 text-lg mb-1 font-['Plus_Jakarta_Sans',sans-serif]">{pillar.title}</h4>
@@ -136,7 +140,7 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
                 onClick={openConsultationModal}
                 className="group relative inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full overflow-hidden bg-[#111827] text-white shadow-[0_8px_30px_rgb(0,0,0,0.15)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-['Plus_Jakarta_Sans',sans-serif]"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="relative z-10 text-base tracking-wide">Discover Custom Strategy Options</span>
                 <ArrowUpRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               </button>

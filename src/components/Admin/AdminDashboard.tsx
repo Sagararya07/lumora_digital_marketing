@@ -23,14 +23,19 @@ import {
   ChevronDown,
   ChevronUp,
   Settings,
+  UploadCloud,
   ExternalLink,
   Save,
   RefreshCw,
+  RefreshCcw,
+  Mail,
+  Phone,
+  Clock,
 } from 'lucide-react';
 import { SiteContent, DynamicPage } from '../../types';
 import { TABLE_CONFIGS, SECTION_SETTINGS, FieldConfig } from './adminConfig';
 import { LumoraLogo } from '../common/LumoraLogo';
-import { LeadGenServicesEditor } from './LeadGenServicesEditor';
+import { DynamicPageEditor } from './DynamicPageEditor';
 
 interface AdminDashboardProps {
   onExitAdmin: () => void;
@@ -57,11 +62,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
   const [activeMenu, setActiveMenu] = useState('dashboard');
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
-  const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({
-    'HOME PAGE CONTENT': true,
-    RESOURCES: true,
-    SYSTEM: true,
-  });
+  const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({});
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault();
@@ -80,7 +81,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     return (
       <div className="flex h-screen bg-[#F8FAFC] items-center justify-center font-['Inter',sans-serif] relative overflow-hidden">
         {/* Ambient Light Blue & Purple Glow Orbs */}
-        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full bg-blue-500/10 blur-[150px] pointer-events-none z-0" />
+        <div className="absolute top-0 right-1/4 w-[600px] h-[600px] rounded-full bg-[#729EE6]/10 blur-[150px] pointer-events-none z-0" />
         <div className="absolute bottom-0 left-1/4 w-[500px] h-[500px] rounded-full bg-purple-500/10 blur-[150px] pointer-events-none z-0" />
 
         <div className="w-full max-w-md relative z-10 p-4">
@@ -104,7 +105,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   type="text"
                   value={username}
                   onChange={(e) => setUsername(e.target.value)}
-                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-sm text-[#111827] focus:border-[#2563EB] focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all font-semibold"
+                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-sm text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all font-semibold"
                   placeholder="Enter username"
                   required
                 />
@@ -117,7 +118,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-sm text-[#111827] focus:border-[#2563EB] focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all font-semibold"
+                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-sm text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100 transition-all font-semibold"
                   placeholder="••••••••"
                   required
                 />
@@ -131,7 +132,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#1D4ED8] hover:to-[#6D28D9] text-white text-sm font-extrabold shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02]"
+                className="w-full py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-sm font-extrabold shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02]"
               >
                 Secure Login
               </button>
@@ -140,9 +141,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             <div className="mt-8 pt-6 border-t border-[#E5E7EB] text-center">
               <button
                 onClick={onExitAdmin}
-                className="text-xs font-bold text-[#6B7280] hover:text-[#2563EB] transition-colors flex items-center gap-1.5 justify-center w-full"
+                className="text-xs font-bold text-[#6B7280] hover:text-[#5B8EE2] transition-colors flex items-center gap-1.5 justify-center w-full"
               >
-                <Home className="w-3.5 h-3.5 text-[#2563EB]" />
+                <Home className="w-3.5 h-3.5 text-[#5B8EE2]" />
                 <span>Return to Live Site</span>
               </button>
             </div>
@@ -165,22 +166,41 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         { id: 'process_steps', label: 'Our Process', icon: Layers },
         { id: 'industries', label: 'Industries', icon: MapPin },
         { id: 'faqs', label: 'FAQs', icon: MessageSquare },
-        { id: 'partner_logos', label: 'Client Brand Logos', icon: Globe },
+        { id: 'testimonials', label: 'Testimonials', icon: MessageSquare },
+        { id: 'trusted_logos', label: 'Trusted Logos', icon: Globe },
       ],
     },
     {
-      title: 'RESOURCES',
+      title: 'PORTFOLIO PAGE CONTENT',
       items: [
-        { id: 'resource_lead_gen', label: 'Lead Generation Services', icon: FileText },
+        { id: 'achievements', label: 'Portfolio Cards', icon: FolderDot },
       ],
     },
     {
-      title: 'PORTFOLIO',
-      items: [{ id: 'achievements', label: 'Case Studies', icon: FolderDot }],
+      title: 'ABOUT PAGE CONTENT',
+      items: [
+        { id: 'about_hero_section', label: 'About Hero', icon: Settings },
+        { id: 'about_mission_cards', label: 'Mission Cards', icon: Settings },
+        { id: 'about_core_pillars', label: 'Core Pillars', icon: Settings },
+      ],
     },
     {
-      title: 'INQUIRIES & LEADS',
+      title: 'DYNAMIC PAGES (RESOURCES)',
+      items: dynamicPages.map(dp => ({
+        id: `page_${dp.id}`,
+        label: (dp.title || dp.slug).split(' - ')[0],
+        icon: FileText
+      })),
+    },
+    {
+      title: 'CRM & LEADS',
       items: [{ id: 'consultation_submissions', label: 'Leads Inbox', icon: Inbox }],
+    },
+    {
+      title: 'RND PAGE CONTENT',
+      items: [
+        { id: 'rnd_modules', label: 'R&D Modules', icon: Settings },
+      ],
     },
     {
       title: 'SYSTEM',
@@ -226,11 +246,11 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             onClick={() => setActiveMenu('dashboard')}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-extrabold transition-all mb-4 ${
               activeMenu === 'dashboard'
-                ? 'bg-blue-50 text-[#2563EB] border border-blue-200 shadow-xs'
+                ? 'bg-[#F2F6FC] text-[#5B8EE2] border border-blue-200 shadow-xs'
                 : 'text-slate-600 hover:text-[#111827] hover:bg-slate-50'
             }`}
           >
-            <LayoutDashboard className="w-5 h-5 text-[#2563EB]" /> Dashboard
+            <LayoutDashboard className="w-5 h-5 text-[#5B8EE2]" /> Dashboard
           </button>
 
           {sidebarNav.map((group, idx) => (
@@ -254,11 +274,11 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                       onClick={() => setActiveMenu(item.id)}
                       className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
                         isActive
-                          ? 'bg-blue-50 text-[#2563EB] border border-blue-200 shadow-xs font-extrabold'
+                          ? 'bg-[#F2F6FC] text-[#5B8EE2] border border-blue-200 shadow-xs font-extrabold'
                           : 'text-slate-600 hover:text-[#111827] hover:bg-slate-50'
                       }`}
                     >
-                      <item.icon className={`w-4 h-4 ${isActive ? 'text-[#2563EB]' : 'text-slate-400'}`} />
+                      <item.icon className={`w-4 h-4 ${isActive ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
                       <span>{item.label}</span>
                     </button>
                   );
@@ -292,7 +312,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                 onRefreshContent();
                 onRefreshPages();
               }}
-              className="p-2.5 text-[#6B7280] hover:text-[#2563EB] rounded-2xl hover:bg-blue-50 transition-colors border border-[#E5E7EB]"
+              className="p-2.5 text-[#6B7280] hover:text-[#5B8EE2] rounded-2xl hover:bg-[#F2F6FC] transition-colors border border-[#E5E7EB]"
               title="Refresh All Content & Data"
             >
               <RefreshCw className="w-4 h-4" />
@@ -300,7 +320,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
             <button
               onClick={onExitAdmin}
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] hover:from-[#1D4ED8] hover:to-[#6D28D9] text-white text-xs font-extrabold shadow-md shadow-blue-500/20 transition-all hover:scale-105 flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif]"
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-xs font-extrabold shadow-md shadow-blue-500/20 transition-all hover:scale-105 flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif]"
             >
               <Home className="w-3.5 h-3.5 text-white" /> View Live Site
             </button>
@@ -310,8 +330,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         {/* Scrollable View Content */}
         <div className="flex-1 overflow-y-auto p-8 z-10 custom-scrollbar">
           {activeMenu === 'dashboard' && <DashboardStats siteContent={siteContent} dynamicPages={dynamicPages} />}
-          {activeMenu === 'resource_lead_gen' && (
-            <LeadGenServicesEditor
+          {activeMenu.startsWith('page_') && (
+            <DynamicPageEditor
+              pageId={activeMenu.replace('page_', '')}
               dynamicPages={dynamicPages}
               onRefresh={onRefreshPages}
               onViewLive={(slug) => {
@@ -348,8 +369,8 @@ const DashboardStats = ({ siteContent, dynamicPages }: { siteContent: SiteConten
 
     {/* Stat Cards Row */}
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      <StatCard title="Services" value={siteContent.services.length.toString()} icon={<Briefcase className="w-6 h-6 text-[#2563EB]" />} iconBg="bg-blue-50 border-blue-100" />
-      <StatCard title="Case Studies" value={siteContent.achievements.length.toString()} icon={<FolderDot className="w-6 h-6 text-[#7C3AED]" />} iconBg="bg-purple-50 border-purple-100" />
+      <StatCard title="Services" value={siteContent.services.length.toString()} icon={<Briefcase className="w-6 h-6 text-[#5B8EE2]" />} iconBg="bg-[#F2F6FC] border-blue-100" />
+      <StatCard title="Portfolio Cards" value={siteContent.achievements.length.toString()} icon={<FolderDot className="w-6 h-6 text-[#D6A67B]" />} iconBg="bg-purple-50 border-purple-100" />
       <StatCard title="Dynamic Pages" value={dynamicPages.length.toString()} icon={<FileText className="w-6 h-6 text-[#EC4899]" />} iconBg="bg-pink-50 border-pink-100" />
       <StatCard title="Industries" value={siteContent.industries.length.toString()} icon={<MapPin className="w-6 h-6 text-[#F59E0B]" />} iconBg="bg-amber-50 border-amber-100" />
     </div>
@@ -361,7 +382,7 @@ const DashboardStats = ({ siteContent, dynamicPages }: { siteContent: SiteConten
           Homepage Dynamic Sections
         </h3>
         <ul className="grid grid-cols-2 gap-3 text-xs text-[#6B7280] font-semibold">
-          {['Hero Section', 'What Is Digital Mkt', 'Target Audience', 'Services', 'Why Choose Us', 'Case Studies', 'Process Timeline', 'Industries We Serve', 'FAQs Accordion', 'Consultation Form'].map((s) => (
+          {['Hero Section', 'Section Headers', 'What Is Digital Mkt', 'Target Audience', 'Services', 'Why Choose Us', 'Our Process', 'Industries We Serve', 'FAQs', 'Testimonials', 'Trusted Logos', 'Portfolio Cards'].map((s) => (
             <li key={s} className="flex items-center gap-2 p-2 rounded-xl bg-[#F8FAFC] border border-slate-100">
               <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
               <span className="truncate">{s}</span>
@@ -375,11 +396,11 @@ const DashboardStats = ({ siteContent, dynamicPages }: { siteContent: SiteConten
           Quick System Shortcuts
         </h3>
         <div className="space-y-3">
-          <a href="/" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3.5 rounded-2xl bg-[#F8FAFC] border border-slate-100 hover:border-blue-300 text-[#2563EB] text-xs font-extrabold transition-all group">
+          <a href="/" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3.5 rounded-2xl bg-[#F8FAFC] border border-slate-100 hover:border-blue-300 text-[#5B8EE2] text-xs font-extrabold transition-all group">
             <span>View Live Website Homepage</span>
             <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </a>
-          <a href="/sitemap.xml" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3.5 rounded-2xl bg-[#F8FAFC] border border-slate-100 hover:border-blue-300 text-[#2563EB] text-xs font-extrabold transition-all group">
+          <a href="/sitemap.xml" target="_blank" rel="noreferrer" className="flex items-center justify-between p-3.5 rounded-2xl bg-[#F8FAFC] border border-slate-100 hover:border-blue-300 text-[#5B8EE2] text-xs font-extrabold transition-all group">
             <span>View Generated XML Sitemap</span>
             <ExternalLink className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
           </a>
@@ -425,7 +446,11 @@ const TableCrudManager = ({
       if (res.ok) {
         const json = await res.json();
         setData(json.data || []);
+      } else {
+        setData([]);
       }
+    } catch {
+      setData([]);
     } finally {
       setLoading(false);
     }
@@ -485,8 +510,16 @@ const TableCrudManager = ({
         </div>
         {config.canCreate && (
           <button
-            onClick={() => setEditingItem({})}
-            className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
+            onClick={() => {
+              const initial: any = {};
+              config.fields.forEach(f => {
+                if (f.type === 'boolean') initial[f.key] = false;
+                else if (f.type === 'number') initial[f.key] = 0;
+                else initial[f.key] = '';
+              });
+              setEditingItem(initial);
+            }}
+            className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
           >
             <Plus className="w-4 h-4" /> Add New
           </button>
@@ -501,8 +534,17 @@ const TableCrudManager = ({
                 <div key={field.key} className={field.colSpan === 2 ? 'md:col-span-2' : ''}>
                   <FieldInput
                     field={field}
-                    value={editingItem[field.key]}
+                    value={editingItem[field.key as keyof typeof editingItem]}
                     onChange={(v) => setEditingItem({ ...editingItem, [field.key]: v })}
+                    onFileUploaded={(url, publicId) => {
+                      if (field.type === 'image') {
+                        setEditingItem(prev => ({
+                          ...prev,
+                          [field.key]: url,
+                          image_public_id: publicId
+                        }));
+                      }
+                    }}
                   />
                 </div>
               ))}
@@ -511,7 +553,7 @@ const TableCrudManager = ({
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white font-extrabold text-xs flex items-center gap-2 shadow-md shadow-blue-500/20"
+                className="px-8 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white font-extrabold text-xs flex items-center gap-2 shadow-md shadow-blue-500/20"
               >
                 <Save className="w-4 h-4" /> {saving ? 'Saving...' : 'Save Changes'}
               </button>
@@ -537,7 +579,7 @@ const TableCrudManager = ({
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => setEditingItem(item)}
-                      className="p-2 rounded-xl bg-blue-50 text-[#2563EB] hover:bg-blue-100 transition-colors"
+                      className="p-2 rounded-xl bg-[#F2F6FC] text-[#5B8EE2] hover:bg-blue-100 transition-colors"
                       title="Edit"
                     >
                       <Edit className="w-4 h-4" />
@@ -565,11 +607,63 @@ const FieldInput = ({
   field,
   value,
   onChange,
+  onFileUploaded,
 }: {
   field: FieldConfig;
   value: unknown;
   onChange: (val: unknown) => void;
+  onFileUploaded?: (url: string, publicId: string) => void;
 }) => {
+  const [uploading, setUploading] = useState(false);
+  const [dragActive, setDragActive] = useState(false);
+
+  const processFile = async (file: File) => {
+    setUploading(true);
+    const formData = new FormData();
+    formData.append('image', file);
+
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      const data = await res.json();
+      if (data.url) {
+        onChange(data.url);
+        if (onFileUploaded) onFileUploaded(data.url, data.public_id);
+      }
+    } catch (err) {
+      console.error('Upload failed', err);
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  const handleDrag = (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (e.type === "dragenter" || e.type === "dragover") {
+      setDragActive(true);
+    } else if (e.type === "dragleave") {
+      setDragActive(false);
+    }
+  };
+
+  const handleDrop = async (e: React.DragEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setDragActive(false);
+    
+    if (e.dataTransfer.files && e.dataTransfer.files[0]) {
+      await processFile(e.dataTransfer.files[0]);
+    }
+  };
+
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    const file = e.target.files?.[0];
+    if (!file) return;
+    await processFile(file);
+  };
   if (field.type === 'textarea') {
     return (
       <div>
@@ -580,7 +674,7 @@ const FieldInput = ({
           rows={3}
           value={String(value || '')}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#2563EB] focus:outline-none leading-relaxed"
+          className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#5B8EE2] focus:outline-none leading-relaxed"
         />
       </div>
     );
@@ -595,7 +689,7 @@ const FieldInput = ({
         <select
           value={String(value || '')}
           onChange={(e) => onChange(e.target.value)}
-          className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#2563EB] focus:outline-none"
+          className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
         >
           {(field.options || []).map((opt) => (
             <option key={opt} value={opt}>
@@ -615,11 +709,57 @@ const FieldInput = ({
           id={`checkbox-${field.key}`}
           checked={Boolean(value)}
           onChange={(e) => onChange(e.target.checked)}
-          className="w-5 h-5 rounded-lg text-[#2563EB] focus:ring-blue-100"
+          className="w-5 h-5 rounded-lg text-[#5B8EE2] focus:ring-blue-100"
         />
         <label htmlFor={`checkbox-${field.key}`} className="text-xs font-extrabold text-[#111827] uppercase tracking-wider font-['Plus_Jakarta_Sans',sans-serif]">
           {field.label}
         </label>
+      </div>
+    );
+  }
+
+  if (field.type === 'image') {
+    return (
+      <div>
+        <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+          {field.label}
+        </label>
+        <div 
+          className={`flex flex-col items-center justify-center p-6 border-2 border-dashed rounded-2xl transition-all duration-200 relative
+            ${dragActive ? 'border-[#5B8EE2] bg-[#F2F6FC]/50' : 'border-[#E5E7EB] bg-[#F8FAFC] hover:border-[#5B8EE2]'}
+          `}
+          onDragEnter={handleDrag}
+          onDragLeave={handleDrag}
+          onDragOver={handleDrag}
+          onDrop={handleDrop}
+        >
+          {value && typeof value === 'string' ? (
+            <div className="flex flex-col items-center gap-3">
+              <img src={value} alt="Preview" className="h-24 w-24 object-cover rounded-xl border border-[#E5E7EB] shadow-sm" />
+              <label className="cursor-pointer text-[#5B8EE2] hover:text-[#4676C2] text-xs font-bold transition-colors">
+                {uploading ? 'Uploading...' : 'Replace Image'}
+                <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} disabled={uploading} />
+              </label>
+            </div>
+          ) : (
+            <div className="flex flex-col items-center gap-2 pointer-events-none text-center">
+              <div className="w-10 h-10 rounded-full bg-[#F2F6FC] text-[#5B8EE2] flex items-center justify-center mb-1">
+                <UploadCloud className="w-5 h-5" />
+              </div>
+              <p className="text-xs font-bold text-[#111827]">
+                {uploading ? 'Uploading...' : 'Drag & drop image here'}
+              </p>
+              <p className="text-[10px] text-[#6B7280]">or</p>
+              <label className="cursor-pointer bg-white border border-[#E5E7EB] hover:border-[#5B8EE2] transition-colors rounded-xl px-4 py-2 text-xs font-bold text-[#111827] pointer-events-auto">
+                Select File
+                <input type="file" accept="image/*" className="hidden" onChange={handleImageUpload} disabled={uploading} />
+              </label>
+            </div>
+          )}
+          {dragActive && (
+            <div className="absolute inset-0 bg-[#5B8EE2]/5 rounded-2xl border-2 border-[#5B8EE2] pointer-events-none" />
+          )}
+        </div>
       </div>
     );
   }
@@ -633,7 +773,7 @@ const FieldInput = ({
         type={field.type === 'number' ? 'number' : 'text'}
         value={String(value || '')}
         onChange={(e) => onChange(field.type === 'number' ? Number(e.target.value) : e.target.value)}
-        className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#2563EB] focus:outline-none"
+        className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
       />
     </div>
   );
@@ -703,7 +843,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         </div>
         <button
           onClick={() => setEditingPage({ title: 'New SEO Page', slug: 'new-page', isPublished: true })}
-          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
+          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
         >
           <Plus className="w-4 h-4" /> Create New Page
         </button>
@@ -749,7 +889,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
             />
           </div>
           <div className="flex gap-3 pt-2">
-            <button onClick={handleSavePage} className="px-6 py-2.5 bg-gradient-to-r from-[#2563EB] to-[#7C3AED] text-white font-bold text-xs rounded-full shadow-md">
+            <button onClick={handleSavePage} className="px-6 py-2.5 bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white font-bold text-xs rounded-full shadow-md">
               Save Page
             </button>
             <button onClick={() => setEditingPage(null)} className="px-5 py-2.5 bg-white border border-[#E5E7EB] text-[#111827] font-bold text-xs rounded-full">
@@ -774,13 +914,13 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
               <div className="flex items-center gap-2 shrink-0">
                 <button
                   onClick={() => handleDuplicate(p)}
-                  className="px-3 py-1.5 rounded-xl bg-purple-50 text-[#7C3AED] hover:bg-purple-100 text-xs font-bold transition-colors"
+                  className="px-3 py-1.5 rounded-xl bg-purple-50 text-[#D6A67B] hover:bg-purple-100 text-xs font-bold transition-colors"
                 >
                   Duplicate
                 </button>
                 <button
                   onClick={() => setEditingPage(p)}
-                  className="p-2 rounded-xl bg-blue-50 text-[#2563EB] hover:bg-blue-100 transition-colors"
+                  className="p-2 rounded-xl bg-[#F2F6FC] text-[#5B8EE2] hover:bg-blue-100 transition-colors"
                 >
                   <Edit className="w-4 h-4" />
                 </button>
@@ -802,32 +942,159 @@ const SitemapPanel = ({ dynamicPages }: { dynamicPages: DynamicPage[] }) => (
     </div>
 
     <div className="p-6 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] space-y-3 font-mono text-xs text-[#111827]">
-      <p className="text-[#2563EB] font-bold">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</p>
-      <p className="text-purple-600 font-bold">&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;</p>
+      <p className="text-[#5B8EE2] font-bold">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;</p>
+      <p className="text-[#D6A67B] font-bold">&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;</p>
       <div className="pl-4 space-y-2">
         <p>&lt;url&gt;&lt;loc&gt;https://lumora.ai/&lt;/loc&gt;&lt;priority&gt;1.0&lt;/priority&gt;&lt;/url&gt;</p>
         {dynamicPages.map((p) => (
           <p key={p.id}>&lt;url&gt;&lt;loc&gt;https://lumora.ai/{p.slug}&lt;/loc&gt;&lt;priority&gt;0.8&lt;/priority&gt;&lt;/url&gt;</p>
         ))}
       </div>
-      <p className="text-purple-600 font-bold">&lt;/urlset&gt;</p>
+      <p className="text-[#D6A67B] font-bold">&lt;/urlset&gt;</p>
     </div>
   </div>
 );
 
 /* --- Site Settings Manager --- */
 const SiteSettingsManager = ({ onSaved }: { onSaved: () => void }) => {
-  return <TableCrudManager tableName="site_settings" config={TABLE_CONFIGS.site_settings} onSaved={onSaved} />;
+  return (
+    <div className="bg-white rounded-3xl border border-[#E5E7EB] p-8 shadow-xs">
+      <h2 className="text-xl font-extrabold text-[#111827] mb-4">Site Settings</h2>
+      <p className="text-sm text-[#6B7280]">Global configuration coming soon...</p>
+    </div>
+  );
 };
 
 /* --- Section Settings Manager --- */
 const SectionSettingsManager = ({ onSaved }: { onSaved: () => void }) => {
-  return <TableCrudManager tableName="section_settings" config={TABLE_CONFIGS.section_settings} onSaved={onSaved} />;
+  return (
+    <div className="bg-white rounded-3xl border border-[#E5E7EB] p-8 shadow-xs">
+      <h2 className="text-xl font-extrabold text-[#111827] mb-4">Section Headers</h2>
+      <p className="text-sm text-[#6B7280]">Section content management coming soon...</p>
+    </div>
+  );
 };
 
 /* --- Leads Inbox Manager --- */
 const LeadsManager = ({ onSaved }: { onSaved: () => void }) => {
-  return <TableCrudManager tableName="consultation_submissions" config={TABLE_CONFIGS.consultation_submissions} onSaved={onSaved} />;
+  const [leads, setLeads] = useState<any[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetchLeads();
+  }, []);
+
+  const fetchLeads = async () => {
+    try {
+      const res = await fetch('/api/leads');
+      const data = await res.json();
+      if (data.success) {
+        setLeads(data.leads);
+      }
+    } catch (e) {
+      console.error(e);
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  const updateStatus = async (id: string, newStatus: string) => {
+    try {
+      await fetch(`/api/leads/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ status: newStatus })
+      });
+      fetchLeads();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
+  return (
+    <div className="bg-white rounded-3xl border border-[#E5E7EB] p-8 shadow-xs">
+      <div className="flex justify-between items-center mb-8">
+        <div>
+          <h2 className="text-2xl font-extrabold text-[#111827]">CRM & Leads Inbox</h2>
+          <p className="text-sm text-[#6B7280] mt-1">Manage and track your incoming consultation requests.</p>
+        </div>
+        <button onClick={fetchLeads} className="p-2 bg-slate-100 hover:bg-slate-200 rounded-full transition-colors text-slate-600">
+          <RefreshCcw className="w-5 h-5" />
+        </button>
+      </div>
+
+      {loading ? (
+        <div className="py-12 flex justify-center"><div className="w-8 h-8 border-4 border-[#5B8EE2] border-t-transparent rounded-full animate-spin"></div></div>
+      ) : leads.length === 0 ? (
+        <div className="py-20 text-center flex flex-col items-center justify-center border-2 border-dashed border-slate-200 rounded-2xl bg-slate-50">
+          <Inbox className="w-12 h-12 text-slate-300 mb-4" />
+          <h3 className="text-lg font-bold text-slate-900">No Leads Yet</h3>
+          <p className="text-sm text-slate-500 max-w-sm mt-2">When visitors fill out forms on your website, they will appear here automatically.</p>
+        </div>
+      ) : (
+        <div className="space-y-4">
+          {leads.map((lead) => (
+            <div key={lead.id} className="p-6 rounded-2xl border border-slate-200 hover:border-blue-300 transition-all bg-slate-50/50 shadow-sm hover:shadow-md group">
+              <div className="flex flex-col sm:flex-row justify-between gap-4 mb-4">
+                <div>
+                  <h3 className="text-xl font-black text-slate-900 flex items-center gap-2">
+                    {lead.name}
+                    {lead.status === 'new' && <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" title="New Lead"></span>}
+                  </h3>
+                  <div className="text-sm font-semibold text-slate-500 mt-0.5">{lead.companyName}</div>
+                  
+                  <div className="text-sm text-slate-600 mt-3 flex flex-col sm:flex-row gap-x-6 gap-y-1">
+                    <a href={`mailto:${lead.email}`} className="flex items-center gap-1.5 hover:text-[#5B8EE2] transition-colors"><Mail className="w-4 h-4 text-slate-400" /> {lead.email}</a>
+                    <a href={`tel:${lead.phone}`} className="flex items-center gap-1.5 hover:text-[#5B8EE2] transition-colors"><Phone className="w-4 h-4 text-slate-400" /> {lead.phone}</a>
+                  </div>
+                </div>
+                <div className="flex sm:flex-col items-end gap-3 shrink-0">
+                  <div className="text-right">
+                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Source Page</span>
+                    <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-[11px] font-bold rounded-full border border-blue-200">{lead.sourcePage}</span>
+                  </div>
+                  <select 
+                    value={lead.status}
+                    onChange={(e) => updateStatus(lead.id, e.target.value)}
+                    className={`text-xs font-bold rounded-full px-4 py-2 border-0 focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer shadow-sm ${
+                      lead.status === 'new' ? 'bg-emerald-100 text-emerald-700' :
+                      lead.status === 'contacted' ? 'bg-amber-100 text-amber-700' :
+                      'bg-slate-200 text-slate-700'
+                    }`}
+                  >
+                    <option value="new">New Lead</option>
+                    <option value="contacted">Contacted</option>
+                    <option value="closed">Closed</option>
+                  </select>
+                </div>
+              </div>
+              
+              <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm mt-4">
+                <div className="text-[11px] font-bold text-slate-400 mb-2 uppercase tracking-wider">Services Required</div>
+                <div className="flex flex-wrap gap-2 mb-5">
+                  {lead.servicesRequired.map((srv: string, i: number) => (
+                    <span key={i} className="px-3 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-semibold border border-slate-200">{srv}</span>
+                  ))}
+                </div>
+                
+                {lead.message && (
+                  <>
+                    <div className="text-[11px] font-bold text-slate-400 mb-2 uppercase tracking-wider">Message</div>
+                    <p className="text-sm text-slate-700 whitespace-pre-wrap leading-relaxed">{lead.message}</p>
+                  </>
+                )}
+              </div>
+              
+              <div className="text-xs text-slate-400 mt-4 font-medium flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5" />
+                Submitted: {new Date(lead.submittedAt).toLocaleString(undefined, { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+              </div>
+            </div>
+          ))}
+        </div>
+      )}
+    </div>
+  );
 };
 
 export default AdminDashboard;
