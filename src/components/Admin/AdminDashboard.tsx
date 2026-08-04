@@ -132,7 +132,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
               <button
                 type="submit"
-                className="w-full py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-sm font-extrabold shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02]"
+                className="w-full py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-sm font-extrabold shadow-lg shadow-blue-500/25 transition-all hover:scale-[1.02]"
               >
                 Secure Login
               </button>
@@ -320,7 +320,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
 
             <button
               onClick={onExitAdmin}
-              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-xs font-extrabold shadow-md shadow-blue-500/20 transition-all hover:scale-105 flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif]"
+              className="px-5 py-2.5 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-xs font-extrabold shadow-md shadow-blue-500/20 transition-all hover:scale-105 flex items-center gap-2 font-['Plus_Jakarta_Sans',sans-serif]"
             >
               <Home className="w-3.5 h-3.5 text-white" /> View Live Site
             </button>
@@ -519,7 +519,7 @@ const TableCrudManager = ({
               });
               setEditingItem(initial);
             }}
-            className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
+            className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
           >
             <Plus className="w-4 h-4" /> Add New
           </button>
@@ -553,7 +553,7 @@ const TableCrudManager = ({
               <button
                 onClick={handleSave}
                 disabled={saving}
-                className="px-8 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white font-extrabold text-xs flex items-center gap-2 shadow-md shadow-blue-500/20"
+                className="px-8 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white font-extrabold text-xs flex items-center gap-2 shadow-md shadow-blue-500/20"
               >
                 <Save className="w-4 h-4" /> {saving ? 'Saving...' : 'Save Changes'}
               </button>
@@ -843,7 +843,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         </div>
         <button
           onClick={() => setEditingPage({ title: 'New SEO Page', slug: 'new-page', isPublished: true })}
-          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
+          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
         >
           <Plus className="w-4 h-4" /> Create New Page
         </button>
@@ -889,7 +889,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
             />
           </div>
           <div className="flex gap-3 pt-2">
-            <button onClick={handleSavePage} className="px-6 py-2.5 bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white font-bold text-xs rounded-full shadow-md">
+            <button onClick={handleSavePage} className="px-6 py-2.5 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white font-bold text-xs rounded-full shadow-md">
               Save Page
             </button>
             <button onClick={() => setEditingPage(null)} className="px-5 py-2.5 bg-white border border-[#E5E7EB] text-[#111827] font-bold text-xs rounded-full">

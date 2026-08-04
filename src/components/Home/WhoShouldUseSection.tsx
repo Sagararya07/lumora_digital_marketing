@@ -103,7 +103,7 @@ export const WhoShouldUseSection: React.FC<WhoShouldUseProps> = ({ items, openCo
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             Who Should Use{' '}
-            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
               Digital Marketing?
             </span>
           </h2>
@@ -170,7 +170,7 @@ export const WhoShouldUseSection: React.FC<WhoShouldUseProps> = ({ items, openCo
                         getIcon(item.iconName)
                       )}
                     </div>
-                    <h3 className="text-xl font-extrabold text-[#111827] group-hover:text-[#5B8EE2] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
+                    <h3 className="text-xl font-extrabold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent group-hover:text-[#5B8EE2] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
                       {item.title}
                     </h3>
                   </div>

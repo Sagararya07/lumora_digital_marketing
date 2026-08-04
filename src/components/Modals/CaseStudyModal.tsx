@@ -64,7 +64,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
                 onClose();
                 openConsultationModal();
               }}
-              className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:opacity-90 text-white text-sm font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 transition-all"
+              className="w-full py-4 rounded-2xl bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:opacity-90 text-white text-sm font-bold shadow-lg hover:shadow-xl hover:-translate-y-0.5 flex items-center justify-center gap-2 transition-all"
             >
               <span>Get Similar Results For Your Business</span>
               <ArrowRight className="w-4 h-4" />

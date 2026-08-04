@@ -97,7 +97,7 @@ export const AchievementsSection: React.FC<AchievementsProps> = ({
 
                 {/* Content */}
                 <div className="p-8">
-                  <h3 className="text-xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
+                  <h3 className="text-xl font-extrabold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-['Plus_Jakarta_Sans',sans-serif]">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-sm text-[#6B7280] font-normal leading-relaxed line-clamp-3">

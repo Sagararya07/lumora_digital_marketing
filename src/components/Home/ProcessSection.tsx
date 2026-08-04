@@ -215,7 +215,7 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
           </div>
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             A Proven Process for{' '}
-            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent drop-shadow-sm">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent drop-shadow-sm">
               Predictable Growth
             </span>
           </h2>
@@ -262,7 +262,7 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
                   
                   <div className="relative z-10 text-center">
-                    <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
+                    <h3 className="text-sm font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
                       {title}
                     </h3>
                     <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
@@ -315,7 +315,7 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
                   
                   <div className="relative z-10 text-center">
-                    <h3 className="text-sm font-black text-[#111827] tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
+                    <h3 className="text-sm font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
                       {title}
                     </h3>
                     <p className="text-xs text-[#6B7280] leading-relaxed font-medium">

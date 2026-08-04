@@ -121,7 +121,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultat
               {/* Central Glowing AI Growth Engine Core */}
               <div className="relative z-20 w-44 h-44 rounded-full bg-gradient-to-br from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] p-1 shadow-2xl shadow-purple-500/40 transform hover:scale-105 transition-transform duration-500 flex items-center justify-center text-center">
                 <div className="w-full h-full rounded-full bg-white/95 backdrop-blur-md p-4 flex flex-col items-center justify-center space-y-1">
-                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] flex items-center justify-center text-white shadow-md">
+                  <div className="w-10 h-10 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] flex items-center justify-center text-white shadow-md">
                     <Zap className="w-5 h-5 text-white animate-bounce" />
                   </div>
                   <span className="text-xs font-black text-[#111827] uppercase tracking-wider font-['Plus_Jakarta_Sans',sans-serif]">
@@ -163,7 +163,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultat
                   <Database className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className="text-xs font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
+                  <h4 className="text-xs font-extrabold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-['Plus_Jakarta_Sans',sans-serif]">
                     Automated Data & API Connectivity
                   </h4>
                   <p className="text-[11px] text-[#6B7280]">Connects seamlessly with all major marketing & CRM channels.</p>
@@ -231,7 +231,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultat
                   </div>
 
                   <div>
-                    <h4 className="text-sm font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#5B8EE2] transition-colors">
+                    <h4 className="text-sm font-extrabold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#5B8EE2] transition-colors">
                       {title}
                     </h4>
                     <p className="text-xs text-[#6B7280] font-normal leading-relaxed mt-1">

@@ -122,7 +122,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
               navigate('/get-a-consultation');
               window.scrollTo({ top: 0, behavior: 'smooth' });
             }}
-            className="w-full py-4 px-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 hover:scale-105 transition-all font-['Plus_Jakarta_Sans',sans-serif]"
+            className="w-full py-4 px-4 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white text-xs font-extrabold flex items-center justify-center gap-2 shadow-lg shadow-blue-500/20 hover:scale-105 transition-all font-['Plus_Jakarta_Sans',sans-serif]"
           >
             <span>Book a Strategy Call</span>
           </button>

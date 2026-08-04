@@ -41,7 +41,7 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             What Growth Leaders Say About{' '}
-            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
               Lumora
             </span>
           </h2>
@@ -76,7 +76,7 @@ export const TestimonialsSection: React.FC<TestimonialsProps> = ({ testimonials 
 
               {/* Author Footer (Ample Bottom Padding) */}
               <div className="flex items-center gap-4 pt-6 border-t border-slate-100 mt-4">
-                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5B8EE2] to-[#D6A67B] flex items-center justify-center text-white text-base font-extrabold shadow-md shrink-0 font-['Plus_Jakarta_Sans',sans-serif]">
+                <div className="w-12 h-12 rounded-full bg-gradient-to-br from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] flex items-center justify-center text-white text-base font-extrabold shadow-md shrink-0 font-['Plus_Jakarta_Sans',sans-serif]">
                   {t.name.charAt(0)}
                 </div>
                 <div>

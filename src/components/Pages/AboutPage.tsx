@@ -106,7 +106,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             siteContent.aboutHero?.background_image ? 'text-white' : 'text-[#111827]'
           }`}>
             Pioneering the Future of Digital Scaling for{' '}
-            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
               Ambitious Global Brands
             </span>
           </h1>
@@ -120,7 +120,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
             <button
               onClick={openConsultationModal}
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
+              className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
             >
               <span>Partner With Our Experts</span>
               <ArrowRight className="w-4 h-4" />

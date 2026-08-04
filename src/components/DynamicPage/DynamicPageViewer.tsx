@@ -128,7 +128,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
 
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] leading-[1.15] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
               {leadingTitle ? `${leadingTitle} ` : ''}
-              <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
                 {highlightTitle}
               </span>
             </h1>
@@ -140,7 +140,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
             <div className="pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <button
                 onClick={openConsultationModal}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
               >
                 <span>Get Lead Generation Proposal</span>
                 <ArrowRight className="w-4 h-4" />
@@ -189,14 +189,14 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                   <div className="w-full space-y-8">
                     <div className="inline-flex items-center justify-center gap-3">
                        <span className="w-8 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hidden sm:block" />
-                       <div className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-extrabold text-lg tracking-widest uppercase font-['Plus_Jakarta_Sans',sans-serif]">
+                       <div className="text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] font-extrabold text-lg tracking-widest uppercase font-['Plus_Jakarta_Sans',sans-serif]">
                          Overview
                        </div>
                        <span className="w-8 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full hidden sm:block" />
                     </div>
                     <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-[#0f172a] leading-[1.15] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
                       {leadingSec ? `${leadingSec} ` : ''}
-                      <span className="bg-gradient-to-r from-blue-600 via-purple-600 to-rose-600 bg-clip-text text-transparent">
+                      <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
                         {highlightSec}
                       </span>
                     </h2>
@@ -218,7 +218,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                   
                   {/* Top Section: Title & Content */}
                   <div className="mb-12 lg:mb-16 max-w-3xl">
-                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight mb-6">
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight mb-6">
                       {secTitle}
                     </h2>
                     <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6" />
@@ -274,7 +274,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
           if (sec.type === 'case-study') {
             return (
               <section key={sec.id} className="max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-24 space-y-24">
-                <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 font-['Plus_Jakarta_Sans',sans-serif] tracking-tight mb-16">
+                <h2 className="text-3xl sm:text-4xl font-extrabold text-center text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight mb-16">
                   {secTitle}
                 </h2>
                 
@@ -315,7 +315,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                             
                             {/* Details Panel */}
                             <div className="flex-1 space-y-6">
-                              <h3 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+                              <h3 className="text-2xl sm:text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
                                 {study.title}
                               </h3>
                               <p className="text-[#4B5563] text-lg leading-relaxed">
@@ -323,7 +323,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                               </p>
                               <button
                                 onClick={() => setActiveModalStudy({ ...study, imgUrl })}
-                                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-sm font-extrabold gap-2 transition-all hover:scale-105 shadow-xl shadow-blue-500/25 font-['Plus_Jakarta_Sans',sans-serif]"
+                                className="inline-flex items-center justify-center px-6 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-sm font-extrabold gap-2 transition-all hover:scale-105 shadow-xl shadow-blue-500/25 font-['Plus_Jakarta_Sans',sans-serif]"
                               >
                                 <span>Read More</span>
                                 <ArrowRight className="w-4 h-4" />
@@ -368,7 +368,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                   </div>
                   <h2 className="text-2xl sm:text-3xl font-extrabold text-[#111827] tracking-tight group-hover:text-[#5B8EE2] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
                     {leadingSec ? `${leadingSec} ` : ''}
-                    <span className="bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] bg-clip-text text-transparent">
+                    <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
                       {highlightSec}
                     </span>
                   </h2>
@@ -456,7 +456,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
               {/* Extended Details (simulated) */}
               <div className="space-y-8">
                 <div>
-                  <h4 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600 mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
+                  <h4 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] mb-4 font-['Plus_Jakarta_Sans',sans-serif]">
                     Strategic Initiatives
                   </h4>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">

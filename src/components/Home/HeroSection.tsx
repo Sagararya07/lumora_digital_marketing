@@ -40,7 +40,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             <div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] font-extrabold text-slate-950 leading-[1.12] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
                 We Build Intelligent{' '}
-                <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+                <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
                   Growth Systems
                 </span>{' '}
                 That Drive Real Business Impact.
@@ -64,7 +64,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                     el?.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-sm font-extrabold flex items-center justify-center gap-2.5 shadow-xl shadow-blue-500/20 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
+                className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-sm font-extrabold flex items-center justify-center gap-2.5 shadow-xl shadow-blue-500/20 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
               >
                 <span>Explore Solutions</span>
                 <ArrowRight className="w-4 h-4 text-white" />

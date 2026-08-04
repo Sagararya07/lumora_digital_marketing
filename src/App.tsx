@@ -417,7 +417,7 @@ const DynamicPageWrapper: React.FC<{
         <p className="text-[#6B7280] mt-2 text-sm font-normal">The page &quot;/{slug}&quot; does not exist or has been unpublished.</p>
         <button
           onClick={onGoHome}
-          className="mt-6 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white font-extrabold text-xs shadow-lg shadow-blue-500/20"
+          className="mt-6 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white font-extrabold text-xs shadow-lg shadow-blue-500/20"
         >
           Return to Agency Homepage
         </button>

@@ -86,7 +86,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
           </div>
           <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
             AI-Powered Solutions for Every{' '}
-            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
               Stage of Growth
             </span>
           </h2>
@@ -129,7 +129,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
                     {tag}
                   </span>
                   
-                  <h3 className="text-3xl sm:text-4xl font-extrabold text-[#111827] mb-6 leading-tight font-['Plus_Jakarta_Sans',sans-serif]">
+                  <h3 className="text-3xl sm:text-4xl font-extrabold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent mb-6 leading-tight font-['Plus_Jakarta_Sans',sans-serif]">
                     {title}
                   </h3>
                   

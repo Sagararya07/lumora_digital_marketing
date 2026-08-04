@@ -27,9 +27,9 @@ interface IndustriesProps {
 
 const industryGradients = [
   'from-[#5B8EE2] to-[#8CB4F5] shadow-blue-500/25',
-  'from-[#D6A67B] to-[#5B8EE2] shadow-orange-500/25',
+  'from-[#D6A67B] via-[#5B8EE2] to-[#EC4899] shadow-orange-500/25',
   'from-[#8CB4F5] to-[#D6A67B] shadow-blue-400/25',
-  'from-[#5B8EE2] to-[#D6A67B] shadow-blue-500/25',
+  'from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] shadow-blue-500/25',
   'from-[#D6A67B] to-[#8CB4F5] shadow-orange-500/25',
   'from-[#5B8EE2] via-[#8CB4F5] to-[#D6A67B] shadow-blue-500/25',
 ];
@@ -73,7 +73,7 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             Industries{' '}
-            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
               We Serve
             </span>
           </h2>
@@ -126,7 +126,7 @@ export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openC
                     </div>
                   </div>
 
-                  <h3 className="text-2xl font-extrabold text-[#111827] mb-4 leading-snug group-hover:text-[#5B8EE2] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
+                  <h3 className="text-2xl font-extrabold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent mb-4 leading-snug group-hover:text-[#5B8EE2] transition-colors font-['Plus_Jakarta_Sans',sans-serif]">
                     {ind.name}
                   </h3>
 

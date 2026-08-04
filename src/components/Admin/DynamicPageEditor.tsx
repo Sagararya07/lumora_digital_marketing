@@ -192,7 +192,7 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
           <button
             onClick={handleSavePage}
             disabled={saving}
-            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-xs font-extrabold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 disabled:opacity-50"
+            className="px-6 py-2.5 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-xs font-extrabold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 disabled:opacity-50"
           >
             <Save className="w-4 h-4 text-white" />
             <span>{saving ? 'Saving...' : 'Save Live Page'}</span>
@@ -399,7 +399,7 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
           <button
             onClick={handleSavePage}
             disabled={saving}
-            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-xs font-extrabold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 disabled:opacity-50"
+            className="px-8 py-3.5 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-xs font-extrabold flex items-center gap-2 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 disabled:opacity-50"
           >
             <Save className="w-4 h-4 text-white" />
             <span>{saving ? 'Saving...' : 'Save & Publish Live Page'}</span>

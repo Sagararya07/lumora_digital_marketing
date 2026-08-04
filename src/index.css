@@ -25,10 +25,10 @@
 
   /* Gradients */
   --gradient-hero: linear-gradient(135deg, #0B1026 0%, #1E3A8A 50%, #D6A67B 100%);
-  --gradient-cta: linear-gradient(135deg, #5B8EE2 0%, #D6A67B 100%);
-  --gradient-cta-hover: linear-gradient(135deg, #4676C2 0%, #C29367 100%);
+  --gradient-cta: linear-gradient(135deg, #5B8EE2 0%, #D6A67B 50%, #EC4899 100%);
+  --gradient-cta-hover: linear-gradient(135deg, #4676C2 0%, #C29367 50%, #DB2777 100%);
   --gradient-glow: linear-gradient(135deg, #FBBF24 0%, #FFD86B 100%);
-  --gradient-primary: linear-gradient(135deg, #8CB4F5 0%, #5B8EE2 50%, #D6A67B 100%);
+  --gradient-primary: linear-gradient(135deg, #5B8EE2 0%, #D6A67B 50%, #EC4899 100%);
 }
 
 /* --- Global Reset & Typography --- */

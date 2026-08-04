@@ -75,7 +75,7 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
             </div>
 
             {/* Floating Circular Badge */}
-            <div className="absolute top-[60%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-[#5B8EE2] to-[#D6A67B] rounded-full flex flex-col items-center justify-center text-white shadow-xl z-20 border-4 border-white animate-pulse" style={{ animationDuration: '4s' }}>
+            <div className="absolute top-[60%] left-[60%] -translate-x-1/2 -translate-y-1/2 w-32 h-32 bg-gradient-to-br from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] rounded-full flex flex-col items-center justify-center text-white shadow-xl z-20 border-4 border-white animate-pulse" style={{ animationDuration: '4s' }}>
               <span className="text-3xl font-extrabold leading-none">10X</span>
               <span className="text-[10px] font-bold uppercase tracking-widest mt-1 text-blue-100">ROI PROVEN</span>
             </div>
@@ -98,7 +98,7 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
             {/* Main Heading */}
             <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight leading-[1.1] mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
               What is <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-[#5B8EE2] via-[#8CB4F5] to-[#D6A67B] bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
                 Digital Marketing?
               </span>
             </h2>
@@ -140,7 +140,7 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
                 onClick={openConsultationModal}
                 className="group relative inline-flex items-center gap-3 font-bold px-8 py-4 rounded-full overflow-hidden bg-[#111827] text-white shadow-[0_8px_30px_rgb(0,0,0,0.15)] hover:shadow-xl hover:-translate-y-1 transition-all duration-300 font-['Plus_Jakarta_Sans',sans-serif]"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                <div className="absolute inset-0 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <span className="relative z-10 text-base tracking-wide">Discover Custom Strategy Options</span>
                 <ArrowUpRight className="w-5 h-5 relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
               </button>

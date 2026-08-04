@@ -58,7 +58,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
           {/* Main Title */}
           <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
             Frequently Asked{' '}
-            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
               Questions
             </span>
           </h2>
@@ -101,7 +101,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
                 onClick={() => setSelectedCategory(cat)}
                 className={`px-5 py-2.5 rounded-full text-xs font-extrabold transition-all duration-300 font-['Plus_Jakarta_Sans',sans-serif] ${
                   selectedCategory === cat
-                    ? 'bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white shadow-md shadow-blue-500/25'
+                    ? 'bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white shadow-md shadow-blue-500/25'
                     : 'bg-[#F8FAFC] text-slate-600 hover:text-[#111827] border border-[#E5E7EB] hover:border-[#5B8EE2]'
                 }`}
               >
@@ -171,7 +171,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
               <p className="text-sm text-slate-500 font-medium">No matching questions found.</p>
               <button
                 onClick={openConsultationModal}
-                className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] text-white text-xs font-bold shadow-md shadow-blue-500/20"
+                className="mt-4 px-6 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white text-xs font-bold shadow-md shadow-blue-500/20"
               >
                 <span>Ask Our Strategy Team Directly</span>
               </button>
@@ -182,7 +182,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
         {/* Premium Light Callout Banner */}
         <div className="mt-14 p-8 sm:p-10 rounded-3xl bg-gradient-to-r from-blue-50/90 via-purple-50/70 to-indigo-50/90 border border-blue-200/80 shadow-xl flex flex-col sm:flex-row items-center justify-between gap-6 relative overflow-hidden">
           <div className="text-center sm:text-left space-y-1 z-10">
-            <h4 className="font-extrabold text-[#111827] text-lg sm:text-xl font-['Plus_Jakarta_Sans',sans-serif]">
+            <h4 className="font-extrabold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent text-lg sm:text-xl font-['Plus_Jakarta_Sans',sans-serif]">
               Have a specialized business requirement?
             </h4>
             <p className="text-xs sm:text-sm text-[#6B7280] font-medium">
@@ -192,7 +192,7 @@ export const FAQSection: React.FC<FAQProps> = ({ faqs, openConsultationModal }) 
           <button
             id="faq-talk-expert-btn"
             onClick={openConsultationModal}
-            className="px-7 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] to-[#D6A67B] hover:from-[#4676C2] hover:to-[#C29367] text-white text-xs sm:text-sm font-extrabold flex items-center gap-2.5 flex-shrink-0 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif] z-10"
+            className="px-7 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-xs sm:text-sm font-extrabold flex items-center gap-2.5 flex-shrink-0 shadow-lg shadow-blue-500/20 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif] z-10"
           >
             <MessageSquare className="w-4 h-4 text-white" />
             <span>Talk to an Expert</span>

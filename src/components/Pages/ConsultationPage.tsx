@@ -40,7 +40,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
             Book Your Free 1-on-1 Growth Strategy Session with{' '}
-            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#8CB4F5] bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
               Lumora Experts
             </span>
           </h1>

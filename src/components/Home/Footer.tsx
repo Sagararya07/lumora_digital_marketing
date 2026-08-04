@@ -61,7 +61,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 2: Solutions */}
           <div className="space-y-4">
-            <h4 className="text-[#111827] font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
+            <h4 className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
               Solutions
             </h4>
             <ul className="space-y-2.5 text-[#6B7280] font-normal">
@@ -76,7 +76,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 3: Industries */}
           <div className="space-y-4">
-            <h4 className="text-[#111827] font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
+            <h4 className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
               Industries
             </h4>
             <ul className="space-y-2.5 text-[#6B7280] font-normal">
@@ -91,7 +91,7 @@ export const Footer: React.FC<FooterProps> = ({
 
           {/* Column 4: Contact Us */}
           <div className="space-y-4">
-            <h4 className="text-[#111827] font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
+            <h4 className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
               Contact Us
             </h4>
             <div className="space-y-3 text-[#6B7280] font-normal">
