@@ -439,6 +439,45 @@ export const initialSiteContent: SiteContent = {
         "CPA Reduction",
         "Scalable Budget Expansion"
       ]
+    },
+{
+            "stepNumber": 6,
+            "title": "A/B Optimization",
+            "description": "A/B testing ad creatives, bidding strategies, and funnel copy to drive down cost-per-lead.",
+            "duration": "Ongoing",
+            "iconName": "Activity",
+            "keyOutputs": [
+                  "A/B Test Results",
+                  "Conversion Optimization",
+                  "CPL Reduction"
+            ]
+      
+    },
+{
+            "stepNumber": 7,
+            "title": "Reporting & Analytics",
+            "description": "Transparent weekly lead attribution reporting and real-time dashboard analytics access.",
+            "duration": "Ongoing",
+            "iconName": "BarChart2",
+            "keyOutputs": [
+                  "Weekly Reports",
+                  "Live Dashboard Access",
+                  "ROI Tracking"
+            ]
+      
+    },
+{
+            "stepNumber": 8,
+            "title": "Growth Scaling",
+            "description": "Re-allocating budget into winning channels and expanding market reach globally.",
+            "duration": "Ongoing",
+            "iconName": "TrendingUp",
+            "keyOutputs": [
+                  "Budget Reallocation",
+                  "Market Expansion",
+                  "Revenue Growth"
+            ]
+      
     }
   ],
   "industries": [
