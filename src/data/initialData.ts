@@ -316,70 +316,338 @@ export const initialSiteContent: SiteContent = {
     }
   ],
   "achievements": [
-    {
-      "id": "case-1",
-      "clientName": "Apex Cloud Solutions",
-      "industry": "B2B SaaS & Cloud Security",
-      "location": "United States & Europe",
-      "metrics": [
-        {
-          "label": "Pipeline Leads",
-          "value": "4,820+",
-          "change": "+280%"
-        },
-        {
-          "label": "Cost Per Lead (CPL)",
-          "value": "$34.20",
-          "change": "-48%"
-        },
-        {
-          "label": "ARR Impact",
-          "value": "$2.4M",
-          "change": "+310%"
-        }
-      ],
-      "challenge": "Apex Cloud was struggling with high Google Ads CPC ($45+) and low demo booking conversion rates from organic search.",
-      "solution": "Implemented a multi-touch LinkedIn B2B retargeting strategy combined with high-intent Google Search exact-match campaigns and interactive ROI calculators.",
-      "results": "Generated 4,820+ qualified enterprise demo requests over 6 months while slashing CPL by 48%.",
-      "testimonial": {
-        "quote": "Lumora transformed our pipeline within 90 days. They are by far the most data-driven marketing partner we have worked with.",
-        "author": "Marcus Vance",
-        "role": "VP of Marketing, Apex Cloud"
+      {
+          "id": "case-1",
+          "clientName": "MedTech Solutions",
+          "industry": "Healthcare",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "300+",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Increased patient acquisition through targeted local SEO and Google Ads.",
+          "solution": "Increased patient acquisition through targeted local SEO and Google Ads.",
+          "results": "Our data-driven approach resulted in a 300+ increase in monthly patient inquiries, optimizing their local presence and reducing Cost Per Acquisition (CPA) by 40%.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Healthcare. Highly recommended!",
+              "author": "VP of Marketing, MedTech Solutions",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-2",
+          "clientName": "Dental Care Network",
+          "industry": "Healthcare",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "150%",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Boosted online bookings by 150% in 6 months.",
+          "solution": "Boosted online bookings by 150% in 6 months.",
+          "results": "We completely revamped their booking funnel and ran hyper-local Facebook and Instagram campaigns, leading to a massive 150% surge in booked appointments.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Healthcare. Highly recommended!",
+              "author": "VP of Marketing, Dental Care Network",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-3",
+          "clientName": "Global Pharma Inc.",
+          "industry": "Healthcare",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "$2M+",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Generated $2M+ in pipeline for new medical device launch.",
+          "solution": "Generated $2M+ in pipeline for new medical device launch.",
+          "results": "Through a combination of LinkedIn B2B lead generation and programmatic display ads, we successfully launched their new device to hospital administrators globally.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Healthcare. Highly recommended!",
+              "author": "VP of Marketing, Global Pharma Inc.",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-4",
+          "clientName": "CloudScale SaaS",
+          "industry": "B2B & IT SaaS",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "3x",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
+          "solution": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
+          "results": "We implemented a multi-touch ABM strategy on LinkedIn, increasing demo requests by 3x and closing $5M+ in new annual recurring revenue.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to B2B & IT SaaS. Highly recommended!",
+              "author": "VP of Marketing, CloudScale SaaS",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-5",
+          "clientName": "CyberDefend Pro",
+          "industry": "B2B & IT SaaS",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "45%",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Reduced cost-per-lead by 45% in highly competitive cyber security space.",
+          "solution": "Reduced cost-per-lead by 45% in highly competitive cyber security space.",
+          "results": "By optimizing Google Search campaigns and creating high-converting landing pages, we slashed CPL by 45% while doubling lead volume.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to B2B & IT SaaS. Highly recommended!",
+              "author": "VP of Marketing, CyberDefend Pro",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-6",
+          "clientName": "DataSync Platforms",
+          "industry": "B2B & IT SaaS",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "500+",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Secured 500+ webinar attendees for product launch.",
+          "solution": "Secured 500+ webinar attendees for product launch.",
+          "results": "We utilized Facebook and LinkedIn ads to drive a highly targeted audience to their virtual product launch, resulting in a record-breaking 500+ attendees.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to B2B & IT SaaS. Highly recommended!",
+              "author": "VP of Marketing, DataSync Platforms",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-7",
+          "clientName": "Luxury Estates Dubai",
+          "industry": "Real Estate",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "$50M+",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Sold $50M+ in luxury off-plan properties through Facebook lead gen.",
+          "solution": "Sold $50M+ in luxury off-plan properties through Facebook lead gen.",
+          "results": "We created immersive video ads showcasing luxury properties and targeted high-net-worth individuals, resulting in over $50M in closed sales.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Real Estate. Highly recommended!",
+              "author": "VP of Marketing, Luxury Estates Dubai",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-8",
+          "clientName": "Urban Living Realty",
+          "industry": "Real Estate",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "200%",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Increased agent inquiries by 200% via Google Ads.",
+          "solution": "Increased agent inquiries by 200% via Google Ads.",
+          "results": "We completely restructured their Google Ads account, focusing on high-intent search terms. This led to a 200% increase in qualified inquiries for their agents.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Real Estate. Highly recommended!",
+              "author": "VP of Marketing, Urban Living Realty",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-9",
+          "clientName": "Commercial Spaces Ltd.",
+          "industry": "Real Estate",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "40%",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Increased commercial lease applications by 40%.",
+          "solution": "Increased commercial lease applications by 40%.",
+          "results": "By leveraging LinkedIn Ads targeting business owners and office managers, we boosted applications for commercial leases by 40% in just 3 months.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Real Estate. Highly recommended!",
+              "author": "VP of Marketing, Commercial Spaces Ltd.",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-10",
+          "clientName": "Fashion Nova UK",
+          "industry": "E-commerce",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "5x",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "5x Return on Ad Spend (ROAS) during Black Friday.",
+          "solution": "5x Return on Ad Spend (ROAS) during Black Friday.",
+          "results": "We designed a comprehensive cross-channel strategy (Facebook, Instagram, Google Shopping) that resulted in a massive 5x ROAS during their biggest sale of the year.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to E-commerce. Highly recommended!",
+              "author": "VP of Marketing, Fashion Nova UK",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-11",
+          "clientName": "Organic Skincare Co.",
+          "industry": "E-commerce",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "60%",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Increased repeat customer rate by 60% through email marketing.",
+          "solution": "Increased repeat customer rate by 60% through email marketing.",
+          "results": "We implemented automated email flows (abandoned cart, welcome series, win-back) that drastically improved customer retention and increased repeat purchases by 60%.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to E-commerce. Highly recommended!",
+              "author": "VP of Marketing, Organic Skincare Co.",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-12",
+          "clientName": "Tech Gadgets Store",
+          "industry": "E-commerce",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "2x",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Doubled conversion rate through CRO and TikTok Ads.",
+          "solution": "Doubled conversion rate through CRO and TikTok Ads.",
+          "results": "We optimized their product pages for conversions and launched engaging TikTok ad campaigns, effectively doubling their overall website conversion rate.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to E-commerce. Highly recommended!",
+              "author": "VP of Marketing, Tech Gadgets Store",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-13",
+          "clientName": "SteelWorks Industrial",
+          "industry": "Manufacturing",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "$10M+",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Generated $10M+ in B2B pipeline via LinkedIn & SEO.",
+          "solution": "Generated $10M+ in B2B pipeline via LinkedIn & SEO.",
+          "results": "We combined targeted LinkedIn outreach with technical SEO to capture high-value search intent, generating over $10M in qualified B2B pipeline.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Manufacturing. Highly recommended!",
+              "author": "VP of Marketing, SteelWorks Industrial",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-14",
+          "clientName": "AutoParts Global",
+          "industry": "Manufacturing",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "85%",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Increased distributor inquiries by 85% globally.",
+          "solution": "Increased distributor inquiries by 85% globally.",
+          "results": "By running multi-language Google Ads campaigns across Europe and Asia, we successfully increased inquiries from international distributors by 85%.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Manufacturing. Highly recommended!",
+              "author": "VP of Marketing, AutoParts Global",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=800"
+      },
+      {
+          "id": "case-15",
+          "clientName": "EcoPackaging Solutions",
+          "industry": "Manufacturing",
+          "location": "Global",
+          "metrics": [
+              {
+                  "label": "Key Result",
+                  "value": "3x",
+                  "change": "+100%"
+              }
+          ],
+          "challenge": "Tripled organic traffic in 8 months.",
+          "solution": "Tripled organic traffic in 8 months.",
+          "results": "Our comprehensive content strategy and technical SEO improvements resulted in a 3x increase in organic traffic, establishing them as an industry thought leader.",
+          "testimonial": {
+              "quote": "Cypher Swift completely transformed our approach to Manufacturing. Highly recommended!",
+              "author": "VP of Marketing, EcoPackaging Solutions",
+              "role": "Client"
+          },
+          "image_url": "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&q=80&w=800"
       }
-    },
-    {
-      "id": "case-2",
-      "clientName": "LuxeLiving Realty",
-      "industry": "Luxury Real Estate",
-      "location": "Dubai & UK",
-      "metrics": [
-        {
-          "label": "Properties Sold",
-          "value": "$48M+",
-          "change": "+190%"
-        },
-        {
-          "label": "HNWI Buyers Reach",
-          "value": "1.2M",
-          "change": "+450%"
-        },
-        {
-          "label": "Average ROAS",
-          "value": "14.2x",
-          "change": "+220%"
-        }
-      ],
-      "challenge": "Targeting ultra-high-net-worth international investors interested in pre-launch luxury Dubai villas.",
-      "solution": "Engineered multi-language Meta video campaigns targeting luxury lifestyle interests paired with instant WhatsApp lead screening.",
-      "results": "Closed 32 luxury villa bookings within 4 months with an unprecedented 14.2x return on ad spend.",
-      "testimonial": {
-        "quote": "Their ability to locate international buyers who actually convert on multi-million dollar properties is unmatched.",
-        "author": "Elena Rostova",
-        "role": "Managing Director, LuxeLiving"
-      }
-    }
   ],
-  "process": [
+    "process": [
     {
       "stepNumber": 1,
       "title": "Requirement & Competitor Analysis",
