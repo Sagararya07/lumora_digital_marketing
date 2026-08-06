@@ -526,71 +526,51 @@ export const initialDynamicPages: DynamicPage[] = [
     "slug": "lead-generation",
     "title": "Lead Generation Services - High Converting B2B & B2C Funnels",
     "pageType": "service",
-    "seo": {
-      "metaTitle": "Lead Generation Agency | Scale Qualified Sales Leads | Lumora",
-      "metaDescription": "Generate pre-qualified B2B and B2C sales inquiries with Lumora’s high-converting lead funnels, targeted ads, and automated CRM routing.",
-      "keywords": "lead generation agency, b2b leads, qualified sales leads, lead funnel agency",
-      "canonicalUrl": "https://lumora.ai/lead-generation",
-      "ogTitle": "Lead Generation Agency - Scale Your Qualified Inquiries",
-      "ogDescription": "Turn anonymous traffic into sales-ready leads with custom funnels.",
-      "ogImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200",
-      "twitterCard": "summary_large_image",
-      "schemaType": "Service",
-      "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Lead Generation Services\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"High-converting sales lead generation for businesses worldwide.\"}",
-      "robotsDirective": "index, follow"
-    },
     "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.730Z",
-    "updatedAt": "2026-08-01T13:27:12.730Z",
     "sections": [
       {
         "id": "sec-overview",
         "type": "overview",
         "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel demand generation engine. Cypher Swift delivers Demand Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel lead generation engine. Cypher Swift delivers Lead Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
+        "mediaUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
         "title": "Lead Generation Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "content": "Explore our specialized lead generation products designed for exponential business growth.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "B2B Appointment Setting",
+            "description": "Securing highly qualified meetings with key decision-makers.",
+            "iconName": "Target"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "Inbound Funnel Optimization",
+            "description": "Maximizing the conversion rates of your existing website traffic.",
+            "iconName": "BarChart3"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "Account-Based Marketing",
+            "description": "Hyper-targeted campaigns for high-value enterprise clients.",
+            "iconName": "Briefcase"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "Cold Email Outreach",
+            "description": "Automated, personalized email sequences that get replies.",
+            "iconName": "Mail"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "Lead Scoring & CRM Sync",
+            "description": "Seamlessly routing warm leads directly to your sales team.",
+            "iconName": "Workflow"
           }
         ]
       },
@@ -602,120 +582,77 @@ export const initialDynamicPages: DynamicPage[] = [
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "SaaS Enterprise Lead Surge",
+            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200",
+            "description": "By implementing a comprehensive B2B lead generation funnel, we increased qualified demos by 250% in 3 months for a leading enterprise SaaS provider.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Funnel Mapping",
+                "iconName": "Map"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Target Identification",
+                "iconName": "Target"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Lead Capture Setup",
+                "iconName": "MousePointerClick"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "CRM Integration",
+                "iconName": "Database"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "title": "Automated Nurturing",
+                "iconName": "Workflow"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
-              },
-              {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
+                "title": "ROI Tracking",
+                "iconName": "BarChart3"
               }
             ]
           },
           {
             "id": "cs-2",
-            "title": "B2B Lead Generation Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated lead generation funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
+            "title": "Real Estate Investor Acquisition",
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "We built an aggressive local lead generation campaign that decreased the Cost Per Lead (CPL) by 40% while doubling the closing rate for a commercial real estate firm.",
             "points": [
               {
                 "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
-                "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
-              },
-              {
-                "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
+                "title": "Local Targeting",
                 "iconName": "MapPin"
               },
               {
                 "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
-                "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
-              },
-              {
-                "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
-              },
-              {
-                "id": "p5",
-                "title": "Cross-Platform ROI",
+                "title": "High-Intent Ads",
                 "iconName": "TrendingUp"
               },
               {
+                "id": "p3",
+                "title": "Landing Page A/B Testing",
+                "iconName": "Sparkles"
+              },
+              {
+                "id": "p4",
+                "title": "Speed-to-Lead Automation",
+                "iconName": "Zap"
+              },
+              {
+                "id": "p5",
+                "title": "Sales Handoff",
+                "iconName": "Users"
+              },
+              {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Performance Scaling",
+                "iconName": "Activity"
               }
             ]
           }
@@ -724,75 +661,55 @@ export const initialDynamicPages: DynamicPage[] = [
     ]
   },
   {
-    "id": "page-social-media",
+    "id": "page-social-media-marketing",
     "slug": "social-media-marketing",
     "title": "Social Media Marketing - Build Brand Authority",
     "pageType": "service",
-    "seo": {
-      "metaTitle": "Social Media Marketing Agency | Lumora",
-      "metaDescription": "Drive organic community engagement and high-conversion paid social campaigns across Facebook, Instagram, LinkedIn, YouTube, and X.",
-      "keywords": "social media marketing, paid social, organic social, influencer marketing",
-      "canonicalUrl": "https://lumora.ai/social-media-marketing",
-      "ogTitle": "Social Media Marketing Agency - Build Brand Authority",
-      "ogDescription": "Drive organic community engagement and high-conversion paid social campaigns.",
-      "ogImage": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=1200",
-      "twitterCard": "summary_large_image",
-      "schemaType": "Service",
-      "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Social Media Marketing\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"High-conversion social media marketing and brand authority.\"}",
-      "robotsDirective": "index, follow"
-    },
     "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
     "sections": [
       {
         "id": "sec-overview",
         "type": "overview",
-        "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel social media marketing engine. Cypher Swift delivers Social Media Marketing services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "title": "Igniting Brand Conversations and Community Growth.",
+        "content": "Social Media is the pulse of modern consumer behavior. Cypher Swift provides elite Social Media Marketing services that transform passive scrollers into active brand advocates. From crafting viral TikTok strategies to building B2B thought leadership on LinkedIn, our data-backed approach ensures your social presence drives measurable engagement, brand loyalty, and direct revenue.",
+        "mediaUrl": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
-        "title": "Social Media Marketing Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "title": "Social Media Marketing Services",
+        "content": "Complete solutions to dominate your industry's social landscape.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "Content Strategy & Creation",
+            "description": "High-end graphics, Reels, and TikToks that demand attention.",
+            "iconName": "Sparkles"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "Community Management",
+            "description": "Active engagement, responding to comments, and building a loyal following.",
+            "iconName": "Users"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "Paid Social Amplification",
+            "description": "Strategic ad spend to boost your best-performing organic content.",
+            "iconName": "TrendingUp"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "Influencer Collaborations",
+            "description": "Partnering with industry voices to expand your brand's reach.",
+            "iconName": "Star"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "Social Listening & Analytics",
+            "description": "Tracking brand sentiment and competitor moves in real-time.",
+            "iconName": "BarChart3"
           }
         ]
       },
@@ -800,124 +717,43 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
-        "content": "How we helped scale a global enterprise.",
+        "content": "Real results from our social media campaigns.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "E-Commerce Lifestyle Brand Explosion",
+            "bgImageUrl": "https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=1200",
+            "description": "By revamping their Instagram and TikTok presence with UGC (User Generated Content) and interactive stories, we grew their following by 150k in 6 months and increased direct social sales by 400%.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
-              },
-              {
-                "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
-              },
-              {
-                "id": "p3",
-                "title": "Influencer Partnerships",
+                "title": "UGC Campaigns",
                 "iconName": "Users"
               },
               {
-                "id": "p4",
-                "title": "Viral Video Strategy",
+                "id": "p2",
+                "title": "Viral Reel Strategy",
                 "iconName": "Video"
               },
               {
-                "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "id": "p3",
+                "title": "Hashtag Optimization",
+                "iconName": "Hash"
               },
               {
-                "id": "p6",
-                "title": "Sentiment Analysis",
+                "id": "p4",
+                "title": "Community Building",
                 "iconName": "Heart"
               },
               {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
-              }
-            ]
-          },
-          {
-            "id": "cs-2",
-            "title": "B2B Social Media Marketing Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated social media marketing funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
                 "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
+                "title": "Social Commerce",
+                "iconName": "ShoppingBag"
               },
               {
                 "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
-              },
-              {
-                "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
-                "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
-              },
-              {
-                "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
-              },
-              {
-                "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
-              },
-              {
-                "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Monthly Analytics",
+                "iconName": "BarChart3"
               }
             ]
           }
@@ -927,74 +763,54 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-seo",
-    "slug": "seo-growth-engine",
+    "slug": "seo",
     "title": "Search Engine Optimization (SEO) - Dominate Organic Search",
     "pageType": "service",
-    "seo": {
-      "metaTitle": "SEO Agency | Dominate Organic Search | Lumora",
-      "metaDescription": "Dominate Google search results with technical SEO, content strategy, and high-authority link building that drives organic traffic.",
-      "keywords": "seo agency, search engine optimization, technical seo, link building",
-      "canonicalUrl": "https://lumora.ai/seo-growth-engine",
-      "ogTitle": "SEO Agency - Dominate Organic Search",
-      "ogDescription": "Dominate Google search results with technical SEO and content strategy.",
-      "ogImage": "https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?w=1200",
-      "twitterCard": "summary_large_image",
-      "schemaType": "Service",
-      "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Search Engine Optimization\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"Technical SEO, content strategy, and high-authority link building.\"}",
-      "robotsDirective": "index, follow"
-    },
     "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
     "sections": [
       {
         "id": "sec-overview",
         "type": "overview",
-        "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel search engine optimization (seo) engine. Cypher Swift delivers Search Engine Optimization (SEO) services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "title": "Securing the Top Spot When Customers Search.",
+        "content": "Organic search visibility is the most sustainable source of long-term revenue. Cypher Swift's SEO experts utilize technical precision, authoritative backlink building, and semantic content strategies to push your brand to the top of Google. We don't just chase traffic; we target high-intent keywords that bring buyers directly to your digital doorstep.",
+        "mediaUrl": "https://images.unsplash.com/photo-1432888117247-2b0e6dfa0698?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
-        "title": "Search Engine Optimization (SEO) Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "title": "Comprehensive SEO Strategies",
+        "content": "Data-driven techniques to conquer search engine rankings.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "Technical SEO Audits",
+            "description": "Fixing site speed, crawl errors, and indexability issues.",
+            "iconName": "Code"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "On-Page Optimization",
+            "description": "Structuring content, headers, and metadata for maximum relevance.",
+            "iconName": "FileText"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "High-Authority Link Building",
+            "description": "Acquiring powerful backlinks from trusted industry domains.",
+            "iconName": "Link"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "Local SEO & GMB Profiles",
+            "description": "Dominating the map pack for local service businesses.",
+            "iconName": "MapPin"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "SEO Content Creation",
+            "description": "Publishing semantic, helpful content that Google loves.",
+            "iconName": "PenTool"
           }
         ]
       },
@@ -1002,124 +818,43 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
-        "content": "How we helped scale a global enterprise.",
+        "content": "Achieving Page 1 dominance.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "National Retailer Traffic Boom",
+            "bgImageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200",
+            "description": "Through a massive technical cleanup and targeted long-tail keyword strategy, we increased organic non-branded traffic by 310%, leading to a massive spike in online revenue.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
+                "title": "Technical Audit",
                 "iconName": "Search"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Keyword Mapping",
+                "iconName": "Map"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Content Pruning",
+                "iconName": "Scissors"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "Link Outreach",
+                "iconName": "Link"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
+                "title": "Core Web Vitals",
                 "iconName": "Activity"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
-              },
-              {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
-              }
-            ]
-          },
-          {
-            "id": "cs-2",
-            "title": "B2B Search Engine Optimization (SEO) Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated search engine optimization (seo) funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
-                "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
-              },
-              {
-                "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
-              },
-              {
-                "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
-                "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
-              },
-              {
-                "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
-              },
-              {
-                "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
-              },
-              {
-                "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "SERP Tracking",
+                "iconName": "BarChart3"
               }
             ]
           }
@@ -1130,73 +865,53 @@ export const initialDynamicPages: DynamicPage[] = [
   {
     "id": "page-performance-marketing",
     "slug": "performance-marketing",
-    "title": "Performance Marketing - AI-Optimized Ad Campaigns",
+    "title": "Performance Marketing - AI-Optimized ROI Campaigns",
     "pageType": "service",
-    "seo": {
-      "metaTitle": "Performance Marketing Agency | Lumora",
-      "metaDescription": "AI-optimized ad campaigns across Google, Meta, and LinkedIn laser-focused on ROI, sales, and conversions.",
-      "keywords": "performance marketing, google ads, paid ads, roas",
-      "canonicalUrl": "https://lumora.ai/performance-marketing",
-      "ogTitle": "Performance Marketing Agency - Maximize ROI",
-      "ogDescription": "AI-optimized ad campaigns across Google, Meta, and LinkedIn.",
-      "ogImage": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1200",
-      "twitterCard": "summary_large_image",
-      "schemaType": "Service",
-      "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Performance Marketing\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"AI-optimized ad campaigns laser-focused on ROI and conversions.\"}",
-      "robotsDirective": "index, follow"
-    },
     "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
     "sections": [
       {
         "id": "sec-overview",
         "type": "overview",
-        "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel performance marketing engine. Cypher Swift delivers Performance Marketing services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "title": "Data-Driven Campaigns Where Every Dollar Counts.",
+        "content": "Performance marketing is about measurable, scalable results. Cypher Swift deploys aggressive, omnichannel performance campaigns driven by AI algorithms and rigorous A/B testing. We focus strictly on KPIs—CPA, ROAS, and LTV—ensuring your marketing budget acts as a precise investment vehicle for immediate revenue growth.",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
-        "title": "Performance Marketing Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "title": "Performance Marketing Strategies",
+        "content": "Unlocking unprecedented ROI with programmatic precision.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "Programmatic Advertising",
+            "description": "Real-time automated bidding across global ad exchanges.",
+            "iconName": "Cpu"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "Conversion Rate Optimization",
+            "description": "Continuous multivariate testing of landing pages and funnels.",
+            "iconName": "MousePointerClick"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "Cross-Channel Attribution",
+            "description": "Understanding the exact touchpoints that drive a sale.",
+            "iconName": "GitMerge"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "Dynamic Creative Optimization",
+            "description": "AI-generated ad variants tailored to the individual user.",
+            "iconName": "Sparkles"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "Affiliate & Partner Marketing",
+            "description": "Leveraging third-party networks for cost-effective acquisition.",
+            "iconName": "Users"
           }
         ]
       },
@@ -1204,124 +919,43 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
-        "content": "How we helped scale a global enterprise.",
+        "content": "Scaling revenue with mathematical precision.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "FinTech App User Acquisition",
+            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+            "description": "By implementing a strict CPA-focused programmatic campaign, we scaled a new FinTech app to 100,000 active users within 4 months while reducing the cost-per-install by 65%.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Algorithm Training",
+                "iconName": "Cpu"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "A/B Testing",
+                "iconName": "SplitSquareHorizontal"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Attribution Modeling",
+                "iconName": "GitMerge"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "LTV Analysis",
+                "iconName": "BarChart3"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
-              },
-              {
-                "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
-              },
-              {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
-              }
-            ]
-          },
-          {
-            "id": "cs-2",
-            "title": "B2B Performance Marketing Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated performance marketing funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
-                "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
-              },
-              {
-                "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
-              },
-              {
-                "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
-                "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
-              },
-              {
-                "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
-              },
-              {
-                "id": "p5",
-                "title": "Cross-Platform ROI",
+                "title": "Budget Scaling",
                 "iconName": "TrendingUp"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Fraud Prevention",
+                "iconName": "ShieldCheck"
               }
             ]
           }
@@ -1332,73 +966,53 @@ export const initialDynamicPages: DynamicPage[] = [
   {
     "id": "page-retargeting-marketing",
     "slug": "retargeting-marketing",
-    "title": "Retargeting Marketing - Re-engage Lost Visitors",
+    "title": "Retargeting Marketing - Re-engage & Convert Lost Visitors",
     "pageType": "service",
-    "seo": {
-      "metaTitle": "Retargeting Marketing Agency | Lumora",
-      "metaDescription": "Re-engage dropped website visitors across display networks and social feeds to boost conversion rates.",
-      "keywords": "retargeting marketing, remarketing, display ads, abandoned cart",
-      "canonicalUrl": "https://lumora.ai/retargeting-marketing",
-      "ogTitle": "Retargeting Marketing Agency - Boost Conversions",
-      "ogDescription": "Re-engage dropped website visitors across display networks and social feeds.",
-      "ogImage": "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=1200",
-      "twitterCard": "summary_large_image",
-      "schemaType": "Service",
-      "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"Retargeting Marketing\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"Re-engage dropped website visitors across display networks to boost conversion rates.\"}",
-      "robotsDirective": "index, follow"
-    },
     "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
     "sections": [
       {
         "id": "sec-overview",
         "type": "overview",
-        "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel retargeting marketing engine. Cypher Swift delivers Retargeting Marketing services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "title": "Don't Let High-Intent Visitors Slip Away.",
+        "content": "Over 97% of visitors leave a website without taking action. Cypher Swift's Retargeting Marketing services ensure your brand stays top-of-mind. We use advanced tracking pixels and dynamic ad formats to re-engage bounced traffic across social networks, search engines, and partner sites, guiding them back to your funnel to complete their purchase or inquiry.",
+        "mediaUrl": "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
-        "title": "Retargeting Marketing Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "title": "Advanced Retargeting Solutions",
+        "content": "Recapture lost revenue with persistent, tailored messaging.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "Dynamic Product Ads",
+            "description": "Showing users the exact products they viewed but didn't buy.",
+            "iconName": "ShoppingBag"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "Cross-Device Tracking",
+            "description": "Reaching users seamlessly across mobile, tablet, and desktop.",
+            "iconName": "MonitorSmartphone"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "Cart Abandonment Campaigns",
+            "description": "High-urgency ads designed to close the sale immediately.",
+            "iconName": "ShoppingCart"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "Video Sequence Retargeting",
+            "description": "Moving users down the funnel with a planned series of video ads.",
+            "iconName": "Video"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "Custom CRM Audiences",
+            "description": "Uploading email lists to retarget existing or lapsed customers.",
+            "iconName": "Database"
           }
         ]
       },
@@ -1406,124 +1020,43 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
-        "content": "How we helped scale a global enterprise.",
+        "content": "Bringing buyers back to the checkout line.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "Luxury Apparel Cart Recovery",
+            "bgImageUrl": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1200",
+            "description": "We implemented a dynamic 3-step retargeting sequence across Facebook and Google Display for a luxury clothing brand, recovering $450k in abandoned cart revenue in a single quarter.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Pixel Configuration",
+                "iconName": "Code"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
-              },
-              {
-                "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
-              },
-              {
-                "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
-              },
-              {
-                "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
-              },
-              {
-                "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
-              },
-              {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
-              }
-            ]
-          },
-          {
-            "id": "cs-2",
-            "title": "B2B Retargeting Marketing Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated retargeting marketing funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
-                "id": "p5",
-                "title": "CRM Integration",
+                "title": "Dynamic Feeds",
                 "iconName": "Database"
               },
               {
-                "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
-              },
-              {
-                "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
                 "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
+                "title": "Urgency Copywriting",
+                "iconName": "PenTool"
               },
               {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Frequency Capping",
+                "iconName": "Clock"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Offer Testing",
+                "iconName": "Sparkles"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "ROAS Tracking",
+                "iconName": "TrendingUp"
               }
             ]
           }
@@ -1536,71 +1069,51 @@ export const initialDynamicPages: DynamicPage[] = [
     "slug": "ai-marketing-automation",
     "title": "AI Marketing Automation - Smart Workflows & Nurturing",
     "pageType": "service",
-    "seo": {
-      "metaTitle": "AI Marketing Automation Agency | Lumora",
-      "metaDescription": "Smart CRM workflows, automated lead nurturing, and AI chatbots to convert visitors faster.",
-      "keywords": "ai marketing automation, crm workflows, chatbots, automated nurturing",
-      "canonicalUrl": "https://lumora.ai/ai-marketing-automation",
-      "ogTitle": "AI Marketing Automation Agency - Convert Faster",
-      "ogDescription": "Smart CRM workflows, automated lead nurturing, and AI chatbots.",
-      "ogImage": "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=1200",
-      "twitterCard": "summary_large_image",
-      "schemaType": "Service",
-      "schemaData": "{\"@context\":\"https://schema.org\",\"@type\":\"Service\",\"name\":\"AI Marketing Automation\",\"provider\":{\"@type\":\"Organization\",\"name\":\"Lumora\"},\"description\":\"Smart CRM workflows, automated lead nurturing, and AI chatbots.\"}",
-      "robotsDirective": "index, follow"
-    },
     "isPublished": true,
-    "createdAt": "2026-08-01T13:27:12.731Z",
-    "updatedAt": "2026-08-01T13:27:12.731Z",
     "sections": [
       {
         "id": "sec-overview",
         "type": "overview",
-        "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel ai marketing automation engine. Cypher Swift delivers AI Marketing Automation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "title": "Scaling Your Sales with Artificial Intelligence.",
+        "content": "Manual lead nurturing is slow and prone to errors. Cypher Swift integrates cutting-edge AI Marketing Automation tools that streamline your entire customer journey. From intelligent chatbots that qualify leads 24/7 to predictive email sequencing and automated CRM updates, we build smart infrastructures that allow your team to focus on closing, not chasing.",
+        "mediaUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
-        "title": "AI Marketing Automation Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "title": "Intelligent Automation Services",
+        "content": "Eliminate repetitive tasks and hyper-personalize customer interactions.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "Predictive Lead Scoring",
+            "description": "AI algorithms that rank leads based on their likelihood to close.",
+            "iconName": "Target"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "Conversational AI Chatbots",
+            "description": "Smart bots that answer FAQs and book meetings automatically.",
+            "iconName": "MessageSquare"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "Automated Email Journeys",
+            "description": "Drip campaigns that adapt based on user behavior and triggers.",
+            "iconName": "Mail"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "CRM Architecture",
+            "description": "Structuring HubSpot/Salesforce for maximum automation efficiency.",
+            "iconName": "Database"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "Omnichannel Sync",
+            "description": "Ensuring marketing data flows perfectly into sales pipelines.",
+            "iconName": "Workflow"
           }
         ]
       },
@@ -1608,124 +1121,43 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
-        "content": "How we helped scale a global enterprise.",
+        "content": "Working smarter, not harder.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "B2B Tech Company Pipeline Automation",
+            "bgImageUrl": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200",
+            "description": "By deploying a customized HubSpot AI workflow and an intelligent qualification bot, we reduced their sales cycle length by 35% and saved the sales team 20 hours per week in manual entry.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Workflow Mapping",
+                "iconName": "Map"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Bot Scripting",
+                "iconName": "Code"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
-              },
-              {
-                "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
-              },
-              {
-                "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
-              },
-              {
-                "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
-              },
-              {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
-              }
-            ]
-          },
-          {
-            "id": "cs-2",
-            "title": "B2B AI Marketing Automation Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated ai marketing automation funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
-                "id": "p5",
                 "title": "CRM Integration",
                 "iconName": "Database"
               },
               {
-                "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
-              },
-              {
-                "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
-                "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
-              },
-              {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Behavioral Triggers",
+                "iconName": "Zap"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Sales Alignment",
+                "iconName": "Users"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Optimization",
+                "iconName": "Activity"
               }
             ]
           }
@@ -1743,51 +1175,46 @@ export const initialDynamicPages: DynamicPage[] = [
       {
         "id": "sec-overview",
         "type": "overview",
-        "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel paid advertising campaigns services engine. Cypher Swift delivers Paid Advertising Campaigns Services services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "title": "Instant Visibility. Immediate Revenue.",
+        "content": "When you need fast, scalable results, nothing beats precision Paid Advertising. Cypher Swift manages high-budget PPC campaigns across Google Ads, Microsoft Ads, and premium display networks. We focus on rigorous keyword research, compelling ad copy, and relentless bid optimization to guarantee that you acquire customers at the lowest possible cost.",
+        "mediaUrl": "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
-        "title": "Paid Advertising Campaigns Services Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "title": "PPC & Display Solutions",
+        "content": "Maximize your ad spend with data-driven paid search strategies.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "Search Engine Marketing (SEM)",
+            "description": "Capturing high-intent searches on Google and Bing.",
+            "iconName": "Search"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "Display Network Campaigns",
+            "description": "Building brand awareness with visually striking banner ads.",
+            "iconName": "Image"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "Video Ads (YouTube)",
+            "description": "Engaging pre-roll and mid-roll video campaigns.",
+            "iconName": "Video"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "Shopping Ads (E-commerce)",
+            "description": "Showcasing your product inventory directly in search results.",
+            "iconName": "ShoppingBag"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "A/B Copy Testing",
+            "description": "Continuously refining ad headlines and descriptions for higher CTR.",
+            "iconName": "PenTool"
           }
         ]
       },
@@ -1795,124 +1222,43 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
-        "content": "How we helped scale a global enterprise.",
+        "content": "Dominating the paid search landscape.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "Legal Firm Lead Generation",
+            "bgImageUrl": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1200",
+            "description": "In a highly competitive market, we restructured a personal injury law firm's Google Ads account, implementing negative keyword lists and bid modifiers to decrease their Cost Per Acquisition by 55%.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
+                "title": "Keyword Audit",
                 "iconName": "Search"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Negative Keywords",
+                "iconName": "MinusCircle"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Ad Copy Writing",
+                "iconName": "PenTool"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
+                "title": "Landing Pages",
+                "iconName": "Layout"
               },
               {
                 "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
+                "title": "Call Tracking",
+                "iconName": "Phone"
               },
               {
                 "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
-              },
-              {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
-              }
-            ]
-          },
-          {
-            "id": "cs-2",
-            "title": "B2B Paid Advertising Campaigns Services Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated paid advertising campaigns services funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
-                "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
-              },
-              {
-                "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
-              },
-              {
-                "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
-                "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
-              },
-              {
-                "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
-              },
-              {
-                "id": "p5",
-                "title": "Cross-Platform ROI",
+                "title": "Bid Adjustments",
                 "iconName": "TrendingUp"
-              },
-              {
-                "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
               }
             ]
           }
@@ -1930,51 +1276,46 @@ export const initialDynamicPages: DynamicPage[] = [
       {
         "id": "sec-overview",
         "type": "overview",
-        "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel target audience reach services engine. Cypher Swift delivers Target Audience Reach Services services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "title": "Connecting Your Brand with the People Who Matter.",
+        "content": "Marketing is useless if it's not seen by the right eyes. Cypher Swift's Target Audience Reach Services utilize advanced demographic, psychographic, and behavioral profiling to put your brand directly in front of your ideal customers. We leverage big data to eliminate wasted impressions and ensure your message resonates with those most likely to convert.",
+        "mediaUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
-        "title": "Target Audience Reach Services Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "title": "Audience Profiling & Penetration",
+        "content": "Scientifically identifying and acquiring your perfect customer.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "Buyer Persona Development",
+            "description": "Creating detailed profiles of your ideal target customers.",
+            "iconName": "UserCheck"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "Lookalike Audiences",
+            "description": "Finding new users who share traits with your best existing clients.",
+            "iconName": "Users"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "Geo-Fencing & Hyper-Local",
+            "description": "Targeting users within specific physical boundaries.",
+            "iconName": "MapPin"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "Behavioral Targeting",
+            "description": "Serving ads based on a user's browsing history and interests.",
+            "iconName": "Target"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "B2B Firmographic Targeting",
+            "description": "Reaching decision-makers based on company size, revenue, and job title.",
+            "iconName": "Briefcase"
           }
         ]
       },
@@ -1982,124 +1323,43 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
-        "content": "How we helped scale a global enterprise.",
+        "content": "Hitting the bullseye on customer acquisition.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "Niche Software Market Penetration",
+            "bgImageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200",
+            "description": "By utilizing highly specific LinkedIn firmographic targeting and AI-built lookalike audiences, we successfully introduced a niche software product to 500+ C-level executives in the manufacturing sector.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
-                "iconName": "Search"
+                "title": "Persona Mapping",
+                "iconName": "UserCheck"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
-              },
-              {
-                "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
-              },
-              {
-                "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
-              },
-              {
-                "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
-              },
-              {
-                "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
-              },
-              {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
-              }
-            ]
-          },
-          {
-            "id": "cs-2",
-            "title": "B2B Target Audience Reach Services Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated target audience reach services funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
-                "id": "p5",
-                "title": "CRM Integration",
+                "title": "Data Harvesting",
                 "iconName": "Database"
               },
               {
-                "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
-              },
-              {
-                "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
                 "id": "p3",
-                "title": "Retargeting Pixels",
-                "iconName": "Eye"
+                "title": "List Segmentation",
+                "iconName": "List"
               },
               {
                 "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
+                "title": "Custom Messaging",
+                "iconName": "MessageSquare"
               },
               {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Omnichannel Delivery",
+                "iconName": "Globe"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Conversion Analysis",
+                "iconName": "BarChart3"
               }
             ]
           }
@@ -2117,51 +1377,46 @@ export const initialDynamicPages: DynamicPage[] = [
       {
         "id": "sec-overview",
         "type": "overview",
-        "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel influencer marketing services engine. Cypher Swift delivers Influencer Marketing Services services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
+        "title": "Borrowing Trust to Accelerate Brand Growth.",
+        "content": "Consumers trust recommendations from people they admire. Cypher Swift manages end-to-end Influencer Marketing campaigns, connecting your brand with vetted macro and micro-influencers whose audiences align perfectly with your target market. We handle the outreach, negotiation, content guidelines, and ROI tracking to ensure authentic partnerships that drive massive sales.",
+        "mediaUrl": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800",
         "bullets": []
       },
       {
         "id": "sec-services",
         "type": "services-grid",
-        "title": "Influencer Marketing Services Solutions & Services",
-        "content": "Explore our specialized products designed for exponential business growth.",
+        "title": "End-to-End Influencer Management",
+        "content": "Strategic partnerships that create authentic brand champions.",
         "cards": [
           {
             "id": "card-1",
-            "title": "Audience Analytics & Deep Insights",
-            "description": "Comprehensive tracking of audience demographics, engagement rates, and growth vectors.",
-            "iconName": "BarChart3",
-            "linkUrl": "#"
+            "title": "Influencer Vetting & Sourcing",
+            "description": "Finding creators with high engagement and authentic followings.",
+            "iconName": "Search"
           },
           {
             "id": "card-2",
-            "title": "Precision Audience Targeting",
-            "description": "Laser-focused ad targeting strategies to ensure maximum return on ad spend.",
-            "iconName": "Target",
-            "linkUrl": "#"
+            "title": "Contract Negotiation",
+            "description": "Managing deliverables, usage rights, and payment structures.",
+            "iconName": "FileText"
           },
           {
             "id": "card-3",
-            "title": "Viral Content Creation Studio",
-            "description": "High-quality graphic and video production that captures attention and drives shares.",
-            "iconName": "Sparkles",
-            "linkUrl": "#"
+            "title": "Campaign Strategy & Briefs",
+            "description": "Providing creative direction while maintaining creator authenticity.",
+            "iconName": "Map"
           },
           {
             "id": "card-4",
-            "title": "Strategic Campaign Roadmaps",
-            "description": "Long-term planning software tailored for multi-channel digital marketing execution.",
-            "iconName": "Route",
-            "linkUrl": "#"
+            "title": "UGC Whitelisting",
+            "description": "Running paid ads through the influencer's social handles.",
+            "iconName": "TrendingUp"
           },
           {
             "id": "card-5",
-            "title": "Automated CRM Sync & Nurturing",
-            "description": "Seamlessly capture leads and sync them directly into your sales nurturing workflows.",
-            "iconName": "Workflow",
-            "linkUrl": "#"
+            "title": "Affiliate & Promo Tracking",
+            "description": "Measuring direct sales generated by each specific creator.",
+            "iconName": "BarChart3"
           }
         ]
       },
@@ -2169,124 +1424,43 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
-        "content": "How we helped scale a global enterprise.",
+        "content": "Going viral with the right partnerships.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Global Brand Awareness Campaign",
-            "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200&auto=format&fit=crop",
-            "description": "We helped a multinational e-commerce brand increase their digital footprint across social platforms. By leveraging data-driven insights and localized content, the campaign achieved a 300% increase in organic reach and doubled their social engagement within the first quarter.",
+            "title": "Beauty Brand Product Launch",
+            "bgImageUrl": "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1200",
+            "description": "We orchestrated a synchronized launch featuring 50 micro-influencers on TikTok and Instagram. The campaign generated 4.5 million organic impressions and sold out the initial product run in just 72 hours.",
             "points": [
               {
                 "id": "p1",
-                "title": "Audience Research",
+                "title": "Creator Scouting",
                 "iconName": "Search"
               },
               {
                 "id": "p2",
-                "title": "Content Localization",
-                "iconName": "Globe"
+                "title": "Product Seeding",
+                "iconName": "Package"
               },
               {
                 "id": "p3",
-                "title": "Influencer Partnerships",
-                "iconName": "Users"
+                "title": "Brief Creation",
+                "iconName": "PenTool"
               },
               {
                 "id": "p4",
-                "title": "Viral Video Strategy",
-                "iconName": "Video"
-              },
-              {
-                "id": "p5",
-                "title": "Engagement Tracking",
-                "iconName": "Activity"
-              },
-              {
-                "id": "p6",
-                "title": "Sentiment Analysis",
-                "iconName": "Heart"
-              },
-              {
-                "id": "p7",
-                "title": "Quarterly Reports",
-                "iconName": "FileText"
-              }
-            ]
-          },
-          {
-            "id": "cs-2",
-            "title": "B2B Influencer Marketing Services Engine",
-            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200&auto=format&fit=crop",
-            "description": "For a fast-growing SaaS company, we built an automated influencer marketing services funnel. By targeting decision-makers on LinkedIn with high-value whitepapers and optimizing the landing page conversion rate, we reduced their Customer Acquisition Cost (CAC) by 45%.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Target Profile Setup",
-                "iconName": "Target"
-              },
-              {
-                "id": "p2",
-                "title": "Whitepaper Creation",
-                "iconName": "FileText"
-              },
-              {
-                "id": "p3",
-                "title": "LinkedIn Outreach",
-                "iconName": "Linkedin"
-              },
-              {
-                "id": "p4",
-                "title": "Funnel Optimization",
-                "iconName": "Filter"
-              },
-              {
-                "id": "p5",
-                "title": "CRM Integration",
-                "iconName": "Database"
-              },
-              {
-                "id": "p6",
-                "title": "Conversion Tracking",
-                "iconName": "MousePointerClick"
-              }
-            ]
-          },
-          {
-            "id": "cs-3",
-            "title": "Omnichannel Sales Boost",
-            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200&auto=format&fit=crop",
-            "description": "A national retail chain approached us to unify their online and offline sales. We deployed synchronized social media retargeting, local SEO, and geofencing campaigns that resulted in a 60% boost in foot traffic and a 40% increase in online sales during the holiday season.",
-            "points": [
-              {
-                "id": "p1",
-                "title": "Local SEO Audit",
-                "iconName": "MapPin"
-              },
-              {
-                "id": "p2",
-                "title": "Geofencing Ads",
-                "iconName": "Smartphone"
-              },
-              {
-                "id": "p3",
-                "title": "Retargeting Pixels",
+                "title": "Content Review",
                 "iconName": "Eye"
               },
               {
-                "id": "p4",
-                "title": "Inventory Sync",
-                "iconName": "RefreshCw"
-              },
-              {
                 "id": "p5",
-                "title": "Cross-Platform ROI",
-                "iconName": "TrendingUp"
+                "title": "Launch Coordination",
+                "iconName": "Clock"
               },
               {
                 "id": "p6",
-                "title": "Post-Sale Nurturing",
-                "iconName": "Mail"
+                "title": "Sales Attribution",
+                "iconName": "DollarSign"
               }
             ]
           }

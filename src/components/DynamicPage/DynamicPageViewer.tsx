@@ -440,9 +440,8 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
             </button>
             
             {/* Left/Top Image (Fixed) */}
-            <div className="w-full md:w-1/2 h-64 md:h-full relative shrink-0">
-              <img src={activeModalStudy.imgUrl} alt={activeModalStudy.title} className="w-full h-full object-cover" />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:to-slate-900/20" />
+            <div className="w-full md:w-1/2 h-64 md:h-full relative shrink-0 bg-[#F8FAFC] flex items-center justify-center p-4">
+              <img src={activeModalStudy.imgUrl} alt={activeModalStudy.title} className="w-full h-full object-contain" />
             </div>
 
             {/* Right/Bottom Content (Scrollable) */}
