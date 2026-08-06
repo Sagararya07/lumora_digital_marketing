@@ -910,6 +910,141 @@ export const initialSiteContent: SiteContent = {
     "description": "Generated $1M in Black Friday sales.",
     "image_url": "https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&q=80&w=800"
   }
+],
+  "rndModules": [
+    {
+        "id": "57b8a1af-a325-4496-9b2f-3f13bd19128c",
+        "title": "Predictive Buyer Journey Engine",
+        "description": "Simulates conversion probabilities across 10,000+ audience pathways before allocating live media spend.",
+        "badge": "Machine Learning",
+        "image_url": "https://cdn-icons-png.flaticon.com/512/2043/2043102.png"
+    },
+    {
+        "id": "fe1e79b0-5649-46f0-9bd1-7d7c0c6c840d",
+        "title": "Automated Multi-Touch Attribution",
+        "description": "Tracks every user touchpoint across search, social, and email to allocate budget to high-converting channels.",
+        "badge": "Real-Time Data",
+        "image_url": "https://cdn-icons-png.flaticon.com/512/2921/2921222.png"
+    },
+    {
+        "id": "e4fc4e37-e202-46b7-b96b-74e422fc7318",
+        "title": "Autonomous AI Lead Qualification",
+        "description": "Interactive AI chatbots and automated scoring sequences verify intent before handing off leads to sales teams.",
+        "badge": "Automation",
+        "image_url": "https://cdn-icons-png.flaticon.com/512/4711/4711987.png"
+    },
+    {
+        "id": "43538efd-e468-47dc-a0db-825671f7181e",
+        "title": "Creative Resonance Computer Vision",
+        "description": "AI visual analysis evaluates ad creative elements (colors, copy layout, imagery) against historic ROAS benchmarks.",
+        "badge": "Computer Vision",
+        "image_url": "https://cdn-icons-png.flaticon.com/512/2919/2919864.png"
+    }
+],
+  "aboutCorePillars": [
+    {
+        "id": "a2fcb6c7-2dce-439b-b724-9b3dc0556cd5",
+        "title": "Data-Driven Strategy",
+        "description": "Every campaign hypothesis is validated using historical search trends and conversion benchmarks.",
+        "iconName": "BarChart3"
+    },
+    {
+        "id": "f019dbdc-a8b4-4954-9831-9d8ef97c25c1",
+        "title": "Certified Premier Partners",
+        "description": "Accredited Google Premier, Meta Business, and HubSpot marketing strategists managing your budget.",
+        "iconName": "Award"
+    },
+    {
+        "id": "e51abb94-2fde-4e70-86f7-b8b3db35ca15",
+        "title": "Relentless ROI Focus",
+        "description": "We optimize down to Customer Acquisition Cost (CAC) and customer lifetime value (LTV).",
+        "iconName": "TrendingUp"
+    }
+],
+  "aboutMissionCards": [
+    {
+        "id": "859bd44e-9776-41e3-bbff-e91e9c9318bf",
+        "title": "Omnichannel Funnel Scaling",
+        "description": "Google Ads, Meta, LinkedIn & Programmatic",
+        "iconName": "Globe2"
+    },
+    {
+        "id": "45aaac53-d8a2-4282-869c-ef191e0c3680",
+        "title": "AI Campaign Automation",
+        "description": "Real-time automated bidding & AI creative testing",
+        "iconName": "Zap"
+    },
+    {
+        "id": "35c815fc-79bb-4612-aa50-62466c77f32e",
+        "title": "100% Attribution Transparency",
+        "description": "Live client dashboard tracking CAC, leads & ROI",
+        "iconName": "CheckCircle2"
+    }
+],
+  "trustedLogos": [
+    {
+        "id": "28a5f009-d080-40ef-b293-48e87dd26e30",
+        "name": "HubSpot",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg"
+    },
+    {
+        "id": "4614aca6-ae66-4ccf-9632-2a303b0c4595",
+        "name": "Honeywell",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Honeywell_logo.svg/320px-Honeywell_logo.svg.png"
+    },
+    {
+        "id": "89930202-bda6-4bdb-b7b6-4237ff554b0c",
+        "name": "Microsoft",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
+    },
+    {
+        "id": "5a08e4b3-4f62-44fa-b6da-febce51ae7e4",
+        "name": "Startup India",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Startup_India_Logo.svg"
+    },
+    {
+        "id": "b9e6484f-2b05-4649-be4c-041137940a24",
+        "name": "Google",
+        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+    }
+],
+  "testimonials": [
+    {
+        "id": "1",
+        "name": "Rahul Sharma",
+        "company": "TechVentures India",
+        "role": "CEO",
+        "content": "Cypher Swift transformed our lead generation pipeline. We went from 20 leads/month to 350+ qualified leads in just 3 months. Their ROI-focused approach is unlike anything we've experienced before.",
+        "rating": 5,
+        "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&auto=format&fit=crop&q=80"
+    },
+    {
+        "id": "2",
+        "name": "Sarah Mitchell",
+        "company": "MedFirst Healthcare",
+        "role": "Marketing Director",
+        "content": "The healthcare campaigns they built for us were HIPAA-compliant, highly targeted, and incredibly effective. Patient appointment bookings increased by 280% in the first quarter.",
+        "rating": 5,
+        "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&auto=format&fit=crop&q=80"
+    },
+    {
+        "id": "3",
+        "name": "James Thornton",
+        "company": "PropMax Real Estate",
+        "role": "Director",
+        "content": "Their real estate lead generation expertise is unmatched. Quality leads, transparent reporting, and a dedicated account manager who actually cares about our results. 5 stars across the board.",
+        "rating": 5,
+        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop&q=80"
+    },
+    {
+        "id": "4",
+        "name": "Priya Nair",
+        "company": "EduFirst Academy",
+        "role": "Founder",
+        "content": "We doubled our student enrollments in one academic year using Cypher Swift's digital marketing strategy. The combination of SEO and paid ads was perfectly calibrated for our goals.",
+        "rating": 5,
+        "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&auto=format&fit=crop&q=80"
+    }
 ]
 };
 
