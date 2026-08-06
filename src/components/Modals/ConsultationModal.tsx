@@ -90,7 +90,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 <Phone className="w-3.5 h-3.5" /> Direct Consultation Call
               </span>
               <h3 className="text-2xl font-extrabold text-slate-900">
-                Book Free Growth Consultation
+                Book Growth Consultation
               </h3>
               <p className="text-xs text-slate-500 font-normal">
                 Discuss your goals with our digital marketing specialists.
@@ -180,7 +180,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                 disabled={loading}
                 className="w-full py-3 px-4 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-200 flex items-center justify-center gap-2 transition-all"
               >
-                {loading ? 'Sending Request...' : 'Submit & Book Free Consultation'}
+                {loading ? 'Sending Request...' : 'Submit'}
               </button>
             </form>
           </div>
