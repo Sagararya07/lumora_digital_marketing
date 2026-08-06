@@ -14,6 +14,7 @@ export interface LeadSubmission {
 
 export interface ServiceItem {
   id: string;
+  slug: string;
   title: string;
   shortDescription: string;
   fullDescription: string;
@@ -252,6 +253,7 @@ export interface DynamicPage {
   countryName?: string;
   seo: SEOMetadata;
   headerCss?: string;
+  heroImage?: string;
   sections: DynamicPageSection[];
   isPublished: boolean;
   createdAt: string;

@@ -98,23 +98,23 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                 : 'text-[#5B8EE2] border-blue-200 bg-[#F2F6FC]/80'
             }`}>
               <Sparkles className={`w-3.5 h-3.5 animate-pulse ${siteContent.aboutHero?.background_image ? 'text-[#AEC7F0]' : 'text-[#5B8EE2]'}`} />
-              <span>ABOUT LUMORA DIGITAL AGENCY</span>
+              <span>{siteContent.aboutHero?.hero_badge || 'ABOUT LUMORA DIGITAL AGENCY'}</span>
             </span>
           </div>
 
           <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight ${
             siteContent.aboutHero?.background_image ? 'text-white' : 'text-[#111827]'
           }`}>
-            Pioneering the Future of Digital Scaling for{' '}
+            {siteContent.aboutHero?.hero_heading_1 || 'Pioneering the Future of Digital Scaling for'}{' '}
             <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
-              Ambitious Global Brands
+              {siteContent.aboutHero?.hero_heading_highlight || 'Ambitious Global Brands'}
             </span>
           </h1>
 
           <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal ${
             siteContent.aboutHero?.background_image ? 'text-gray-300' : 'text-[#6B7280]'
           }`}>
-            At Lumora, we combine algorithmic precision, AI-driven campaign intelligence, and creative storytelling to turn digital attention into predictable pipeline revenue.
+            {siteContent.aboutHero?.hero_description || 'At Lumora, we combine algorithmic precision, AI-driven campaign intelligence, and creative storytelling to turn digital attention into predictable pipeline revenue.'}
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -122,7 +122,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
               onClick={openConsultationModal}
               className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-sm font-extrabold flex items-center justify-center gap-2 shadow-xl shadow-blue-500/25 transition-all hover:scale-105 w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif]"
             >
-              <span>Partner With Our Experts</span>
+              <span>{siteContent.aboutHero?.hero_primary_cta || 'Partner With Our Experts'}</span>
               <ArrowRight className="w-4 h-4" />
             </button>
             <button
@@ -133,7 +133,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
                   : 'bg-white hover:bg-slate-50 border border-[#E5E7EB] text-[#111827]'
               }`}
             >
-              Explore Agency Home
+              {siteContent.aboutHero?.hero_secondary_cta || 'Explore Agency Home'}
             </button>
           </div>
         </div>
@@ -146,26 +146,26 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             
             <div className="space-y-6">
               <span className="text-xs font-extrabold text-[#5B8EE2] uppercase tracking-widest font-['Plus_Jakarta_Sans',sans-serif]">
-                OUR MISSION & VISION
+                {siteContent.aboutHero?.mission_title || "OUR MISSION & VISION"}
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
-                Eliminating Guesswork in Modern Customer Acquisition
+                {siteContent.aboutHero?.mission_heading || "Eliminating Guesswork in Modern Customer Acquisition"}
               </h2>
               <p className="text-base text-[#6B7280] leading-relaxed font-normal">
-                Founded with a mission to replace vanity metrics with bottom-line growth, Lumora builds end-to-end digital acquisition funnels. We manage hyper-targeted search ads, paid social campaigns, technical SEO, and conversion optimization for enterprises, SaaS scale-ups, and regional market leaders.
+                {siteContent.aboutHero?.mission_text1 || "Founded with a mission to replace vanity metrics with bottom-line growth, Lumora builds end-to-end digital acquisition funnels. We manage hyper-targeted search ads, paid social campaigns, technical SEO, and conversion optimization for enterprises, SaaS scale-ups, and regional market leaders."}
               </p>
               <p className="text-base text-[#6B7280] leading-relaxed font-normal">
-                Our global team operates across North America, Europe, the Middle East, and Asia-Pacific, managing high-performing campaigns tailored for local, national, and international buyer behaviors.
+                {siteContent.aboutHero?.mission_text2 || "Our global team operates across North America, Europe, the Middle East, and Asia-Pacific, managing high-performing campaigns tailored for local, national, and international buyer behaviors."}
               </p>
 
               <div className="grid grid-cols-2 gap-4 pt-4">
                 <div className="p-4 rounded-2xl bg-white border border-[#E5E7EB]">
-                  <p className="text-3xl font-extrabold text-[#5B8EE2] font-['Plus_Jakarta_Sans',sans-serif]">10+ Yrs</p>
-                  <p className="text-xs text-[#6B7280] font-bold mt-1 font-['Plus_Jakarta_Sans',sans-serif]">Industry Leadership</p>
+                  <p className="text-3xl font-extrabold text-[#5B8EE2] font-['Plus_Jakarta_Sans',sans-serif]">{siteContent.aboutHero?.mission_stat1_value || "10+ Yrs"}</p>
+                  <p className="text-xs text-[#6B7280] font-bold mt-1 font-['Plus_Jakarta_Sans',sans-serif]">{siteContent.aboutHero?.mission_stat1_label || "Industry Leadership"}</p>
                 </div>
                 <div className="p-4 rounded-2xl bg-white border border-[#E5E7EB]">
-                  <p className="text-3xl font-extrabold text-[#D6A67B] font-['Plus_Jakarta_Sans',sans-serif]">15+ Countries</p>
-                  <p className="text-xs text-[#6B7280] font-bold mt-1 font-['Plus_Jakarta_Sans',sans-serif]">Global Client Footprint</p>
+                  <p className="text-3xl font-extrabold text-[#D6A67B] font-['Plus_Jakarta_Sans',sans-serif]">{siteContent.aboutHero?.mission_stat2_value || "15+ Countries"}</p>
+                  <p className="text-xs text-[#6B7280] font-bold mt-1 font-['Plus_Jakarta_Sans',sans-serif]">{siteContent.aboutHero?.mission_stat2_label || "Global Client Footprint"}</p>
                 </div>
               </div>
             </div>

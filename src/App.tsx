@@ -22,13 +22,13 @@ import { ServiceDetailModal } from './components/Modals/ServiceDetailModal';
 import { CaseStudyModal } from './components/Modals/CaseStudyModal';
 import { LegalModal } from './components/Modals/LegalModal';
 
+import { ConsultationPage } from './components/Pages/ConsultationPage';
 import { DynamicPageViewer } from './components/DynamicPage/DynamicPageViewer';
 import { AdminDashboard } from './components/Admin/AdminDashboard';
 
 import { AboutPage } from './components/Pages/AboutPage';
 import { PortfolioPage } from './components/Pages/PortfolioPage';
 import { RndPage } from './components/Pages/RndPage';
-import { ConsultationPage } from './components/Pages/ConsultationPage';
 
 import { initialSiteContent, initialDynamicPages } from './data/initialData';
 import { SiteContent, DynamicPage, ServiceItem, AchievementItem, CaseStudyItem } from './types';
@@ -157,6 +157,22 @@ export function App() {
   const isAdminRoute = location.pathname.startsWith('/admin');
   const activeDynamicSlug = location.pathname === '/' || location.pathname === '/admin' ? null : location.pathname.slice(1);
 
+  const dynamicServices = dynamicPages
+    .filter(dp => dp.isPublished)
+    .map(dp => ({
+      id: String(dp.id),
+      slug: dp.slug,
+      title: dp.title,
+      shortDescription: dp.seo?.metaDescription || dp.overviewContent || 'Comprehensive digital marketing solutions driven by AI.',
+      fullDescription: dp.overviewContent || '',
+      iconName: dp.heroBadge || 'Target',
+      features: [],
+      deliverables: [],
+      recommendedFor: '',
+      badge: dp.heroBadge || '',
+      image: dp.heroImage || ''
+    }));
+
   return (
     <div className="min-h-screen bg-white text-slate-900 font-['Inter',sans-serif] selection:bg-[#5B8EE2] selection:text-white transition-colors duration-300">
       
@@ -184,6 +200,7 @@ export function App() {
             onOpenMobileNav={() => setIsOpenMobileNav(true)}
             openConsultationModal={() => setIsConsultationModalOpen(true)}
             dynamicPages={dynamicPages}
+            services={siteContent.services}
             onSelectDynamicPage={handleSelectDynamicPage}
             onGoHome={handleGoHome}
             onNavSection={handleNavTabClick}
@@ -249,6 +266,7 @@ export function App() {
               />
             } />
             
+
             {/* Dynamic CMS Page Renderer */}
             <Route path="/:slug" element={
               <DynamicPageWrapper 
@@ -288,7 +306,7 @@ export function App() {
 
                 {/* Section 4: Our Digital Marketing Services */}
                 <ServicesSection
-                  services={siteContent.services}
+                  services={dynamicServices}
                   onSelectService={(svc) => setSelectedService(svc)}
                   openConsultationModal={() => setIsConsultationModalOpen(true)}
                 />
@@ -348,6 +366,7 @@ export function App() {
         {!isAdminRoute && (
           <Footer
             contactInfo={siteContent.contactInfo}
+            services={siteContent.services}
             onOpenConsultation={() => setIsConsultationModalOpen(true)}
             onOpenLegalModal={(type) => setLegalModalType(type)}
             dynamicPages={dynamicPages}

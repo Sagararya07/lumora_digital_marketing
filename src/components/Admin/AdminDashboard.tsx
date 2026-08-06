@@ -179,18 +179,21 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     {
       title: 'ABOUT PAGE CONTENT',
       items: [
-        { id: 'about_hero_section', label: 'About Hero', icon: Settings },
+        { id: 'about_hero_section', label: 'Hero & Mission Text', icon: Settings },
         { id: 'about_mission_cards', label: 'Mission Cards', icon: Settings },
         { id: 'about_core_pillars', label: 'Core Pillars', icon: Settings },
       ],
     },
     {
       title: 'DYNAMIC PAGES (RESOURCES)',
-      items: dynamicPages.map(dp => ({
-        id: `page_${dp.id}`,
-        label: (dp.title || dp.slug).split(' - ')[0],
-        icon: FileText
-      })),
+      items: [
+        ...dynamicPages.map(dp => ({
+          id: `page_${dp.id}`,
+          label: (dp.title || dp.slug).split(' - ')[0],
+          icon: FileText
+        })),
+        { id: 'pages', label: 'Create New Page', icon: Plus }
+      ],
     },
     {
       title: 'CRM & LEADS',
@@ -300,7 +303,9 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             </button>
             <div>
               <h2 className="text-lg font-extrabold text-[#111827] capitalize font-['Plus_Jakarta_Sans',sans-serif]">
-                {activeMenu.replace(/_/g, ' ')}
+                {activeMenu.startsWith('page_') 
+                  ? (dynamicPages.find(p => String(p.id) === activeMenu.replace('page_', ''))?.title || 'Dynamic Page')
+                  : activeMenu.replace(/_/g, ' ')}
               </h2>
               <p className="text-xs text-[#6B7280] font-normal">Manage your Lumora marketing website content</p>
             </div>
@@ -345,7 +350,14 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           {activeMenu === 'sitemap' && <SitemapPanel dynamicPages={dynamicPages} />}
           {activeMenu === 'site_settings' && <SiteSettingsManager onSaved={handleContentSaved} />}
           {activeMenu === 'section_settings' && <SectionSettingsManager onSaved={handleContentSaved} />}
-          {TABLE_CONFIGS[activeMenu] && (
+          {activeMenu === 'services' && (
+            <ServicesDynamicManager 
+              dynamicPages={dynamicPages} 
+              onEdit={(id) => setActiveMenu(`page_${id}`)} 
+              onAddNew={() => setActiveMenu('pages')} 
+            />
+          )}
+          {activeMenu !== 'services' && TABLE_CONFIGS[activeMenu] && (
             <TableCrudManager tableName={activeMenu} config={TABLE_CONFIGS[activeMenu]} onSaved={handleContentSaved} />
           )}
           {activeMenu === 'consultation_submissions' && <LeadsManager onSaved={handleContentSaved} />}
@@ -602,6 +614,52 @@ const TableCrudManager = ({
   );
 };
 
+/* --- Services Dynamic Manager (Replaces legacy services table) --- */
+const ServicesDynamicManager = ({ dynamicPages, onEdit, onAddNew }: { dynamicPages: DynamicPage[]; onEdit: (id: string) => void; onAddNew: () => void }) => {
+  return (
+    <div className="bg-white rounded-3xl border border-[#E5E7EB] overflow-hidden flex flex-col h-[calc(100vh-140px)] shadow-xs">
+      <div className="p-6 border-b border-[#E5E7EB] flex items-center justify-between shrink-0 bg-[#F8FAFC]">
+        <div>
+          <h2 className="text-xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">Services</h2>
+          <p className="text-xs text-[#6B7280] mt-0.5 font-normal">{dynamicPages.length} items · updates show live instantly</p>
+        </div>
+        <button
+          onClick={onAddNew}
+          className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
+        >
+          <Plus className="w-4 h-4" /> Add New
+        </button>
+      </div>
+
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        <div className="divide-y divide-[#E5E7EB]">
+          {dynamicPages.length === 0 ? (
+            <div className="p-12 text-center text-[#6B7280] font-normal text-xs">No records found. Click &quot;Add New&quot; to create one.</div>
+          ) : (
+            dynamicPages.map((item) => (
+              <div key={String(item.id)} className="p-5 flex items-center justify-between hover:bg-[#F8FAFC] transition-colors">
+                <div>
+                  <h4 className="font-extrabold text-sm text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">{item.title}</h4>
+                  <p className="text-xs text-[#6B7280] mt-0.5 line-clamp-1">{item.seo?.metaDescription || item.overviewTitle || ''}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => onEdit(String(item.id))}
+                    className="p-2 rounded-xl bg-[#F2F6FC] text-[#5B8EE2] hover:bg-blue-100 transition-colors"
+                    title="Edit Service Page"
+                  >
+                    <Edit className="w-4 h-4" />
+                  </button>
+                </div>
+              </div>
+            ))
+          )}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 /* --- Field Input Component --- */
 const FieldInput = ({
   field,
@@ -802,9 +860,18 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         overview_title: String(pageAny.overviewTitle || ''),
         overview_content: String(pageAny.overviewContent || ''),
         is_published: true,
+        sections: p.sections,
+        heroImage: p.heroImage,
       }),
     });
     onRefresh();
+  };
+
+  const handleDeletePage = async (id: number, title: string) => {
+    if (window.confirm(`Are you sure you want to delete the page "${title}"?\n\nThis action cannot be undone.`)) {
+      await fetch(`/api/pages/${id}`, { method: 'DELETE' });
+      onRefresh();
+    }
   };
 
   const handleSavePage = async () => {
@@ -827,6 +894,8 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         overview_title: editingPage.overviewTitle,
         overview_content: editingPage.overviewContent,
         is_published: editingPage.isPublished ?? true,
+        sections: editingPage.sections,
+        heroImage: editingPage.heroImage,
       }),
     });
 
@@ -842,7 +911,23 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
           <p className="text-xs text-[#6B7280]">Duplicate pages in 1 click and customize slugs, H1s, and Meta tags for SEO</p>
         </div>
         <button
-          onClick={() => setEditingPage({ title: 'New SEO Page', slug: 'new-page', isPublished: true })}
+          onClick={() => {
+            const template = (dynamicPages && dynamicPages.length > 0) ? dynamicPages[0] : ({} as any);
+            setEditingPage({
+              title: 'New Strategy Page',
+              slug: `new-page-${Date.now().toString().slice(-4)}`,
+              isPublished: true,
+              sections: template.sections || [],
+              heroImage: template.heroImage || '',
+              metaTitle: template.seo?.metaTitle || '',
+              metaDescription: template.seo?.metaDescription || '',
+              heroBadge: template.heroBadge || '',
+              heroHeading: template.heroHeading || 'New Strategy Page',
+              heroSubheading: template.heroSubheading || '',
+              overviewTitle: template.overviewTitle || '',
+              overviewContent: template.overviewContent || ''
+            });
+          }}
           className="flex items-center gap-2 px-5 py-2.5 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white rounded-full text-xs font-extrabold shadow-md shadow-blue-500/20 hover:scale-105 transition-all"
         >
           <Plus className="w-4 h-4" /> Create New Page
@@ -888,11 +973,17 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
               className="w-full p-3 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827]"
             />
           </div>
-          <div className="flex gap-3 pt-2">
-            <button onClick={handleSavePage} className="px-6 py-2.5 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white font-bold text-xs rounded-full shadow-md">
+          <div className="bg-blue-50 border border-blue-100 p-4 rounded-xl mt-4">
+            <p className="text-xs text-blue-800 flex items-start gap-2">
+              <span className="text-blue-500 font-bold">ℹ️ Note:</span>
+              <span>This is just the SEO and URL setup. To fully edit the <strong>Sections, Content, and Grid Cards</strong> for this page, click <strong>Save Page</strong> below, and then click on this page's name in the left sidebar!</span>
+            </p>
+          </div>
+          <div className="flex gap-3 pt-4 border-t border-[#E5E7EB] mt-4">
+            <button onClick={handleSavePage} className="px-6 py-2.5 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white font-bold text-xs rounded-full shadow-md hover:scale-105 transition-all">
               Save Page
             </button>
-            <button onClick={() => setEditingPage(null)} className="px-5 py-2.5 bg-white border border-[#E5E7EB] text-[#111827] font-bold text-xs rounded-full">
+            <button onClick={() => setEditingPage(null)} className="px-5 py-2.5 bg-white border border-[#E5E7EB] text-[#111827] font-bold text-xs rounded-full hover:bg-slate-50 transition-colors">
               Cancel
             </button>
           </div>
@@ -923,6 +1014,12 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
                   className="p-2 rounded-xl bg-[#F2F6FC] text-[#5B8EE2] hover:bg-blue-100 transition-colors"
                 >
                   <Edit className="w-4 h-4" />
+                </button>
+                <button
+                  onClick={() => handleDeletePage(p.id!, p.title)}
+                  className="p-2 rounded-xl bg-red-50 text-red-500 hover:bg-red-100 transition-colors ml-1"
+                >
+                  <Trash2 className="w-4 h-4" />
                 </button>
               </div>
             </div>

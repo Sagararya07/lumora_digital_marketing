@@ -218,14 +218,15 @@ async function getSiteContent(): Promise<SiteContent> {
 
   const services: ServiceItem[] = servicesRes.rows.map(r => ({
     id: r.id.toString(),
+    slug: r.slug,
     title: r.title,
     shortDescription: r.short_description,
     fullDescription: r.full_description,
     iconName: r.icon,
-    features: r.short_description ? r.short_description.split('.').filter(Boolean).slice(0, 4).map((s: string) => s.trim()) : ['Strategy', 'Execution', 'Reporting'],
-    deliverables: ['Monthly Reports', 'Performance Dashboard', 'Strategy Sessions'],
-    recommendedFor: r.is_featured ? 'High-Growth Brands' : 'Growing Businesses',
-    badge: r.is_featured ? 'Featured' : undefined,
+    features: r.features && r.features.length ? r.features : (r.short_description ? r.short_description.split('.').filter(Boolean).slice(0, 4).map((s: string) => s.trim()) : ['Strategy', 'Execution', 'Reporting']),
+    deliverables: r.deliverables && r.deliverables.length ? r.deliverables : ['Monthly Reports', 'Performance Dashboard', 'Strategy Sessions'],
+    recommendedFor: r.recommended_for || (r.is_featured ? 'High-Growth Brands' : 'Growing Businesses'),
+    badge: r.badge || (r.is_featured ? 'Featured' : undefined),
     imageUrl: r.image_url
   }));
 
@@ -315,9 +316,7 @@ async function getSiteContent(): Promise<SiteContent> {
     iconName: r.icon_name,
   }));
 
-  const aboutHero = aboutHeroRes.rows[0] ? {
-    background_image: aboutHeroRes.rows[0].background_image
-  } : undefined;
+  const aboutHero = aboutHeroRes.rows[0] || undefined;
 
   const rndModules = rndModulesRes.rows.map(r => ({
     id: r.id.toString(),
@@ -586,7 +585,9 @@ app.get('/robots.txt', (_req, res) => {
 app.get('/api/pages', async (req, res) => {
   try {
     const result = await pool.query('SELECT * FROM pages ORDER BY sort_order, created_at DESC');
-    const mapped = result.rows.map(r => ({
+    const mapped = result.rows.map(r => {
+      const parsedContent = typeof r.content === 'string' ? JSON.parse(r.content || '{}') : (r.content || {});
+      return {
       id: r.id.toString(),
       slug: r.slug,
       title: r.title,
@@ -605,11 +606,13 @@ app.get('/api/pages', async (req, res) => {
         schemaData: r.schema_markup || '{}',
         robotsDirective: r.robots || 'index, follow'
       },
-      sections: r.content?.sections || [],
+      heroImage: parsedContent.heroImage,
+      sections: parsedContent.sections || [],
       isPublished: r.is_published,
       createdAt: r.created_at,
       updatedAt: r.updated_at
-    }));
+    };
+    });
     res.json({ success: true, pages: mapped });
   } catch (err) {
     res.status(500).json({ error: 'Failed to fetch pages' });
@@ -624,7 +627,10 @@ app.post('/api/pages', async (req, res) => {
     const check = await pool.query('SELECT id FROM pages WHERE slug = $1', [cleanSlug]);
     if (check.rows.length > 0) return res.status(400).json({ error: `Slug "${cleanSlug}" exists.` });
 
-    const content = p.sections ? { sections: p.sections } : { sections: [{ type: 'hero', title: p.title, content: 'Targeted strategies.' }] };
+    const content = {
+      heroImage: p.heroImage,
+      sections: p.sections || [{ type: 'hero', title: p.title, content: 'Targeted strategies.' }]
+    };
     
     await pool.query(
       `INSERT INTO pages (
@@ -650,13 +656,33 @@ app.put('/api/pages/:id', async (req, res) => {
   const { id } = req.params;
   const p = req.body;
   try {
-    const content = p.sections ? { sections: p.sections } : { sections: [] };
-    await pool.query(
-      `UPDATE pages SET 
-        title=$1, meta_title=$2, meta_description=$3, content=$4, is_published=$5, updated_at=NOW()
-       WHERE id=$6`,
-      [p.title, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, id]
-    );
+    const cleanSlug = p.slug ? p.slug.toLowerCase().replace(/[^a-z0-9-/]/g, '-').replace(/^-+|-+$/g, '') : null;
+    
+    if (cleanSlug) {
+      const check = await pool.query('SELECT id FROM pages WHERE slug = $1 AND id != $2', [cleanSlug, id]);
+      if (check.rows.length > 0) return res.status(400).json({ error: `Slug "${cleanSlug}" exists.` });
+    }
+
+    const content = {
+      heroImage: p.heroImage,
+      sections: p.sections || []
+    };
+
+    if (cleanSlug) {
+      await pool.query(
+        `UPDATE pages SET 
+          title=$1, slug=$2, meta_title=$3, meta_description=$4, content=$5, is_published=$6, updated_at=NOW()
+         WHERE id=$7`,
+        [p.title, cleanSlug, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, id]
+      );
+    } else {
+      await pool.query(
+        `UPDATE pages SET 
+          title=$1, meta_title=$2, meta_description=$3, content=$4, is_published=$5, updated_at=NOW()
+         WHERE id=$6`,
+        [p.title, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, id]
+      );
+    }
     res.json({ success: true });
   } catch (err: any) {
     res.status(500).json({ error: 'Failed to update page', details: err.message });
@@ -681,7 +707,11 @@ app.get('/api/admin/table/:tableName', async (req, res) => {
 
   try {
     let orderClause = 'ORDER BY created_at DESC';
-    if (!['hero_section', 'about_hero_section'].includes(tableName)) {
+    if (tableName === 'hero_section') {
+      orderClause = 'ORDER BY updated_at DESC';
+    } else if (tableName === 'about_hero_section') {
+      orderClause = 'ORDER BY created_at DESC';
+    } else {
       orderClause = 'ORDER BY sort_order ASC NULLS LAST, created_at DESC';
     }
     const result = await pool.query(`SELECT * FROM ${tableName} ${orderClause}`);
@@ -721,7 +751,8 @@ app.put('/api/admin/table/:tableName/:id', async (req, res) => {
     if (keys.length === 0) return res.json({ success: true });
 
     const setString = keys.map((k, i) => `${k} = $${i + 1}`).join(', ');
-    const query = `UPDATE ${tableName} SET ${setString}, updated_at = NOW() WHERE id = $${keys.length + 1} RETURNING *`;
+    const updateQueryTail = tableName === 'about_hero_section' ? '' : ', updated_at = NOW()';
+    const query = `UPDATE ${tableName} SET ${setString}${updateQueryTail} WHERE id = $${keys.length + 1} RETURNING *`;
     
     const result = await pool.query(query, [...values, id]);
     res.json({ success: true, data: result.rows[0] });

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   Mail,
   Phone,
@@ -23,6 +24,7 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({
+  services,
   onOpenLegalModal,
   onGoHome,
   onNavSection,
@@ -65,12 +67,23 @@ export const Footer: React.FC<FooterProps> = ({
               Solutions
             </h4>
             <ul className="space-y-2.5 text-[#6B7280] font-normal">
-              <li><button onClick={() => onNavSection?.('services-section')} className="hover:text-[#5B8EE2] transition-colors">Growth Strategy</button></li>
-              <li><button onClick={() => onNavSection?.('services-section')} className="hover:text-[#5B8EE2] transition-colors">Demand Generation</button></li>
-              <li><button onClick={() => onNavSection?.('services-section')} className="hover:text-[#5B8EE2] transition-colors">Performance Marketing</button></li>
-              <li><button onClick={() => onNavSection?.('services-section')} className="hover:text-[#5B8EE2] transition-colors">AI Marketing Automation</button></li>
-              <li><button onClick={() => onNavSection?.('services-section')} className="hover:text-[#5B8EE2] transition-colors">SEO Growth Engine</button></li>
-              <li><button onClick={() => onNavSection?.('services-section')} className="hover:text-[#5B8EE2] transition-colors">Digital Experience</button></li>
+              {(services && services.length > 0 ? services : [
+                { title: 'Social Media Marketing', slug: 'social-media-marketing', id: 'social-media-marketing' },
+                { title: 'Search Engine Optimization (SEO)', slug: 'seo-growth-engine', id: 'seo-growth-engine' },
+                { title: 'Performance Marketing', slug: 'performance-marketing', id: 'performance-marketing' },
+                { title: 'Lead Generation', slug: 'lead-generation', id: 'lead-generation' },
+                { title: 'Retargeting Marketing', slug: 'retargeting-marketing', id: 'retargeting-marketing' },
+                { title: 'AI Marketing Automation', slug: 'ai-marketing-automation', id: 'ai-marketing-automation' },
+              ]).map((item, i) => (
+                <li key={i}>
+                  <button 
+                    onClick={() => onNavSection?.(item.id?.toString() || item.slug || `service-${i}`)}
+                    className="hover:text-[#5B8EE2] transition-colors text-left"
+                  >
+                    {item.title}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
 

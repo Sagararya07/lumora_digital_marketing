@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   TrendingUp, Users, Target, Bot, Globe, Search, ArrowRight, Sparkles, Share2, Megaphone, Repeat
 } from 'lucide-react';
@@ -101,7 +102,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
             const fallback = mockSolutions[idx % mockSolutions.length];
             const title = item.title || fallback.title;
             const desc = item.shortDescription || fallback.shortDescription;
-            const image = item.image_url || fallback.image;
+            const image = (item as any).imageUrl || (item as any).image_url || (item as any).image || fallback.image;
             const formattedIdx = String(idx + 1).padStart(2, '0');
             const tag = `${formattedIdx} / ${title.split(' ')[0].toUpperCase()}`;
             const isEven = idx % 2 === 0;
@@ -109,7 +110,8 @@ export const ServicesSection: React.FC<ServicesProps> = ({
             return (
               <div 
                 key={item.id || idx} 
-                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 lg:gap-16 items-center`}
+                id={item.slug || item.id || fallback.id}
+                className={`flex flex-col ${isEven ? 'lg:flex-row' : 'lg:flex-row-reverse'} gap-10 lg:gap-16 items-center scroll-mt-24`}
               >
                 {/* Image Section */}
                 <div className="w-full lg:w-1/2 relative group">
@@ -139,7 +141,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
 
                   <div>
                     <button
-                      onClick={() => onSelectService({ ...item, id: fallback.id } as ServiceItem)}
+                      onClick={() => onSelectService({ ...item, slug: item.slug || fallback.id })}
                       className="group inline-flex items-center gap-2 text-[#5B8EE2] font-bold text-sm tracking-wide uppercase hover:text-[#4676C2] transition-colors"
                     >
                       FULL STRATEGY & DETAILS

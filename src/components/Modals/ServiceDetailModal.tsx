@@ -88,7 +88,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
             <button
               onClick={() => {
                 onClose();
-                onReadMore(service.id);
+                onReadMore(service.slug || service.id);
               }}
               className="px-4 py-2 rounded-xl border border-[#5B8EE2] text-[#5B8EE2] hover:bg-[#F2F6FC] text-xs font-bold transition-colors"
             >

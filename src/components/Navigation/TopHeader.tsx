@@ -1,8 +1,10 @@
 import React, { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import {
   Menu,
   ArrowRight,
   ChevronDown,
+  ChevronRight,
 } from 'lucide-react';
 import { DynamicPage, ServiceItem } from '../../types';
 import { LumoraLogo } from '../common/LumoraLogo';
@@ -24,6 +26,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
   onOpenMobileNav,
   openConsultationModal,
   dynamicPages,
+  services,
   onSelectDynamicPage,
   onGoHome,
   onNavSection,
@@ -42,11 +45,9 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
     { id: 'ai-marketing-automation', slug: 'ai-marketing-automation', title: 'AI Marketing Automation' }
   ];
 
-  const resourceItems = coreServices.map(coreService => {
-    // Check if a dynamic page exists for this slug
-    const dynamicPage = dynamicPages.find(p => p.slug === coreService.slug && p.isPublished);
-    return dynamicPage || coreService;
-  });
+  const resourceItems = dynamicPages.length > 0 
+    ? dynamicPages.filter(p => p.isPublished)
+    : coreServices;
 
   useEffect(() => {
     const close = (e: MouseEvent) => {
@@ -57,6 +58,26 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
     document.addEventListener('mousedown', close);
     return () => document.removeEventListener('mousedown', close);
   }, []);
+
+  const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
+
+  const handleMouseEnter = (menu: 'solutions' | 'resources') => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    if (activeSubMenu && activeSubMenu !== menu) {
+      hoverTimeout.current = setTimeout(() => {
+        setActiveSubMenu(menu);
+      }, 200);
+    } else {
+      setActiveSubMenu(menu);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+    hoverTimeout.current = setTimeout(() => {
+      setActiveSubMenu(null);
+    }, 200);
+  };
 
   const handleNavClick = (sectionId: string) => {
     if (sectionId === 'home') {
@@ -116,65 +137,71 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
             </button>
 
             {digitalMarketingOpen && (
-              <div className="absolute top-full left-0 mt-3 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl overflow-hidden z-50 animate-in fade-in slide-in-from-top-2">
+              <div className="absolute top-full left-0 mt-3 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2">
 
-                {/* Solutions Accordion */}
-                <div className="border-b border-slate-100 last:border-0">
+                {/* Solutions Flyout */}
+                <div 
+                  className="relative border-b border-slate-100 last:border-0"
+                  onMouseEnter={() => handleMouseEnter('solutions')}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <button
                     onClick={() => setActiveSubMenu(activeSubMenu === 'solutions' ? null : 'solutions')}
-                    className="w-full text-left px-5 py-4 text-sm font-semibold text-slate-800 hover:text-[#5B8EE2] hover:bg-slate-50 transition-colors flex items-center justify-between"
+                    className="w-full text-left px-5 py-4 text-sm font-semibold text-slate-800 hover:text-[#5B8EE2] hover:bg-slate-50 transition-colors flex items-center justify-between rounded-t-2xl"
                   >
                     <span>Solutions</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeSubMenu === 'solutions' ? 'rotate-180 text-[#5B8EE2]' : 'text-slate-400'}`} />
+                    <ChevronRight className={`w-4 h-4 transition-colors duration-200 ${activeSubMenu === 'solutions' ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
                   </button>
 
                   {activeSubMenu === 'solutions' && (
-                    <div className="bg-slate-50/50 py-2 px-3 border-t border-slate-100">
-                      {[
-                        { name: 'Social Media Marketing', id: 'services-section' },
-                        { name: 'Search Engine Optimization (SEO)', id: 'services-section' },
-                        { name: 'Performance Marketing', id: 'services-section' },
-                        { name: 'Lead Generation', id: 'services-section' },
-                        { name: 'Retargeting Marketing', id: 'services-section' },
-                        { name: 'AI Marketing Automation', id: 'services-section' },
-                      ].map((item, i) => (
+                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 px-3 animate-in fade-in slide-in-from-left-2 z-50 max-h-[60vh] overflow-y-auto overflow-x-hidden custom-scrollbar">
+                      {resourceItems.map((item, i) => (
                         <button
-                          key={i}
-                          onClick={() => { handleNavClick(item.id); setDigitalMarketingOpen(false); }}
-                          className="w-full text-left px-4 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-white rounded-lg transition-colors flex items-center justify-between group"
+                          key={item.id || i}
+                          onClick={() => {
+                            handleNavClick(item.slug || item.id?.toString() || `service-${i}`);
+                            setDigitalMarketingOpen(false);
+                            setActiveSubMenu(null);
+                          }}
+                          className="w-full text-left px-4 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group"
                         >
-                          <span>{item.name}</span>
-                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 transition-opacity" />
+                          <span className="truncate">{item.title}</span>
+                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-[#5B8EE2] transition-opacity shrink-0" />
                         </button>
                       ))}
                     </div>
                   )}
                 </div>
 
-                {/* Resources Accordion */}
-                <div>
+                {/* Resources Flyout */}
+                <div 
+                  className="relative"
+                  onMouseEnter={() => handleMouseEnter('resources')}
+                  onMouseLeave={handleMouseLeave}
+                >
                   <button
                     onClick={() => setActiveSubMenu(activeSubMenu === 'resources' ? null : 'resources')}
-                    className="w-full text-left px-5 py-4 text-sm font-semibold text-slate-800 hover:text-[#5B8EE2] hover:bg-slate-50 transition-colors flex items-center justify-between"
+                    className="w-full text-left px-5 py-4 text-sm font-semibold text-slate-800 hover:text-[#5B8EE2] hover:bg-slate-50 transition-colors flex items-center justify-between rounded-b-2xl"
                   >
                     <span>Resources</span>
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${activeSubMenu === 'resources' ? 'rotate-180 text-[#5B8EE2]' : 'text-slate-400'}`} />
+                    <ChevronRight className={`w-4 h-4 transition-colors duration-200 ${activeSubMenu === 'resources' ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
                   </button>
 
                   {activeSubMenu === 'resources' && (
-                    <div className="bg-slate-50/50 py-2 px-3 border-t border-slate-100">
+                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 px-3 animate-in fade-in slide-in-from-left-2 z-50 max-h-[60vh] overflow-y-auto overflow-x-hidden custom-scrollbar">
                       {resourceItems.map((page) => (
-                        <button
+                        <Link
                           key={page.id}
+                          to={'isPublished' in page ? `/${page.slug}` : `/solutions/${page.slug}`}
                           onClick={() => {
-                            onSelectDynamicPage(page.slug);
                             setDigitalMarketingOpen(false);
+                            setActiveSubMenu(null);
                           }}
-                          className="w-full text-left px-4 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-white rounded-lg transition-colors flex items-center justify-between group"
+                          className="w-full text-left px-4 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group"
                         >
                           <span className="truncate">{page.title}</span>
-                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-[#5B8EE2] transition-opacity" />
-                        </button>
+                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-[#5B8EE2] transition-opacity shrink-0" />
+                        </Link>
                       ))}
                     </div>
                   )}
