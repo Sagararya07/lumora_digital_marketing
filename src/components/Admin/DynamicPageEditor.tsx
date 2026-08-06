@@ -235,6 +235,32 @@ const handleAddSection = () => {
     }
   };
 
+  const handleCaseStudyImageUpload = async (sectionIndex: number, caseStudyIndex: number, e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || !e.target.files[0]) return;
+    setIsUploading(true);
+    const file = e.target.files[0];
+    const formData = new FormData();
+    formData.append('image', file);
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      if (!res.ok) throw new Error('Upload failed');
+      const data = await res.json();
+      
+      const updated = [...sections];
+      if (updated[sectionIndex].caseStudies) {
+        (updated[sectionIndex].caseStudies[caseStudyIndex] as any)['bgImageUrl'] = data.url;
+        setSections(updated);
+      }
+    } catch (err) {
+      alert('Failed to upload case study background image.');
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
   // Save Page Handler
   const handleSavePage = async () => {
     setSaving(true);
@@ -682,13 +708,29 @@ const handleAddSection = () => {
                           </div>
                           <div>
                             <label className="block text-[10px] font-extrabold text-[#6B7280] uppercase mb-1.5">Background Image URL (Optional)</label>
-                            <input
-                              type="text"
-                              value={study.bgImageUrl || ''}
-                              onChange={(e) => handleUpdateCaseStudy(idx, studyIdx, 'bgImageUrl', e.target.value)}
-                              className="w-full p-2.5 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
-                              placeholder="https://..."
-                            />
+                            <div className="flex gap-2">
+                              <input
+                                type="text"
+                                value={study.bgImageUrl || ''}
+                                onChange={(e) => handleUpdateCaseStudy(idx, studyIdx, 'bgImageUrl', e.target.value)}
+                                className="flex-1 p-2.5 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
+                                placeholder="https://..."
+                              />
+                              <label className="cursor-pointer shrink-0 bg-slate-100 hover:bg-slate-200 border border-[#E5E7EB] px-3 py-2.5 rounded-xl flex items-center justify-center transition-colors">
+                                <input 
+                                  type="file" 
+                                  className="hidden" 
+                                  accept="image/*" 
+                                  onChange={(e) => handleCaseStudyImageUpload(idx, studyIdx, e)} 
+                                  disabled={isUploading} 
+                                />
+                                {isUploading ? (
+                                  <div className="w-4 h-4 border-2 border-slate-400 border-t-slate-800 rounded-full animate-spin" />
+                                ) : (
+                                  <Upload className="w-4 h-4 text-slate-600" />
+                                )}
+                              </label>
+                            </div>
                           </div>
                         </div>
 
