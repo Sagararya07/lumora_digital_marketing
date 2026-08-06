@@ -214,13 +214,13 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
         </nav>
 
         {/* Right Action CTA Button */}
-        <div className="flex items-center gap-3 shrink-0">
+        <div className="flex items-center gap-2 sm:gap-3 shrink-0">
           <button
             onClick={openConsultationModal}
-            className="px-6 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-xs font-bold tracking-wide shadow-lg shadow-blue-500/25 flex items-center gap-2 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
+            className="px-3 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-[10px] sm:text-xs font-bold tracking-wide shadow-lg shadow-blue-500/25 flex items-center gap-1.5 sm:gap-2 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
           >
             <span>Get a Consultation</span>
-            <ArrowRight className="w-4 h-4" />
+            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
           </button>
         </div>
 

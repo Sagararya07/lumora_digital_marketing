@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, ArrowRight, Home, Info, FolderDot, Zap, MessageSquare } from 'lucide-react';
 import { LumoraLogo } from '../common/LumoraLogo';
 import { DynamicPage } from '../../types';
+import { ChevronDown } from 'lucide-react';
 
 interface LeftSidebarProps {
   currentTab: string;
@@ -34,6 +35,22 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
     { id: 'rnd', path: '/rnd', label: 'Rnd', icon: Zap },
     { id: 'get-a-consultation', path: '/get-a-consultation', label: 'Get a Consultation', icon: MessageSquare },
   ];
+
+  const [digitalMarketingOpen, setDigitalMarketingOpen] = useState(false);
+  const [activeSubMenu, setActiveSubMenu] = useState<'solutions' | 'resources' | null>(null);
+
+  const coreServices = [
+    { id: 'social-media-marketing', slug: 'social-media-marketing', title: 'Social Media Marketing' },
+    { id: 'seo-growth-engine', slug: 'seo-growth-engine', title: 'Search Engine Optimization (SEO)' },
+    { id: 'performance-marketing', slug: 'performance-marketing', title: 'Performance Marketing' },
+    { id: 'lead-generation', slug: 'lead-generation', title: 'Lead Generation' },
+    { id: 'retargeting-marketing', slug: 'retargeting-marketing', title: 'Retargeting Marketing' },
+    { id: 'ai-marketing-automation', slug: 'ai-marketing-automation', title: 'AI Marketing Automation' }
+  ];
+
+  const resourceItems = dynamicPages && dynamicPages.length > 0 
+    ? dynamicPages.filter(p => p.isPublished)
+    : coreServices;
 
   const handleNavClick = (item: { id: string; path: string }) => {
     if (item.path === '/') {
@@ -90,26 +107,92 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
             Navigation Drawer
           </div>
           
-          {navItems.map((item) => {
+          {navItems.map((item, index) => {
             const isActive = activeDynamicSlug === item.id || (activeDynamicSlug === null && item.id === 'home');
             const ItemIcon = item.icon;
+            
             return (
-              <button
-                key={item.id}
-                id={`nav-item-${item.id}`}
-                onClick={() => handleNavClick(item)}
-                className={`w-full text-left px-5 py-3.5 rounded-2xl text-sm font-extrabold transition-all flex items-center justify-between font-['Plus_Jakarta_Sans',sans-serif] ${
-                  isActive
-                    ? 'text-[#5B8EE2] bg-[#F2F6FC] border border-blue-200 shadow-xs'
-                    : 'text-[#111827] hover:text-[#5B8EE2] hover:bg-slate-50'
-                }`}
-              >
-                <div className="flex items-center gap-3">
-                  <ItemIcon className={`w-4 h-4 ${isActive ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
-                  <span>{item.label}</span>
-                </div>
-                <ArrowRight className="w-3.5 h-3.5 opacity-50" />
-              </button>
+              <React.Fragment key={item.id}>
+                {index === 1 && (
+                  <div className="w-full text-left bg-white rounded-2xl font-['Plus_Jakarta_Sans',sans-serif]">
+                    <button
+                      onClick={() => { setDigitalMarketingOpen(!digitalMarketingOpen); setActiveSubMenu(null); }}
+                      className={`w-full text-left px-5 py-3.5 rounded-2xl text-sm font-extrabold transition-all flex items-center justify-between ${
+                        activeDynamicSlug && activeDynamicSlug !== 'admin'
+                          ? 'text-[#5B8EE2] bg-[#F2F6FC] border border-blue-200 shadow-xs'
+                          : 'text-[#111827] hover:text-[#5B8EE2] hover:bg-slate-50'
+                      }`}
+                    >
+                      <div className="flex items-center gap-3">
+                        <Zap className={`w-4 h-4 ${activeDynamicSlug && activeDynamicSlug !== 'admin' ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
+                        <span>Digital Marketing</span>
+                      </div>
+                      <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${digitalMarketingOpen ? 'rotate-180 text-[#5B8EE2]' : 'opacity-50'}`} />
+                    </button>
+                    {digitalMarketingOpen && (
+                      <div className="mt-1 pl-4 space-y-1 bg-slate-50 rounded-xl p-2 animate-in fade-in slide-in-from-top-2">
+                        <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden bg-white">
+                          <button
+                            onClick={() => setActiveSubMenu(activeSubMenu === 'solutions' ? null : 'solutions')}
+                            className="text-left px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between border-b border-slate-100"
+                          >
+                            <span>Solutions</span>
+                            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeSubMenu === 'solutions' ? 'rotate-180' : ''}`} />
+                          </button>
+                          {activeSubMenu === 'solutions' && (
+                            <div className="flex flex-col bg-slate-50">
+                              {resourceItems.map((rItem, i) => (
+                                <button
+                                  key={`sol-${rItem.id || i}`}
+                                  onClick={() => handleNavClick({ id: rItem.slug || rItem.id?.toString() || '', path: `/solutions/${rItem.slug || rItem.id}` })}
+                                  className="text-left px-6 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2]"
+                                >
+                                  {rItem.title}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                          <button
+                            onClick={() => setActiveSubMenu(activeSubMenu === 'resources' ? null : 'resources')}
+                            className="text-left px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between"
+                          >
+                            <span>Resources</span>
+                            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeSubMenu === 'resources' ? 'rotate-180' : ''}`} />
+                          </button>
+                          {activeSubMenu === 'resources' && (
+                            <div className="flex flex-col bg-slate-50 border-t border-slate-100">
+                              {resourceItems.map((rItem, i) => (
+                                <button
+                                  key={`res-${rItem.id || i}`}
+                                  onClick={() => handleNavClick({ id: rItem.slug || rItem.id?.toString() || '', path: 'isPublished' in rItem ? `/${rItem.slug}` : `/solutions/${rItem.slug}` })}
+                                  className="text-left px-6 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2]"
+                                >
+                                  {rItem.title}
+                                </button>
+                              ))}
+                            </div>
+                          )}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                )}
+                <button
+                  id={`nav-item-${item.id}`}
+                  onClick={() => handleNavClick(item)}
+                  className={`w-full text-left px-5 py-3.5 rounded-2xl text-sm font-extrabold transition-all flex items-center justify-between font-['Plus_Jakarta_Sans',sans-serif] ${
+                    isActive
+                      ? 'text-[#5B8EE2] bg-[#F2F6FC] border border-blue-200 shadow-xs'
+                      : 'text-[#111827] hover:text-[#5B8EE2] hover:bg-slate-50'
+                  }`}
+                >
+                  <div className="flex items-center gap-3">
+                    <ItemIcon className={`w-4 h-4 ${isActive ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
+                    <span>{item.label}</span>
+                  </div>
+                  <ArrowRight className="w-3.5 h-3.5 opacity-50" />
+                </button>
+              </React.Fragment>
             );
           })}
         </div>
