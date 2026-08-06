@@ -25,6 +25,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   isOpenMobile,
   setIsOpenMobile,
   activeDynamicSlug,
+  dynamicPages,
 }) => {
   const navigate = useNavigate();
 
