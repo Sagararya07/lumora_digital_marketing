@@ -145,10 +145,10 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
                               {resourceItems.map((rItem, i) => (
                                 <button
                                   key={`sol-${rItem.id || i}`}
-                                  onClick={() => handleNavClick({ id: rItem.slug || rItem.id?.toString() || '', path: `/solutions/${rItem.slug || rItem.id}` })}
-                                  className="text-left px-6 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2]"
+                                  onClick={() => handleNavClick({ id: rItem.slug || rItem.id?.toString() || '', path: `/${rItem.slug || rItem.id}` })}
+                                  className="text-left px-6 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
                                 >
-                                  {rItem.title}
+                                  {rItem.title.split('-')[0].trim()}
                                 </button>
                               ))}
                             </div>
@@ -165,10 +165,10 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
                               {resourceItems.map((rItem, i) => (
                                 <button
                                   key={`res-${rItem.id || i}`}
-                                  onClick={() => handleNavClick({ id: rItem.slug || rItem.id?.toString() || '', path: 'isPublished' in rItem ? `/${rItem.slug}` : `/solutions/${rItem.slug}` })}
-                                  className="text-left px-6 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2]"
+                                  onClick={() => handleNavClick({ id: rItem.slug || rItem.id?.toString() || '', path: `/${rItem.slug || rItem.id}` })}
+                                  className="text-left px-6 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
                                 >
-                                  {rItem.title}
+                                  {rItem.title.split('-')[0].trim()}
                                 </button>
                               ))}
                             </div>
