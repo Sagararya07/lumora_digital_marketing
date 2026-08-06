@@ -38,6 +38,14 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
   const [heroImage, setHeroImage] = useState<string>('');
   const [isUploading, setIsUploading] = useState(false);
   const [sections, setSections] = useState<DynamicPageSection[]>([]);
+  
+  // Custom Modal Fields
+  const [overviewContent, setOverviewContent] = useState<string>('');
+  const [heroBadge, setHeroBadge] = useState<string>('');
+  const [serviceFeatures, setServiceFeatures] = useState<string[]>([]);
+  const [serviceDeliverables, setServiceDeliverables] = useState<string[]>([]);
+  const [serviceRecommendedFor, setServiceRecommendedFor] = useState<string>('');
+
   const [saving, setSaving] = useState<boolean>(false);
   const [savedSuccess, setSavedSuccess] = useState<boolean>(false);
 
@@ -50,6 +58,11 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
       setMetaTitle(targetPage.seo?.metaTitle || targetPage.title);
       setMetaDescription(targetPage.seo?.metaDescription || '');
       setHeroImage(targetPage.heroImage || '');
+      setOverviewContent(targetPage.overviewContent || '');
+      setHeroBadge(targetPage.heroBadge || '');
+      setServiceFeatures(targetPage.serviceFeatures || []);
+      setServiceDeliverables(targetPage.serviceDeliverables || []);
+      setServiceRecommendedFor(targetPage.serviceRecommendedFor || '');
       setSections(targetPage.sections || []);
     }
   }, [targetPage]);
@@ -245,6 +258,11 @@ const handleAddSection = () => {
       },
       sections,
       heroImage,
+      overviewContent,
+      heroBadge,
+      serviceFeatures,
+      serviceDeliverables,
+      serviceRecommendedFor,
     };
 
     try {
@@ -424,6 +442,85 @@ const handleAddSection = () => {
           </div>
         </div>
 
+        {/* Modal Configuration (Service Pages Only) */}
+        {targetPage?.pageType === 'service' && (
+          <div className="p-6 rounded-3xl bg-[#F8FAFC] border border-[#E5E7EB] space-y-5">
+            <div className="flex items-center gap-2 pb-3 border-b border-[#E5E7EB]">
+              <Sparkles className="w-4 h-4 text-[#5B8EE2]" />
+              <h3 className="font-extrabold text-sm text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">
+                Service Modal Details (Optional Overrides)
+              </h3>
+            </div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <div className="md:col-span-2">
+                <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                  Overview Description
+                </label>
+                <textarea
+                  rows={2}
+                  value={overviewContent}
+                  onChange={(e) => setOverviewContent(e.target.value)}
+                  className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100 leading-relaxed"
+                  placeholder="Full description for the modal..."
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                  Hero Badge (Icon Name)
+                </label>
+                <input
+                  type="text"
+                  value={heroBadge}
+                  onChange={(e) => setHeroBadge(e.target.value)}
+                  className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100"
+                  placeholder="e.g. Target, Users, TrendingUp"
+                />
+              </div>
+
+              <div>
+                <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                  Recommended Audience
+                </label>
+                <input
+                  type="text"
+                  value={serviceRecommendedFor}
+                  onChange={(e) => setServiceRecommendedFor(e.target.value)}
+                  className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100"
+                  placeholder="e.g. Scaling B2B SaaS Companies"
+                />
+              </div>
+
+              <div className="md:col-span-2">
+                <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                  Key Capabilities (Features)
+                </label>
+                <textarea
+                  rows={3}
+                  value={serviceFeatures.join('\n')}
+                  onChange={(e) => setServiceFeatures(e.target.value.split('\n'))}
+                  className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100 leading-relaxed"
+                  placeholder="Enter one feature per line..."
+                />
+              </div>
+
+              <div className="md:col-span-2">
+                <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                  Client Deliverables
+                </label>
+                <textarea
+                  rows={3}
+                  value={serviceDeliverables.join('\n')}
+                  onChange={(e) => setServiceDeliverables(e.target.value.split('\n'))}
+                  className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100 leading-relaxed"
+                  placeholder="Enter one deliverable per line..."
+                />
+              </div>
+            </div>
+          </div>
+        )}
+        
         {/* 2. Section-by-Section Editor */}
         <div className="space-y-6">
           <div className="flex items-center justify-between pb-3 border-b border-[#E5E7EB]">

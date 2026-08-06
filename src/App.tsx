@@ -170,9 +170,9 @@ export function App() {
         shortDescription: dp.seo?.metaDescription || dp.overviewContent || fallback.shortDescription,
         fullDescription: dp.overviewContent || fallback.fullDescription,
         iconName: dp.heroBadge || 'Target',
-        features: fallback.features,
-        deliverables: fallback.deliverables,
-        recommendedFor: fallback.recommendedFor,
+        features: (dp.serviceFeatures && dp.serviceFeatures.length > 0 && dp.serviceFeatures[0] !== '') ? dp.serviceFeatures : fallback.features,
+        deliverables: (dp.serviceDeliverables && dp.serviceDeliverables.length > 0 && dp.serviceDeliverables[0] !== '') ? dp.serviceDeliverables : fallback.deliverables,
+        recommendedFor: dp.serviceRecommendedFor || fallback.recommendedFor,
         badge: dp.heroBadge || fallback.badge,
         image: dp.heroImage || fallback.image
       };

@@ -259,6 +259,13 @@ export interface DynamicPage {
   createdAt: string;
   updatedAt: string;
   replicatedFromId?: string;
+  
+  // Custom Service Modal Fields
+  overviewContent?: string;
+  heroBadge?: string;
+  serviceFeatures?: string[];
+  serviceDeliverables?: string[];
+  serviceRecommendedFor?: string;
 }
 
 export interface AIContentRequest {
