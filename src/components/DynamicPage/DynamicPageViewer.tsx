@@ -12,6 +12,7 @@ import {
   Workflow,
   X
 } from 'lucide-react';
+import * as Icons from 'lucide-react';
 import { DynamicPage } from '../../types';
 import { ConsultationSection } from '../Home/ConsultationSection';
 import { useViewMore } from '../../hooks/useViewMore';
@@ -251,12 +252,16 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                           
                           {/* Square Icon Container */}
                           <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
-                            {card.iconName === 'BarChart3' && <BarChart3 className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
-                            {card.iconName === 'Target' && <Target className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
-                            {card.iconName === 'Sparkles' && <Sparkles className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
-                            {card.iconName === 'Route' && <Route className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
-                            {card.iconName === 'Workflow' && <Workflow className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />}
-                            {!card.iconName && card.iconUrl && <img src={card.iconUrl} alt="icon" className="w-full h-full object-contain drop-shadow-sm" />}
+                            {(() => {
+                              const IconComponent = card.iconName ? (Icons as any)[card.iconName] : null;
+                              if (IconComponent) {
+                                return <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-[#5B8EE2] drop-shadow-sm" />;
+                              }
+                              if (card.iconUrl) {
+                                return <img src={card.iconUrl} alt="icon" className="w-full h-full object-contain drop-shadow-sm" />;
+                              }
+                              return null;
+                            })()}
                           </div>
                           
                           {/* Title Only */}
@@ -310,7 +315,10 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                                     className={`flex items-center gap-4 p-4 rounded-2xl bg-white/95 backdrop-blur-md border shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-1 ${ptIdx === 0 ? 'border-blue-400 shadow-blue-100 ring-1 ring-blue-400/50' : 'border-white/50 hover:border-blue-200'}`}
                                   >
                                     <div className={`flex-shrink-0 w-10 h-10 rounded-full flex items-center justify-center ${ptIdx === 0 ? 'bg-gradient-to-br from-blue-500 to-purple-600 text-white shadow-md' : 'bg-slate-100 text-slate-500'}`}>
-                                      <CheckCircle2 className="w-5 h-5" />
+                                      {(() => {
+                                        const PointIcon = pt.iconName ? (Icons as any)[pt.iconName] : CheckCircle2;
+                                        return <PointIcon className="w-5 h-5" />;
+                                      })()}
                                     </div>
                                     <span className="text-sm font-semibold text-slate-800 leading-snug">{pt.title}</span>
                                   </div>
