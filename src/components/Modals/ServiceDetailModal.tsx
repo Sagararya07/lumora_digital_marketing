@@ -77,12 +77,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
 
         {/* Action Buttons */}
         <div className="flex items-center justify-end gap-3 pt-2 border-t border-slate-100">
-          <button
-            onClick={onClose}
-            className="px-4 py-2 rounded-xl bg-slate-100 text-slate-600 hover:text-slate-900 text-xs font-semibold"
-          >
-            Close
-          </button>
+
           
           {onReadMore && (
             <button
@@ -103,7 +98,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
             }}
             className="px-5 py-2 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-200 flex items-center gap-1.5 transition-all"
           >
-            <span>Request Proposal for {service.title}</span>
+            <span>Request Proposal</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
