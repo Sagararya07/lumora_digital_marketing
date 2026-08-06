@@ -33,6 +33,7 @@ import { RndPage } from './components/Pages/RndPage';
 import { initialSiteContent, initialDynamicPages } from './data/initialData';
 import { SiteContent, DynamicPage, ServiceItem, AchievementItem, CaseStudyItem } from './types';
 import { useTheme } from './hooks/useTheme';
+import { fallbackServiceDetails } from './data/serviceDetails';
 
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; error: Error | null }> {
   constructor(props: { children: React.ReactNode }) {
@@ -159,19 +160,31 @@ export function App() {
 
   const dynamicServices = dynamicPages
     .filter(dp => dp.isPublished)
-    .map(dp => ({
-      id: String(dp.id),
-      slug: dp.slug,
-      title: dp.title,
-      shortDescription: dp.seo?.metaDescription || dp.overviewContent || 'Comprehensive digital marketing solutions driven by AI.',
-      fullDescription: dp.overviewContent || '',
-      iconName: dp.heroBadge || 'Target',
-      features: [],
-      deliverables: [],
-      recommendedFor: '',
-      badge: dp.heroBadge || '',
-      image: dp.heroImage || ''
-    }));
+    .map(dp => {
+      const fallback = fallbackServiceDetails[dp.slug] || {
+        shortDescription: 'Comprehensive digital marketing solutions driven by AI.',
+        fullDescription: '',
+        features: [],
+        deliverables: [],
+        recommendedFor: '',
+        badge: 'Service',
+        image: ''
+      };
+
+      return {
+        id: String(dp.id),
+        slug: dp.slug,
+        title: dp.title,
+        shortDescription: dp.seo?.metaDescription || dp.overviewContent || fallback.shortDescription,
+        fullDescription: dp.overviewContent || fallback.fullDescription,
+        iconName: dp.heroBadge || 'Target',
+        features: fallback.features,
+        deliverables: fallback.deliverables,
+        recommendedFor: fallback.recommendedFor,
+        badge: dp.heroBadge || fallback.badge,
+        image: dp.heroImage || fallback.image
+      };
+    });
 
   return (
     <div className="min-h-screen bg-white text-slate-900 font-['Inter',sans-serif] selection:bg-[#5B8EE2] selection:text-white transition-colors duration-300">
