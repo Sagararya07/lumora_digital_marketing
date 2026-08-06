@@ -62,3 +62,41 @@ export const fallbackServiceDetails: Record<string, {
     image: '/images/services/ai_marketing_1785498439194.png'
   }
 };
+
+export function getFallbackServiceDetails(slug: string, title?: string) {
+  if (fallbackServiceDetails[slug]) {
+    return fallbackServiceDetails[slug];
+  }
+  
+  const searchString = `${slug} ${title || ''}`.toLowerCase();
+  
+  if (searchString.includes('seo') || searchString.includes('search engine')) {
+    return fallbackServiceDetails['seo-growth-engine'];
+  }
+  if (searchString.includes('social') || searchString.includes('media')) {
+    return fallbackServiceDetails['social-media-marketing'];
+  }
+  if (searchString.includes('performance') || searchString.includes('ads') || searchString.includes('paid')) {
+    return fallbackServiceDetails['performance-marketing'];
+  }
+  if (searchString.includes('lead') || searchString.includes('acquisition') || searchString.includes('funnel')) {
+    return fallbackServiceDetails['lead-generation'];
+  }
+  if (searchString.includes('retargeting') || searchString.includes('remarketing')) {
+    return fallbackServiceDetails['retargeting-marketing'];
+  }
+  if (searchString.includes('ai') || searchString.includes('automation') || searchString.includes('bot')) {
+    return fallbackServiceDetails['ai-marketing-automation'];
+  }
+  
+  // Generic fallback if absolutely nothing matches
+  return {
+    shortDescription: 'Comprehensive digital marketing solutions driven by AI.',
+    fullDescription: 'We provide end-to-end digital marketing services tailored to your specific business needs, ensuring measurable and scalable growth.',
+    features: ['Custom Strategy Development', 'Data-Driven Execution', 'Continuous Optimization', 'Transparent Reporting', 'Dedicated Account Management'],
+    deliverables: ['Initial Strategy Blueprint', 'Execution Roadmap', 'Monthly Performance Reviews', 'Access to Analytics Dashboard'],
+    recommendedFor: 'Businesses of all sizes looking for a dedicated partner to accelerate their digital growth.',
+    badge: 'Service',
+    image: ''
+  };
+}

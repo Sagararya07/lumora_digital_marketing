@@ -33,7 +33,7 @@ import { RndPage } from './components/Pages/RndPage';
 import { initialSiteContent, initialDynamicPages } from './data/initialData';
 import { SiteContent, DynamicPage, ServiceItem, AchievementItem, CaseStudyItem } from './types';
 import { useTheme } from './hooks/useTheme';
-import { fallbackServiceDetails } from './data/serviceDetails';
+import { getFallbackServiceDetails } from './data/serviceDetails';
 
 class ErrorBoundary extends React.Component<{ children: React.ReactNode }, { hasError: boolean; error: Error | null }> {
   constructor(props: { children: React.ReactNode }) {
@@ -161,15 +161,7 @@ export function App() {
   const dynamicServices = dynamicPages
     .filter(dp => dp.isPublished)
     .map(dp => {
-      const fallback = fallbackServiceDetails[dp.slug] || {
-        shortDescription: 'Comprehensive digital marketing solutions driven by AI.',
-        fullDescription: '',
-        features: [],
-        deliverables: [],
-        recommendedFor: '',
-        badge: 'Service',
-        image: ''
-      };
+      const fallback = getFallbackServiceDetails(dp.slug, dp.title);
 
       return {
         id: String(dp.id),

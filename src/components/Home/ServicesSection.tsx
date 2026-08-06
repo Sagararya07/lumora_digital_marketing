@@ -4,7 +4,7 @@ import {
   TrendingUp, Users, Target, Bot, Globe, Search, ArrowRight, Sparkles, Share2, Megaphone, Repeat
 } from 'lucide-react';
 import { ServiceItem } from '../../types';
-import { fallbackServiceDetails } from '../../data/serviceDetails';
+import { getFallbackServiceDetails } from '../../data/serviceDetails';
 
 interface ServicesProps {
   services?: ServiceItem[];
@@ -144,13 +144,13 @@ export const ServicesSection: React.FC<ServicesProps> = ({
                     <button
                       onClick={() => {
                         const baseSlug = item.slug || fallback.id;
-                        const defaultData = fallbackServiceDetails[baseSlug] || { features: [], deliverables: [], recommendedFor: '', fullDescription: '' };
+                        const defaultData = getFallbackServiceDetails(baseSlug, item.title || fallback.title);
                         
                         onSelectService({ 
                           ...item, 
                           slug: baseSlug,
-                          features: item.features || defaultData.features,
-                          deliverables: item.deliverables || defaultData.deliverables,
+                          features: item.features?.length ? item.features : defaultData.features,
+                          deliverables: item.deliverables?.length ? item.deliverables : defaultData.deliverables,
                           recommendedFor: item.recommendedFor || defaultData.recommendedFor,
                           fullDescription: item.fullDescription || defaultData.fullDescription
                         });
