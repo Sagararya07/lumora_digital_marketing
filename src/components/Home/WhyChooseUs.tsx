@@ -94,7 +94,7 @@ const floatingOrbitNodes = [
   { name: 'LinkedIn B2B', tag: 'Executive Outreach', icon: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png', pos: 'bottom-24 left-2' },
   { name: 'WhatsApp Bot', tag: '24/7 Lead Qual', icon: 'https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg', pos: 'bottom-24 right-2' },
   { name: 'Stripe Funnels', tag: 'Instant Checkout', icon: 'https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg', pos: 'bottom-2 left-16' },
-  { name: 'Zapier Engine', tag: '3000+ App Sync', icon: 'https://upload.wikimedia.org/wikipedia/commons/0/0e/Zapier_logo.svg', pos: 'bottom-2 right-16' },
+  { name: 'Zapier Engine', tag: '3000+ App Sync', icon: 'https://www.vectorlogo.zone/logos/zapier/zapier-icon.svg', pos: 'bottom-2 right-16' },
 ];
 
 export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultationModal }) => {

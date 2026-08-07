@@ -413,7 +413,7 @@ app.get('/api/leads', async (req, res) => {
   }
 });
 
-// Email Notification Helper targeting cypherswiftinfotech@gmail.com
+// Email Notification Helper targeting cypherswiftinfotech@gmail.com, support@lumora.expert, and digitalmarketing@lumora.expert
 const sendLeadEmailNotification = async (leadData: {
   name: string;
   companyName?: string;
@@ -424,7 +424,7 @@ const sendLeadEmailNotification = async (leadData: {
   message?: string;
   sourcePage?: string;
 }) => {
-  const targetEmail = 'cypherswiftinfotech@gmail.com';
+  const targetEmails = 'cypherswiftinfotech@gmail.com, support@lumora.expert, digitalmarketing@lumora.expert';
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
@@ -467,18 +467,18 @@ const sendLeadEmailNotification = async (leadData: {
       }
 
       <hr style="border: 0; border-top: 1px solid #e5e7eb; margin: 20px 0 10px 0;" />
-      <p style="font-size: 11px; color: #9ca3af; text-align: center;">This notification was automatically sent by Lumora Lead Management System to <strong>${targetEmail}</strong>.</p>
+      <p style="font-size: 11px; color: #9ca3af; text-align: center;">This notification was automatically sent by Lumora Lead Management System to <strong>${targetEmails}</strong>.</p>
     </div>
   `;
 
   try {
     await transporter.sendMail({
       from: `"Lumora Lead Alert" <${process.env.SMTP_USER || 'no-reply@lumora.ai'}>`,
-      to: targetEmail,
+      to: targetEmails,
       subject: `🔥 New Lead Submission: ${leadData.name || leadData.email} (${servicesStr})`,
       html: htmlContent,
     });
-    console.log(`[Email Notification] Successfully sent lead alert email to ${targetEmail}`);
+    console.log(`[Email Notification] Successfully sent lead alert email to ${targetEmails}`);
   } catch (err: any) {
     console.warn(`[Email Notification Note] Form lead saved to Admin DB. Email alert note: ${err.message}`);
   }

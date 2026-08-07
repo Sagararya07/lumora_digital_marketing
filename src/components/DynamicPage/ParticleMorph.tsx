@@ -170,7 +170,156 @@ function generateImageShape(imageUrl: string, count: number): Promise<{ position
   });
 }
 
-const Particles: React.FC<{ imageUrl?: string }> = ({ imageUrl }) => {
+function generateThemeShape(theme: string, count: number): Promise<{ positions: Float32Array, colors: Float32Array }> {
+  return new Promise((resolve) => {
+    const canvas = document.createElement('canvas');
+    const size = 256;
+    canvas.width = size;
+    canvas.height = size;
+    const ctx = canvas.getContext('2d', { willReadFrequently: true });
+    if (!ctx) {
+      resolve(fallbackShape(count));
+      return;
+    }
+    
+    ctx.fillStyle = '#000000';
+    ctx.fillRect(0, 0, size, size);
+    
+    ctx.fillStyle = '#ffffff';
+    ctx.strokeStyle = '#ffffff';
+    ctx.lineWidth = 15;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    
+    const s = size;
+
+    switch(theme) {
+      case 'lead-generation':
+        ctx.beginPath();
+        ctx.moveTo(s*0.2, s*0.2); ctx.lineTo(s*0.8, s*0.2);
+        ctx.lineTo(s*0.6, s*0.6); ctx.lineTo(s*0.6, s*0.9);
+        ctx.lineTo(s*0.4, s*0.9); ctx.lineTo(s*0.4, s*0.6);
+        ctx.closePath();
+        ctx.stroke();
+        break;
+      case 'social-media-marketing':
+        ctx.beginPath();
+        ctx.arc(s*0.5, s*0.5, s*0.12, 0, Math.PI*2);
+        ctx.arc(s*0.2, s*0.2, s*0.08, 0, Math.PI*2);
+        ctx.arc(s*0.8, s*0.3, s*0.08, 0, Math.PI*2);
+        ctx.arc(s*0.3, s*0.8, s*0.08, 0, Math.PI*2);
+        ctx.arc(s*0.7, s*0.7, s*0.08, 0, Math.PI*2);
+        ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(s*0.5, s*0.5); ctx.lineTo(s*0.2, s*0.2);
+        ctx.moveTo(s*0.5, s*0.5); ctx.lineTo(s*0.8, s*0.3);
+        ctx.moveTo(s*0.5, s*0.5); ctx.lineTo(s*0.3, s*0.8);
+        ctx.moveTo(s*0.5, s*0.5); ctx.lineTo(s*0.7, s*0.7);
+        ctx.stroke();
+        break;
+      case 'seo':
+        ctx.beginPath();
+        ctx.moveTo(s*0.1, s*0.1); ctx.lineTo(s*0.1, s*0.9); ctx.lineTo(s*0.9, s*0.9);
+        ctx.stroke();
+        ctx.fillRect(s*0.2, s*0.6, s*0.15, s*0.3);
+        ctx.fillRect(s*0.45, s*0.4, s*0.15, s*0.5);
+        ctx.fillRect(s*0.7, s*0.2, s*0.15, s*0.7);
+        break;
+      case 'performance-marketing':
+      case 'target-audience-reach':
+        ctx.beginPath(); ctx.arc(s*0.5, s*0.5, s*0.35, 0, Math.PI*2); ctx.stroke();
+        ctx.beginPath(); ctx.arc(s*0.5, s*0.5, s*0.2, 0, Math.PI*2); ctx.stroke();
+        ctx.beginPath(); ctx.arc(s*0.5, s*0.5, s*0.05, 0, Math.PI*2); ctx.fill();
+        ctx.beginPath();
+        ctx.moveTo(s*0.5, s*0.05); ctx.lineTo(s*0.5, s*0.95);
+        ctx.moveTo(s*0.05, s*0.5); ctx.lineTo(s*0.95, s*0.5);
+        ctx.stroke();
+        break;
+      case 'retargeting-marketing':
+        ctx.beginPath();
+        ctx.arc(s*0.5, s*0.5, s*0.3, 0.5, Math.PI*2 - 0.5);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(s*0.85, s*0.65); ctx.lineTo(s*0.75, s*0.8); ctx.lineTo(s*0.95, s*0.75);
+        ctx.stroke();
+        break;
+      case 'ai-marketing-automation':
+        ctx.beginPath(); ctx.ellipse(s*0.5, s*0.5, s*0.1, s*0.4, Math.PI/4, 0, 2*Math.PI); ctx.stroke();
+        ctx.beginPath(); ctx.ellipse(s*0.5, s*0.5, s*0.1, s*0.4, -Math.PI/4, 0, 2*Math.PI); ctx.stroke();
+        ctx.beginPath(); ctx.arc(s*0.5, s*0.5, s*0.05, 0, 2*Math.PI); ctx.fill();
+        break;
+      case 'paid-advertising-campaigns':
+        ctx.beginPath();
+        ctx.moveTo(s*0.3, s*0.4); ctx.lineTo(s*0.7, s*0.2);
+        ctx.lineTo(s*0.7, s*0.8); ctx.lineTo(s*0.3, s*0.6);
+        ctx.closePath();
+        ctx.stroke();
+        ctx.fillRect(s*0.2, s*0.4, s*0.1, s*0.2);
+        break;
+      case 'influencer-marketing':
+        ctx.beginPath();
+        for(let i=0; i<5; i++) {
+          ctx.lineTo(s*0.5 + s*0.35*Math.cos(i * 2*Math.PI/5 - Math.PI/2), s*0.5 + s*0.35*Math.sin(i * 2*Math.PI/5 - Math.PI/2));
+          ctx.lineTo(s*0.5 + s*0.15*Math.cos((i+0.5) * 2*Math.PI/5 - Math.PI/2), s*0.5 + s*0.15*Math.sin((i+0.5) * 2*Math.PI/5 - Math.PI/2));
+        }
+        ctx.closePath();
+        ctx.stroke();
+        break;
+      default:
+        // fallback to sphere/lotus is handled outside, but we can just draw a cube or something
+        ctx.strokeRect(s*0.2, s*0.2, s*0.6, s*0.6);
+        break;
+    }
+
+    const imgData = ctx.getImageData(0, 0, size, size).data;
+    const validPixels: {x: number, y: number, r: number, g: number, b: number}[] = [];
+    
+    for (let py = 0; py < size; py++) {
+      for (let px = 0; px < size; px++) {
+        const i = (py * size + px) * 4;
+        const r = imgData[i];
+        if (r > 128) {
+          validPixels.push({
+            x: px, y: py,
+            r: 0.35, 
+            g: 0.55,
+            b: 0.88,
+          });
+        }
+      }
+    }
+
+    if (validPixels.length === 0) {
+      resolve(fallbackShape(count));
+      return;
+    }
+
+    const positions = new Float32Array(count * 3);
+    const colors = new Float32Array(count * 3);
+    const bounds = 8.0; 
+    
+    for (let i = 0; i < count; i++) {
+      const p = validPixels[Math.floor(Math.random() * validPixels.length)];
+      const noiseX = (Math.random() - 0.5) * (bounds / size) * 3.0;
+      const noiseY = (Math.random() - 0.5) * (bounds / size) * 3.0;
+      
+      const px = (p.x / size - 0.5) * bounds + noiseX;
+      const py = -(p.y / size - 0.5) * bounds + noiseY;
+      const pz = (Math.random() - 0.5) * 2.0; 
+      
+      positions[i * 3] = px;
+      positions[i * 3 + 1] = py;
+      positions[i * 3 + 2] = pz;
+      
+      colors[i * 3] = p.r + (Math.random() - 0.5) * 0.2;
+      colors[i * 3 + 1] = p.g + (Math.random() - 0.5) * 0.2;
+      colors[i * 3 + 2] = p.b + (Math.random() - 0.5) * 0.2;
+    }
+    resolve({ positions, colors });
+  });
+}
+
+const Particles: React.FC<{ imageUrl?: string, theme?: string }> = ({ imageUrl, theme }) => {
   const pointsRef = useRef<THREE.Points>(null);
   const [targetIndex, setTargetIndex] = useState(0);
   
@@ -185,7 +334,21 @@ const Particles: React.FC<{ imageUrl?: string }> = ({ imageUrl }) => {
 
   useEffect(() => {
     let active = true;
-    if (imageUrl) {
+    if (theme) {
+      generateThemeShape(theme, PARTICLE_COUNT).then(shape => {
+        if (active) {
+          const breatheShape = {
+            positions: new Float32Array(shape.positions),
+            colors: new Float32Array(shape.colors)
+          };
+          for(let i = 0; i < PARTICLE_COUNT; i++) {
+            breatheShape.positions[i*3+2] += (Math.random() - 0.5) * 4.0; // expand z
+          }
+          setActiveShapes([shape, breatheShape]);
+          setTargetIndex(0);
+        }
+      });
+    } else if (imageUrl) {
       generateImageShape(imageUrl, PARTICLE_COUNT).then(imgShape => {
         if (active) {
           const breatheShape = {
@@ -204,7 +367,7 @@ const Particles: React.FC<{ imageUrl?: string }> = ({ imageUrl }) => {
       setTargetIndex(0);
     }
     return () => { active = false; };
-  }, [imageUrl, defaultShapes]);
+  }, [imageUrl, theme, defaultShapes]);
 
   const currentPositions = useMemo(() => {
     const pos = new Float32Array(PARTICLE_COUNT * 3);
@@ -228,7 +391,7 @@ const Particles: React.FC<{ imageUrl?: string }> = ({ imageUrl }) => {
   useFrame((state, delta) => {
     if (!pointsRef.current) return;
     
-    if (imageUrl) {
+    if (theme || imageUrl) {
       pointsRef.current.rotation.y = Math.sin(state.clock.elapsedTime * 0.5) * 0.2;
       pointsRef.current.rotation.x = Math.sin(state.clock.elapsedTime * 0.3) * 0.1;
     } else {
@@ -281,11 +444,13 @@ const Particles: React.FC<{ imageUrl?: string }> = ({ imageUrl }) => {
   );
 };
 
-export const ParticleMorph: React.FC<{ imageUrl?: string }> = ({ imageUrl }) => {
+export const ParticleMorph: React.FC<{ imageUrl?: string, theme?: string }> = ({ imageUrl, theme }) => {
   return (
     <div className="absolute inset-0 pointer-events-none z-0 overflow-hidden">
       <Canvas camera={{ position: [0, 0, 10], fov: 45 }}>
-        <Particles imageUrl={imageUrl} />
+        <ambientLight intensity={0.5} />
+        <pointLight position={[10, 10, 10]} intensity={1} />
+        <Particles imageUrl={imageUrl} theme={theme} />
       </Canvas>
     </div>
   );

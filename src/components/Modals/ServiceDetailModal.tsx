@@ -98,7 +98,7 @@ export const ServiceDetailModal: React.FC<ServiceDetailModalProps> = ({
             }}
             className="px-5 py-2 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white text-xs font-bold shadow-md shadow-blue-200 flex items-center gap-1.5 transition-all"
           >
-            <span>Request Proposal</span>
+            <span>Request for service</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>

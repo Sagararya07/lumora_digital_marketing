@@ -237,7 +237,7 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
               return (
               <div 
                 key={idx} 
-                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-[220px]
+                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-auto lg:h-[220px]
                 ${idx % 2 === 0 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
               >
                 {/* Glowing Step Number Badge */}
@@ -255,8 +255,18 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
                   <div className="hidden lg:block absolute top-1/2 right-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
                 )}
                 
+                {/* Mobile Text (Visible only on small screens) */}
+                <div className="mt-4 text-center lg:hidden w-full">
+                  <h3 className="text-sm font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
+                    {title}
+                  </h3>
+                  <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
+                    {desc}
+                  </p>
+                </div>
+                
                 {/* Floating Sky Cloud Popup (Hidden until hover, no layout shift) */}
-                <div className="absolute bottom-[95%] left-1/2 w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
+                <div className="hidden lg:flex absolute bottom-[95%] left-1/2 w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
                   
                   {/* Cloud Tail Pointer */}
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
@@ -290,7 +300,7 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
               return (
               <div 
                 key={idx} 
-                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-[220px]
+                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-auto lg:h-[220px]
                 ${idx % 2 === 1 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
               >
                 {/* Glowing Step Number Badge */}
@@ -308,8 +318,18 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
                   <div className="hidden lg:block absolute top-1/2 left-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
                 )}
                 
+                {/* Mobile Text (Visible only on small screens) */}
+                <div className="mt-4 text-center lg:hidden w-full">
+                  <h3 className="text-sm font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
+                    {title}
+                  </h3>
+                  <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
+                    {desc}
+                  </p>
+                </div>
+                
                 {/* Floating Sky Cloud Popup (Hidden until hover, no layout shift) */}
-                <div className="absolute bottom-[95%] left-1/2 w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
+                <div className="hidden lg:flex absolute bottom-[95%] left-1/2 w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
                   
                   {/* Cloud Tail Pointer */}
                   <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>

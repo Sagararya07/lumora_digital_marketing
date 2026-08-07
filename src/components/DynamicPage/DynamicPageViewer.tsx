@@ -163,7 +163,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
 
           {/* Right 3D Canvas Area */}
           <div className="w-full lg:w-[45%] h-[400px] lg:h-[500px] relative rounded-[3rem] overflow-hidden shadow-2xl shadow-blue-500/10 border border-white/60 bg-gradient-to-br from-blue-50/50 via-white/40 to-purple-50/50 backdrop-blur-xl group">
-            <ParticleMorph imageUrl={page.heroImage} />
+            <ParticleMorph imageUrl={page.heroImage} theme={page.slug} />
             
             {/* Inner glow/shadow for premium feel */}
             <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[3rem] pointer-events-none z-10" />

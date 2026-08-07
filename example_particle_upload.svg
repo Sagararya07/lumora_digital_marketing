@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256">
+  <!-- 
+    Notice that there is NO background rectangle here (no <rect> filling the background). 
+    This is what makes the background transparent!
+  -->
+  
+  <!-- A simple funnel/target shape for Lead Generation with a thick stroke -->
+  <g stroke="#5B8EE2" stroke-width="20" stroke-linecap="round" stroke-linejoin="round" fill="none">
+    <!-- Top wide part of funnel -->
+    <path d="M 30 50 L 226 50 L 150 140 L 150 220 L 106 220 L 106 140 Z" />
+    
+    <!-- Add some flow lines going into the funnel -->
+    <path d="M 80 15 L 80 30" stroke="#EC4899" />
+    <path d="M 128 5 L 128 30" stroke="#D6A67B" />
+    <path d="M 176 15 L 176 30" stroke="#EC4899" />
+  </g>
+</svg>
