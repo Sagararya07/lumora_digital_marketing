@@ -24,6 +24,7 @@ interface FooterProps {
 }
 
 export const Footer: React.FC<FooterProps> = ({
+  contactInfo,
   services,
   onOpenLegalModal,
   onGoHome,
@@ -32,7 +33,7 @@ export const Footer: React.FC<FooterProps> = ({
   return (
     <footer id="main-footer" className="bg-[#FFFFFF] text-[#6B7280] text-xs border-t border-[#E5E7EB]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-10 mb-12">
 
           {/* Column 1: Lumora Logo & About */}
           <div className="lg:col-span-2 space-y-5">
@@ -62,11 +63,11 @@ export const Footer: React.FC<FooterProps> = ({
           </div>
 
           {/* Column 2: Solutions */}
-          <div className="space-y-4">
+          <div className="space-y-4 lg:col-span-2">
             <h4 className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
               Solutions
             </h4>
-            <ul className="space-y-2.5 text-[#6B7280] font-normal">
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 text-[#6B7280] font-normal">
               {(services && services.length > 0 ? services : [
                 { title: 'Social Media Marketing', slug: 'social-media-marketing', id: 'social-media-marketing' },
                 { title: 'Search Engine Optimization (SEO)', slug: 'seo-growth-engine', id: 'seo-growth-engine' },
@@ -80,7 +81,7 @@ export const Footer: React.FC<FooterProps> = ({
                     onClick={() => onNavSection?.(item.id?.toString() || item.slug || `service-${i}`)}
                     className="hover:text-[#5B8EE2] transition-colors text-left"
                   >
-                    {item.title}
+                    {item.title.split(' - ')[0]}
                   </button>
                 </li>
               ))}
@@ -109,20 +110,20 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <div className="space-y-3 text-[#6B7280] font-normal">
               <p className="flex items-center gap-2.5">
-                <Mail className="w-4 h-4 text-[#5B8EE2]" />
-                <a href="mailto:cypherswiftinfotech@gmail.com" className="hover:text-[#5B8EE2] transition-colors">
-                  cypherswiftinfotech@gmail.com
+                <Mail className="w-4 h-4 text-[#5B8EE2] shrink-0" />
+                <a href={`mailto:${contactInfo?.email || 'contact@lumora.ai'}`} className="hover:text-[#5B8EE2] transition-colors break-all">
+                  {contactInfo?.email || 'contact@lumora.ai'}
                 </a>
               </p>
               <p className="flex items-center gap-2.5">
-                <Phone className="w-4 h-4 text-[#5B8EE2]" />
-                <a href="tel:+919179765554" className="hover:text-[#5B8EE2] transition-colors">
-                  +91 9179765554
+                <Phone className="w-4 h-4 text-[#5B8EE2] shrink-0" />
+                <a href={`tel:${contactInfo?.phone || '+919998887766'}`} className="hover:text-[#5B8EE2] transition-colors">
+                  {contactInfo?.phone || '+91 999 888 7766'}
                 </a>
               </p>
-              <p className="flex items-center gap-2.5">
-                <MapPin className="w-4 h-4 text-[#5B8EE2]" />
-                <span>Bangalore, India</span>
+              <p className="flex items-start gap-2.5">
+                <MapPin className="w-4 h-4 text-[#5B8EE2] shrink-0 mt-0.5" />
+                <span className="leading-relaxed">{contactInfo?.address || 'Innovation Tower, Tech Park Boulevard'}</span>
               </p>
             </div>
           </div>

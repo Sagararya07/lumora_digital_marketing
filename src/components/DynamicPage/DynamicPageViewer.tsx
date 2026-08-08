@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { 
   ArrowLeft, 
   CheckCircle2, 
@@ -15,6 +16,7 @@ import {
 import * as Icons from 'lucide-react';
 import { DynamicPage } from '../../types';
 import { ConsultationSection } from '../Home/ConsultationSection';
+import { ProcessSection } from '../Home/ProcessSection';
 import { useViewMore } from '../../hooks/useViewMore';
 import { ViewMoreButton } from '../common/ViewMoreButton';
 import { ParticleMorph } from './ParticleMorph';
@@ -42,6 +44,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
   consultationHeading,
   consultationSubheading,
 }) => {
+  const navigate = useNavigate();
   const [activeModalStudy, setActiveModalStudy] = useState<any>(null);
   const [showAllCaseStudies, setShowAllCaseStudies] = useState(false);
 
@@ -100,7 +103,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
     'from-rose-500 to-pink-600',
   ];
 
-  const { visibleItems: visibleSections, expanded, toggle, hiddenCount, shouldShowButton } = useViewMore(page.sections, 1, { initialRows: 3 });
+  const visibleSections = page.sections.filter(sec => sec.isActive !== false);
 
   // Format Page Hero Title with Gradient Text
   const pageTitle = replacePlaceholders(page.title);
@@ -117,7 +120,8 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
       
 
 
-      {/* Dynamic Hero Section - 3D Particle Theme */}
+      {/* Dynamic Hero Section - Conditionally Rendered */}
+      {!visibleSections.some(sec => sec.type === 'icon-hero') && (
       <section className="relative overflow-hidden pt-20 pb-24 px-4 sm:px-8 bg-gradient-to-b from-blue-50/70 via-white to-slate-50 border-b border-[#E5E7EB]">
         
         {/* Background Mesh Orbs */}
@@ -171,6 +175,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
 
         </div>
       </section>
+      )}
 
       {/* Page Rendered Section Blocks */}
       <div className="w-full pb-20">
@@ -182,6 +187,55 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
           if (secWords.length > 1) {
             highlightSec = secWords.pop() || '';
             leadingSec = secWords.join(' ');
+          }
+
+          if (sec.type === 'icon-hero') {
+            return (
+              <section key={sec.id} className="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 px-4 sm:px-8 bg-gradient-to-br from-[#5B8EE2]/5 via-[#D6A67B]/5 to-[#EC4899]/5 border-b border-[#E5E7EB]">
+                {/* Background Mesh Orbs */}
+                <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full opacity-50 blur-[120px] pointer-events-none bg-[#5B8EE2]/20 z-0" />
+                <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full opacity-40 blur-[120px] pointer-events-none bg-[#EC4899]/20 z-0" />
+                <div className="absolute top-[20%] left-[40%] w-[400px] h-[400px] rounded-full opacity-30 blur-[100px] pointer-events-none bg-[#D6A67B]/20 z-0" />
+                
+                <div className="absolute top-0 inset-x-0 h-px bg-gradient-to-r from-transparent via-[#5B8EE2]/30 to-transparent" />
+                <div className="flex flex-col items-center gap-6 relative z-10 max-w-4xl mx-auto text-center">
+                  {(sec.mediaUrl || sec.iconName) && (
+                    <div className="w-24 h-24 mb-2 flex items-center justify-center bg-white rounded-3xl shadow-xl shadow-slate-200/50 p-4 border border-slate-100 transform hover:scale-110 transition-transform duration-300">
+                      {(() => {
+                        const IconComponent = sec.iconName ? (Icons as any)[sec.iconName] : null;
+                        if (IconComponent) {
+                          return <IconComponent className="w-12 h-12 text-[#5B8EE2] drop-shadow-sm" />;
+                        }
+                        if (sec.mediaUrl) {
+                          return <img src={sec.mediaUrl} alt={secTitle} className="w-full h-full object-contain drop-shadow-sm" />;
+                        }
+                        return null;
+                      })()}
+                    </div>
+                  )}
+                  <h1 className="text-4xl sm:text-5xl font-black text-[#111827] leading-tight tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+                    {secTitle}
+                  </h1>
+                  <p className="text-[#4B5563] text-lg sm:text-xl leading-relaxed font-medium max-w-3xl">
+                    {replacePlaceholders(sec.content)}
+                  </p>
+                </div>
+              </section>
+            );
+          }
+
+          if (sec.type === 'process') {
+            const mappedSteps = sec.cards?.map((card: any, i: number) => ({
+              num: (i + 1).toString(),
+              title: card.title,
+              desc: card.description,
+              imageUrl: card.iconUrl || card.mediaUrl,
+            }));
+            return (
+              <div key={sec.id}>
+                <ProcessSection steps={mappedSteps} openConsultationModal={openConsultationModal} />
+              </div>
+            );
           }
 
           if (sec.type === 'text-media' || sec.type === 'overview') {
@@ -248,7 +302,16 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                     {/* Right Panel: Horizontal Cards List */}
                     <div className="w-full lg:w-1/2 flex flex-col gap-4">
                       {sec.cards?.map((card) => (
-                        <div key={card.id} className="group bg-white rounded-xl sm:rounded-2xl border border-[#E5E7EB] p-4 sm:p-6 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 flex items-center gap-4 sm:gap-6 cursor-pointer">
+                        <div 
+                          key={card.id} 
+                          className={`group bg-white rounded-xl sm:rounded-2xl border border-[#E5E7EB] p-4 sm:p-6 shadow-sm hover:shadow-md transition-all duration-300 flex items-center gap-4 sm:gap-6 ${card.linkUrl ? 'cursor-pointer hover:border-blue-200' : ''}`}
+                          onClick={() => {
+                            if (card.linkUrl) {
+                              navigate(`/${card.linkUrl}`);
+                              window.scrollTo({ top: 0, behavior: 'smooth' });
+                            }
+                          }}
+                        >
                           
                           {/* Square Icon Container */}
                           <div className="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden bg-slate-100 flex items-center justify-center p-2 group-hover:scale-105 transition-transform duration-300">
@@ -276,6 +339,74 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                     </div>
                     
                   </div>
+                </div>
+              </section>
+            );
+          }
+
+          if (sec.type === 'scrollable-cards') {
+            return (
+              <section key={sec.id} className="bg-white py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden">
+                <div className="max-w-[1400px] mx-auto relative z-10">
+                  
+                  {/* Title with lines */}
+                  <div className="flex items-center justify-center gap-4 mb-12">
+                    <span className="w-8 sm:w-16 h-px bg-slate-300 rounded-full" />
+                    <h2 className="text-3xl sm:text-4xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
+                      {secTitle}
+                    </h2>
+                    <span className="w-8 sm:w-16 h-px bg-slate-300 rounded-full" />
+                  </div>
+
+                  {/* Scrollable Container */}
+                  <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+                    {sec.cards?.map((card) => (
+                      <div key={card.id} className="w-[280px] sm:w-[300px] shrink-0 snap-center bg-white rounded-3xl border border-[#E5E7EB] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group">
+                        
+                        {/* Icon */}
+                        <div className="flex-shrink-0 w-20 h-20 flex items-center justify-center mb-6">
+                          {(() => {
+                            const IconComponent = card.iconName ? (Icons as any)[card.iconName] : null;
+                            if (IconComponent) {
+                              return <IconComponent className="w-12 h-12 text-[#5B8EE2] drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />;
+                            }
+                            if (card.iconUrl) {
+                              return <img src={card.iconUrl} alt={card.title} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300" />;
+                            }
+                            return <div className="w-12 h-12 rounded-xl bg-slate-100 animate-pulse" />;
+                          })()}
+                        </div>
+                        
+                        {/* Title */}
+                        <h3 className="text-xl font-bold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] mb-3 leading-tight">
+                          {card.title}
+                        </h3>
+                        
+                        {/* Description */}
+                        <p className="text-[#6B7280] text-sm leading-relaxed flex-1 font-medium">
+                          {card.description}
+                        </p>
+
+                        {/* Link */}
+                        <div className="mt-6 pt-6 border-t border-slate-100 w-full flex justify-center">
+                          <button
+                            onClick={(e) => {
+                              e.preventDefault();
+                              if (card.linkUrl) {
+                                navigate(`/${card.linkUrl}`);
+                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                              }
+                            }}
+                            className="inline-flex items-center gap-1.5 text-[#5B8EE2] text-sm font-extrabold hover:text-blue-700 transition-colors cursor-pointer"
+                          >
+                            Learn More <ArrowRight className="w-3.5 h-3.5" />
+                          </button>
+                        </div>
+                        
+                      </div>
+                    ))}
+                  </div>
+                  
                 </div>
               </section>
             );
@@ -412,17 +543,6 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
             </div>
           );
         })}
-
-        {shouldShowButton && (
-          <div className="flex justify-center mt-12 pb-12">
-            <ViewMoreButton
-              expanded={expanded}
-              onToggle={toggle}
-              hiddenCount={hiddenCount}
-              label="View More Sections"
-            />
-          </div>
-        )}
       </div>
 
       {/* Embedded Lead Consultation Form */}

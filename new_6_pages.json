@@ -1,0 +1,385 @@
+[
+  {
+    id: '20',
+    slug: 'strategies-creations',
+    title: 'Strategies Creations',
+    isPublished: true,
+    heroTitle: 'Data-Driven Strategies Creations',
+    heroSubtitle: 'We craft comprehensive digital marketing strategies that align with your business goals, target the right audience, and drive sustainable growth.',
+    heroBadge: 'TrendingUp',
+    heroImage: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=2000',
+    overviewContent: 'Our strategy creation process dives deep into your market, competitors, and audience. We build actionable roadmaps that take the guesswork out of marketing and give your team clear, measurable objectives to achieve.',
+    sections: [
+      {
+        id: 'overview-20',
+        type: 'overview',
+        isActive: true,
+        orderIndex: 0,
+        content: "A successful marketing campaign starts with a solid foundation. Our Strategies Creations service involves deep market research, competitive analysis, and audience profiling to create a customized marketing blueprint. We don't just give you ideas; we give you a step-by-step execution plan tailored to maximize ROI across all relevant channels.",
+        title: 'Strategic Blueprinting',
+        subtitle: 'The Foundation of Success'
+      },
+      {
+        id: 'features-20',
+        type: 'services-grid',
+        isActive: true,
+        orderIndex: 1,
+        title: 'Key Strategy Components',
+        subtitle: 'What goes into our strategies',
+        items: [
+          {
+            title: 'Market Positioning',
+            description: 'Finding the white space in your industry.',
+            iconName: 'Target'
+          },
+          {
+            title: 'Audience Personas',
+            description: 'Detailed profiles of your ideal buyers.',
+            iconName: 'Users'
+          },
+          {
+            title: 'Channel Selection',
+            description: 'Identifying where your audience spends their time.',
+            iconName: 'Share2'
+          },
+          {
+            title: 'Budget Allocation',
+            description: 'Optimizing spend for maximum returns.',
+            iconName: 'PieChart'
+          }
+        ]
+      }
+    ],
+    seo: {
+      metaTitle: 'Marketing Strategies Creations | Lumora',
+      metaDescription: 'Custom digital marketing strategies tailored for growth and ROI.',
+      keywords: 'marketing strategy, digital strategy, growth planning'
+    },
+    serviceFeatures: [
+      'In-depth Market Research',
+      'Competitor Analysis',
+      'Actionable Roadmaps'
+    ],
+    serviceDeliverables: [
+      'Comprehensive Strategy Document',
+      'Quarterly Execution Plans',
+      'KPI Dashboards'
+    ],
+    serviceRecommendedFor: 'Startups and enterprises looking to scale or pivot.'
+  },
+  {
+    id: '21',
+    slug: 'diagnose-marketing',
+    title: 'Diagnose Marketing',
+    isPublished: true,
+    heroTitle: 'Comprehensive Marketing Diagnosis',
+    heroSubtitle: 'Identify bottlenecks, discover wasted ad spend, and unlock hidden revenue opportunities within your current marketing funnel.',
+    heroBadge: 'Search',
+    heroImage: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2000',
+    overviewContent: "If your marketing isn't performing as expected, our Diagnose Marketing service will find out why. We conduct a complete audit of your digital footprint, ad accounts, SEO, and website conversion rates to pinpoint exact areas of improvement.",
+    sections: [
+      {
+        id: 'overview-21',
+        type: 'overview',
+        isActive: true,
+        orderIndex: 0,
+        content: 'Stop guessing why your campaigns are failing. Our diagnostic process uses advanced analytics and manual expert review to audit every touchpoint of your customer journey. We evaluate messaging alignment, technical setup, tracking accuracy, and creative effectiveness to provide a clear diagnosis of your marketing health.',
+        title: 'Uncovering the Truth',
+        subtitle: 'Deep-dive Audits'
+      },
+      {
+        id: 'process-21',
+        type: 'process',
+        isActive: true,
+        orderIndex: 1,
+        title: 'Our Diagnostic Process',
+        subtitle: 'How we find the leaks in your funnel',
+        items: [
+          {
+            title: 'Data Collection',
+            description: 'Connecting to your analytics and ad accounts.'
+          },
+          {
+            title: 'Technical Audit',
+            description: 'Checking tracking pixels, site speed, and SEO.'
+          },
+          {
+            title: 'Creative Review',
+            description: 'Analyzing ad copy, design, and brand messaging.'
+          },
+          {
+            title: 'Action Plan',
+            description: 'Delivering a prioritized list of fixes and opportunities.'
+          }
+        ]
+      }
+    ],
+    seo: {
+      metaTitle: 'Diagnose Marketing Performance | Lumora',
+      metaDescription: 'Find out why your marketing campaigns are underperforming with our expert diagnostic services.',
+      keywords: 'marketing audit, campaign diagnosis, conversion rate optimization'
+    },
+    serviceFeatures: [
+      'Full Funnel Analysis',
+      'Tracking & Analytics Verification',
+      'Competitor Benchmarking'
+    ],
+    serviceDeliverables: [
+      'Detailed Audit Report',
+      'Prioritized Action Plan',
+      'Consultation Session'
+    ],
+    serviceRecommendedFor: 'Companies with existing campaigns seeing declining ROI.'
+  },
+  {
+    id: '22',
+    slug: 'retarget-marketing',
+    title: 'Retarget Marketing',
+    isPublished: true,
+    heroTitle: 'High-Converting Retargeting Campaigns',
+    heroSubtitle: 'Bring back lost visitors and turn them into paying customers with highly personalized, omnichannel retargeting strategies.',
+    heroBadge: 'Repeat',
+    heroImage: 'https://images.unsplash.com/photo-1533750516457-a7f992034fec?auto=format&fit=crop&q=80&w=2000',
+    overviewContent: 'Over 95% of first-time website visitors leave without converting. Our Retarget Marketing service captures this lost revenue by strategically re-engaging them across social media, display networks, and email with tailored messaging based on their previous behavior.',
+    sections: [
+      {
+        id: 'overview-22',
+        type: 'overview',
+        isActive: true,
+        orderIndex: 0,
+        content: "We don't just stalk your visitors with the same ad. We build dynamic retargeting funnels that address objections, offer timely incentives, and guide prospects back to the point of purchase. By segmenting audiences based on how they interacted with your site (e.g., viewed pricing, abandoned cart, read a blog), we deliver hyper-relevant ads that drastically improve conversion rates.",
+        title: 'Smart Re-engagement',
+        subtitle: 'Closing the Loop'
+      },
+      {
+        id: 'features-22',
+        type: 'services-grid',
+        isActive: true,
+        orderIndex: 1,
+        title: 'Retargeting Capabilities',
+        subtitle: 'Platforms and strategies we use',
+        items: [
+          {
+            title: 'Dynamic Product Ads',
+            description: 'Showing exactly what they left in their cart.',
+            iconName: 'ShoppingCart'
+          },
+          {
+            title: 'Cross-Channel',
+            description: 'Following users seamlessly across Meta, Google, and LinkedIn.',
+            iconName: 'Globe'
+          },
+          {
+            title: 'Sequential Messaging',
+            description: 'Telling a story over multiple ad touches.',
+            iconName: 'MessageSquare'
+          }
+        ]
+      }
+    ],
+    seo: {
+      metaTitle: 'Retarget Marketing Services | Lumora',
+      metaDescription: 'Convert lost traffic with smart omnichannel retargeting campaigns.',
+      keywords: 'retargeting, remarketing, conversion optimization'
+    },
+    serviceFeatures: [
+      'Dynamic Ad Creatives',
+      'Behavioral Audience Segmentation',
+      'Frequency Capping & Optimization'
+    ],
+    serviceDeliverables: [
+      'Retargeting Funnel Setup',
+      'A/B Tested Creatives',
+      'ROI & Attribution Reporting'
+    ],
+    serviceRecommendedFor: 'E-commerce and B2B SaaS with high website traffic.'
+  },
+  {
+    id: '23',
+    slug: 'demand-generation',
+    title: 'Demand Generation',
+    isPublished: true,
+    heroTitle: 'Scalable Demand Generation',
+    heroSubtitle: 'Create sustainable, long-term brand awareness and interest that fills your pipeline with high-intent prospects before they even start searching for a solution.',
+    heroBadge: 'Megaphone',
+    heroImage: 'https://images.unsplash.com/photo-1432888498266-38ffec3eaf0a?auto=format&fit=crop&q=80&w=2000',
+    overviewContent: "Unlike traditional lead gen that harvests existing demand, our Demand Generation services create new demand. We position your brand as a thought leader and educate your market on the problems they didn't know they had, making you the undeniable solution.",
+    sections: [
+      {
+        id: 'overview-23',
+        type: 'overview',
+        isActive: true,
+        orderIndex: 0,
+        content: 'Demand generation requires a holistic approach combining content marketing, PR, organic social, and top-of-funnel paid media. We focus on distributing high-value, ungated content that builds trust and authority. By capturing mindshare early, we ensure that when buyers are ready to purchase, you are the only brand they consider.',
+        title: 'Creating the Market',
+        subtitle: 'Beyond Lead Gen'
+      },
+      {
+        id: 'faq-23',
+        type: 'faq',
+        isActive: true,
+        orderIndex: 1,
+        title: 'Demand Generation FAQs',
+        subtitle: 'Common questions about our approach',
+        items: [
+          {
+            question: 'How is this different from Lead Generation?',
+            answer: 'Lead generation captures existing intent (often through gated content or direct response ads). Demand generation creates the intent through education and brand building, often without asking for an email right away.'
+          },
+          {
+            question: 'How do you measure Demand Generation?',
+            answer: 'We look at blended metrics including branded search volume, direct traffic, content engagement, and overall pipeline velocity, rather than just cost-per-lead.'
+          }
+        ]
+      }
+    ],
+    seo: {
+      metaTitle: 'B2B Demand Generation | Lumora',
+      metaDescription: 'Build brand authority and create sustainable pipeline with our demand generation strategies.',
+      keywords: 'demand generation, B2B marketing, brand awareness'
+    },
+    serviceFeatures: [
+      'Content Strategy & Distribution',
+      'Thought Leadership Campaigns',
+      'Account-Based Marketing (ABM)'
+    ],
+    serviceDeliverables: [
+      'Content Calendar',
+      'Multi-channel Distribution Setup',
+      'Brand Lift Metrics'
+    ],
+    serviceRecommendedFor: 'B2B companies selling high-ticket or complex solutions.'
+  },
+  {
+    id: '24',
+    slug: 'high-quality-lead-generation',
+    title: 'High Quality Lead Generation',
+    isPublished: true,
+    heroTitle: 'High Quality Lead Generation',
+    heroSubtitle: 'Stop chasing unqualified prospects. We build automated funnels that attract, qualify, and deliver sales-ready leads directly to your CRM.',
+    heroBadge: 'Filter',
+    heroImage: 'https://images.unsplash.com/photo-1556761175-5973dc0f32b7?auto=format&fit=crop&q=80&w=2000',
+    overviewContent: 'Quantity means nothing if the quality is poor. Our lead generation strategies prioritize intent and qualification over sheer volume. We utilize advanced targeting, rigorous qualifying questionnaires, and CRM integrations to ensure your sales team only speaks to prospects who are ready to buy.',
+    sections: [
+      {
+        id: 'overview-24',
+        type: 'overview',
+        isActive: true,
+        orderIndex: 0,
+        content: 'We engineer lead generation systems tailored to your specific ideal customer profile (ICP). By combining high-converting landing pages, compelling lead magnets, and targeted advertising on platforms like LinkedIn and Google, we create a predictable engine for growth. Every lead is scored and nurtured through automated email sequences until they meet your sales criteria.',
+        title: 'Quality Over Quantity',
+        subtitle: 'The Revenue Engine'
+      },
+      {
+        id: 'process-24',
+        type: 'process',
+        isActive: true,
+        orderIndex: 1,
+        title: 'Our Lead Gen System',
+        subtitle: 'How we deliver quality',
+        items: [
+          {
+            title: 'ICP Targeting',
+            description: 'Defining exactly who makes a good lead.'
+          },
+          {
+            title: 'Funnel Creation',
+            description: 'Building landing pages and qualification forms.'
+          },
+          {
+            title: 'Traffic Generation',
+            description: 'Driving highly targeted ad traffic to the funnel.'
+          },
+          {
+            title: 'CRM Integration',
+            description: 'Passing enriched lead data directly to your sales team.'
+          }
+        ]
+      }
+    ],
+    seo: {
+      metaTitle: 'High Quality Lead Generation Services | Lumora',
+      metaDescription: 'Generate sales-ready B2B and B2C leads with our optimized marketing funnels.',
+      keywords: 'lead generation, quality leads, B2B leads, sales funnels'
+    },
+    serviceFeatures: [
+      'Custom Landing Pages',
+      'Lead Scoring & Qualification',
+      'CRM & Marketing Automation Integration'
+    ],
+    serviceDeliverables: [
+      'Automated Lead Funnel',
+      'Targeted Ad Campaigns',
+      'Lead Nurture Email Sequences'
+    ],
+    serviceRecommendedFor: 'Service businesses, SaaS, and B2B organizations.'
+  },
+  {
+    id: '25',
+    slug: 'experts-monthly-audit',
+    title: 'Experts Monthly Audit',
+    isPublished: true,
+    heroTitle: 'Experts Monthly Audit',
+    heroSubtitle: 'Continuous oversight and strategic refinement of your internal marketing efforts by our seasoned industry veterans.',
+    heroBadge: 'CheckCircle',
+    heroImage: 'https://images.unsplash.com/photo-1507208353683-fb4f23b7ff8f?auto=format&fit=crop&q=80&w=2000',
+    overviewContent: 'Have an in-house marketing team but need expert guidance to ensure they are on the right track? Our Experts Monthly Audit provides ongoing, high-level strategic review, campaign optimization recommendations, and mentorship for your internal staff.',
+    sections: [
+      {
+        id: 'overview-25',
+        type: 'overview',
+        isActive: true,
+        orderIndex: 0,
+        content: 'Marketing moves fast. What worked six months ago might be wasting your budget today. With our monthly audit service, a dedicated senior strategist reviews your analytics, ad accounts, and content strategy every 30 days. We provide actionable feedback, catch costly mistakes before they scale, and keep your team updated on the latest platform changes and growth hacks.',
+        title: 'Strategic Oversight',
+        subtitle: 'Your Fractional CMO Team'
+      },
+      {
+        id: 'features-25',
+        type: 'services-grid',
+        isActive: true,
+        orderIndex: 1,
+        title: 'What We Review',
+        subtitle: 'Monthly checks and balances',
+        items: [
+          {
+            title: 'Ad Spend Efficiency',
+            description: 'Ensuring your ROAS is maximized across platforms.',
+            iconName: 'DollarSign'
+          },
+          {
+            title: 'Conversion Bottlenecks',
+            description: 'Identifying where users drop off on your site.',
+            iconName: 'AlertTriangle'
+          },
+          {
+            title: 'SEO Performance',
+            description: 'Tracking rankings and organic traffic growth.',
+            iconName: 'TrendingUp'
+          },
+          {
+            title: 'Strategy Alignment',
+            description: 'Keeping tactics aligned with business goals.',
+            iconName: 'Compass'
+          }
+        ]
+      }
+    ],
+    seo: {
+      metaTitle: 'Monthly Marketing Audits | Lumora',
+      metaDescription: 'Get expert oversight and monthly reviews of your marketing campaigns to ensure maximum performance.',
+      keywords: 'marketing audit, fractional CMO, campaign review, marketing consulting'
+    },
+    serviceFeatures: [
+      'Deep-Dive Monthly Account Reviews',
+      'Actionable Fixes & Recommendations',
+      '1-on-1 Strategy Calls'
+    ],
+    serviceDeliverables: [
+      'Monthly Video Walkthrough',
+      'Prioritized Task List',
+      'Performance Benchmark Report'
+    ],
+    serviceRecommendedFor: 'Companies with an in-house marketing team seeking expert guidance.'
+  }
+]

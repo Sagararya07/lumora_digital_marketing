@@ -159,7 +159,7 @@ export function App() {
   const activeDynamicSlug = location.pathname === '/' || location.pathname === '/admin' ? null : location.pathname.slice(1);
 
   const dynamicServices = dynamicPages
-    .filter(dp => dp.isPublished)
+    .filter(dp => dp.isPublished && !dp.slug?.includes('/'))
     .map(dp => {
       const fallback = getFallbackServiceDetails(dp.slug, dp.title);
 
@@ -190,6 +190,7 @@ export function App() {
           isOpenMobile={isOpenMobileNav}
           setIsOpenMobile={setIsOpenMobileNav}
           dynamicPages={dynamicPages}
+          services={dynamicServices}
           onSelectDynamicPage={handleSelectDynamicPage}
           activeDynamicSlug={activeDynamicSlug}
           theme={theme}
@@ -205,7 +206,7 @@ export function App() {
             onOpenMobileNav={() => setIsOpenMobileNav(true)}
             openConsultationModal={() => setIsConsultationModalOpen(true)}
             dynamicPages={dynamicPages}
-            services={siteContent.services}
+            services={dynamicServices}
             onSelectDynamicPage={handleSelectDynamicPage}
             onGoHome={handleGoHome}
             onNavSection={handleNavTabClick}
@@ -274,6 +275,16 @@ export function App() {
 
             {/* Dynamic CMS Page Renderer */}
             <Route path="/:slug" element={
+              <DynamicPageWrapper 
+                dynamicPages={dynamicPages} 
+                onGoHome={handleGoHome}
+                siteContent={siteContent}
+                setIsConsultationModalOpen={setIsConsultationModalOpen}
+                onOpenLegalModal={(type) => setLegalModalType(type)}
+                onSelectDynamicPage={handleSelectDynamicPage}
+              />
+            } />
+            <Route path="/:slug/:subslug" element={
               <DynamicPageWrapper 
                 dynamicPages={dynamicPages} 
                 onGoHome={handleGoHome}
@@ -371,7 +382,7 @@ export function App() {
         {!isAdminRoute && (
           <Footer
             contactInfo={siteContent.contactInfo}
-            services={siteContent.services}
+            services={dynamicServices}
             onOpenConsultation={() => setIsConsultationModalOpen(true)}
             onOpenLegalModal={(type) => setLegalModalType(type)}
             dynamicPages={dynamicPages}
@@ -431,14 +442,15 @@ const DynamicPageWrapper: React.FC<{
   onOpenLegalModal,
   onSelectDynamicPage,
 }) => {
-  const { slug } = useParams<{ slug: string }>();
-  const page = dynamicPages.find((p) => p.slug === slug);
+  const { slug, subslug } = useParams<{ slug: string; subslug?: string }>();
+  const fullSlug = subslug ? `${slug}/${subslug}` : slug;
+  const page = dynamicPages.find((p) => p.slug === fullSlug);
 
   if (!page) {
     return (
       <div className="min-h-[70vh] flex flex-col items-center justify-center p-8 text-center bg-[#F8FAFC]">
         <h1 className="text-4xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">Page Not Found (404)</h1>
-        <p className="text-[#6B7280] mt-2 text-sm font-normal">The page &quot;/{slug}&quot; does not exist or has been unpublished.</p>
+        <p className="text-[#6B7280] mt-2 text-sm font-normal">The page &quot;/{fullSlug}&quot; does not exist or has been unpublished.</p>
         <button
           onClick={onGoHome}
           className="mt-6 px-8 py-3.5 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white font-extrabold text-xs shadow-lg shadow-blue-500/20"

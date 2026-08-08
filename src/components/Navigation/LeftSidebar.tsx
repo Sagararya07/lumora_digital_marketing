@@ -13,6 +13,7 @@ interface LeftSidebarProps {
   setIsOpenMobile: (open: boolean) => void;
   activeDynamicSlug: string | null;
   dynamicPages?: DynamicPage[];
+  services?: ServiceItem[];
   onSelectDynamicPage?: (slug: string) => void;
   theme?: 'dark' | 'light';
   toggleTheme?: () => void;
@@ -26,6 +27,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   setIsOpenMobile,
   activeDynamicSlug,
   dynamicPages,
+  services,
 }) => {
   const navigate = useNavigate();
 
@@ -50,7 +52,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   ];
 
   const resourceItems = dynamicPages && dynamicPages.length > 0 
-    ? dynamicPages.filter(p => p.isPublished)
+    ? dynamicPages.filter(p => p.isPublished && !p.slug?.includes('/'))
     : coreServices;
 
   const handleNavClick = (item: { id: string; path: string }) => {
@@ -141,17 +143,24 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
                             <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeSubMenu === 'solutions' ? 'rotate-180' : ''}`} />
                           </button>
                           {activeSubMenu === 'solutions' && (
-                            <div className="flex flex-col bg-slate-50">
-                              {resourceItems.map((rItem, i) => (
+                            <div className="flex flex-col bg-slate-50 border-t border-slate-100">
+                              {(services || []).map((item, i) => (
                                 <button
-                                  key={`sol-${rItem.id || i}`}
+                                  key={`sol-${item.id || i}`}
                                   onClick={() => {
-                                    setCurrentTab(rItem.slug || rItem.id?.toString() || '');
+                                    if (window.location.pathname !== '/') {
+                                      navigate('/');
+                                      setTimeout(() => {
+                                        document.getElementById(item.slug || item.id || '')?.scrollIntoView({ behavior: 'smooth' });
+                                      }, 300);
+                                    } else {
+                                      document.getElementById(item.slug || item.id || '')?.scrollIntoView({ behavior: 'smooth' });
+                                    }
                                     setIsOpenMobile(false);
                                   }}
-                                  className="text-left px-6 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
+                                  className="text-left px-6 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
                                 >
-                                  {rItem.title.split('-')[0].trim()}
+                                  {item.title}
                                 </button>
                               ))}
                             </div>
@@ -169,10 +178,12 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
                                 <button
                                   key={`res-${rItem.id || i}`}
                                   onClick={() => {
-                                    setCurrentTab(rItem.slug || rItem.id?.toString() || '');
+                                    if (rItem.slug) {
+                                      navigate(`/${rItem.slug}`);
+                                    }
                                     setIsOpenMobile(false);
                                   }}
-                                  className="text-left px-6 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
+                                  className="text-left px-6 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
                                 >
                                   {rItem.title.split('-')[0].trim()}
                                 </button>

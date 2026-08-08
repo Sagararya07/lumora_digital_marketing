@@ -205,7 +205,8 @@ export interface SEOMetadata {
 
 export interface DynamicPageSection {
   id: string;
-  type: 'hero' | 'text-media' | 'services' | 'services-grid' | 'overview' | 'lead-form' | 'faq' | 'case-study' | 'custom-html';
+  type: 'hero' | 'text-media' | 'services' | 'services-grid' | 'overview' | 'lead-form' | 'faq' | 'case-study' | 'custom-html' | 'scrollable-cards' | 'icon-hero' | 'process';
+  isActive?: boolean;
   title: string;
   content: string;
   mediaUrl?: string;

@@ -163,6 +163,73 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
     }
   };
 
+  const handleAddCard = (sectionIndex: number) => {
+    const updated = [...sections];
+    if (!updated[sectionIndex].cards) {
+      updated[sectionIndex].cards = [];
+    }
+    updated[sectionIndex].cards!.push({
+      id: `card-${Date.now()}`,
+      title: 'New Card',
+      description: 'Card description...'
+    });
+    setSections(updated);
+  };
+
+  const handleUpdateCard = (sectionIndex: number, cardIndex: number, field: string, val: string) => {
+    const updated = [...sections];
+    if (updated[sectionIndex].cards) {
+      (updated[sectionIndex].cards![cardIndex] as any)[field] = val;
+      setSections(updated);
+    }
+  };
+
+  const handleRemoveCard = (sectionIndex: number, cardIndex: number) => {
+    const updated = [...sections];
+    if (updated[sectionIndex].cards) {
+      updated[sectionIndex].cards!.splice(cardIndex, 1);
+      setSections(updated);
+    }
+  };
+
+  const handleCardIconUpload = async (sectionIndex: number, cardIndex: number, e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || !e.target.files[0]) return;
+    setIsUploading(true);
+    const file = e.target.files[0];
+    
+    // Convert to base64 for immediate frontend use if no backend is present, 
+    // or use the existing /api/upload endpoint
+    const formData = new FormData();
+    formData.append('image', file);
+    try {
+      const res = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData,
+      });
+      if (res.ok) {
+        const data = await res.json();
+        handleUpdateCard(sectionIndex, cardIndex, 'iconUrl', data.url);
+      } else {
+        // Fallback to Base64 if /api/upload fails
+        const reader = new FileReader();
+        reader.onloadend = () => {
+          handleUpdateCard(sectionIndex, cardIndex, 'iconUrl', reader.result as string);
+        };
+        reader.readAsDataURL(file);
+      }
+    } catch (err) {
+      // Fallback to Base64
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        handleUpdateCard(sectionIndex, cardIndex, 'iconUrl', reader.result as string);
+      };
+      reader.readAsDataURL(file);
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+
 const handleAddSection = () => {
     const newSec: DynamicPageSection = {
       id: `sec-custom-${Date.now()}`,
@@ -184,6 +251,14 @@ const handleAddSection = () => {
       updated.splice(index, 1);
       setSections(updated);
     }
+  };
+
+  const handleToggleSectionActive = (index: number) => {
+    const updated = [...sections];
+    // Default to active if undefined
+    const currentState = updated[index].isActive === undefined ? true : updated[index].isActive;
+    updated[index].isActive = !currentState;
+    setSections(updated);
   };
 
   const handleHeroImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -581,13 +656,25 @@ const handleAddSection = () => {
                   </span>
                 </div>
 
-                <button
-                  onClick={() => handleRemoveSection(idx)}
-                  className="p-2 rounded-xl text-rose-500 hover:bg-rose-50 transition-colors"
-                  title="Remove Section"
-                >
-                  <Trash2 className="w-4 h-4" />
-                </button>
+                <div className="flex items-center gap-3">
+                  <button
+                    onClick={() => handleToggleSectionActive(idx)}
+                    className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-colors ${
+                      sec.isActive === false 
+                        ? 'bg-slate-100 text-slate-500 hover:bg-slate-200' 
+                        : 'bg-emerald-50 text-emerald-600 hover:bg-emerald-100 border border-emerald-200'
+                    }`}
+                  >
+                    {sec.isActive === false ? 'Inactive' : 'Active'}
+                  </button>
+                  <button
+                    onClick={() => handleRemoveSection(idx)}
+                    className="p-2 rounded-xl text-rose-500 hover:bg-rose-50 transition-colors"
+                    title="Remove Section"
+                  >
+                    <Trash2 className="w-4 h-4" />
+                  </button>
+                </div>
               </div>
 
               {/* Section Title */}
@@ -603,6 +690,26 @@ const handleAddSection = () => {
                   placeholder="Section Title"
                 />
               </div>
+
+              {/* Section Media/Icon URL */}
+              {(sec.type === 'icon-hero' || sec.type === 'text-media' || sec.type === 'overview') && (
+                <div>
+                  <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                    Media / Icon URL (Optional)
+                  </label>
+                  <input
+                    type="text"
+                    value={sec.mediaUrl || ''}
+                    onChange={(e) => {
+                      const updated = [...sections];
+                      updated[idx].mediaUrl = e.target.value;
+                      setSections(updated);
+                    }}
+                    className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
+                    placeholder="https://..."
+                  />
+                </div>
+              )}
 
               {/* Section Paragraph */}
               <div>
@@ -776,6 +883,123 @@ const handleAddSection = () => {
                   ))}
                 </div>
               </div>
+
+              {/* Cards Editor (For Services Grid, Scrollable Cards, Process) */}
+              {(sec.type === 'services-grid' || sec.type === 'scrollable-cards' || sec.type === 'process') && (
+                <div className="pt-5 border-t border-[#E5E7EB] mt-5">
+                  <div className="flex items-center justify-between mb-4">
+                    <span className="text-xs font-extrabold text-[#111827] uppercase tracking-wider flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif]">
+                      <Layers className="w-4 h-4 text-[#5B8EE2]" />
+                      Section Cards ({sec.cards?.length || 0})
+                    </span>
+                    <button
+                      onClick={() => handleAddCard(idx)}
+                      className="px-3 py-1.5 rounded-full bg-[#F2F6FC] text-[#5B8EE2] hover:bg-blue-100 text-[10px] font-extrabold flex items-center gap-1 transition-colors border border-blue-200"
+                    >
+                      <Plus className="w-3 h-3" /> Add Card
+                    </button>
+                  </div>
+
+                  <div className="space-y-4">
+                    {(sec.cards || []).map((card, cardIdx) => (
+                      <div key={card.id} className="p-4 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] relative shadow-sm">
+                        <button
+                          onClick={() => handleRemoveCard(idx, cardIdx)}
+                          className="absolute -top-3 -right-3 w-7 h-7 bg-white border border-rose-200 rounded-full text-rose-500 flex items-center justify-center hover:bg-rose-50 transition-all shadow-sm z-10"
+                          title="Delete Card"
+                        >
+                          <Trash2 className="w-3.5 h-3.5" />
+                        </button>
+                        
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                          <div className="space-y-4">
+                            <div>
+                              <label className="block text-[10px] font-extrabold text-[#6B7280] uppercase mb-1.5">Card Title</label>
+                              <input
+                                type="text"
+                                value={card.title || ''}
+                                onChange={(e) => handleUpdateCard(idx, cardIdx, 'title', e.target.value)}
+                                className="w-full p-2.5 bg-white border border-[#E5E7EB] rounded-xl text-xs font-bold text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
+                                placeholder="Card Title"
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-[10px] font-extrabold text-[#6B7280] uppercase mb-1.5">Description</label>
+                              <textarea
+                                rows={3}
+                                value={card.description || ''}
+                                onChange={(e) => handleUpdateCard(idx, cardIdx, 'description', e.target.value)}
+                                className="w-full p-2.5 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
+                                placeholder="Description..."
+                              />
+                            </div>
+                            <div>
+                              <label className="block text-[10px] font-extrabold text-[#6B7280] uppercase mb-1.5">Link URL (Optional)</label>
+                              <input
+                                type="text"
+                                value={card.linkUrl || ''}
+                                onChange={(e) => handleUpdateCard(idx, cardIdx, 'linkUrl', e.target.value)}
+                                className="w-full p-2.5 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
+                                placeholder="https://..."
+                              />
+                            </div>
+                          </div>
+                          
+                          <div>
+                            <label className="block text-[10px] font-extrabold text-[#6B7280] uppercase mb-1.5">Icon / Image</label>
+                            <div className="flex flex-col gap-3">
+                              {card.iconUrl ? (
+                                <div className="w-20 h-20 rounded-xl overflow-hidden border border-[#E5E7EB] bg-white flex items-center justify-center relative group">
+                                  <img src={card.iconUrl} alt="Icon" className="max-w-full max-h-full object-contain p-2" />
+                                  <button 
+                                    onClick={() => handleUpdateCard(idx, cardIdx, 'iconUrl', '')}
+                                    className="absolute inset-0 bg-black/50 text-white flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
+                                  >
+                                    <Trash2 className="w-4 h-4" />
+                                  </button>
+                                </div>
+                              ) : (
+                                <div className="w-20 h-20 rounded-xl border border-dashed border-[#CBD5E1] bg-white flex items-center justify-center text-slate-300">
+                                  <ImageIcon className="w-8 h-8" />
+                                </div>
+                              )}
+                              
+                              <label className="cursor-pointer bg-slate-100 hover:bg-slate-200 border border-[#E5E7EB] px-3 py-2.5 rounded-xl flex items-center justify-center transition-colors text-xs font-semibold text-slate-600 gap-2 w-full max-w-[200px]">
+                                <input 
+                                  type="file" 
+                                  className="hidden" 
+                                  accept="image/*" 
+                                  onChange={(e) => handleCardIconUpload(idx, cardIdx, e)} 
+                                  disabled={isUploading} 
+                                />
+                                {isUploading ? (
+                                  <div className="w-4 h-4 border-2 border-slate-400 border-t-slate-800 rounded-full animate-spin" />
+                                ) : (
+                                  <Upload className="w-4 h-4 text-slate-600" />
+                                )}
+                                <span>Upload Icon</span>
+                              </label>
+                              <div className="mt-2">
+                                <label className="block text-[10px] font-extrabold text-[#6B7280] uppercase mb-1.5">Or Icon Name (Lucide)</label>
+                                <input
+                                  type="text"
+                                  value={card.iconName || ''}
+                                  onChange={(e) => handleUpdateCard(idx, cardIdx, 'iconName', e.target.value)}
+                                  className="w-full p-2.5 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
+                                  placeholder="e.g. Target, Users"
+                                />
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    ))}
+                    {(!sec.cards || sec.cards.length === 0) && (
+                      <p className="text-xs text-slate-400 text-center py-4 bg-slate-50 rounded-xl border border-dashed border-slate-200">No cards added yet.</p>
+                    )}
+                  </div>
+                </div>
+              )}
 
             </div>
           ))}

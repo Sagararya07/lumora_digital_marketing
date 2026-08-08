@@ -1,4 +1,5 @@
 import React from 'react';
+import * as Icons from 'lucide-react';
 import { Sparkles } from 'lucide-react';
 
 interface ProcessProps {
@@ -230,10 +231,12 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
           {/* Row 1 (Steps 1 to 4) - Moves Right */}
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-8 justify-between w-full">
             {(steps?.length > 0 ? steps : processFlow).slice(0, 4).map((dbItem: any, idx: number) => {
+              const activeSteps = steps?.length > 0 ? steps : processFlow;
               const item = processFlow[idx % processFlow.length];
               const title = dbItem.title || item.title;
               const desc = dbItem.description || dbItem.desc || item.desc;
               const imageUrl = dbItem.imageUrl;
+              const iconName = dbItem.iconName;
               return (
               <div 
                 key={idx} 
@@ -242,43 +245,35 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
               >
                 {/* Glowing Step Number Badge */}
                 <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#8CB4F5] to-[#818CF8] flex items-center justify-center text-white font-black text-xl shadow-[0_0_15px_rgba(56,189,248,0.6)] transform group-hover:rotate-12 transition-transform duration-300 z-20">
-                  {item.num}
+                  {dbItem.num || item.num || (idx + 1)}
                 </div>
 
                 {/* Meaningful Illustration */}
-                <div className="w-full max-w-[140px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex-grow flex items-center justify-center min-h-[140px]">
-                  {imageUrl ? <img src={imageUrl} alt={title} className="w-full h-full object-contain" /> : item.illustration}
+                <div className="w-full max-w-[100px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex items-center justify-center min-h-[100px] mb-4">
+                  {(() => {
+                    if (imageUrl) return <img src={imageUrl} alt={title} className="w-full h-full object-contain" />;
+                    if (iconName && (Icons as any)[iconName]) {
+                      const IconComp = (Icons as any)[iconName];
+                      return <IconComp className="w-16 h-16 text-[#5B8EE2] drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />;
+                    }
+                    return item.illustration;
+                  })()}
                 </div>
 
                 {/* Snake Connector Line Desktop (Right Arrow) */}
                 {idx < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 right-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
+                  <div className="hidden lg:block absolute top-1/4 right-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
                 )}
                 
-                {/* Mobile Text (Visible only on small screens) */}
-                <div className="mt-4 text-center lg:hidden w-full">
-                  <h3 className="text-sm font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
+                {/* Hover Tooltip */}
+                <div className="absolute bottom-[90%] left-1/2 -translate-x-1/2 w-[280px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.12)] border border-slate-100 p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:-translate-y-4 transition-all duration-300 z-50 pointer-events-none">
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-b border-r border-slate-100 transform rotate-45 shadow-[3px_3px_5px_rgba(0,0,0,0.02)]"></div>
+                  <h4 className="text-[11px] sm:text-xs font-black text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] to-[#EC4899] uppercase tracking-wider mb-2 leading-tight text-center">
                     {title}
-                  </h3>
-                  <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
+                  </h4>
+                  <p className="text-[#6B7280] text-xs sm:text-sm leading-relaxed font-medium text-center">
                     {desc}
                   </p>
-                </div>
-                
-                {/* Floating Sky Cloud Popup (Hidden until hover, no layout shift) */}
-                <div className="hidden lg:flex absolute bottom-[95%] left-1/2 w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
-                  
-                  {/* Cloud Tail Pointer */}
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
-                  
-                  <div className="relative z-10 text-center">
-                    <h3 className="text-sm font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
-                      {title}
-                    </h3>
-                    <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
-                      {desc}
-                    </p>
-                  </div>
                 </div>
               </div>
             )})}
@@ -291,60 +286,56 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
 
           {/* Row 2 (Steps 8 to 5) - Moves Left (Reversed for Snake effect) */}
           <div className="flex flex-col lg:flex-row-reverse gap-6 lg:gap-8 justify-between w-full">
-            {[...(steps?.length > 0 ? steps : processFlow).slice(4, 8)].reverse().map((dbItem: any, reverseIdx: number) => {
-              const idx = 7 - reverseIdx;
-              const item = processFlow[idx % processFlow.length];
-              const title = dbItem.title || item.title;
-              const desc = dbItem.description || dbItem.desc || item.desc;
-              const imageUrl = dbItem.imageUrl;
-              return (
-              <div 
-                key={idx} 
-                className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-auto lg:h-[220px]
-                ${idx % 2 === 1 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
-              >
-                {/* Glowing Step Number Badge */}
-                <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#A855F7] to-[#EC4899] flex items-center justify-center text-white font-black text-xl shadow-[0_0_15px_rgba(168,85,247,0.6)] transform group-hover:-rotate-12 transition-transform duration-300 z-20">
-                  {item.num}
-                </div>
+            {(() => {
+              const activeSteps = steps?.length > 0 ? steps : processFlow;
+              const secondRow = activeSteps.slice(4, 8);
+              return [...secondRow].reverse().map((dbItem: any, reverseIdx: number) => {
+                const originalIdx = 4 + (secondRow.length - 1 - reverseIdx);
+                const item = processFlow[originalIdx % processFlow.length];
+                const title = dbItem.title || item.title;
+                const desc = dbItem.description || dbItem.desc || item.desc;
+                const imageUrl = dbItem.imageUrl;
+                const iconName = dbItem.iconName;
+                return (
+                <div 
+                  key={originalIdx} 
+                  className={`flex-1 flex flex-col items-center justify-center relative p-8 rounded-3xl bg-white backdrop-blur-lg border border-slate-200 shadow-[0_0_30px_rgba(0,0,0,0.05)] transition-all duration-400 hover:scale-105 hover:bg-white hover:border-slate-300 hover:shadow-[0_0_40px_rgba(0,0,0,0.1)] hover:z-50 group cursor-pointer lg:w-[23%] h-auto lg:h-[220px]
+                  ${originalIdx % 2 === 1 ? 'lg:-translate-y-8' : 'lg:translate-y-8'}`}
+                >
+                  {/* Glowing Step Number Badge */}
+                  <div className="absolute -top-4 -right-4 w-12 h-12 rounded-full bg-gradient-to-br from-[#A855F7] to-[#EC4899] flex items-center justify-center text-white font-black text-xl shadow-[0_0_15px_rgba(168,85,247,0.6)] transform group-hover:-rotate-12 transition-transform duration-300 z-20">
+                    {dbItem.num || item.num || (originalIdx + 1)}
+                  </div>
 
-                {/* Meaningful Illustration */}
-                <div className="w-full max-w-[140px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex-grow flex items-center justify-center min-h-[140px]">
-                  {imageUrl ? <img src={imageUrl} alt={title} className="w-full h-full object-contain" /> : item.illustration}
-                </div>
+                  {/* Meaningful Illustration */}
+                  <div className="w-full max-w-[100px] transform group-hover:-translate-y-2 transition-transform duration-500 drop-shadow-xl z-10 flex items-center justify-center min-h-[100px] mb-4">
+                    {(() => {
+                      if (imageUrl) return <img src={imageUrl} alt={title} className="w-full h-full object-contain" />;
+                      if (iconName && (Icons as any)[iconName]) {
+                        const IconComp = (Icons as any)[iconName];
+                        return <IconComp className="w-16 h-16 text-[#A855F7] drop-shadow-sm group-hover:scale-110 transition-transform duration-300" />;
+                      }
+                      return item.illustration;
+                    })()}
+                  </div>
 
                 {/* Snake Connector Line Desktop (Left Arrow - Because flex-row-reverse, the visual left is DOM right side) */}
                 {reverseIdx < 3 && (
-                  <div className="hidden lg:block absolute top-1/2 left-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
+                  <div className="hidden lg:block absolute top-1/4 left-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
                 )}
                 
-                {/* Mobile Text (Visible only on small screens) */}
-                <div className="mt-4 text-center lg:hidden w-full">
-                  <h3 className="text-sm font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
+                {/* Hover Tooltip */}
+                <div className="absolute bottom-[90%] left-1/2 -translate-x-1/2 w-[280px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.12)] border border-slate-100 p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:-translate-y-4 transition-all duration-300 z-50 pointer-events-none">
+                  <div className="absolute -bottom-2 left-1/2 -translate-x-1/2 w-4 h-4 bg-white border-b border-r border-slate-100 transform rotate-45 shadow-[3px_3px_5px_rgba(0,0,0,0.02)]"></div>
+                  <h4 className="text-[11px] sm:text-xs font-black text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] to-[#EC4899] uppercase tracking-wider mb-2 leading-tight text-center">
                     {title}
-                  </h3>
-                  <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
+                  </h4>
+                  <p className="text-[#6B7280] text-xs sm:text-sm leading-relaxed font-medium text-center">
                     {desc}
                   </p>
                 </div>
-                
-                {/* Floating Sky Cloud Popup (Hidden until hover, no layout shift) */}
-                <div className="hidden lg:flex absolute bottom-[95%] left-1/2 w-[280px] p-5 bg-white border border-slate-100 shadow-[0_20px_50px_rgba(0,0,0,0.12)] rounded-3xl opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 transition-all duration-300 z-[100] flex-col items-center -translate-x-1/2 group-hover:-translate-y-4">
-                  
-                  {/* Cloud Tail Pointer */}
-                  <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 w-6 h-6 bg-white border-b border-r border-slate-100 rotate-45 shadow-[4px_4px_10px_rgba(0,0,0,0.02)]"></div>
-                  
-                  <div className="relative z-10 text-center">
-                    <h3 className="text-sm font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent tracking-wide font-['Plus_Jakarta_Sans',sans-serif] uppercase mb-2">
-                      {title}
-                    </h3>
-                    <p className="text-xs text-[#6B7280] leading-relaxed font-medium">
-                      {desc}
-                    </p>
-                  </div>
-                </div>
               </div>
-            )})}
+            )})})()}
           </div>
 
         </div>

@@ -30,6 +30,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
   onSelectDynamicPage,
   onGoHome,
   onNavSection,
+  activeDynamicSlug,
 }) => {
   const [digitalMarketingOpen, setDigitalMarketingOpen] = useState(false);
   const [activeSubMenu, setActiveSubMenu] = useState<'solutions' | 'resources' | null>(null);
@@ -46,7 +47,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
   ];
 
   const resourceItems = dynamicPages.length > 0 
-    ? dynamicPages.filter(p => p.isPublished)
+    ? dynamicPages.filter(p => p.isPublished && !p.slug?.includes('/'))
     : coreServices;
 
   useEffect(() => {
@@ -154,16 +155,23 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
                   </button>
 
                   {activeSubMenu === 'solutions' && (
-                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 px-3 animate-in fade-in slide-in-from-left-2 z-50 max-h-[60vh] overflow-y-auto overflow-x-hidden custom-scrollbar">
-                      {resourceItems.map((item, i) => (
+                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 px-3 animate-in fade-in slide-in-from-left-2 z-50 max-h-[85vh] overflow-y-auto overflow-x-hidden custom-scrollbar">
+                      {(services || []).map((item, i) => (
                         <button
                           key={item.id || i}
                           onClick={() => {
-                            handleNavClick(item.slug || item.id?.toString() || `service-${i}`);
+                            if (window.location.pathname !== '/') {
+                              onGoHome();
+                              setTimeout(() => {
+                                onNavSection?.(item.slug || item.id || '');
+                              }, 300);
+                            } else {
+                              onNavSection?.(item.slug || item.id || '');
+                            }
                             setDigitalMarketingOpen(false);
                             setActiveSubMenu(null);
                           }}
-                          className="w-full text-left px-4 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group"
+                          className="w-full text-left px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group"
                         >
                           <span className="truncate">{item.title}</span>
                           <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-[#5B8EE2] transition-opacity shrink-0" />
@@ -188,7 +196,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
                   </button>
 
                   {activeSubMenu === 'resources' && (
-                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 px-3 animate-in fade-in slide-in-from-left-2 z-50 max-h-[60vh] overflow-y-auto overflow-x-hidden custom-scrollbar">
+                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 px-3 animate-in fade-in slide-in-from-left-2 z-50 max-h-[85vh] overflow-y-auto overflow-x-hidden custom-scrollbar">
                       {resourceItems.map((page) => (
                         <Link
                           key={page.id}
@@ -197,7 +205,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
                             setDigitalMarketingOpen(false);
                             setActiveSubMenu(null);
                           }}
-                          className="w-full text-left px-4 py-2.5 text-xs font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group"
+                          className="w-full text-left px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group"
                         >
                           <span className="truncate">{page.title}</span>
                           <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-[#5B8EE2] transition-opacity shrink-0" />
