@@ -147,6 +147,15 @@ export interface WhyChooseContent {
   points: { id: string; title: string; description: string; icon: string; imageUrl?: string }[];
 }
 
+export interface TeamMember {
+  id: string;
+  name: string;
+  role: string;
+  specializations: string[];
+  imageUrl: string;
+  description: string;
+}
+
 export interface SiteContent {
   hero: HeroContent;
   whatIs: WhatIsDigitalContent;
@@ -166,6 +175,7 @@ export interface SiteContent {
     background_image: string;
   };
   rndModules?: RndModuleItem[];
+  teamMembers?: TeamMember[];
   contactInfo: {
     phone: string;
     whatsapp: string;

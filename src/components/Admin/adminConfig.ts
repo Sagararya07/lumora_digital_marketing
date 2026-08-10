@@ -242,6 +242,20 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
   },
+  team_members: {
+    label: 'Team Members',
+    canCreate: true,
+    canDelete: true,
+    fields: [
+      { key: 'name', label: 'Member Name', type: 'text' },
+      { key: 'role', label: 'Role / Designation', type: 'text' },
+      { key: 'specializations', label: 'Specializations (comma separated)', type: 'text', colSpan: 2 },
+      { key: 'image_url', label: 'Profile Photo', type: 'image' },
+      { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
+      { key: 'sort_order', label: 'Sort Order', type: 'number' },
+      { key: 'is_active', label: 'Active', type: 'boolean' },
+    ],
+  },
 };
 
 export const SECTION_SETTINGS = [

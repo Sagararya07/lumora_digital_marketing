@@ -182,6 +182,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         { id: 'about_hero_section', label: 'Hero & Mission Text', icon: Settings },
         { id: 'about_mission_cards', label: 'Mission Cards', icon: Settings },
         { id: 'about_core_pillars', label: 'Core Pillars', icon: Settings },
+        { id: 'team_members', label: 'Team Members', icon: Users },
       ],
     },
     {

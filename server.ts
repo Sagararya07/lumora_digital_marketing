@@ -19,7 +19,8 @@ import {
   HeroContent,
   WhatIsDigitalContent,
   WhyChooseContent,
-  WhoShouldUseItem
+  WhoShouldUseItem,
+  TeamMember
 } from './src/types.js';
 
 dotenv.config();
@@ -122,7 +123,8 @@ async function getSiteContent(): Promise<SiteContent> {
     aboutMissionCardsRes,
     aboutCorePillarsRes,
     aboutHeroRes,
-    rndModulesRes
+    rndModulesRes,
+    teamMembersRes
   ] = await Promise.all([
     pool.query('SELECT * FROM hero_section WHERE is_active = true LIMIT 1'),
     pool.query('SELECT * FROM services WHERE is_active = true ORDER BY sort_order'),
@@ -140,7 +142,8 @@ async function getSiteContent(): Promise<SiteContent> {
     pool.query('SELECT * FROM about_mission_cards WHERE is_active = true ORDER BY sort_order'),
     pool.query('SELECT * FROM about_core_pillars WHERE is_active = true ORDER BY sort_order'),
     pool.query('SELECT * FROM about_hero_section LIMIT 1'),
-    pool.query('SELECT * FROM rnd_modules WHERE is_active = true ORDER BY sort_order')
+    pool.query('SELECT * FROM rnd_modules WHERE is_active = true ORDER BY sort_order'),
+    pool.query('SELECT * FROM team_members WHERE is_active = true ORDER BY sort_order')
   ]);
 
   const settingsMap: Record<string, string> = {};
@@ -326,6 +329,15 @@ async function getSiteContent(): Promise<SiteContent> {
     image_url: r.image_url
   }));
 
+  const teamMembers = teamMembersRes.rows.map(r => ({
+    id: r.id.toString(),
+    name: r.name,
+    role: r.role,
+    specializations: r.specializations ? r.specializations.split(',').map((s: string) => s.trim()) : [],
+    imageUrl: r.image_url,
+    description: r.description
+  }));
+
   return {
     hero,
     whatIs,
@@ -343,6 +355,7 @@ async function getSiteContent(): Promise<SiteContent> {
     aboutCorePillars,
     aboutHero,
     rndModules,
+    teamMembers,
     contactInfo: {
       phone: settingsMap['phone'] || settingsMap['contact_phone'] || '+91 999 888 7766',
       whatsapp: settingsMap['whatsapp'] || settingsMap['contact_whatsapp'] || '+91 999 888 7766',
@@ -702,7 +715,7 @@ app.delete('/api/pages/:id', async (req, res) => {
 // Generic Admin CMS Updates
 app.get('/api/admin/table/:tableName', async (req, res) => {
   const { tableName } = req.params;
-  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'about_hero_section', 'rnd_modules'];
+  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'about_hero_section', 'rnd_modules', 'team_members'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {
@@ -739,7 +752,7 @@ app.put('/api/admin/table/:tableName/:id', async (req, res) => {
   }
   
   // Whitelist tables to prevent SQL injection
-  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'about_hero_section', 'rnd_modules'];
+  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'about_hero_section', 'rnd_modules', 'team_members'];
   if (!allowedTables.includes(tableName)) {
     return res.status(403).json({ error: 'Invalid table name' });
   }
@@ -779,7 +792,7 @@ app.post('/api/admin/table/:tableName', async (req, res) => {
     }
   }
   
-  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'rnd_modules'];
+  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'rnd_modules', 'team_members'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {

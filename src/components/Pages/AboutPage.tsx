@@ -20,6 +20,7 @@ import * as Icons from 'lucide-react';
 import { SiteContent } from '../../types';
 import { ConsultationSection } from '../Home/ConsultationSection';
 import { ViewMoreButton } from '../common/ViewMoreButton';
+import { TeamSection } from '../About/TeamSection';
 
 const getIcon = (iconName: string, props: LucideProps) => {
   const IconComponent = (Icons as any)[iconName] || Icons.CheckCircle;
@@ -73,47 +74,27 @@ export const AboutPage: React.FC<AboutPageProps> = ({
       
       {/* 1. Dedicated About Hero Section */}
       <section 
-        className={`relative overflow-hidden pt-20 pb-24 px-4 sm:px-8 border-b border-[#E5E7EB] ${
-          siteContent.aboutHero?.background_image 
-            ? 'bg-gray-900 bg-center bg-cover bg-no-repeat' 
-            : 'bg-gradient-to-b from-blue-50/70 via-white to-slate-50'
-        }`}
-        style={siteContent.aboutHero?.background_image ? { backgroundImage: `url(${siteContent.aboutHero.background_image})` } : {}}
+        className="relative overflow-hidden pt-20 pb-24 px-4 sm:px-8 border-b border-[#E5E7EB] bg-gradient-to-b from-blue-50/70 via-white to-slate-50"
       >
-        
-        {siteContent.aboutHero?.background_image ? (
-          <div className="absolute inset-0 bg-black/60 z-0" />
-        ) : (
-          <>
-            <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-30 blur-[140px] pointer-events-none bg-[#729EE6]/20" />
-            <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none bg-purple-500/20" />
-          </>
-        )}
+        <div className="absolute top-0 left-1/4 w-[600px] h-[600px] rounded-full opacity-30 blur-[140px] pointer-events-none bg-[#729EE6]/20" />
+        <div className="absolute bottom-0 right-1/4 w-[500px] h-[500px] rounded-full opacity-20 blur-[140px] pointer-events-none bg-purple-500/20" />
 
         <div className="max-w-4xl mx-auto text-center space-y-6 relative z-10">
           <div>
-            <span className={`inline-flex items-center gap-2 font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border shadow-xs font-['Plus_Jakarta_Sans',sans-serif] ${
-              siteContent.aboutHero?.background_image
-                ? 'text-[#AEC7F0] border-[#729EE6]/30 bg-blue-900/40'
-                : 'text-[#5B8EE2] border-blue-200 bg-[#F2F6FC]/80'
-            }`}>
-              <Sparkles className={`w-3.5 h-3.5 animate-pulse ${siteContent.aboutHero?.background_image ? 'text-[#AEC7F0]' : 'text-[#5B8EE2]'}`} />
+            <span className="inline-flex items-center gap-2 font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border shadow-xs font-['Plus_Jakarta_Sans',sans-serif] text-[#5B8EE2] border-blue-200 bg-[#F2F6FC]/80">
+              <Sparkles className="w-3.5 h-3.5 animate-pulse text-[#5B8EE2]" />
               <span>{siteContent.aboutHero?.hero_badge || 'ABOUT LUMORA DIGITAL AGENCY'}</span>
             </span>
           </div>
 
-          <h1 className={`text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight ${
-            siteContent.aboutHero?.background_image ? 'text-white' : 'text-[#111827]'
-          }`}>
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight text-[#111827]">
             {siteContent.aboutHero?.hero_heading_1 || 'Pioneering the Future of Digital Scaling for'}{' '}
             <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
               {siteContent.aboutHero?.hero_heading_highlight || 'Ambitious Global Brands'}
             </span>
           </h1>
 
-          <p className={`text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal ${
-            siteContent.aboutHero?.background_image ? 'text-gray-300' : 'text-[#6B7280]'
-          }`}>
+          <p className="text-base sm:text-lg max-w-3xl mx-auto leading-relaxed font-normal text-[#6B7280]">
             {siteContent.aboutHero?.hero_description || 'At Lumora, we combine algorithmic precision, AI-driven campaign intelligence, and creative storytelling to turn digital attention into predictable pipeline revenue.'}
           </p>
 
@@ -127,11 +108,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({
             </button>
             <button
               onClick={onGoHome}
-              className={`px-8 py-4 rounded-full text-sm font-extrabold transition-all shadow-xs w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif] ${
-                siteContent.aboutHero?.background_image
-                  ? 'bg-white/10 hover:bg-white/20 border border-white/20 text-white backdrop-blur-sm'
-                  : 'bg-white hover:bg-slate-50 border border-[#E5E7EB] text-[#111827]'
-              }`}
+              className="px-8 py-4 rounded-full text-sm font-extrabold transition-all shadow-xs w-full sm:w-auto font-['Plus_Jakarta_Sans',sans-serif] bg-white hover:bg-slate-50 border border-[#E5E7EB] text-[#111827]"
             >
               {siteContent.aboutHero?.hero_secondary_cta || 'Explore Agency Home'}
             </button>
@@ -193,6 +170,9 @@ export const AboutPage: React.FC<AboutPageProps> = ({
           </div>
         </div>
       </section>
+
+      {/* Team Members Section */}
+      <TeamSection teamMembers={siteContent.teamMembers} />
 
       {/* 3. Core Agency Pillars */}
       <section className="py-20 sm:py-28 bg-white border-b border-[#E5E7EB]">
