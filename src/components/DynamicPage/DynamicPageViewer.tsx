@@ -344,6 +344,95 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
             );
           }
 
+          if (sec.type === 'how-we-do-it') {
+            const pageName = pageTitle.split(' -')[0] || pageTitle;
+            const dynamicTitle = `How we do ${pageName}`;
+
+            // Auto-detect the best, most meaningful image for this specific page
+            let bestImage = page.heroImage;
+            if (!bestImage) {
+              const secWithMedia = page.sections.find((s: any) => s.mediaUrl && s.type !== 'how-we-do-it');
+              if (secWithMedia) bestImage = secWithMedia.mediaUrl;
+            }
+            
+            // If the Unsplash image is 404ing (like the old generic ones), replace it with a known working generic business photo.
+            if (bestImage && bestImage.includes('1432888117247')) {
+              bestImage = "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200";
+            }
+            
+            const finalImage = bestImage || "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200";
+            
+            return (
+              <section key={sec.id} className="w-full bg-slate-50 border-y border-[#E5E7EB] flex flex-col md:flex-row min-h-[600px]">
+                {/* Left Side */}
+                <div className="w-full md:w-[55%] lg:w-[60%] p-8 sm:p-12 lg:p-20 relative flex flex-col justify-center">
+                  
+                  {/* Decorative Dots Pattern */}
+                  <div className="hidden lg:grid grid-cols-5 gap-2 w-16 absolute left-6 top-24 opacity-30">
+                     {Array.from({length: 25}).map((_, i) => (
+                       <div key={i} className="w-1.5 h-1.5 bg-[#5B8EE2] rounded-full" />
+                     ))}
+                  </div>
+
+                  <div className="w-12 h-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-full mb-6 lg:ml-12" />
+                  <h2 className="text-4xl sm:text-5xl lg:text-[3.5rem] font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] leading-[1.15] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] mb-6 lg:ml-12">
+                    {dynamicTitle}
+                  </h2>
+                  <p className="text-[#4B5563] text-lg sm:text-xl leading-relaxed font-medium mb-8 max-w-2xl lg:ml-12">
+                    {replacePlaceholders(sec.content)}
+                  </p>
+                  
+                  <div className="mb-12 lg:ml-12">
+                    <button 
+                      onClick={openConsultationModal}
+                      className="group inline-flex items-center gap-2 bg-[#0B1026] hover:bg-blue-700 text-white px-8 py-3.5 text-sm font-bold tracking-widest transition-all rounded-full uppercase shadow-lg shadow-blue-900/20"
+                    >
+                      READ MORE
+                      <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                    </button>
+                  </div>
+                  
+                  {/* Grid of cards */}
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:ml-12">
+                    {sec.cards?.map((card, cardIdx) => (
+                      <div key={card.id || cardIdx} className="bg-white p-6 min-h-[140px] flex flex-col justify-end group hover:-translate-y-1 transition-all duration-300 border border-slate-200 hover:border-blue-200 cursor-pointer shadow-sm hover:shadow-md rounded-2xl">
+                        <div className="w-6 h-1 bg-gradient-to-r from-[#5B8EE2] to-[#EC4899] mb-4 opacity-80 rounded-full" />
+                        <h4 className="text-[#111827] font-['Plus_Jakarta_Sans',sans-serif] font-bold text-lg leading-snug">
+                          {card.title}
+                        </h4>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Right Side */}
+                <div className="w-full md:w-[45%] lg:w-[40%] relative min-h-[400px] md:min-h-full">
+                  <img 
+                    src={finalImage} 
+                    alt={secTitle} 
+                    className="absolute inset-0 w-full h-full object-cover"
+                  />
+                  {/* Themed overlay box */}
+                  <div className="absolute bottom-0 right-0 md:right-auto md:left-[-15%] lg:left-[-20%] w-full md:w-[130%] bg-gradient-to-br from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] p-8 sm:p-12 shadow-2xl rounded-tr-3xl md:rounded-r-none md:rounded-l-3xl lg:rounded-3xl border border-white/20">
+                    <div className="relative z-10 text-white">
+                      <div className="grid grid-cols-5 gap-2 w-16 mb-6 opacity-40">
+                         {Array.from({length: 20}).map((_, i) => (
+                           <div key={i} className="w-1.5 h-1.5 bg-white rounded-full" />
+                         ))}
+                      </div>
+                      <h3 className="text-2xl sm:text-3xl font-['Plus_Jakarta_Sans',sans-serif] font-medium italic mb-2">
+                        Great Strategy is
+                      </h3>
+                      <h2 className="text-4xl sm:text-5xl font-black font-['Plus_Jakarta_Sans',sans-serif] tracking-tight uppercase drop-shadow-md">
+                        GOOD BUSINESS
+                      </h2>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            );
+          }
+
           if (sec.type === 'scrollable-cards') {
             return (
               <section key={sec.id} className="bg-white py-16 sm:py-24 px-4 sm:px-8 relative overflow-hidden">

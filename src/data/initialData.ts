@@ -1145,6 +1145,40 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
+      {
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
@@ -1284,6 +1318,40 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
+      {
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
@@ -1384,6 +1452,40 @@ export const initialDynamicPages: DynamicPage[] = [
           }
         ]
       },
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -1486,6 +1588,40 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
+      {
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
@@ -1586,6 +1722,40 @@ export const initialDynamicPages: DynamicPage[] = [
           }
         ]
       },
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -1688,6 +1858,55 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
+      {
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
@@ -1788,6 +2007,55 @@ export const initialDynamicPages: DynamicPage[] = [
           }
         ]
       },
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -1890,6 +2158,55 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
+      {
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
@@ -1991,6 +2308,55 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+        "cards": [
+          {
+            "id": "hw-1",
+            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+          },
+          {
+            "id": "hw-2",
+            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+          },
+          {
+            "id": "hw-3",
+            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+          },
+          {
+            "id": "hw-4",
+            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+          },
+          {
+            "id": "hw-5",
+            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+          },
+          {
+            "id": "hw-6",
+            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+          }
+        ]
+      },
+
+      {
         "id": "sec-case-study",
         "type": "case-study",
         "title": "Client Success & Transformation",
@@ -2087,6 +2453,54 @@ export const initialDynamicPages: DynamicPage[] = [
             "iconName": "PieChart"
           }
         ]
+      },
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+
+    
+      ,
+      {
+        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "type": "case-study",
+        "title": "Client Success & Transformation",
+        "content": "Real results for real clients.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Scaling " + "strategies-creations".replace(/-/g, ' '),
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+            "points": [
+              {
+                "id": "p1",
+                "title": "Strategic Planning",
+                "iconName": "Map"
+              },
+              {
+                "id": "p2",
+                "title": "Execution",
+                "iconName": "Target"
+              },
+              {
+                "id": "p3",
+                "title": "Results",
+                "iconName": "TrendingUp"
+              }
+            ]
+          }
+        ]
       }
     ],
     "seo": {
@@ -2126,7 +2540,21 @@ export const initialDynamicPages: DynamicPage[] = [
         "title": "Uncovering the Truth",
         "subtitle": "Deep-dive Audits"
       },
-      {
+            {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+{
         "id": "process-21",
         "type": "process",
         "isActive": true,
@@ -2149,6 +2577,39 @@ export const initialDynamicPages: DynamicPage[] = [
           {
             "title": "Action Plan",
             "description": "Delivering a prioritized list of fixes and opportunities."
+          }
+        ]
+      }
+    
+      ,
+      {
+        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "type": "case-study",
+        "title": "Client Success & Transformation",
+        "content": "Real results for real clients.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Scaling " + "diagnose-marketing".replace(/-/g, ' '),
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+            "points": [
+              {
+                "id": "p1",
+                "title": "Strategic Planning",
+                "iconName": "Map"
+              },
+              {
+                "id": "p2",
+                "title": "Execution",
+                "iconName": "Target"
+              },
+              {
+                "id": "p3",
+                "title": "Results",
+                "iconName": "TrendingUp"
+              }
+            ]
           }
         ]
       }
@@ -2214,6 +2675,54 @@ export const initialDynamicPages: DynamicPage[] = [
             "iconName": "MessageSquare"
           }
         ]
+      },
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+
+    
+      ,
+      {
+        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "type": "case-study",
+        "title": "Client Success & Transformation",
+        "content": "Real results for real clients.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Scaling " + "retarget-marketing".replace(/-/g, ' '),
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+            "points": [
+              {
+                "id": "p1",
+                "title": "Strategic Planning",
+                "iconName": "Map"
+              },
+              {
+                "id": "p2",
+                "title": "Execution",
+                "iconName": "Target"
+              },
+              {
+                "id": "p3",
+                "title": "Results",
+                "iconName": "TrendingUp"
+              }
+            ]
+          }
+        ]
       }
     ],
     "seo": {
@@ -2263,11 +2772,61 @@ export const initialDynamicPages: DynamicPage[] = [
         "cards": [
           {
             "title": "How is this different from Lead Generation?",
-            "description": "Lead generation captures existing intent (often through gated content or direct response ads). Demand generation creates the intent through education and brand building, often without asking for an email right away."
+            "description": "Lead generation captures existing intent (often through gated content or direct response ads). Demand generation creates the intent through education and brand building, often without asking for an email right away.",
+            "iconName": "MessageCircle"
           },
           {
             "title": "How do you measure Demand Generation?",
-            "description": "We look at blended metrics including branded search volume, direct traffic, content engagement, and overall pipeline velocity, rather than just cost-per-lead."
+            "description": "We look at blended metrics including branded search volume, direct traffic, content engagement, and overall pipeline velocity, rather than just cost-per-lead.",
+            "iconName": "MessageCircle"
+          }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+
+    
+      ,
+      {
+        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "type": "case-study",
+        "title": "Client Success & Transformation",
+        "content": "Real results for real clients.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Scaling " + "demand-generation".replace(/-/g, ' '),
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+            "points": [
+              {
+                "id": "p1",
+                "title": "Strategic Planning",
+                "iconName": "Map"
+              },
+              {
+                "id": "p2",
+                "title": "Execution",
+                "iconName": "Target"
+              },
+              {
+                "id": "p3",
+                "title": "Results",
+                "iconName": "TrendingUp"
+              }
+            ]
           }
         ]
       }
@@ -2309,29 +2868,50 @@ export const initialDynamicPages: DynamicPage[] = [
         "title": "Quality Over Quantity",
         "subtitle": "The Revenue Engine"
       },
-      {
-        "id": "process-24",
-        "type": "process",
-        "isActive": true,
-        "orderIndex": 1,
-        "title": "Our Lead Gen System",
-        "subtitle": "How we deliver quality",
+            {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      }
+    
+      ,
+      {
+        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "type": "case-study",
+        "title": "Client Success & Transformation",
+        "content": "Real results for real clients.",
+        "caseStudies": [
           {
-            "title": "ICP Targeting",
-            "description": "Defining exactly who makes a good lead."
-          },
-          {
-            "title": "Funnel Creation",
-            "description": "Building landing pages and qualification forms."
-          },
-          {
-            "title": "Traffic Generation",
-            "description": "Driving highly targeted ad traffic to the funnel."
-          },
-          {
-            "title": "CRM Integration",
-            "description": "Passing enriched lead data directly to your sales team."
+            "id": "cs-1",
+            "title": "Scaling " + "high-quality-lead-generation".replace(/-/g, ' '),
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+            "points": [
+              {
+                "id": "p1",
+                "title": "Strategic Planning",
+                "iconName": "Map"
+              },
+              {
+                "id": "p2",
+                "title": "Execution",
+                "iconName": "Target"
+              },
+              {
+                "id": "p3",
+                "title": "Results",
+                "iconName": "TrendingUp"
+              }
+            ]
           }
         ]
       }
@@ -2402,6 +2982,54 @@ export const initialDynamicPages: DynamicPage[] = [
             "iconName": "Compass"
           }
         ]
+      },
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+
+    
+      ,
+      {
+        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "type": "case-study",
+        "title": "Client Success & Transformation",
+        "content": "Real results for real clients.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Scaling " + "experts-monthly-audit".replace(/-/g, ' '),
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+            "points": [
+              {
+                "id": "p1",
+                "title": "Strategic Planning",
+                "iconName": "Map"
+              },
+              {
+                "id": "p2",
+                "title": "Execution",
+                "iconName": "Target"
+              },
+              {
+                "id": "p3",
+                "title": "Results",
+                "iconName": "TrendingUp"
+              }
+            ]
+          }
+        ]
       }
     ],
     "seo": {
@@ -2436,7 +3064,21 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
         "bullets": []
       },
-      {
+            {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+{
         "id": "sec-process-google-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -2460,7 +3102,21 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
         "bullets": []
       },
-      {
+            {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+{
         "id": "sec-process-meta-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -2484,7 +3140,21 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
         "bullets": []
       },
-      {
+            {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+{
         "id": "sec-process-youtube-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -2508,7 +3178,21 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
         "bullets": []
       },
-      {
+            {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+{
         "id": "sec-process-linkedin-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -2532,7 +3216,21 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
         "bullets": []
       },
-      {
+            {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "type": "how-we-do-it",
+        "title": "How we do it",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "cards": [
+          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
+          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
+          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
+          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
+          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
+          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
+        ]
+      },
+{
         "id": "sec-process-twitter-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
