@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp, Users, Target, Bot, Globe, Search, ArrowRight, Sparkles, Share2, Megaphone, Repeat
@@ -73,7 +73,9 @@ export const ServicesSection: React.FC<ServicesProps> = ({
   services = [],
   onSelectService,
 }) => {
+  const [visibleCount, setVisibleCount] = useState(4);
   const displayItems = services.length >= 6 ? services : mockSolutions;
+  const currentItems = displayItems.slice(0, visibleCount);
 
   return (
     <section id="services-section" className="py-16 sm:py-20 bg-[#FAFAFA]">
@@ -99,7 +101,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
 
         {/* Zig-Zag Alternating Layout */}
         <div className="space-y-16 sm:space-y-24">
-          {displayItems.map((item, idx) => {
+          {currentItems.map((item, idx) => {
             const fallback = mockSolutions[idx % mockSolutions.length];
             const title = item.title || fallback.title;
             const desc = item.shortDescription || fallback.shortDescription;
@@ -166,6 +168,20 @@ export const ServicesSection: React.FC<ServicesProps> = ({
             );
           })}
         </div>
+
+        {visibleCount < displayItems.length && (
+          <div className="mt-20 flex justify-center">
+            <button
+              onClick={() => setVisibleCount(prev => prev + 4)}
+              className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white font-bold text-sm tracking-[0.1em] uppercase px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(236,72,153,0.5)] hover:-translate-y-1"
+            >
+              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 flex items-center gap-2">
+                VIEW MORE <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+              </span>
+            </button>
+          </div>
+        )}
 
       </div>
     </section>

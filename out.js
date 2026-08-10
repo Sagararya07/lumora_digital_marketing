@@ -1,6 +1,4 @@
-import { SiteContent, DynamicPage } from '../types';
-
-export const initialSiteContent: SiteContent = {
+export const initialSiteContent = {
   "hero": {
     "badgeText": "Local | National and Global Reach",
     "headlineMain": "Grow Your Business with Local, National & Global",
@@ -316,338 +314,338 @@ export const initialSiteContent: SiteContent = {
     }
   ],
   "achievements": [
-      {
-          "id": "case-1",
-          "clientName": "MedTech Solutions",
-          "industry": "Healthcare",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "300+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased patient acquisition through targeted local SEO and Google Ads.",
-          "solution": "Increased patient acquisition through targeted local SEO and Google Ads.",
-          "results": "Our data-driven approach resulted in a 300+ increase in monthly patient inquiries, optimizing their local presence and reducing Cost Per Acquisition (CPA) by 40%.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
-              "author": "VP of Marketing, MedTech Solutions",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
+    {
+      "id": "case-1",
+      "clientName": "MedTech Solutions",
+      "industry": "Healthcare",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "300+",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Increased patient acquisition through targeted local SEO and Google Ads.",
+      "solution": "Increased patient acquisition through targeted local SEO and Google Ads.",
+      "results": "Our data-driven approach resulted in a 300+ increase in monthly patient inquiries, optimizing their local presence and reducing Cost Per Acquisition (CPA) by 40%.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
+        "author": "VP of Marketing, MedTech Solutions",
+        "role": "Client"
       },
-      {
-          "id": "case-2",
-          "clientName": "Dental Care Network",
-          "industry": "Healthcare",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "150%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Boosted online bookings by 150% in 6 months.",
-          "solution": "Boosted online bookings by 150% in 6 months.",
-          "results": "We completely revamped their booking funnel and ran hyper-local Facebook and Instagram campaigns, leading to a massive 150% surge in booked appointments.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
-              "author": "VP of Marketing, Dental Care Network",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-2",
+      "clientName": "Dental Care Network",
+      "industry": "Healthcare",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "150%",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Boosted online bookings by 150% in 6 months.",
+      "solution": "Boosted online bookings by 150% in 6 months.",
+      "results": "We completely revamped their booking funnel and ran hyper-local Facebook and Instagram campaigns, leading to a massive 150% surge in booked appointments.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
+        "author": "VP of Marketing, Dental Care Network",
+        "role": "Client"
       },
-      {
-          "id": "case-3",
-          "clientName": "Global Pharma Inc.",
-          "industry": "Healthcare",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "$2M+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Generated $2M+ in pipeline for new medical device launch.",
-          "solution": "Generated $2M+ in pipeline for new medical device launch.",
-          "results": "Through a combination of LinkedIn B2B lead generation and programmatic display ads, we successfully launched their new device to hospital administrators globally.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
-              "author": "VP of Marketing, Global Pharma Inc.",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-3",
+      "clientName": "Global Pharma Inc.",
+      "industry": "Healthcare",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "$2M+",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Generated $2M+ in pipeline for new medical device launch.",
+      "solution": "Generated $2M+ in pipeline for new medical device launch.",
+      "results": "Through a combination of LinkedIn B2B lead generation and programmatic display ads, we successfully launched their new device to hospital administrators globally.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
+        "author": "VP of Marketing, Global Pharma Inc.",
+        "role": "Client"
       },
-      {
-          "id": "case-4",
-          "clientName": "CloudScale SaaS",
-          "industry": "B2B & IT SaaS",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "3x",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
-          "solution": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
-          "results": "We implemented a multi-touch ABM strategy on LinkedIn, increasing demo requests by 3x and closing $5M+ in new annual recurring revenue.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
-              "author": "VP of Marketing, CloudScale SaaS",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-4",
+      "clientName": "CloudScale SaaS",
+      "industry": "B2B & IT SaaS",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "3x",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
+      "solution": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
+      "results": "We implemented a multi-touch ABM strategy on LinkedIn, increasing demo requests by 3x and closing $5M+ in new annual recurring revenue.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
+        "author": "VP of Marketing, CloudScale SaaS",
+        "role": "Client"
       },
-      {
-          "id": "case-5",
-          "clientName": "CyberDefend Pro",
-          "industry": "B2B & IT SaaS",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "45%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Reduced cost-per-lead by 45% in highly competitive cyber security space.",
-          "solution": "Reduced cost-per-lead by 45% in highly competitive cyber security space.",
-          "results": "By optimizing Google Search campaigns and creating high-converting landing pages, we slashed CPL by 45% while doubling lead volume.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
-              "author": "VP of Marketing, CyberDefend Pro",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-5",
+      "clientName": "CyberDefend Pro",
+      "industry": "B2B & IT SaaS",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "45%",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Reduced cost-per-lead by 45% in highly competitive cyber security space.",
+      "solution": "Reduced cost-per-lead by 45% in highly competitive cyber security space.",
+      "results": "By optimizing Google Search campaigns and creating high-converting landing pages, we slashed CPL by 45% while doubling lead volume.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
+        "author": "VP of Marketing, CyberDefend Pro",
+        "role": "Client"
       },
-      {
-          "id": "case-6",
-          "clientName": "DataSync Platforms",
-          "industry": "B2B & IT SaaS",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "500+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Secured 500+ webinar attendees for product launch.",
-          "solution": "Secured 500+ webinar attendees for product launch.",
-          "results": "We utilized Facebook and LinkedIn ads to drive a highly targeted audience to their virtual product launch, resulting in a record-breaking 500+ attendees.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
-              "author": "VP of Marketing, DataSync Platforms",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-6",
+      "clientName": "DataSync Platforms",
+      "industry": "B2B & IT SaaS",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "500+",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Secured 500+ webinar attendees for product launch.",
+      "solution": "Secured 500+ webinar attendees for product launch.",
+      "results": "We utilized Facebook and LinkedIn ads to drive a highly targeted audience to their virtual product launch, resulting in a record-breaking 500+ attendees.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
+        "author": "VP of Marketing, DataSync Platforms",
+        "role": "Client"
       },
-      {
-          "id": "case-7",
-          "clientName": "Luxury Estates Dubai",
-          "industry": "Real Estate",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "$50M+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Sold $50M+ in luxury off-plan properties through Facebook lead gen.",
-          "solution": "Sold $50M+ in luxury off-plan properties through Facebook lead gen.",
-          "results": "We created immersive video ads showcasing luxury properties and targeted high-net-worth individuals, resulting in over $50M in closed sales.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
-              "author": "VP of Marketing, Luxury Estates Dubai",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-7",
+      "clientName": "Luxury Estates Dubai",
+      "industry": "Real Estate",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "$50M+",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Sold $50M+ in luxury off-plan properties through Facebook lead gen.",
+      "solution": "Sold $50M+ in luxury off-plan properties through Facebook lead gen.",
+      "results": "We created immersive video ads showcasing luxury properties and targeted high-net-worth individuals, resulting in over $50M in closed sales.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
+        "author": "VP of Marketing, Luxury Estates Dubai",
+        "role": "Client"
       },
-      {
-          "id": "case-8",
-          "clientName": "Urban Living Realty",
-          "industry": "Real Estate",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "200%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased agent inquiries by 200% via Google Ads.",
-          "solution": "Increased agent inquiries by 200% via Google Ads.",
-          "results": "We completely restructured their Google Ads account, focusing on high-intent search terms. This led to a 200% increase in qualified inquiries for their agents.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
-              "author": "VP of Marketing, Urban Living Realty",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-8",
+      "clientName": "Urban Living Realty",
+      "industry": "Real Estate",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "200%",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Increased agent inquiries by 200% via Google Ads.",
+      "solution": "Increased agent inquiries by 200% via Google Ads.",
+      "results": "We completely restructured their Google Ads account, focusing on high-intent search terms. This led to a 200% increase in qualified inquiries for their agents.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
+        "author": "VP of Marketing, Urban Living Realty",
+        "role": "Client"
       },
-      {
-          "id": "case-9",
-          "clientName": "Commercial Spaces Ltd.",
-          "industry": "Real Estate",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "40%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased commercial lease applications by 40%.",
-          "solution": "Increased commercial lease applications by 40%.",
-          "results": "By leveraging LinkedIn Ads targeting business owners and office managers, we boosted applications for commercial leases by 40% in just 3 months.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
-              "author": "VP of Marketing, Commercial Spaces Ltd.",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-9",
+      "clientName": "Commercial Spaces Ltd.",
+      "industry": "Real Estate",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "40%",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Increased commercial lease applications by 40%.",
+      "solution": "Increased commercial lease applications by 40%.",
+      "results": "By leveraging LinkedIn Ads targeting business owners and office managers, we boosted applications for commercial leases by 40% in just 3 months.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
+        "author": "VP of Marketing, Commercial Spaces Ltd.",
+        "role": "Client"
       },
-      {
-          "id": "case-10",
-          "clientName": "Fashion Nova UK",
-          "industry": "E-commerce",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "5x",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "5x Return on Ad Spend (ROAS) during Black Friday.",
-          "solution": "5x Return on Ad Spend (ROAS) during Black Friday.",
-          "results": "We designed a comprehensive cross-channel strategy (Facebook, Instagram, Google Shopping) that resulted in a massive 5x ROAS during their biggest sale of the year.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
-              "author": "VP of Marketing, Fashion Nova UK",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-10",
+      "clientName": "Fashion Nova UK",
+      "industry": "E-commerce",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "5x",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "5x Return on Ad Spend (ROAS) during Black Friday.",
+      "solution": "5x Return on Ad Spend (ROAS) during Black Friday.",
+      "results": "We designed a comprehensive cross-channel strategy (Facebook, Instagram, Google Shopping) that resulted in a massive 5x ROAS during their biggest sale of the year.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
+        "author": "VP of Marketing, Fashion Nova UK",
+        "role": "Client"
       },
-      {
-          "id": "case-11",
-          "clientName": "Organic Skincare Co.",
-          "industry": "E-commerce",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "60%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased repeat customer rate by 60% through email marketing.",
-          "solution": "Increased repeat customer rate by 60% through email marketing.",
-          "results": "We implemented automated email flows (abandoned cart, welcome series, win-back) that drastically improved customer retention and increased repeat purchases by 60%.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
-              "author": "VP of Marketing, Organic Skincare Co.",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-11",
+      "clientName": "Organic Skincare Co.",
+      "industry": "E-commerce",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "60%",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Increased repeat customer rate by 60% through email marketing.",
+      "solution": "Increased repeat customer rate by 60% through email marketing.",
+      "results": "We implemented automated email flows (abandoned cart, welcome series, win-back) that drastically improved customer retention and increased repeat purchases by 60%.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
+        "author": "VP of Marketing, Organic Skincare Co.",
+        "role": "Client"
       },
-      {
-          "id": "case-12",
-          "clientName": "Tech Gadgets Store",
-          "industry": "E-commerce",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "2x",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Doubled conversion rate through CRO and TikTok Ads.",
-          "solution": "Doubled conversion rate through CRO and TikTok Ads.",
-          "results": "We optimized their product pages for conversions and launched engaging TikTok ad campaigns, effectively doubling their overall website conversion rate.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
-              "author": "VP of Marketing, Tech Gadgets Store",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-12",
+      "clientName": "Tech Gadgets Store",
+      "industry": "E-commerce",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "2x",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Doubled conversion rate through CRO and TikTok Ads.",
+      "solution": "Doubled conversion rate through CRO and TikTok Ads.",
+      "results": "We optimized their product pages for conversions and launched engaging TikTok ad campaigns, effectively doubling their overall website conversion rate.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
+        "author": "VP of Marketing, Tech Gadgets Store",
+        "role": "Client"
       },
-      {
-          "id": "case-13",
-          "clientName": "SteelWorks Industrial",
-          "industry": "Manufacturing",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "$10M+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Generated $10M+ in B2B pipeline via LinkedIn & SEO.",
-          "solution": "Generated $10M+ in B2B pipeline via LinkedIn & SEO.",
-          "results": "We combined targeted LinkedIn outreach with technical SEO to capture high-value search intent, generating over $10M in qualified B2B pipeline.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
-              "author": "VP of Marketing, SteelWorks Industrial",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-13",
+      "clientName": "SteelWorks Industrial",
+      "industry": "Manufacturing",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "$10M+",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Generated $10M+ in B2B pipeline via LinkedIn & SEO.",
+      "solution": "Generated $10M+ in B2B pipeline via LinkedIn & SEO.",
+      "results": "We combined targeted LinkedIn outreach with technical SEO to capture high-value search intent, generating over $10M in qualified B2B pipeline.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
+        "author": "VP of Marketing, SteelWorks Industrial",
+        "role": "Client"
       },
-      {
-          "id": "case-14",
-          "clientName": "AutoParts Global",
-          "industry": "Manufacturing",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "85%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased distributor inquiries by 85% globally.",
-          "solution": "Increased distributor inquiries by 85% globally.",
-          "results": "By running multi-language Google Ads campaigns across Europe and Asia, we successfully increased inquiries from international distributors by 85%.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
-              "author": "VP of Marketing, AutoParts Global",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-14",
+      "clientName": "AutoParts Global",
+      "industry": "Manufacturing",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "85%",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Increased distributor inquiries by 85% globally.",
+      "solution": "Increased distributor inquiries by 85% globally.",
+      "results": "By running multi-language Google Ads campaigns across Europe and Asia, we successfully increased inquiries from international distributors by 85%.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
+        "author": "VP of Marketing, AutoParts Global",
+        "role": "Client"
       },
-      {
-          "id": "case-15",
-          "clientName": "EcoPackaging Solutions",
-          "industry": "Manufacturing",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "3x",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Tripled organic traffic in 8 months.",
-          "solution": "Tripled organic traffic in 8 months.",
-          "results": "Our comprehensive content strategy and technical SEO improvements resulted in a 3x increase in organic traffic, establishing them as an industry thought leader.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
-              "author": "VP of Marketing, EcoPackaging Solutions",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&q=80&w=800"
-      }
+      "image_url": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-15",
+      "clientName": "EcoPackaging Solutions",
+      "industry": "Manufacturing",
+      "location": "Global",
+      "metrics": [
+        {
+          "label": "Key Result",
+          "value": "3x",
+          "change": "+100%"
+        }
+      ],
+      "challenge": "Tripled organic traffic in 8 months.",
+      "solution": "Tripled organic traffic in 8 months.",
+      "results": "Our comprehensive content strategy and technical SEO improvements resulted in a 3x increase in organic traffic, establishing them as an industry thought leader.",
+      "testimonial": {
+        "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
+        "author": "VP of Marketing, EcoPackaging Solutions",
+        "role": "Client"
+      },
+      "image_url": "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&q=80&w=800"
+    }
   ],
-    "process": [
+  "process": [
     {
       "stepNumber": 1,
       "title": "Requirement & Competitor Analysis",
@@ -708,44 +706,41 @@ export const initialSiteContent: SiteContent = {
         "Scalable Budget Expansion"
       ]
     },
-{
-            "stepNumber": 6,
-            "title": "A/B Optimization",
-            "description": "A/B testing ad creatives, bidding strategies, and funnel copy to drive down cost-per-lead.",
-            "duration": "Ongoing",
-            "iconName": "Activity",
-            "keyOutputs": [
-                  "A/B Test Results",
-                  "Conversion Optimization",
-                  "CPL Reduction"
-            ]
-      
+    {
+      "stepNumber": 6,
+      "title": "A/B Optimization",
+      "description": "A/B testing ad creatives, bidding strategies, and funnel copy to drive down cost-per-lead.",
+      "duration": "Ongoing",
+      "iconName": "Activity",
+      "keyOutputs": [
+        "A/B Test Results",
+        "Conversion Optimization",
+        "CPL Reduction"
+      ]
     },
-{
-            "stepNumber": 7,
-            "title": "Reporting & Analytics",
-            "description": "Transparent weekly lead attribution reporting and real-time dashboard analytics access.",
-            "duration": "Ongoing",
-            "iconName": "BarChart2",
-            "keyOutputs": [
-                  "Weekly Reports",
-                  "Live Dashboard Access",
-                  "ROI Tracking"
-            ]
-      
+    {
+      "stepNumber": 7,
+      "title": "Reporting & Analytics",
+      "description": "Transparent weekly lead attribution reporting and real-time dashboard analytics access.",
+      "duration": "Ongoing",
+      "iconName": "BarChart2",
+      "keyOutputs": [
+        "Weekly Reports",
+        "Live Dashboard Access",
+        "ROI Tracking"
+      ]
     },
-{
-            "stepNumber": 8,
-            "title": "Growth Scaling",
-            "description": "Re-allocating budget into winning channels and expanding market reach globally.",
-            "duration": "Ongoing",
-            "iconName": "TrendingUp",
-            "keyOutputs": [
-                  "Budget Reallocation",
-                  "Market Expansion",
-                  "Revenue Growth"
-            ]
-      
+    {
+      "stepNumber": 8,
+      "title": "Growth Scaling",
+      "description": "Re-allocating budget into winning channels and expanding market reach globally.",
+      "duration": "Ongoing",
+      "iconName": "TrendingUp",
+      "keyOutputs": [
+        "Budget Reallocation",
+        "Market Expansion",
+        "Revenue Growth"
+      ]
     }
   ],
   "industries": [
@@ -826,229 +821,228 @@ export const initialSiteContent: SiteContent = {
     "workingHours": "Mon - Sat: 9:00 AM - 8:00 PM IST / Global 24/7 Support"
   },
   "caseStudiesList": [
-  {
-    "id": "case-healthcare-1",
-    "title": "MedTech Solutions",
-    "category": "Healthcare",
-    "description": "Increased patient acquisition through targeted local SEO and Google Ads.",
-    "image_url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-healthcare-2",
-    "title": "Dental Care Network",
-    "category": "Healthcare",
-    "description": "Boosted online bookings by 150% in 6 months.",
-    "image_url": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-healthcare-3",
-    "title": "Global Pharma Inc.",
-    "category": "Healthcare",
-    "description": "Generated $2M+ in pipeline for new medical device launch.",
-    "image_url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-b2b-1",
-    "title": "CloudScale SaaS",
-    "category": "B2B & IT SaaS",
-    "description": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
-    "image_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-b2b-2",
-    "title": "DataSync Pro",
-    "category": "B2B & IT SaaS",
-    "description": "Drove 10,000+ free trial signups via Technical SEO.",
-    "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-b2b-3",
-    "title": "CyberDefend",
-    "category": "B2B & IT SaaS",
-    "description": "Reduced customer churn, saving $500k annually.",
-    "image_url": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-realestate-1",
-    "title": "Skyline Developers",
-    "category": "Real Estate",
-    "description": "Sold out 50+ luxury condos in record time.",
-    "image_url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-realestate-2",
-    "title": "Urban Spaces Realty",
-    "category": "Real Estate",
-    "description": "Increased lead volume by 400% through Google Local Services.",
-    "image_url": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-realestate-3",
-    "title": "Commercial Property Group",
-    "category": "Real Estate",
-    "description": "Sourced $10M+ in commercial leasing contracts.",
-    "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-ecomm-1",
-    "title": "Fashion Nova Styles",
-    "category": "E-commerce",
-    "description": "Achieved a 5x Return on Ad Spend (ROAS) on TikTok.",
-    "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-ecomm-2",
-    "title": "EcoLiving Goods",
-    "category": "E-commerce",
-    "description": "Doubled conversion rates with CRO and email flows.",
-    "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800"
-  },
-  {
-    "id": "case-ecomm-3",
-    "title": "TechGadgets Direct",
-    "category": "E-commerce",
-    "description": "Generated $1M in Black Friday sales.",
-    "image_url": "https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&q=80&w=800"
-  }
-],
+    {
+      "id": "case-healthcare-1",
+      "title": "MedTech Solutions",
+      "category": "Healthcare",
+      "description": "Increased patient acquisition through targeted local SEO and Google Ads.",
+      "image_url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-healthcare-2",
+      "title": "Dental Care Network",
+      "category": "Healthcare",
+      "description": "Boosted online bookings by 150% in 6 months.",
+      "image_url": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-healthcare-3",
+      "title": "Global Pharma Inc.",
+      "category": "Healthcare",
+      "description": "Generated $2M+ in pipeline for new medical device launch.",
+      "image_url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-b2b-1",
+      "title": "CloudScale SaaS",
+      "category": "B2B & IT SaaS",
+      "description": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
+      "image_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-b2b-2",
+      "title": "DataSync Pro",
+      "category": "B2B & IT SaaS",
+      "description": "Drove 10,000+ free trial signups via Technical SEO.",
+      "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-b2b-3",
+      "title": "CyberDefend",
+      "category": "B2B & IT SaaS",
+      "description": "Reduced customer churn, saving $500k annually.",
+      "image_url": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-realestate-1",
+      "title": "Skyline Developers",
+      "category": "Real Estate",
+      "description": "Sold out 50+ luxury condos in record time.",
+      "image_url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-realestate-2",
+      "title": "Urban Spaces Realty",
+      "category": "Real Estate",
+      "description": "Increased lead volume by 400% through Google Local Services.",
+      "image_url": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-realestate-3",
+      "title": "Commercial Property Group",
+      "category": "Real Estate",
+      "description": "Sourced $10M+ in commercial leasing contracts.",
+      "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-ecomm-1",
+      "title": "Fashion Nova Styles",
+      "category": "E-commerce",
+      "description": "Achieved a 5x Return on Ad Spend (ROAS) on TikTok.",
+      "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-ecomm-2",
+      "title": "EcoLiving Goods",
+      "category": "E-commerce",
+      "description": "Doubled conversion rates with CRO and email flows.",
+      "image_url": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-ecomm-3",
+      "title": "TechGadgets Direct",
+      "category": "E-commerce",
+      "description": "Generated $1M in Black Friday sales.",
+      "image_url": "https://images.unsplash.com/photo-1491933382434-500287f9b54b?auto=format&fit=crop&q=80&w=800"
+    }
+  ],
   "rndModules": [
     {
-        "id": "57b8a1af-a325-4496-9b2f-3f13bd19128c",
-        "title": "Predictive Buyer Journey Engine",
-        "description": "Simulates conversion probabilities across 10,000+ audience pathways before allocating live media spend.",
-        "badge": "Machine Learning",
-        "image_url": "https://cdn-icons-png.flaticon.com/512/2043/2043102.png"
+      "id": "57b8a1af-a325-4496-9b2f-3f13bd19128c",
+      "title": "Predictive Buyer Journey Engine",
+      "description": "Simulates conversion probabilities across 10,000+ audience pathways before allocating live media spend.",
+      "badge": "Machine Learning",
+      "image_url": "https://cdn-icons-png.flaticon.com/512/2043/2043102.png"
     },
     {
-        "id": "fe1e79b0-5649-46f0-9bd1-7d7c0c6c840d",
-        "title": "Automated Multi-Touch Attribution",
-        "description": "Tracks every user touchpoint across search, social, and email to allocate budget to high-converting channels.",
-        "badge": "Real-Time Data",
-        "image_url": "https://cdn-icons-png.flaticon.com/512/2921/2921222.png"
+      "id": "fe1e79b0-5649-46f0-9bd1-7d7c0c6c840d",
+      "title": "Automated Multi-Touch Attribution",
+      "description": "Tracks every user touchpoint across search, social, and email to allocate budget to high-converting channels.",
+      "badge": "Real-Time Data",
+      "image_url": "https://cdn-icons-png.flaticon.com/512/2921/2921222.png"
     },
     {
-        "id": "e4fc4e37-e202-46b7-b96b-74e422fc7318",
-        "title": "Autonomous AI Lead Qualification",
-        "description": "Interactive AI chatbots and automated scoring sequences verify intent before handing off leads to sales teams.",
-        "badge": "Automation",
-        "image_url": "https://cdn-icons-png.flaticon.com/512/4711/4711987.png"
+      "id": "e4fc4e37-e202-46b7-b96b-74e422fc7318",
+      "title": "Autonomous AI Lead Qualification",
+      "description": "Interactive AI chatbots and automated scoring sequences verify intent before handing off leads to sales teams.",
+      "badge": "Automation",
+      "image_url": "https://cdn-icons-png.flaticon.com/512/4711/4711987.png"
     },
     {
-        "id": "43538efd-e468-47dc-a0db-825671f7181e",
-        "title": "Creative Resonance Computer Vision",
-        "description": "AI visual analysis evaluates ad creative elements (colors, copy layout, imagery) against historic ROAS benchmarks.",
-        "badge": "Computer Vision",
-        "image_url": "https://cdn-icons-png.flaticon.com/512/2919/2919864.png"
+      "id": "43538efd-e468-47dc-a0db-825671f7181e",
+      "title": "Creative Resonance Computer Vision",
+      "description": "AI visual analysis evaluates ad creative elements (colors, copy layout, imagery) against historic ROAS benchmarks.",
+      "badge": "Computer Vision",
+      "image_url": "https://cdn-icons-png.flaticon.com/512/2919/2919864.png"
     }
-],
+  ],
   "aboutCorePillars": [
     {
-        "id": "a2fcb6c7-2dce-439b-b724-9b3dc0556cd5",
-        "title": "Data-Driven Strategy",
-        "description": "Every campaign hypothesis is validated using historical search trends and conversion benchmarks.",
-        "iconName": "BarChart3"
+      "id": "a2fcb6c7-2dce-439b-b724-9b3dc0556cd5",
+      "title": "Data-Driven Strategy",
+      "description": "Every campaign hypothesis is validated using historical search trends and conversion benchmarks.",
+      "iconName": "BarChart3"
     },
     {
-        "id": "f019dbdc-a8b4-4954-9831-9d8ef97c25c1",
-        "title": "Certified Premier Partners",
-        "description": "Accredited Google Premier, Meta Business, and HubSpot marketing strategists managing your budget.",
-        "iconName": "Award"
+      "id": "f019dbdc-a8b4-4954-9831-9d8ef97c25c1",
+      "title": "Certified Premier Partners",
+      "description": "Accredited Google Premier, Meta Business, and HubSpot marketing strategists managing your budget.",
+      "iconName": "Award"
     },
     {
-        "id": "e51abb94-2fde-4e70-86f7-b8b3db35ca15",
-        "title": "Relentless ROI Focus",
-        "description": "We optimize down to Customer Acquisition Cost (CAC) and customer lifetime value (LTV).",
-        "iconName": "TrendingUp"
+      "id": "e51abb94-2fde-4e70-86f7-b8b3db35ca15",
+      "title": "Relentless ROI Focus",
+      "description": "We optimize down to Customer Acquisition Cost (CAC) and customer lifetime value (LTV).",
+      "iconName": "TrendingUp"
     }
-],
+  ],
   "aboutMissionCards": [
     {
-        "id": "859bd44e-9776-41e3-bbff-e91e9c9318bf",
-        "title": "Omnichannel Funnel Scaling",
-        "description": "Google Ads, Meta, LinkedIn & Programmatic",
-        "iconName": "Globe2"
+      "id": "859bd44e-9776-41e3-bbff-e91e9c9318bf",
+      "title": "Omnichannel Funnel Scaling",
+      "description": "Google Ads, Meta, LinkedIn & Programmatic",
+      "iconName": "Globe2"
     },
     {
-        "id": "45aaac53-d8a2-4282-869c-ef191e0c3680",
-        "title": "AI Campaign Automation",
-        "description": "Real-time automated bidding & AI creative testing",
-        "iconName": "Zap"
+      "id": "45aaac53-d8a2-4282-869c-ef191e0c3680",
+      "title": "AI Campaign Automation",
+      "description": "Real-time automated bidding & AI creative testing",
+      "iconName": "Zap"
     },
     {
-        "id": "35c815fc-79bb-4612-aa50-62466c77f32e",
-        "title": "100% Attribution Transparency",
-        "description": "Live client dashboard tracking CAC, leads & ROI",
-        "iconName": "CheckCircle2"
+      "id": "35c815fc-79bb-4612-aa50-62466c77f32e",
+      "title": "100% Attribution Transparency",
+      "description": "Live client dashboard tracking CAC, leads & ROI",
+      "iconName": "CheckCircle2"
     }
-],
+  ],
   "trustedLogos": [
     {
-        "id": "28a5f009-d080-40ef-b293-48e87dd26e30",
-        "name": "HubSpot",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg"
+      "id": "28a5f009-d080-40ef-b293-48e87dd26e30",
+      "name": "HubSpot",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg"
     },
     {
-        "id": "4614aca6-ae66-4ccf-9632-2a303b0c4595",
-        "name": "Honeywell",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Honeywell_logo.svg/320px-Honeywell_logo.svg.png"
+      "id": "4614aca6-ae66-4ccf-9632-2a303b0c4595",
+      "name": "Honeywell",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/Honeywell_logo.svg/320px-Honeywell_logo.svg.png"
     },
     {
-        "id": "89930202-bda6-4bdb-b7b6-4237ff554b0c",
-        "name": "Microsoft",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
+      "id": "89930202-bda6-4bdb-b7b6-4237ff554b0c",
+      "name": "Microsoft",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/9/96/Microsoft_logo_%282012%29.svg"
     },
     {
-        "id": "5a08e4b3-4f62-44fa-b6da-febce51ae7e4",
-        "name": "Startup India",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Startup_India_Logo.svg"
+      "id": "5a08e4b3-4f62-44fa-b6da-febce51ae7e4",
+      "name": "Startup India",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/e/e0/Startup_India_Logo.svg"
     },
     {
-        "id": "b9e6484f-2b05-4649-be4c-041137940a24",
-        "name": "Google",
-        "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+      "id": "b9e6484f-2b05-4649-be4c-041137940a24",
+      "name": "Google",
+      "image_url": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
     }
-],
+  ],
   "testimonials": [
     {
-        "id": "1",
-        "name": "Rahul Sharma",
-        "company": "TechVentures India",
-        "role": "CEO",
-        "content": "Lumora transformed our lead generation pipeline. We went from 20 leads/month to 350+ qualified leads in just 3 months. Their ROI-focused approach is unlike anything we've experienced before.",
-        "rating": 5,
-        "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&auto=format&fit=crop&q=80"
+      "id": "1",
+      "name": "Rahul Sharma",
+      "company": "TechVentures India",
+      "role": "CEO",
+      "content": "Lumora transformed our lead generation pipeline. We went from 20 leads/month to 350+ qualified leads in just 3 months. Their ROI-focused approach is unlike anything we've experienced before.",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&auto=format&fit=crop&q=80"
     },
     {
-        "id": "2",
-        "name": "Sarah Mitchell",
-        "company": "MedFirst Healthcare",
-        "role": "Marketing Director",
-        "content": "The healthcare campaigns they built for us were HIPAA-compliant, highly targeted, and incredibly effective. Patient appointment bookings increased by 280% in the first quarter.",
-        "rating": 5,
-        "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&auto=format&fit=crop&q=80"
+      "id": "2",
+      "name": "Sarah Mitchell",
+      "company": "MedFirst Healthcare",
+      "role": "Marketing Director",
+      "content": "The healthcare campaigns they built for us were HIPAA-compliant, highly targeted, and incredibly effective. Patient appointment bookings increased by 280% in the first quarter.",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&h=400&auto=format&fit=crop&q=80"
     },
     {
-        "id": "3",
-        "name": "James Thornton",
-        "company": "PropMax Real Estate",
-        "role": "Director",
-        "content": "Their real estate lead generation expertise is unmatched. Quality leads, transparent reporting, and a dedicated account manager who actually cares about our results. 5 stars across the board.",
-        "rating": 5,
-        "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop&q=80"
+      "id": "3",
+      "name": "James Thornton",
+      "company": "PropMax Real Estate",
+      "role": "Director",
+      "content": "Their real estate lead generation expertise is unmatched. Quality leads, transparent reporting, and a dedicated account manager who actually cares about our results. 5 stars across the board.",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&auto=format&fit=crop&q=80"
     },
     {
-        "id": "4",
-        "name": "Priya Nair",
-        "company": "EduFirst Academy",
-        "role": "Founder",
-        "content": "We doubled our student enrollments in one academic year using Lumora's digital marketing strategy. The combination of SEO and paid ads was perfectly calibrated for our goals.",
-        "rating": 5,
-        "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&auto=format&fit=crop&q=80"
+      "id": "4",
+      "name": "Priya Nair",
+      "company": "EduFirst Academy",
+      "role": "Founder",
+      "content": "We doubled our student enrollments in one academic year using Lumora's digital marketing strategy. The combination of SEO and paid ads was perfectly calibrated for our goals.",
+      "rating": 5,
+      "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&auto=format&fit=crop&q=80"
     }
-]
+  ]
 };
-
-export const initialDynamicPages: DynamicPage[] = [
+export const initialDynamicPages = [
   {
     "id": "page-lead-generation",
     "slug": "lead-generation",
@@ -1056,53 +1050,53 @@ export const initialDynamicPages: DynamicPage[] = [
     "pageType": "service",
     "isPublished": true,
     "sections": [
-        {
-          "id": "sec-ads-we-manage",
-          "type": "scrollable-cards",
-          "title": "Ads We Manage",
-          "cards": [
-            {
-              "id": "card-google",
-              "title": "Google Ads",
-              "description": "Search, Display, Shopping, Performance Max & YouTube Ads",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
-              "linkUrl": "lead-generation/google-ads"
-            },
-            {
-              "id": "card-meta",
-              "title": "Meta Ads",
-              "description": "Facebook & Instagram Ads that build brand, leads & sales",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
-              "linkUrl": "lead-generation/meta-ads"
-            },
-            {
-              "id": "card-youtube",
-              "title": "YouTube Ads",
-              "description": "Video Ads that increase brand awareness and drive conversions",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
-              "linkUrl": "lead-generation/youtube-ads"
-            },
-            {
-              "id": "card-linkedin",
-              "title": "LinkedIn Ads",
-              "description": "B2B Leads, Brand Building & Targeted Outreach for Professionals",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
-              "linkUrl": "lead-generation/linkedin-ads"
-            },
-            {
-              "id": "card-twitter",
-              "title": "Twitter (X) Ads",
-              "description": "Promote your business and engage with your target audience",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
-              "linkUrl": "lead-generation/twitter-ads"
-            }
-          ]
-        },
+      {
+        "id": "sec-ads-we-manage",
+        "type": "scrollable-cards",
+        "title": "Ads We Manage",
+        "cards": [
+          {
+            "id": "card-google",
+            "title": "Google Ads",
+            "description": "Search, Display, Shopping, Performance Max & YouTube Ads",
+            "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
+            "linkUrl": "lead-generation/google-ads"
+          },
+          {
+            "id": "card-meta",
+            "title": "Meta Ads",
+            "description": "Facebook & Instagram Ads that build brand, leads & sales",
+            "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+            "linkUrl": "lead-generation/meta-ads"
+          },
+          {
+            "id": "card-youtube",
+            "title": "YouTube Ads",
+            "description": "Video Ads that increase brand awareness and drive conversions",
+            "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+            "linkUrl": "lead-generation/youtube-ads"
+          },
+          {
+            "id": "card-linkedin",
+            "title": "LinkedIn Ads",
+            "description": "B2B Leads, Brand Building & Targeted Outreach for Professionals",
+            "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+            "linkUrl": "lead-generation/linkedin-ads"
+          },
+          {
+            "id": "card-twitter",
+            "title": "Twitter (X) Ads",
+            "description": "Promote your business and engage with your target audience",
+            "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
+            "linkUrl": "lead-generation/twitter-ads"
+          }
+        ]
+      },
       {
         "id": "sec-overview",
         "type": "overview",
         "title": "Turning Awareness Into Qualified Demand For Your Business.",
-        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel lead generation engine. Lumora delivers Lead Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
+        "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns\u2014it requires a structured, full-funnel lead generation engine. Lumora delivers Lead Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
         "mediaUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800",
         "bullets": []
       },
@@ -1145,39 +1139,44 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -1261,11 +1260,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-lead-generation-" + Math.floor(Math.random()*10000),
+        "id": "faq-lead-generation-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -1343,39 +1340,44 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -1421,11 +1423,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-social-media-marketing-" + Math.floor(Math.random()*10000),
+        "id": "faq-social-media-marketing-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -1503,39 +1503,44 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -1581,11 +1586,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-seo-" + Math.floor(Math.random()*10000),
+        "id": "faq-seo-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -1620,7 +1623,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview",
         "type": "overview",
         "title": "Data-Driven Campaigns Where Every Dollar Counts.",
-        "content": "Performance marketing is about measurable, scalable results. Lumora deploys aggressive, omnichannel performance campaigns driven by AI algorithms and rigorous A/B testing. We focus strictly on KPIs—CPA, ROAS, and LTV—ensuring your marketing budget acts as a precise investment vehicle for immediate revenue growth.",
+        "content": "Performance marketing is about measurable, scalable results. Lumora deploys aggressive, omnichannel performance campaigns driven by AI algorithms and rigorous A/B testing. We focus strictly on KPIs\u2014CPA, ROAS, and LTV\u2014ensuring your marketing budget acts as a precise investment vehicle for immediate revenue growth.",
         "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
         "bullets": []
       },
@@ -1663,39 +1666,44 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -1741,11 +1749,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-performance-marketing-" + Math.floor(Math.random()*10000),
+        "id": "faq-performance-marketing-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -1823,39 +1829,44 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -1901,11 +1912,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-retargeting-marketing-" + Math.floor(Math.random()*10000),
+        "id": "faq-retargeting-marketing-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -1983,10 +1992,10 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -1996,41 +2005,45 @@ export const initialDynamicPages: DynamicPage[] = [
           { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
-
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -2076,11 +2089,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-ai-marketing-automation-" + Math.floor(Math.random()*10000),
+        "id": "faq-ai-marketing-automation-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -2158,10 +2169,10 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -2171,41 +2182,45 @@ export const initialDynamicPages: DynamicPage[] = [
           { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
-
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -2251,11 +2266,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-paid-advertising-campaigns-" + Math.floor(Math.random()*10000),
+        "id": "faq-paid-advertising-campaigns-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -2333,10 +2346,10 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -2346,41 +2359,45 @@ export const initialDynamicPages: DynamicPage[] = [
           { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
-
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -2426,11 +2443,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-target-audience-reach-" + Math.floor(Math.random()*10000),
+        "id": "faq-target-audience-reach-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -2508,10 +2523,10 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -2521,41 +2536,45 @@ export const initialDynamicPages: DynamicPage[] = [
           { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
-
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
           {
             "id": "hw-1",
-            "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap."
+            "title": "Strategy & Planning",
+            "description": "We analyze your business goals and develop a comprehensive roadmap."
           },
           {
             "id": "hw-2",
-            "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates."
+            "title": "Design & Copywriting",
+            "description": "Crafting compelling visuals and persuasive messaging that resonates."
           },
           {
             "id": "hw-3",
-            "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices."
+            "title": "Technical Execution",
+            "description": "Implementing the strategy using cutting-edge tools and best practices."
           },
           {
             "id": "hw-4",
-            "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly."
+            "title": "Quality Assurance",
+            "description": "Rigorous testing to ensure everything performs flawlessly."
           },
           {
             "id": "hw-5",
-            "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact."
+            "title": "Campaign Launch",
+            "description": "Deploying the campaigns with precision and maximum impact."
           },
           {
             "id": "hw-6",
-            "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success."
+            "title": "Optimization & Scaling",
+            "description": "Continuous monitoring and refining to maximize ROI and scale success."
           }
         ]
       },
-
       {
         "id": "sec-case-study",
         "type": "case-study",
@@ -2601,11 +2620,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-influencer-marketing-" + Math.floor(Math.random()*10000),
+        "id": "faq-influencer-marketing-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -2680,10 +2697,10 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -2694,14 +2711,14 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "id": "sec-case-study-" + Math.floor(Math.random() * 1e4),
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "Real results for real clients.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Scaling " + "strategies-creations".replace(/-/g, ' '),
+            "title": "Scaling " + "strategies-creations".replace(/-/g, " "),
             "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
             "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
             "points": [
@@ -2723,11 +2740,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-strategies-creations-" + Math.floor(Math.random()*10000),
+        "id": "faq-strategies-creations-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -2787,11 +2802,11 @@ export const initialDynamicPages: DynamicPage[] = [
         "title": "Uncovering the Truth",
         "subtitle": "Deep-dive Audits"
       },
-            {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -2801,7 +2816,7 @@ export const initialDynamicPages: DynamicPage[] = [
           { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
-{
+      {
         "id": "process-21",
         "type": "process",
         "isActive": true,
@@ -2826,18 +2841,16 @@ export const initialDynamicPages: DynamicPage[] = [
             "description": "Delivering a prioritized list of fixes and opportunities."
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "id": "sec-case-study-" + Math.floor(Math.random() * 1e4),
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "Real results for real clients.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Scaling " + "diagnose-marketing".replace(/-/g, ' '),
+            "title": "Scaling " + "diagnose-marketing".replace(/-/g, " "),
             "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
             "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
             "points": [
@@ -2859,11 +2872,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-diagnose-marketing-" + Math.floor(Math.random()*10000),
+        "id": "faq-diagnose-marketing-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -2949,10 +2960,10 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -2963,14 +2974,14 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "id": "sec-case-study-" + Math.floor(Math.random() * 1e4),
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "Real results for real clients.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Scaling " + "retarget-marketing".replace(/-/g, ' '),
+            "title": "Scaling " + "retarget-marketing".replace(/-/g, " "),
             "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
             "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
             "points": [
@@ -2992,11 +3003,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-retarget-marketing-" + Math.floor(Math.random()*10000),
+        "id": "faq-retarget-marketing-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -3077,10 +3086,10 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -3091,14 +3100,14 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "id": "sec-case-study-" + Math.floor(Math.random() * 1e4),
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "Real results for real clients.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Scaling " + "demand-generation".replace(/-/g, ' '),
+            "title": "Scaling " + "demand-generation".replace(/-/g, " "),
             "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
             "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
             "points": [
@@ -3120,11 +3129,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-demand-generation-" + Math.floor(Math.random()*10000),
+        "id": "faq-demand-generation-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -3184,11 +3191,11 @@ export const initialDynamicPages: DynamicPage[] = [
         "title": "Quality Over Quantity",
         "subtitle": "The Revenue Engine"
       },
-            {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+      {
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -3197,18 +3204,16 @@ export const initialDynamicPages: DynamicPage[] = [
           { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
           { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "id": "sec-case-study-" + Math.floor(Math.random() * 1e4),
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "Real results for real clients.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Scaling " + "high-quality-lead-generation".replace(/-/g, ' '),
+            "title": "Scaling " + "high-quality-lead-generation".replace(/-/g, " "),
             "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
             "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
             "points": [
@@ -3230,11 +3235,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-high-quality-lead-generation-" + Math.floor(Math.random()*10000),
+        "id": "faq-high-quality-lead-generation-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -3325,10 +3328,10 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
+        "id": "sec-how-we-do-it-" + Math.floor(Math.random() * 1e4),
         "type": "how-we-do-it",
         "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution \u2014 every project is built for performance and a seamless user experience across all platforms.",
         "cards": [
           { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
           { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
@@ -3339,14 +3342,14 @@ export const initialDynamicPages: DynamicPage[] = [
         ]
       },
       {
-        "id": "sec-case-study-" + Math.floor(Math.random()*10000),
+        "id": "sec-case-study-" + Math.floor(Math.random() * 1e4),
         "type": "case-study",
         "title": "Client Success & Transformation",
         "content": "Real results for real clients.",
         "caseStudies": [
           {
             "id": "cs-1",
-            "title": "Scaling " + "experts-monthly-audit".replace(/-/g, ' '),
+            "title": "Scaling " + "experts-monthly-audit".replace(/-/g, " "),
             "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
             "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
             "points": [
@@ -3368,11 +3371,9 @@ export const initialDynamicPages: DynamicPage[] = [
             ]
           }
         ]
-      }
-    
-      ,
+      },
       {
-        "id": "faq-experts-monthly-audit-" + Math.floor(Math.random()*10000),
+        "id": "faq-experts-monthly-audit-" + Math.floor(Math.random() * 1e4),
         "type": "faq",
         "title": "Frequently Asked Questions",
         "content": "",
@@ -3427,7 +3428,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
         "bullets": []
       },
-{
+      {
         "id": "sec-process-google-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -3451,7 +3452,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
         "bullets": []
       },
-{
+      {
         "id": "sec-process-meta-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -3475,7 +3476,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
         "bullets": []
       },
-{
+      {
         "id": "sec-process-youtube-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -3499,7 +3500,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
         "bullets": []
       },
-{
+      {
         "id": "sec-process-linkedin-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -3523,7 +3524,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
         "bullets": []
       },
-{
+      {
         "id": "sec-process-twitter-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",

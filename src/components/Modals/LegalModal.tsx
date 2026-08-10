@@ -36,7 +36,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           </div>
           <div>
             <h3 className="text-2xl font-bold text-slate-900">{titles[type]}</h3>
-            <p className="text-xs text-slate-500 font-normal">Effective Date: January 2026 • Cypher Swift Digital Marketing Agency</p>
+            <p className="text-xs text-slate-500 font-normal">Effective Date: January 2026 • Lumora Digital Marketing Agency</p>
           </div>
         </div>
 
@@ -45,7 +45,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           {type === 'privacy' && (
             <>
               <p>
-                At Cypher Swift, accessible from cypherswift.com, one of our main priorities is the privacy of our visitors and clients. This Privacy Policy document outlines the types of information collected and how we utilize it.
+                At Lumora, accessible from lumora.com, one of our main priorities is the privacy of our visitors and clients. This Privacy Policy document outlines the types of information collected and how we utilize it.
               </p>
               <h4 className="font-bold text-slate-900 text-sm">1. Information We Collect</h4>
               <p>
@@ -53,7 +53,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
               </p>
               <h4 className="font-bold text-slate-900 text-sm">2. How We Use Your Information</h4>
               <p>
-                We use collected information to provide customized marketing proposals, manage client communication, route leads directly to our account supervisors (cypherswiftinfotech@gmail.com), and optimize campaign execution.
+                We use collected information to provide customized marketing proposals, manage client communication, route leads directly to our account supervisors (contact@lumora.com), and optimize campaign execution.
               </p>
               <h4 className="font-bold text-slate-900 text-sm">3. Data Security & GDPR Compliance</h4>
               <p>
@@ -65,11 +65,11 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           {type === 'terms' && (
             <>
               <p>
-                By accessing or engaging services with Cypher Swift Digital Marketing Agency, you agree to be bound by the following Terms and Conditions.
+                By accessing or engaging services with Lumora Digital Marketing Agency, you agree to be bound by the following Terms and Conditions.
               </p>
               <h4 className="font-bold text-slate-900 text-sm">1. Service Scope & Execution</h4>
               <p>
-                Cypher Swift provides digital marketing, search engine optimization, performance advertising, and lead generation services as specified in agreed campaign proposals.
+                Lumora provides digital marketing, search engine optimization, performance advertising, and lead generation services as specified in agreed campaign proposals.
               </p>
               <h4 className="font-bold text-slate-900 text-sm">2. Client Obligations</h4>
               <p>
@@ -85,7 +85,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
           {type === 'refund' && (
             <>
               <p>
-                Cypher Swift is committed to deliver high-quality marketing campaign execution and transparent reporting.
+                Lumora is committed to deliver high-quality marketing campaign execution and transparent reporting.
               </p>
               <h4 className="font-bold text-slate-900 text-sm">1. Ad Spend & Media Costs</h4>
               <p>
@@ -93,7 +93,7 @@ export const LegalModal: React.FC<LegalModalProps> = ({ type, onClose }) => {
               </p>
               <h4 className="font-bold text-slate-900 text-sm">2. Agency Retainer Fees</h4>
               <p>
-                If Cypher Swift fails to launch agreed marketing campaigns within the stipulated setup timeframe without client delay, a 100% refund of initial setup retainer fees will be issued upon written request.
+                If Lumora fails to launch agreed marketing campaigns within the stipulated setup timeframe without client delay, a 100% refund of initial setup retainer fees will be issued upon written request.
               </p>
             </>
           )}

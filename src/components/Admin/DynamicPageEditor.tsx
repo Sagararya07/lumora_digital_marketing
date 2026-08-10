@@ -885,7 +885,7 @@ const handleAddSection = () => {
               </div>
 
               {/* Cards Editor (For Services Grid, Scrollable Cards, Process, How we do it) */}
-              {(sec.type === 'services-grid' || sec.type === 'scrollable-cards' || sec.type === 'process' || sec.type === 'how-we-do-it') && (
+              {(sec.type === 'services-grid' || sec.type === 'scrollable-cards' || sec.type === 'process' || sec.type === 'how-we-do-it' || sec.type === 'faq') && (
                 <div className="pt-5 border-t border-[#E5E7EB] mt-5">
                   <div className="flex items-center justify-between mb-4">
                     <span className="text-xs font-extrabold text-[#111827] uppercase tracking-wider flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif]">

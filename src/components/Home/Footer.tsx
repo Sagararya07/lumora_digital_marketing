@@ -67,25 +67,28 @@ export const Footer: React.FC<FooterProps> = ({
             <h4 className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
               Solutions
             </h4>
-            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-2.5 text-[#6B7280] font-normal">
-              {(services && services.length > 0 ? services : [
-                { title: 'Social Media Marketing', slug: 'social-media-marketing', id: 'social-media-marketing' },
-                { title: 'Search Engine Optimization (SEO)', slug: 'seo-growth-engine', id: 'seo-growth-engine' },
-                { title: 'Performance Marketing', slug: 'performance-marketing', id: 'performance-marketing' },
-                { title: 'Lead Generation', slug: 'lead-generation', id: 'lead-generation' },
-                { title: 'Retargeting Marketing', slug: 'retargeting-marketing', id: 'retargeting-marketing' },
-                { title: 'AI Marketing Automation', slug: 'ai-marketing-automation', id: 'ai-marketing-automation' },
-              ]).map((item, i) => (
-                <li key={i}>
-                  <button 
-                    onClick={() => onNavSection?.(item.id?.toString() || item.slug || `service-${i}`)}
-                    className="hover:text-[#5B8EE2] transition-colors text-left"
-                  >
-                    {item.title.split(' - ')[0]}
-                  </button>
-                </li>
-              ))}
-            </ul>
+            <div className="max-h-[135px] overflow-hidden hover:overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full transition-all duration-300">
+              <ul className="grid grid-cols-1 gap-y-2.5 text-[#6B7280] font-normal">
+                {(services && services.length > 0 ? services : [
+                  { title: 'Social Media Marketing', slug: 'social-media-marketing', id: 'social-media-marketing' },
+                  { title: 'Search Engine Optimization (SEO)', slug: 'seo-growth-engine', id: 'seo-growth-engine' },
+                  { title: 'Performance Marketing', slug: 'performance-marketing', id: 'performance-marketing' },
+                  { title: 'Lead Generation', slug: 'lead-generation', id: 'lead-generation' },
+                  { title: 'Retargeting Marketing', slug: 'retargeting-marketing', id: 'retargeting-marketing' },
+                  { title: 'AI Marketing Automation', slug: 'ai-marketing-automation', id: 'ai-marketing-automation' },
+                ]).map((item, i) => (
+                  <li key={i} className="w-full">
+                    <button 
+                      onClick={() => onNavSection?.(item.id?.toString() || item.slug || `service-${i}`)}
+                      className="hover:text-[#5B8EE2] transition-colors text-left whitespace-nowrap truncate w-full block"
+                      title={item.title.split(' - ')[0]}
+                    >
+                      {item.title.split(' - ')[0]}
+                    </button>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
 
           {/* Column 3: Industries */}

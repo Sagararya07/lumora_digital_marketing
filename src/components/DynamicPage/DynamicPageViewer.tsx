@@ -17,6 +17,7 @@ import * as Icons from 'lucide-react';
 import { DynamicPage } from '../../types';
 import { ConsultationSection } from '../Home/ConsultationSection';
 import { ProcessSection } from '../Home/ProcessSection';
+import { FAQSection } from '../Home/FAQSection';
 import { useViewMore } from '../../hooks/useViewMore';
 import { ViewMoreButton } from '../common/ViewMoreButton';
 import { ParticleMorph } from './ParticleMorph';
@@ -238,6 +239,23 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
             );
           }
 
+          if (sec.type === 'faq') {
+            const mappedFaqs = sec.cards?.map((card, i) => ({
+              id: card.id || `faq-${i}`,
+              question: card.title || '',
+              answer: card.description || '',
+              category: 'General' as const,
+            })) || [];
+            
+            if (mappedFaqs.length === 0) return null;
+
+            return (
+              <div key={sec.id}>
+                <FAQSection faqs={mappedFaqs} openConsultationModal={openConsultationModal} />
+              </div>
+            );
+          }
+
           if (sec.type === 'text-media' || sec.type === 'overview') {
             return (
               <section key={sec.id} className="relative max-w-7xl mx-auto px-4 sm:px-8 py-16 sm:py-28 overflow-hidden">
@@ -448,7 +466,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                   </div>
 
                   {/* Scrollable Container */}
-                  <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 snap-x snap-mandatory hide-scrollbar -mx-4 px-4 sm:mx-0 sm:px-0">
+                  <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:[background:linear-gradient(to_right,#5B8EE2,#D6A67B,#EC4899)] [&::-webkit-scrollbar-thumb]:rounded-full -mx-4 px-4 sm:mx-0 sm:px-0">
                     {sec.cards?.map((card) => (
                       <div key={card.id} className="w-[280px] sm:w-[300px] shrink-0 snap-center bg-white rounded-3xl border border-[#E5E7EB] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group">
                         

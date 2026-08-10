@@ -82,7 +82,7 @@ export const ConsultationSection: React.FC<ConsultationSectionProps> = ({
             {submitted ? (
               <div className="flex items-center gap-2.5 px-8 py-4 rounded-full bg-white text-slate-900 font-bold text-xs shadow-lg">
                 <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>Thank you! We will reach out to cypherswiftinfotech@gmail.com shortly.</span>
+                <span>Thank you! We will reach out to contact@lumora.com shortly.</span>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center gap-3">
