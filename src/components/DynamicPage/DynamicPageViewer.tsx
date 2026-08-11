@@ -384,7 +384,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
             return (
               <section key={sec.id} className="w-full bg-slate-50 border-y border-[#E5E7EB] flex flex-col md:flex-row min-h-[600px]">
                 {/* Left Side */}
-                <div className="w-full md:w-[55%] lg:w-[60%] p-8 sm:p-12 lg:p-20 relative flex flex-col justify-center">
+                <div className="w-full md:w-[55%] lg:w-[60%] p-8 sm:p-12 lg:p-20 relative z-10 flex flex-col justify-center">
                   
                   {/* Decorative Dots Pattern */}
                   <div className="hidden lg:grid grid-cols-5 gap-2 w-16 absolute left-6 top-24 opacity-30">
@@ -425,14 +425,17 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                 </div>
 
                 {/* Right Side */}
-                <div className="w-full md:w-[45%] lg:w-[40%] relative min-h-[400px] md:min-h-full">
-                  <img 
-                    src={finalImage} 
-                    alt={secTitle} 
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                <div className="w-full md:w-[45%] lg:w-[40%] flex flex-col md:block relative min-h-[400px] md:min-h-full">
+                  <div className="relative w-full h-[300px] md:absolute md:inset-0 md:h-full">
+                    <img 
+                      src={finalImage} 
+                      alt={secTitle} 
+                      className="absolute inset-0 w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-slate-900/50 via-transparent to-transparent opacity-60" />
+                  </div>
                   {/* Themed overlay box */}
-                  <div className="absolute bottom-0 right-0 md:right-auto md:left-[-15%] lg:left-[-20%] w-full md:w-[130%] bg-gradient-to-br from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] p-8 sm:p-12 shadow-2xl rounded-tr-3xl md:rounded-r-none md:rounded-l-3xl lg:rounded-3xl border border-white/20">
+                  <div className="w-full relative md:absolute md:bottom-0 md:right-0 md:left-[-5%] lg:left-[-10%] md:w-[105%] lg:w-[110%] bg-gradient-to-br from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] p-8 sm:p-12 shadow-2xl md:rounded-tl-3xl lg:rounded-tl-3xl border border-white/20">
                     <div className="relative z-10 text-white">
                       <div className="grid grid-cols-5 gap-2 w-16 mb-6 opacity-40">
                          {Array.from({length: 20}).map((_, i) => (
