@@ -67,7 +67,7 @@ export const Footer: React.FC<FooterProps> = ({
             <h4 className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-extrabold uppercase tracking-wider text-xs font-['Plus_Jakarta_Sans',sans-serif]">
               Solutions
             </h4>
-            <div className="max-h-[135px] overflow-hidden hover:overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-100 hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full transition-all duration-300">
+            <div className="max-h-[135px] overflow-y-auto md:overflow-hidden md:hover:overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 md:[&::-webkit-scrollbar-thumb]:bg-gray-100 md:hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full transition-all duration-300 touch-pan-y">
               <ul className="grid grid-cols-1 gap-y-2.5 text-[#6B7280] font-normal">
                 {(services && services.length > 0 ? services : [
                   { title: 'Social Media Marketing', slug: 'social-media-marketing', id: 'social-media-marketing' },
