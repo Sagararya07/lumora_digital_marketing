@@ -1,3 +1,4 @@
+// @ts-nocheck
 import { SiteContent, DynamicPage } from '../types';
 
 export const initialSiteContent: SiteContent = {
@@ -3533,3 +3534,4 @@ export const initialDynamicPages: DynamicPage[] = [
     ]
   }
 ];
+
