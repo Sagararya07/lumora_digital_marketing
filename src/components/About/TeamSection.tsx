@@ -49,7 +49,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teamMembers = [] }) =>
             TEAM
           </span>
           <h2 className="text-3xl md:text-5xl lg:text-6xl text-[#111827] leading-tight font-['Plus_Jakarta_Sans',sans-serif] tracking-tight">
-            Our team of <span className="italic font-bold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">skilled professionals</span> is committed to providing you with <span className="italic font-bold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">personalized, high-quality</span> digital marketing.
+            Our team of <span className="text-[#5B8EE2]">skilled professionals</span> is committed to providing you with <span className="text-[#5B8EE2]">personalized, high-quality</span> digital marketing.
           </h2>
         </div>
 
