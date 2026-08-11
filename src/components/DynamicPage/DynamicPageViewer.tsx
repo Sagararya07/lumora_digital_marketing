@@ -406,7 +406,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                       onClick={openConsultationModal}
                       className="group inline-flex items-center gap-2 bg-[#0B1026] hover:bg-blue-700 text-white px-8 py-3.5 text-sm font-bold tracking-widest transition-all rounded-full uppercase shadow-lg shadow-blue-900/20"
                     >
-                      READ MORE
+                      Request for Service
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
