@@ -814,12 +814,38 @@ export const initialSiteContent: SiteContent = {
     },
     {
       "id": "faq-4",
-      "question": "Can we edit pages, create custom landing pages, or replicate pages?",
-      "answer": "Absolutely. Lumora includes a full dynamic Admin Panel and SEO Replicator where you can edit content, duplicate pages for different locations, set custom slugs, manage meta tags, and preview live SEO scores.",
-      "category": "Process"
-    }
-  ],
-  "contactInfo": {
+        "question": "Can we edit pages, create custom landing pages, or replicate pages?",
+        "answer": "Absolutely. Lumora includes a full dynamic Admin Panel and SEO Replicator where you can edit content, duplicate pages for different locations, set custom slugs, manage meta tags, and preview live SEO scores.",
+        "category": "Process"
+      }
+    ],
+    "teamMembers": [
+      {
+        "id": "team-1",
+        "name": "Alexandra Hayes",
+        "role": "Head of Strategy",
+        "specializations": ["Omnichannel Marketing", "Predictive Analytics", "Revenue Operations"],
+        "imageUrl": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=600&auto=format&fit=crop",
+        "description": "Alexandra leads our global strategy division with a laser focus on data-driven acquisition."
+      },
+      {
+        "id": "team-2",
+        "name": "Marcus Reynolds",
+        "role": "Director of Performance Media",
+        "specializations": ["Programmatic Advertising", "Google Ads", "B2B Lead Gen"],
+        "imageUrl": "https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=600&auto=format&fit=crop",
+        "description": "Marcus manages our high-budget paid media campaigns."
+      },
+      {
+        "id": "team-3",
+        "name": "Sarah Jenkins",
+        "role": "Creative Director",
+        "specializations": ["Brand Storytelling", "Video Production", "UI/UX Design"],
+        "imageUrl": "https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=600&auto=format&fit=crop",
+        "description": "Sarah oversees all creative initiatives at Lumora, transforming complex data points into compelling visual narratives."
+      }
+    ],
+    "contactInfo": {
     "phone": "+91 9179765554",
     "whatsapp": "+91 9179765554",
     "email": "support@lumora.expert",
