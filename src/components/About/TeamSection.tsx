@@ -57,7 +57,7 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teamMembers = [] }) =>
         <div className={`grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-8 items-center transition-opacity duration-300 ${isAnimating ? 'opacity-0' : 'opacity-100'}`}>
           
           {/* Left Column: Name & Details */}
-          <div className="flex flex-col h-full justify-between order-2 lg:order-1 pt-6 lg:pt-10">
+          <div className="flex flex-col order-2 lg:order-1 pt-6 lg:pt-10">
             <div>
               {title && <span className="text-2xl md:text-3xl lg:text-5xl italic text-[#5B8EE2] block mb-2">{title}</span>}
               <h3 className="text-3xl md:text-5xl lg:text-7xl font-bold tracking-tighter leading-none mb-4 md:mb-6 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
@@ -66,9 +66,9 @@ export const TeamSection: React.FC<TeamSectionProps> = ({ teamMembers = [] }) =>
               <p className="text-xl font-bold text-[#5B8EE2] uppercase tracking-wider">{activeMember.role}</p>
             </div>
 
-            <div className="mt-16 lg:mt-auto">
+            <div className="mt-8">
               <p className="text-sm text-[#9CA3AF] mb-3">(Specialization)</p>
-              <div className="flex flex-wrap gap-4 text-sm font-semibold text-[#4B5563]">
+              <div className="flex flex-col gap-2 text-sm font-semibold text-[#4B5563]">
                 {activeMember.specializations.map((spec, i) => (
                   <span key={i}>{spec}</span>
                 ))}
