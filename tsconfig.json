@@ -22,5 +22,7 @@
     },
     "allowImportingTsExtensions": true,
     "noEmit": true
-  }
+  },
+  "include": ["src/**/*", "server.ts", "src/**/*.tsx", "src/**/*.ts"],
+  "exclude": ["node_modules", "dist", "*.js", "*.cjs", "*.mjs", "tempData.js", "test.js"]
 }
