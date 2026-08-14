@@ -691,6 +691,35 @@ const handleAddSection = () => {
                 />
               </div>
 
+              {/* Section Type Selector */}
+              <div>
+                <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                  Section Type
+                </label>
+                <select
+                  value={sec.type || 'text-media'}
+                  onChange={(e) => {
+                    const updated = [...sections];
+                    updated[idx].type = e.target.value as any;
+                    setSections(updated);
+                  }}
+                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#5B8EE2] focus:outline-none cursor-pointer hover:border-[#5B8EE2] transition-colors"
+                >
+                  <option value="text-media">Text & Media</option>
+                  <option value="scrollable-cards">Scrollable Cards (Ads/Leads We Manage)</option>
+                  <option value="services-grid">Services Grid</option>
+                  <option value="overview">Overview</option>
+                  <option value="how-we-do-it">How We Do It</option>
+                  <option value="faq">FAQ</option>
+                  <option value="case-study">Case Study</option>
+                  <option value="process">Process</option>
+                  <option value="hero">Hero</option>
+                  <option value="icon-hero">Icon Hero</option>
+                  <option value="custom-html">Custom HTML</option>
+                  <option value="lead-form">Lead Form</option>
+                </select>
+              </div>
+
               {/* Section Media/Icon URL */}
               {(sec.type === 'icon-hero' || sec.type === 'text-media' || sec.type === 'overview' || sec.type === 'how-we-do-it') && (
                 <div>

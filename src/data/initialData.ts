@@ -1086,42 +1086,42 @@ export const initialDynamicPages: DynamicPage[] = [
         {
           "id": "sec-ads-we-manage",
           "type": "scrollable-cards",
-          "title": "Ads We Manage",
+          "title": "Leads We Manage",
           "cards": [
             {
-              "id": "card-google",
-              "title": "Google Ads",
-              "description": "Search, Display, Shopping, Performance Max & YouTube Ads",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
-              "linkUrl": "lead-generation/google-ads"
+              "id": "card-b2b-sales",
+              "title": "B2B Sales Leads",
+              "description": "High-value business inquiries, meeting bookings, and enterprise prospects.",
+              "iconName": "Briefcase",
+              "linkUrl": "lead-generation/b2b-sales"
             },
             {
-              "id": "card-meta",
-              "title": "Meta Ads",
-              "description": "Facebook & Instagram Ads that build brand, leads & sales",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
-              "linkUrl": "lead-generation/meta-ads"
+              "id": "card-real-estate",
+              "title": "Real Estate Leads",
+              "description": "Qualified homebuyers, property investors, and commercial real estate inquiries.",
+              "iconName": "Home",
+              "linkUrl": "lead-generation/real-estate"
             },
             {
-              "id": "card-youtube",
-              "title": "YouTube Ads",
-              "description": "Video Ads that increase brand awareness and drive conversions",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
-              "linkUrl": "lead-generation/youtube-ads"
+              "id": "card-healthcare",
+              "title": "Healthcare Leads",
+              "description": "Patient bookings, telemedicine consultations, and clinic inquiries.",
+              "iconName": "Heart",
+              "linkUrl": "lead-generation/healthcare"
             },
             {
-              "id": "card-linkedin",
-              "title": "LinkedIn Ads",
-              "description": "B2B Leads, Brand Building & Targeted Outreach for Professionals",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
-              "linkUrl": "lead-generation/linkedin-ads"
+              "id": "card-saas",
+              "title": "SaaS & Tech Leads",
+              "description": "Free trial signups, product demo requests, and software subscriptions.",
+              "iconName": "Monitor",
+              "linkUrl": "lead-generation/saas"
             },
             {
-              "id": "card-twitter",
-              "title": "Twitter (X) Ads",
-              "description": "Promote your business and engage with your target audience",
-              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
-              "linkUrl": "lead-generation/twitter-ads"
+              "id": "card-ecommerce",
+              "title": "E-commerce Leads",
+              "description": "High-intent shoppers, cart abandonment recovery, and newsletter signups.",
+              "iconName": "ShoppingCart",
+              "linkUrl": "lead-generation/ecommerce"
             }
           ]
         },
@@ -2138,7 +2138,49 @@ export const initialDynamicPages: DynamicPage[] = [
     "pageType": "service",
     "isPublished": true,
     "sections": [
-      {
+      
+        {
+          "id": "sec-ads-we-manage-paid",
+          "type": "scrollable-cards",
+          "title": "Ads We Manage",
+          "cards": [
+            {
+              "id": "card-google",
+              "title": "Google Ads",
+              "description": "Search, Display, Shopping, Performance Max & YouTube Ads",
+              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
+              "linkUrl": "paid-advertising-campaigns/google-ads"
+            },
+            {
+              "id": "card-meta",
+              "title": "Meta Ads",
+              "description": "Facebook & Instagram Ads that build brand, leads & sales",
+              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+              "linkUrl": "paid-advertising-campaigns/meta-ads"
+            },
+            {
+              "id": "card-youtube",
+              "title": "YouTube Ads",
+              "description": "Video Ads that increase brand awareness and drive conversions",
+              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+              "linkUrl": "paid-advertising-campaigns/youtube-ads"
+            },
+            {
+              "id": "card-linkedin",
+              "title": "LinkedIn Ads",
+              "description": "B2B Leads, Brand Building & Targeted Outreach for Professionals",
+              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+              "linkUrl": "paid-advertising-campaigns/linkedin-ads"
+            },
+            {
+              "id": "card-twitter",
+              "title": "Twitter (X) Ads",
+              "description": "Promote your business and engage with your target audience",
+              "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
+              "linkUrl": "paid-advertising-campaigns/twitter-ads"
+            }
+          ]
+        },{
         "id": "sec-overview",
         "type": "overview",
         "title": "Instant Visibility. Immediate Revenue.",
