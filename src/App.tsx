@@ -151,8 +151,13 @@ export function App() {
     if (sectionId === 'home') {
       window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
-      const el = document.getElementById(sectionId);
-      el?.scrollIntoView({ behavior: 'smooth' });
+      window.dispatchEvent(new CustomEvent('navToService', { detail: sectionId }));
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }, 100);
     }
   };
 

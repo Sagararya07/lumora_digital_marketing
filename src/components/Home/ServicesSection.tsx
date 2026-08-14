@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import {
   TrendingUp, Users, Target, Bot, Globe, Search, ArrowRight, Sparkles, Share2, Megaphone, Repeat
@@ -76,6 +76,22 @@ export const ServicesSection: React.FC<ServicesProps> = ({
   const [visibleCount, setVisibleCount] = useState(4);
   const displayItems = services.length >= 6 ? services : mockSolutions;
   const currentItems = displayItems.slice(0, visibleCount);
+
+  useEffect(() => {
+    const handleNavToService = (e: CustomEvent) => {
+      const targetId = e.detail;
+      const index = displayItems.findIndex((item, idx) => {
+        const fallback = mockSolutions[idx % mockSolutions.length];
+        return (item.slug || item.id || fallback.id) === targetId;
+      });
+      if (index >= visibleCount) {
+        setVisibleCount(displayItems.length);
+      }
+    };
+    
+    window.addEventListener('navToService', handleNavToService as EventListener);
+    return () => window.removeEventListener('navToService', handleNavToService as EventListener);
+  }, [displayItems, visibleCount]);
 
   return (
     <section id="services-section" className="py-16 sm:py-20 bg-[#FAFAFA]">
