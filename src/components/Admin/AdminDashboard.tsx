@@ -1110,6 +1110,18 @@ const LeadsManager = ({ onSaved }: { onSaved: () => void }) => {
     }
   };
 
+  const deleteLead = async (id: string) => {
+    if (!window.confirm('Are you sure you want to delete this lead? This cannot be undone.')) return;
+    try {
+      await fetch(`/api/leads/${id}`, {
+        method: 'DELETE',
+      });
+      fetchLeads();
+    } catch (e) {
+      console.error(e);
+    }
+  };
+
   return (
     <div className="bg-white rounded-3xl border border-[#E5E7EB] p-8 shadow-xs">
       <div className="flex justify-between items-center mb-8">
@@ -1152,19 +1164,28 @@ const LeadsManager = ({ onSaved }: { onSaved: () => void }) => {
                     <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block mb-1">Source Page</span>
                     <span className="inline-block px-3 py-1 bg-blue-100 text-blue-700 text-[11px] font-bold rounded-full border border-blue-200">{lead.sourcePage}</span>
                   </div>
-                  <select 
-                    value={lead.status}
-                    onChange={(e) => updateStatus(lead.id, e.target.value)}
-                    className={`text-xs font-bold rounded-full px-4 py-2 border-0 focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer shadow-sm ${
-                      lead.status === 'new' ? 'bg-emerald-100 text-emerald-700' :
-                      lead.status === 'contacted' ? 'bg-amber-100 text-amber-700' :
-                      'bg-slate-200 text-slate-700'
-                    }`}
-                  >
-                    <option value="new">New Lead</option>
-                    <option value="contacted">Contacted</option>
-                    <option value="closed">Closed</option>
-                  </select>
+                  <div className="flex items-center gap-2">
+                    <select 
+                      value={lead.status}
+                      onChange={(e) => updateStatus(lead.id, e.target.value)}
+                      className={`text-xs font-bold rounded-full px-4 py-2 border-0 focus:ring-2 focus:ring-blue-500 outline-none cursor-pointer shadow-sm ${
+                        lead.status === 'new' ? 'bg-emerald-100 text-emerald-700' :
+                        lead.status === 'contacted' ? 'bg-amber-100 text-amber-700' :
+                        'bg-slate-200 text-slate-700'
+                      }`}
+                    >
+                      <option value="new">New Lead</option>
+                      <option value="contacted">Contacted</option>
+                      <option value="closed">Closed</option>
+                    </select>
+                    <button
+                      onClick={() => deleteLead(lead.id)}
+                      className="p-2 rounded-full bg-rose-50 text-rose-500 hover:bg-rose-100 hover:text-rose-600 transition-colors shadow-sm"
+                      title="Delete Lead"
+                    >
+                      <Trash2 className="w-4 h-4" />
+                    </button>
+                  </div>
                 </div>
               </div>
               
