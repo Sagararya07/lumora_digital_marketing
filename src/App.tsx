@@ -389,6 +389,7 @@ export function App() {
           <Footer
             contactInfo={siteContent.contactInfo}
             services={dynamicServices}
+            industries={siteContent.industries}
             onOpenConsultation={() => setIsConsultationModalOpen(true)}
             onOpenLegalModal={(type) => setLegalModalType(type)}
             dynamicPages={dynamicPages}

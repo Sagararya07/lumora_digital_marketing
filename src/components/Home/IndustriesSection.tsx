@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { 
   HeartPulse, 
   GraduationCap, 
@@ -35,7 +35,20 @@ const industryGradients = [
 ];
 
 export const IndustriesSection: React.FC<IndustriesProps> = ({ industries, openConsultationModal }) => {
-  const { visibleItems, expanded, toggle, hiddenCount, shouldShowButton } = useViewMore(industries, 3, { initialRows: 2 });
+  const { visibleItems, expanded, setExpanded, toggle, hiddenCount, shouldShowButton, collapsedCount } = useViewMore(industries, 3, { initialRows: 2 });
+
+  useEffect(() => {
+    const handleNavToService = (e: CustomEvent) => {
+      const targetId = e.detail;
+      const index = industries.findIndex(ind => `industry-card-${ind.id}` === targetId);
+      if (index >= (collapsedCount || 6) && !expanded) {
+        setExpanded(true);
+      }
+    };
+    
+    window.addEventListener('navToService', handleNavToService as EventListener);
+    return () => window.removeEventListener('navToService', handleNavToService as EventListener);
+  }, [industries, collapsedCount, expanded, setExpanded]);
 
   const getIndustryIcon = (iconName: string, isWatermark = false) => {
     const cls = isWatermark ? "w-full h-full" : "w-6 h-6 text-white";
