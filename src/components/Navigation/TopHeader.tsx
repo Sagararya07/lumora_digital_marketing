@@ -87,13 +87,13 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           {/* Lumora Logo (Default Clicking Returns to Home) */}
           <button
             onClick={onGoHome}
-            className="relative flex items-center justify-center shrink-0 text-left focus:outline-none group py-1 mt-2"
+            className="relative flex items-center justify-center shrink-0 text-left focus:outline-none group py-2 px-2 mt-1 h-16 w-32"
             title="Lumora Home"
           >
-            {/* Animated Glow Effect on Hover */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] rounded-full blur-md opacity-0 group-hover:opacity-40 transition-all duration-500 scale-[1.2] group-hover:scale-[1.4]"></div>
+            {/* Animated Glow Effect always blinking */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] rounded-full blur-md opacity-70 animate-pulse pointer-events-none scale-[1.3]"></div>
             
-            <div className="relative z-10 scale-[1.3] sm:scale-[1.5] translate-y-1 transition-transform duration-500 group-hover:scale-[1.4] sm:group-hover:scale-[1.6]">
+            <div className="relative z-10 scale-[1.3] sm:scale-[1.5] transition-transform duration-500 group-hover:scale-[1.4] sm:group-hover:scale-[1.6] pointer-events-none">
               <LumoraLogo size="lg" />
             </div>
           </button>
@@ -110,15 +110,15 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           >
             <button
               onClick={() => { setDigitalMarketingOpen(!digitalMarketingOpen); }}
-              className="flex items-center gap-1.5 py-2 text-slate-800 hover:text-[#5B8EE2] transition-colors"
+              className="flex items-center gap-1.5 py-2 text-[#5B8EE2] hover:text-[#4676C2] transition-colors"
             >
               <span>Lumora's Digital Marketing & Branding</span>
-              <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${digitalMarketingOpen ? 'rotate-180 text-[#5B8EE2]' : ''}`} />
+              <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${digitalMarketingOpen ? 'rotate-180' : ''}`} />
             </button>
 
             {digitalMarketingOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[650px] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 p-6">
-                <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[900px] max-w-[95vw] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 p-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4">
                   {(services || []).map((item, i) => {
                     const IconComponent = (LucideIcons as any)[item.iconName || 'CheckCircle'] || LucideIcons.CheckCircle;
                     

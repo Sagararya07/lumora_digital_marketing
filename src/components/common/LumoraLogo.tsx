@@ -24,7 +24,7 @@ export const LumoraLogo: React.FC<LumoraLogoProps> = ({
       <img
         src="/lumora-logo.png"
         alt="Lumora Logo"
-        className={`${sizeClasses[size]} w-auto object-contain transition-all duration-300 hover:scale-105 mix-blend-multiply`}
+        className={`${sizeClasses[size]} w-auto object-contain mix-blend-multiply`}
       />
     </div>
   );
