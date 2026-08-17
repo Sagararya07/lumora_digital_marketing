@@ -77,6 +77,15 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'is_active', label: 'Active', type: 'boolean' },
     ],
   },
+  icon_edit: {
+    label: 'Service Icons',
+    canCreate: false,
+    canDelete: false,
+    fields: [
+      { key: 'title', label: 'Service Title', type: 'text', colSpan: 2 },
+      { key: 'icon', label: 'Icon (Lucide name)', type: 'text', colSpan: 2 },
+    ],
+  },
   why_choose_us: {
     label: 'Why Choose Us',
     canCreate: true,
@@ -143,6 +152,17 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'icon', label: 'Icon (Lucide name)', type: 'text' },
       { key: 'sort_order', label: 'Sort Order', type: 'number' },
       { key: 'is_active', label: 'Active', type: 'boolean' },
+    ],
+  },
+  case_studies: {
+    label: 'Case Studies',
+    canCreate: true,
+    canDelete: true,
+    fields: [
+      { key: 'image_url', label: 'Cover Image URL', type: 'image', colSpan: 2 },
+      { key: 'title', label: 'Client / Case Title', type: 'text', colSpan: 2 },
+      { key: 'category', label: 'Industry / Category', type: 'text' },
+      { key: 'description', label: 'Description', type: 'textarea', colSpan: 2 },
     ],
   },
   partner_logos: {

@@ -78,9 +78,9 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
 
       {/* Side Menu Drawer Container */}
       <aside
-        id="left-sidebar-navigation"
-        className={`fixed top-0 left-0 bottom-0 w-[260px] sm:w-[280px] z-50 bg-white text-[#111827] shadow-2xl flex flex-col transition-transform duration-300 ease-in-out border-r border-[#E5E7EB] ${
-          isOpenMobile ? 'translate-x-0' : '-translate-x-full'
+        id="right-sidebar-navigation"
+        className={`fixed top-0 right-0 bottom-0 w-[260px] sm:w-[280px] z-50 bg-white text-[#111827] shadow-2xl flex flex-col transition-transform duration-300 ease-in-out border-l border-[#E5E7EB] ${
+          isOpenMobile ? 'translate-x-0' : 'translate-x-full'
         }`}
       >
         {/* Drawer Header with Logo & Close Button */}
@@ -117,7 +117,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
             
             return (
               <React.Fragment key={item.id}>
-                {index === 1 && (
+                {index === 2 && (
                   <div className="w-full text-left bg-white rounded-2xl font-['Plus_Jakarta_Sans',sans-serif]">
                     <button
                       onClick={() => { setDigitalMarketingOpen(!digitalMarketingOpen); setActiveSubMenu(null); }}
@@ -129,48 +129,19 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
                     >
                       <div className="flex items-center gap-3">
                         <Zap className={`w-4 h-4 ${activeDynamicSlug && activeDynamicSlug !== 'admin' ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
-                        <span>Digital Marketing</span>
+                        <span>Our Services</span>
                       </div>
                       <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${digitalMarketingOpen ? 'rotate-180 text-[#5B8EE2]' : 'opacity-50'}`} />
                     </button>
                     {digitalMarketingOpen && (
                       <div className="mt-1 pl-4 space-y-1 bg-slate-50 rounded-xl p-2 animate-in fade-in slide-in-from-top-2">
                         <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden bg-white">
-                          <button
-                            onClick={() => setActiveSubMenu(activeSubMenu === 'solutions' ? null : 'solutions')}
-                            className="text-left px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between border-b border-slate-100"
-                          >
-                            <span>Solutions</span>
-                            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeSubMenu === 'solutions' ? 'rotate-180' : ''}`} />
-                          </button>
-                          {activeSubMenu === 'solutions' && (
-                            <div className="flex flex-col bg-slate-50 border-t border-slate-100">
-                              {(services || []).map((item, i) => (
-                                <button
-                                  key={`sol-${item.id || i}`}
-                                  onClick={() => {
-                                    if (window.location.pathname !== '/') {
-                                      navigate('/');
-                                      setTimeout(() => {
-                                        document.getElementById(item.slug || item.id || '')?.scrollIntoView({ behavior: 'smooth' });
-                                      }, 300);
-                                    } else {
-                                      document.getElementById(item.slug || item.id || '')?.scrollIntoView({ behavior: 'smooth' });
-                                    }
-                                    setIsOpenMobile(false);
-                                  }}
-                                  className="text-left px-6 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
-                                >
-                                  {item.title}
-                                </button>
-                              ))}
-                            </div>
-                          )}
+
                           <button
                             onClick={() => setActiveSubMenu(activeSubMenu === 'resources' ? null : 'resources')}
                             className="text-left px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between"
                           >
-                            <span>Resources</span>
+                            <span>Services</span>
                             <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeSubMenu === 'resources' ? 'rotate-180' : ''}`} />
                           </button>
                           {activeSubMenu === 'resources' && (

@@ -185,8 +185,8 @@ export const ServicesSection: React.FC<ServicesProps> = ({
           })}
         </div>
 
-        {visibleCount < displayItems.length && (
-          <div className="mt-20 flex justify-center">
+        <div className="mt-20 flex justify-center">
+          {visibleCount < displayItems.length ? (
             <button
               onClick={() => setVisibleCount(prev => prev + 4)}
               className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white font-bold text-sm tracking-[0.1em] uppercase px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(236,72,153,0.5)] hover:-translate-y-1"
@@ -196,8 +196,21 @@ export const ServicesSection: React.FC<ServicesProps> = ({
                 VIEW MORE <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
               </span>
             </button>
-          </div>
-        )}
+          ) : displayItems.length > 4 ? (
+            <button
+              onClick={() => {
+                setVisibleCount(4);
+                document.getElementById('services-section')?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="group relative inline-flex items-center justify-center gap-3 bg-gradient-to-r from-slate-700 to-slate-900 text-white font-bold text-sm tracking-[0.1em] uppercase px-8 py-4 rounded-full overflow-hidden transition-all duration-300 hover:shadow-[0_10px_40px_-10px_rgba(15,23,42,0.5)] hover:-translate-y-1"
+            >
+              <div className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <span className="relative z-10 flex items-center gap-2">
+                VIEW LESS <ArrowRight className="w-4 h-4 transform rotate-180 group-hover:-translate-x-1 transition-transform" />
+              </span>
+            </button>
+          ) : null}
+        </div>
 
       </div>
     </section>

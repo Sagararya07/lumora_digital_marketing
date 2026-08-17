@@ -622,6 +622,7 @@ app.get('/api/pages', async (req, res) => {
       heroImage: parsedContent.heroImage,
       sections: parsedContent.sections || [],
       isPublished: r.is_published,
+      sortOrder: r.sort_order,
       createdAt: r.created_at,
       updatedAt: r.updated_at
     };
@@ -648,14 +649,15 @@ app.post('/api/pages', async (req, res) => {
     await pool.query(
       `INSERT INTO pages (
         title, slug, content, is_published, template_type, city_placeholder, country_placeholder,
-        meta_title, meta_description, canonical_url, robots, created_at, updated_at
-      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 'index, follow', NOW(), NOW())`,
+        meta_title, meta_description, canonical_url, robots, sort_order, created_at, updated_at
+      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 'index, follow', $11, NOW(), NOW())`,
       [
         p.title, cleanSlug, JSON.stringify(content), p.isPublished ?? true, p.pageType || 'landing',
         p.cityName || '', p.countryName || '',
         p.seo?.metaTitle || `${p.title} | Cypher Swift`, 
         p.seo?.metaDescription || '', 
-        p.seo?.canonicalUrl || `https://cypherswift.com/${cleanSlug}`
+        p.seo?.canonicalUrl || `https://cypherswift.com/${cleanSlug}`,
+        p.sortOrder || 0
       ]
     );
 
@@ -678,22 +680,27 @@ app.put('/api/pages/:id', async (req, res) => {
 
     const content = {
       heroImage: p.heroImage,
+      overviewContent: p.overviewContent,
+      heroBadge: p.heroBadge,
+      serviceFeatures: p.serviceFeatures,
+      serviceDeliverables: p.serviceDeliverables,
+      serviceRecommendedFor: p.serviceRecommendedFor,
       sections: p.sections || []
     };
 
     if (cleanSlug) {
       await pool.query(
         `UPDATE pages SET 
-          title=$1, slug=$2, meta_title=$3, meta_description=$4, content=$5, is_published=$6, updated_at=NOW()
-         WHERE id=$7`,
-        [p.title, cleanSlug, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, id]
+          title=$1, slug=$2, meta_title=$3, meta_description=$4, content=$5, is_published=$6, sort_order=$7, updated_at=NOW()
+         WHERE id=$8`,
+        [p.title, cleanSlug, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, p.sortOrder || 0, id]
       );
     } else {
       await pool.query(
         `UPDATE pages SET 
-          title=$1, meta_title=$2, meta_description=$3, content=$4, is_published=$5, updated_at=NOW()
-         WHERE id=$6`,
-        [p.title, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, id]
+          title=$1, meta_title=$2, meta_description=$3, content=$4, is_published=$5, sort_order=$6, updated_at=NOW()
+         WHERE id=$7`,
+        [p.title, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, p.sortOrder || 0, id]
       );
     }
     res.json({ success: true });

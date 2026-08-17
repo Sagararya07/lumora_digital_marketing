@@ -159,10 +159,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       title: 'HOME PAGE CONTENT',
       items: [
         { id: 'hero_section', label: 'Hero Section', icon: Home },
-        { id: 'section_settings', label: 'Section Headers', icon: Settings },
         { id: 'digital_marketing_content', label: 'What Is Digital Mkt', icon: GraduationCap },
         { id: 'target_audience', label: 'Target Audience', icon: Users },
         { id: 'services', label: 'Services', icon: Briefcase },
+        { id: 'icon_edit', label: 'Icon Edit', icon: Edit },
         { id: 'why_choose_us', label: 'Why Choose Us', icon: BookOpen },
         { id: 'process_steps', label: 'Our Process', icon: Layers },
         { id: 'industries', label: 'Industries', icon: MapPin },
@@ -175,6 +175,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       title: 'PORTFOLIO PAGE CONTENT',
       items: [
         { id: 'achievements', label: 'Portfolio Cards', icon: FolderDot },
+        { id: 'case_studies', label: 'Case Studies', icon: FolderDot },
       ],
     },
     {
@@ -210,7 +211,6 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     {
       title: 'SYSTEM',
       items: [
-        { id: 'site_settings', label: 'Contact & Social', icon: Settings },
         { id: 'pages', label: 'Dynamic Pages', icon: Rss },
         { id: 'sitemap', label: 'Sitemap & SEO', icon: Globe },
       ],
@@ -359,7 +359,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
               onAddNew={() => setActiveMenu('pages')} 
             />
           )}
-          {activeMenu !== 'services' && TABLE_CONFIGS[activeMenu] && (
+          {activeMenu === 'icon_edit' && (
+            <IconEditManager dynamicPages={dynamicPages} onRefresh={onRefreshPages} />
+          )}
+          {activeMenu !== 'services' && activeMenu !== 'icon_edit' && TABLE_CONFIGS[activeMenu] && (
             <TableCrudManager tableName={activeMenu} config={TABLE_CONFIGS[activeMenu]} onSaved={handleContentSaved} />
           )}
           {activeMenu === 'consultation_submissions' && <LeadsManager onSaved={handleContentSaved} />}
@@ -396,7 +399,7 @@ const DashboardStats = ({ siteContent, dynamicPages }: { siteContent: SiteConten
           Homepage Dynamic Sections
         </h3>
         <ul className="grid grid-cols-2 gap-3 text-xs text-[#6B7280] font-semibold">
-          {['Hero Section', 'Section Headers', 'What Is Digital Mkt', 'Target Audience', 'Services', 'Why Choose Us', 'Our Process', 'Industries We Serve', 'FAQs', 'Testimonials', 'Trusted Logos', 'Portfolio Cards'].map((s) => (
+          {['Hero Section', 'What Is Digital Mkt', 'Target Audience', 'Services', 'Why Choose Us', 'Our Process', 'Industries We Serve', 'FAQs', 'Testimonials', 'Trusted Logos', 'Portfolio Cards'].map((s) => (
             <li key={s} className="flex items-center gap-2 p-2 rounded-xl bg-[#F8FAFC] border border-slate-100">
               <span className="w-2 h-2 rounded-full bg-emerald-500 shrink-0" />
               <span className="truncate">{s}</span>
@@ -611,6 +614,84 @@ const TableCrudManager = ({
             )}
           </div>
         )}
+      </div>
+    </div>
+  );
+};
+
+/* --- Icon Edit Manager --- */
+const IconEditManager = ({ dynamicPages, onRefresh }: { dynamicPages: DynamicPage[], onRefresh: () => void }) => {
+  const [editingId, setEditingId] = useState<string | null>(null);
+  const [editIcon, setEditIcon] = useState('');
+  const [saving, setSaving] = useState(false);
+
+  // Match the exact same logic used for "dynamicServices" in App.tsx
+  const displayPages = dynamicPages.filter(dp => dp.isPublished && !dp.slug?.includes('/'));
+
+  const handleSave = async (id: string, page: DynamicPage) => {
+    setSaving(true);
+    try {
+      const payload = { ...page, heroBadge: editIcon };
+      await fetch(`/api/pages/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+      setEditingId(null);
+      onRefresh();
+    } catch (err) {
+      alert('Failed to save icon');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  return (
+    <div className="bg-white rounded-3xl border border-[#E5E7EB] overflow-hidden flex flex-col h-[calc(100vh-140px)] shadow-xs">
+      <div className="p-6 border-b border-[#E5E7EB] flex items-center justify-between shrink-0 bg-[#F8FAFC]">
+        <div>
+          <h2 className="text-xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">Service Icons</h2>
+          <p className="text-xs text-[#6B7280] mt-0.5 font-normal">{displayPages.length} items · updates show live instantly</p>
+        </div>
+      </div>
+      <div className="flex-1 overflow-y-auto custom-scrollbar">
+        <div className="divide-y divide-[#E5E7EB]">
+          {displayPages.length === 0 ? (
+            <div className="p-12 text-center text-[#6B7280] font-normal text-xs">No records found.</div>
+          ) : (
+            displayPages.map((item) => (
+              <div key={String(item.id)} className="p-5 flex items-center justify-between hover:bg-[#F8FAFC] transition-colors">
+                <div>
+                  <h4 className="font-extrabold text-sm text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">{item.title}</h4>
+                  <p className="text-xs text-[#6B7280] mt-0.5">Icon: {item.heroBadge || 'Target'}</p>
+                </div>
+                <div className="flex items-center gap-2">
+                  {editingId === String(item.id) ? (
+                    <div className="flex items-center gap-2">
+                      <input 
+                        type="text" 
+                        value={editIcon} 
+                        onChange={e => setEditIcon(e.target.value)} 
+                        className="p-2 text-xs border border-slate-300 rounded-lg"
+                        placeholder="Lucide Icon Name"
+                      />
+                      <button onClick={() => handleSave(String(item.id), item)} disabled={saving} className="p-2 rounded-xl bg-emerald-50 text-emerald-600 hover:bg-emerald-100 transition-colors" title="Save"><Save className="w-4 h-4" /></button>
+                      <button onClick={() => setEditingId(null)} className="p-2 rounded-xl bg-slate-100 text-slate-600 hover:bg-slate-200 transition-colors" title="Cancel"><X className="w-4 h-4" /></button>
+                    </div>
+                  ) : (
+                    <button
+                      onClick={() => { setEditingId(String(item.id)); setEditIcon(item.heroBadge || 'Target'); }}
+                      className="p-2 rounded-xl bg-[#F2F6FC] text-[#5B8EE2] hover:bg-blue-100 transition-colors"
+                      title="Edit Icon"
+                    >
+                      <Edit className="w-4 h-4" />
+                    </button>
+                  )}
+                </div>
+              </div>
+            ))
+          )}
+        </div>
       </div>
     </div>
   );
@@ -862,6 +943,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         overview_title: String(pageAny.overviewTitle || ''),
         overview_content: String(pageAny.overviewContent || ''),
         is_published: true,
+        sortOrder: p.sortOrder || 0,
         sections: p.sections,
         heroImage: p.heroImage,
       }),
@@ -896,6 +978,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         overview_title: editingPage.overviewTitle,
         overview_content: editingPage.overviewContent,
         is_published: editingPage.isPublished ?? true,
+        sortOrder: editingPage.sortOrder || 0,
         sections: editingPage.sections,
         heroImage: editingPage.heroImage,
       }),
@@ -972,6 +1055,15 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
               rows={2}
               value={editingPage.metaDescription || ''}
               onChange={(e) => setEditingPage({ ...editingPage, metaDescription: e.target.value })}
+              className="w-full p-3 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827]"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-bold text-[#111827] mb-1">Sort Order</label>
+            <input
+              type="number"
+              value={editingPage.sortOrder || 0}
+              onChange={(e) => setEditingPage({ ...editingPage, sortOrder: Number(e.target.value) })}
               className="w-full p-3 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827]"
             />
           </div>

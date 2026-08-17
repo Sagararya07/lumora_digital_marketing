@@ -38,6 +38,7 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
   const [heroImage, setHeroImage] = useState<string>('');
   const [isUploading, setIsUploading] = useState(false);
   const [sections, setSections] = useState<DynamicPageSection[]>([]);
+  const [sortOrder, setSortOrder] = useState<number>(0);
   
   // Custom Modal Fields
   const [overviewContent, setOverviewContent] = useState<string>('');
@@ -64,6 +65,7 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
       setServiceDeliverables(targetPage.serviceDeliverables || []);
       setServiceRecommendedFor(targetPage.serviceRecommendedFor || '');
       setSections(targetPage.sections || []);
+      setSortOrder(targetPage.sortOrder || 0);
     }
   }, [targetPage]);
 
@@ -345,6 +347,7 @@ const handleAddSection = () => {
       title,
       slug,
       isPublished: true,
+      sortOrder,
       pageType: targetPage?.pageType || 'service',
       seo: {
         metaTitle: metaTitle || title,
@@ -477,6 +480,19 @@ const handleAddSection = () => {
                 onChange={(e) => setSlug(e.target.value)}
                 className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100"
                 placeholder="page-slug"
+              />
+            </div>
+
+            <div>
+              <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                Sort Order (Menu Ranking)
+              </label>
+              <input
+                type="number"
+                value={sortOrder}
+                onChange={(e) => setSortOrder(Number(e.target.value))}
+                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100"
+                placeholder="0"
               />
             </div>
 
@@ -677,24 +693,10 @@ const handleAddSection = () => {
                 </div>
               </div>
 
-              {/* Section Title */}
-              <div>
-                <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
-                  Section Headline (H2)
-                </label>
-                <input
-                  type="text"
-                  value={sec.title}
-                  onChange={(e) => handleUpdateSectionTitle(idx, e.target.value)}
-                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
-                  placeholder="Section Title"
-                />
-              </div>
-
               {/* Section Type Selector */}
               <div>
                 <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
-                  Section Type
+                  1. Choose Section Type
                 </label>
                 <select
                   value={sec.type || 'text-media'}
@@ -720,11 +722,25 @@ const handleAddSection = () => {
                 </select>
               </div>
 
+              {/* Section Title */}
+              <div>
+                <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                  2. Section Headline (H2)
+                </label>
+                <input
+                  type="text"
+                  value={sec.title}
+                  onChange={(e) => handleUpdateSectionTitle(idx, e.target.value)}
+                  className="w-full p-3.5 bg-[#F8FAFC] border border-[#E5E7EB] rounded-2xl text-xs font-bold text-[#111827] focus:border-[#5B8EE2] focus:outline-none"
+                  placeholder="Section Title"
+                />
+              </div>
+
               {/* Section Media/Icon URL */}
               {(sec.type === 'icon-hero' || sec.type === 'text-media' || sec.type === 'overview' || sec.type === 'how-we-do-it') && (
                 <div>
                   <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
-                    Media / Icon URL (Optional)
+                    3. Media / Icon URL (Optional)
                   </label>
                   <input
                     type="text"
@@ -743,7 +759,7 @@ const handleAddSection = () => {
               {/* Section Paragraph */}
               <div>
                 <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
-                  Section Body Content / Paragraph
+                  4. Section Body Content / Paragraph
                 </label>
                 <textarea
                   rows={3}
@@ -755,8 +771,9 @@ const handleAddSection = () => {
               </div>
 
               {/* Section Bullets / Deliverables */}
-              <div className="pt-2">
-                <div className="flex items-center justify-between mb-3">
+              {(sec.type === 'text-media' || sec.type === 'how-we-do-it' || sec.type === 'hero' || sec.type === 'overview' || sec.type === 'process' || sec.type === 'faq') && (
+                <div className="pt-2">
+                  <div className="flex items-center justify-between mb-3">
                   <span className="text-xs font-extrabold text-[#111827] uppercase tracking-wider flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif]">
                     <Sparkles className="w-3.5 h-3.5 text-[#5B8EE2]" />
                     Key Deliverables & Strategy Focus Items
@@ -793,9 +810,11 @@ const handleAddSection = () => {
                   ))}
                 </div>
               </div>
+              )}
 
               {/* Case Studies / Client Success Cards */}
-              <div className="pt-5 border-t border-[#E5E7EB] mt-5">
+              {sec.type === 'case-study' && (
+                <div className="pt-5 border-t border-[#E5E7EB] mt-5">
                 <div className="flex items-center justify-between mb-4">
                   <span className="text-xs font-extrabold text-[#111827] uppercase tracking-wider flex items-center gap-1.5 font-['Plus_Jakarta_Sans',sans-serif]">
                     <Globe className="w-4 h-4 text-[#5B8EE2]" />
@@ -912,6 +931,7 @@ const handleAddSection = () => {
                   ))}
                 </div>
               </div>
+              )}
 
               {/* Cards Editor (For Services Grid, Scrollable Cards, Process, How we do it) */}
               {(sec.type === 'services-grid' || sec.type === 'scrollable-cards' || sec.type === 'process' || sec.type === 'how-we-do-it' || sec.type === 'faq') && (

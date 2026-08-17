@@ -7,7 +7,7 @@ export const initialSiteContent: SiteContent = {
     "headlineMain": "Grow Your Business with Local, National & Global",
     "headlineHighlight": "Digital Marketing",
     "subheadline": "Drive qualified leads, increase brand visibility, and scale your global presence with data-driven digital marketing strategies tailored for modern growth.",
-    "ctaPrimaryText": "Get Free Consultation",
+    "ctaPrimaryText": "Explore Services",
     "ctaSecondaryText": "Talk to an Expert",
     "statNumber": "+342%",
     "statLabel": "Avg. Pipeline Revenue Growth",
@@ -1080,7 +1080,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-lead-generation",
     "slug": "lead-generation",
     "title": "Lead Generation Services - High Converting B2B & B2C Funnels",
-    "pageType": "service",
+      "heroBadge": "Users",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
         {
@@ -1320,7 +1321,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-social-media-marketing",
     "slug": "social-media-marketing",
     "title": "Social Media Marketing - Build Brand Authority",
-    "pageType": "service",
+      "heroBadge": "Share2",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -1480,7 +1482,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-seo",
     "slug": "seo",
     "title": "Search Engine Optimization (SEO) - Dominate Organic Search",
-    "pageType": "service",
+      "heroBadge": "Search",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -1640,7 +1643,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-performance-marketing",
     "slug": "performance-marketing",
     "title": "Performance Marketing - AI-Optimized ROI Campaigns",
-    "pageType": "service",
+      "heroBadge": "Target",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -1800,7 +1804,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-retargeting-marketing",
     "slug": "retargeting-marketing",
     "title": "Retargeting Marketing - Re-engage & Convert Lost Visitors",
-    "pageType": "service",
+      "heroBadge": "RefreshCw",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -1960,7 +1965,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-ai-marketing-automation",
     "slug": "ai-marketing-automation",
     "title": "AI Marketing Automation - Smart Workflows & Nurturing",
-    "pageType": "service",
+      "heroBadge": "Cpu",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -2007,20 +2013,6 @@ export const initialDynamicPages: DynamicPage[] = [
             "description": "Ensuring marketing data flows perfectly into sales pipelines.",
             "iconName": "Workflow"
           }
-        ]
-      },
-      {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
-        "type": "how-we-do-it",
-        "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
-        "cards": [
-          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
-          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
-          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
-          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
-          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
-          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
 
@@ -2135,7 +2127,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-paid-advertising-campaigns",
     "slug": "paid-advertising-campaigns",
     "title": "Paid Advertising Campaigns Services",
-    "pageType": "service",
+      "heroBadge": "Megaphone",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       
@@ -2224,20 +2217,6 @@ export const initialDynamicPages: DynamicPage[] = [
             "description": "Continuously refining ad headlines and descriptions for higher CTR.",
             "iconName": "PenTool"
           }
-        ]
-      },
-      {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
-        "type": "how-we-do-it",
-        "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
-        "cards": [
-          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
-          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
-          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
-          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
-          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
-          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
 
@@ -2352,7 +2331,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-target-audience-reach",
     "slug": "target-audience-reach",
     "title": "Target Audience Reach Services",
-    "pageType": "service",
+      "heroBadge": "Crosshair",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -2399,20 +2379,6 @@ export const initialDynamicPages: DynamicPage[] = [
             "description": "Reaching decision-makers based on company size, revenue, and job title.",
             "iconName": "Briefcase"
           }
-        ]
-      },
-      {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
-        "type": "how-we-do-it",
-        "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
-        "cards": [
-          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
-          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
-          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
-          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
-          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
-          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
 
@@ -2527,7 +2493,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-influencer-marketing",
     "slug": "influencer-marketing",
     "title": "Influencer Marketing Services",
-    "pageType": "service",
+      "heroBadge": "Star",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -2574,20 +2541,6 @@ export const initialDynamicPages: DynamicPage[] = [
             "description": "Measuring direct sales generated by each specific creator.",
             "iconName": "BarChart3"
           }
-        ]
-      },
-      {
-        "id": "sec-how-we-do-it-" + Math.floor(Math.random()*10000),
-        "type": "how-we-do-it",
-        "title": "How we do it",
-        "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
-        "cards": [
-          { "id": "hw-1", "title": "Strategy & Planning", "description": "We analyze your business goals and develop a comprehensive roadmap." },
-          { "id": "hw-2", "title": "Design & Copywriting", "description": "Crafting compelling visuals and persuasive messaging that resonates." },
-          { "id": "hw-3", "title": "Technical Execution", "description": "Implementing the strategy using cutting-edge tools and best practices." },
-          { "id": "hw-4", "title": "Quality Assurance", "description": "Rigorous testing to ensure everything performs flawlessly." },
-          { "id": "hw-5", "title": "Campaign Launch", "description": "Deploying the campaigns with precision and maximum impact." },
-          { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
 
@@ -2870,34 +2823,6 @@ export const initialDynamicPages: DynamicPage[] = [
           { "id": "hw-6", "title": "Optimization & Scaling", "description": "Continuous monitoring and refining to maximize ROI and scale success." }
         ]
       },
-{
-        "id": "process-21",
-        "type": "process",
-        "isActive": true,
-        "orderIndex": 1,
-        "title": "Our Diagnostic Process",
-        "subtitle": "How we find the leaks in your funnel",
-        "cards": [
-          {
-            "title": "Data Collection",
-            "description": "Connecting to your analytics and ad accounts."
-          },
-          {
-            "title": "Technical Audit",
-            "description": "Checking tracking pixels, site speed, and SEO."
-          },
-          {
-            "title": "Creative Review",
-            "description": "Analyzing ad copy, design, and brand messaging."
-          },
-          {
-            "title": "Action Plan",
-            "description": "Delivering a prioritized list of fixes and opportunities."
-          }
-        ]
-      }
-    
-      ,
       {
         "id": "sec-case-study-" + Math.floor(Math.random()*10000),
         "type": "case-study",
@@ -3485,7 +3410,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-google-ads",
     "slug": "lead-generation/google-ads",
     "title": "Google Ads Management",
-    "pageType": "service",
+      "heroBadge": "Lightbulb",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -3509,7 +3435,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-meta-ads",
     "slug": "lead-generation/meta-ads",
     "title": "Meta Ads (Facebook & Instagram)",
-    "pageType": "service",
+      "heroBadge": "Activity",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -3533,7 +3460,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-youtube-ads",
     "slug": "lead-generation/youtube-ads",
     "title": "YouTube Advertising",
-    "pageType": "service",
+      "heroBadge": "Repeat",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -3557,7 +3485,117 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-linkedin-ads",
     "slug": "lead-generation/linkedin-ads",
     "title": "LinkedIn Ads Management",
-    "pageType": "service",
+      "heroBadge": "TrendingUp",
+      "pageType": "service",
+    "isPublished": true,
+    "sections": [
+      {
+        "id": "sec-icon-hero-linkedin-ads",
+        "type": "icon-hero",
+        "title": "LinkedIn Ads",
+        "content": "Connect with decision-makers and professionals. LinkedIn Ads offer unparalleled B2B targeting capabilities based on job title, industry, and company size to generate high-quality leads.",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+        "bullets": []
+      },
+    ],
+    "seo": {
+      "metaTitle": "Monthly Marketing Audits | Lumora",
+      "metaDescription": "Get expert oversight and monthly reviews of your marketing campaigns to ensure maximum performance.",
+      "keywords": "marketing audit, fractional CMO, campaign review, marketing consulting"
+    },
+    "serviceFeatures": [
+      "Deep-Dive Monthly Account Reviews",
+      "Actionable Fixes & Recommendations",
+      "1-on-1 Strategy Calls"
+    ],
+    "serviceDeliverables": [
+      "Monthly Video Walkthrough",
+      "Prioritized Task List",
+      "Performance Benchmark Report"
+    ],
+    "serviceRecommendedFor": "Companies with an in-house marketing team seeking expert guidance."
+  },
+  {
+    "id": "page-google-ads",
+    "slug": "lead-generation/google-ads",
+    "title": "Google Ads Management",
+      "heroBadge": "Filter",
+      "pageType": "service",
+    "isPublished": true,
+    "sections": [
+      {
+        "id": "sec-icon-hero-google-ads",
+        "type": "icon-hero",
+        "title": "Google Ads",
+        "content": "Reach customers exactly when they are searching for what you offer. Our Google Ads management services ensure high ROI by optimizing campaigns across Search, Display, Shopping, and Performance Max networks.",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
+        "bullets": []
+      },
+{
+        "id": "sec-process-google-ads",
+        "type": "process",
+        "title": "A Proven Process for Predictable Growth",
+        "content": "From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.",
+        "cards": []
+      }
+    ]
+  },
+  {
+    "id": "page-meta-ads",
+    "slug": "lead-generation/meta-ads",
+    "title": "Meta Ads (Facebook & Instagram)",
+      "heroBadge": "ClipboardCheck",
+      "pageType": "service",
+    "isPublished": true,
+    "sections": [
+      {
+        "id": "sec-icon-hero-meta-ads",
+        "type": "icon-hero",
+        "title": "Meta Ads (Facebook & Instagram)",
+        "content": "Leverage the power of Facebook and Instagram with targeted Meta Ads. We create compelling ad creative and utilize advanced audience targeting to drive brand awareness, leads, and sales.",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+        "bullets": []
+      },
+{
+        "id": "sec-process-meta-ads",
+        "type": "process",
+        "title": "A Proven Process for Predictable Growth",
+        "content": "From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.",
+        "cards": []
+      }
+    ]
+  },
+  {
+    "id": "page-youtube-ads",
+    "slug": "lead-generation/youtube-ads",
+    "title": "YouTube Advertising",
+      "heroBadge": "UserCheck",
+      "pageType": "service",
+    "isPublished": true,
+    "sections": [
+      {
+        "id": "sec-icon-hero-youtube-ads",
+        "type": "icon-hero",
+        "title": "YouTube Advertising",
+        "content": "Harness the world's second-largest search engine. YouTube Ads allow you to connect with users through engaging video content, driving both brand awareness and direct conversions at a lower cost-per-view.",
+        "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+        "bullets": []
+      },
+{
+        "id": "sec-process-youtube-ads",
+        "type": "process",
+        "title": "A Proven Process for Predictable Growth",
+        "content": "From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.",
+        "cards": []
+      }
+    ]
+  },
+  {
+    "id": "page-linkedin-ads",
+    "slug": "lead-generation/linkedin-ads",
+    "title": "LinkedIn Ads Management",
+      "heroBadge": "Shield",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -3581,7 +3619,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-twitter-ads",
     "slug": "lead-generation/twitter-ads",
     "title": "Twitter (X) Advertising",
-    "pageType": "service",
+      "heroBadge": "Target",
+      "pageType": "service",
     "isPublished": true,
     "sections": [
       {
@@ -3592,7 +3631,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "mediaUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
         "bullets": []
       },
-{
+      {
         "id": "sec-process-twitter-ads",
         "type": "process",
         "title": "A Proven Process for Predictable Growth",
@@ -3600,6 +3639,282 @@ export const initialDynamicPages: DynamicPage[] = [
         "cards": []
       }
     ]
+  },
+  {
+    "id": "page-personal-branding",
+    "slug": "personal-branding",
+    "title": "Personal Branding",
+    "isPublished": true,
+    "pageType": "service",
+    "heroTitle": "Elevate Your Personal Brand & Legacy",
+    "heroSubtitle": "Position yourself as an industry authority. We build powerful personal brands for CEOs, entrepreneurs, and thought leaders who want to maximize their influence and legacy.",
+    "heroBadge": "Award",
+    "heroImage": "/images/services/personal_branding_hero.jpg",
+    "overviewContent": "In today's digital landscape, people buy from people they trust. Your personal brand is your most valuable asset. Our tailored personal branding strategies are designed exclusively for high-achieving entrepreneurs, CEOs, and industry leaders to help you stand out, build a lasting legacy, and command industry authority.",
+    "sections": [
+      {
+        "id": "sec-overview-personal-branding",
+        "type": "overview",
+        "isActive": true,
+        "orderIndex": 0,
+        "content": "A strong personal brand does more than boost your ego—it drives business growth, attracts premium partnerships, and opens doors to speaking engagements and media opportunities. We handle everything from LinkedIn thought leadership and PR placements to premium content creation, so you can focus on leading your business.",
+        "title": "Build Your Legacy",
+        "subtitle": "Influence that Scales"
+      },
+      {
+        "id": "features-personal-branding",
+        "type": "services-grid",
+        "isActive": true,
+        "orderIndex": 1,
+        "title": "Personal Branding Services",
+        "subtitle": "What we do for leaders",
+        "cards": [
+          {
+            "title": "Executive Thought Leadership",
+            "description": "Ghostwritten articles, LinkedIn posts, and industry insights.",
+            "iconName": "PenTool"
+          },
+          {
+            "title": "Digital PR & Media Placement",
+            "description": "Getting you featured in top-tier publications and podcasts.",
+            "iconName": "Mic"
+          },
+          {
+            "title": "Premium Visual Identity",
+            "description": "Professional photography, personal logo, and website design.",
+            "iconName": "Image"
+          },
+          {
+            "title": "Speaking Engagement Outreach",
+            "description": "Securing keynote speaking spots at industry conferences.",
+            "iconName": "Megaphone"
+          }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-personal-branding",
+        "type": "how-we-do-it",
+        "title": "How we build your brand",
+        "content": "Our process is highly personalized. We start by uncovering your unique story, core values, and expertise, then craft a narrative that resonates with your target audience and peers.",
+        "cards": [
+          { "id": "pb-hw-1", "title": "Brand Discovery", "description": "Deep-dive interviews to extract your unique value proposition." },
+          { "id": "pb-hw-2", "title": "Strategy & Narrative", "description": "Defining your content pillars and target audience." },
+          { "id": "pb-hw-3", "title": "Content Creation", "description": "Developing high-impact visual and written content." },
+          { "id": "pb-hw-4", "title": "Omnichannel Distribution", "description": "Publishing across LinkedIn, Twitter, and personal blogs." },
+          { "id": "pb-hw-5", "title": "PR & Outreach", "description": "Pitching you to podcasts and media outlets." },
+          { "id": "pb-hw-6", "title": "Authority Scaling", "description": "Leveraging your new authority for business growth." }
+        ]
+      },
+      {
+        "id": "sec-case-study-personal-branding",
+        "type": "case-study",
+        "title": "Client Success & Transformation",
+        "content": "How we built a top-tier personal brand.",
+        "caseStudies": [
+          {
+            "id": "cs-pb-1",
+            "title": "Scaling Executive Influence",
+            "bgImageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200",
+            "description": "We worked with a tech founder to position them as a thought leader on LinkedIn, resulting in a 400% increase in profile views and securing two keynote speaking slots at major industry conferences within 6 months.",
+            "points": [
+              {
+                "id": "p1",
+                "title": "Narrative Building",
+                "iconName": "PenTool"
+              },
+              {
+                "id": "p2",
+                "title": "Content Strategy",
+                "iconName": "Map"
+              },
+              {
+                "id": "p3",
+                "title": "Audience Engagement",
+                "iconName": "Users"
+              },
+              {
+                "id": "p4",
+                "title": "PR Placements",
+                "iconName": "Mic"
+              },
+              {
+                "id": "p5",
+                "title": "Speaking Gigs",
+                "iconName": "Megaphone"
+              },
+              {
+                "id": "p6",
+                "title": "Lead Growth",
+                "iconName": "TrendingUp"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-personal-branding",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "",
+        "cards": [
+          {
+            "id": "faq-pb-1",
+            "title": "Who is this service for?",
+            "description": "This service is specifically designed for CEOs, founders, entrepreneurs, executives, and subject matter experts looking to build authority and a recognizable personal brand."
+          },
+          {
+            "id": "faq-pb-2",
+            "title": "How much of my time will this take?",
+            "description": "We understand leaders are busy. We typically require just 2-3 hours per month for interviews and content approvals. We handle the rest."
+          },
+          {
+            "id": "faq-pb-3",
+            "title": "Can personal branding directly impact my company's revenue?",
+            "description": "Absolutely. Founders with strong personal brands significantly reduce customer acquisition costs, attract better talent, and close deals faster due to established trust."
+          }
+        ]
+      }
+    ],
+    "seo": {
+      "metaTitle": "Personal Branding for CEOs & Entrepreneurs | Lumora",
+      "metaDescription": "Build your legacy and industry authority with our premium personal branding services for leaders, founders, and CEOs.",
+      "keywords": "personal branding, ceo branding, executive branding, thought leadership"
+    },
+    "serviceFeatures": [
+      "LinkedIn Authority Building",
+      "PR & Podcast Placements",
+      "Executive Ghostwriting"
+    ],
+    "serviceDeliverables": [
+      "Personal Brand Strategy Playbook",
+      "Monthly Content Calendar",
+      "Media Kit & Press Features"
+    ],
+    "serviceRecommendedFor": "CEOs, Founders, and executives wanting to build a lasting legacy."
+  },
+  {
+    "id": "page-brand-management",
+    "slug": "brand-management",
+    "title": "Brand Management",
+    "isPublished": true,
+    "pageType": "service",
+    "heroTitle": "Scale Your Product's Market Presence",
+    "heroSubtitle": "End-to-end product brand management. We handle product positioning, digital marketing, visual identity, and performance campaigns to make your products market leaders.",
+    "heroBadge": "Star",
+    "heroImage": "/images/services/brand_management_hero.jpg",
+    "overviewContent": "Effective brand management is more than just a logo on a product. It's the complete strategy of how your item is perceived, marketed, and sold in a competitive landscape. We help e-commerce and retail businesses build strong, recognizable product brands that drive loyalty and high-volume sales through data-driven marketing, aesthetic packaging design, and targeted omnichannel campaigns.",
+    "sections": [
+      {
+        "id": "sec-overview-brand-management",
+        "type": "overview",
+        "isActive": true,
+        "orderIndex": 0,
+        "content": "Our comprehensive brand management services cover everything your product needs to succeed. From initial market research and competitor analysis to executing high-converting digital ad campaigns and influencer partnerships, we ensure your product stays top-of-mind for consumers.",
+        "title": "Dominate Your Market Category",
+        "subtitle": "Product Marketing Excellence"
+      },
+      {
+        "id": "features-brand-management",
+        "type": "services-grid",
+        "isActive": true,
+        "orderIndex": 1,
+        "title": "Product Brand Management Services",
+        "subtitle": "How we elevate your items",
+        "cards": [
+          {
+            "title": "Product Positioning & Strategy",
+            "description": "Defining your unique value proposition and target demographic.",
+            "iconName": "Target"
+          },
+          {
+            "title": "Visual Identity & Packaging",
+            "description": "Creating stunning visuals, logos, and packaging designs that sell.",
+            "iconName": "Image"
+          },
+          {
+            "title": "E-Commerce & Performance Ads",
+            "description": "Driving direct sales via Google Shopping, Meta, and TikTok Ads.",
+            "iconName": "TrendingUp"
+          },
+          {
+            "title": "Influencer & Affiliate Marketing",
+            "description": "Partnering with creators to build authentic product awareness.",
+            "iconName": "Users"
+          }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-brand-management",
+        "type": "how-we-do-it",
+        "title": "Our Brand Management Process",
+        "content": "A systematic approach to taking your product from an unknown item to a household name.",
+        "cards": [
+          { "id": "bm-hw-1", "title": "Market Audit", "description": "Analyzing competitors and finding market gaps." },
+          { "id": "bm-hw-2", "title": "Brand Guidelines", "description": "Establishing consistent visual and tonal identity." },
+          { "id": "bm-hw-3", "title": "Campaign Launch", "description": "Rolling out multi-channel marketing campaigns." },
+          { "id": "bm-hw-4", "title": "Distribution & SEO", "description": "Optimizing listings on Amazon, Shopify, and Google." },
+          { "id": "bm-hw-5", "title": "Community Building", "description": "Fostering customer loyalty and social proof." },
+          { "id": "bm-hw-6", "title": "Scale & Optimize", "description": "Using analytics to refine ads and scale production." }
+        ]
+      },
+      {
+        "id": "sec-case-study-brand-management",
+        "type": "case-study",
+        "title": "Client Success & Transformation",
+        "content": "How we helped consumer brands achieve explosive growth.",
+        "caseStudies": [
+          {
+            "id": "cs-bm-1",
+            "title": "DTC Skincare Brand Relaunch",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200",
+            "description": "We took over the brand management for a struggling DTC skincare line. By revamping their visual identity and launching targeted TikTok and Meta ad campaigns, we increased their monthly recurring revenue by 350% in 4 months.",
+            "points": [
+              { "id": "p1", "title": "Packaging Redesign", "iconName": "Package" },
+              { "id": "p2", "title": "TikTok Ads", "iconName": "Video" },
+              { "id": "p3", "title": "Conversion Optimization", "iconName": "TrendingUp" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-brand-management",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "",
+        "cards": [
+          {
+            "id": "faq-bm-1",
+            "title": "Do you work with physical or digital products?",
+            "description": "We manage both! While we have extensive experience with physical CPG (Consumer Packaged Goods), fashion, and tech hardware, we also successfully manage SaaS and digital product brands."
+          },
+          {
+            "id": "faq-bm-2",
+            "title": "Does this include social media management?",
+            "description": "Yes, our brand management packages typically include full-scale social media management to ensure your product maintains a consistent and engaging presence online."
+          },
+          {
+            "id": "faq-bm-3",
+            "title": "How long does it take to see results?",
+            "description": "While visual identity changes are immediate, building measurable brand equity and scaling e-commerce sales typically takes 3 to 6 months of consistent campaign execution."
+          }
+        ]
+      }
+    ],
+    "seo": {
+      "metaTitle": "Product Brand Management Services | Lumora",
+      "metaDescription": "Scale your product's market presence with our end-to-end brand management, marketing, and performance strategies.",
+      "keywords": "product brand management, item marketing, CPG marketing, e-commerce branding"
+    },
+    "serviceFeatures": [
+      "Product Positioning & Launch",
+      "Omnichannel Ad Campaigns",
+      "Packaging & Visual Identity"
+    ],
+    "serviceDeliverables": [
+      "Comprehensive Brand Book",
+      "Monthly Ad Performance Reports",
+      "Influencer Partnership Roster"
+    ],
+    "serviceRecommendedFor": "E-commerce stores, retail brands, and startups launching new products."
   }
 ];
-

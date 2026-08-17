@@ -267,6 +267,7 @@ export interface DynamicPage {
   heroImage?: string;
   sections: DynamicPageSection[];
   isPublished: boolean;
+  sortOrder?: number;
   createdAt: string;
   updatedAt: string;
   replicatedFromId?: string;

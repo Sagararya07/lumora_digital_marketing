@@ -13,9 +13,28 @@ interface HeroSectionProps {
 }
 
 export const HeroSection: React.FC<HeroSectionProps> = ({
+  content,
   openConsultationModal,
   onNavigateToServices,
 }) => {
+  const renderHeadline = () => {
+    const main = content?.headlineMain || 'We Build Intelligent Growth Systems That Drive Real Business Impact.';
+    const highlight = content?.headlineHighlight || 'Growth Systems';
+    
+    if (main.includes(highlight)) {
+      const parts = main.split(highlight);
+      return (
+        <>
+          {parts[0]}
+          <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
+            {highlight}
+          </span>
+          {parts.slice(1).join(highlight)}
+        </>
+      );
+    }
+    return main;
+  };
   return (
     <section 
       id="hero-section"
@@ -33,23 +52,19 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
             
             {/* Top Badge */}
             <div className="inline-flex items-center gap-2 text-[#D6A67B] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-purple-200 bg-purple-50/80 backdrop-blur-md shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
-              <span>AI-POWERED GROWTH. MEASURABLE RESULTS.</span>
+              <span>{content?.badgeText || 'AI-POWERED GROWTH. MEASURABLE RESULTS.'}</span>
             </div>
 
             {/* Main Headline */}
             <div>
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.8rem] font-extrabold text-slate-950 leading-[1.12] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
-                We Build Intelligent{' '}
-                <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
-                  Growth Systems
-                </span>{' '}
-                That Drive Real Business Impact.
+                {renderHeadline()}
               </h1>
             </div>
 
             {/* Subheadline */}
-            <p className="text-slate-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-normal">
-              Lumora combines AI, marketing, automation and data to help businesses attract the right customers, convert more leads and scale revenue predictably.
+            <p className="text-slate-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-normal whitespace-pre-wrap">
+              {content?.subheadline || 'Lumora combines AI, marketing, automation and data to help businesses attract the right customers, convert more leads and scale revenue predictably.'}
             </p>
 
             {/* CTA Buttons */}
@@ -66,7 +81,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 }}
                 className="px-8 py-4 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-sm font-extrabold flex items-center justify-center gap-2.5 shadow-xl shadow-blue-500/20 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
               >
-                <span>Explore Solutions</span>
+                <span>{content?.ctaPrimaryText || 'Explore Solutions'}</span>
                 <ArrowRight className="w-4 h-4 text-white" />
               </button>
 
@@ -75,7 +90,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
                 onClick={openConsultationModal}
                 className="px-8 py-4 rounded-full border-2 border-[#5B8EE2]/40 bg-purple-50/40 hover:bg-[#5B8EE2] hover:text-white text-purple-900 text-sm font-extrabold flex items-center justify-center gap-2.5 transition-all group font-['Plus_Jakarta_Sans',sans-serif]"
               >
-                <span className="group-hover:text-white transition-colors">Book a Strategy Call</span>
+                <span className="group-hover:text-white transition-colors">{content?.ctaSecondaryText || 'Book a Strategy Call'}</span>
                 <Calendar className="w-4 h-4 text-[#D6A67B] group-hover:text-white transition-colors" />
               </button>
             </div>

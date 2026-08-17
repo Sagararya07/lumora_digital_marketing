@@ -49,7 +49,7 @@ export const Footer: React.FC<FooterProps> = ({
 
             {/* Social Icons Row */}
             <div className="flex items-center gap-3 pt-2">
-              <a href="#" className="p-2.5 rounded-full bg-[#F8FAFC] text-[#6B7280] hover:text-[#5B8EE2] hover:bg-[#F2F6FC] transition-colors border border-[#E5E7EB]">
+              <a href="https://www.linkedin.com/company/cypher-swift-digital-marketing-and-branding-with-lumora-s/?viewAsMember=true" target="_blank" rel="noopener noreferrer" className="p-2.5 rounded-full bg-[#F8FAFC] text-[#6B7280] hover:text-[#5B8EE2] hover:bg-[#F2F6FC] transition-colors border border-[#E5E7EB]">
                 <Linkedin className="w-4 h-4" />
               </a>
               <a href="#" className="p-2.5 rounded-full bg-[#F8FAFC] text-[#6B7280] hover:text-[#5B8EE2] hover:bg-[#F2F6FC] transition-colors border border-[#E5E7EB]">

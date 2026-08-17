@@ -189,14 +189,11 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultat
 
             {/* Title */}
             <div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] leading-[1.12] tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
-                Why Choose Lumora?{' '}
-                <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent block mt-1.5">
-                  Engineered For Exponential Growth.
-                </span>
+              <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#111827] leading-[1.12] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] whitespace-pre-wrap">
+                {content?.title || 'Why Choose Lumora?'}
               </h2>
-              <p className="text-sm sm:text-base text-[#6B7280] font-normal leading-relaxed mt-3">
-                We combine AI-driven campaign intelligence, certified expert execution, and 100% transparent attribution to turn digital attention into predictable pipeline revenue.
+              <p className="text-sm sm:text-base text-[#6B7280] font-normal leading-relaxed mt-3 whitespace-pre-wrap">
+                {content?.subtitle || 'We combine AI-driven campaign intelligence, certified expert execution, and 100% transparent attribution to turn digital attention into predictable pipeline revenue.'}
               </p>
             </div>
 

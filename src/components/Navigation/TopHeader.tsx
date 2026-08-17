@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import * as LucideIcons from 'lucide-react';
 import {
   Menu,
   ArrowRight,
@@ -36,19 +37,6 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
   const [activeSubMenu, setActiveSubMenu] = useState<'solutions' | 'resources' | null>(null);
   const digitalMarketingRef = useRef<HTMLDivElement>(null);
 
-  // 6 Core Services for Resources sub-menu
-  const coreServices = [
-    { id: 'social-media-marketing', slug: 'social-media-marketing', title: 'Social Media Marketing' },
-    { id: 'seo-growth-engine', slug: 'seo-growth-engine', title: 'Search Engine Optimization (SEO)' },
-    { id: 'performance-marketing', slug: 'performance-marketing', title: 'Performance Marketing' },
-    { id: 'lead-generation', slug: 'lead-generation', title: 'Lead Generation' },
-    { id: 'retargeting-marketing', slug: 'retargeting-marketing', title: 'Retargeting Marketing' },
-    { id: 'ai-marketing-automation', slug: 'ai-marketing-automation', title: 'AI Marketing Automation' }
-  ];
-
-  const resourceItems = dynamicPages.length > 0 
-    ? dynamicPages.filter(p => p.isPublished && !p.slug?.includes('/'))
-    : coreServices;
 
   useEffect(() => {
     const close = (e: MouseEvent) => {
@@ -60,23 +48,17 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
     return () => document.removeEventListener('mousedown', close);
   }, []);
 
-  const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
+  const mainHoverTimeout = useRef<NodeJS.Timeout | null>(null);
 
-  const handleMouseEnter = (menu: 'solutions' | 'resources') => {
-    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
-    if (activeSubMenu && activeSubMenu !== menu) {
-      hoverTimeout.current = setTimeout(() => {
-        setActiveSubMenu(menu);
-      }, 200);
-    } else {
-      setActiveSubMenu(menu);
-    }
+  const handleMainMouseEnter = () => {
+    if (mainHoverTimeout.current) clearTimeout(mainHoverTimeout.current);
+    setDigitalMarketingOpen(true);
   };
 
-  const handleMouseLeave = () => {
-    if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
-    hoverTimeout.current = setTimeout(() => {
-      setActiveSubMenu(null);
+  const handleMainMouseLeave = () => {
+    if (mainHoverTimeout.current) clearTimeout(mainHoverTimeout.current);
+    mainHoverTimeout.current = setTimeout(() => {
+      setDigitalMarketingOpen(false);
     }, 200);
   };
 
@@ -101,19 +83,6 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
         {/* Left Side: Top Left Menu Icon Button & Lumora Logo */}
         <div className="flex items-center gap-3 shrink-0">
 
-          {/* Top Left Menu Icon Button (Opens Left Drawer) */}
-          <button
-            id="left-top-menu-icon-btn"
-            onClick={onOpenMobileNav}
-            className="p-2.5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#5B8EE2] hover:bg-[#F2F6FC] text-slate-700 hover:text-[#5B8EE2] transition-all flex items-center gap-2 group cursor-pointer"
-            title="Open Menu Drawer"
-            aria-label="Open Navigation Menu Drawer"
-          >
-            <Menu className="w-5 h-5 text-[#5B8EE2] group-hover:scale-110 transition-transform" />
-            <span className="hidden sm:inline-block text-xs font-extrabold text-[#111827] group-hover:text-[#5B8EE2]">
-              Menu
-            </span>
-          </button>
 
           {/* Lumora Logo (Default Clicking Returns to Home) */}
           <button
@@ -128,35 +97,41 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
         {/* Center Desktop Navigation Menu */}
         <nav className="hidden lg:flex items-center gap-10 font-['Plus_Jakarta_Sans',sans-serif] text-sm font-bold text-[#111827]">
 
-          <div className="relative" ref={digitalMarketingRef}>
+          <div 
+            className="relative" 
+            ref={digitalMarketingRef}
+            onMouseEnter={handleMainMouseEnter}
+            onMouseLeave={handleMainMouseLeave}
+          >
             <button
-              onClick={() => { setDigitalMarketingOpen(!digitalMarketingOpen); setActiveSubMenu(null); }}
+              onClick={() => { setDigitalMarketingOpen(!digitalMarketingOpen); }}
               className="flex items-center gap-1.5 py-2 text-slate-800 hover:text-[#5B8EE2] transition-colors"
             >
-              <span>Digital Marketing</span>
+              <span>Lumora's Digital Marketing & Branding</span>
               <ChevronDown className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${digitalMarketingOpen ? 'rotate-180 text-[#5B8EE2]' : ''}`} />
             </button>
 
             {digitalMarketingOpen && (
-              <div className="absolute top-full left-0 mt-3 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2">
-
-                {/* Solutions Flyout */}
-                <div 
-                  className="relative border-b border-slate-100 last:border-0"
-                  onMouseEnter={() => handleMouseEnter('solutions')}
-                  onMouseLeave={handleMouseLeave}
-                >
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[750px] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 flex overflow-hidden">
+                {/* Left Categories Sidebar */}
+                <div className="w-1/3 bg-slate-50 p-4 border-r border-slate-100 flex flex-col gap-1">
                   <button
-                    onClick={() => setActiveSubMenu(activeSubMenu === 'solutions' ? null : 'solutions')}
-                    className="w-full text-left px-5 py-4 text-sm font-semibold text-slate-800 hover:text-[#5B8EE2] hover:bg-slate-50 transition-colors flex items-center justify-between rounded-t-2xl"
+                    onMouseEnter={() => setActiveSubMenu('solutions')}
+                    className={`w-full text-left px-4 py-3 text-sm font-bold rounded-xl flex items-center justify-between transition-colors ${activeSubMenu === 'solutions' || !activeSubMenu ? 'bg-white text-[#5B8EE2] shadow-sm' : 'text-slate-600 hover:bg-white/50'}`}
                   >
                     <span>Solutions</span>
-                    <ChevronRight className={`w-4 h-4 transition-colors duration-200 ${activeSubMenu === 'solutions' ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
+                    <ChevronRight className="w-4 h-4" />
                   </button>
-
-                  {activeSubMenu === 'solutions' && (
-                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 px-3 animate-in fade-in slide-in-from-left-2 z-50 max-h-[85vh] overflow-y-auto overflow-x-hidden custom-scrollbar">
-                      {(services || []).map((item, i) => (
+                </div>
+                
+                {/* Right Content Area */}
+                <div className="w-2/3 p-6 bg-white min-h-[300px]">
+                  {(!activeSubMenu || activeSubMenu === 'solutions') && (
+                    <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                      {(services || []).map((item, i) => {
+                        const IconComponent = (LucideIcons as any)[item.iconName || 'CheckCircle'] || LucideIcons.CheckCircle;
+                        
+                        return (
                         <button
                           key={item.id || i}
                           onClick={() => {
@@ -171,50 +146,17 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
                             setDigitalMarketingOpen(false);
                             setActiveSubMenu(null);
                           }}
-                          className="w-full text-left px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group"
+                          className="text-left text-sm font-medium text-slate-600 hover:text-[#5B8EE2] transition-colors flex items-center gap-3 group p-2 -ml-2 rounded-xl hover:bg-slate-50"
                         >
+                          <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-white group-hover:shadow-sm flex items-center justify-center shrink-0 transition-all border border-transparent group-hover:border-[#5B8EE2]/20">
+                            <IconComponent className="w-4 h-4 text-slate-500 group-hover:text-[#5B8EE2] transition-colors" />
+                          </div>
                           <span className="truncate">{item.title}</span>
-                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-[#5B8EE2] transition-opacity shrink-0" />
                         </button>
-                      ))}
+                      )})}
                     </div>
                   )}
                 </div>
-
-                {/* Resources Flyout */}
-                <div 
-                  className="relative"
-                  onMouseEnter={() => handleMouseEnter('resources')}
-                  onMouseLeave={handleMouseLeave}
-                >
-                  <button
-                    onClick={() => setActiveSubMenu(activeSubMenu === 'resources' ? null : 'resources')}
-                    className="w-full text-left px-5 py-4 text-sm font-semibold text-slate-800 hover:text-[#5B8EE2] hover:bg-slate-50 transition-colors flex items-center justify-between rounded-b-2xl"
-                  >
-                    <span>Resources</span>
-                    <ChevronRight className={`w-4 h-4 transition-colors duration-200 ${activeSubMenu === 'resources' ? 'text-[#5B8EE2]' : 'text-slate-400'}`} />
-                  </button>
-
-                  {activeSubMenu === 'resources' && (
-                    <div className="absolute top-0 left-full ml-1 w-72 bg-white border border-slate-200 rounded-2xl shadow-2xl py-2 px-3 animate-in fade-in slide-in-from-left-2 z-50 max-h-[85vh] overflow-y-auto overflow-x-hidden custom-scrollbar">
-                      {resourceItems.map((page) => (
-                        <Link
-                          key={page.id}
-                          to={'isPublished' in page ? `/${page.slug}` : `/solutions/${page.slug}`}
-                          onClick={() => {
-                            setDigitalMarketingOpen(false);
-                            setActiveSubMenu(null);
-                          }}
-                          className="w-full text-left px-4 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] hover:bg-slate-50 rounded-lg transition-colors flex items-center justify-between group"
-                        >
-                          <span className="truncate">{page.title}</span>
-                          <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 text-[#5B8EE2] transition-opacity shrink-0" />
-                        </Link>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
               </div>
             )}
           </div>
@@ -229,6 +171,17 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           >
             <span>Get a Consultation</span>
             <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+          </button>
+
+          {/* Top Right Menu Icon Button (Opens Left Drawer) */}
+          <button
+            id="right-top-menu-icon-btn"
+            onClick={onOpenMobileNav}
+            className="p-2.5 sm:p-3 rounded-full bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#5B8EE2] hover:bg-[#F2F6FC] text-slate-700 hover:text-[#5B8EE2] transition-all flex items-center justify-center group cursor-pointer"
+            title="Open Menu Drawer"
+            aria-label="Open Navigation Menu Drawer"
+          >
+            <Menu className="w-5 h-5 text-[#5B8EE2] group-hover:scale-110 transition-transform" />
           </button>
         </div>
 

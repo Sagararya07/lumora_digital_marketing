@@ -96,17 +96,14 @@ export const WhatIsDigitalMarketing: React.FC<WhatIsProps> = ({ content, openCon
             </div>
 
             {/* Main Heading */}
-            <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight leading-[1.1] mb-6 font-['Plus_Jakarta_Sans',sans-serif]">
-              What is <br className="hidden sm:block" />
-              <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
-                Digital Marketing?
-              </span>
+            <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-800 tracking-tight leading-[1.1] mb-6 font-['Plus_Jakarta_Sans',sans-serif] whitespace-pre-wrap">
+              {content.title}
             </h2>
 
             {/* Description */}
-            <p className="text-lg text-slate-600 leading-relaxed mb-10">
+            <p className="text-lg text-slate-600 leading-relaxed mb-10 whitespace-pre-wrap">
               <strong className="text-slate-800 font-bold block mb-2">{content.subtitle}</strong>
-              Digital marketing is the targeted, data-backed strategy of promoting brands across search, social, and digital channels to convert international digital attention into scalable pipeline revenue.
+              {content.descriptionParagraph1 || 'Digital marketing is the targeted, data-backed strategy of promoting brands across search, social, and digital channels to convert international digital attention into scalable pipeline revenue.'}
             </p>
 
             {/* Key Pillars - Vertical Stack */}

@@ -45,7 +45,7 @@ export const CaseStudyModal: React.FC<CaseStudyModalProps> = ({
         {/* Right Side: Scrollable Content */}
         <div className="md:w-[55%] flex-1 flex flex-col min-h-0 bg-white">
           <div className="flex-1 overflow-y-auto p-8 sm:p-12 custom-scrollbar">
-            <h3 className="text-3xl sm:text-4xl font-black text-slate-900 leading-tight mb-8 font-['Plus_Jakarta_Sans',sans-serif]">
+            <h3 className="text-3xl sm:text-4xl font-black bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent leading-tight mb-8 font-['Plus_Jakarta_Sans',sans-serif]">
               {caseStudy.title}
             </h3>
             
