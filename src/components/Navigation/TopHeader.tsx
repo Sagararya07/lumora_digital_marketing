@@ -87,10 +87,15 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           {/* Lumora Logo (Default Clicking Returns to Home) */}
           <button
             onClick={onGoHome}
-            className="flex items-center shrink-0 text-left focus:outline-none hover:opacity-90 transition-opacity"
+            className="relative flex items-center justify-center shrink-0 text-left focus:outline-none group py-1 mt-2"
             title="Lumora Home"
           >
-            <LumoraLogo size="md" />
+            {/* Animated Glow Effect on Hover */}
+            <div className="absolute inset-0 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] rounded-full blur-md opacity-0 group-hover:opacity-40 transition-all duration-500 scale-[1.2] group-hover:scale-[1.4]"></div>
+            
+            <div className="relative z-10 scale-[1.3] sm:scale-[1.5] translate-y-1 transition-transform duration-500 group-hover:scale-[1.4] sm:group-hover:scale-[1.6]">
+              <LumoraLogo size="lg" />
+            </div>
           </button>
         </div>
 
