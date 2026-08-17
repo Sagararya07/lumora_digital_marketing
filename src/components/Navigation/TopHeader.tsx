@@ -34,7 +34,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
   activeDynamicSlug,
 }) => {
   const [digitalMarketingOpen, setDigitalMarketingOpen] = useState(false);
-  const [activeSubMenu, setActiveSubMenu] = useState<'solutions' | 'resources' | null>(null);
+
   const digitalMarketingRef = useRef<HTMLDivElement>(null);
 
 
@@ -112,50 +112,33 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
             </button>
 
             {digitalMarketingOpen && (
-              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[750px] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 flex overflow-hidden">
-                {/* Left Categories Sidebar */}
-                <div className="w-1/3 bg-slate-50 p-4 border-r border-slate-100 flex flex-col gap-1">
-                  <button
-                    onMouseEnter={() => setActiveSubMenu('solutions')}
-                    className={`w-full text-left px-4 py-3 text-sm font-bold rounded-xl flex items-center justify-between transition-colors ${activeSubMenu === 'solutions' || !activeSubMenu ? 'bg-white text-[#5B8EE2] shadow-sm' : 'text-slate-600 hover:bg-white/50'}`}
-                  >
-                    <span>Solutions</span>
-                    <ChevronRight className="w-4 h-4" />
-                  </button>
-                </div>
-                
-                {/* Right Content Area */}
-                <div className="w-2/3 p-6 bg-white min-h-[300px]">
-                  {(!activeSubMenu || activeSubMenu === 'solutions') && (
-                    <div className="grid grid-cols-2 gap-x-8 gap-y-4">
-                      {(services || []).map((item, i) => {
-                        const IconComponent = (LucideIcons as any)[item.iconName || 'CheckCircle'] || LucideIcons.CheckCircle;
-                        
-                        return (
-                        <button
-                          key={item.id || i}
-                          onClick={() => {
-                            if (window.location.pathname !== '/') {
-                              onGoHome();
-                              setTimeout(() => {
-                                onNavSection?.(item.slug || item.id || '');
-                              }, 300);
-                            } else {
-                              onNavSection?.(item.slug || item.id || '');
-                            }
-                            setDigitalMarketingOpen(false);
-                            setActiveSubMenu(null);
-                          }}
-                          className="text-left text-sm font-medium text-slate-600 hover:text-[#5B8EE2] transition-colors flex items-center gap-3 group p-2 -ml-2 rounded-xl hover:bg-slate-50"
-                        >
-                          <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-white group-hover:shadow-sm flex items-center justify-center shrink-0 transition-all border border-transparent group-hover:border-[#5B8EE2]/20">
-                            <IconComponent className="w-4 h-4 text-slate-500 group-hover:text-[#5B8EE2] transition-colors" />
-                          </div>
-                          <span className="truncate">{item.title}</span>
-                        </button>
-                      )})}
-                    </div>
-                  )}
+              <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[650px] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 p-6">
+                <div className="grid grid-cols-2 gap-x-8 gap-y-4">
+                  {(services || []).map((item, i) => {
+                    const IconComponent = (LucideIcons as any)[item.iconName || 'CheckCircle'] || LucideIcons.CheckCircle;
+                    
+                    return (
+                    <button
+                      key={item.id || i}
+                      onClick={() => {
+                        if (window.location.pathname !== '/') {
+                          onGoHome();
+                          setTimeout(() => {
+                            onNavSection?.(item.slug || item.id || '');
+                          }, 300);
+                        } else {
+                          onNavSection?.(item.slug || item.id || '');
+                        }
+                        setDigitalMarketingOpen(false);
+                      }}
+                      className="text-left text-sm font-medium text-slate-600 hover:text-[#5B8EE2] transition-colors flex items-center gap-3 group p-2 -ml-2 rounded-xl hover:bg-slate-50"
+                    >
+                      <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-white group-hover:shadow-sm flex items-center justify-center shrink-0 transition-all border border-transparent group-hover:border-[#5B8EE2]/20">
+                        <IconComponent className="w-4 h-4 text-slate-500 group-hover:text-[#5B8EE2] transition-colors" />
+                      </div>
+                      <span className="truncate">{item.title}</span>
+                    </button>
+                  )})}
                 </div>
               </div>
             )}

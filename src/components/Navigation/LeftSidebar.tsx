@@ -41,7 +41,6 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   ];
 
   const [digitalMarketingOpen, setDigitalMarketingOpen] = useState(false);
-  const [activeSubMenu, setActiveSubMenu] = useState<'solutions' | 'resources' | null>(null);
 
   const coreServices = [
     { id: 'social-media-marketing', slug: 'social-media-marketing', title: 'Social Media Marketing' },
@@ -137,31 +136,22 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
                       <div className="mt-1 pl-4 space-y-1 bg-slate-50 rounded-xl p-2 animate-in fade-in slide-in-from-top-2">
                         <div className="flex flex-col border border-slate-200 rounded-lg overflow-hidden bg-white">
 
-                          <button
-                            onClick={() => setActiveSubMenu(activeSubMenu === 'resources' ? null : 'resources')}
-                            className="text-left px-4 py-3 text-sm font-bold text-slate-800 hover:bg-slate-50 flex items-center justify-between"
-                          >
-                            <span>Services</span>
-                            <ChevronDown className={`w-3.5 h-3.5 transition-transform ${activeSubMenu === 'resources' ? 'rotate-180' : ''}`} />
-                          </button>
-                          {activeSubMenu === 'resources' && (
-                            <div className="flex flex-col bg-slate-50 border-t border-slate-100">
-                              {resourceItems.map((rItem, i) => (
-                                <button
-                                  key={`res-${rItem.id || i}`}
-                                  onClick={() => {
-                                    if (rItem.slug) {
-                                      navigate(`/${rItem.slug}`);
-                                    }
-                                    setIsOpenMobile(false);
-                                  }}
-                                  className="text-left px-6 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
-                                >
-                                  {rItem.title.split('-')[0].trim()}
-                                </button>
-                              ))}
-                            </div>
-                          )}
+                          <div className="flex flex-col bg-slate-50 border-t border-slate-100">
+                            {resourceItems.map((rItem, i) => (
+                              <button
+                                key={`res-${rItem.id || i}`}
+                                onClick={() => {
+                                  if (rItem.slug) {
+                                    navigate(`/${rItem.slug}`);
+                                  }
+                                  setIsOpenMobile(false);
+                                }}
+                                className="text-left px-6 py-2.5 text-sm font-medium text-slate-600 hover:text-[#5B8EE2] truncate"
+                              >
+                                {rItem.title.split('-')[0].trim()}
+                              </button>
+                            ))}
+                          </div>
                         </div>
                       </div>
                     )}
