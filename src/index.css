@@ -133,3 +133,12 @@ h1, h2, h3, h4, h5, h6, .heading-font {
   background-color: var(--color-royal-blue);
   color: #FFFFFF;
 }
+
+@keyframes pulseScale {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.animate-pulse-scale {
+  animation: pulseScale 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}

@@ -91,10 +91,12 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
             title="Lumora Home"
           >
             {/* Animated Glow Effect always blinking */}
-            <div className="absolute inset-0 bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] rounded-full blur-md opacity-70 animate-pulse pointer-events-none scale-[1.3]"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-blue-300 via-purple-300 to-pink-300 rounded-full blur-xl opacity-100 animate-pulse pointer-events-none scale-[1.3]"></div>
             
             <div className="relative z-10 scale-[1.3] sm:scale-[1.5] transition-transform duration-500 group-hover:scale-[1.4] sm:group-hover:scale-[1.6] pointer-events-none">
-              <LumoraLogo size="lg" />
+              <div className="animate-pulse-scale">
+                <LumoraLogo size="lg" />
+              </div>
             </div>
           </button>
         </div>

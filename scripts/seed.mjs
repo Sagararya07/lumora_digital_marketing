@@ -40,7 +40,7 @@ const extendedSettings = [
     label: 'Why Choose Us Section',
     type: 'json',
     value: JSON.stringify({
-      title: 'Why Choose Cypher Swift?',
+      title: 'Why Choose Lumora?',
       subtitle: 'Built for High-Growth Enterprises, SMEs & Ambitious Brands',
     }),
   },

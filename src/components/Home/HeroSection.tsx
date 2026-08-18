@@ -88,10 +88,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
               {/* Secondary Outlined Pill Button */}
               <button
                 onClick={openConsultationModal}
-                className="px-8 py-4 rounded-full border-2 border-[#5B8EE2]/40 bg-purple-50/40 hover:bg-[#5B8EE2] hover:text-white text-purple-900 text-sm font-extrabold flex items-center justify-center gap-2.5 transition-all group font-['Plus_Jakarta_Sans',sans-serif]"
+                className="px-8 py-4 rounded-full border-2 border-[#5B8EE2] bg-transparent hover:bg-[#5B8EE2] hover:text-white text-[#5B8EE2] text-sm font-extrabold flex items-center justify-center gap-2.5 transition-all group font-['Plus_Jakarta_Sans',sans-serif]"
               >
                 <span className="group-hover:text-white transition-colors">{content?.ctaSecondaryText || 'Book a Strategy Call'}</span>
-                <Calendar className="w-4 h-4 text-[#D6A67B] group-hover:text-white transition-colors" />
+                <Calendar className="w-4 h-4 text-[#5B8EE2] group-hover:text-white transition-colors" />
               </button>
             </div>
 

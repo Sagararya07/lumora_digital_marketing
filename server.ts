@@ -166,7 +166,7 @@ async function getSiteContent(): Promise<SiteContent> {
   });
 
   const whyChooseSection = parseJsonSetting(settingsMap['why_choose_section'], {
-    title: 'Why Choose Cypher Swift?',
+    title: 'Why Choose Lumora?',
     subtitle: 'Built for High-Growth Enterprises, SMEs & Ambitious Brands',
   });
 
