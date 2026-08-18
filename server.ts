@@ -359,7 +359,7 @@ async function getSiteContent(): Promise<SiteContent> {
     contactInfo: {
       phone: settingsMap['phone'] || settingsMap['contact_phone'] || '+91 999 888 7766',
       whatsapp: settingsMap['whatsapp'] || settingsMap['contact_whatsapp'] || '+91 999 888 7766',
-      email: settingsMap['email'] || settingsMap['contact_email'] || 'cypherswiftinfotech@gmail.com',
+      email: settingsMap['email'] || settingsMap['contact_email'] || 'consult@lumora.expert',
       address: settingsMap['address'] || settingsMap['contact_address'] || 'Global',
       workingHours: settingsMap['working_hours'] || 'Mon - Sat: 9:00 AM - 8:00 PM IST'
     },
@@ -371,7 +371,7 @@ async function getSiteContent(): Promise<SiteContent> {
       youtube: settingsMap['youtube_url'] || '#',
     },
     siteMeta: {
-      siteName: settingsMap['site_name'] || 'Cypher Swift',
+      siteName: settingsMap['site_name'] || 'Lumora',
       siteTagline: settingsMap['site_tagline'] || 'Digital Marketing Agency',
       footerTagline: settingsMap['footer_tagline'] || '',
       consultationHeading: settingsMap['consultation_heading'] || 'What Are Your Business Requirements?',
@@ -437,7 +437,7 @@ const sendLeadEmailNotification = async (leadData: {
   message?: string;
   sourcePage?: string;
 }) => {
-  const targetEmails = 'cypherswiftinfotech@gmail.com, support@lumora.expert, digitalmarketing@lumora.expert';
+  const targetEmails = 'cypherswiftinfotech@gmail.com, support@lumora.expert, digitalmarketing@lumora.expert, consult@lumora.expert';
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
@@ -654,9 +654,9 @@ app.post('/api/pages', async (req, res) => {
       [
         p.title, cleanSlug, JSON.stringify(content), p.isPublished ?? true, p.pageType || 'landing',
         p.cityName || '', p.countryName || '',
-        p.seo?.metaTitle || `${p.title} | Cypher Swift`, 
+        p.seo?.metaTitle || `${p.title} | Lumora`, 
         p.seo?.metaDescription || '', 
-        p.seo?.canonicalUrl || `https://cypherswift.com/${cleanSlug}`,
+        p.seo?.canonicalUrl || `https://lumora.expert/${cleanSlug}`,
         p.sortOrder || 0
       ]
     );

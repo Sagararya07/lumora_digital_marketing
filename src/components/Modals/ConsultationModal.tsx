@@ -71,7 +71,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             </div>
             <h3 className="text-2xl font-bold text-slate-900">Consultation Booked!</h3>
             <p className="text-xs sm:text-sm text-slate-600 max-w-md mx-auto font-normal">
-              Thank you for submitting your business requirements. An executive strategist from Lumora will reach out within 24 hours. A copy has been routed to contact@lumora.com.
+              Thank you for submitting your business requirements. An executive strategist from Lumora will reach out within 24 hours. A copy has been routed to consult@lumora.expert.
             </p>
             <button
               onClick={() => {

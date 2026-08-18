@@ -848,7 +848,7 @@ export const initialSiteContent: SiteContent = {
     "contactInfo": {
     "phone": "+91 9179765554",
     "whatsapp": "+91 9179765554",
-    "email": "support@lumora.expert",
+    "email": "consult@lumora.expert",
     "address": "Plot No 5/C, Sy No 83/1, Raidurgam panmaktha Hyderabad Knowledge City, Serilingampally, Hyderabad, Telangana 500081.",
     "workingHours": "Mon - Sat: 9:00 AM - 8:00 PM IST / Global 24/7 Support"
   },
