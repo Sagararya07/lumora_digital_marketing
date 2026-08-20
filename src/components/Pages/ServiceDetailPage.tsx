@@ -14,7 +14,8 @@ export const ServiceDetailPage: React.FC<ServiceDetailPageProps> = ({
   onOpenLegalModal,
   onOpenConsultationModal
 }) => {
-  const { slug } = useParams<{ slug: string }>();
+  const params = useParams();
+  const slug = params['*'];
   const [service, setService] = useState<ServiceItem | null>(null);
 
   useEffect(() => {

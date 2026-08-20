@@ -79,6 +79,7 @@ export const initialSiteContent: SiteContent = {
     ]
   },
   "services": [
+    
     {
       "id": "social-media-marketing",
       "title": "Social Media Marketing",
@@ -1072,7 +1073,28 @@ export const initialSiteContent: SiteContent = {
         "rating": 5,
         "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&h=400&auto=format&fit=crop&q=80"
     }
-]
+],
+    contactInfo: {
+        phone: "+91 999 888 7766",
+        whatsapp: "+91 999 888 7766",
+        email: "consult@lumora.expert",
+        address: "Global",
+        workingHours: "Mon - Sat: 9:00 AM - 8:00 PM IST"
+    },
+    siteMeta: {
+        siteName: "Lumora",
+        siteTagline: "Digital Marketing Agency",
+        footerTagline: "",
+        consultationHeading: "What Are Your Business Requirements?",
+        consultationSubheading: "Book a free consultation with our experts."
+    },
+    navigationVisibility: {
+        showHome: true,
+        showAbout: true,
+        showPortfolio: true,
+        showRnd: true,
+        showConsultation: true
+    }
 };
 
 export const initialDynamicPages: DynamicPage[] = [
@@ -3408,7 +3430,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-google-ads",
-    "slug": "lead-generation/google-ads",
+    "slug": "paid-advertising-campaigns/google-ads",
     "title": "Google Ads Management",
       "heroBadge": "Lightbulb",
       "pageType": "service",
@@ -3433,7 +3455,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-meta-ads",
-    "slug": "lead-generation/meta-ads",
+    "slug": "paid-advertising-campaigns/meta-ads",
     "title": "Meta Ads (Facebook & Instagram)",
       "heroBadge": "Activity",
       "pageType": "service",
@@ -3458,7 +3480,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-youtube-ads",
-    "slug": "lead-generation/youtube-ads",
+    "slug": "paid-advertising-campaigns/youtube-ads",
     "title": "YouTube Advertising",
       "heroBadge": "Repeat",
       "pageType": "service",
@@ -3483,7 +3505,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-linkedin-ads",
-    "slug": "lead-generation/linkedin-ads",
+    "slug": "paid-advertising-campaigns/linkedin-ads",
     "title": "LinkedIn Ads Management",
       "heroBadge": "TrendingUp",
       "pageType": "service",
@@ -3517,7 +3539,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-google-ads",
-    "slug": "lead-generation/google-ads",
+    "slug": "paid-advertising-campaigns/google-ads",
     "title": "Google Ads Management",
       "heroBadge": "Filter",
       "pageType": "service",
@@ -3542,7 +3564,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-meta-ads",
-    "slug": "lead-generation/meta-ads",
+    "slug": "paid-advertising-campaigns/meta-ads",
     "title": "Meta Ads (Facebook & Instagram)",
       "heroBadge": "ClipboardCheck",
       "pageType": "service",
@@ -3567,7 +3589,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-youtube-ads",
-    "slug": "lead-generation/youtube-ads",
+    "slug": "paid-advertising-campaigns/youtube-ads",
     "title": "YouTube Advertising",
       "heroBadge": "UserCheck",
       "pageType": "service",
@@ -3592,7 +3614,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-linkedin-ads",
-    "slug": "lead-generation/linkedin-ads",
+    "slug": "paid-advertising-campaigns/linkedin-ads",
     "title": "LinkedIn Ads Management",
       "heroBadge": "Shield",
       "pageType": "service",
@@ -3617,7 +3639,7 @@ export const initialDynamicPages: DynamicPage[] = [
   },
   {
     "id": "page-twitter-ads",
-    "slug": "lead-generation/twitter-ads",
+    "slug": "paid-advertising-campaigns/twitter-ads",
     "title": "Twitter (X) Advertising",
       "heroBadge": "Target",
       "pageType": "service",
@@ -3917,4 +3939,130 @@ export const initialDynamicPages: DynamicPage[] = [
     ],
     "serviceRecommendedFor": "E-commerce stores, retail brands, and startups launching new products."
   }
+,
+{
+  "id": "page-b2b-sales",
+  "slug": "lead-generation/b2b-sales",
+  "title": "B2B Sales Leads",
+  "heroBadge": "Briefcase",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-icon-hero-b2b-sales",
+      "type": "icon-hero",
+      "title": "B2B Sales Leads",
+      "content": "Generate high-value business inquiries, meeting bookings, and enterprise prospects with targeted B2B lead generation strategies designed for measurable growth.",
+      "iconName": "Briefcase",
+      "bullets": []
+    },
+    {
+      "id": "sec-process-b2b-sales",
+      "type": "process",
+      "title": "A Proven Process for Predictable Growth",
+      "content": "From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.",
+      "cards": []
+    }
+  ]
+},
+{
+  "id": "page-real-estate",
+  "slug": "lead-generation/real-estate",
+  "title": "Real Estate Leads",
+  "heroBadge": "Home",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-icon-hero-real-estate",
+      "type": "icon-hero",
+      "title": "Real Estate Leads",
+      "content": "Attract qualified homebuyers, property investors, and commercial real estate inquiries with hyper-local geo-targeted campaigns.",
+      "iconName": "Home",
+      "bullets": []
+    },
+    {
+      "id": "sec-process-real-estate",
+      "type": "process",
+      "title": "A Proven Process for Predictable Growth",
+      "content": "From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.",
+      "cards": []
+    }
+  ]
+},
+{
+  "id": "page-healthcare",
+  "slug": "lead-generation/healthcare",
+  "title": "Healthcare Leads",
+  "heroBadge": "Heart",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-icon-hero-healthcare",
+      "type": "icon-hero",
+      "title": "Healthcare Leads",
+      "content": "Drive patient bookings, telemedicine consultations, and clinic inquiries through HIPAA-compliant, targeted digital marketing campaigns.",
+      "iconName": "Heart",
+      "bullets": []
+    },
+    {
+      "id": "sec-process-healthcare",
+      "type": "process",
+      "title": "A Proven Process for Predictable Growth",
+      "content": "From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.",
+      "cards": []
+    }
+  ]
+},
+{
+  "id": "page-saas",
+  "slug": "lead-generation/saas",
+  "title": "SaaS & Tech Leads",
+  "heroBadge": "Monitor",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-icon-hero-saas",
+      "type": "icon-hero",
+      "title": "SaaS & Tech Leads",
+      "content": "Acquire free trial signups, product demo requests, and software subscriptions with data-driven paid acquisition and growth hacking strategies.",
+      "iconName": "Monitor",
+      "bullets": []
+    },
+    {
+      "id": "sec-process-saas",
+      "type": "process",
+      "title": "A Proven Process for Predictable Growth",
+      "content": "From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.",
+      "cards": []
+    }
+  ]
+},
+{
+  "id": "page-ecommerce",
+  "slug": "lead-generation/ecommerce",
+  "title": "E-commerce Leads",
+  "heroBadge": "ShoppingBag",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-icon-hero-ecommerce",
+      "type": "icon-hero",
+      "title": "E-commerce Leads",
+      "content": "From high-intent cart abandoners to new customer acquisition, we manage e-commerce lead generation to increase Customer Lifetime Value (LTV).",
+      "iconName": "ShoppingBag",
+      "bullets": []
+    },
+    {
+      "id": "sec-process-ecommerce",
+      "type": "process",
+      "title": "A Proven Process for Predictable Growth",
+      "content": "From initial discovery to continuous scaling, our methodology ensures maximum ROI at every stage of your customer acquisition journey.",
+      "cards": []
+    }
+  ]
+}
 ];

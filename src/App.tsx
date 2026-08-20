@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React, { useState, useEffect } from 'react';
-import { Routes, Route, useNavigate, useLocation, useParams } from 'react-router-dom';
+import { Routes, Route, useNavigate, useLocation, useParams, Navigate } from 'react-router-dom';
 import { LeftSidebar } from './components/Navigation/LeftSidebar';
 import { TopHeader } from './components/Navigation/TopHeader';
 import { HeroSection } from './components/Home/HeroSection';
@@ -24,6 +24,7 @@ import { CaseStudyModal } from './components/Modals/CaseStudyModal';
 import { LegalModal } from './components/Modals/LegalModal';
 
 import { ConsultationPage } from './components/Pages/ConsultationPage';
+import { ServiceDetailPage } from './components/Pages/ServiceDetailPage';
 import { DynamicPageViewer } from './components/DynamicPage/DynamicPageViewer';
 import { AdminDashboard } from './components/Admin/AdminDashboard';
 
@@ -100,7 +101,18 @@ export function App() {
       const res = await fetch('/api/content');
       const data = await res.json();
       if (res.ok && data.data) {
-        setSiteContent(data.data);
+        const mergedData = { ...data.data };
+        
+        // Merge initialSiteContent services that might not be in DB yet
+        if (mergedData.services && initialSiteContent.services) {
+          const dbSlugs = new Set(mergedData.services.map((s: any) => s.slug));
+          const missingServices = initialSiteContent.services.filter(s => !dbSlugs.has(s.slug));
+          mergedData.services = [...mergedData.services, ...missingServices];
+        } else if (!mergedData.services) {
+          mergedData.services = initialSiteContent.services || [];
+        }
+
+        setSiteContent(mergedData);
       }
     } catch (err) {
       console.error('Failed to load site content from server:', err);
@@ -201,6 +213,7 @@ export function App() {
           activeDynamicSlug={activeDynamicSlug}
           theme={theme}
           toggleTheme={toggleTheme}
+          siteContent={siteContent}
         />
       )}
 
@@ -219,6 +232,7 @@ export function App() {
             activeDynamicSlug={activeDynamicSlug}
             theme={theme}
             toggleTheme={toggleTheme}
+            siteContent={siteContent}
           />
         )}
 
@@ -240,44 +254,61 @@ export function App() {
 
             {/* Dedicated Full Pages for Menu Drawer Options */}
             <Route path="/about" element={
-              <AboutPage
-                siteContent={siteContent}
-                onGoHome={handleGoHome}
-                openConsultationModal={() => setIsConsultationModalOpen(true)}
-              />
+              siteContent.navigationVisibility?.showAbout === false ? <Navigate to="/" replace /> : (
+                <AboutPage
+                  siteContent={siteContent}
+                  onGoHome={handleGoHome}
+                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                />
+              )
             } />
 
             <Route path="/portfolio" element={
-              <PortfolioPage
-                siteContent={siteContent}
-                onGoHome={handleGoHome}
-                openConsultationModal={() => setIsConsultationModalOpen(true)}
-                onSelectCaseStudy={handleSelectCaseStudy}
-              />
+              siteContent.navigationVisibility?.showPortfolio === false ? <Navigate to="/" replace /> : (
+                <PortfolioPage
+                  siteContent={siteContent}
+                  onGoHome={handleGoHome}
+                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  onSelectCaseStudy={handleSelectCaseStudy}
+                />
+              )
             } />
 
             <Route path="/rnd" element={
-              <RndPage
-                siteContent={siteContent}
-                onGoHome={handleGoHome}
-                openConsultationModal={() => setIsConsultationModalOpen(true)}
-              />
+              siteContent.navigationVisibility?.showRnd === false ? <Navigate to="/" replace /> : (
+                <RndPage
+                  siteContent={siteContent}
+                  onGoHome={handleGoHome}
+                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                />
+              )
             } />
 
             <Route path="/get-a-consultation" element={
-              <ConsultationPage
-                siteContent={siteContent}
-                onGoHome={handleGoHome}
-              />
+              siteContent.navigationVisibility?.showConsultation === false ? <Navigate to="/" replace /> : (
+                <ConsultationPage
+                  siteContent={siteContent}
+                  onGoHome={handleGoHome}
+                />
+              )
             } />
 
             <Route path="/consultation" element={
-              <ConsultationPage
-                siteContent={siteContent}
-                onGoHome={handleGoHome}
-              />
+              siteContent.navigationVisibility?.showConsultation === false ? <Navigate to="/" replace /> : (
+                <ConsultationPage
+                  siteContent={siteContent}
+                  onGoHome={handleGoHome}
+                />
+              )
             } />
             
+            <Route path="/services/*" element={
+              <ServiceDetailPage
+                siteContent={siteContent}
+                onOpenLegalModal={(type) => setLegalModalType(type)}
+                onOpenConsultationModal={() => setIsConsultationModalOpen(true)}
+              />
+            } />
 
             {/* Dynamic CMS Page Renderer */}
             <Route path="/:slug" element={
@@ -477,6 +508,8 @@ const DynamicPageWrapper: React.FC<{
         contactInfo={siteContent.contactInfo}
         consultationHeading={siteContent.siteMeta?.consultationHeading}
         consultationSubheading={siteContent.siteMeta?.consultationSubheading}
+        dynamicPages={dynamicPages}
+        services={siteContent.services}
       />
     </div>
   );

@@ -7,7 +7,7 @@ import {
   ChevronDown,
   ChevronRight,
 } from 'lucide-react';
-import { DynamicPage, ServiceItem } from '../../types';
+import { DynamicPage, ServiceItem, SiteContent } from '../../types';
 import { LumoraLogo } from '../common/LumoraLogo';
 
 interface TopHeaderProps {
@@ -21,6 +21,7 @@ interface TopHeaderProps {
   activeDynamicSlug: string | null;
   theme?: 'dark' | 'light';
   toggleTheme?: () => void;
+  siteContent?: SiteContent;
 }
 
 export const TopHeader: React.FC<TopHeaderProps> = ({
@@ -32,6 +33,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
   onGoHome,
   onNavSection,
   activeDynamicSlug,
+  siteContent,
 }) => {
   const [digitalMarketingOpen, setDigitalMarketingOpen] = useState(false);
 
@@ -155,13 +157,15 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
 
         {/* Right Action CTA Button */}
         <div className="flex items-center gap-2 sm:gap-3 shrink-0">
-          <button
-            onClick={openConsultationModal}
-            className="px-3 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-[10px] sm:text-xs font-bold tracking-wide shadow-lg shadow-blue-500/25 flex items-center gap-1.5 sm:gap-2 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
-          >
-            <span>Get a Consultation</span>
-            <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          </button>
+          {siteContent?.navigationVisibility?.showConsultation !== false && (
+            <button
+              onClick={openConsultationModal}
+              className="px-3 py-2 sm:px-6 sm:py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] hover:from-[#4676C2] hover:via-[#C29367] hover:to-[#DB2777] text-white text-[10px] sm:text-xs font-bold tracking-wide shadow-lg shadow-blue-500/25 flex items-center gap-1.5 sm:gap-2 transition-all hover:scale-105 font-['Plus_Jakarta_Sans',sans-serif]"
+            >
+              <span>Get a Consultation</span>
+              <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
+            </button>
+          )}
 
           {/* Top Right Menu Icon Button (Opens Left Drawer) */}
           <button

@@ -213,6 +213,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       items: [
         { id: 'pages', label: 'Dynamic Pages', icon: Rss },
         { id: 'sitemap', label: 'Sitemap & SEO', icon: Globe },
+        { id: 'site_settings', label: 'Site Settings', icon: Settings },
       ],
     },
   ];
@@ -350,7 +351,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           )}
           {activeMenu === 'pages' && <DynamicPagesManager dynamicPages={dynamicPages} onRefresh={onRefreshPages} />}
           {activeMenu === 'sitemap' && <SitemapPanel dynamicPages={dynamicPages} />}
-          {activeMenu === 'site_settings' && <SiteSettingsManager onSaved={handleContentSaved} />}
+          {activeMenu === 'site_settings' && <SiteSettingsManager siteContent={siteContent} onSaved={handleContentSaved} />}
           {activeMenu === 'section_settings' && <SectionSettingsManager onSaved={handleContentSaved} />}
           {activeMenu === 'services' && (
             <ServicesDynamicManager 
@@ -1147,11 +1148,71 @@ const SitemapPanel = ({ dynamicPages }: { dynamicPages: DynamicPage[] }) => (
 );
 
 /* --- Site Settings Manager --- */
-const SiteSettingsManager = ({ onSaved }: { onSaved: () => void }) => {
+const SiteSettingsManager = ({ siteContent, onSaved }: { siteContent: SiteContent, onSaved: () => void }) => {
+  const [navVis, setNavVis] = useState(siteContent.navigationVisibility || {
+    showHome: true, showAbout: true, showPortfolio: true, showRnd: true, showConsultation: true
+  });
+  const [saving, setSaving] = useState(false);
+
+  const handleToggle = (key: keyof typeof navVis) => {
+    setNavVis(prev => ({ ...prev, [key]: !prev[key] }));
+  };
+
+  const handleSave = async () => {
+    setSaving(true);
+    try {
+      const res = await fetch('/api/admin/settings/navigation_visibility', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ value: JSON.stringify(navVis) })
+      });
+      if (!res.ok) throw new Error('Failed to save navigation settings');
+      onSaved();
+    } catch (err) {
+      console.error(err);
+      alert('Error saving settings');
+    } finally {
+      setSaving(false);
+    }
+  };
+
+  const ToggleItem = ({ label, prop }: { label: string, prop: keyof typeof navVis }) => (
+    <div className="flex items-center justify-between p-4 bg-[#F8FAFC] rounded-xl border border-[#E5E7EB]">
+      <span className="font-semibold text-[#111827]">{label} Page</span>
+      <button
+        onClick={() => handleToggle(prop)}
+        className={`w-12 h-6 rounded-full transition-colors relative flex items-center ${navVis[prop] ? 'bg-[#5B8EE2]' : 'bg-slate-300'}`}
+      >
+        <span className={`w-4 h-4 bg-white rounded-full absolute transition-transform shadow-sm ${navVis[prop] ? 'translate-x-7' : 'translate-x-1'}`} />
+      </button>
+    </div>
+  );
+
   return (
     <div className="bg-white rounded-3xl border border-[#E5E7EB] p-8 shadow-xs">
-      <h2 className="text-xl font-extrabold text-[#111827] mb-4">Site Settings</h2>
-      <p className="text-sm text-[#6B7280]">Global configuration coming soon...</p>
+      <div className="flex justify-between items-center mb-6">
+        <h2 className="text-xl font-extrabold text-[#111827]">Site Navigation Settings</h2>
+        <button 
+          onClick={handleSave} 
+          disabled={saving}
+          className="flex items-center gap-2 px-5 py-2 bg-[#111827] hover:bg-black text-white text-sm font-bold rounded-xl transition-colors disabled:opacity-50"
+        >
+          {saving ? <RefreshCw className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
+          {saving ? 'Saving...' : 'Save Settings'}
+        </button>
+      </div>
+      
+      <p className="text-sm text-[#6B7280] mb-6">
+        Toggle the visibility of main static pages across the website (Header & Mobile Drawer).
+      </p>
+
+      <div className="space-y-3 max-w-xl">
+        <ToggleItem label="Home" prop="showHome" />
+        <ToggleItem label="About" prop="showAbout" />
+        <ToggleItem label="Portfolio" prop="showPortfolio" />
+        <ToggleItem label="R&D" prop="showRnd" />
+        <ToggleItem label="Consultation" prop="showConsultation" />
+      </div>
     </div>
   );
 };

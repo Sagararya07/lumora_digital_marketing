@@ -170,6 +170,14 @@ async function getSiteContent(): Promise<SiteContent> {
     subtitle: 'Built for High-Growth Enterprises, SMEs & Ambitious Brands',
   });
 
+  const navigationVisibility = parseJsonSetting(settingsMap['navigation_visibility'], {
+    showHome: true,
+    showAbout: true,
+    showPortfolio: true,
+    showRnd: true,
+    showConsultation: true,
+  });
+
   const heroRow = heroRes.rows[0] || {};
   const hero: HeroContent = {
     badgeText: heroRow.tagline || 'AI-Powered Digital Marketing',
@@ -376,7 +384,8 @@ async function getSiteContent(): Promise<SiteContent> {
       footerTagline: settingsMap['footer_tagline'] || '',
       consultationHeading: settingsMap['consultation_heading'] || 'What Are Your Business Requirements?',
       consultationSubheading: settingsMap['consultation_subheading'] || 'Book a free consultation with our experts.',
-    }
+    },
+    navigationVisibility
   };
 }
 
@@ -551,12 +560,18 @@ app.put('/api/admin/settings/:key', async (req, res) => {
   const { key } = req.params;
   const { value } = req.body;
   try {
-    const result = await pool.query(
-      'UPDATE site_settings SET value = $1, updated_at = NOW() WHERE key = $2 RETURNING *',
-      [value, key]
-    );
-    if (result.rows.length === 0) {
-      return res.status(404).json({ error: 'Setting not found' });
+    const check = await pool.query('SELECT * FROM site_settings WHERE key = $1', [key]);
+    let result;
+    if (check.rows.length === 0) {
+      result = await pool.query(
+        'INSERT INTO site_settings (key, value, updated_at) VALUES ($1, $2, NOW()) RETURNING *',
+        [key, value]
+      );
+    } else {
+      result = await pool.query(
+        'UPDATE site_settings SET value = $1, updated_at = NOW() WHERE key = $2 RETURNING *',
+        [value, key]
+      );
     }
     res.json({ success: true, data: result.rows[0] });
   } catch (err: any) {

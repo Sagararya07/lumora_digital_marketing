@@ -156,6 +156,14 @@ export interface TeamMember {
   description: string;
 }
 
+export interface NavigationVisibility {
+  showHome: boolean;
+  showAbout: boolean;
+  showPortfolio: boolean;
+  showRnd: boolean;
+  showConsultation: boolean;
+}
+
 export interface SiteContent {
   hero: HeroContent;
   whatIs: WhatIsDigitalContent;
@@ -197,6 +205,7 @@ export interface SiteContent {
     consultationHeading: string;
     consultationSubheading: string;
   };
+  navigationVisibility?: NavigationVisibility;
 }
 
 export interface SEOMetadata {

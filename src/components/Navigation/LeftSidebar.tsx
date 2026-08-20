@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { X, ArrowRight, Home, Info, FolderDot, Zap, MessageSquare } from 'lucide-react';
 import { LumoraLogo } from '../common/LumoraLogo';
-import { DynamicPage } from '../../types';
+import { DynamicPage, SiteContent } from '../../types';
 import { ChevronDown } from 'lucide-react';
 
 interface LeftSidebarProps {
@@ -18,6 +18,7 @@ interface LeftSidebarProps {
   onSelectDynamicPage?: (slug: string) => void;
   theme?: 'dark' | 'light';
   toggleTheme?: () => void;
+  siteContent?: SiteContent;
 }
 
 export const LeftSidebar: React.FC<LeftSidebarProps> = ({
@@ -29,16 +30,17 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   activeDynamicSlug,
   dynamicPages,
   services,
+  siteContent,
 }) => {
   const navigate = useNavigate();
 
   const navItems = [
-    { id: 'home', path: '/', label: 'Home', icon: Home },
-    { id: 'about', path: '/about', label: 'About', icon: Info },
-    { id: 'portfolio', path: '/portfolio', label: 'Portfolio', icon: FolderDot },
-    { id: 'rnd', path: '/rnd', label: 'Rnd', icon: Zap },
-    { id: 'get-a-consultation', path: '/get-a-consultation', label: 'Get a Consultation', icon: MessageSquare },
-  ];
+    { id: 'home', path: '/', label: 'Home', icon: Home, show: siteContent?.navigationVisibility?.showHome !== false },
+    { id: 'about', path: '/about', label: 'About', icon: Info, show: siteContent?.navigationVisibility?.showAbout !== false },
+    { id: 'portfolio', path: '/portfolio', label: 'Portfolio', icon: FolderDot, show: siteContent?.navigationVisibility?.showPortfolio !== false },
+    { id: 'rnd', path: '/rnd', label: 'Rnd', icon: Zap, show: siteContent?.navigationVisibility?.showRnd !== false },
+    { id: 'get-a-consultation', path: '/get-a-consultation', label: 'Get a Consultation', icon: MessageSquare, show: siteContent?.navigationVisibility?.showConsultation !== false },
+  ].filter(item => item.show);
 
   const [digitalMarketingOpen, setDigitalMarketingOpen] = useState(false);
 

@@ -36,6 +36,7 @@ interface DynamicPageViewerProps {
   };
   consultationHeading?: string;
   consultationSubheading?: string;
+  dynamicPages?: DynamicPage[];
 }
 
 export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
@@ -45,6 +46,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
   contactInfo,
   consultationHeading,
   consultationSubheading,
+  dynamicPages,
 }) => {
   const navigate = useNavigate();
   const [activeModalStudy, setActiveModalStudy] = useState<any>(null);
@@ -504,8 +506,19 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                             onClick={(e) => {
                               e.preventDefault();
                               if (card.linkUrl) {
-                                navigate(`/${card.linkUrl}`);
-                                window.scrollTo({ top: 0, behavior: 'smooth' });
+                                const isExternal = card.linkUrl.startsWith('http');
+                                const isPageExists = dynamicPages ? dynamicPages.some(p => p.slug === card.linkUrl) : true;
+                                
+                                if (isExternal) {
+                                  window.open(card.linkUrl, '_blank');
+                                } else if (isPageExists || !dynamicPages) {
+                                  navigate(`/${card.linkUrl}`);
+                                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                                } else {
+                                  if (openConsultationModal) openConsultationModal();
+                                }
+                              } else {
+                                if (openConsultationModal) openConsultationModal();
                               }
                             }}
                             className="inline-flex items-center gap-1.5 text-[#5B8EE2] text-sm font-extrabold hover:text-blue-700 transition-colors cursor-pointer"
