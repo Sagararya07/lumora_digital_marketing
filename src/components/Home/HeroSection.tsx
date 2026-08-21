@@ -38,7 +38,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   return (
     <section 
       id="hero-section"
-      className="relative overflow-hidden pt-12 pb-20 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28 bg-white text-slate-900 transition-colors"
+      className="relative overflow-hidden pt-8 pb-16 sm:pt-16 sm:pb-24 lg:pt-20 lg:pb-28 bg-white text-slate-900 transition-colors"
     >
       {/* Radiant Ambient Light Blue & Purple Swirl Glow Orbs */}
       <div className="absolute top-0 right-1/4 w-[700px] h-[700px] rounded-full bg-gradient-to-tr from-[#8CB4F5]/15 via-[#D6A67B]/15 to-transparent blur-[160px] pointer-events-none" />

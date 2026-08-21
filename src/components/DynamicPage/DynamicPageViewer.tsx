@@ -195,7 +195,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
 
           if (sec.type === 'icon-hero') {
             return (
-              <section key={sec.id} className="relative overflow-hidden pt-28 pb-16 sm:pt-36 sm:pb-24 px-4 sm:px-8 bg-gradient-to-br from-[#5B8EE2]/5 via-[#D6A67B]/5 to-[#EC4899]/5 border-b border-[#E5E7EB]">
+              <section key={sec.id} className="relative overflow-hidden pt-16 pb-12 sm:pt-36 sm:pb-24 px-4 sm:px-8 bg-gradient-to-br from-[#5B8EE2]/5 via-[#D6A67B]/5 to-[#EC4899]/5 border-b border-[#E5E7EB]">
                 {/* Background Mesh Orbs */}
                 <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] rounded-full opacity-50 blur-[120px] pointer-events-none bg-[#5B8EE2]/20 z-0" />
                 <div className="absolute bottom-[-20%] right-[-10%] w-[600px] h-[600px] rounded-full opacity-40 blur-[120px] pointer-events-none bg-[#EC4899]/20 z-0" />
@@ -217,7 +217,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                       })()}
                     </div>
                   )}
-                  <h1 className="text-4xl sm:text-5xl font-black text-[#111827] leading-tight tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
+                  <h1 className="text-3xl sm:text-5xl font-black text-[#111827] leading-tight tracking-tight font-['Plus_Jakarta_Sans',sans-serif]">
                     {secTitle}
                   </h1>
                   <p className="text-[#4B5563] text-lg sm:text-xl leading-relaxed font-medium max-w-3xl">
@@ -472,7 +472,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                   </div>
 
                   {/* Scrollable Container */}
-                  <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:h-1.5 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:[background:linear-gradient(to_right,#5B8EE2,#D6A67B,#EC4899)] [&::-webkit-scrollbar-thumb]:rounded-full -mx-4 px-4 sm:mx-0 sm:px-0">
+                  <div className="flex overflow-x-auto gap-4 sm:gap-6 pb-8 snap-x snap-mandatory [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] -mx-4 px-4 sm:mx-0 sm:px-0">
                     {sec.cards?.map((card) => (
                       <div key={card.id} className="w-[280px] sm:w-[300px] shrink-0 snap-center bg-white rounded-3xl border border-[#E5E7EB] p-8 flex flex-col items-center text-center shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-300 group">
                         

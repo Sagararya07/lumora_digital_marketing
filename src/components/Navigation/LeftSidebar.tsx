@@ -80,7 +80,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
       {/* Side Menu Drawer Container */}
       <aside
         id="right-sidebar-navigation"
-        className={`fixed top-0 right-0 bottom-0 w-[260px] sm:w-[280px] z-50 bg-white text-[#111827] shadow-2xl flex flex-col transition-transform duration-300 ease-in-out border-l border-[#E5E7EB] ${
+        className={`fixed top-0 right-0 bottom-0 w-[85vw] max-w-[320px] sm:w-[320px] z-50 bg-white text-[#111827] shadow-2xl flex flex-col transition-transform duration-300 ease-in-out border-l border-[#E5E7EB] ${
           isOpenMobile ? 'translate-x-0' : 'translate-x-full'
         }`}
       >

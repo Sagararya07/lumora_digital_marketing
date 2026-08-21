@@ -115,7 +115,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   placeholder="e.g. John Smith"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
+                  className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-[16px] sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
                 />
               </div>
 
@@ -130,7 +130,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     placeholder="john@company.com"
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
+                    className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-[16px] sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
                   />
                 </div>
 
@@ -144,7 +144,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                     placeholder="+1 (555) 000-0000"
                     value={formData.phone}
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                    className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
+                    className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-[16px] sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
                   />
                 </div>
               </div>
@@ -158,7 +158,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   placeholder="e.g. Nexus Enterprises"
                   value={formData.companyName}
                   onChange={(e) => setFormData({ ...formData, companyName: e.target.value })}
-                  className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
+                  className="w-full px-3.5 py-2.5 bg-white border border-slate-200 rounded-xl text-[16px] sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
                 />
               </div>
 
@@ -171,14 +171,14 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
                   placeholder="Tell us what you want to achieve (e.g. More B2B leads, Higher ROI)..."
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  className="w-full px-3.5 py-2 bg-white border border-slate-200 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
+                  className="w-full px-3.5 py-2 bg-white border border-slate-200 rounded-xl text-[16px] sm:text-sm text-slate-900 placeholder-slate-400 focus:outline-none focus:border-[#729EE6] shadow-sm"
                 />
               </div>
 
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full py-3 px-4 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-200 flex items-center justify-center gap-2 transition-all"
+                className="w-full py-3.5 px-4 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-[15px] sm:text-base shadow-md shadow-blue-200 flex items-center justify-center gap-2 transition-all"
               >
                 {loading ? 'Sending Request...' : 'Submit'}
               </button>

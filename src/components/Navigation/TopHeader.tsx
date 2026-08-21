@@ -171,7 +171,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
           <button
             id="right-top-menu-icon-btn"
             onClick={onOpenMobileNav}
-            className="p-2.5 sm:p-3 rounded-full bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#5B8EE2] hover:bg-[#F2F6FC] text-slate-700 hover:text-[#5B8EE2] transition-all flex items-center justify-center group cursor-pointer"
+            className="p-2.5 sm:p-3 min-w-[44px] min-h-[44px] rounded-full bg-[#F8FAFC] border border-[#E5E7EB] hover:border-[#5B8EE2] hover:bg-[#F2F6FC] text-slate-700 hover:text-[#5B8EE2] transition-all flex items-center justify-center group cursor-pointer"
             title="Open Menu Drawer"
             aria-label="Open Navigation Menu Drawer"
           >

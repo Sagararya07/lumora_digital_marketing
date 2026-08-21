@@ -264,6 +264,8 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
                 {idx < 3 && (
                   <div className="hidden lg:block absolute top-1/4 right-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
                 )}
+                {/* Mobile Vertical Connector */}
+                <div className="block lg:hidden absolute -bottom-[3rem] left-1/2 -translate-x-1/2 h-[3rem] border-l-4 border-dashed border-slate-300 z-0"></div>
                 
                 {/* Hover Tooltip */}
                 <div className="absolute bottom-[90%] left-1/2 -translate-x-1/2 w-[280px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.12)] border border-slate-100 p-5 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:-translate-y-4 transition-all duration-300 z-50 pointer-events-none">
@@ -322,6 +324,10 @@ export const ProcessSection: React.FC<ProcessProps> = ({ steps }) => {
                 {/* Snake Connector Line Desktop (Left Arrow - Because flex-row-reverse, the visual left is DOM right side) */}
                 {reverseIdx < 3 && (
                   <div className="hidden lg:block absolute top-1/4 left-[-2.5rem] w-8 border-t-4 border-dashed border-slate-300 z-0"></div>
+                )}
+                {/* Mobile Vertical Connector */}
+                {reverseIdx < 3 && (
+                  <div className="block lg:hidden absolute -bottom-[3rem] left-1/2 -translate-x-1/2 h-[3rem] border-l-4 border-dashed border-slate-300 z-0"></div>
                 )}
                 
                 {/* Hover Tooltip */}
