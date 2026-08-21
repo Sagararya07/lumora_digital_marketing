@@ -1,0 +1,1893 @@
+import fs from 'fs';
+import path from 'path';
+
+const dataPath = path.join(process.cwd(), 'src/data/initialData.ts');
+let content = fs.readFileSync(dataPath, 'utf-8');
+
+const requiredServices = [
+  { title: "Diagnose Marketing", slug: "diagnose-marketing", iconName: "Activity" },
+  { title: "Target Audience Reach", slug: "target-audience-reach", iconName: "Crosshair" },
+  { title: "Search Engine Optimization (SEO)", slug: "search-engine-optimization", iconName: "Search" },
+  { title: "Social Media Marketing", slug: "social-media-marketing", iconName: "Share2" },
+  { title: "Paid Advertising Campaigns", slug: "paid-advertising-campaigns", iconName: "Megaphone" },
+  { title: "Performance Marketing", slug: "performance-marketing", iconName: "Target" },
+  { title: "Demand Generation", slug: "demand-generation", iconName: "TrendingUp" },
+  { title: "Lead Generation", slug: "lead-generation", iconName: "Users" },
+  { title: "Retargeting Marketing", slug: "retargeting-marketing", iconName: "RotateCcw" },
+  { title: "Influencer Marketing", slug: "influencer-marketing", iconName: "Star" },
+  { title: "Business Branding", slug: "business-branding", iconName: "Briefcase" },
+  { title: "Personal Branding", slug: "personal-branding", iconName: "User" },
+  { title: "Brand Management", slug: "brand-management", iconName: "Shield" },
+  { title: "AI Marketing Automation", slug: "ai-marketing-automation", iconName: "Cpu" },
+  { title: "Expert Monthly Audit", slug: "expert-monthly-audit", iconName: "FileSearch" }
+];
+
+const newServicesString = requiredServices.map(s => {
+  if (s.slug === 'diagnose-marketing') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Identify growth blockers, wasted ad spend, and hidden revenue opportunities.",
+      "fullDescription": "Before scaling your marketing efforts, you need to know exactly what is working, what is wasting budget, and where your hidden growth opportunities lie. Our Marketing Diagnosis process dissects your entire digital footprint—from technical SEO and paid ad performance to conversion funnels and competitor gaps.",
+      "iconName": "${s.iconName}",
+      "features": ["Technical SEO Audits", "Paid Media Spend Analysis", "Conversion Rate Optimization (CRO)", "Competitor Benchmarking"],
+      "deliverables": ["Comprehensive Audit Report", "Prioritized Action Plan", "Tech Stack Review", "Strategy Alignment Session"],
+      "recommendedFor": "Businesses experiencing stagnant growth or inefficient ad spend",
+      "badge": "Highly Recommended"
+    }`;
+  }
+  if (s.slug === 'demand-generation') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Create awareness, educate your market, and build a sustainable pipeline of high-intent buyers.",
+      "fullDescription": "Stop competing solely for the 3% of the market that is ready to buy today. Our Demand Generation strategies educate, engage, and nurture the remaining 97% of your total addressable market. By distributing high-value content and building omnipresent brand authority, we ensure that when prospects are ready to buy, you are their only logical choice.",
+      "iconName": "${s.iconName}",
+      "features": ["Omnichannel Content Distribution", "Account-Based Marketing (ABM)", "Webinar & Event Marketing", "Dark Social Strategies"],
+      "deliverables": ["Demand Gen Strategy Playbook", "Content Amplification Funnels", "Sales & Marketing Alignment", "Brand Awareness Metrics"],
+      "recommendedFor": "B2B Enterprises, SaaS, and high-ticket service providers",
+      "badge": "Strategic Growth"
+    }`;
+  }
+  if (s.slug === 'business-branding') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Build a distinctive business identity, command premium pricing, and secure lasting brand loyalty.",
+      "fullDescription": "Your brand is more than just a logo; it is the psychological relationship between your company and your consumers. We build robust Business Branding strategies that articulate your unique value proposition, establish market authority, and create memorable visual and verbal identities that resonate with your target audience.",
+      "iconName": "${s.iconName}",
+      "features": ["Brand Strategy & Positioning", "Visual Identity Design", "Brand Voice & Messaging", "Comprehensive Corporate Guidelines"],
+      "deliverables": ["Brand Architecture Blueprint", "Logo & Typography Suites", "Brand Tone of Voice Document", "Complete Brand Book"],
+      "recommendedFor": "Startups, enterprises scaling up, and legacy brands seeking a refresh",
+      "badge": "Premium"
+    }`;
+  }
+
+  if (s.slug === 'personal-branding') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Become the recognized authority in your industry and monetize your personal brand.",
+      "fullDescription": "In the modern digital economy, people buy from people they trust. A strong personal brand elevates you from a commodity to an industry thought leader. We help founders, executives, and industry experts build, scale, and monetize their personal brands through targeted content, PR, and strategic positioning.",
+      "iconName": "${s.iconName}",
+      "features": ["Executive Positioning", "LinkedIn Thought Leadership", "Digital PR & Media Features", "Content Creation & Video"],
+      "deliverables": ["Personal Brand Strategy", "Ghostwritten Content", "Media Kit", "Speaking Engagement Outreach"],
+      "recommendedFor": "Founders, C-Level Executives, and Industry Experts",
+      "badge": "High Impact"
+    }`;
+  }
+
+  if (s.slug === 'brand-management') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Protect your digital reputation, ensure brand consistency, and track equity over time.",
+      "fullDescription": "A brand is not built in a day, but its reputation can be damaged in seconds. Comprehensive Brand Management goes beyond visual consistency; it's about actively monitoring sentiment, protecting digital equity, and ensuring brand compliance across all touchpoints. We serve as the guardians of your brand's integrity.",
+      "iconName": "${s.iconName}",
+      "features": ["Reputation Management", "Brand Compliance", "Digital Asset Management", "Sentiment Analysis"],
+      "deliverables": ["Brand Monitoring Dashboard", "Crisis Response Playbook", "Asset Library Setup", "Quarterly Equity Reports"],
+      "recommendedFor": "Established enterprises, public figures, and scaling organizations",
+      "badge": "Guardian"
+    }`;
+  }
+
+  if (s.slug === 'ai-marketing-automation') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Hyper-personalize customer journeys, predict buying behaviors, and automate complex workflows at scale.",
+      "fullDescription": "Stop relying on manual, error-prone tasks. AI Marketing Automation allows you to scale your efforts exponentially without scaling your headcount. From AI-driven email sequencing and dynamic ad creative to intelligent chatbots and CRM syncing, we implement the technology that allows your team to do more with less while driving higher conversions.",
+      "iconName": "${s.iconName}",
+      "features": ["Predictive Lead Scoring", "Conversational AI Chatbots", "Dynamic Email Sequences", "Programmatic Ad Buying"],
+      "deliverables": ["Automation Architecture Blueprint", "CRM & API Integrations", "Custom Chatbot Deployment", "Machine Learning Optimization"],
+      "recommendedFor": "Data-driven companies, E-Commerce, and high-volume B2B sales teams",
+      "badge": "Cutting-Edge"
+    }`;
+  }
+
+  if (s.slug === 'expert-monthly-audit') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Continuous oversight, forensic analysis, and strategic alignment for your digital ecosystem.",
+      "fullDescription": "The digital landscape changes daily—what worked last month might be wasting budget today. Our Expert Monthly Audit service provides ongoing, rigorous oversight of your entire marketing ecosystem. We act as an external board of advisors, evaluating your team's execution, auditing ad accounts for inefficiencies, and ensuring your strategy stays aligned with your revenue goals.",
+      "iconName": "${s.iconName}",
+      "features": ["Paid Media Forensic Audits", "Technical SEO Tracking", "Conversion Funnel Analysis", "Competitor Movement Tracking"],
+      "deliverables": ["Executive Strategy Briefing", "Actionable Fix Roadmap", "Monthly Advisory Call", "Algorithmic Diagnostics"],
+      "recommendedFor": "Companies with in-house teams or multiple agency partners",
+      "badge": "Advisory"
+    }`;
+  }
+
+  if (s.slug === 'search-engine-optimization') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Dominate search results and capture high-intent, revenue-generating organic traffic.",
+      "fullDescription": "Being on the second page of Google is the same as not existing. We build robust, technically sound, and content-rich SEO strategies that drive sustainable organic traffic. Our approach goes beyond vanity metrics; we focus on ranking for the revenue-generating keywords that your ideal customers are actively searching for.",
+      "iconName": "${s.iconName}",
+      "features": ["Technical SEO Audits", "On-Page & Keyword Strategy", "Topical Authority Content", "High-Authority Link Building"],
+      "deliverables": ["Keyword Mapping Blueprint", "Technical Remediation Plan", "Monthly Link Reports", "Organic Traffic Dashboards"],
+      "recommendedFor": "B2B SaaS, E-commerce, and high-growth startups",
+      "badge": "Core Strategy"
+    }`;
+  }
+
+  if (s.slug === 'target-audience-reach') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Identify, isolate, and engage your exact demographic with surgical precision.",
+      "fullDescription": "Broad, untargeted marketing is a massive drain on your budget. Target Audience Reach is about identifying and engaging the exact demographic, firmographic, and psychographic profiles most likely to buy your product. We leverage advanced data modeling and programmatic networks to put your brand directly in front of the right people—locally, nationally, or globally.",
+      "iconName": "${s.iconName}",
+      "features": ["Persona & Intent Mapping", "Programmatic ABM Targeting", "Geo-Fencing & Local Targeting", "Cross-Device Retargeting"],
+      "deliverables": ["Audience Intelligence Report", "Custom Audience Building", "Programmatic Media Plan", "Cost-Per-Acquisition Optimization"],
+      "recommendedFor": "B2B Enterprises, Niche Retailers, and Event Promoters",
+      "badge": "High Conversion"
+    }`;
+  }
+
+  if (s.slug === 'social-media-marketing') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Build brand authority, foster trust, and drive active audience engagement.",
+      "fullDescription": "Social media is no longer just a branding exercise; it is a primary driver of customer acquisition and retention. We build dynamic, platform-specific strategies that turn passive scrollers into active brand advocates. From high-production video content to community management, we ensure your brand voice cuts through the noise and drives measurable business impact.",
+      "iconName": "${s.iconName}",
+      "features": ["Short-Form Video Production", "B2B LinkedIn Authority", "Community Management", "Influencer Partnerships"],
+      "deliverables": ["Social Strategy Playbook", "Monthly Content Calendar", "Video & Graphic Assets", "Engagement & Growth Reports"],
+      "recommendedFor": "DTC E-commerce, B2B Thought Leaders, and SaaS Brands",
+      "badge": "Community Focus"
+    }`;
+  }
+
+  if (s.slug === 'paid-advertising-campaigns') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Highly engineered paid media ecosystems that drive immediate, measurable ROI.",
+      "fullDescription": "Paid advertising is the fastest way to scale your revenue—if executed correctly. We don't just 'run ads'; we build highly engineered paid media ecosystems across search, social, and programmatic networks. By combining relentless A/B testing with advanced bidding algorithms, we eliminate wasted spend and drive highly qualified leads and direct sales.",
+      "iconName": "${s.iconName}",
+      "features": ["Google & Bing Search Ads", "Paid Social Campaigns", "Programmatic Display", "E-Commerce Shopping Ads"],
+      "deliverables": ["Funnel Architecture Map", "Ad Creative & Copy", "Algorithmic Bidding Strategy", "Daily ROAS Monitoring"],
+      "recommendedFor": "Aggressive Growth Companies and Performance-Driven E-Commerce",
+      "badge": "Revenue Driver"
+    }`;
+  }
+
+  if (s.slug === 'performance-marketing') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Data-driven marketing that strictly aligns every dollar spent with bottom-line revenue.",
+      "fullDescription": "Traditional marketing hopes for results; Performance Marketing guarantees accountability. We align every marketing dollar spent directly with your bottom line. By obsessing over metrics like Cost Per Acquisition (CPA), Customer Lifetime Value (LTV), and Return on Ad Spend (ROAS), we build growth engines that scale profitably and predictably.",
+      "iconName": "${s.iconName}",
+      "features": ["Conversion Rate Optimization", "Multi-Touch Attribution", "Affiliate Marketing", "LTV/CAC Optimization"],
+      "deliverables": ["Performance Growth Model", "Server-Side Tracking Setup", "A/B Testing Roadmap", "Cohort Analysis Reports"],
+      "recommendedFor": "Scale-Ups, E-Commerce Brands, and Data-Driven Enterprises",
+      "badge": "Scalable Growth"
+    }`;
+  }
+
+  if (s.slug === 'lead-generation') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Build a predictable pipeline of high-intent, qualified sales prospects.",
+      "fullDescription": "Traffic means nothing if it doesn't convert into sales conversations. Our Lead Generation services are ruthlessly focused on one thing: filling your sales pipeline with qualified prospects who have an immediate need for your solution. We optimize the entire conversion journey to ensure maximum lead velocity at the lowest possible cost.",
+      "iconName": "${s.iconName}",
+      "features": ["Inbound Lead Funnels", "Outbound Automation", "Lead Magnet Creation", "Automated Lead Scoring"],
+      "deliverables": ["Conversion-Optimized Landing Pages", "CRM Integration Setup", "Email Nurture Sequences", "Cost-Per-Lead (CPL) Tracking"],
+      "recommendedFor": "B2B Services, Consultancies, and High-Ticket Local Services",
+      "badge": "Sales Engine"
+    }`;
+  }
+
+  if (s.slug === 'retargeting-marketing') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Recapture lost traffic and turn hesitant visitors into high-value customers.",
+      "fullDescription": "97% of your website visitors will leave without taking action. If you aren't bringing them back, you are leaving massive amounts of revenue on the table. Our Retargeting Marketing services deploy highly personalized, cross-channel campaigns that follow your high-intent prospects across the web, reminding them why they need your solution and giving them the exact push they need to convert.",
+      "iconName": "${s.iconName}",
+      "features": ["Dynamic E-Commerce Retargeting", "Cross-Channel Pixel Tracking", "Cart Abandonment Sequences", "Sequential Ad Storytelling"],
+      "deliverables": ["Omnipresence Pixel Setup", "Dynamic Ad Creative", "Audience Segmentation Strategy", "Recovery Revenue Dashboard"],
+      "recommendedFor": "E-Commerce, SaaS, and High-Consideration B2B Buyers",
+      "badge": "Revenue Recovery"
+    }`;
+  }
+
+  if (s.slug === 'influencer-marketing') {
+    return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Partner with highly trusted creators to drive massive authentic brand awareness.",
+      "fullDescription": "Consumers trust people, not logos. Influencer Marketing is no longer about vanity metrics or generic endorsements; it is about partnering with highly trusted creators who can authentically integrate your product into their audience's daily lives. We manage the entire lifecycle—from creator discovery and rigorous contract negotiation to campaign execution and strict ROI tracking.",
+      "iconName": "${s.iconName}",
+      "features": ["Micro-Influencer Campaigns", "B2B Thought Leader Collabs", "User-Generated Content (UGC)", "Affiliate Creator Networks"],
+      "deliverables": ["Creator Discovery & Vetting", "Creative Briefs & Contracts", "Product Seeding Logistics", "Promo Code ROI Tracking"],
+      "recommendedFor": "DTC Brands, App Developers, and B2B SaaS Innovators",
+      "badge": "Viral Scale"
+    }`;
+  }
+
+  return `
+    {
+      "id": "${s.slug}",
+      "title": "${s.title}",
+      "shortDescription": "Comprehensive ${s.title} services tailored for your business growth.",
+      "fullDescription": "Our ${s.title} strategy drives sustainable and scalable results. We leverage industry best practices and data-driven insights to maximize your ROI.",
+      "iconName": "${s.iconName}",
+      "features": ["Strategic Planning", "Data-Driven Execution", "Continuous Optimization", "Transparent Reporting"],
+      "deliverables": ["Monthly Reports", "Performance Dashboard", "Strategy Sessions", "Dedicated Account Manager"],
+      "recommendedFor": "Growing businesses and enterprises",
+      "badge": "Featured"
+    }`;
+}).join(',');
+
+const newServicesBlock = `"services": [${newServicesString}\n  ],`;
+content = content.replace(/"services":\s*\[[\s\S]*?\n\s*\],\s*"whoShouldUse":/m, `${newServicesBlock}\n  "whoShouldUse":`);
+
+const newPagesString = requiredServices.map((s, idx) => {
+  if (s.slug === 'diagnose-marketing') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Marketing Diagnosis & Audit Services",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Stop Guessing. Start Scaling with a Data-Driven Marketing Diagnosis.",
+        "content": "Before investing heavily in new campaigns, you need absolute clarity on your current performance. Our Marketing Diagnosis process dissects your entire digital ecosystem—identifying technical roadblocks, wasted advertising budget, broken conversion funnels, and untapped market opportunities. We provide a clear, actionable roadmap to turn inefficiencies into profitable growth.",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "What We Analyze",
+        "content": "A 360-degree deep dive into your digital marketing ecosystem.",
+        "cards": [
+          { "id": "card-1", "title": "SEO & Organic Traffic", "description": "Checking indexability, keyword gaps, backlink health, and content relevancy.", "iconName": "Search" },
+          { "id": "card-2", "title": "Paid Media & Advertising", "description": "Auditing ROAS, Cost-Per-Acquisition, bidding strategies, and campaign structure.", "iconName": "MousePointerClick" },
+          { "id": "card-3", "title": "Conversion Rate (CRO)", "description": "Analyzing user journeys, landing page friction, and lead capture forms.", "iconName": "TrendingUp" },
+          { "id": "card-4", "title": "Competitor Benchmarking", "description": "Identifying gaps in your market positioning and uncovering their strategies.", "iconName": "Crosshair" },
+          { "id": "card-5", "title": "Tech Stack & Analytics", "description": "Ensuring tracking pixels, GA4, and CRMs are accurately aligned and firing.", "iconName": "Settings" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "Our Diagnostic Process",
+        "content": "We use a proven, data-first approach to uncover inefficiencies and map out a strategic recovery and growth plan.",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Discovery & Data Collection", "description": "We gather historical data, gain access to your platforms, and align on business goals." },
+          { "id": "hw-2", "title": "Technical Deep Dive", "description": "Our experts manually audit your ad accounts, website code, and tracking systems." },
+          { "id": "hw-3", "title": "Competitor & Market Analysis", "description": "We evaluate your positioning against top industry competitors to find strategic gaps." },
+          { "id": "hw-4", "title": "Strategic Roadmapping", "description": "We compile our findings into a prioritized, actionable growth roadmap." },
+          { "id": "hw-5", "title": "Implementation Handoff", "description": "We review the plan with you and seamlessly transition into execution mode." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Diagnostic Success Stories",
+        "content": "See how our comprehensive audits have transformed struggling campaigns into highly profitable growth engines.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "E-Commerce Revenue Recovery",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+            "description": "Our diagnosis identified a critical tracking bug and massive landing page friction. After implementing our fixes, they saw a 45% increase in conversion rate and a $120k revenue boost within 30 days.",
+            "points": [
+              { "id": "p1", "title": "Tracking Fixed", "iconName": "CheckCircle" },
+              { "id": "p2", "title": "Friction Removed", "iconName": "Zap" },
+              { "id": "p3", "title": "45% CRO Boost", "iconName": "TrendingUp" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "B2B Ad Spend Optimization",
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "We audited a $50k/mo Google Ads account for a SaaS company, eliminating 60% of wasted spend on irrelevant keywords while doubling their qualified enterprise leads.",
+            "points": [
+              { "id": "p1", "title": "60% Waste Cut", "iconName": "Scissors" },
+              { "id": "p2", "title": "Leads Doubled", "iconName": "Users" },
+              { "id": "p3", "title": "Lower CAC", "iconName": "ArrowDown" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our marketing diagnostic process.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "How long does a full marketing diagnosis take?",
+            "description": "Typically, a comprehensive audit takes 1 to 2 weeks, depending on the complexity of your active campaigns, the size of your website, and your overall digital footprint."
+          },
+          {
+            "id": "faq-2",
+            "title": "What do we receive at the end of the audit?",
+            "description": "You will receive a highly detailed, plain-English report containing our findings, data-backed insights, and a prioritized action plan detailing exactly what needs to be fixed and scaled."
+          },
+          {
+            "id": "faq-3",
+            "title": "Will you implement the fixes for us?",
+            "description": "Yes! While the diagnosis provides you with a standalone roadmap, our team is fully equipped to transition seamlessly from the audit phase into full implementation and ongoing campaign management."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+  
+  if (s.slug === 'demand-generation') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Enterprise Demand Generation Services",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Don't Just Capture Demand. Create It.",
+        "content": "Most companies fight fiercely over the 3% of the market that is ready to buy today, leading to skyrocketing acquisition costs and diminishing returns. Lumora's Demand Generation strategies shift the paradigm by actively educating, engaging, and nurturing the other 97%. Through high-value content distribution, omnipresent branding, and strategic market positioning, we make sure that when your prospects enter the buying cycle, you are the only logical choice.",
+        "mediaUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Demand Generation Channels",
+        "content": "We deploy an omnipresent strategy across the platforms where your buyers learn and engage.",
+        "cards": [
+          { "id": "card-1", "title": "Content Amplification", "description": "Distributing whitepapers, case studies, and insights across social networks to build undeniable authority.", "iconName": "Share2" },
+          { "id": "card-2", "title": "Account-Based Marketing", "description": "Deploying hyper-targeted, personalized campaigns to high-value enterprise accounts.", "iconName": "Briefcase" },
+          { "id": "card-3", "title": "Webinars & Live Events", "description": "Building interactive, value-driven virtual events that foster trust and rapid engagement.", "iconName": "Video" },
+          { "id": "card-4", "title": "Dark Social Strategy", "description": "Leveraging communities, podcasts, and untrackable word-of-mouth channels to drive organic demand.", "iconName": "Users" },
+          { "id": "card-5", "title": "Nurture Workflows", "description": "Automated email and retargeting sequences that keep your brand top-of-mind over long sales cycles.", "iconName": "Mail" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "Our Demand Creation Process",
+        "content": "A systematic approach to turning cold prospects into brand advocates and eventually, loyal customers.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744094-24638ea0b3b5?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Audience Intelligence", "description": "Mapping your Total Addressable Market and identifying key pain points." },
+          { "id": "hw-2", "title": "Content Strategy", "description": "Developing un-gated, highly actionable content that solves your buyers' immediate problems." },
+          { "id": "hw-3", "title": "Omnichannel Distribution", "description": "Pushing content natively through LinkedIn, industry PR, YouTube, and targeted display networks." },
+          { "id": "hw-4", "title": "Engagement Tracking", "description": "Monitoring account-level engagement (ABM) to identify surging buyer intent." },
+          { "id": "hw-5", "title": "Sales Alignment", "description": "Seamlessly passing highly-educated, warm prospects to your sales team with full context." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Demand Generation In Action",
+        "content": "How we built sustainable pipelines for enterprise clients.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Scaling a B2B SaaS Pipeline",
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "By shifting budget from high-cost bottom-of-funnel search ads to top-of-funnel LinkedIn thought leadership and webinars, we reduced their Customer Acquisition Cost by 35% while increasing total pipeline volume by 3x over 6 months.",
+            "points": [
+              { "id": "p1", "title": "3x Pipeline", "iconName": "TrendingUp" },
+              { "id": "p2", "title": "35% Lower CAC", "iconName": "ArrowDown" },
+              { "id": "p3", "title": "Brand Authority", "iconName": "Award" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "Enterprise Tech Adoption",
+            "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+            "description": "Implemented an Account-Based Marketing (ABM) strategy targeting the Fortune 500. Through hyper-personalized content and direct mail, we achieved a 42% meeting booking rate among target accounts.",
+            "points": [
+              { "id": "p1", "title": "ABM Strategy", "iconName": "Target" },
+              { "id": "p2", "title": "42% Meeting Rate", "iconName": "Calendar" },
+              { "id": "p3", "title": "Enterprise Deals", "iconName": "Briefcase" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our Demand Generation strategies.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "What is the difference between Lead Generation and Demand Generation?",
+            "description": "Lead Generation focuses on capturing existing demand (collecting contact info from people actively looking to buy). Demand Generation focuses on creating demand—educating the market so they eventually realize they have a problem your product solves."
+          },
+          {
+            "id": "faq-2",
+            "title": "How long does Demand Generation take to show ROI?",
+            "description": "Because it targets the 97% of the market not ready to buy today, demand generation is a long-term play. While leading indicators (engagement, branded search volume) improve in weeks, revenue impact is typically seen between months 3 to 6."
+          },
+          {
+            "id": "faq-3",
+            "title": "How do you measure the success of Demand Generation?",
+            "description": "We measure success through metrics like account-level engagement, increase in direct and branded organic search traffic, pipeline velocity, and ultimately, closed-won revenue from influenced accounts."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+  
+  if (s.slug === 'business-branding') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Business & Corporate Branding Services",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Build a Brand That Commands Authority and Loyalty.",
+        "content": "A logo is not a brand. A brand is the psychological relationship and set of expectations established between your business and your customers. Lumora builds comprehensive, robust Business Branding strategies that articulate your unique value proposition, establish market dominance, and create memorable visual and verbal identities that deeply resonate with your target demographic. We craft brands that can charge premium pricing and survive market shifts.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Brand Development Pillars",
+        "content": "Everything you need to stand out, look premium, and sound authentic.",
+        "cards": [
+          { "id": "card-1", "title": "Brand Strategy & Positioning", "description": "Defining your mission, vision, core values, and precise market positioning.", "iconName": "Compass" },
+          { "id": "card-2", "title": "Visual Identity Design", "description": "Crafting premium logos, color palettes, typography, and visual assets.", "iconName": "Palette" },
+          { "id": "card-3", "title": "Brand Voice & Messaging", "description": "Establishing a unique tone of voice, key messages, and elevator pitches.", "iconName": "MessageCircle" },
+          { "id": "card-4", "title": "Corporate Guidelines", "description": "Creating comprehensive Brand Books to ensure consistency across all touchpoints.", "iconName": "BookOpen" },
+          { "id": "card-5", "title": "Rebranding & Refresh", "description": "Modernizing legacy brands without losing existing customer equity.", "iconName": "RefreshCw" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "Our Branding Methodology",
+        "content": "We don't just design; we strategically engineer your brand identity from the ground up.",
+        "mediaUrl": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Discovery & Audit", "description": "Immersing ourselves in your industry, interviewing stakeholders, and auditing current assets." },
+          { "id": "hw-2", "title": "Market Positioning", "description": "Identifying the 'white space' in your industry where your brand can lead unopposed." },
+          { "id": "hw-3", "title": "Concept Creation", "description": "Presenting diverse visual and verbal directions based on the approved strategy." },
+          { "id": "hw-4", "title": "Refinement", "description": "Iterating on the chosen concept to achieve perfection down to the smallest detail." },
+          { "id": "hw-5", "title": "Rollout & Activation", "description": "Delivering all assets, guidelines, and launch strategies to introduce the brand to the world." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Branding Success Stories",
+        "content": "See how our brand transformations have elevated businesses to new heights.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Scaling a Fintech Startup",
+            "bgImageUrl": "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=1200",
+            "description": "We built a complete visual identity and trust-centric brand voice for a new Fintech app. The cohesive, premium branding helped them secure a $15M Series A funding round within 6 months of launch.",
+            "points": [
+              { "id": "p1", "title": "Visual Identity", "iconName": "Palette" },
+              { "id": "p2", "title": "$15M Funded", "iconName": "DollarSign" },
+              { "id": "p3", "title": "Trust Established", "iconName": "Shield" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "Legacy Retailer Rebrand",
+            "bgImageUrl": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1200",
+            "description": "A 30-year-old retail chain was losing market share to younger competitors. We executed a modern rebrand while preserving their heritage, resulting in a 25% increase in Gen-Z and Millennial foot traffic.",
+            "points": [
+              { "id": "p1", "title": "Modernized", "iconName": "RefreshCw" },
+              { "id": "p2", "title": "25% New Demo", "iconName": "Users" },
+              { "id": "p3", "title": "Heritage Kept", "iconName": "Award" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our Business Branding services.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "What is included in a typical Brand Identity package?",
+            "description": "Our packages usually include Brand Strategy (Positioning, Mission, Values), Visual Identity (Logo suite, Color Palette, Typography), Brand Voice guidelines, and a comprehensive Brand Book detailing how to use these assets."
+          },
+          {
+            "id": "faq-2",
+            "title": "How long does a full rebrand take?",
+            "description": "A comprehensive rebrand—from initial discovery to final rollout—typically takes between 4 to 8 weeks, depending on the size of your organization and the number of deliverables required."
+          },
+          {
+            "id": "faq-3",
+            "title": "Why is Brand Positioning so important?",
+            "description": "Positioning determines how your target audience perceives you relative to your competitors. Without strong positioning, you compete solely on price. With it, you compete on unique value, allowing you to charge premium rates."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'personal-branding') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Executive & Personal Branding Services",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Become the Recognized Authority in Your Industry.",
+        "content": "In today's digital-first economy, people don't just buy from companies—they buy from people they trust. A powerful personal brand elevates you from a commodity to an industry thought leader, opening doors to new partnerships, speaking engagements, and inbound revenue. We help founders, executives, and subject matter experts build, scale, and monetize their personal brands through highly strategic content, PR, and positioning.",
+        "mediaUrl": "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Personal Brand Pillars",
+        "content": "A multi-channel approach to establishing you as the go-to expert.",
+        "cards": [
+          { "id": "card-1", "title": "Executive Positioning", "description": "Defining your unique angle, core values, and industry expertise.", "iconName": "UserCheck" },
+          { "id": "card-2", "title": "LinkedIn Thought Leadership", "description": "Professional ghostwriting and network growth strategies on LinkedIn.", "iconName": "MessageSquare" },
+          { "id": "card-3", "title": "Digital PR & Features", "description": "Securing podcast interviews, article placements, and media mentions.", "iconName": "Mic" },
+          { "id": "card-4", "title": "Content & Video Production", "description": "High-quality, short-form video content to humanize your brand.", "iconName": "Video" },
+          { "id": "card-5", "title": "Monetization Strategy", "description": "Turning your growing audience into a tangible, revenue-generating asset.", "iconName": "DollarSign" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "How We Build Your Brand",
+        "content": "A turnkey solution for busy executives who want maximum impact with minimal time commitment.",
+        "mediaUrl": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "The Expert Audit", "description": "We assess your current digital footprint and identify your most valuable knowledge." },
+          { "id": "hw-2", "title": "The Narrative Blueprint", "description": "We craft your unique story, content pillars, and distinctive voice." },
+          { "id": "hw-3", "title": "Omnichannel Production", "description": "Our team ghostwrites, designs, and produces a steady pipeline of content for you." },
+          { "id": "hw-4", "title": "Audience Growth", "description": "We execute proven engagement strategies to rapidly grow your targeted following." },
+          { "id": "hw-5", "title": "Authority Scaling", "description": "We leverage your growing audience to secure high-tier speaking gigs and PR." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Thought Leadership Success",
+        "content": "How we turned industry experts into undeniable authorities.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Scaling a SaaS Founder",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1200",
+            "description": "We took a relatively unknown SaaS founder and positioned them as a top voice in B2B software. Within 8 months, their LinkedIn presence drove over $500k in inbound pipeline for their company.",
+            "points": [
+              { "id": "p1", "title": "$500k Pipeline", "iconName": "DollarSign" },
+              { "id": "p2", "title": "Top Voice Badge", "iconName": "Award" },
+              { "id": "p3", "title": "Zero Ad Spend", "iconName": "Zap" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "Executive Thought Leadership",
+            "bgImageUrl": "https://images.unsplash.com/photo-1475503572774-15a45e5d30b9?q=80&w=1200",
+            "description": "A seasoned CEO wanted to pivot into public speaking. By completely revamping their personal brand and pushing out high-value insights, they grew their following by 400% and secured 3 major keynote gigs.",
+            "points": [
+              { "id": "p1", "title": "400% Growth", "iconName": "TrendingUp" },
+              { "id": "p2", "title": "3 Keynotes", "iconName": "Mic" },
+              { "id": "p3", "title": "Media Features", "iconName": "Star" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our Personal Branding process.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "Do I need to write my own content?",
+            "description": "No. Our expert ghostwriting team captures your unique voice through short, efficient interviews. We write the content, you approve it, and we publish it."
+          },
+          {
+            "id": "faq-2",
+            "title": "How long does it take to see results?",
+            "description": "While visibility and engagement often increase within the first few weeks, true authority and consistent inbound opportunities typically compound over 3 to 6 months."
+          },
+          {
+            "id": "faq-3",
+            "title": "What platforms do you focus on?",
+            "description": "We tailor the platform strategy to where your specific target audience lives. For B2B executives, this is almost exclusively LinkedIn and X (Twitter), occasionally supplemented with YouTube."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'brand-management') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Comprehensive Brand Management Services",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Protect, Monitor, and Evolve Your Most Valuable Asset.",
+        "content": "A brand's reputation is its most powerful revenue driver—but as your company scales, maintaining consistency and positive sentiment becomes increasingly complex. Comprehensive Brand Management is the active, ongoing process of protecting your digital equity, ensuring strict compliance across all internal and external touchpoints, and strategically evolving your narrative as market dynamics shift. We serve as the vigilant guardians of your brand's integrity.",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Brand Guardianship Pillars",
+        "content": "A proactive suite of services to secure and grow your market position.",
+        "cards": [
+          { "id": "card-1", "title": "Reputation Management", "description": "Active monitoring of brand sentiment, reviews, and rapid crisis response.", "iconName": "ShieldAlert" },
+          { "id": "card-2", "title": "Brand Compliance", "description": "Ensuring visual and verbal consistency across teams, affiliates, and vendors.", "iconName": "CheckSquare" },
+          { "id": "card-3", "title": "Digital Asset Management", "description": "Organizing and distributing brand collateral securely and efficiently.", "iconName": "FolderLock" },
+          { "id": "card-4", "title": "Equity Tracking", "description": "Measuring brand awareness, share of voice, and perceived market value over time.", "iconName": "BarChart2" },
+          { "id": "card-5", "title": "Brand Evolution", "description": "Strategic, incremental refreshes to keep the brand modern without losing core identity.", "iconName": "RefreshCw" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Management Process",
+        "content": "How we take control of your brand ecosystem to ensure flawless execution.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Baseline Audit", "description": "Assessing current brand perception, identifying inconsistencies, and mapping vulnerabilities." },
+          { "id": "hw-2", "title": "Asset Centralization", "description": "Creating a single source of truth for all logos, fonts, and approved messaging." },
+          { "id": "hw-3", "title": "Proactive Monitoring", "description": "Deploying advanced social listening and sentiment analysis tools 24/7." },
+          { "id": "hw-4", "title": "Enforcement & Training", "description": "Educating internal teams and partners on strict adherence to brand guidelines." },
+          { "id": "hw-5", "title": "Quarterly Equity Reviews", "description": "Measuring the ROI of brand activities and adjusting strategies for growth." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Brand Guardianship Success",
+        "content": "How we have protected and streamlined major brands.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Global Enterprise Compliance",
+            "bgImageUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200",
+            "description": "A multinational corporation was suffering from fragmented branding across 14 regional offices. We centralized their asset management and enforced compliance, resulting in a unified global presence and saving 40 hours a month in design revisions.",
+            "points": [
+              { "id": "p1", "title": "100% Compliance", "iconName": "CheckCircle" },
+              { "id": "p2", "title": "40hrs Saved/Mo", "iconName": "Clock" },
+              { "id": "p3", "title": "Unified Identity", "iconName": "Globe" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "Crisis Mitigation & Recovery",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1200",
+            "description": "Following a negative PR incident, a major retail brand's online sentiment dropped to 30% positive. Through rapid response protocols and strategic positive content amplification, we rebuilt their sentiment to 85% positive within 4 months.",
+            "points": [
+              { "id": "p1", "title": "85% Positive", "iconName": "TrendingUp" },
+              { "id": "p2", "title": "Rapid Response", "iconName": "Zap" },
+              { "id": "p3", "title": "Trust Restored", "iconName": "Shield" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our Brand Management approach.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "What is the difference between Branding and Brand Management?",
+            "description": "Branding is the initial creation of the identity (the strategy, logo, and voice). Brand Management is the ongoing, daily protection, execution, and measurement of that identity to ensure it retains its value."
+          },
+          {
+            "id": "faq-2",
+            "title": "How do you measure brand equity?",
+            "description": "We measure brand equity through a combination of Share of Voice (SOV) compared to competitors, branded organic search volume growth, automated sentiment analysis, and direct customer perception surveys."
+          },
+          {
+            "id": "faq-3",
+            "title": "Do you handle PR crises?",
+            "description": "Yes. Our reputation management services include rapid response protocols to immediately mitigate damage during negative PR events, followed by long-term strategies to rebuild trust and positive sentiment."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'ai-marketing-automation') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "AI Marketing Automation Solutions",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Scale Your Marketing Efforts with Artificial Intelligence.",
+        "content": "Stop relying on manual, error-prone tasks. AI Marketing Automation allows you to hyper-personalize customer journeys at scale, predict buying behaviors before they happen, and automate complex workflows. From AI-driven email sequencing and dynamic ad creative to intelligent chatbots and seamless CRM syncing, we implement the cutting-edge technology that empowers your team to do more with less while significantly driving up conversion rates.",
+        "mediaUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Automation Capabilities",
+        "content": "Deploying machine learning to optimize every stage of your funnel.",
+        "cards": [
+          { "id": "card-1", "title": "AI-Driven Email Sequences", "description": "Predictive send times and dynamic content tailored to individual user behavior.", "iconName": "Mail" },
+          { "id": "card-2", "title": "Conversational AI", "description": "Intelligent chatbots capable of 24/7 lead qualification and customer support.", "iconName": "MessageCircle" },
+          { "id": "card-3", "title": "CRM & Data Sync", "description": "Eliminating manual data entry through seamless API and webhook integrations.", "iconName": "Database" },
+          { "id": "card-4", "title": "Programmatic Bidding", "description": "AI algorithms optimizing your ad spend and bid strategies in real-time.", "iconName": "MousePointerClick" },
+          { "id": "card-5", "title": "Predictive Lead Scoring", "description": "Using historical data to identify exactly which prospects are ready to buy right now.", "iconName": "Target" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Implementation Process",
+        "content": "A rigorous, phased approach to integrating AI into your marketing ecosystem securely.",
+        "mediaUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Workflow Audit", "description": "We map out your current manual processes to identify high-impact automation opportunities." },
+          { "id": "hw-2", "title": "Tech Stack Integration", "description": "Connecting your CRMs, analytics APIs, and marketing platforms into one cohesive brain." },
+          { "id": "hw-3", "title": "Logic & Trigger Setup", "description": "Building the complex 'if/then' rules and machine learning parameters for your campaigns." },
+          { "id": "hw-4", "title": "Testing & QA", "description": "Running extensive simulations to ensure flawless execution across all possible user journeys." },
+          { "id": "hw-5", "title": "Continuous Learning", "description": "Monitoring the AI's performance and training the models to improve conversion rates over time." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "AI Automation Success Stories",
+        "content": "How we turned manual processes into intelligent revenue engines.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Automating B2B Lead Nurturing",
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "We replaced a static drip campaign with an AI-driven behavioral sequence for a SaaS company. This hyper-personalization increased email open rates by 40% and reduced their average sales cycle length by 22 days.",
+            "points": [
+              { "id": "p1", "title": "40% Higher Opens", "iconName": "Mail" },
+              { "id": "p2", "title": "22 Days Faster", "iconName": "Clock" },
+              { "id": "p3", "title": "Behavior Triggers", "iconName": "Zap" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "E-Commerce Cart Recovery",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+            "description": "Implemented a predictive discount AI that analyzed user behavior to offer dynamic, individualized incentives. It successfully recovered 35% of abandoned carts without relying on blanket margin-killing discounts.",
+            "points": [
+              { "id": "p1", "title": "35% Recovery", "iconName": "TrendingUp" },
+              { "id": "p2", "title": "Margin Protected", "iconName": "Shield" },
+              { "id": "p3", "title": "Dynamic Pricing", "iconName": "DollarSign" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about integrating AI Marketing Automation.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "Will AI replace my marketing team?",
+            "description": "No. AI eliminates the tedious, repetitive tasks (like manual data entry and generic email blasts), freeing your marketing and sales teams to focus on high-level strategy, creative direction, and closing deals."
+          },
+          {
+            "id": "faq-2",
+            "title": "What CRMs and tools do you integrate with?",
+            "description": "We are platform-agnostic and regularly build integrations across HubSpot, Salesforce, Marketo, ActiveCampaign, Klaviyo, and custom REST APIs."
+          },
+          {
+            "id": "faq-3",
+            "title": "Is my customer data safe?",
+            "description": "Absolutely. All AI automations we deploy are built with strict data privacy protocols, GDPR/CCPA compliance, and secure API gateways to ensure your proprietary data remains yours."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'expert-monthly-audit') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Expert Monthly Marketing Audits",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Continuous Oversight for Peak Performance.",
+        "content": "The digital landscape changes daily—what worked last month might be bleeding your budget today. Our Expert Monthly Audit service provides rigorous, objective oversight of your entire marketing ecosystem. We act as your external board of advisors, evaluating your internal team's execution, auditing ad accounts for hidden inefficiencies, and ensuring your overarching strategy stays perfectly aligned with your revenue goals.",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Monthly Audit Deliverables",
+        "content": "A forensic deep-dive into the health of your digital presence.",
+        "cards": [
+          { "id": "card-1", "title": "Paid Media Forensics", "description": "Deep dive into Ad spend, ROAS, wasted keywords, and bidding inefficiencies.", "iconName": "DollarSign" },
+          { "id": "card-2", "title": "Technical SEO Tracking", "description": "Monthly checks for crawl errors, Core Web Vitals drops, and indexation issues.", "iconName": "Search" },
+          { "id": "card-3", "title": "Funnel Analysis", "description": "Tracking user drop-offs and friction points across your primary conversion paths.", "iconName": "TrendingDown" },
+          { "id": "card-4", "title": "Competitor Movement", "description": "Monitoring new competitor campaigns, keyword shifts, and positioning changes.", "iconName": "Eye" },
+          { "id": "card-5", "title": "Executive Briefing", "description": "A concise, no-fluff strategic report tailored for C-level leadership.", "iconName": "Briefcase" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Monthly Cadence",
+        "content": "How we maintain relentless accountability and optimization.",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Data Aggregation", "description": "Pulling metrics from all your platforms into one unified, un-biased source of truth." },
+          { "id": "hw-2", "title": "Algorithmic Diagnostics", "description": "Running automated, proprietary tools to catch obvious technical errors instantly." },
+          { "id": "hw-3", "title": "Senior Expert Review", "description": "Manual, nuanced analysis conducted exclusively by our top-tier marketing veterans." },
+          { "id": "hw-4", "title": "The Action Plan", "description": "Detailing exactly what needs to be fixed, what to kill, and what to scale." },
+          { "id": "hw-5", "title": "The Advisory Call", "description": "A high-impact, 1-hour strategic alignment call with your marketing leadership." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Audit Success Stories",
+        "content": "How objective oversight saved millions in wasted budget.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Rescuing an Internal Team",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+            "description": "An internal marketing team was burning $100k/mo on Google Ads with declining returns. During our first monthly audit, we caught a broad-match setting error that, when fixed, saved them $20k/mo instantly without affecting lead volume.",
+            "points": [
+              { "id": "p1", "title": "$20k/mo Saved", "iconName": "Scissors" },
+              { "id": "p2", "title": "Settings Fixed", "iconName": "Settings" },
+              { "id": "p3", "title": "Leads Maintained", "iconName": "Users" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "Maintaining SEO Dominance",
+            "bgImageUrl": "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200",
+            "description": "After a client's major site update, our diagnostic tools identified a catastrophic drop in Core Web Vitals and indexability within 48 hours, preventing a potential 30% loss in organic traffic.",
+            "points": [
+              { "id": "p1", "title": "Rapid Detection", "iconName": "Zap" },
+              { "id": "p2", "title": "Traffic Saved", "iconName": "TrendingUp" },
+              { "id": "p3", "title": "Vitals Restored", "iconName": "CheckCircle" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our Expert Audit services.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "Is this a replacement for an agency?",
+            "description": "No, this is objective oversight. We audit your internal team or your current agency partners to keep them accountable, efficient, and aligned with best practices."
+          },
+          {
+            "id": "faq-2",
+            "title": "Do you implement the fixes?",
+            "description": "This specific service is advisory. We provide the roadmap, and your team executes it. However, if your team lacks the bandwidth, we can step in on a project basis to implement the solutions."
+          },
+          {
+            "id": "faq-3",
+            "title": "Who conducts the audit?",
+            "description": "Unlike large agencies that pass audits to junior staff, our monthly audits are conducted exclusively by our most senior strategists and department heads."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'search-engine-optimization') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Search Engine Optimization (SEO) Services",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Dominate Search Results and Capture High-Intent Demand.",
+        "content": "Being on the second page of Google is the same as not existing. We build robust, technically sound, and content-rich SEO strategies that drive sustainable, high-converting organic traffic. Our approach goes beyond vanity metrics; we focus entirely on ranking for the revenue-generating keywords that your ideal customers are actively searching for when they are ready to buy.",
+        "mediaUrl": "https://images.unsplash.com/photo-1432888117426-1d3744957e84?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Our SEO Architecture",
+        "content": "A multi-disciplinary approach to climbing the search rankings.",
+        "cards": [
+          { "id": "card-1", "title": "Technical SEO", "description": "Optimizing site architecture, crawlability, and Core Web Vitals for maximum speed.", "iconName": "Settings" },
+          { "id": "card-2", "title": "On-Page Strategy", "description": "Keyword targeting, internal link siloing, and meta data optimization.", "iconName": "FileText" },
+          { "id": "card-3", "title": "Content Authority", "description": "Building long-form pillar pages to establish dominance in your topical niche.", "iconName": "BookOpen" },
+          { "id": "card-4", "title": "Off-Page & PR", "description": "Acquiring high-authority backlinks and executing Digital PR campaigns.", "iconName": "Link" },
+          { "id": "card-5", "title": "Local & Global SEO", "description": "Scaling your visibility in specific regional markets or dominating internationally.", "iconName": "Globe" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Ranking Methodology",
+        "content": "How we take websites from obscurity to industry dominance.",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Comprehensive Audit", "description": "Identifying severe technical blockers and uncovering low-hanging keyword fruit." },
+          { "id": "hw-2", "title": "Intent Mapping", "description": "Aligning your most valuable keywords with the specific stages of the buyer's journey." },
+          { "id": "hw-3", "title": "Technical Remediation", "description": "Fixing code, server responses, and UX issues that are holding your rankings back." },
+          { "id": "hw-4", "title": "Content Engine Activation", "description": "Deploying our writers to publish highly authoritative, search-optimized assets." },
+          { "id": "hw-5", "title": "Continuous Outreach", "description": "Running ongoing link-building sprints to continually increase your Domain Authority." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Organic Growth Stories",
+        "content": "How our SEO strategies translated into massive revenue growth.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "B2B SaaS Organic Scaling",
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "By executing a topical cluster content strategy and a rigorous technical cleanup, we grew a SaaS company's non-branded organic traffic by 450% in 12 months, resulting in a 3x increase in enterprise demo requests.",
+            "points": [
+              { "id": "p1", "title": "450% Traffic Growth", "iconName": "TrendingUp" },
+              { "id": "p2", "title": "3x Demo Requests", "iconName": "Users" },
+              { "id": "p3", "title": "Topical Authority", "iconName": "Award" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "E-Commerce Traffic Recovery",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+            "description": "An e-commerce retailer lost 60% of their traffic to an algorithmic penalty. We audited their backlink profile, disavowed toxic links, and restructured their category pages, recovering their traffic and boosting organic revenue by $2M year-over-year.",
+            "points": [
+              { "id": "p1", "title": "Penalty Lifted", "iconName": "CheckCircle" },
+              { "id": "p2", "title": "$2M New Revenue", "iconName": "DollarSign" },
+              { "id": "p3", "title": "Clean Backlinks", "iconName": "Shield" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our SEO services.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "How long does it take to see SEO results?",
+            "description": "While resolving severe technical errors can yield quick wins within 30 days, meaningful, compounding organic growth typically takes between 3 to 6 months depending on the competitiveness of your industry."
+          },
+          {
+            "id": "faq-2",
+            "title": "Are backlinks still important for SEO?",
+            "description": "Yes. High-quality, contextually relevant backlinks act as 'votes of confidence' from other sites and remain one of the top three ranking factors in Google's core algorithm."
+          },
+          {
+            "id": "faq-3",
+            "title": "Do you guarantee the #1 spot on Google?",
+            "description": "No ethical agency can guarantee a #1 spot due to the constant volatility of search algorithms. What we do guarantee is a rigorous, data-driven methodology that reliably increases organic visibility and revenue."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'target-audience-reach') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Precision Target Audience Reach",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Precision Targeting. Global Scale.",
+        "content": "Broad, 'spray and pray' marketing is a massive drain on your budget. Target Audience Reach is about identifying, isolating, and engaging the exact demographic, firmographic, and psychographic profiles most likely to buy your product. We leverage advanced 1st-party data modeling and programmatic networks to put your brand directly in front of the right decision-makers—whether they are a mile away or across the globe.",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Audience Reach Capabilities",
+        "content": "How we find and engage your ideal buyers across the digital landscape.",
+        "cards": [
+          { "id": "card-1", "title": "Persona Mapping", "description": "Creating hyper-accurate buyer profiles based on real-world data and intent signals.", "iconName": "Users" },
+          { "id": "card-2", "title": "Programmatic Display", "description": "Targeting users across millions of premium sites in real-time.", "iconName": "Monitor" },
+          { "id": "card-3", "title": "Geo-Fencing", "description": "Hyper-local mobile targeting for physical events, competitors, or storefronts.", "iconName": "MapPin" },
+          { "id": "card-4", "title": "Account-Based Targeting", "description": "Isolating C-level decision-makers at specific target companies.", "iconName": "Briefcase" },
+          { "id": "card-5", "title": "Cross-Device Retargeting", "description": "Following high-intent users seamlessly across mobile, desktop, and CTV.", "iconName": "Smartphone" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Targeting Methodology",
+        "content": "A scientific approach to eliminating wasted ad impressions.",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Audience Intelligence", "description": "Analyzing your 1st-party CRM data to understand who your best customers actually are." },
+          { "id": "hw-2", "title": "Lookalike Modeling", "description": "Using machine learning algorithms to find new users who match your best buyers." },
+          { "id": "hw-3", "title": "Platform Selection", "description": "Choosing the right digital networks based on B2B vs B2C intent and media consumption habits." },
+          { "id": "hw-4", "title": "Creative Personalization", "description": "Dynamically adapting ad messaging to speak directly to specific audience segments." },
+          { "id": "hw-5", "title": "Performance Optimization", "description": "Continuously trimming wasted impressions to lower your overall Cost Per Acquisition." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Targeting Success Stories",
+        "content": "How precision reach drove massive ROI for our clients.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Global B2B Software Launch",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1200",
+            "description": "We utilized LinkedIn and programmatic Account-Based Marketing (ABM) to isolate and reach CTOs across 5 countries. This hyper-targeted approach yielded a 200% ROI in Q1 and secured 15 enterprise contracts.",
+            "points": [
+              { "id": "p1", "title": "200% ROI", "iconName": "TrendingUp" },
+              { "id": "p2", "title": "CTO Targeting", "iconName": "Target" },
+              { "id": "p3", "title": "Global Reach", "iconName": "Globe" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "Retail Franchise Expansion",
+            "bgImageUrl": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1200",
+            "description": "To support a national rollout, we deployed advanced geo-fencing around competitor locations and high-density shopping districts, driving a measurable 15% lift in physical store foot traffic.",
+            "points": [
+              { "id": "p1", "title": "Geo-Fencing", "iconName": "MapPin" },
+              { "id": "p2", "title": "15% Foot Traffic", "iconName": "Users" },
+              { "id": "p3", "title": "Competitor Conquesting", "iconName": "Crosshair" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about Audience Reach & Targeting.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "Can you target specific job titles at specific companies?",
+            "description": "Yes. Through Account-Based Marketing (ABM) and LinkedIn targeting, we can isolate decision-makers at specific companies with surgical precision."
+          },
+          {
+            "id": "faq-2",
+            "title": "How do you respect user privacy?",
+            "description": "We strictly adhere to GDPR, CCPA, and utilize privacy-compliant 1st-party data strategies and contextual targeting as third-party cookies phase out."
+          },
+          {
+            "id": "faq-3",
+            "title": "What is the minimum audience size needed?",
+            "description": "While niche audiences often convert higher, advertising algorithms typically require a pool of at least 1,000 to 5,000 users to optimize delivery effectively."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'social-media-marketing') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Strategic Social Media Marketing",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Build Brand Authority and Drive Engagement.",
+        "content": "Social media is no longer just a top-of-funnel branding exercise; it is a primary driver of customer acquisition, retention, and loyalty. We build dynamic, highly targeted social media strategies that turn passive scrollers into active brand advocates. From high-retention video production to meticulous community management, we ensure your brand voice cuts through the algorithmic noise and drives measurable revenue.",
+        "mediaUrl": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Social Media Capabilities",
+        "content": "A full-suite approach to dominating the social landscape.",
+        "cards": [
+          { "id": "card-1", "title": "Social Strategy", "description": "Defining your unique voice, content pillars, and platform-specific tactics.", "iconName": "Target" },
+          { "id": "card-2", "title": "Video Production", "description": "High-retention, native short-form video for TikTok, Reels, and YouTube Shorts.", "iconName": "Video" },
+          { "id": "card-3", "title": "Community Management", "description": "Active community engagement, comment moderation, and crisis response.", "iconName": "MessageCircle" },
+          { "id": "card-4", "title": "LinkedIn Authority", "description": "Executive ghostwriting and B2B corporate page scaling.", "iconName": "Briefcase" },
+          { "id": "card-5", "title": "Creator Partnerships", "description": "Sourcing and negotiating with high-impact influencers in your niche.", "iconName": "Users" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Content Engine",
+        "content": "How we produce, publish, and scale your social presence.",
+        "mediaUrl": "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "The Brand Voice Audit", "description": "We establish a distinct tone, visual identity, and operational guidelines for your brand." },
+          { "id": "hw-2", "title": "Calendar Creation", "description": "Planning a monthly mix of educational, entertaining, and promotional content." },
+          { "id": "hw-3", "title": "Asset Production", "description": "Our in-house team designs graphics and edits trend-matching, high-retention video." },
+          { "id": "hw-4", "title": "Publishing & Engagement", "description": "Deploying content at algorithmically optimal times and actively driving conversation." },
+          { "id": "hw-5", "title": "Analytics & Iteration", "description": "Measuring engagement rates weekly to double-down on the creative that actually works." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Social Growth Stories",
+        "content": "How our social strategies built massive, engaged communities.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "Viral Consumer Launch",
+            "bgImageUrl": "https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=1200",
+            "description": "By leveraging a network of micro-influencers and native short-form video, we generated 2.5 million organic impressions on TikTok within the first 30 days of a DTC product launch, selling out their initial inventory.",
+            "points": [
+              { "id": "p1", "title": "2.5M Impressions", "iconName": "Eye" },
+              { "id": "p2", "title": "Sold Out Inventory", "iconName": "ShoppingCart" },
+              { "id": "p3", "title": "Viral Growth", "iconName": "TrendingUp" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "B2B LinkedIn Dominance",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1200",
+            "description": "Through a combination of executive ghostwriting and high-value carousel posts, we grew a B2B tech company's LinkedIn page from 500 to 15,000 highly engaged industry followers in 6 months, directly sourcing 4 enterprise deals.",
+            "points": [
+              { "id": "p1", "title": "30x Follower Growth", "iconName": "Users" },
+              { "id": "p2", "title": "4 Enterprise Deals", "iconName": "Briefcase" },
+              { "id": "p3", "title": "Thought Leadership", "iconName": "Award" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about scaling on social media.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "Do I need to be active on every social platform?",
+            "description": "No. It is significantly more effective to dominate one or two platforms where your exact target audience spends their time, rather than spreading your resources too thin across all platforms."
+          },
+          {
+            "id": "faq-2",
+            "title": "How do you measure social media success?",
+            "description": "We move far beyond vanity metrics like total followers. We measure success through engagement rates, click-through rates (CTR), shareability, and ultimately, attributed conversions in your CRM."
+          },
+          {
+            "id": "faq-3",
+            "title": "Do you handle all the video editing in-house?",
+            "description": "Yes. Our internal creative team handles everything from scripting and storyboarding to post-production, sound design, and native trend-matching edits."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'paid-advertising-campaigns') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Performance Paid Advertising",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Strategic Paid Media for Immediate ROI.",
+        "content": "Paid advertising is the fastest way to scale your revenue—but without precise execution, it's the fastest way to burn your budget. We don't just 'run ads'; we build highly engineered paid media ecosystems across search, social, and programmatic networks. By combining relentless A/B testing with advanced algorithmic bidding, we eliminate wasted spend and drive a predictable, scalable pipeline of qualified leads and direct sales.",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-ads-we-manage-${s.slug}",
+        "type": "scrollable-cards",
+        "title": "Ads We Manage",
+        "content": "Dominating intent and capturing attention across the entire digital ecosystem.",
+        "cards": [
+          { "id": "card-1", "title": "Google Ads", "description": "Search, Display, Shopping, Performance Max & YouTube Ads", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg", "linkUrl": "paid-advertising-campaigns/google-ads" },
+          { "id": "card-2", "title": "Meta Ads", "description": "Facebook & Instagram Ads that build brand, leads & sales", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", "linkUrl": "paid-advertising-campaigns/meta-ads" },
+          { "id": "card-3", "title": "YouTube Ads", "description": "Video Ads that increase brand awareness and drive conversions", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg", "linkUrl": "paid-advertising-campaigns/youtube-ads" },
+          { "id": "card-4", "title": "LinkedIn Ads", "description": "B2B Leads, Brand Building & Targeted Outreach for Professionals", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png", "linkUrl": "paid-advertising-campaigns/linkedin-ads" },
+          { "id": "card-5", "title": "Twitter Ads", "description": "Promote your brand and engage with your target audience on Twitter", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg", "linkUrl": "paid-advertising-campaigns/twitter-ads" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Campaign Architecture",
+        "content": "A mathematically rigorous approach to scaling ad spend profitably.",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Profitability Audit", "description": "Analyzing your historical ad account data to instantly identify and cut wasted spend." },
+          { "id": "hw-2", "title": "Funnel Mapping", "description": "Architecting the exact ad sequence from the very first click to the final conversion." },
+          { "id": "hw-3", "title": "Creative Production", "description": "Designing thumb-stopping, psychology-driven ad creatives built explicitly for conversion." },
+          { "id": "hw-4", "title": "Algorithmic Bidding", "description": "Deploying your campaigns with smart-bidding strategies to maximize machine learning." },
+          { "id": "hw-5", "title": "Relentless Optimization", "description": "Daily monitoring, continuous A/B testing, and ruthless budget reallocation." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Paid Media Success Stories",
+        "content": "How we turned ad spend into predictable profit engines.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "E-Commerce ROAS Scaling",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+            "description": "We took a DTC brand from a stagnant 1.5x to a 4.2x Return on Ad Spend (ROAS) within 90 days by completely restructuring their Google Shopping feeds and deploying dynamic creative testing on Meta.",
+            "points": [
+              { "id": "p1", "title": "4.2x ROAS", "iconName": "TrendingUp" },
+              { "id": "p2", "title": "90 Day Scale", "iconName": "Clock" },
+              { "id": "p3", "title": "Feed Optimized", "iconName": "Settings" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "B2B SaaS Lead Generation",
+            "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+            "description": "A software company was overpaying for unqualified leads. We shifted their budget into hyper-targeted LinkedIn ABM campaigns and intent-based Google Ads, slashing their CPA by 45% while doubling lead volume.",
+            "points": [
+              { "id": "p1", "title": "45% Lower CPA", "iconName": "ArrowDown" },
+              { "id": "p2", "title": "2x Lead Volume", "iconName": "Users" },
+              { "id": "p3", "title": "High Intent", "iconName": "Target" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about scaling with Paid Advertising.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "How much should I spend on ads?",
+            "description": "We recommend starting with a budget that allows for statistically significant testing—usually a minimum of $3,000 to $5,000 per month, depending heavily on the CPCs in your specific industry."
+          },
+          {
+            "id": "faq-2",
+            "title": "How long does it take to see a positive ROI?",
+            "description": "While leads and sales can start flowing on day one, achieving true algorithmic optimization and a stabilized, predictable ROI typically requires 30 to 60 days of active management."
+          },
+          {
+            "id": "faq-3",
+            "title": "Do you create the ad graphics and videos?",
+            "description": "Yes. Our performance creative team designs all ad visuals and writes all copy specifically engineered to maximize click-through rates (CTR) and conversion rates (CVR)."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'performance-marketing') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Data-Driven Performance Marketing",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Data-Driven Marketing that Scales Your Revenue.",
+        "content": "Traditional marketing hopes for results; Performance Marketing guarantees accountability. We align every single marketing dollar spent directly with your bottom line. By obsessing over hard metrics like Cost Per Acquisition (CPA), Customer Lifetime Value (LTV), and Return on Ad Spend (ROAS), we build highly tuned growth engines that scale profitably, predictably, and aggressively.",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Performance Capabilities",
+        "content": "The tactical execution behind mathematically sound growth.",
+        "cards": [
+          { "id": "card-1", "title": "Conversion Optimization", "description": "Rigorous A/B testing of landing pages and funnels to maximize lead capture.", "iconName": "MousePointerClick" },
+          { "id": "card-2", "title": "Multi-Touch Attribution", "description": "Tracking the exact customer journey to properly attribute revenue to the right channels.", "iconName": "Share2" },
+          { "id": "card-3", "title": "Affiliate Marketing", "description": "Scaling revenue through vetted, performance-based revenue-share networks.", "iconName": "Users" },
+          { "id": "card-4", "title": "LTV/CAC Optimization", "description": "Balancing your acquisition cost with lifetime value for sustainable scaling.", "iconName": "Activity" },
+          { "id": "card-5", "title": "Scalable Media Buying", "description": "Injecting budget aggressively into winning campaigns while maintaining ROAS.", "iconName": "TrendingUp" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Growth Engine Process",
+        "content": "A systematic methodology for finding and exploiting profitable acquisition channels.",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "The Growth Model", "description": "Building a mathematical model of your entire acquisition funnel to identify bottlenecks." },
+          { "id": "hw-2", "title": "Tracking Infrastructure", "description": "Setting up pixel-perfect, server-side tracking to ensure absolute data integrity." },
+          { "id": "hw-3", "title": "Rapid Testing Sprints", "description": "Deploying high-tempo weekly A/B tests on ad creative, copy, and landing pages." },
+          { "id": "hw-4", "title": "Cohort Analysis", "description": "Reviewing historical retention data to find your most profitable customer segments." },
+          { "id": "hw-5", "title": "Vertical Scaling", "description": "Aggressively increasing spend on winning variations to capture maximum market share." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Performance Scaling Wins",
+        "content": "How we turned data into exponential revenue growth.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "E-Commerce Aggressive Scaling",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+            "description": "By implementing strict server-side tracking and multi-touch attribution, we scaled a DTC brand's monthly ad spend from $50k to $250k while maintaining a 3.5x ROAS and actually improving their LTV/CAC ratio by 20%.",
+            "points": [
+              { "id": "p1", "title": "$250k/mo Spend", "iconName": "DollarSign" },
+              { "id": "p2", "title": "Maintained 3.5x ROAS", "iconName": "TrendingUp" },
+              { "id": "p3", "title": "Improved LTV", "iconName": "Activity" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "Lead Gen Profitability",
+            "bgImageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200",
+            "description": "A financial services firm was struggling with high acquisition costs. Through aggressive landing page CRO and eliminating wasted spend identified by our attribution model, we reduced their cost per qualified lead by 60%.",
+            "points": [
+              { "id": "p1", "title": "60% Lower CPL", "iconName": "ArrowDown" },
+              { "id": "p2", "title": "CRO Focused", "iconName": "MousePointerClick" },
+              { "id": "p3", "title": "Higher Lead Quality", "iconName": "CheckCircle" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our Performance Marketing approach.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "What is the difference between Performance Marketing and Paid Ads?",
+            "description": "Paid advertising is simply a channel. Performance Marketing is the overarching methodology of running those channels (and others) strictly based on data, ROI, and measurable business outcomes."
+          },
+          {
+            "id": "faq-2",
+            "title": "How do you handle tracking in a post-cookie world?",
+            "description": "We implement robust server-side tracking (like Facebook Conversion API), 1st-party data collection strategies, and advanced probabilistic attribution modeling to ensure data accuracy despite iOS updates."
+          },
+          {
+            "id": "faq-3",
+            "title": "Do you work on a performance basis?",
+            "description": "For select, highly vetted partners that meet strict criteria regarding historical data and product-market fit, we do occasionally offer hybrid performance-based compensation models."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'lead-generation') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "High-Velocity Lead Generation",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Build a Predictable Pipeline of Qualified Buyers.",
+        "content": "Website traffic means nothing if it doesn't convert into actual sales conversations. Our Lead Generation services are ruthlessly focused on one single metric: filling your sales pipeline with highly qualified prospects who have an immediate need for your solution. By optimizing the entire conversion journey—from thumb-stopping ad creative to frictionless landing pages—we ensure maximum lead velocity at the lowest possible Cost-Per-Lead (CPL).",
+        "mediaUrl": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-leads-we-manage-${s.slug}",
+        "type": "scrollable-cards",
+        "title": "Leads We Manage",
+        "content": "Targeted lead acquisition across industries and channels.",
+        "cards": [
+          { "id": "card-1", "title": "B2B Sales Leads", "description": "High-value business inquiries, meeting bookings, and enterprise prospects.", "iconName": "Briefcase", "linkUrl": "lead-generation/b2b-sales" },
+          { "id": "card-2", "title": "Real Estate Leads", "description": "Qualified homebuyers, property investors, and commercial real estate inquiries.", "iconName": "Home", "linkUrl": "lead-generation/real-estate" },
+          { "id": "card-3", "title": "Healthcare Leads", "description": "Patient bookings, telemedicine consultations, and clinic inquiries.", "iconName": "Heart", "linkUrl": "lead-generation/healthcare" },
+          { "id": "card-4", "title": "SaaS & Tech Leads", "description": "Free trial signups, product demo requests, and software subscriptions.", "iconName": "Monitor", "linkUrl": "lead-generation/saas-tech" },
+          { "id": "card-5", "title": "E-commerce Leads", "description": "High-intent cart abandoners, newsletter signups, and VIP shoppers.", "iconName": "ShoppingCart", "linkUrl": "lead-generation/ecommerce" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Conversion Journey",
+        "content": "How we turn cold traffic into booked sales appointments.",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Offer Creation", "description": "Developing an irresistible hook or lead magnet that demands your prospect's attention." },
+          { "id": "hw-2", "title": "Traffic Acquisition", "description": "Deploying highly targeted paid and organic campaigns to drive the right users to the offer." },
+          { "id": "hw-3", "title": "Conversion Mechanics", "description": "Building lightning-fast, high-converting landing pages tailored to the ad creative." },
+          { "id": "hw-4", "title": "Nurture Sequences", "description": "Deploying automated email and SMS drips to warm up leads who aren't ready to buy yet." },
+          { "id": "hw-5", "title": "Sales Integration", "description": "Pushing scored, qualified leads directly into your CRM in real-time for immediate follow-up." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Lead Velocity Success",
+        "content": "How we flooded sales teams with high-intent prospects.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "B2B Service Scaling",
+            "bgImageUrl": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200",
+            "description": "We built a targeted webinar funnel for a B2B consultancy that generated 450+ highly qualified sales appointments in 90 days, completely transforming their outbound-heavy sales process into an inbound machine.",
+            "points": [
+              { "id": "p1", "title": "450+ Appointments", "iconName": "Calendar" },
+              { "id": "p2", "title": "90 Day Scale", "iconName": "Clock" },
+              { "id": "p3", "title": "Inbound Shift", "iconName": "TrendingUp" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "Local Service Domination",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1200",
+            "description": "By overhauling their localized landing pages and implementing strict geo-targeting on Google Ads, we reduced the Cost-Per-Lead (CPL) by 55% for a national home services franchise.",
+            "points": [
+              { "id": "p1", "title": "55% Lower CPL", "iconName": "ArrowDown" },
+              { "id": "p2", "title": "Localized CRO", "iconName": "MapPin" },
+              { "id": "p3", "title": "Higher Close Rate", "iconName": "CheckCircle" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about our lead generation process.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "Are these exclusive leads?",
+            "description": "Yes. We build custom campaigns specifically for your business. Every lead generated is exclusive to you; we do not sell shared or recycled leads like traditional lead-broker platforms."
+          },
+          {
+            "id": "faq-2",
+            "title": "How do you ensure lead quality?",
+            "description": "We use strict ad targeting criteria, multi-step qualifying questions on our lead forms, and automated CRM lead scoring to filter out 'tire kickers' before they ever reach your sales team."
+          },
+          {
+            "id": "faq-3",
+            "title": "Can you integrate with my CRM?",
+            "description": "Absolutely. We build seamless integrations using APIs and Webhooks for Salesforce, HubSpot, Pipedrive, GoHighLevel, and virtually any other modern CRM platform."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'retargeting-marketing') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Precision Retargeting Marketing",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Recapture Lost Revenue and Maximize ROI.",
+        "content": "Most users don't buy on their first visit. In fact, 97% of your website traffic will bounce without taking a single action. If you aren't actively bringing them back, you are effectively subsidizing your competitors' marketing. Our precision retargeting campaigns deploy highly personalized, cross-channel ads that follow your highest-intent prospects across the web, reminding them why they need your solution and delivering the exact offer they need to finally convert.",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Retargeting Capabilities",
+        "content": "Strategies to stay top-of-mind and force the conversion.",
+        "cards": [
+          { "id": "card-1", "title": "Dynamic Retargeting", "description": "Showing e-commerce users the exact products they viewed or added to cart.", "iconName": "ShoppingCart" },
+          { "id": "card-2", "title": "Cross-Channel Tracking", "description": "Following users seamlessly from Facebook to Google Display to YouTube.", "iconName": "Monitor" },
+          { "id": "card-3", "title": "Account Retargeting", "description": "Staying hyper-visible to B2B enterprise buyers during long, complex sales cycles.", "iconName": "Briefcase" },
+          { "id": "card-4", "title": "Cart Abandonment", "description": "Deploying urgent email, SMS, and ad sequences to recover lost checkouts.", "iconName": "AlertCircle" },
+          { "id": "card-5", "title": "Sequential Storytelling", "description": "Moving users through an ad sequence of awareness, logic, and urgency.", "iconName": "Film" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Omnipresence Strategy",
+        "content": "How we build a web of inescapable, high-converting touchpoints.",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Audience Segmentation", "description": "Dividing visitors by behavior, time-on-site, and specific pages viewed to gauge intent." },
+          { "id": "hw-2", "title": "The Omnipresence Pixel", "description": "Deploying global tracking via Server-Side APIs to bypass ad-blockers and iOS restrictions." },
+          { "id": "hw-3", "title": "Dynamic Creative", "description": "Designing ad creatives that automatically adapt based on the user's previous on-site actions." },
+          { "id": "hw-4", "title": "Frequency Capping", "description": "Strictly managing how often ads are shown so your brand stays helpful, not annoying." },
+          { "id": "hw-5", "title": "Offer Escalation", "description": "Introducing strategic discounts or bonuses exactly when a buyer is hesitating the most." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Revenue Recovery Wins",
+        "content": "How retargeting turned lost traffic into massive profit.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "E-Commerce Cart Recovery",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
+            "description": "An apparel brand was losing 70% of carts at checkout. We implemented a dynamic Meta product catalog retargeting strategy combined with SMS cart abandonment, generating $85,000 in recovered revenue in just 30 days.",
+            "points": [
+              { "id": "p1", "title": "$85k Recovered", "iconName": "DollarSign" },
+              { "id": "p2", "title": "Dynamic Catalog", "iconName": "Image" },
+              { "id": "p3", "title": "SMS Integration", "iconName": "Smartphone" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "B2B SaaS Conversion Lift",
+            "bgImageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200",
+            "description": "A B2B SaaS company had great traffic but low demo bookings. We deployed a 30-day sequential retargeting campaign on LinkedIn and YouTube, educating prospects over time. Demo requests increased by 40%.",
+            "points": [
+              { "id": "p1", "title": "40% More Demos", "iconName": "Calendar" },
+              { "id": "p2", "title": "Sequential Ads", "iconName": "Film" },
+              { "id": "p3", "title": "LinkedIn & YouTube", "iconName": "Share2" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about Retargeting Marketing.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "Is retargeting annoying to users?",
+            "description": "Only if done poorly. We utilize strict frequency capping (limiting how many times a user sees an ad per day) and sequential messaging to ensure your brand remains top-of-mind without becoming annoying."
+          },
+          {
+            "id": "faq-2",
+            "title": "Does retargeting still work without third-party cookies?",
+            "description": "Yes. While iOS updates changed the landscape, we rely on robust 1st-party data collection and server-side tracking (like the Meta Conversions API) to maintain high audience match rates."
+          },
+          {
+            "id": "faq-3",
+            "title": "How large does my audience need to be?",
+            "description": "Most major ad platforms require a minimum audience pool of 100 to 1,000 specific matched users before retargeting ads will begin to serve effectively."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  if (s.slug === 'influencer-marketing') {
+    return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "Authentic Influencer Marketing",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Leverage Authentic Voices to Drive Massive Scale.",
+        "content": "Consumers inherently trust people, not faceless logos. True Influencer Marketing is no longer about buying vanity metrics or posting generic endorsements; it is about partnering with highly trusted creators who can authentically integrate your product into their audience's daily lives. We manage the entire lifecycle—from strategic creator discovery and rigorous contract negotiation to campaign execution and strict ROI tracking—ensuring your brand message is delivered by the voices your market actually listens to.",
+        "mediaUrl": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Influencer & Creator Solutions",
+        "content": "Building trust at scale across every tier of influence.",
+        "cards": [
+          { "id": "card-1", "title": "Micro-Influencer Campaigns", "description": "Leveraging highly engaged niche creators for maximum conversion rates.", "iconName": "Users" },
+          { "id": "card-2", "title": "Macro & Celebrity Partnerships", "description": "Driving massive, overnight brand awareness and cultural impact.", "iconName": "Star" },
+          { "id": "card-3", "title": "B2B Thought Leaders", "description": "Partnering with industry experts and executives on LinkedIn and podcasts.", "iconName": "Briefcase" },
+          { "id": "card-4", "title": "UGC Creation", "description": "Sourcing authentic, lo-fi video assets to fuel your own paid ad campaigns.", "iconName": "Video" },
+          { "id": "card-5", "title": "Affiliate Programs", "description": "Structuring performance-based compensation based on actual sales driven.", "iconName": "Percent" }
+        ]
+      },
+      {
+        "id": "sec-how-we-do-it-${s.slug}",
+        "type": "how-we-do-it",
+        "title": "The Creator Management Lifecycle",
+        "content": "How we execute flawless campaigns across dozens of creators simultaneously.",
+        "mediaUrl": "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1200",
+        "cards": [
+          { "id": "hw-1", "title": "Audience Matching", "description": "Using deep data analytics to ensure a creator's following matches your exact target demographic." },
+          { "id": "hw-2", "title": "Vetting & Negotiation", "description": "Filtering out fake followers and negotiating strict deliverables, timelines, and usage rights." },
+          { "id": "hw-3", "title": "Creative Briefing", "description": "Providing creators with brand guardrails while allowing space for their authentic expression." },
+          { "id": "hw-4", "title": "Campaign Orchestration", "description": "Managing product shipping, content review, and live scheduling across the entire roster." },
+          { "id": "hw-5", "title": "ROI Measurement", "description": "Tracking exact sales, clicks, and impressions via custom promo codes and dedicated UTM links." }
+        ]
+      },
+      {
+        "id": "sec-case-study-${s.slug}",
+        "type": "case-study",
+        "title": "Influencer Impact Stories",
+        "content": "How creator partnerships drove tangible, measurable revenue.",
+        "caseStudies": [
+          {
+            "id": "cs-1",
+            "title": "DTC Beauty Launch",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200",
+            "description": "We partnered with 50 tightly vetted micro-influencers on TikTok to build hype for a new skincare line. The campaign generated 4.5M organic views and drove $200k in direct sales within 48 hours of the product drop.",
+            "points": [
+              { "id": "p1", "title": "4.5M Organic Views", "iconName": "Eye" },
+              { "id": "p2", "title": "$200k Sales in 48h", "iconName": "DollarSign" },
+              { "id": "p3", "title": "50 Creators Scaled", "iconName": "Users" }
+            ]
+          },
+          {
+            "id": "cs-2",
+            "title": "B2B Software Adoption",
+            "bgImageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1200",
+            "description": "To break into a new enterprise market, we collaborated with 5 major LinkedIn thought leaders to co-host a digital summit. This drove 1,200 highly qualified webinar registrations and $1.2M in sales pipeline.",
+            "points": [
+              { "id": "p1", "title": "1,200 Registrations", "iconName": "UserPlus" },
+              { "id": "p2", "title": "$1.2M Pipeline", "iconName": "TrendingUp" },
+              { "id": "p3", "title": "B2B Trust Built", "iconName": "Shield" }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "faq-${s.slug}",
+        "type": "faq",
+        "title": "Frequently Asked Questions",
+        "content": "Common questions about scaling with influencers.",
+        "cards": [
+          {
+            "id": "faq-1",
+            "title": "Do I get to approve the content before it goes live?",
+            "description": "Yes. All of our creative briefs include a mandatory draft review process. We ensure brand safety and factual accuracy while preserving the creator's authentic voice."
+          },
+          {
+            "id": "faq-2",
+            "title": "How do you actually measure the ROI of an influencer?",
+            "description": "We move past vanity metrics like 'likes'. We track hard conversions using dedicated landing pages, unique trackable UTM links, and custom creator promo codes."
+          },
+          {
+            "id": "faq-3",
+            "title": "Who owns the rights to the content they create?",
+            "description": "We aggressively negotiate 'whitelisting' and usage rights upfront in our contracts. This allows you to legally repurpose their high-performing content into your own paid ad campaigns."
+          }
+        ]
+      }
+    ]
+  }`;
+  }
+
+  // Default placeholder for other pages
+  return `
+  {
+    "id": "page-${s.slug}",
+    "slug": "${s.slug}",
+    "title": "${s.title} Services",
+    "heroBadge": "${s.iconName}",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": ${idx + 1},
+    "sections": [
+      {
+        "id": "sec-overview-${s.slug}",
+        "type": "overview",
+        "title": "Scaling your business with ${s.title}",
+        "content": "In today's competitive landscape, effective ${s.title} is essential. Lumora delivers comprehensive solutions that help you attract, engage, and convert your target audience.",
+        "mediaUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800",
+        "bullets": []
+      },
+      {
+        "id": "sec-services-${s.slug}",
+        "type": "services-grid",
+        "title": "Our ${s.title} Solutions",
+        "content": "Explore our specialized products designed for exponential growth.",
+        "cards": [
+          { "id": "card-1", "title": "Strategy & Planning", "description": "Customized roadmap for success.", "iconName": "Target" },
+          { "id": "card-2", "title": "Implementation", "description": "Seamless technical execution.", "iconName": "Zap" },
+          { "id": "card-3", "title": "Optimization", "description": "Continuous performance enhancement.", "iconName": "TrendingUp" }
+        ]
+      }
+    ]
+  }`;
+}).join(',');
+
+const subPagesArray = [
+  { slug: 'paid-advertising-campaigns/google-ads', title: 'Google Ads', desc: 'Reach customers exactly when they are searching for what you offer. Our Google Ads management services ensure high ROI by optimizing campaigns across Search, Display, Shopping, and Performance Max networks.', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg' },
+  { slug: 'paid-advertising-campaigns/meta-ads', title: 'Meta Ads', desc: 'Facebook and Instagram Ads that build brand, leads and sales with targeted demographic precision.', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg' },
+  { slug: 'paid-advertising-campaigns/youtube-ads', title: 'YouTube Ads', desc: 'Video Ads that increase brand awareness and drive conversions on the worlds largest video platform.', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg' },
+  { slug: 'paid-advertising-campaigns/linkedin-ads', title: 'LinkedIn Ads', desc: 'B2B Leads, Brand Building and Targeted Outreach for Professionals across corporate environments.', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png' },
+  { slug: 'paid-advertising-campaigns/twitter-ads', title: 'Twitter Ads', desc: 'Promote your brand and engage with your target audience on Twitter through high-impact viral campaigns.', iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg' },
+  
+  { slug: 'lead-generation/b2b-sales', title: 'B2B Sales Leads', desc: 'Generate high-value business inquiries, meeting bookings, and enterprise prospects with targeted B2B lead generation strategies designed for measurable growth.', iconName: 'Briefcase' },
+  { slug: 'lead-generation/real-estate', title: 'Real Estate Leads', desc: 'Connect with qualified homebuyers, property investors, and commercial real estate prospects actively searching for properties in your target markets.', iconName: 'Home' },
+  { slug: 'lead-generation/healthcare', title: 'Healthcare Leads', desc: 'Increase patient bookings, telemedicine consultations, and clinic inquiries with HIPAA-compliant, targeted healthcare marketing funnels.', iconName: 'Heart' },
+  { slug: 'lead-generation/saas-tech', title: 'SaaS & Tech Leads', desc: 'Drive free trial signups, product demo requests, and software subscriptions with high-converting inbound marketing designed for B2B tech companies.', iconName: 'Monitor' },
+  { slug: 'lead-generation/ecommerce', title: 'E-commerce Leads', desc: 'Capture high-intent cart abandoners, newsletter signups, and VIP shoppers to maximize lifetime value and lower customer acquisition costs.', iconName: 'ShoppingCart' }
+];
+
+const subPagesString = subPagesArray.map(sp => `
+  {
+    "id": "page-${sp.slug.replace('/', '-')}",
+    "slug": "${sp.slug}",
+    "title": "${sp.title}",
+    "heroBadge": "Target",
+    "pageType": "service",
+    "isPublished": true,
+    "sortOrder": 100,
+    "sections": [
+      {
+        "id": "sec-overview-${sp.slug.replace('/', '-')}",
+        "type": "icon-hero",
+        "title": "${sp.title}",
+        "content": "${sp.desc}",
+        ${sp.iconUrl ? `"mediaUrl": "${sp.iconUrl}"` : `"iconName": "${sp.iconName}"`}
+      },
+      {
+        "id": "sec-process-${sp.slug.replace('/', '-')}",
+        "type": "process",
+        "cards": []
+      }
+    ]
+  }`).join(',');
+
+const newDynamicPagesBlock = `export const initialDynamicPages: DynamicPage[] = [${newPagesString},\n${subPagesString}\n];`;
+
+const pagesStartIndex = content.indexOf('export const initialDynamicPages: DynamicPage[] = [');
+if (pagesStartIndex !== -1) {
+  content = content.substring(0, pagesStartIndex) + newDynamicPagesBlock + '\n';
+}
+
+fs.writeFileSync(dataPath, content, 'utf-8');
+console.log("Successfully updated initialData.ts with detailed Influencer Marketing content.");
