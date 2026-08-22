@@ -123,7 +123,9 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
             {digitalMarketingOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[900px] max-w-[95vw] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 p-6">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4">
-                  {(services || []).map((item, i) => {
+                  {(services || [])
+                    .filter((s: any) => s.position === 'Header' || s.position === 'Both' || !s.position)
+                    .map((item, i) => {
                     const IconComponent = (LucideIcons as any)[item.iconName || 'CheckCircle'] || LucideIcons.CheckCircle;
                     
                     return (

@@ -81,14 +81,14 @@ export const Footer: React.FC<FooterProps> = ({
             </h4>
             <div className="max-h-[135px] overflow-y-auto md:overflow-hidden md:hover:overflow-y-auto pr-2 [&::-webkit-scrollbar]:w-1 [&::-webkit-scrollbar-track]:bg-transparent [&::-webkit-scrollbar-thumb]:bg-gray-200 md:[&::-webkit-scrollbar-thumb]:bg-gray-100 md:hover:[&::-webkit-scrollbar-thumb]:bg-gray-200 [&::-webkit-scrollbar-thumb]:rounded-full transition-all duration-300 touch-pan-y">
               <ul className="grid grid-cols-1 gap-y-2.5 text-[#6B7280] font-normal">
-                {(services && services.length > 0 ? services : [
+                {((services && services.length > 0 ? services : [
                   { title: 'Social Media Marketing', slug: 'social-media-marketing', id: 'social-media-marketing' },
                   { title: 'Search Engine Optimization (SEO)', slug: 'seo-growth-engine', id: 'seo-growth-engine' },
                   { title: 'Performance Marketing', slug: 'performance-marketing', id: 'performance-marketing' },
                   { title: 'Lead Generation', slug: 'lead-generation', id: 'lead-generation' },
                   { title: 'Retargeting Marketing', slug: 'retargeting-marketing', id: 'retargeting-marketing' },
                   { title: 'AI Marketing Automation', slug: 'ai-marketing-automation', id: 'ai-marketing-automation' },
-                ]).map((item, i) => (
+                ]) as any[]).filter((s: any) => s.position === 'Footer' || s.position === 'Both' || !s.position).map((item, i) => (
                   <li key={i} className="w-full">
                     <button 
                       onClick={() => onNavSection?.(item.slug || item.id?.toString() || `service-${i}`)}

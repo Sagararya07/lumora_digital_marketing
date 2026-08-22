@@ -177,7 +177,7 @@ export function App() {
   const activeDynamicSlug = location.pathname === '/' || location.pathname === '/admin' ? null : location.pathname.slice(1);
 
   const dynamicServices = dynamicPages
-    .filter(dp => dp.isPublished && !dp.slug?.includes('/'))
+    .filter(dp => dp.isPublished && !dp.slug?.includes('/') && dp.position !== 'None')
     .map(dp => {
       const fallback = getFallbackServiceDetails(dp.slug, dp.title);
 
@@ -192,7 +192,8 @@ export function App() {
         deliverables: (dp.serviceDeliverables && dp.serviceDeliverables.length > 0 && dp.serviceDeliverables[0] !== '') ? dp.serviceDeliverables : fallback.deliverables,
         recommendedFor: dp.serviceRecommendedFor || fallback.recommendedFor,
         badge: dp.heroBadge || fallback.badge,
-        image: dp.heroImage || fallback.image
+        image: dp.heroImage || fallback.image,
+        position: dp.position || 'Both'
       };
     });
 

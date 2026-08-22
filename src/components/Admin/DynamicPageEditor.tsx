@@ -39,6 +39,7 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
   const [isUploading, setIsUploading] = useState(false);
   const [sections, setSections] = useState<DynamicPageSection[]>([]);
   const [sortOrder, setSortOrder] = useState<number>(0);
+  const [position, setPosition] = useState<'Header' | 'Footer' | 'Both' | 'None'>('Both');
   
   // Custom Modal Fields
   const [overviewContent, setOverviewContent] = useState<string>('');
@@ -66,6 +67,7 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
       setServiceRecommendedFor(targetPage.serviceRecommendedFor || '');
       setSections(targetPage.sections || []);
       setSortOrder(targetPage.sortOrder || 0);
+      setPosition(targetPage.position || 'Both');
     }
   }, [targetPage]);
 
@@ -367,6 +369,7 @@ const handleAddSection = () => {
       serviceFeatures,
       serviceDeliverables,
       serviceRecommendedFor,
+      position,
     };
 
     try {
@@ -494,6 +497,27 @@ const handleAddSection = () => {
                 className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-semibold text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100"
                 placeholder="0"
               />
+            </div>
+
+            <div>
+              <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                Position
+              </label>
+              <div className="flex items-center gap-4 mt-3">
+                {['Header', 'Footer', 'Both', 'None'].map((pos) => (
+                  <label key={pos} className="flex items-center gap-2 cursor-pointer group">
+                    <input
+                      type="radio"
+                      name="position"
+                      value={pos}
+                      checked={position === pos}
+                      onChange={() => setPosition(pos as 'Header' | 'Footer' | 'Both' | 'None')}
+                      className="w-4 h-4 text-[#5B8EE2] bg-gray-100 border-gray-300 focus:ring-[#5B8EE2] focus:ring-2 cursor-pointer"
+                    />
+                    <span className="text-sm font-medium text-slate-700 group-hover:text-[#5B8EE2] transition-colors">{pos}</span>
+                  </label>
+                ))}
+              </div>
             </div>
 
             <div className="md:col-span-2">

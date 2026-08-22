@@ -277,6 +277,7 @@ export interface DynamicPage {
   sections: DynamicPageSection[];
   isPublished: boolean;
   sortOrder?: number;
+  position?: 'Header' | 'Footer' | 'Both' | 'None';
   createdAt: string;
   updatedAt: string;
   replicatedFromId?: string;

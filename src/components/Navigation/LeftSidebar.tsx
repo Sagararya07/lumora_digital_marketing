@@ -54,7 +54,7 @@ export const LeftSidebar: React.FC<LeftSidebarProps> = ({
   ];
 
   const resourceItems = dynamicPages && dynamicPages.length > 0 
-    ? dynamicPages.filter(p => p.isPublished && !p.slug?.includes('/'))
+    ? dynamicPages.filter(p => p.isPublished && !p.slug?.includes('/') && (p.position === 'Header' || p.position === 'Both' || !p.position))
     : coreServices;
 
   const handleNavClick = (item: { id: string; path: string }) => {

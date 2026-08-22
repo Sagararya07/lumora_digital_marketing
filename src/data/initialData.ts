@@ -2803,4 +2803,2842 @@ export const initialDynamicPages: DynamicPage[] = [
       }
     ]
   }
+,
+{
+  "id": "page-lead-generation-hidden",
+  "slug": "lead-generation-v2",
+  "title": "Lead Generation Services - High Converting B2B & B2C Funnels",
+  "heroBadge": "Users",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-ads-we-manage",
+      "type": "scrollable-cards",
+      "title": "Leads We Manage",
+      "cards": [
+        {
+          "id": "card-b2b-sales",
+          "title": "B2B Sales Leads",
+          "description": "High-value business inquiries, meeting bookings, and enterprise prospects.",
+          "iconName": "Briefcase",
+          "linkUrl": "lead-generation/b2b-sales"
+        },
+        {
+          "id": "card-real-estate",
+          "title": "Real Estate Leads",
+          "description": "Qualified homebuyers, property investors, and commercial real estate inquiries.",
+          "iconName": "Home",
+          "linkUrl": "lead-generation/real-estate"
+        },
+        {
+          "id": "card-healthcare",
+          "title": "Healthcare Leads",
+          "description": "Patient bookings, telemedicine consultations, and clinic inquiries.",
+          "iconName": "Heart",
+          "linkUrl": "lead-generation/healthcare"
+        },
+        {
+          "id": "card-saas",
+          "title": "SaaS & Tech Leads",
+          "description": "Free trial signups, product demo requests, and software subscriptions.",
+          "iconName": "Monitor",
+          "linkUrl": "lead-generation/saas"
+        },
+        {
+          "id": "card-ecommerce",
+          "title": "E-commerce Leads",
+          "description": "High-intent shoppers, cart abandonment recovery, and newsletter signups.",
+          "iconName": "ShoppingCart",
+          "linkUrl": "lead-generation/ecommerce"
+        }
+      ]
+    },
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Turning Awareness Into Qualified Demand For Your Business.",
+      "content": "In competitive global markets, growth is no longer driven by isolated marketing campaigns—it requires a structured, full-funnel lead generation engine. Lumora delivers Lead Generation services that help organizations consistently attract, engage, convert, and retain high-intent prospects across digital channels. We work with B2B enterprises, B2C brands, SaaS companies, startups, and global service providers to build demand systems that align marketing, sales, and revenue operations.",
+      "mediaUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "Lead Generation Solutions & Services",
+      "content": "Explore our specialized lead generation products designed for exponential business growth.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "B2B Appointment Setting",
+          "description": "Securing highly qualified meetings with key decision-makers.",
+          "iconName": "Target"
+        },
+        {
+          "id": "card-2",
+          "title": "Inbound Funnel Optimization",
+          "description": "Maximizing the conversion rates of your existing website traffic.",
+          "iconName": "BarChart3"
+        },
+        {
+          "id": "card-3",
+          "title": "Account-Based Marketing",
+          "description": "Hyper-targeted campaigns for high-value enterprise clients.",
+          "iconName": "Briefcase"
+        },
+        {
+          "id": "card-4",
+          "title": "Cold Email Outreach",
+          "description": "Automated, personalized email sequences that get replies.",
+          "iconName": "Mail"
+        },
+        {
+          "id": "card-5",
+          "title": "Lead Scoring & CRM Sync",
+          "description": "Seamlessly routing warm leads directly to your sales team.",
+          "iconName": "Workflow"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-9660",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "How we helped scale a global enterprise.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "SaaS Enterprise Lead Surge",
+          "bgImageUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200",
+          "description": "By implementing a comprehensive B2B lead generation funnel, we increased qualified demos by 250% in 3 months for a leading enterprise SaaS provider.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Funnel Mapping",
+              "iconName": "Map"
+            },
+            {
+              "id": "p2",
+              "title": "Target Identification",
+              "iconName": "Target"
+            },
+            {
+              "id": "p3",
+              "title": "Lead Capture Setup",
+              "iconName": "MousePointerClick"
+            },
+            {
+              "id": "p4",
+              "title": "CRM Integration",
+              "iconName": "Database"
+            },
+            {
+              "id": "p5",
+              "title": "Automated Nurturing",
+              "iconName": "Workflow"
+            },
+            {
+              "id": "p6",
+              "title": "ROI Tracking",
+              "iconName": "BarChart3"
+            }
+          ]
+        },
+        {
+          "id": "cs-2",
+          "title": "Real Estate Investor Acquisition",
+          "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+          "description": "We built an aggressive local lead generation campaign that decreased the Cost Per Lead (CPL) by 40% while doubling the closing rate for a commercial real estate firm.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Local Targeting",
+              "iconName": "MapPin"
+            },
+            {
+              "id": "p2",
+              "title": "High-Intent Ads",
+              "iconName": "TrendingUp"
+            },
+            {
+              "id": "p3",
+              "title": "Landing Page A/B Testing",
+              "iconName": "Sparkles"
+            },
+            {
+              "id": "p4",
+              "title": "Speed-to-Lead Automation",
+              "iconName": "Zap"
+            },
+            {
+              "id": "p5",
+              "title": "Sales Handoff",
+              "iconName": "Users"
+            },
+            {
+              "id": "p6",
+              "title": "Performance Scaling",
+              "iconName": "Activity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-lead-generation-2636",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Lead Generation services include?",
+          "description": "Our Lead Generation services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Lead Generation?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Lead Generation campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Lead Generation?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Lead Generation solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "page-social-media-marketing-hidden",
+  "slug": "social-media-marketing-v2",
+  "title": "Social Media Marketing - Build Brand Authority",
+  "heroBadge": "Share2",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Igniting Brand Conversations and Community Growth.",
+      "content": "Social Media is the pulse of modern consumer behavior. Lumora provides elite Social Media Marketing services that transform passive scrollers into active brand advocates. From crafting viral TikTok strategies to building B2B thought leadership on LinkedIn, our data-backed approach ensures your social presence drives measurable engagement, brand loyalty, and direct revenue.",
+      "mediaUrl": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "Social Media Marketing Services",
+      "content": "Complete solutions to dominate your industry's social landscape.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Content Strategy & Creation",
+          "description": "High-end graphics, Reels, and TikToks that demand attention.",
+          "iconName": "Sparkles"
+        },
+        {
+          "id": "card-2",
+          "title": "Community Management",
+          "description": "Active engagement, responding to comments, and building a loyal following.",
+          "iconName": "Users"
+        },
+        {
+          "id": "card-3",
+          "title": "Paid Social Amplification",
+          "description": "Strategic ad spend to boost your best-performing organic content.",
+          "iconName": "TrendingUp"
+        },
+        {
+          "id": "card-4",
+          "title": "Influencer Collaborations",
+          "description": "Partnering with industry voices to expand your brand's reach.",
+          "iconName": "Star"
+        },
+        {
+          "id": "card-5",
+          "title": "Social Listening & Analytics",
+          "description": "Tracking brand sentiment and competitor moves in real-time.",
+          "iconName": "BarChart3"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-8540",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Real results from our social media campaigns.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "E-Commerce Lifestyle Brand Explosion",
+          "bgImageUrl": "https://images.unsplash.com/photo-1616469829581-73993eb86b02?q=80&w=1200",
+          "description": "By revamping their Instagram and TikTok presence with UGC (User Generated Content) and interactive stories, we grew their following by 150k in 6 months and increased direct social sales by 400%.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "UGC Campaigns",
+              "iconName": "Users"
+            },
+            {
+              "id": "p2",
+              "title": "Viral Reel Strategy",
+              "iconName": "Video"
+            },
+            {
+              "id": "p3",
+              "title": "Hashtag Optimization",
+              "iconName": "Hash"
+            },
+            {
+              "id": "p4",
+              "title": "Community Building",
+              "iconName": "Heart"
+            },
+            {
+              "id": "p5",
+              "title": "Social Commerce",
+              "iconName": "ShoppingBag"
+            },
+            {
+              "id": "p6",
+              "title": "Monthly Analytics",
+              "iconName": "BarChart3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-social-media-marketing-8189",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Social Media Marketing services include?",
+          "description": "Our Social Media Marketing services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Social Media Marketing?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Social Media Marketing campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Social Media Marketing?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Social Media Marketing solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "page-seo-hidden",
+  "slug": "seo",
+  "title": "Search Engine Optimization (SEO) - Dominate Organic Search",
+  "heroBadge": "Search",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Securing the Top Spot When Customers Search.",
+      "content": "Organic search visibility is the most sustainable source of long-term revenue. Lumora's SEO experts utilize technical precision, authoritative backlink building, and semantic content strategies to push your brand to the top of Google. We don't just chase traffic; we target high-intent keywords that bring buyers directly to your digital doorstep.",
+      "mediaUrl": "https://images.unsplash.com/photo-1432888117247-2b0e6dfa0698?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "Comprehensive SEO Strategies",
+      "content": "Data-driven techniques to conquer search engine rankings.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Technical SEO Audits",
+          "description": "Fixing site speed, crawl errors, and indexability issues.",
+          "iconName": "Code"
+        },
+        {
+          "id": "card-2",
+          "title": "On-Page Optimization",
+          "description": "Structuring content, headers, and metadata for maximum relevance.",
+          "iconName": "FileText"
+        },
+        {
+          "id": "card-3",
+          "title": "High-Authority Link Building",
+          "description": "Acquiring powerful backlinks from trusted industry domains.",
+          "iconName": "Link"
+        },
+        {
+          "id": "card-4",
+          "title": "Local SEO & GMB Profiles",
+          "description": "Dominating the map pack for local service businesses.",
+          "iconName": "MapPin"
+        },
+        {
+          "id": "card-5",
+          "title": "SEO Content Creation",
+          "description": "Publishing semantic, helpful content that Google loves.",
+          "iconName": "PenTool"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-2755",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Achieving Page 1 dominance.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "National Retailer Traffic Boom",
+          "bgImageUrl": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1200",
+          "description": "Through a massive technical cleanup and targeted long-tail keyword strategy, we increased organic non-branded traffic by 310%, leading to a massive spike in online revenue.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Technical Audit",
+              "iconName": "Search"
+            },
+            {
+              "id": "p2",
+              "title": "Keyword Mapping",
+              "iconName": "Map"
+            },
+            {
+              "id": "p3",
+              "title": "Content Pruning",
+              "iconName": "Scissors"
+            },
+            {
+              "id": "p4",
+              "title": "Link Outreach",
+              "iconName": "Link"
+            },
+            {
+              "id": "p5",
+              "title": "Core Web Vitals",
+              "iconName": "Activity"
+            },
+            {
+              "id": "p6",
+              "title": "SERP Tracking",
+              "iconName": "BarChart3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-seo-9477",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Search Engine Optimization (SEO) services include?",
+          "description": "Our Search Engine Optimization (SEO) services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Search Engine Optimization (SEO)?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Search Engine Optimization (SEO) campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Search Engine Optimization (SEO)?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Search Engine Optimization (SEO) solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "page-performance-marketing-hidden",
+  "slug": "performance-marketing-v2",
+  "title": "Performance Marketing - AI-Optimized ROI Campaigns",
+  "heroBadge": "Target",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Data-Driven Campaigns Where Every Dollar Counts.",
+      "content": "Performance marketing is about measurable, scalable results. Lumora deploys aggressive, omnichannel performance campaigns driven by AI algorithms and rigorous A/B testing. We focus strictly on KPIs—CPA, ROAS, and LTV—ensuring your marketing budget acts as a precise investment vehicle for immediate revenue growth.",
+      "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "Performance Marketing Strategies",
+      "content": "Unlocking unprecedented ROI with programmatic precision.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Programmatic Advertising",
+          "description": "Real-time automated bidding across global ad exchanges.",
+          "iconName": "Cpu"
+        },
+        {
+          "id": "card-2",
+          "title": "Conversion Rate Optimization",
+          "description": "Continuous multivariate testing of landing pages and funnels.",
+          "iconName": "MousePointerClick"
+        },
+        {
+          "id": "card-3",
+          "title": "Cross-Channel Attribution",
+          "description": "Understanding the exact touchpoints that drive a sale.",
+          "iconName": "GitMerge"
+        },
+        {
+          "id": "card-4",
+          "title": "Dynamic Creative Optimization",
+          "description": "AI-generated ad variants tailored to the individual user.",
+          "iconName": "Sparkles"
+        },
+        {
+          "id": "card-5",
+          "title": "Affiliate & Partner Marketing",
+          "description": "Leveraging third-party networks for cost-effective acquisition.",
+          "iconName": "Users"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-720",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Scaling revenue with mathematical precision.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "FinTech App User Acquisition",
+          "bgImageUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+          "description": "By implementing a strict CPA-focused programmatic campaign, we scaled a new FinTech app to 100,000 active users within 4 months while reducing the cost-per-install by 65%.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Algorithm Training",
+              "iconName": "Cpu"
+            },
+            {
+              "id": "p2",
+              "title": "A/B Testing",
+              "iconName": "SplitSquareHorizontal"
+            },
+            {
+              "id": "p3",
+              "title": "Attribution Modeling",
+              "iconName": "GitMerge"
+            },
+            {
+              "id": "p4",
+              "title": "LTV Analysis",
+              "iconName": "BarChart3"
+            },
+            {
+              "id": "p5",
+              "title": "Budget Scaling",
+              "iconName": "TrendingUp"
+            },
+            {
+              "id": "p6",
+              "title": "Fraud Prevention",
+              "iconName": "ShieldCheck"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-performance-marketing-6913",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Performance Marketing services include?",
+          "description": "Our Performance Marketing services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Performance Marketing?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Performance Marketing campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Performance Marketing?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Performance Marketing solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "page-retargeting-marketing-hidden",
+  "slug": "retargeting-marketing-v2",
+  "title": "Retargeting Marketing - Re-engage & Convert Lost Visitors",
+  "heroBadge": "RefreshCw",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Don't Let High-Intent Visitors Slip Away.",
+      "content": "Over 97% of visitors leave a website without taking action. Lumora's Retargeting Marketing services ensure your brand stays top-of-mind. We use advanced tracking pixels and dynamic ad formats to re-engage bounced traffic across social networks, search engines, and partner sites, guiding them back to your funnel to complete their purchase or inquiry.",
+      "mediaUrl": "https://images.unsplash.com/photo-1533750516457-a7f992034fec?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "Advanced Retargeting Solutions",
+      "content": "Recapture lost revenue with persistent, tailored messaging.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Dynamic Product Ads",
+          "description": "Showing users the exact products they viewed but didn't buy.",
+          "iconName": "ShoppingBag"
+        },
+        {
+          "id": "card-2",
+          "title": "Cross-Device Tracking",
+          "description": "Reaching users seamlessly across mobile, tablet, and desktop.",
+          "iconName": "MonitorSmartphone"
+        },
+        {
+          "id": "card-3",
+          "title": "Cart Abandonment Campaigns",
+          "description": "High-urgency ads designed to close the sale immediately.",
+          "iconName": "ShoppingCart"
+        },
+        {
+          "id": "card-4",
+          "title": "Video Sequence Retargeting",
+          "description": "Moving users down the funnel with a planned series of video ads.",
+          "iconName": "Video"
+        },
+        {
+          "id": "card-5",
+          "title": "Custom CRM Audiences",
+          "description": "Uploading email lists to retarget existing or lapsed customers.",
+          "iconName": "Database"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-9376",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Bringing buyers back to the checkout line.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Luxury Apparel Cart Recovery",
+          "bgImageUrl": "https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?q=80&w=1200",
+          "description": "We implemented a dynamic 3-step retargeting sequence across Facebook and Google Display for a luxury clothing brand, recovering $450k in abandoned cart revenue in a single quarter.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Pixel Configuration",
+              "iconName": "Code"
+            },
+            {
+              "id": "p2",
+              "title": "Dynamic Feeds",
+              "iconName": "Database"
+            },
+            {
+              "id": "p3",
+              "title": "Urgency Copywriting",
+              "iconName": "PenTool"
+            },
+            {
+              "id": "p4",
+              "title": "Frequency Capping",
+              "iconName": "Clock"
+            },
+            {
+              "id": "p5",
+              "title": "Offer Testing",
+              "iconName": "Sparkles"
+            },
+            {
+              "id": "p6",
+              "title": "ROAS Tracking",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-retargeting-marketing-1811",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Retargeting Marketing services include?",
+          "description": "Our Retargeting Marketing services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Retargeting Marketing?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Retargeting Marketing campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Retargeting Marketing?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Retargeting Marketing solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "page-ai-marketing-automation-hidden",
+  "slug": "ai-marketing-automation-v2",
+  "title": "AI Marketing Automation - Smart Workflows & Nurturing",
+  "heroBadge": "Cpu",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Scaling Your Sales with Artificial Intelligence.",
+      "content": "Manual lead nurturing is slow and prone to errors. Lumora integrates cutting-edge AI Marketing Automation tools that streamline your entire customer journey. From intelligent chatbots that qualify leads 24/7 to predictive email sequencing and automated CRM updates, we build smart infrastructures that allow your team to focus on closing, not chasing.",
+      "mediaUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "Intelligent Automation Services",
+      "content": "Eliminate repetitive tasks and hyper-personalize customer interactions.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Predictive Lead Scoring",
+          "description": "AI algorithms that rank leads based on their likelihood to close.",
+          "iconName": "Target"
+        },
+        {
+          "id": "card-2",
+          "title": "Conversational AI Chatbots",
+          "description": "Smart bots that answer FAQs and book meetings automatically.",
+          "iconName": "MessageSquare"
+        },
+        {
+          "id": "card-3",
+          "title": "Automated Email Journeys",
+          "description": "Drip campaigns that adapt based on user behavior and triggers.",
+          "iconName": "Mail"
+        },
+        {
+          "id": "card-4",
+          "title": "CRM Architecture",
+          "description": "Structuring HubSpot/Salesforce for maximum automation efficiency.",
+          "iconName": "Database"
+        },
+        {
+          "id": "card-5",
+          "title": "Omnichannel Sync",
+          "description": "Ensuring marketing data flows perfectly into sales pipelines.",
+          "iconName": "Workflow"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-1850",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Working smarter, not harder.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "B2B Tech Company Pipeline Automation",
+          "bgImageUrl": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=1200",
+          "description": "By deploying a customized HubSpot AI workflow and an intelligent qualification bot, we reduced their sales cycle length by 35% and saved the sales team 20 hours per week in manual entry.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Workflow Mapping",
+              "iconName": "Map"
+            },
+            {
+              "id": "p2",
+              "title": "Bot Scripting",
+              "iconName": "Code"
+            },
+            {
+              "id": "p3",
+              "title": "CRM Integration",
+              "iconName": "Database"
+            },
+            {
+              "id": "p4",
+              "title": "Behavioral Triggers",
+              "iconName": "Zap"
+            },
+            {
+              "id": "p5",
+              "title": "Sales Alignment",
+              "iconName": "Users"
+            },
+            {
+              "id": "p6",
+              "title": "Optimization",
+              "iconName": "Activity"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-ai-marketing-automation-2943",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your AI Marketing Automation services include?",
+          "description": "Our AI Marketing Automation services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from AI Marketing Automation?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive AI Marketing Automation campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for AI Marketing Automation?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled AI Marketing Automation solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "page-paid-advertising-campaigns-hidden",
+  "slug": "paid-advertising-campaigns-v2",
+  "title": "Paid Advertising Campaigns Services",
+  "heroBadge": "Megaphone",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-ads-we-manage-paid",
+      "type": "scrollable-cards",
+      "title": "Ads We Manage",
+      "cards": [
+        {
+          "id": "card-google",
+          "title": "Google Ads",
+          "description": "Search, Display, Shopping, Performance Max & YouTube Ads",
+          "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg",
+          "linkUrl": "paid-advertising-campaigns/google-ads"
+        },
+        {
+          "id": "card-meta",
+          "title": "Meta Ads",
+          "description": "Facebook & Instagram Ads that build brand, leads & sales",
+          "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg",
+          "linkUrl": "paid-advertising-campaigns/meta-ads"
+        },
+        {
+          "id": "card-youtube",
+          "title": "YouTube Ads",
+          "description": "Video Ads that increase brand awareness and drive conversions",
+          "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg",
+          "linkUrl": "paid-advertising-campaigns/youtube-ads"
+        },
+        {
+          "id": "card-linkedin",
+          "title": "LinkedIn Ads",
+          "description": "B2B Leads, Brand Building & Targeted Outreach for Professionals",
+          "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png",
+          "linkUrl": "paid-advertising-campaigns/linkedin-ads"
+        },
+        {
+          "id": "card-twitter",
+          "title": "Twitter (X) Ads",
+          "description": "Promote your business and engage with your target audience",
+          "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ce/X_logo_2023.svg",
+          "linkUrl": "paid-advertising-campaigns/twitter-ads"
+        }
+      ]
+    },
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Instant Visibility. Immediate Revenue.",
+      "content": "When you need fast, scalable results, nothing beats precision Paid Advertising. Lumora manages high-budget PPC campaigns across Google Ads, Microsoft Ads, and premium display networks. We focus on rigorous keyword research, compelling ad copy, and relentless bid optimization to guarantee that you acquire customers at the lowest possible cost.",
+      "mediaUrl": "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "PPC & Display Solutions",
+      "content": "Maximize your ad spend with data-driven paid search strategies.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Search Engine Marketing (SEM)",
+          "description": "Capturing high-intent searches on Google and Bing.",
+          "iconName": "Search"
+        },
+        {
+          "id": "card-2",
+          "title": "Display Network Campaigns",
+          "description": "Building brand awareness with visually striking banner ads.",
+          "iconName": "Image"
+        },
+        {
+          "id": "card-3",
+          "title": "Video Ads (YouTube)",
+          "description": "Engaging pre-roll and mid-roll video campaigns.",
+          "iconName": "Video"
+        },
+        {
+          "id": "card-4",
+          "title": "Shopping Ads (E-commerce)",
+          "description": "Showcasing your product inventory directly in search results.",
+          "iconName": "ShoppingBag"
+        },
+        {
+          "id": "card-5",
+          "title": "A/B Copy Testing",
+          "description": "Continuously refining ad headlines and descriptions for higher CTR.",
+          "iconName": "PenTool"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-5263",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Dominating the paid search landscape.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Legal Firm Lead Generation",
+          "bgImageUrl": "https://images.unsplash.com/photo-1589829085413-56de8ae18c73?q=80&w=1200",
+          "description": "In a highly competitive market, we restructured a personal injury law firm's Google Ads account, implementing negative keyword lists and bid modifiers to decrease their Cost Per Acquisition by 55%.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Keyword Audit",
+              "iconName": "Search"
+            },
+            {
+              "id": "p2",
+              "title": "Negative Keywords",
+              "iconName": "MinusCircle"
+            },
+            {
+              "id": "p3",
+              "title": "Ad Copy Writing",
+              "iconName": "PenTool"
+            },
+            {
+              "id": "p4",
+              "title": "Landing Pages",
+              "iconName": "Layout"
+            },
+            {
+              "id": "p5",
+              "title": "Call Tracking",
+              "iconName": "Phone"
+            },
+            {
+              "id": "p6",
+              "title": "Bid Adjustments",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-paid-advertising-campaigns-4007",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Paid Advertising Campaigns services include?",
+          "description": "Our Paid Advertising Campaigns services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Paid Advertising Campaigns?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Paid Advertising Campaigns campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Paid Advertising Campaigns?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Paid Advertising Campaigns solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "page-target-audience-reach-hidden",
+  "slug": "target-audience-reach-v2",
+  "title": "Target Audience Reach Services",
+  "heroBadge": "Crosshair",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Connecting Your Brand with the People Who Matter.",
+      "content": "Marketing is useless if it's not seen by the right eyes. Lumora's Target Audience Reach Services utilize advanced demographic, psychographic, and behavioral profiling to put your brand directly in front of your ideal customers. We leverage big data to eliminate wasted impressions and ensure your message resonates with those most likely to convert.",
+      "mediaUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "Audience Profiling & Penetration",
+      "content": "Scientifically identifying and acquiring your perfect customer.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Buyer Persona Development",
+          "description": "Creating detailed profiles of your ideal target customers.",
+          "iconName": "UserCheck"
+        },
+        {
+          "id": "card-2",
+          "title": "Lookalike Audiences",
+          "description": "Finding new users who share traits with your best existing clients.",
+          "iconName": "Users"
+        },
+        {
+          "id": "card-3",
+          "title": "Geo-Fencing & Hyper-Local",
+          "description": "Targeting users within specific physical boundaries.",
+          "iconName": "MapPin"
+        },
+        {
+          "id": "card-4",
+          "title": "Behavioral Targeting",
+          "description": "Serving ads based on a user's browsing history and interests.",
+          "iconName": "Target"
+        },
+        {
+          "id": "card-5",
+          "title": "B2B Firmographic Targeting",
+          "description": "Reaching decision-makers based on company size, revenue, and job title.",
+          "iconName": "Briefcase"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-4879",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Hitting the bullseye on customer acquisition.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Niche Software Market Penetration",
+          "bgImageUrl": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=1200",
+          "description": "By utilizing highly specific LinkedIn firmographic targeting and AI-built lookalike audiences, we successfully introduced a niche software product to 500+ C-level executives in the manufacturing sector.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Persona Mapping",
+              "iconName": "UserCheck"
+            },
+            {
+              "id": "p2",
+              "title": "Data Harvesting",
+              "iconName": "Database"
+            },
+            {
+              "id": "p3",
+              "title": "List Segmentation",
+              "iconName": "List"
+            },
+            {
+              "id": "p4",
+              "title": "Custom Messaging",
+              "iconName": "MessageSquare"
+            },
+            {
+              "id": "p5",
+              "title": "Omnichannel Delivery",
+              "iconName": "Globe"
+            },
+            {
+              "id": "p6",
+              "title": "Conversion Analysis",
+              "iconName": "BarChart3"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-target-audience-reach-7038",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Target Audience Reach services include?",
+          "description": "Our Target Audience Reach services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Target Audience Reach?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Target Audience Reach campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Target Audience Reach?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Target Audience Reach solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "page-influencer-marketing-hidden",
+  "slug": "influencer-marketing-v2",
+  "title": "Influencer Marketing Services",
+  "heroBadge": "Star",
+  "pageType": "service",
+  "isPublished": true,
+  "sections": [
+    {
+      "id": "sec-overview",
+      "type": "overview",
+      "title": "Borrowing Trust to Accelerate Brand Growth.",
+      "content": "Consumers trust recommendations from people they admire. Lumora manages end-to-end Influencer Marketing campaigns, connecting your brand with vetted macro and micro-influencers whose audiences align perfectly with your target market. We handle the outreach, negotiation, content guidelines, and ROI tracking to ensure authentic partnerships that drive massive sales.",
+      "mediaUrl": "https://images.unsplash.com/photo-1611162616305-c69b3fa7fbe0?q=80&w=800",
+      "bullets": []
+    },
+    {
+      "id": "sec-services",
+      "type": "services-grid",
+      "title": "End-to-End Influencer Management",
+      "content": "Strategic partnerships that create authentic brand champions.",
+      "cards": [
+        {
+          "id": "card-1",
+          "title": "Influencer Vetting & Sourcing",
+          "description": "Finding creators with high engagement and authentic followings.",
+          "iconName": "Search"
+        },
+        {
+          "id": "card-2",
+          "title": "Contract Negotiation",
+          "description": "Managing deliverables, usage rights, and payment structures.",
+          "iconName": "FileText"
+        },
+        {
+          "id": "card-3",
+          "title": "Campaign Strategy & Briefs",
+          "description": "Providing creative direction while maintaining creator authenticity.",
+          "iconName": "Map"
+        },
+        {
+          "id": "card-4",
+          "title": "UGC Whitelisting",
+          "description": "Running paid ads through the influencer's social handles.",
+          "iconName": "TrendingUp"
+        },
+        {
+          "id": "card-5",
+          "title": "Affiliate & Promo Tracking",
+          "description": "Measuring direct sales generated by each specific creator.",
+          "iconName": "BarChart3"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-8765",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Going viral with the right partnerships.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Beauty Brand Product Launch",
+          "bgImageUrl": "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1200",
+          "description": "We orchestrated a synchronized launch featuring 50 micro-influencers on TikTok and Instagram. The campaign generated 4.5 million organic impressions and sold out the initial product run in just 72 hours.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Creator Scouting",
+              "iconName": "Search"
+            },
+            {
+              "id": "p2",
+              "title": "Product Seeding",
+              "iconName": "Package"
+            },
+            {
+              "id": "p3",
+              "title": "Brief Creation",
+              "iconName": "PenTool"
+            },
+            {
+              "id": "p4",
+              "title": "Content Review",
+              "iconName": "Eye"
+            },
+            {
+              "id": "p5",
+              "title": "Launch Coordination",
+              "iconName": "Clock"
+            },
+            {
+              "id": "p6",
+              "title": "Sales Attribution",
+              "iconName": "DollarSign"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-influencer-marketing-5320",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Influencer Marketing services include?",
+          "description": "Our Influencer Marketing services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Influencer Marketing?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Influencer Marketing campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Influencer Marketing?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Influencer Marketing solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "position": "None"
+},
+{
+  "id": "20-hidden",
+  "slug": "strategies-creations",
+  "title": "Strategies Creations",
+  "isPublished": true,
+  "heroTitle": "Data-Driven Strategies Creations",
+  "heroSubtitle": "We craft comprehensive digital marketing strategies that align with your business goals, target the right audience, and drive sustainable growth.",
+  "heroBadge": "TrendingUp",
+  "heroImage": "/images/services/strategy_creation.png",
+  "overviewContent": "Our strategy creation process dives deep into your market, competitors, and audience. We build actionable roadmaps that take the guesswork out of marketing and give your team clear, measurable objectives to achieve.",
+  "sections": [
+    {
+      "id": "overview-20",
+      "type": "overview",
+      "isActive": true,
+      "orderIndex": 0,
+      "content": "A successful marketing campaign starts with a solid foundation. Our Strategies Creations service involves deep market research, competitive analysis, and audience profiling to create a customized marketing blueprint. We don't just give you ideas; we give you a step-by-step execution plan tailored to maximize ROI across all relevant channels.",
+      "title": "Strategic Blueprinting",
+      "subtitle": "The Foundation of Success"
+    },
+    {
+      "id": "features-20",
+      "type": "services-grid",
+      "isActive": true,
+      "orderIndex": 1,
+      "title": "Key Strategy Components",
+      "subtitle": "What goes into our strategies",
+      "cards": [
+        {
+          "title": "Market Positioning",
+          "description": "Finding the white space in your industry.",
+          "iconName": "Target"
+        },
+        {
+          "title": "Audience Personas",
+          "description": "Detailed profiles of your ideal buyers.",
+          "iconName": "Users"
+        },
+        {
+          "title": "Channel Selection",
+          "description": "Identifying where your audience spends their time.",
+          "iconName": "Share2"
+        },
+        {
+          "title": "Budget Allocation",
+          "description": "Optimizing spend for maximum returns.",
+          "iconName": "PieChart"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-9105",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-8837",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Real results for real clients.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Scaling strategies creations",
+          "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+          "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Strategic Planning",
+              "iconName": "Map"
+            },
+            {
+              "id": "p2",
+              "title": "Execution",
+              "iconName": "Target"
+            },
+            {
+              "id": "p3",
+              "title": "Results",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-strategies-creations-9383",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Strategies Creations services include?",
+          "description": "Our Strategies Creations services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Strategies Creations?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Strategies Creations campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Strategies Creations?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Strategies Creations solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Marketing Strategies Creations | Lumora",
+    "metaDescription": "Custom digital marketing strategies tailored for growth and ROI.",
+    "keywords": "marketing strategy, digital strategy, growth planning"
+  },
+  "serviceFeatures": [
+    "In-depth Market Research",
+    "Competitor Analysis",
+    "Actionable Roadmaps"
+  ],
+  "serviceDeliverables": [
+    "Comprehensive Strategy Document",
+    "Quarterly Execution Plans",
+    "KPI Dashboards"
+  ],
+  "serviceRecommendedFor": "Startups and enterprises looking to scale or pivot.",
+  "position": "None"
+},
+{
+  "id": "21-hidden",
+  "slug": "diagnose-marketing-v2",
+  "title": "Diagnose Marketing",
+  "isPublished": true,
+  "heroTitle": "Comprehensive Marketing Diagnosis",
+  "heroSubtitle": "Identify bottlenecks, discover wasted ad spend, and unlock hidden revenue opportunities within your current marketing funnel.",
+  "heroBadge": "Search",
+  "heroImage": "/images/services/diagnose_marketing.png",
+  "overviewContent": "If your marketing isn't performing as expected, our Diagnose Marketing service will find out why. We conduct a complete audit of your digital footprint, ad accounts, SEO, and website conversion rates to pinpoint exact areas of improvement.",
+  "sections": [
+    {
+      "id": "overview-21",
+      "type": "overview",
+      "isActive": true,
+      "orderIndex": 0,
+      "content": "Stop guessing why your campaigns are failing. Our diagnostic process uses advanced analytics and manual expert review to audit every touchpoint of your customer journey. We evaluate messaging alignment, technical setup, tracking accuracy, and creative effectiveness to provide a clear diagnosis of your marketing health.",
+      "title": "Uncovering the Truth",
+      "subtitle": "Deep-dive Audits"
+    },
+    {
+      "id": "sec-how-we-do-it-9462",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-8782",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Real results for real clients.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Scaling diagnose marketing",
+          "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+          "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Strategic Planning",
+              "iconName": "Map"
+            },
+            {
+              "id": "p2",
+              "title": "Execution",
+              "iconName": "Target"
+            },
+            {
+              "id": "p3",
+              "title": "Results",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-diagnose-marketing-9922",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Diagnose Marketing services include?",
+          "description": "Our Diagnose Marketing services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Diagnose Marketing?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Diagnose Marketing campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Diagnose Marketing?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Diagnose Marketing solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Diagnose Marketing Performance | Lumora",
+    "metaDescription": "Find out why your marketing campaigns are underperforming with our expert diagnostic services.",
+    "keywords": "marketing audit, campaign diagnosis, conversion rate optimization"
+  },
+  "serviceFeatures": [
+    "Full Funnel Analysis",
+    "Tracking & Analytics Verification",
+    "Competitor Benchmarking"
+  ],
+  "serviceDeliverables": [
+    "Detailed Audit Report",
+    "Prioritized Action Plan",
+    "Consultation Session"
+  ],
+  "serviceRecommendedFor": "Companies with existing campaigns seeing declining ROI.",
+  "position": "None"
+},
+{
+  "id": "22-hidden",
+  "slug": "retarget-marketing",
+  "title": "Retarget Marketing",
+  "isPublished": true,
+  "heroTitle": "High-Converting Retargeting Campaigns",
+  "heroSubtitle": "Bring back lost visitors and turn them into paying customers with highly personalized, omnichannel retargeting strategies.",
+  "heroBadge": "Repeat",
+  "heroImage": "/images/services/retarget_marketing.png",
+  "overviewContent": "Over 95% of first-time website visitors leave without converting. Our Retarget Marketing service captures this lost revenue by strategically re-engaging them across social media, display networks, and email with tailored messaging based on their previous behavior.",
+  "sections": [
+    {
+      "id": "overview-22",
+      "type": "overview",
+      "isActive": true,
+      "orderIndex": 0,
+      "content": "We don't just stalk your visitors with the same ad. We build dynamic retargeting funnels that address objections, offer timely incentives, and guide prospects back to the point of purchase. By segmenting audiences based on how they interacted with your site (e.g., viewed pricing, abandoned cart, read a blog), we deliver hyper-relevant ads that drastically improve conversion rates.",
+      "title": "Smart Re-engagement",
+      "subtitle": "Closing the Loop"
+    },
+    {
+      "id": "features-22",
+      "type": "services-grid",
+      "isActive": true,
+      "orderIndex": 1,
+      "title": "Retargeting Capabilities",
+      "subtitle": "Platforms and strategies we use",
+      "cards": [
+        {
+          "title": "Dynamic Product Ads",
+          "description": "Showing exactly what they left in their cart.",
+          "iconName": "ShoppingCart"
+        },
+        {
+          "title": "Cross-Channel",
+          "description": "Following users seamlessly across Meta, Google, and LinkedIn.",
+          "iconName": "Globe"
+        },
+        {
+          "title": "Sequential Messaging",
+          "description": "Telling a story over multiple ad touches.",
+          "iconName": "MessageSquare"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-1451",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-2107",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Real results for real clients.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Scaling retarget marketing",
+          "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+          "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Strategic Planning",
+              "iconName": "Map"
+            },
+            {
+              "id": "p2",
+              "title": "Execution",
+              "iconName": "Target"
+            },
+            {
+              "id": "p3",
+              "title": "Results",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-retarget-marketing-9060",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Retarget Marketing services include?",
+          "description": "Our Retarget Marketing services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Retarget Marketing?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Retarget Marketing campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Retarget Marketing?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Retarget Marketing solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Retarget Marketing Services | Lumora",
+    "metaDescription": "Convert lost traffic with smart omnichannel retargeting campaigns.",
+    "keywords": "retargeting, remarketing, conversion optimization"
+  },
+  "serviceFeatures": [
+    "Dynamic Ad Creatives",
+    "Behavioral Audience Segmentation",
+    "Frequency Capping & Optimization"
+  ],
+  "serviceDeliverables": [
+    "Retargeting Funnel Setup",
+    "A/B Tested Creatives",
+    "ROI & Attribution Reporting"
+  ],
+  "serviceRecommendedFor": "E-commerce and B2B SaaS with high website traffic.",
+  "position": "None"
+},
+{
+  "id": "23-hidden",
+  "slug": "demand-generation-v2",
+  "title": "Demand Generation",
+  "isPublished": true,
+  "heroTitle": "Scalable Demand Generation",
+  "heroSubtitle": "Create sustainable, long-term brand awareness and interest that fills your pipeline with high-intent prospects before they even start searching for a solution.",
+  "heroBadge": "Megaphone",
+  "heroImage": "/images/services/demand_generation.png",
+  "overviewContent": "Unlike traditional lead gen that harvests existing demand, our Demand Generation services create new demand. We position your brand as a thought leader and educate your market on the problems they didn't know they had, making you the undeniable solution.",
+  "sections": [
+    {
+      "id": "overview-23",
+      "type": "overview",
+      "isActive": true,
+      "orderIndex": 0,
+      "content": "Demand generation requires a holistic approach combining content marketing, PR, organic social, and top-of-funnel paid media. We focus on distributing high-value, ungated content that builds trust and authority. By capturing mindshare early, we ensure that when buyers are ready to purchase, you are the only brand they consider.",
+      "title": "Creating the Market",
+      "subtitle": "Beyond Lead Gen"
+    },
+    {
+      "id": "faq-23",
+      "type": "services-grid",
+      "isActive": true,
+      "orderIndex": 1,
+      "title": "Demand Generation FAQs",
+      "subtitle": "Common questions about our approach",
+      "cards": [
+        {
+          "title": "How is this different from Lead Generation?",
+          "description": "Lead generation captures existing intent (often through gated content or direct response ads). Demand generation creates the intent through education and brand building, often without asking for an email right away.",
+          "iconName": "MessageCircle"
+        },
+        {
+          "title": "How do you measure Demand Generation?",
+          "description": "We look at blended metrics including branded search volume, direct traffic, content engagement, and overall pipeline velocity, rather than just cost-per-lead.",
+          "iconName": "MessageCircle"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-6810",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-1701",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Real results for real clients.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Scaling demand generation",
+          "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+          "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Strategic Planning",
+              "iconName": "Map"
+            },
+            {
+              "id": "p2",
+              "title": "Execution",
+              "iconName": "Target"
+            },
+            {
+              "id": "p3",
+              "title": "Results",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-demand-generation-4289",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Demand Generation services include?",
+          "description": "Our Demand Generation services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Demand Generation?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Demand Generation campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Demand Generation?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Demand Generation solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "B2B Demand Generation | Lumora",
+    "metaDescription": "Build brand authority and create sustainable pipeline with our demand generation strategies.",
+    "keywords": "demand generation, B2B marketing, brand awareness"
+  },
+  "serviceFeatures": [
+    "Content Strategy & Distribution",
+    "Thought Leadership Campaigns",
+    "Account-Based Marketing (ABM)"
+  ],
+  "serviceDeliverables": [
+    "Content Calendar",
+    "Multi-channel Distribution Setup",
+    "Brand Lift Metrics"
+  ],
+  "serviceRecommendedFor": "B2B companies selling high-ticket or complex solutions.",
+  "position": "None"
+},
+{
+  "id": "24-hidden",
+  "slug": "high-quality-lead-generation",
+  "title": "High Quality Lead Generation",
+  "isPublished": true,
+  "heroTitle": "High Quality Lead Generation",
+  "heroSubtitle": "Stop chasing unqualified prospects. We build automated funnels that attract, qualify, and deliver sales-ready leads directly to your CRM.",
+  "heroBadge": "Filter",
+  "heroImage": "/images/services/lead_generation.png",
+  "overviewContent": "Quantity means nothing if the quality is poor. Our lead generation strategies prioritize intent and qualification over sheer volume. We utilize advanced targeting, rigorous qualifying questionnaires, and CRM integrations to ensure your sales team only speaks to prospects who are ready to buy.",
+  "sections": [
+    {
+      "id": "overview-24",
+      "type": "overview",
+      "isActive": true,
+      "orderIndex": 0,
+      "content": "We engineer lead generation systems tailored to your specific ideal customer profile (ICP). By combining high-converting landing pages, compelling lead magnets, and targeted advertising on platforms like LinkedIn and Google, we create a predictable engine for growth. Every lead is scored and nurtured through automated email sequences until they meet your sales criteria.",
+      "title": "Quality Over Quantity",
+      "subtitle": "The Revenue Engine"
+    },
+    {
+      "id": "sec-how-we-do-it-809",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-8293",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Real results for real clients.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Scaling high quality lead generation",
+          "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+          "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Strategic Planning",
+              "iconName": "Map"
+            },
+            {
+              "id": "p2",
+              "title": "Execution",
+              "iconName": "Target"
+            },
+            {
+              "id": "p3",
+              "title": "Results",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-high-quality-lead-generation-479",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your High Quality Lead Generation services include?",
+          "description": "Our High Quality Lead Generation services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from High Quality Lead Generation?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive High Quality Lead Generation campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for High Quality Lead Generation?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled High Quality Lead Generation solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "High Quality Lead Generation Services | Lumora",
+    "metaDescription": "Generate sales-ready B2B and B2C leads with our optimized marketing funnels.",
+    "keywords": "lead generation, quality leads, B2B leads, sales funnels"
+  },
+  "serviceFeatures": [
+    "Custom Landing Pages",
+    "Lead Scoring & Qualification",
+    "CRM & Marketing Automation Integration"
+  ],
+  "serviceDeliverables": [
+    "Automated Lead Funnel",
+    "Targeted Ad Campaigns",
+    "Lead Nurture Email Sequences"
+  ],
+  "serviceRecommendedFor": "Service businesses, SaaS, and B2B organizations.",
+  "position": "None"
+},
+{
+  "id": "25-hidden",
+  "slug": "experts-monthly-audit",
+  "title": "Experts Monthly Audit",
+  "isPublished": true,
+  "heroTitle": "Experts Monthly Audit",
+  "heroSubtitle": "Continuous oversight and strategic refinement of your internal marketing efforts by our seasoned industry veterans.",
+  "heroBadge": "CheckCircle",
+  "heroImage": "/images/services/monthly_audit.png",
+  "overviewContent": "Have an in-house marketing team but need expert guidance to ensure they are on the right track? Our Experts Monthly Audit provides ongoing, high-level strategic review, campaign optimization recommendations, and mentorship for your internal staff.",
+  "sections": [
+    {
+      "id": "overview-25",
+      "type": "overview",
+      "isActive": true,
+      "orderIndex": 0,
+      "content": "Marketing moves fast. What worked six months ago might be wasting your budget today. With our monthly audit service, a dedicated senior strategist reviews your analytics, ad accounts, and content strategy every 30 days. We provide actionable feedback, catch costly mistakes before they scale, and keep your team updated on the latest platform changes and growth hacks.",
+      "title": "Strategic Oversight",
+      "subtitle": "Your Fractional CMO Team"
+    },
+    {
+      "id": "features-25",
+      "type": "services-grid",
+      "isActive": true,
+      "orderIndex": 1,
+      "title": "What We Review",
+      "subtitle": "Monthly checks and balances",
+      "cards": [
+        {
+          "title": "Ad Spend Efficiency",
+          "description": "Ensuring your ROAS is maximized across platforms.",
+          "iconName": "DollarSign"
+        },
+        {
+          "title": "Conversion Bottlenecks",
+          "description": "Identifying where users drop off on your site.",
+          "iconName": "AlertTriangle"
+        },
+        {
+          "title": "SEO Performance",
+          "description": "Tracking rankings and organic traffic growth.",
+          "iconName": "TrendingUp"
+        },
+        {
+          "title": "Strategy Alignment",
+          "description": "Keeping tactics aligned with business goals.",
+          "iconName": "Compass"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-966",
+      "type": "how-we-do-it",
+      "title": "How we do it",
+      "content": "We create fast, responsive, and conversion-optimised solutions that turn visitors into customers. From strategic planning to seamless execution — every project is built for performance and a seamless user experience across all platforms.",
+      "cards": [
+        {
+          "id": "hw-1",
+          "title": "Strategy & Planning",
+          "description": "We analyze your business goals and develop a comprehensive roadmap."
+        },
+        {
+          "id": "hw-2",
+          "title": "Design & Copywriting",
+          "description": "Crafting compelling visuals and persuasive messaging that resonates."
+        },
+        {
+          "id": "hw-3",
+          "title": "Technical Execution",
+          "description": "Implementing the strategy using cutting-edge tools and best practices."
+        },
+        {
+          "id": "hw-4",
+          "title": "Quality Assurance",
+          "description": "Rigorous testing to ensure everything performs flawlessly."
+        },
+        {
+          "id": "hw-5",
+          "title": "Campaign Launch",
+          "description": "Deploying the campaigns with precision and maximum impact."
+        },
+        {
+          "id": "hw-6",
+          "title": "Optimization & Scaling",
+          "description": "Continuous monitoring and refining to maximize ROI and scale success."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-8958",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "Real results for real clients.",
+      "caseStudies": [
+        {
+          "id": "cs-1",
+          "title": "Scaling experts monthly audit",
+          "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+          "description": "Through a strategic approach, we helped our client achieve unprecedented growth and efficiency.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Strategic Planning",
+              "iconName": "Map"
+            },
+            {
+              "id": "p2",
+              "title": "Execution",
+              "iconName": "Target"
+            },
+            {
+              "id": "p3",
+              "title": "Results",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-experts-monthly-audit-5298",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-1",
+          "title": "What exactly do your Experts Monthly Audit services include?",
+          "description": "Our Experts Monthly Audit services provide end-to-end strategy, execution, and continuous optimization tailored to your unique business goals. We focus on driving measurable growth and maximizing your ROI."
+        },
+        {
+          "id": "faq-2",
+          "title": "How long does it take to see results from Experts Monthly Audit?",
+          "description": "While initial improvements and quick wins can often be seen within the first few weeks, comprehensive Experts Monthly Audit campaigns typically show significant, scalable growth in 3-6 months."
+        },
+        {
+          "id": "faq-3",
+          "title": "Why should we choose Lumora for Experts Monthly Audit?",
+          "description": "With years of industry expertise, transparent reporting, and a proven track record of scaling businesses, we deliver unparalleled Experts Monthly Audit solutions that directly impact your bottom line."
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Monthly Marketing Audits | Lumora",
+    "metaDescription": "Get expert oversight and monthly reviews of your marketing campaigns to ensure maximum performance.",
+    "keywords": "marketing audit, fractional CMO, campaign review, marketing consulting"
+  },
+  "serviceFeatures": [
+    "Deep-Dive Monthly Account Reviews",
+    "Actionable Fixes & Recommendations",
+    "1-on-1 Strategy Calls"
+  ],
+  "serviceDeliverables": [
+    "Monthly Video Walkthrough",
+    "Prioritized Task List",
+    "Performance Benchmark Report"
+  ],
+  "serviceRecommendedFor": "Companies with an in-house marketing team seeking expert guidance.",
+  "position": "None"
+},
+{
+  "id": "page-personal-branding-hidden",
+  "slug": "personal-branding-v2",
+  "title": "Personal Branding",
+  "isPublished": true,
+  "pageType": "service",
+  "heroTitle": "Elevate Your Personal Brand & Legacy",
+  "heroSubtitle": "Position yourself as an industry authority. We build powerful personal brands for CEOs, entrepreneurs, and thought leaders who want to maximize their influence and legacy.",
+  "heroBadge": "Award",
+  "heroImage": "/images/services/personal_branding_hero.jpg",
+  "overviewContent": "In today's digital landscape, people buy from people they trust. Your personal brand is your most valuable asset. Our tailored personal branding strategies are designed exclusively for high-achieving entrepreneurs, CEOs, and industry leaders to help you stand out, build a lasting legacy, and command industry authority.",
+  "sections": [
+    {
+      "id": "sec-overview-personal-branding",
+      "type": "overview",
+      "isActive": true,
+      "orderIndex": 0,
+      "content": "A strong personal brand does more than boost your ego—it drives business growth, attracts premium partnerships, and opens doors to speaking engagements and media opportunities. We handle everything from LinkedIn thought leadership and PR placements to premium content creation, so you can focus on leading your business.",
+      "title": "Build Your Legacy",
+      "subtitle": "Influence that Scales"
+    },
+    {
+      "id": "features-personal-branding",
+      "type": "services-grid",
+      "isActive": true,
+      "orderIndex": 1,
+      "title": "Personal Branding Services",
+      "subtitle": "What we do for leaders",
+      "cards": [
+        {
+          "title": "Executive Thought Leadership",
+          "description": "Ghostwritten articles, LinkedIn posts, and industry insights.",
+          "iconName": "PenTool"
+        },
+        {
+          "title": "Digital PR & Media Placement",
+          "description": "Getting you featured in top-tier publications and podcasts.",
+          "iconName": "Mic"
+        },
+        {
+          "title": "Premium Visual Identity",
+          "description": "Professional photography, personal logo, and website design.",
+          "iconName": "Image"
+        },
+        {
+          "title": "Speaking Engagement Outreach",
+          "description": "Securing keynote speaking spots at industry conferences.",
+          "iconName": "Megaphone"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-personal-branding",
+      "type": "how-we-do-it",
+      "title": "How we build your brand",
+      "content": "Our process is highly personalized. We start by uncovering your unique story, core values, and expertise, then craft a narrative that resonates with your target audience and peers.",
+      "cards": [
+        {
+          "id": "pb-hw-1",
+          "title": "Brand Discovery",
+          "description": "Deep-dive interviews to extract your unique value proposition."
+        },
+        {
+          "id": "pb-hw-2",
+          "title": "Strategy & Narrative",
+          "description": "Defining your content pillars and target audience."
+        },
+        {
+          "id": "pb-hw-3",
+          "title": "Content Creation",
+          "description": "Developing high-impact visual and written content."
+        },
+        {
+          "id": "pb-hw-4",
+          "title": "Omnichannel Distribution",
+          "description": "Publishing across LinkedIn, Twitter, and personal blogs."
+        },
+        {
+          "id": "pb-hw-5",
+          "title": "PR & Outreach",
+          "description": "Pitching you to podcasts and media outlets."
+        },
+        {
+          "id": "pb-hw-6",
+          "title": "Authority Scaling",
+          "description": "Leveraging your new authority for business growth."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-personal-branding",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "How we built a top-tier personal brand.",
+      "caseStudies": [
+        {
+          "id": "cs-pb-1",
+          "title": "Scaling Executive Influence",
+          "bgImageUrl": "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?q=80&w=1200",
+          "description": "We worked with a tech founder to position them as a thought leader on LinkedIn, resulting in a 400% increase in profile views and securing two keynote speaking slots at major industry conferences within 6 months.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Narrative Building",
+              "iconName": "PenTool"
+            },
+            {
+              "id": "p2",
+              "title": "Content Strategy",
+              "iconName": "Map"
+            },
+            {
+              "id": "p3",
+              "title": "Audience Engagement",
+              "iconName": "Users"
+            },
+            {
+              "id": "p4",
+              "title": "PR Placements",
+              "iconName": "Mic"
+            },
+            {
+              "id": "p5",
+              "title": "Speaking Gigs",
+              "iconName": "Megaphone"
+            },
+            {
+              "id": "p6",
+              "title": "Lead Growth",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-personal-branding",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-pb-1",
+          "title": "Who is this service for?",
+          "description": "This service is specifically designed for CEOs, founders, entrepreneurs, executives, and subject matter experts looking to build authority and a recognizable personal brand."
+        },
+        {
+          "id": "faq-pb-2",
+          "title": "How much of my time will this take?",
+          "description": "We understand leaders are busy. We typically require just 2-3 hours per month for interviews and content approvals. We handle the rest."
+        },
+        {
+          "id": "faq-pb-3",
+          "title": "Can personal branding directly impact my company's revenue?",
+          "description": "Absolutely. Founders with strong personal brands significantly reduce customer acquisition costs, attract better talent, and close deals faster due to established trust."
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Personal Branding for CEOs & Entrepreneurs | Lumora",
+    "metaDescription": "Build your legacy and industry authority with our premium personal branding services for leaders, founders, and CEOs.",
+    "keywords": "personal branding, ceo branding, executive branding, thought leadership"
+  },
+  "serviceFeatures": [
+    "LinkedIn Authority Building",
+    "PR & Podcast Placements",
+    "Executive Ghostwriting"
+  ],
+  "serviceDeliverables": [
+    "Personal Brand Strategy Playbook",
+    "Monthly Content Calendar",
+    "Media Kit & Press Features"
+  ],
+  "serviceRecommendedFor": "CEOs, Founders, and executives wanting to build a lasting legacy.",
+  "position": "None"
+},
+{
+  "id": "page-brand-management-hidden",
+  "slug": "brand-management-v2",
+  "title": "Brand Management",
+  "isPublished": true,
+  "pageType": "service",
+  "heroTitle": "Scale Your Product's Market Presence",
+  "heroSubtitle": "End-to-end product brand management. We handle product positioning, digital marketing, visual identity, and performance campaigns to make your products market leaders.",
+  "heroBadge": "Star",
+  "heroImage": "/images/services/brand_management_hero.jpg",
+  "overviewContent": "Effective brand management is more than just a logo on a product. It's the complete strategy of how your item is perceived, marketed, and sold in a competitive landscape. We help e-commerce and retail businesses build strong, recognizable product brands that drive loyalty and high-volume sales through data-driven marketing, aesthetic packaging design, and targeted omnichannel campaigns.",
+  "sections": [
+    {
+      "id": "sec-overview-brand-management",
+      "type": "overview",
+      "isActive": true,
+      "orderIndex": 0,
+      "content": "Our comprehensive brand management services cover everything your product needs to succeed. From initial market research and competitor analysis to executing high-converting digital ad campaigns and influencer partnerships, we ensure your product stays top-of-mind for consumers.",
+      "title": "Dominate Your Market Category",
+      "subtitle": "Product Marketing Excellence"
+    },
+    {
+      "id": "features-brand-management",
+      "type": "services-grid",
+      "isActive": true,
+      "orderIndex": 1,
+      "title": "Product Brand Management Services",
+      "subtitle": "How we elevate your items",
+      "cards": [
+        {
+          "title": "Product Positioning & Strategy",
+          "description": "Defining your unique value proposition and target demographic.",
+          "iconName": "Target"
+        },
+        {
+          "title": "Visual Identity & Packaging",
+          "description": "Creating stunning visuals, logos, and packaging designs that sell.",
+          "iconName": "Image"
+        },
+        {
+          "title": "E-Commerce & Performance Ads",
+          "description": "Driving direct sales via Google Shopping, Meta, and TikTok Ads.",
+          "iconName": "TrendingUp"
+        },
+        {
+          "title": "Influencer & Affiliate Marketing",
+          "description": "Partnering with creators to build authentic product awareness.",
+          "iconName": "Users"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-brand-management",
+      "type": "how-we-do-it",
+      "title": "Our Brand Management Process",
+      "content": "A systematic approach to taking your product from an unknown item to a household name.",
+      "cards": [
+        {
+          "id": "bm-hw-1",
+          "title": "Market Audit",
+          "description": "Analyzing competitors and finding market gaps."
+        },
+        {
+          "id": "bm-hw-2",
+          "title": "Brand Guidelines",
+          "description": "Establishing consistent visual and tonal identity."
+        },
+        {
+          "id": "bm-hw-3",
+          "title": "Campaign Launch",
+          "description": "Rolling out multi-channel marketing campaigns."
+        },
+        {
+          "id": "bm-hw-4",
+          "title": "Distribution & SEO",
+          "description": "Optimizing listings on Amazon, Shopify, and Google."
+        },
+        {
+          "id": "bm-hw-5",
+          "title": "Community Building",
+          "description": "Fostering customer loyalty and social proof."
+        },
+        {
+          "id": "bm-hw-6",
+          "title": "Scale & Optimize",
+          "description": "Using analytics to refine ads and scale production."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-brand-management",
+      "type": "case-study",
+      "title": "Client Success & Transformation",
+      "content": "How we helped consumer brands achieve explosive growth.",
+      "caseStudies": [
+        {
+          "id": "cs-bm-1",
+          "title": "DTC Skincare Brand Relaunch",
+          "bgImageUrl": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?q=80&w=1200",
+          "description": "We took over the brand management for a struggling DTC skincare line. By revamping their visual identity and launching targeted TikTok and Meta ad campaigns, we increased their monthly recurring revenue by 350% in 4 months.",
+          "points": [
+            {
+              "id": "p1",
+              "title": "Packaging Redesign",
+              "iconName": "Package"
+            },
+            {
+              "id": "p2",
+              "title": "TikTok Ads",
+              "iconName": "Video"
+            },
+            {
+              "id": "p3",
+              "title": "Conversion Optimization",
+              "iconName": "TrendingUp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-brand-management",
+      "type": "faq",
+      "title": "Frequently Asked Questions",
+      "content": "",
+      "cards": [
+        {
+          "id": "faq-bm-1",
+          "title": "Do you work with physical or digital products?",
+          "description": "We manage both! While we have extensive experience with physical CPG (Consumer Packaged Goods), fashion, and tech hardware, we also successfully manage SaaS and digital product brands."
+        },
+        {
+          "id": "faq-bm-2",
+          "title": "Does this include social media management?",
+          "description": "Yes, our brand management packages typically include full-scale social media management to ensure your product maintains a consistent and engaging presence online."
+        },
+        {
+          "id": "faq-bm-3",
+          "title": "How long does it take to see results?",
+          "description": "While visual identity changes are immediate, building measurable brand equity and scaling e-commerce sales typically takes 3 to 6 months of consistent campaign execution."
+        }
+      ]
+    }
+  ],
+  "seo": {
+    "metaTitle": "Product Brand Management Services | Lumora",
+    "metaDescription": "Scale your product's market presence with our end-to-end brand management, marketing, and performance strategies.",
+    "keywords": "product brand management, item marketing, CPG marketing, e-commerce branding"
+  },
+  "serviceFeatures": [
+    "Product Positioning & Launch",
+    "Omnichannel Ad Campaigns",
+    "Packaging & Visual Identity"
+  ],
+  "serviceDeliverables": [
+    "Comprehensive Brand Book",
+    "Monthly Ad Performance Reports",
+    "Influencer Partnership Roster"
+  ],
+  "serviceRecommendedFor": "E-commerce stores, retail brands, and startups launching new products.",
+  "position": "None"
+}
 ];

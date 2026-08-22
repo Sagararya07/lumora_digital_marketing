@@ -638,6 +638,7 @@ app.get('/api/pages', async (req, res) => {
       sections: parsedContent.sections || [],
       isPublished: r.is_published,
       sortOrder: r.sort_order,
+      position: parsedContent.position || 'Both',
       createdAt: r.created_at,
       updatedAt: r.updated_at
     };
@@ -658,7 +659,8 @@ app.post('/api/pages', async (req, res) => {
 
     const content = {
       heroImage: p.heroImage,
-      sections: p.sections || [{ type: 'hero', title: p.title, content: 'Targeted strategies.' }]
+      sections: p.sections || [{ type: 'hero', title: p.title, content: 'Targeted strategies.' }],
+      position: p.position || 'Both'
     };
     
     await pool.query(
@@ -700,7 +702,8 @@ app.put('/api/pages/:id', async (req, res) => {
       serviceFeatures: p.serviceFeatures,
       serviceDeliverables: p.serviceDeliverables,
       serviceRecommendedFor: p.serviceRecommendedFor,
-      sections: p.sections || []
+      sections: p.sections || [],
+      position: p.position || 'Both'
     };
 
     if (cleanSlug) {

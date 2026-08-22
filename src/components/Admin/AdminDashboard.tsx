@@ -188,9 +188,19 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       ],
     },
     {
-      title: 'DYNAMIC PAGES (RESOURCES)',
+      title: `DYNAMIC PAGES (SERVICES) (${dynamicPages.filter(dp => !dp.slug?.includes('/') && dp.position !== 'None').length})`,
       items: [
-        ...dynamicPages.map(dp => ({
+        ...dynamicPages.filter(dp => !dp.slug?.includes('/') && dp.position !== 'None').map(dp => ({
+          id: `page_${dp.id}`,
+          label: (dp.title || dp.slug).split(' - ')[0],
+          icon: FileText
+        }))
+      ],
+    },
+    {
+      title: `DYNAMIC PAGES (HIDDEN) (${dynamicPages.filter(dp => !dp.slug?.includes('/') && dp.position === 'None').length})`,
+      items: [
+        ...dynamicPages.filter(dp => !dp.slug?.includes('/') && dp.position === 'None').map(dp => ({
           id: `page_${dp.id}`,
           label: (dp.title || dp.slug).split(' - ')[0],
           icon: FileText
@@ -389,7 +399,7 @@ const DashboardStats = ({ siteContent, dynamicPages }: { siteContent: SiteConten
     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       <StatCard title="Services" value={siteContent.services.length.toString()} icon={<Briefcase className="w-6 h-6 text-[#5B8EE2]" />} iconBg="bg-[#F2F6FC] border-blue-100" />
       <StatCard title="Portfolio Cards" value={siteContent.achievements.length.toString()} icon={<FolderDot className="w-6 h-6 text-[#D6A67B]" />} iconBg="bg-purple-50 border-purple-100" />
-      <StatCard title="Dynamic Pages" value={dynamicPages.length.toString()} icon={<FileText className="w-6 h-6 text-[#EC4899]" />} iconBg="bg-pink-50 border-pink-100" />
+      <StatCard title="Dynamic Pages" value={dynamicPages.filter(dp => !dp.slug?.includes('/')).length.toString()} icon={<FileText className="w-6 h-6 text-[#EC4899]" />} iconBg="bg-pink-50 border-pink-100" />
       <StatCard title="Industries" value={siteContent.industries.length.toString()} icon={<MapPin className="w-6 h-6 text-[#F59E0B]" />} iconBg="bg-amber-50 border-amber-100" />
     </div>
 
@@ -700,12 +710,13 @@ const IconEditManager = ({ dynamicPages, onRefresh }: { dynamicPages: DynamicPag
 
 /* --- Services Dynamic Manager (Replaces legacy services table) --- */
 const ServicesDynamicManager = ({ dynamicPages, onEdit, onAddNew }: { dynamicPages: DynamicPage[]; onEdit: (id: string) => void; onAddNew: () => void }) => {
+  const filteredPages = dynamicPages.filter(dp => !dp.slug?.includes('/'));
   return (
     <div className="bg-white rounded-3xl border border-[#E5E7EB] overflow-hidden flex flex-col h-[calc(100vh-140px)] shadow-xs">
       <div className="p-6 border-b border-[#E5E7EB] flex items-center justify-between shrink-0 bg-[#F8FAFC]">
         <div>
           <h2 className="text-xl font-extrabold text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">Services</h2>
-          <p className="text-xs text-[#6B7280] mt-0.5 font-normal">{dynamicPages.length} items · updates show live instantly</p>
+          <p className="text-xs text-[#6B7280] mt-0.5 font-normal">{filteredPages.length} items · updates show live instantly</p>
         </div>
         <button
           onClick={onAddNew}
@@ -717,10 +728,10 @@ const ServicesDynamicManager = ({ dynamicPages, onEdit, onAddNew }: { dynamicPag
 
       <div className="flex-1 overflow-y-auto custom-scrollbar">
         <div className="divide-y divide-[#E5E7EB]">
-          {dynamicPages.length === 0 ? (
+          {filteredPages.length === 0 ? (
             <div className="p-12 text-center text-[#6B7280] font-normal text-xs">No records found. Click &quot;Add New&quot; to create one.</div>
           ) : (
-            dynamicPages.map((item) => (
+            filteredPages.map((item) => (
               <div key={String(item.id)} className="p-5 flex items-center justify-between hover:bg-[#F8FAFC] transition-colors">
                 <div>
                   <h4 className="font-extrabold text-sm text-[#111827] font-['Plus_Jakarta_Sans',sans-serif]">{item.title}</h4>
@@ -998,7 +1009,8 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         </div>
         <button
           onClick={() => {
-            const template = (dynamicPages && dynamicPages.length > 0) ? dynamicPages[0] : ({} as any);
+            const filteredPages = dynamicPages.filter(dp => !dp.slug?.includes('/'));
+            const template = (filteredPages && filteredPages.length > 0) ? filteredPages[0] : ({} as any);
             setEditingPage({
               title: 'New Strategy Page',
               slug: `new-page-${Date.now().toString().slice(-4)}`,
@@ -1085,7 +1097,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         </div>
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          {dynamicPages.map((p) => (
+          {dynamicPages.filter(dp => !dp.slug?.includes('/')).map((p) => (
             <div key={p.id} className="p-5 rounded-2xl bg-[#F8FAFC] border border-[#E5E7EB] flex items-center justify-between hover:border-blue-300 transition-colors">
               <div>
                 <div className="flex items-center gap-2">
@@ -1138,7 +1150,7 @@ const SitemapPanel = ({ dynamicPages }: { dynamicPages: DynamicPage[] }) => (
       <p className="text-[#D6A67B] font-bold">&lt;urlset xmlns=&quot;http://www.sitemaps.org/schemas/sitemap/0.9&quot;&gt;</p>
       <div className="pl-4 space-y-2">
         <p>&lt;url&gt;&lt;loc&gt;https://lumora.ai/&lt;/loc&gt;&lt;priority&gt;1.0&lt;/priority&gt;&lt;/url&gt;</p>
-        {dynamicPages.map((p) => (
+        {dynamicPages.filter(dp => !dp.slug?.includes('/')).map((p) => (
           <p key={p.id}>&lt;url&gt;&lt;loc&gt;https://lumora.ai/{p.slug}&lt;/loc&gt;&lt;priority&gt;0.8&lt;/priority&gt;&lt;/url&gt;</p>
         ))}
       </div>
