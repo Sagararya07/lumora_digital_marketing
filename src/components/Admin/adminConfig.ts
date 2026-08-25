@@ -177,6 +177,18 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'is_active', label: 'Active in Marquee', type: 'boolean' },
     ],
   },
+  first_time_visitors: {
+    label: 'First Time Visitor Data',
+    canCreate: false,
+    canDelete: true,
+    fields: [
+      { key: 'name', label: 'Name', type: 'text' },
+      { key: 'email', label: 'Email', type: 'text' },
+      { key: 'number', label: 'Number', type: 'text' },
+      { key: 'industry', label: 'Industry', type: 'text' },
+      { key: 'message', label: 'Message', type: 'textarea', colSpan: 2 },
+    ],
+  },
   trusted_logos: {
     label: 'Trusted Logos (Images)',
     canCreate: true,

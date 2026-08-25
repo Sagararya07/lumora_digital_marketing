@@ -22,6 +22,7 @@ import { ConsultationModal } from './components/Modals/ConsultationModal';
 import { ServiceDetailModal } from './components/Modals/ServiceDetailModal';
 import { CaseStudyModal } from './components/Modals/CaseStudyModal';
 import { LegalModal } from './components/Modals/LegalModal';
+import { FirstTimeVisitorModal } from './components/Modals/FirstTimeVisitorModal';
 
 import { ConsultationPage } from './components/Pages/ConsultationPage';
 import { ServiceDetailPage } from './components/Pages/ServiceDetailPage';
@@ -75,6 +76,7 @@ export function App() {
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudyItem | null>(null);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | 'refund' | null>(null);
+  const [isFirstTimeVisitorModalOpen, setIsFirstTimeVisitorModalOpen] = useState<boolean>(false);
 
   const handleSelectCaseStudy = (item: any) => {
     if (item.clientName) {
@@ -94,7 +96,17 @@ export function App() {
   useEffect(() => {
     fetchSiteContent();
     fetchDynamicPages();
-  }, []);
+
+    // First-time visitor check
+    const hasVisited = localStorage.getItem('hasVisited');
+    if (!hasVisited && !location.pathname.startsWith('/admin')) {
+      const timer = setTimeout(() => {
+        setIsFirstTimeVisitorModalOpen(true);
+        localStorage.setItem('hasVisited', 'true');
+      }, 9000);
+      return () => clearTimeout(timer);
+    }
+  }, [location.pathname]);
 
   const fetchSiteContent = async () => {
     try {
@@ -460,6 +472,11 @@ export function App() {
       <LegalModal
         type={legalModalType}
         onClose={() => setLegalModalType(null)}
+      />
+
+      <FirstTimeVisitorModal
+        isOpen={isFirstTimeVisitorModalOpen}
+        onClose={() => setIsFirstTimeVisitorModalOpen(false)}
       />
 
     </div>

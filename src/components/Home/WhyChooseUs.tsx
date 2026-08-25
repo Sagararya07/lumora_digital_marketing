@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   ArrowRight, 
   Sparkles,
@@ -13,7 +13,11 @@ import {
   Database,
   Cpu,
   Flame,
-  CheckCircle2
+  CheckCircle2,
+  Target,
+  Search,
+  Map as MapIcon,
+  Users
 } from 'lucide-react';
 
 interface WhyChooseUsProps {
@@ -37,53 +41,159 @@ const getWhyChooseIcon = (iconName: string) => {
     case 'Flame': return <Flame className={cls} />;
     case 'CheckCircle2': return <CheckCircle2 className={cls} />;
     case 'Sparkles': return <Sparkles className={cls} />;
+    case 'Target': return <Target className={cls} />;
+    case 'Search': return <Search className={cls} />;
+    case 'Map': return <MapIcon className={cls} />;
+    case 'Users': return <Users className={cls} />;
     default: return <Award className={cls} />;
   }
 };
 
-const energeticPoints = [
-  { 
-    title: 'Industry Experience', 
-    desc: 'Deep vertical expertise scaling B2B SaaS, Healthcare, Real Estate & Manufacturing.', 
-    metric: '15+ Verticals',
-    icon: <Award className="w-5 h-5 text-white" />,
-    gradient: 'from-blue-500 to-indigo-600 shadow-blue-500/30'
+const tabsData = [
+  {
+    id: 'advantage',
+    label: 'The Lumora Advantage',
+    points: [
+      { 
+        title: 'Industry Experience', 
+        desc: 'Deep vertical expertise scaling B2B SaaS, Healthcare, Real Estate & Manufacturing.', 
+        metric: '15+ Verticals',
+        icon: <Award className="w-5 h-5 text-white" />,
+        gradient: 'from-blue-500 to-indigo-600 shadow-blue-500/30'
+      },
+      { 
+        title: 'Tier-1 Certified Experts', 
+        desc: 'Elite accredited Google Premier, Meta, and HubSpot growth architects managing your budget.', 
+        metric: 'Top 1% Tier',
+        icon: <ShieldCheck className="w-5 h-5 text-white" />,
+        gradient: 'from-purple-500 to-indigo-600 shadow-purple-500/30'
+      },
+      { 
+        title: 'ROI-Driven Acquisition', 
+        desc: 'Relentless CAC optimization to maximize customer lifetime value and pipeline returns.', 
+        metric: '14.2x ROAS',
+        icon: <TrendingUp className="w-5 h-5 text-white" />,
+        gradient: 'from-pink-500 to-rose-600 shadow-pink-500/30'
+      },
+      { 
+        title: 'AI Growth Automation', 
+        desc: 'Autonomous lead scoring, 24/7 AI chatbots, and predictive bidding models for instant conversion.', 
+        metric: '99.8% Precision',
+        icon: <Bot className="w-5 h-5 text-white" />,
+        gradient: 'from-cyan-500 to-blue-600 shadow-cyan-500/30'
+      },
+      { 
+        title: '100% Attribution Transparency', 
+        desc: 'Live real-time client growth dashboard tracking every single dollar and lead attribution.', 
+        metric: 'Live 24/7 Sync',
+        icon: <BarChart3 className="w-5 h-5 text-white" />,
+        gradient: 'from-amber-500 to-orange-600 shadow-amber-500/30'
+      },
+      { 
+        title: 'Dedicated Senior Strategist', 
+        desc: 'Direct WhatsApp & Slack access to your personal lead acquisition strategist.', 
+        metric: 'Dedicated 1-on-1',
+        icon: <UserCheck className="w-5 h-5 text-white" />,
+        gradient: 'from-emerald-500 to-teal-600 shadow-emerald-500/30'
+      },
+    ]
   },
-  { 
-    title: 'Tier-1 Certified Experts', 
-    desc: 'Elite accredited Google Premier, Meta, and HubSpot growth architects managing your budget.', 
-    metric: 'Top 1% Tier',
-    icon: <ShieldCheck className="w-5 h-5 text-white" />,
-    gradient: 'from-purple-500 to-indigo-600 shadow-purple-500/30'
+  {
+    id: 'strategy',
+    label: 'Strategic Approach',
+    points: [
+      { 
+        title: 'Choose the Right Marketing', 
+        desc: "Lumora's experts identify the marketing strategies, channels and activities that actually fit your business—not every trend or tactic is right for every business.", 
+        metric: 'Custom Strategy',
+        icon: <Target className="w-5 h-5 text-white" />,
+        gradient: 'from-blue-500 to-indigo-600 shadow-blue-500/30'
+      },
+      { 
+        title: 'Find What Actually Works', 
+        desc: 'We analyse your business, audience, market and performance to identify what works, what needs improvement and where your marketing investment can create the greatest value.', 
+        metric: 'Data-Backed',
+        icon: <BarChart3 className="w-5 h-5 text-white" />,
+        gradient: 'from-purple-500 to-indigo-600 shadow-purple-500/30'
+      },
+      { 
+        title: 'Know Where To Be Found', 
+        desc: 'Search Engines, Social Platforms or both? Lumora helps determine where your products and services need to be visible—and builds the right strategy around those channels.', 
+        metric: 'Channel Optimized',
+        icon: <MapIcon className="w-5 h-5 text-white" />,
+        gradient: 'from-pink-500 to-rose-600 shadow-pink-500/30'
+      },
+      { 
+        title: 'Match Customer Intent', 
+        desc: 'Some search, some browse social platforms, others need multiple interactions before buying. Lumora builds your marketing around these customer journeys.', 
+        metric: 'Intent Driven',
+        icon: <Search className="w-5 h-5 text-white" />,
+        gradient: 'from-cyan-500 to-blue-600 shadow-cyan-500/30'
+      },
+      { 
+        title: 'Market Where It Matters', 
+        desc: "The goal isn't to be present on every platform. The goal is to be present on the right platform, in the right market, in front of the right audience, with the right message.", 
+        metric: 'Laser Focused',
+        icon: <ShieldCheck className="w-5 h-5 text-white" />,
+        gradient: 'from-amber-500 to-orange-600 shadow-amber-500/30'
+      },
+      { 
+        title: 'Experienced Team Beside You', 
+        desc: 'Work with specialists who complement your in-house team and turn strategy into consistent execution.', 
+        metric: 'Expert Execution',
+        icon: <Users className="w-5 h-5 text-white" />,
+        gradient: 'from-emerald-500 to-teal-600 shadow-emerald-500/30'
+      },
+    ]
   },
-  { 
-    title: 'ROI-Driven Acquisition', 
-    desc: 'Relentless CAC optimization to maximize customer lifetime value and pipeline returns.', 
-    metric: '14.2x ROAS',
-    icon: <TrendingUp className="w-5 h-5 text-white" />,
-    gradient: 'from-pink-500 to-rose-600 shadow-pink-500/30'
-  },
-  { 
-    title: 'AI Growth Automation', 
-    desc: 'Autonomous lead scoring, 24/7 AI chatbots, and predictive bidding models for instant conversion.', 
-    metric: '99.8% Precision',
-    icon: <Bot className="w-5 h-5 text-white" />,
-    gradient: 'from-cyan-500 to-blue-600 shadow-cyan-500/30'
-  },
-  { 
-    title: '100% Attribution Transparency', 
-    desc: 'Live real-time client growth dashboard tracking every single dollar and lead attribution.', 
-    metric: 'Live 24/7 Sync',
-    icon: <BarChart3 className="w-5 h-5 text-white" />,
-    gradient: 'from-amber-500 to-orange-600 shadow-amber-500/30'
-  },
-  { 
-    title: 'Dedicated Senior Strategist', 
-    desc: 'Direct WhatsApp & Slack access to your personal lead acquisition strategist.', 
-    metric: 'Dedicated 1-on-1',
-    icon: <UserCheck className="w-5 h-5 text-white" />,
-    gradient: 'from-emerald-500 to-teal-600 shadow-emerald-500/30'
-  },
+  {
+    id: 'framework',
+    label: 'Growth Framework',
+    points: [
+      { 
+        title: 'Diagnose Before You Market', 
+        desc: "Understand what's holding your branding, positioning, audience and marketing performance back.", 
+        metric: 'Step 01',
+        icon: <Search className="w-5 h-5 text-white" />,
+        gradient: 'from-blue-500 to-indigo-600 shadow-blue-500/30'
+      },
+      { 
+        title: 'Present the Right Value', 
+        desc: 'Position your products and services with the right message, value proposition and market positioning.', 
+        metric: 'Step 02',
+        icon: <Award className="w-5 h-5 text-white" />,
+        gradient: 'from-purple-500 to-indigo-600 shadow-purple-500/30'
+      },
+      { 
+        title: 'Reach the Right Audience', 
+        desc: 'Put your business in front of the people and markets that matter to your growth.', 
+        metric: 'Step 03',
+        icon: <Globe className="w-5 h-5 text-white" />,
+        gradient: 'from-pink-500 to-rose-600 shadow-pink-500/30'
+      },
+      { 
+        title: 'Generate High-Quality Leads', 
+        desc: 'Focus on relevant prospects who have genuine potential—not simply higher lead numbers.', 
+        metric: 'Step 04',
+        icon: <Zap className="w-5 h-5 text-white" />,
+        gradient: 'from-cyan-500 to-blue-600 shadow-cyan-500/30'
+      },
+      { 
+        title: 'Build Predictable Pipeline', 
+        desc: 'Create a structured system that continuously turns marketing activity into business opportunities.', 
+        metric: 'Step 05',
+        icon: <TrendingUp className="w-5 h-5 text-white" />,
+        gradient: 'from-amber-500 to-orange-600 shadow-amber-500/30'
+      },
+      { 
+        title: 'Make Marketing Consistent', 
+        desc: 'Build a consistent presence that keeps your brand visible, relevant and trusted.', 
+        metric: 'Step 06',
+        icon: <CheckCircle2 className="w-5 h-5 text-white" />,
+        gradient: 'from-emerald-500 to-teal-600 shadow-emerald-500/30'
+      },
+    ]
+  }
 ];
 
 const floatingOrbitNodes = [
@@ -98,6 +208,22 @@ const floatingOrbitNodes = [
 ];
 
 export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultationModal }) => {
+  const [activeTab, setActiveTab] = useState(tabsData[0].id);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveTab(current => {
+        const currentIndex = tabsData.findIndex(t => t.id === current);
+        const nextIndex = (currentIndex + 1) % tabsData.length;
+        return tabsData[nextIndex].id;
+      });
+    }, 8000); // Auto-switch every 8 seconds
+    return () => clearInterval(interval);
+  }, [activeTab]);
+
+  const currentTab = tabsData.find(t => t.id === activeTab) || tabsData[0];
+  const pointsToRender = currentTab.points;
+
   return (
     <section id="why-choose-us-section" className="py-20 sm:py-28 pt-24 sm:pt-32 bg-gradient-to-b from-[#F8FAFC] via-white to-blue-50/40 border-y border-[#E5E7EB] overflow-hidden relative">
       
@@ -197,26 +323,35 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultat
               </p>
             </div>
 
+            {/* Tab Navigation */}
+            <div className="flex items-center gap-3 overflow-x-auto py-3 px-2 -mx-2 scrollbar-hide">
+              {tabsData.map(tab => (
+                <button
+                  key={tab.id}
+                  onClick={() => setActiveTab(tab.id)}
+                  className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 whitespace-nowrap ${
+                    activeTab === tab.id
+                      ? 'bg-gradient-to-r from-[#5B8EE2] to-[#729EE6] text-white shadow-lg shadow-blue-500/25 scale-105 ring-1 ring-white/20'
+                      : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 hover:text-slate-900'
+                  }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
+
             {/* 6 Energetic Advantage Cards */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-              {(content?.points?.length > 0 ? content.points : energeticPoints).slice(0, 6).map((item: any, i: number) => {
-                const fallback = energeticPoints[i % energeticPoints.length];
-                const title = item.title || fallback.title;
-                const desc = item.description || fallback.desc;
-                const metric = fallback.metric;
-                const gradient = fallback.gradient;
-                const icon = item.imageUrl ? (
-                  <img src={item.imageUrl} alt={title} className="w-6 h-6 object-cover rounded" />
-                ) : (
-                  <span className="w-5 h-5 text-white flex items-center justify-center">
-                    {item.iconName ? getWhyChooseIcon(item.iconName) : fallback.icon}
-                  </span>
-                );
+              {pointsToRender.map((item: any, i: number) => {
+                const metric = item.metric;
+                const gradient = item.gradient;
+                const icon = item.icon;
 
                 return (
                 <div 
-                  key={i} 
-                  className="p-4 rounded-3xl bg-white/90 backdrop-blur-md border border-[#E5E7EB] hover:border-[#5B8EE2] shadow-xs hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between"
+                  key={`${activeTab}-${i}`} 
+                  className="p-4 rounded-3xl bg-white/90 backdrop-blur-md border border-[#E5E7EB] hover:border-[#5B8EE2] shadow-xs hover:shadow-2xl hover:-translate-y-1.5 transition-all duration-300 group flex flex-col justify-between animate-fade-in-up"
+                  style={{ animationDelay: `${i * 50}ms` }}
                 >
                   <div className="flex items-start justify-between gap-3 mb-3">
                     <div className={`w-10 h-10 rounded-2xl bg-gradient-to-br ${gradient} flex items-center justify-center shrink-0 group-hover:scale-110 transition-transform overflow-hidden relative`}>
@@ -229,10 +364,10 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultat
 
                   <div>
                     <h4 className="text-sm font-extrabold bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-['Plus_Jakarta_Sans',sans-serif] group-hover:text-[#5B8EE2] transition-colors">
-                      {title}
+                      {item.title}
                     </h4>
                     <p className="text-xs text-[#6B7280] font-normal leading-relaxed mt-1">
-                      {desc}
+                      {item.desc}
                     </p>
                   </div>
                 </div>

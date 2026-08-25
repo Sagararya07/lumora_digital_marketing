@@ -546,6 +546,104 @@ app.delete('/api/leads/:id', async (req, res) => {
   }
 });
 
+// --- First Time Visitors with OTP Verification ---
+
+// In-memory OTP cache. Key: email, Value: { code, expiresAt }
+const otpCache = new Map<string, { code: string; expiresAt: number }>();
+
+app.post('/api/send-otp', async (req, res) => {
+  const { email } = req.body;
+  if (!email) return res.status(400).json({ error: 'Email is required.' });
+
+  // Generate a 6-digit OTP
+  const code = Math.floor(100000 + Math.random() * 900000).toString();
+  // Set expiration to 5 minutes from now
+  const expiresAt = Date.now() + 5 * 60 * 1000;
+
+  otpCache.set(email, { code, expiresAt });
+
+  // Use the same nodemailer logic
+  const transporter = nodemailer.createTransport({
+    host: process.env.SMTP_HOST || 'smtp.gmail.com',
+    port: Number(process.env.SMTP_PORT) || 587,
+    secure: process.env.SMTP_SECURE === 'true',
+    auth: {
+      user: process.env.GMAIL_USER || process.env.SMTP_USER || '',
+      pass: process.env.GMAIL_PASS || process.env.SMTP_PASS || '',
+    },
+  });
+
+  try {
+    await transporter.sendMail({
+      from: `"Lumora Security" <${process.env.GMAIL_USER || 'no-reply@lumora.expert'}>`,
+      to: email,
+      subject: `Your Verification Code for Lumora`,
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 500px; padding: 20px; border: 1px solid #e5e7eb; border-radius: 10px;">
+          <h2 style="color: #2563eb;">Welcome to Lumora!</h2>
+          <p style="color: #4b5563;">Your email verification code is:</p>
+          <div style="font-size: 24px; font-weight: bold; padding: 15px; background: #f3f4f6; text-align: center; letter-spacing: 5px; border-radius: 8px;">
+            ${code}
+          </div>
+          <p style="color: #9ca3af; font-size: 12px; margin-top: 20px;">This code will expire in 5 minutes.</p>
+        </div>
+      `,
+    });
+    console.log(`[OTP] Sent to ${email}: ${code}`);
+    res.json({ success: true, message: 'OTP sent successfully.' });
+  } catch (err: any) {
+    console.error(`[OTP Error] Failed to send email to ${email}: ${err.message}`);
+    res.status(500).json({ error: 'Failed to send OTP email.', details: err.message });
+  }
+});
+
+app.post('/api/first-time-visitors', async (req, res) => {
+  const { name, email, number, industry, message, otp } = req.body;
+  
+  if (!email || !otp) {
+    return res.status(400).json({ error: 'Email and OTP are required.' });
+  }
+
+  const cachedOtp = otpCache.get(email);
+  if (!cachedOtp) {
+    return res.status(400).json({ error: 'No OTP requested for this email or it has expired.' });
+  }
+  
+  if (Date.now() > cachedOtp.expiresAt) {
+    otpCache.delete(email);
+    return res.status(400).json({ error: 'OTP has expired. Please request a new one.' });
+  }
+
+  if (cachedOtp.code !== otp) {
+    return res.status(400).json({ error: 'Invalid OTP code.' });
+  }
+
+  // OTP verified, remove from cache
+  otpCache.delete(email);
+
+  try {
+    const result = await pool.query(
+      `INSERT INTO first_time_visitors (name, email, number, industry, message, created_at)
+       VALUES ($1, $2, $3, $4, $5, NOW()) RETURNING *`,
+      [name, email, number, industry, message]
+    );
+
+    // Optionally trigger the same email notification logic
+    sendLeadEmailNotification({
+      name,
+      email,
+      phone: number,
+      companyName: industry,
+      message: message + " (First Time Visitor Form - Email Verified)",
+      sourcePage: 'First Time Visitor Popup'
+    }).catch(err => console.error("Email notification failed", err));
+
+    res.json({ success: true, message: 'First time visitor data submitted successfully.' });
+  } catch (err: any) {
+    res.status(500).json({ error: 'Failed to submit first time visitor data', details: err.message });
+  }
+});
+
 // Site Settings
 app.get('/api/admin/settings', async (_req, res) => {
   try {

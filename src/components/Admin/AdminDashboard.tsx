@@ -210,7 +210,10 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     },
     {
       title: 'CRM & LEADS',
-      items: [{ id: 'consultation_submissions', label: 'Leads Inbox', icon: Inbox }],
+      items: [
+        { id: 'consultation_submissions', label: 'Leads Inbox', icon: Inbox },
+        { id: 'first_time_visitors', label: 'First Time Visitor Data', icon: Inbox }
+      ],
     },
     {
       title: 'RND PAGE CONTENT',
