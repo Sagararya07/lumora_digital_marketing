@@ -148,9 +148,11 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
               </span>
             </h1>
 
-            <p className="text-base sm:text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-              {replacePlaceholders(page.seo?.metaDescription || '')}
-            </p>
+            {(page.seo?.metaDescription || page.overviewContent) && (
+              <p className="text-base sm:text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                {replacePlaceholders(page.seo?.metaDescription || page.overviewContent || '')}
+              </p>
+            )}
 
             <div className="pt-6 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <button

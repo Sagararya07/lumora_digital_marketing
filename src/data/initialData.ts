@@ -314,338 +314,483 @@ export const initialSiteContent: SiteContent = {
     }
   ],
   "achievements": [
-      {
-          "id": "case-1",
-          "clientName": "MedTech Solutions",
-          "industry": "Healthcare",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "300+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased patient acquisition through targeted local SEO and Google Ads.",
-          "solution": "Increased patient acquisition through targeted local SEO and Google Ads.",
-          "results": "Our data-driven approach resulted in a 300+ increase in monthly patient inquiries, optimizing their local presence and reducing Cost Per Acquisition (CPA) by 40%.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
-              "author": "VP of Marketing, MedTech Solutions",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
+    {
+      "id": "case-hc-1",
+      "clientName": "MedTech Solutions",
+      "industry": "Healthcare",
+      "location": "Dubai, UAE & Global",
+      "metrics": [
+        { "label": "Monthly Inquiries", "value": "300+", "change": "+312%" },
+        { "label": "CPA Reduction", "value": "40%", "change": "↓ Lower Cost" }
+      ],
+      "challenge": "MedTech Solutions was a cutting-edge medical device distributor struggling to generate qualified leads from hospital procurement teams and independent clinicians. Their Google Ads account was burning $18,000/month with a disorganised campaign structure targeting broad, non-converting keywords. Organic search visibility was negligible. The sales team was overwhelmed with unqualified enquiries while missing genuinely interested buyers.",
+      "solution": "Lumora conducted a full technical SEO audit and restructured their Google Ads account around high-intent, procedure-specific keywords — targeting terms like 'surgical imaging equipment supplier UAE' and 'hospital-grade monitoring devices'. We created condition-specific landing pages for each product category, integrated a lead qualification form powered by HubSpot, and launched a LinkedIn thought-leadership campaign targeting hospital procurement directors and CMOs across the GCC region.",
+      "results": "Within 90 days, MedTech Solutions saw 300+ qualified monthly inquiries from procurement decision-makers — a 312% increase. Cost Per Acquisition dropped 40% due to improved targeting precision. Their Google Ads ROAS climbed from 1.4x to 4.1x. Organic impressions grew 280% in 6 months, establishing the brand as a top-ranked medical supplier across 14 high-value search terms.",
+      "testimonial": {
+        "quote": "Lumora didn't just run ads — they understood our buyers deeply. The quality of leads we're getting now is night and day. Our sales team is genuinely excited to receive enquiries.",
+        "author": "Sarah Mitchell",
+        "role": "VP of Marketing, MedTech Solutions"
       },
-      {
-          "id": "case-2",
-          "clientName": "Dental Care Network",
-          "industry": "Healthcare",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "150%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Boosted online bookings by 150% in 6 months.",
-          "solution": "Boosted online bookings by 150% in 6 months.",
-          "results": "We completely revamped their booking funnel and ran hyper-local Facebook and Instagram campaigns, leading to a massive 150% surge in booked appointments.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
-              "author": "VP of Marketing, Dental Care Network",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-hc-2",
+      "clientName": "ClearSmile Dental Network",
+      "industry": "Healthcare",
+      "location": "London, UK",
+      "metrics": [
+        { "label": "Booked Appointments", "value": "+150%", "change": "↑ 6 Months" },
+        { "label": "Cost Per Booking", "value": "£18", "change": "↓ from £52" }
+      ],
+      "challenge": "ClearSmile operated 14 dental clinics across Greater London but relied entirely on walk-ins and word-of-mouth. Their outdated website had no online booking capability and their social media presence was inactive. Competitors with aggressive digital campaigns were capturing the majority of local search traffic for high-value treatments including Invisalign, dental implants, and veneers.",
+      "solution": "We launched a three-phase strategy: first, a complete UX overhaul of their website with integrated online booking via Calendly and a WhatsApp chat widget. Second, hyper-local Google Ads campaigns geofenced around each clinic's 3-mile radius, targeting high-value treatment search terms. Third, a monthly Instagram and Facebook content calendar featuring before/after treatment stories, patient education reels, and clinic team highlights to build local trust and engagement.",
+      "results": "In 6 months, online appointment bookings increased 150% across all 14 locations. The cost per booked appointment fell from £52 to £18 — a 65% reduction. Instagram followers grew from 1,200 to 18,400, and the brand's Google review count increased from 67 to 412 reviews (4.8★ average). One clinic location alone generated £240,000 in treatment revenue from the digital campaign in Q3.",
+      "testimonial": {
+        "quote": "The transformation has been remarkable. We went from struggling to fill appointment slots to having a 3-week waiting list at our busiest clinics. Lumora delivered beyond what we thought was possible.",
+        "author": "Dr. James Okafor",
+        "role": "CEO & Founder, ClearSmile Dental Network"
       },
-      {
-          "id": "case-3",
-          "clientName": "Global Pharma Inc.",
-          "industry": "Healthcare",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "$2M+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Generated $2M+ in pipeline for new medical device launch.",
-          "solution": "Generated $2M+ in pipeline for new medical device launch.",
-          "results": "Through a combination of LinkedIn B2B lead generation and programmatic display ads, we successfully launched their new device to hospital administrators globally.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Healthcare. Highly recommended!",
-              "author": "VP of Marketing, Global Pharma Inc.",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1606811841689-23dfddce3e95?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-hc-3",
+      "clientName": "VitaCore Pharma",
+      "industry": "Healthcare",
+      "location": "Zurich, Switzerland & MENA",
+      "metrics": [
+        { "label": "Pipeline Generated", "value": "$2.4M", "change": "↑ New Markets" },
+        { "label": "HCP Engagement Rate", "value": "34%", "change": "↑ from 8%" }
+      ],
+      "challenge": "VitaCore Pharma was preparing to launch a novel oncology support supplement across European and MENA hospital networks. Their challenge was twofold: regulatory-compliant promotion to Healthcare Professionals (HCPs) without making unsubstantiated medical claims, and simultaneously building awareness among hospital procurement committees. Their existing agency had no experience in compliant pharma digital marketing.",
+      "solution": "Lumora built a closed HCP digital ecosystem — a gated, evidence-based microsite accessible only to verified healthcare professionals, populated with clinical trial summaries, peer-reviewed citations, and dosing guides. We ran LinkedIn campaigns targeting oncologists, haematologists, and hospital pharmacists by job title and institution. A HubSpot CRM pipeline was integrated so the medical sales team could see exactly which HCPs had engaged with which content before their follow-up call.",
+      "results": "The launch campaign generated $2.4M in initial pipeline conversations with hospital procurement committees across 9 countries. HCP engagement rates on the microsite averaged 34% — compared to an industry average of 8%. The sales team's average call-to-demo conversion rate improved from 12% to 41%, as reps now entered calls with full content engagement histories. Two major hospital groups in the UAE signed preferred supplier agreements within 5 months of the campaign going live.",
+      "testimonial": {
+        "quote": "Working in regulated pharma marketing is notoriously difficult digitally. Lumora navigated every compliance boundary while still generating real commercial results. An exceptional team.",
+        "author": "Dr. Priya Anand",
+        "role": "Head of Commercial Strategy, VitaCore Pharma"
       },
-      {
-          "id": "case-4",
-          "clientName": "CloudScale SaaS",
-          "industry": "B2B & IT SaaS",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "3x",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
-          "solution": "Tripled Enterprise MRR using Account-Based Marketing (ABM).",
-          "results": "We implemented a multi-touch ABM strategy on LinkedIn, increasing demo requests by 3x and closing $5M+ in new annual recurring revenue.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
-              "author": "VP of Marketing, CloudScale SaaS",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1581056771107-24ca5f033842?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-hc-4",
+      "clientName": "PrimeCare Telehealth",
+      "industry": "Healthcare",
+      "location": "Toronto, Canada",
+      "metrics": [
+        { "label": "App Downloads", "value": "42,000", "change": "+890% in 4mo" },
+        { "label": "Patient Retention", "value": "78%", "change": "↑ Month 2 Rate" }
+      ],
+      "challenge": "PrimeCare was a telehealth startup launching its on-demand GP consultation app in Ontario. They had a $120,000 launch budget but no brand recognition, no user base, and were competing against established incumbents like Maple and Dialogue — both of whom had millions in VC funding for marketing. The founders needed not just downloads, but active, recurring users.",
+      "solution": "Lumora engineered a layered acquisition strategy: iOS and Android App Store Optimisation (ASO) to capture organic search intent; Apple Search Ads and Google UAC campaigns targeting adults 30-55 searching for after-hours healthcare; an influencer partnership with 12 Canadian family health micro-influencers (50K–200K followers) for authentic product reviews; and a referral loop built into the onboarding flow offering free consultations for sharing the app with family members.",
+      "results": "The app crossed 42,000 downloads in 4 months — 890% above the benchmark for comparable telehealth app launches. The referral programme alone drove 28% of all downloads at zero incremental ad spend. Month-2 retention (users who returned for a second consultation) hit 78% — the founders had projected 45%. PrimeCare closed a CAD $3.2M Series A round 6 months post-launch, citing the validated user growth metrics Lumora helped generate.",
+      "testimonial": {
+        "quote": "We went from zero users to a Series A in six months. Lumora's acquisition strategy was central to that story. They understood both the healthcare consumer and performance marketing at a level we hadn't seen before.",
+        "author": "Amir Hashemi",
+        "role": "Co-Founder & CEO, PrimeCare Telehealth"
       },
-      {
-          "id": "case-5",
-          "clientName": "CyberDefend Pro",
-          "industry": "B2B & IT SaaS",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "45%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Reduced cost-per-lead by 45% in highly competitive cyber security space.",
-          "solution": "Reduced cost-per-lead by 45% in highly competitive cyber security space.",
-          "results": "By optimizing Google Search campaigns and creating high-converting landing pages, we slashed CPL by 45% while doubling lead volume.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
-              "author": "VP of Marketing, CyberDefend Pro",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-hc-5",
+      "clientName": "NovaScan Radiology",
+      "industry": "Healthcare",
+      "location": "Sydney, Australia",
+      "metrics": [
+        { "label": "GP Referrals", "value": "+220%", "change": "↑ 12 Months" },
+        { "label": "Scan Bookings", "value": "1,800+", "change": "Monthly Average" }
+      ],
+      "challenge": "NovaScan operated 6 radiology imaging centres across Sydney and was entirely dependent on GP referrals, which had been declining for 3 consecutive years as nearby bulk-billing competitors undercut their pricing. They needed a dual-audience strategy — maintaining GP relationships while simultaneously building direct-to-patient awareness for self-referred scans (DEXA, MRI, ultrasound) permissible under Australian Medicare.",
+      "solution": "We developed a two-track digital programme: a B2B LinkedIn and email nurture campaign targeting GPs and specialists within a 10km radius of each centre with educational content on imaging technology and fast turnaround reporting; and a B2C Google Search and Facebook campaign targeting self-referral keywords for permissible scans. We also produced a series of patient-education YouTube videos on what to expect during different scan types, optimised for local search.",
+      "results": "GP referral volumes increased 220% over 12 months, with 67 new GP practices added to the referral network. Self-referred monthly bookings grew from 280 to 1,800+ per month across all 6 centres. The YouTube education series accumulated 340,000 organic views, driving an additional 12% of bookings via brand-search. Annual revenue increased by AUD $2.8M, enabling NovaScan to open a seventh centre in Parramatta.",
+      "testimonial": {
+        "quote": "We were sceptical that digital marketing would work for radiology. Lumora proved us wrong completely. Our centres are now at capacity and we're expanding. Remarkable ROI.",
+        "author": "Dr. Lena Kowalski",
+        "role": "Managing Director, NovaScan Radiology"
       },
-      {
-          "id": "case-6",
-          "clientName": "DataSync Platforms",
-          "industry": "B2B & IT SaaS",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "500+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Secured 500+ webinar attendees for product launch.",
-          "solution": "Secured 500+ webinar attendees for product launch.",
-          "results": "We utilized Facebook and LinkedIn ads to drive a highly targeted audience to their virtual product launch, resulting in a record-breaking 500+ attendees.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to B2B & IT SaaS. Highly recommended!",
-              "author": "VP of Marketing, DataSync Platforms",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-saas-1",
+      "clientName": "CloudScale SaaS",
+      "industry": "B2B & IT SaaS",
+      "location": "San Francisco, USA",
+      "metrics": [
+        { "label": "Enterprise MRR Growth", "value": "3x", "change": "+$5M ARR" },
+        { "label": "Demo-to-Close Rate", "value": "38%", "change": "↑ from 11%" }
+      ],
+      "challenge": "CloudScale was a Series B cloud infrastructure SaaS company with a strong product but a stagnant enterprise pipeline. Their self-serve PLG motion worked well for SMBs but they consistently failed to reach Director and VP-level buyers at mid-market and enterprise accounts. Their SDR team was sending 200+ cold emails a week with a 1.2% reply rate, burning headcount on low-quality outbound.",
+      "solution": "Lumora designed and executed a full Account-Based Marketing (ABM) programme on LinkedIn and through direct mail. We built a list of 480 Tier-1 target accounts (companies with 500–5,000 employees, cloud-native or in active cloud migration). For each account, personalised LinkedIn ad sequences targeting IT Directors, VPs of Infrastructure, and CTOs were deployed alongside a direct mail campaign sending a premium 'Cloud Cost Audit' physical report to named contacts. Landing pages were personalised by industry vertical.",
+      "results": "Within 5 months, demo pipeline grew 3x. 47 of the 480 Tier-1 target accounts entered active sales conversations — an ABM engagement rate of nearly 10% (industry average: 2.1%). Demo-to-close rates improved from 11% to 38% because the SDR team was now speaking to pre-warmed, educated buyers. CloudScale added $5M in net new ARR in the 12 months following the ABM launch and attributed the programme as the primary driver in their Series C deck.",
+      "testimonial": {
+        "quote": "Our enterprise motion was broken before Lumora. They rebuilt it from the ground up with an ABM approach we hadn't seen executed this well outside of a $500/hr consultancy. The pipeline results speak for themselves.",
+        "author": "Marcus Webb",
+        "role": "VP of Revenue, CloudScale SaaS"
       },
-      {
-          "id": "case-7",
-          "clientName": "Luxury Estates Dubai",
-          "industry": "Real Estate",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "$50M+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Sold $50M+ in luxury off-plan properties through Facebook lead gen.",
-          "solution": "Sold $50M+ in luxury off-plan properties through Facebook lead gen.",
-          "results": "We created immersive video ads showcasing luxury properties and targeted high-net-worth individuals, resulting in over $50M in closed sales.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
-              "author": "VP of Marketing, Luxury Estates Dubai",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-saas-2",
+      "clientName": "CyberDefend Pro",
+      "industry": "B2B & IT SaaS",
+      "location": "London, UK",
+      "metrics": [
+        { "label": "Cost Per Lead", "value": "↓45%", "change": "£148 → £81" },
+        { "label": "MQL Volume", "value": "2.2x", "change": "Monthly Growth" }
+      ],
+      "challenge": "CyberDefend Pro sold endpoint security software to UK SMEs and mid-market businesses. The cybersecurity SaaS space is one of the most competitive on Google Ads — average CPCs exceed £28 for broad security keywords. Their campaigns were losing money at £148 per Marketing Qualified Lead, and their conversion rates on landing pages hovered at 2.1% — well below the SaaS benchmark of 7–12%.",
+      "solution": "Lumora restructured their Google Ads architecture around attack-type and compliance-specific intent signals rather than generic security keywords — targeting 'ransomware protection for SME', 'GDPR-compliant endpoint security', and 'Cyber Essentials certification software'. We redesigned 8 landing pages with trust-led conversion frameworks (case studies above the fold, free trial CTAs, 30-second demo videos), and implemented HubSpot lead scoring to ensure only MQLs passed to the sales team.",
+      "results": "CPL dropped from £148 to £81 — a 45% reduction. Landing page conversion rates rose from 2.1% to 9.4% across the new page set. Monthly MQL volume grew 2.2x without increasing ad budget. The sales team's qualified pipeline grew 180% in 4 months. CyberDefend's ROAS on paid search moved from 1.8x to 5.1x, and they subsequently doubled their Google Ads budget with confidence in the unit economics.",
+      "testimonial": {
+        "quote": "We had tried three different agencies before Lumora. None of them could crack our CPL problem. Lumora did it within 90 days by rebuilding our campaign strategy from scratch. Game-changing.",
+        "author": "Claire Hudson",
+        "role": "Head of Demand Generation, CyberDefend Pro"
       },
-      {
-          "id": "case-8",
-          "clientName": "Urban Living Realty",
-          "industry": "Real Estate",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "200%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased agent inquiries by 200% via Google Ads.",
-          "solution": "Increased agent inquiries by 200% via Google Ads.",
-          "results": "We completely restructured their Google Ads account, focusing on high-intent search terms. This led to a 200% increase in qualified inquiries for their agents.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
-              "author": "VP of Marketing, Urban Living Realty",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-saas-3",
+      "clientName": "DataSync Platforms",
+      "industry": "B2B & IT SaaS",
+      "location": "Berlin, Germany",
+      "metrics": [
+        { "label": "Product Launch Attendees", "value": "500+", "change": "1-Day Virtual Event" },
+        { "label": "Post-Event Trial Signups", "value": "312", "change": "72hr Window" }
+      ],
+      "challenge": "DataSync was launching v3.0 of their real-time data pipeline platform — their most significant product update in 3 years. The marketing team had 6 weeks to generate registrations for a virtual launch event and convert attendees into free trial users. They had a small marketing budget of €35,000 and no experience running large-scale virtual event campaigns.",
+      "solution": "Lumora built a full virtual event acquisition funnel: LinkedIn Sponsored Content targeting Data Engineers, Analytics Managers, and CTOs at 200-2,000 employee companies across Germany, Netherlands, and UK; a Facebook retargeting loop targeting website visitors from the past 90 days; a 4-email drip sequence to their existing 6,200 contact database with personalised subject lines by job function; and an affiliate programme offering tech newsletter sponsors a revenue share for registrations driven.",
+      "results": "The launch event attracted 512 registered attendees against a target of 200 — a 156% overachievement. Live attendance rate was 74% (industry average: 40%). Within 72 hours of the event, 312 attendees converted to free trial signups, of whom 84 converted to paid plans within 30 days — generating €210,000 in new ARR from a €35,000 campaign investment. DataSync's email database grew by 2,400 validated contacts from the event ecosystem.",
+      "testimonial": {
+        "quote": "We've never run a product launch like this. Lumora turned what could have been an internal demo into a full commercial event with real pipeline attached. The trial-to-paid conversion numbers blew us away.",
+        "author": "Tobias Richter",
+        "role": "CMO, DataSync Platforms"
       },
-      {
-          "id": "case-9",
-          "clientName": "Commercial Spaces Ltd.",
-          "industry": "Real Estate",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "40%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased commercial lease applications by 40%.",
-          "solution": "Increased commercial lease applications by 40%.",
-          "results": "By leveraging LinkedIn Ads targeting business owners and office managers, we boosted applications for commercial leases by 40% in just 3 months.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Real Estate. Highly recommended!",
-              "author": "VP of Marketing, Commercial Spaces Ltd.",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-saas-4",
+      "clientName": "RecruitIQ Platform",
+      "industry": "B2B & IT SaaS",
+      "location": "Singapore & APAC",
+      "metrics": [
+        { "label": "Paid Subscriptions", "value": "+280%", "change": "8-Month Period" },
+        { "label": "CAC Payback Period", "value": "3.1mo", "change": "↓ from 9.4mo" }
+      ],
+      "challenge": "RecruitIQ was an AI-powered HR tech platform targeting talent acquisition teams at mid-sized companies across Singapore, Australia, and India. Despite strong product-market fit validated by NPS scores of 72, they couldn't scale paid acquisition efficiently. Their CAC payback period of 9.4 months was unsustainable for their growth targets, and their SEO produced almost no traffic beyond branded terms.",
+      "solution": "Lumora deployed a content-led SEO strategy targeting high-volume, commercial-intent HR and recruitment search queries — publishing 3 long-form pieces weekly including salary benchmark reports, hiring timeline calculators, and 'how to hire for X role in Singapore' guides. These drove inbound traffic that was then captured via freemium trial CTAs. Simultaneously, we launched retargeting campaigns to trial users who had not converted, and a LinkedIn ABM programme targeting HR Directors at companies between 100–1,000 employees.",
+      "results": "Organic traffic grew from 3,200 to 38,000 monthly sessions in 8 months. Paid subscriptions increased 280%. CAC Payback Period compressed from 9.4 months to 3.1 months, transforming the unit economics and enabling a higher-confidence growth investment by the board. Three of RecruitIQ's content pieces ranked on Google Page 1 for high-volume terms including 'recruitment software Singapore' and 'ATS platform APAC' — generating 800+ inbound trial requests per month organically.",
+      "testimonial": {
+        "quote": "Lumora fundamentally changed how we think about acquisition. The SEO programme they built is now our single largest lead source, and the CAC payback improvement meant our board finally approved the next growth phase.",
+        "author": "Vanessa Lim",
+        "role": "Chief Marketing Officer, RecruitIQ Platform"
       },
-      {
-          "id": "case-10",
-          "clientName": "Fashion Nova UK",
-          "industry": "E-commerce",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "5x",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "5x Return on Ad Spend (ROAS) during Black Friday.",
-          "solution": "5x Return on Ad Spend (ROAS) during Black Friday.",
-          "results": "We designed a comprehensive cross-channel strategy (Facebook, Instagram, Google Shopping) that resulted in a massive 5x ROAS during their biggest sale of the year.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
-              "author": "VP of Marketing, Fashion Nova UK",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-saas-5",
+      "clientName": "BuildFlow Pro",
+      "industry": "B2B & IT SaaS",
+      "location": "Houston, USA",
+      "metrics": [
+        { "label": "Enterprise Demo Requests", "value": "+190%", "change": "Q-o-Q Growth" },
+        { "label": "LinkedIn Engagement Rate", "value": "6.8%", "change": "vs 0.5% avg" }
+      ],
+      "challenge": "BuildFlow Pro was a construction project management SaaS competing against Procore and PlanGrid for mid-to-large contractor accounts. Despite having a superior UX and better price point, they were invisible in the digital landscape — virtually zero content presence, no paid media strategy, and a sales team relying on trade show attendance as their sole pipeline channel. Trade shows were generating 3-5 demos per event at a cost of $8,000+ per event.",
+      "solution": "Lumora developed a vertical-specific content and demand generation strategy: a 12-part 'Modern Construction Operations' LinkedIn newsletter targeting Project Managers, General Contractors, and Estimators; a Google Ads campaign targeting commercial construction software comparison terms; a YouTube series of 4-minute 'workflow tip' videos demonstrating real BuildFlow Pro use cases; and a partner co-marketing programme with construction material suppliers to reach their shared customer base.",
+      "results": "LinkedIn newsletter reached 14,200 subscribers in 4 months with a 6.8% engagement rate — 13x the B2B LinkedIn benchmark. Enterprise demo requests grew 190% quarter-over-quarter. The YouTube series accumulated 280,000 views and became the primary conversion asset — prospects who watched 2+ videos converted to demos at a 52% rate. Trade show dependency fell from 80% to 18% of pipeline, and cost-per-demo dropped from $8,000+ to $340.",
+      "testimonial": {
+        "quote": "We spent years doing trade shows and getting nowhere at scale. Lumora showed us that content and digital can outperform any booth we've ever run — at a fraction of the cost and with data we can actually act on.",
+        "author": "Jake Delgado",
+        "role": "VP of Sales & Marketing, BuildFlow Pro"
       },
-      {
-          "id": "case-11",
-          "clientName": "Organic Skincare Co.",
-          "industry": "E-commerce",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "60%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased repeat customer rate by 60% through email marketing.",
-          "solution": "Increased repeat customer rate by 60% through email marketing.",
-          "results": "We implemented automated email flows (abandoned cart, welcome series, win-back) that drastically improved customer retention and increased repeat purchases by 60%.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
-              "author": "VP of Marketing, Organic Skincare Co.",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-re-1",
+      "clientName": "Pinnacle Estates Dubai",
+      "industry": "Real Estate",
+      "location": "Dubai, UAE",
+      "metrics": [
+        { "label": "Off-Plan Sales Value", "value": "$54M", "change": "90-Day Campaign" },
+        { "label": "Cost Per Qualified Lead", "value": "$28", "change": "↓ from $310" }
+      ],
+      "challenge": "Pinnacle Estates was launching a premium 380-unit off-plan residential tower in Dubai Marina. The developer needed to generate qualified buyer inquiries from High Net Worth Individuals (HNWIs) in the UK, India, Russia, and domestically in the UAE — all simultaneously. Previous campaigns with other agencies had generated high lead volumes but extremely poor quality, with sales agents wasting 80% of their time on unqualified prospects.",
+      "solution": "Lumora implemented a qualification-first lead generation strategy. Facebook and Instagram video ads showcased the development with cinematic drone footage and 3D rendered walkthroughs, but clicked through to a 4-question pre-qualification form (budget, residency status, timeline, investment intent) before any contact information was collected. Only leads that confirmed a minimum AED 1.5M investment capacity were passed to agents. We ran parallel campaigns in English, Hindi, and Russian across all target markets.",
+      "results": "Over 90 days, the campaign generated 1,940 pre-qualified leads at an average cost of $28 per lead — down from $310 with their previous agency. Of these, 312 attended site presentations and 78 completed property reservations, representing $54M in off-plan sales. The sales team's time efficiency improved dramatically as agent-to-buyer ratio conversations moved from 8% to 41% close rates. The campaign was Pinnacle's fastest-ever development pre-sell.",
+      "testimonial": {
+        "quote": "The lead quality difference was extraordinary. Our agents went from frustrated to motivated because every conversation was with someone who had already confirmed their intent and capacity. Lumora cracked a problem we'd struggled with for years.",
+        "author": "Omar Al-Rashid",
+        "role": "Director of Sales, Pinnacle Estates Dubai"
       },
-      {
-          "id": "case-12",
-          "clientName": "Tech Gadgets Store",
-          "industry": "E-commerce",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "2x",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Doubled conversion rate through CRO and TikTok Ads.",
-          "solution": "Doubled conversion rate through CRO and TikTok Ads.",
-          "results": "We optimized their product pages for conversions and launched engaging TikTok ad campaigns, effectively doubling their overall website conversion rate.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to E-commerce. Highly recommended!",
-              "author": "VP of Marketing, Tech Gadgets Store",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-re-2",
+      "clientName": "CityEdge Realty Group",
+      "industry": "Real Estate",
+      "location": "London, UK",
+      "metrics": [
+        { "label": "Agent Enquiries", "value": "+200%", "change": "Year-on-Year" },
+        { "label": "Google Ads ROAS", "value": "8.4x", "change": "↑ from 1.9x" }
+      ],
+      "challenge": "CityEdge Realty operated 22 residential estate agency branches across London and faced intense competition from online-first disruptors like Purplebricks and Yopa who were spending aggressively on Google Ads. CityEdge's own campaigns were inefficiently structured — broad match keywords, no geographic bid adjustments per branch, and landing pages directing all traffic to a generic homepage with a 78% bounce rate.",
+      "solution": "Lumora rebuilt CityEdge's entire Google Ads infrastructure: 22 branch-specific campaigns with hyper-local geotargeting, postcode-level bid adjustments, and bespoke landing pages for each branch area featuring current listings, local market data, and a 60-second branch manager video introduction. We also launched a Google Business Profile optimisation programme for all 22 branches and implemented a review generation workflow that prompted satisfied clients to leave Google reviews via a post-completion SMS link.",
+      "results": "Qualified agent enquiry volume increased 200% year-on-year. Google Ads ROAS improved from 1.9x to 8.4x. All 22 branch landing pages now convert at an average of 11.4% (up from 2.3%). CityEdge's average Google review rating across branches climbed from 3.9★ to 4.7★ with 1,840 new reviews in 8 months. Their combined Google Business Profile listing views grew 440%, driving a significant increase in direct calls to each branch.",
+      "testimonial": {
+        "quote": "Lumora rebuilt our digital presence branch by branch, and the results have been extraordinary. We're now competitive with the online-only agencies in digital while still offering the personal service they can't match.",
+        "author": "Helena Forsythe",
+        "role": "Head of Marketing, CityEdge Realty Group"
       },
-      {
-          "id": "case-13",
-          "clientName": "SteelWorks Industrial",
-          "industry": "Manufacturing",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "$10M+",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Generated $10M+ in B2B pipeline via LinkedIn & SEO.",
-          "solution": "Generated $10M+ in B2B pipeline via LinkedIn & SEO.",
-          "results": "We combined targeted LinkedIn outreach with technical SEO to capture high-value search intent, generating over $10M in qualified B2B pipeline.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
-              "author": "VP of Marketing, SteelWorks Industrial",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-re-3",
+      "clientName": "MetroCommercial Properties",
+      "industry": "Real Estate",
+      "location": "New York, USA",
+      "metrics": [
+        { "label": "Lease Applications", "value": "+40%", "change": "Q1 to Q3" },
+        { "label": "Average Days on Market", "value": "19 days", "change": "↓ from 67 days" }
+      ],
+      "challenge": "MetroCommercial managed a portfolio of 140 commercial properties (office spaces, retail units, and warehouses) across Manhattan, Brooklyn, and Queens. Post-pandemic occupancy rates had dropped to 61% and their primary listing channel (CoStar) was generating insufficient enquiry volume for their vacancy portfolio. They needed a modern digital strategy to reach business owners, retail operators, and logistics companies actively seeking space.",
+      "solution": "We launched a LinkedIn-led demand generation programme targeting business owners, Operations Directors, and Retail Expansion Managers at companies with 10–500 employees headquartered in the tri-state area. Each commercial property category (retail, office, warehouse) received dedicated campaigns with video walkthroughs, virtual tour integrations, and neighbourhood market reports as gated content. We also developed a Google Display retargeting strategy reaching companies that had visited competitor listing sites.",
+      "results": "Lease enquiry applications grew 40% from Q1 to Q3. Average days-on-market across the portfolio fell from 67 to 19 days — a 72% improvement. Portfolio occupancy rate climbed from 61% to 88% in 9 months. Three of the highest-value vacant properties (all previously listed 90+ days) were leased within 3 weeks of launching Lumora's campaigns. Annual rental income across the portfolio increased by $3.2M.",
+      "testimonial": {
+        "quote": "We had properties sitting empty for months. Lumora found the right tenants digitally in a way CoStar alone never could. The occupancy improvement has been transformative for our investors.",
+        "author": "Richard Tan",
+        "role": "Managing Partner, MetroCommercial Properties"
       },
-      {
-          "id": "case-14",
-          "clientName": "AutoParts Global",
-          "industry": "Manufacturing",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "85%",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Increased distributor inquiries by 85% globally.",
-          "solution": "Increased distributor inquiries by 85% globally.",
-          "results": "By running multi-language Google Ads campaigns across Europe and Asia, we successfully increased inquiries from international distributors by 85%.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
-              "author": "VP of Marketing, AutoParts Global",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=800"
+      "image_url": "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-re-4",
+      "clientName": "BluePeak Developments",
+      "industry": "Real Estate",
+      "location": "Riyadh, Saudi Arabia",
+      "metrics": [
+        { "label": "Villa Reservations", "value": "94 units", "change": "60-Day Launch" },
+        { "label": "Social Media Reach", "value": "4.2M", "change": "Unique Accounts" }
+      ],
+      "challenge": "BluePeak was launching an exclusive gated villa community — 120 units priced between SAR 2.8M and SAR 7.4M — in North Riyadh, targeting affluent Saudi nationals and GCC expats. The challenge was reaching ultra-high-net-worth buyers across Saudi Arabia, Kuwait, Bahrain, and Qatar through digital channels while maintaining the brand's luxury positioning. Standard social media advertising felt too 'mass market' for their target demographic.",
+      "solution": "Lumora designed a 'Luxury Digital Exclusivity' campaign strategy: an invitation-only digital launch event hosted on a private microsite accessible only via personalised QR codes sent to a curated prospect list; a WhatsApp broadcast series to 3,400 pre-vetted HNW contacts with exclusive first-look floor plans and pricing; a targeted Instagram and Snapchat campaign using behavioural and luxury interest targeting; and partnerships with 8 Saudi lifestyle and interior design influencers for organic community coverage.",
+      "results": "Within 60 days of the launch campaign, 94 of 120 villa units were reserved — 78% of the project — generating SAR 342M in reservations. Total organic and paid social reach exceeded 4.2M unique accounts across the GCC. The WhatsApp broadcast achieved a 94% open rate and 31% response rate — directly resulting in 28 site visits. The brand's Instagram page grew from 800 to 47,000 followers. BluePeak returned to Lumora for their next 3 development launches.",
+      "testimonial": {
+        "quote": "Lumora understood that selling luxury property is about creating desire and exclusivity before you ever mention the price. Their campaign approach was unlike anything we'd seen in Saudi real estate marketing. Exceptional results.",
+        "author": "Khalid Al-Dosari",
+        "role": "Chief Executive Officer, BluePeak Developments"
       },
-      {
-          "id": "case-15",
-          "clientName": "EcoPackaging Solutions",
-          "industry": "Manufacturing",
-          "location": "Global",
-          "metrics": [
-              {
-                  "label": "Key Result",
-                  "value": "3x",
-                  "change": "+100%"
-              }
-          ],
-          "challenge": "Tripled organic traffic in 8 months.",
-          "solution": "Tripled organic traffic in 8 months.",
-          "results": "Our comprehensive content strategy and technical SEO improvements resulted in a 3x increase in organic traffic, establishing them as an industry thought leader.",
-          "testimonial": {
-              "quote": "Lumora completely transformed our approach to Manufacturing. Highly recommended!",
-              "author": "VP of Marketing, EcoPackaging Solutions",
-              "role": "Client"
-          },
-          "image_url": "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&q=80&w=800"
-      }
+      "image_url": "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-re-5",
+      "clientName": "GreenHaven Residential",
+      "industry": "Real Estate",
+      "location": "Melbourne, Australia",
+      "metrics": [
+        { "label": "First Home Buyer Leads", "value": "1,840", "change": "90-Day Campaign" },
+        { "label": "Settlement Conversions", "value": "124", "change": "↑ 22% Rate" }
+      ],
+      "challenge": "GreenHaven was developing a 380-lot affordable housing estate targeting first home buyers in Melbourne's outer growth corridor. The primary challenge was reaching first-home buyers aged 25–38 who were eligible for Australian Government First Home Owner Grants — a motivated but digitally fragmented audience who consumed information across Facebook, Instagram, TikTok, and YouTube equally. Previous campaigns had generated quantity over quality, with high lead drop-off at the pre-approval stage.",
+      "solution": "Lumora built a first-home buyer education funnel: a dedicated 'First Home Buyer Hub' landing page featuring grant eligibility calculators, suburb comparison tools, and a 12-step buying guide PDF. Facebook Lead Ads targeted couples aged 25–38 earning $70K–$130K combined salary in relevant postcodes. A 5-part video series on TikTok and YouTube demystified the buying process — each video ending with a soft CTA to the calculator tool. A mortgage broker referral programme was integrated so leads could be pre-qualified within 48 hours.",
+      "results": "1,840 qualified first-home buyer leads were generated in 90 days, with 68% completing a full buyer profile. 124 progressed to settlement — a 22% lead-to-sale conversion rate against an industry benchmark of 7–9%. Average cost per settlement was AUD $2,100 against a revenue value of AUD $480,000+ per lot. GreenHaven sold 124 lots in 90 days — the estate was 33% sold at launch and reached 100% sold-out status in 7 months.",
+      "testimonial": {
+        "quote": "The education-first approach Lumora proposed was the right call. We stopped trying to sell to first home buyers and started helping them understand the process. The conversion results prove it works.",
+        "author": "Natalie Byrne",
+        "role": "National Sales Director, GreenHaven Residential"
+      },
+      "image_url": "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-ec-1",
+      "clientName": "StyleHaven Fashion",
+      "industry": "E-commerce",
+      "location": "Manchester, UK",
+      "metrics": [
+        { "label": "Black Friday ROAS", "value": "5.8x", "change": "↑ from 1.9x" },
+        { "label": "Revenue in 72hrs", "value": "£380K", "change": "Single Campaign" }
+      ],
+      "challenge": "StyleHaven was a UK fashion e-commerce brand competing in the brutally contested fast-fashion market. They had a healthy existing customer base of 34,000 but consistently underperformed during peak sale periods — their Black Friday 2022 campaign generated a 1.9x ROAS, barely covering ad costs. Their product catalogue of 2,400 SKUs was being promoted with a flat, non-personalised ad approach that showed all customers the same ads regardless of browsing or purchase history.",
+      "solution": "Lumora rebuilt their Meta Ads infrastructure around dynamic product catalogues and behavioural segmentation: users who viewed dresses in the past 7 days saw dress ads; abandoned cart visitors saw exact cart contents in carousel ads with a countdown timer; existing customers were shown new arrivals in categories they'd previously purchased. We also launched a pre-sale hype sequence — 5 teaser posts and stories in the 2 weeks before Black Friday with countdown urgency, exclusive early-access email sign-ups, and influencer unboxing partnerships.",
+      "results": "Black Friday ROAS rose from 1.9x to 5.8x. The campaign generated £380,000 in revenue in 72 hours — the brand's single largest revenue period on record. Email early-access sign-ups reached 8,200, and the early access window alone generated £94,000 in pre-sale revenue before the public launch. StyleHaven's Meta Ads cost-per-purchase dropped 61% year-over-year. The brand reinvested the surplus to expand to Ireland and Australia the following quarter.",
+      "testimonial": {
+        "quote": "Black Friday used to be our most stressful period with the worst returns. Lumora turned it into our best day ever — nearly 6x ROAS. The dynamic catalogue approach was the difference maker. We'll never run a flat campaign again.",
+        "author": "Zara Patel",
+        "role": "E-commerce Director, StyleHaven Fashion"
+      },
+      "image_url": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-ec-2",
+      "clientName": "PureGlow Skincare",
+      "industry": "E-commerce",
+      "location": "Los Angeles, USA",
+      "metrics": [
+        { "label": "Repeat Purchase Rate", "value": "+60%", "change": "↑ 6-Month LTV" },
+        { "label": "Email Revenue Share", "value": "38%", "change": "of Total Revenue" }
+      ],
+      "challenge": "PureGlow was a clean beauty e-commerce brand that had built a loyal but small customer base through Instagram. Despite a high NPS of 78 and glowing product reviews, their repeat purchase rate was just 14% — customers would buy once and not return. They were heavily dependent on paid social for new customer acquisition, with email generating less than 6% of total revenue. The founders knew they had a retention problem but didn't know how to fix it.",
+      "solution": "Lumora conducted a full customer lifecycle audit and implemented a 7-flow Klaviyo email and SMS automation architecture: a 5-email welcome series for new customers with skincare education content tied to purchased products; a 30-day post-purchase check-in with a replenishment reminder; an abandoned cart sequence with social proof testimonials; a 'win-back' flow for lapsed 90+ day customers with a loyalty discount; a VIP tier programme for top 20% customers with early product access. Each flow was A/B tested for subject lines and send timing.",
+      "results": "In 6 months, repeat purchase rate climbed from 14% to 22.4% — a 60% improvement. Email and SMS moved from 6% to 38% of total monthly revenue. Customer Lifetime Value (LTV) over 12 months increased from $87 to $164. The win-back flow alone recovered $84,000 in revenue from lapsed customers in Q2. With paid social dependency reduced, PureGlow's blended ROAS across all channels improved from 2.3x to 4.8x as LTV offset acquisition costs.",
+      "testimonial": {
+        "quote": "We were essentially losing customers after their first purchase without knowing it. Lumora's retention programme transformed our entire business model. We now acquire customers knowing they'll stay — that changes everything financially.",
+        "author": "Mia Thornton",
+        "role": "CEO & Co-Founder, PureGlow Skincare"
+      },
+      "image_url": "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-ec-3",
+      "clientName": "GadgetNest Electronics",
+      "industry": "E-commerce",
+      "location": "Toronto, Canada",
+      "metrics": [
+        { "label": "Conversion Rate", "value": "2x", "change": "1.8% → 4.1%" },
+        { "label": "TikTok Revenue", "value": "$240K", "change": "New Channel" }
+      ],
+      "challenge": "GadgetNest sold consumer electronics and accessories online across Canada. With a 1.8% website conversion rate and a $34 average cart abandonment problem, they were leaving significant revenue on the table. Their marketing mix was exclusively Google Shopping and SEO — no social commerce presence, no influencer programme, no TikTok strategy despite their 18–35 core demographic spending 3+ hours daily on the platform.",
+      "solution": "Lumora tackled both the on-site conversion problem and the channel diversification simultaneously. On-site CRO: we redesigned product pages with embedded comparison tables, video demos, 'in the box' gallery sections, and urgency messaging ('Only 3 left in stock — ships in 24h'). A 3-step cart abandonment SMS sequence was integrated. For TikTok: we launched a creator programme with 24 micro-influencers in the tech/productivity niche (30K–150K followers) producing authentic unboxing and 'does this actually work' style content, amplified via TikTok Spark Ads.",
+      "results": "Website conversion rate grew from 1.8% to 4.1% — a 128% improvement generating an additional $620,000 in annual revenue from existing traffic without increasing ad spend. Cart abandonment recovery via SMS generated $94,000 in recovered revenue in 6 months. TikTok became a net new $240,000 revenue channel in its first 5 months. GadgetNest's blended ROAS across all channels improved from 2.9x to 6.1x.",
+      "testimonial": {
+        "quote": "The CRO work alone paid for the entire Lumora retainer 10 times over in the first year. And TikTok was a channel we were scared to try — now it's one of our top three revenue sources. Incredible execution.",
+        "author": "Ben Nakamura",
+        "role": "Head of Growth, GadgetNest Electronics"
+      },
+      "image_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-ec-4",
+      "clientName": "NourishBox Subscription",
+      "industry": "E-commerce",
+      "location": "Amsterdam, Netherlands",
+      "metrics": [
+        { "label": "Monthly Subscribers", "value": "+340%", "change": "8-Month Growth" },
+        { "label": "Churn Rate", "value": "4.2%", "change": "↓ from 18.7%" }
+      ],
+      "challenge": "NourishBox was a healthy snack subscription box service struggling with two interconnected problems: expensive new subscriber acquisition (€48 CAC) and a devastating 18.7% monthly churn rate that made growth near-impossible — for every 100 new subscribers, 19 were cancelling each month. Their onboarding experience was generic, their packaging was uninspiring, and they had no proactive retention programme in place.",
+      "solution": "Lumora addressed both acquisition and retention simultaneously. Acquisition: a Facebook and Instagram video campaign showcasing the unboxing experience with a 'personalise your first box' quiz landing page — personalisation increased perceived value and reduced price sensitivity. Referral programme with double-sided rewards (€10 credit for referrer and referred). Retention: a complete onboarding redesign — personalised welcome cards, a 12-week snack education email series, and a 'pause instead of cancel' flow that offered 2 free months to subscribers initiating cancellation.",
+      "results": "Monthly subscribers grew 340% over 8 months. Monthly churn fell from 18.7% to 4.2% — transforming the unit economics. Average subscriber LTV grew from €124 to €411. The referral programme drove 31% of new subscribers in months 4–8 at a CAC of €4 — compared to €48 from paid social. The 'pause instead of cancel' flow saved 34% of subscribers who initiated cancellation requests, recovering €180,000 in ARR in 6 months.",
+      "testimonial": {
+        "quote": "We were on a growth treadmill — acquiring fast but losing just as fast. Lumora diagnosed the retention problem and fixed it alongside acquisition. The LTV improvement is what changed our investor story completely.",
+        "author": "Sophia van der Berg",
+        "role": "Co-Founder & CMO, NourishBox Subscription"
+      },
+      "image_url": "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-ec-5",
+      "clientName": "ArmorX Sportswear",
+      "industry": "E-commerce",
+      "location": "Dubai, UAE & GCC",
+      "metrics": [
+        { "label": "GCC Online Revenue", "value": "+420%", "change": "Year 1 Growth" },
+        { "label": "Instagram Followers", "value": "180K", "change": "↑ from 12K" }
+      ],
+      "challenge": "ArmorX was a performance sportswear brand manufacturing in Pakistan with ambitions to build a premium DTC e-commerce brand across the GCC — UAE, Saudi Arabia, Kuwait, and Qatar. Despite high-quality products, they had zero digital brand presence, no social media following, no influencer relationships, and a basic Shopify store with no traffic. Their budget was $60,000 for the first 12 months.",
+      "solution": "Lumora built ArmorX's entire digital brand from the ground up: professional content production for Instagram and TikTok (lifestyle shoots in Dubai gyms, stadium venues, and desert training environments); a phased influencer programme starting with 20 GCC fitness micro-influencers and scaling to 4 macro-influencers; Meta Ads campaigns targeting GCC fitness enthusiasts aged 18–35; Google Shopping for branded and performance sportswear terms; and a Ramadan campaign featuring 'train during Ramadan' content series that went viral across Saudi Arabia.",
+      "results": "In 12 months, ArmorX grew from 12,000 to 180,000 Instagram followers. GCC online revenue grew 420% year-over-year. The Ramadan campaign generated 2.4M organic impressions and drove a single-month revenue record of $84,000. Website conversion rate was optimised to 3.8% (benchmark: 2.1% for fashion e-commerce). ArmorX successfully launched into Noon.com and Amazon UAE marketplaces in Month 10 using Lumora's brand equity as leverage for premium placement.",
+      "testimonial": {
+        "quote": "Lumora didn't just run our marketing — they built our brand. We went from a manufacturer with a website to a recognised GCC sportswear brand with a genuine community. The growth has exceeded every projection we made.",
+        "author": "Tariq Mahmood",
+        "role": "Founder & CEO, ArmorX Sportswear"
+      },
+      "image_url": "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-mfg-1",
+      "clientName": "SteelCraft Industrial",
+      "industry": "Manufacturing",
+      "location": "Birmingham, UK & Europe",
+      "metrics": [
+        { "label": "B2B Pipeline Generated", "value": "$10.4M", "change": "12-Month Value" },
+        { "label": "Organic Traffic", "value": "+380%", "change": "↑ Target Keyphrases" }
+      ],
+      "challenge": "SteelCraft manufactured precision-engineered steel components for the automotive and aerospace sectors. Their entire business development function relied on relationship selling and trade show attendance — they had zero digital presence and appeared on page 6+ of Google for their core product categories. With trade shows costing £80,000 annually and generating diminishing returns post-pandemic, they needed to build an inbound digital lead engine.",
+      "solution": "Lumora built a technical content SEO strategy targeting highly specific manufacturing and engineering search terms — 'precision CNC machining UK', 'aerospace-grade steel components supplier', 'ISO 9001 steel parts manufacturer Birmingham'. We created in-depth capability pages, material specification guides, and an interactive 'Request a Quote' tool. LinkedIn Company Page and employee advocacy programmes were launched targeting Procurement Directors and Engineers at Tier 1 automotive and aerospace OEMs. A Google Ads campaign captured competitors' branded search terms.",
+      "results": "Organic traffic grew 380% in 12 months with 34 target keyphrases ranking on Google Page 1. LinkedIn generated 180 qualified enquiries from procurement decision-makers at OEM accounts. The digital pipeline value reached $10.4M — equivalent to 7 years of trade show ROI at a fraction of the cost. SteelCraft won 3 new long-term supply contracts directly traceable to inbound digital enquiries, representing £2.8M in annualised revenue.",
+      "testimonial": {
+        "quote": "We were sceptical that SEO and LinkedIn could work for industrial manufacturing. Lumora proved us wrong within 6 months. We now have procurement directors from major OEMs emailing us directly — something that never happened before.",
+        "author": "David Clarke",
+        "role": "Commercial Director, SteelCraft Industrial"
+      },
+      "image_url": "https://images.unsplash.com/photo-1565514020179-026b92b84bb6?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-mfg-2",
+      "clientName": "GlobalDrive Auto Components",
+      "industry": "Manufacturing",
+      "location": "Stuttgart, Germany & Global",
+      "metrics": [
+        { "label": "International Distributor Enquiries", "value": "+85%", "change": "Year-on-Year" },
+        { "label": "Markets Entered", "value": "14", "change": "New Countries" }
+      ],
+      "challenge": "GlobalDrive manufactured OEM-grade automotive replacement parts and wanted to expand their distributor network from 8 to 30+ countries. Their existing website was German-only, their Google Ads budget of €20,000/month was entirely domestic, and they had no strategy for reaching international auto parts distributors actively searching for new supplier partnerships. Language and localisation barriers were seen as insurmountable.",
+      "solution": "Lumora designed a multilingual international expansion programme: website localisation into 7 languages (English, French, Spanish, Arabic, Polish, Japanese, Portuguese) with country-specific SEO strategies for each target market; Google Ads campaigns in each target language targeting 'auto parts supplier' and 'OEM automotive components distributor' terms; a LinkedIn account management programme specifically targeting Purchasing Managers and Import Directors at auto parts distributors in each target country; and a dedicated 'Become a Distributor' landing page with a streamlined application form.",
+      "results": "International distributor enquiries grew 85% year-over-year. 14 new country markets generated qualified distribution partnership applications within 12 months, including entries into South Korea, Mexico, Poland, and the UAE. 8 new distribution agreements were signed, expanding GlobalDrive's international coverage from 8 to 22 countries. Multi-language organic traffic increased 520% and became the primary lead source for international markets at 62% lower cost than paid search.",
+      "testimonial": {
+        "quote": "International expansion felt overwhelming before Lumora. They made it systematic — language, market, channel, by channel. We have distribution partnerships now in markets we'd never have reached through traditional means.",
+        "author": "Klaus Brandt",
+        "role": "Head of International Business, GlobalDrive Auto Components"
+      },
+      "image_url": "https://images.unsplash.com/photo-1580674285054-bed31e145f59?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-mfg-3",
+      "clientName": "EcoForm Packaging",
+      "industry": "Manufacturing",
+      "location": "Copenhagen, Denmark",
+      "metrics": [
+        { "label": "Organic Traffic", "value": "3x", "change": "8-Month Growth" },
+        { "label": "Inbound RFQ Value", "value": "€4.8M", "change": "Annual Pipeline" }
+      ],
+      "challenge": "EcoForm produced sustainable packaging solutions — compostable, recycled, and FSC-certified materials — for the food service and retail sectors. Despite operating in a rapidly growing market driven by EU sustainability directives, they were invisible online. Their website attracted 800 monthly visitors and their sales team relied entirely on cold calling — a slow, expensive process in a market where buyers were actively searching for sustainable packaging suppliers.",
+      "solution": "Lumora positioned EcoForm as the definitive thought leader in sustainable packaging through a content SEO strategy targeting EU sustainability regulation-related queries, material comparison guides, and 'how to switch from plastic to compostable packaging' buyer guides. A Sustainability Resource Hub was built on the website with downloadable lifecycle assessment reports — gated behind an email sign-up. Google Ads targeted urgent regulatory compliance terms. LinkedIn campaigns reached Sustainability Directors and Procurement Managers at FMCG brands.",
+      "results": "Organic traffic tripled in 8 months. The Sustainability Resource Hub generated 1,840 email sign-ups from qualified procurement contacts in its first 4 months. Inbound RFQ value from digital-sourced leads reached €4.8M annually. EcoForm ranked on Google Page 1 for 28 high-value sustainable packaging terms across 6 EU markets. The brand was cited in 3 EU trade publications after a viral piece on EU Single-Use Plastics Directive compliance — driving 40,000 organic referral visits.",
+      "testimonial": {
+        "quote": "Our market was growing but we weren't capturing any of it digitally. Lumora's content strategy made us the go-to authority for sustainable packaging information — and the enquiries followed naturally. A genuinely strategic approach.",
+        "author": "Astrid Lindqvist",
+        "role": "CEO, EcoForm Packaging"
+      },
+      "image_url": "https://images.unsplash.com/photo-1605600659908-0ef719419d41?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-mfg-4",
+      "clientName": "ThermoTech Systems",
+      "industry": "Manufacturing",
+      "location": "Houston, USA",
+      "metrics": [
+        { "label": "Qualified B2B Leads", "value": "+165%", "change": "Quarterly Growth" },
+        { "label": "Sales Cycle Length", "value": "↓38%", "change": "94 → 58 Days" }
+      ],
+      "challenge": "ThermoTech manufactured industrial HVAC and thermal management systems for oil & gas, data centres, and commercial construction. Their sales cycle averaged 94 days because prospects arrived at sales conversations with minimal product knowledge, requiring extensive education before any specification discussions. Marketing consisted of a brochure website and occasional industry magazine ads — neither generating measurable enquiries.",
+      "solution": "Lumora built a 'Buyer Education Engine': a technical resource library of 34 product specification documents, application case studies, and energy efficiency ROI calculators — all optimised for search. Google Ads targeted specific application terms: 'industrial HVAC for data centres', 'thermal management oil rig equipment', 'commercial HVAC specification'. A LinkedIn video series featuring ThermoTech engineers explaining product performance in real-world conditions positioned the brand as a technical authority. A nurture email sequence was built to educate leads through specification, compliance, and procurement stages before a sales call was requested.",
+      "results": "Qualified inbound B2B leads grew 165% quarter-over-quarter. The pre-call education programme reduced the average sales cycle from 94 to 58 days — a 38% reduction — as prospects arrived at first calls with product familiarity and pre-answered objections. Annual new business revenue from digital-sourced leads reached $8.2M in the first year. The ROI calculator was used 3,400 times in 6 months, with 28% of users submitting an RFQ directly from the calculator results page.",
+      "testimonial": {
+        "quote": "The ROI calculator alone transformed how we have initial conversations. Prospects now arrive knowing their energy cost savings before we speak — the sale practically starts at stage 3 instead of stage 1. Extraordinary strategic thinking from Lumora.",
+        "author": "Robert Steiner",
+        "role": "VP of Sales & Marketing, ThermoTech Systems"
+      },
+      "image_url": "https://images.unsplash.com/photo-1513828583688-c52646db42da?auto=format&fit=crop&q=80&w=800"
+    },
+    {
+      "id": "case-mfg-5",
+      "clientName": "ProWeave Textiles",
+      "industry": "Manufacturing",
+      "location": "Istanbul, Turkey & Global",
+      "metrics": [
+        { "label": "Export Buyer Connections", "value": "280+", "change": "12-Month Period" },
+        { "label": "Alibaba RFQ Conversion", "value": "+210%", "change": "↑ Response Rate" }
+      ],
+      "challenge": "ProWeave was a Turkish technical textile manufacturer producing industrial fabrics for the automotive, marine, and construction sectors. They had strong product quality and competitive pricing but no digital export strategy. They relied on B2B trade portals like Alibaba with poor profile optimisation and inconsistent follow-up, leading to missed export opportunities. The founder wanted to build direct relationships with buyers in Western Europe, North America, and the GCC rather than continuing with intermediary traders who compressed margins.",
+      "solution": "Lumora built ProWeave's digital export strategy across three channels: a complete Alibaba profile overhaul with professional product imagery, detailed specification sheets, certifications uploaded, and automated rapid response templates optimised for conversion; a LinkedIn Company Page programme targeting Import Directors and Procurement Managers at specific verticals (automotive tier suppliers, marine product manufacturers) in target export markets; and a direct email outreach programme to 1,800 verified industrial buyers built from industry databases, personalised by application and product type.",
+      "results": "ProWeave established 280+ verified direct buyer connections in 14 countries within 12 months. Alibaba RFQ response-to-meeting conversion improved 210% with the optimised profile and follow-up sequences. Direct buyer relationships — bypassing intermediary traders — increased average margin per order by 18%. Three long-term supply contracts were signed with verified buyers in Germany, the UAE, and Canada. Annual export revenue grew 78%, reaching $4.2M in new export business in the first year of the programme.",
+      "testimonial": {
+        "quote": "Lumora understood that for a manufacturer like us, digital marketing means finding the right buyers, not just getting impressions. Every strategy they recommended was focused on direct buyer connections, and the results have transformed our export business.",
+        "author": "Mehmet Yilmaz",
+        "role": "Export Director, ProWeave Textiles"
+      },
+      "image_url": "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&q=80&w=800"
+    }
   ],
-    "process": [
+  "process": [
     {
       "stepNumber": 1,
       "title": "Requirement & Competitor Analysis",
@@ -5640,5 +5785,520 @@ export const initialDynamicPages: DynamicPage[] = [
   ],
   "serviceRecommendedFor": "E-commerce stores, retail brands, and startups launching new products.",
   "position": "None"
+},
+{
+  "id": "page-ai-agent-for-marketing",
+  "slug": "ai-agent-for-marketing",
+  "title": "AI Agent for Marketing",
+  "heroBadge": "Bot",
+  "pageType": "service",
+  "isPublished": false,
+  "sortOrder": 99,
+  "position": "None",
+  "createdAt": "2026-08-26T00:00:00.000Z",
+  "updatedAt": "2026-08-26T00:00:00.000Z",
+  "overviewContent": "Deploy autonomous AI marketing agents that work 24/7 to generate leads, nurture prospects, optimize campaigns, and close revenue—without manual intervention. Lumora's AI Agent stack replaces repetitive marketing tasks with intelligent, self-learning systems that continuously improve performance.",
+  "serviceFeatures": [
+    "Autonomous Campaign Management",
+    "AI-Powered Lead Nurturing Sequences",
+    "Real-Time Bid Optimization",
+    "Predictive Audience Segmentation",
+    "AI Content & Ad Copy Generation",
+    "Conversational Marketing Chatbots"
+  ],
+  "serviceDeliverables": [
+    "Custom AI Agent Architecture Blueprint",
+    "Automated Lead Nurture Workflow",
+    "AI Ad Copy & Creative Suite",
+    "Monthly AI Performance Dashboard",
+    "Chatbot Deployment & Training Report"
+  ],
+  "serviceRecommendedFor": "Growth-stage B2B & B2C companies, SaaS platforms, and enterprises seeking to scale marketing without scaling headcount.",
+  "seo": {
+    "metaTitle": "AI Agent for Marketing | Autonomous Marketing Automation | Lumora",
+    "metaDescription": "Deploy intelligent AI marketing agents that automate lead generation, campaign optimization, and customer nurturing 24/7. Lumora builds custom AI agent systems for modern growth marketing.",
+    "keywords": "AI agent for marketing, autonomous marketing AI, AI marketing automation, AI lead generation, marketing AI agents, conversational marketing AI",
+    "canonicalUrl": "/ai-agent-for-marketing",
+    "ogTitle": "AI Agent for Marketing — Lumora Digital",
+    "ogDescription": "Autonomous AI agents that run your marketing 24/7. Generate leads, nurture prospects, and optimize campaigns without manual effort.",
+    "ogImage": "",
+    "twitterCard": "summary_large_image",
+    "schemaType": "Service",
+    "schemaData": "{}",
+    "robotsDirective": "index, follow"
+  },
+  "sections": [
+    {
+      "id": "sec-overview-ai-agent-marketing",
+      "type": "overview",
+      "isActive": true,
+      "title": "Your Marketing Team That Never Sleeps — Powered by AI Agents",
+      "content": "Traditional marketing teams are limited by time, bandwidth, and cognitive capacity. AI marketing agents aren't. Lumora deploys a network of intelligent, autonomous agents that manage every layer of your marketing funnel—from the first ad impression to the final signed contract. These agents learn from every interaction, self-optimize in real-time, and scale your growth without scaling your payroll.",
+      "mediaUrl": "https://images.unsplash.com/photo-1677442135703-1787eea5ce01?q=80&w=1200",
+      "bullets": [
+        "Runs 24/7 without human fatigue or oversight",
+        "Self-optimizes campaigns using live performance data",
+        "Reduces cost-per-lead by up to 60% through intelligent automation",
+        "Integrates with your CRM, ad platforms, and analytics stack"
+      ]
+    },
+    {
+      "id": "sec-services-ai-agent-marketing",
+      "type": "services-grid",
+      "isActive": true,
+      "title": "What Our AI Marketing Agents Do",
+      "content": "A full-stack suite of autonomous agents, each specialized for a critical marketing function.",
+      "cards": [
+        {
+          "id": "card-ai-1",
+          "title": "Autonomous Campaign Manager",
+          "description": "AI agents that monitor, adjust, and scale paid campaigns across Google, Meta, and LinkedIn in real-time — no human input needed.",
+          "iconName": "Settings2"
+        },
+        {
+          "id": "card-ai-2",
+          "title": "Intelligent Lead Nurture Agent",
+          "description": "Personalized email and SMS sequences triggered by real behavioral signals — open rates, page visits, and intent data — not just time delays.",
+          "iconName": "Mail"
+        },
+        {
+          "id": "card-ai-3",
+          "title": "AI Content Generation Engine",
+          "description": "Produces high-converting ad copy, landing page headlines, social captions, and blog outlines using brand-trained language models.",
+          "iconName": "FileText"
+        },
+        {
+          "id": "card-ai-4",
+          "title": "Predictive Audience Segmentation",
+          "description": "Analyzes your CRM and first-party data to predict which prospects are most likely to convert and prioritizes them automatically.",
+          "iconName": "Users"
+        },
+        {
+          "id": "card-ai-5",
+          "title": "Conversational Marketing Chatbot",
+          "description": "An AI chat agent deployed on your website that qualifies leads, books demos, and answers objections 24/7 — acting as your always-on sales rep.",
+          "iconName": "MessageSquare"
+        },
+        {
+          "id": "card-ai-6",
+          "title": "Real-Time Analytics & Reporting Agent",
+          "description": "Automatically surfaces anomalies, opportunities, and performance alerts from your marketing data — before you even think to check.",
+          "iconName": "BarChart3"
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-ai-agent-marketing",
+      "type": "how-we-do-it",
+      "isActive": true,
+      "title": "How We Build & Deploy Your AI Marketing Agent Stack",
+      "content": "A structured, enterprise-grade deployment process designed to get your AI agents live and producing results within weeks.",
+      "mediaUrl": "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-ai-1",
+          "title": "Discovery & Stack Audit",
+          "description": "We map your existing tech stack, CRM, ad accounts, and data pipelines to design the optimal AI agent architecture for your business."
+        },
+        {
+          "id": "hw-ai-2",
+          "title": "Agent Architecture Design",
+          "description": "Our AI engineers design a custom multi-agent system tailored to your funnel stages, target audience, and revenue goals."
+        },
+        {
+          "id": "hw-ai-3",
+          "title": "Data Training & Integration",
+          "description": "Agents are trained on your historical campaign data, CRM records, and brand voice to ensure contextually accurate outputs from day one."
+        },
+        {
+          "id": "hw-ai-4",
+          "title": "Controlled Pilot Launch",
+          "description": "We deploy agents in a controlled environment, running parallel tests to validate performance before full activation."
+        },
+        {
+          "id": "hw-ai-5",
+          "title": "Full Deployment & Optimization Loop",
+          "description": "Agents go live across all channels, with a continuous feedback loop that improves targeting, messaging, and spend efficiency every week."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-ai-agent-marketing",
+      "type": "case-study",
+      "isActive": true,
+      "title": "AI Agent Marketing in Action",
+      "content": "Real results from brands that replaced manual marketing workflows with Lumora's autonomous AI agent systems.",
+      "caseStudies": [
+        {
+          "id": "cs-ai-1",
+          "title": "SaaS Company Cuts CAC by 58% with AI Lead Nurturing Agent",
+          "bgImageUrl": "https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200",
+          "description": "A B2B SaaS platform replaced their manual email sequences with Lumora's behavioral AI nurturing agent. The agent tracked 14 intent signals per lead and personalized every touchpoint, resulting in a 58% drop in CAC and a 3x increase in demo bookings within 90 days.",
+          "points": [
+            { "id": "p1", "title": "58% Lower CAC", "iconName": "TrendingDown" },
+            { "id": "p2", "title": "3x Demo Bookings", "iconName": "Calendar" },
+            { "id": "p3", "title": "90-Day Results", "iconName": "Zap" }
+          ]
+        },
+        {
+          "id": "cs-ai-2",
+          "title": "E-Commerce Brand Scales Ad Spend 4x Without Hiring",
+          "bgImageUrl": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?q=80&w=1200",
+          "description": "An online retailer used Lumora's autonomous campaign manager agent to scale Meta and Google ad spend from $15k to $60k/month. The agent reallocated budget to top-performing creatives in real-time, maintaining a 4.2x ROAS throughout the scale phase.",
+          "points": [
+            { "id": "p1", "title": "4x Ad Spend Scaled", "iconName": "ArrowUpRight" },
+            { "id": "p2", "title": "4.2x ROAS Maintained", "iconName": "BarChart3" },
+            { "id": "p3", "title": "Zero Extra Headcount", "iconName": "Users" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-ai-agent-marketing",
+      "type": "faq",
+      "isActive": true,
+      "title": "Frequently Asked Questions",
+      "content": "Everything you need to know about deploying AI agents for your marketing operations.",
+      "cards": [
+        {
+          "id": "faq-ai-1",
+          "title": "What exactly is an AI marketing agent?",
+          "description": "An AI marketing agent is an autonomous software system that can perceive data, make decisions, and execute marketing actions — such as adjusting ad bids, sending personalized emails, or qualifying leads — without human intervention. Unlike simple automations, AI agents learn and adapt over time."
+        },
+        {
+          "id": "faq-ai-2",
+          "title": "How is this different from regular marketing automation tools like HubSpot or Mailchimp?",
+          "description": "Traditional automation tools follow fixed 'if-then' rule sequences set by humans. AI agents, by contrast, use machine learning to independently analyze data, identify patterns, and make optimized decisions dynamically — taking actions that no static rule set could anticipate."
+        },
+        {
+          "id": "faq-ai-3",
+          "title": "Which platforms and tools do your AI agents integrate with?",
+          "description": "Our AI agents integrate with Google Ads, Meta Ads, LinkedIn Campaign Manager, HubSpot, Salesforce, Klaviyo, Intercom, GA4, and most major CRM and ad platforms via API. Custom integrations are available for enterprise tech stacks."
+        },
+        {
+          "id": "faq-ai-4",
+          "title": "How long does it take to deploy an AI marketing agent?",
+          "description": "A standard AI agent deployment takes 4 to 8 weeks from kick-off to live operation, including discovery, architecture design, data training, and controlled testing. Complex multi-agent systems for enterprise clients may require 10 to 14 weeks."
+        },
+        {
+          "id": "faq-ai-5",
+          "title": "Do we retain full control over the AI agent's actions?",
+          "description": "Absolutely. Every agent operates within guardrails you define — budget caps, brand voice parameters, approval thresholds, and channel restrictions. You can override, pause, or retrain any agent at any time through our client dashboard."
+        }
+      ]
+    }
+  ]
+},
+{
+  "id": "page-cross-marketing",
+  "slug": "cross-marketing",
+  "title": "Cross Marketing & Brand Collaboration",
+  "heroBadge": "Handshake",
+  "pageType": "service",
+  "isPublished": true,
+  "sortOrder": 15,
+  "position": "Both",
+  "createdAt": "2026-08-26T00:00:00.000Z",
+  "updatedAt": "2026-08-26T00:00:00.000Z",
+  "heroImage": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1400",
+  "overviewContent": "Cross marketing is the art of connecting two complementary brands — amplifying each other's audiences, distribution channels, and credibility. Think Nike partnering with FC Barcelona, Red Bull owning extreme sports, or Spotify collaborating with Starbucks. We architect, negotiate, and execute these brand alliances from strategy to signed deal.",
+  "serviceFeatures": [
+    "Brand Partnership Strategy",
+    "Cross-Sector Audience Mapping",
+    "Co-Marketing Campaign Execution",
+    "Influencer & Ambassador Integration",
+    "Revenue Share Modelling",
+    "Joint Content Production"
+  ],
+  "serviceDeliverables": [
+    "Brand Collaboration Blueprint",
+    "Partner Outreach & Negotiation",
+    "Co-Branded Campaign Assets",
+    "Joint Audience Analytics Report",
+    "Cross-Channel Distribution Plan"
+  ],
+  "serviceRecommendedFor": "Consumer brands, sports franchises, lifestyle companies, and enterprises ready to multiply their reach through strategic alliances.",
+  "seo": {
+    "metaTitle": "Cross Marketing & Brand Collaboration Services | Lumora",
+    "metaDescription": "We architect strategic brand partnerships and cross-marketing campaigns that multiply audience reach, unlock new revenue streams, and build lasting co-brand equity. From Nike × sports teams to Spotify × Starbucks — we make brand alliances work.",
+    "keywords": "cross marketing, brand collaboration, brand partnership, co-marketing, brand alliance, cross-sector marketing, sports brand partnership, influencer collaboration",
+    "canonicalUrl": "/cross-marketing",
+    "ogTitle": "Cross Marketing & Brand Collaboration — Lumora Digital",
+    "ogDescription": "We connect brands across sectors to multiply reach, revenue, and relevance. Architect powerful brand alliances with Lumora.",
+    "ogImage": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200",
+    "twitterCard": "summary_large_image",
+    "schemaType": "Service",
+    "schemaData": "{}",
+    "robotsDirective": "index, follow"
+  },
+  "sections": [
+    {
+      "id": "sec-icon-hero-cross-marketing",
+      "type": "icon-hero",
+      "isActive": true,
+      "title": "Cross Marketing & Brand Collaboration",
+      "content": "We engineer high-value brand partnerships that unlock new audiences, amplify revenue, and build co-brand equity that neither partner could achieve alone. From global sports sponsorships to niche lifestyle tie-ups — Lumora connects the right brands, in the right markets, at the right time.",
+      "iconName": "Handshake",
+      "mediaUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200"
+    },
+    {
+      "id": "sec-overview-cross-marketing",
+      "type": "overview",
+      "isActive": true,
+      "title": "What Is Cross Marketing?",
+      "content": "Cross marketing — also called brand collaboration or co-marketing — is a strategic alliance between two or more complementary brands to jointly promote products, services, or experiences to each other's audiences. It's more than a logo on a jersey. It's a precisely designed distribution play that multiplies trust, reach, and revenue simultaneously.\n\nConsider Nike's alliance with FC Barcelona. Nike doesn't just get visibility — they get permission from millions of football fans to be part of their identity. Consider Red Bull's ownership of extreme sports culture — they don't sponsor events, they are the event. These are calculated cross-marketing architectures. That's exactly what Lumora designs for brands ready to grow beyond their category.",
+      "mediaUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200",
+      "bullets": []
+    },
+    {
+      "id": "sec-services-cross-marketing",
+      "type": "services-grid",
+      "isActive": true,
+      "title": "Our Cross Marketing Service Pillars",
+      "content": "Every brand collaboration engagement is built on six core pillars — each designed to ensure the partnership creates measurable value for both parties from day one.",
+      "mediaUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1200",
+      "cards": [
+        {
+          "id": "card-cm-1",
+          "title": "Brand Affinity Mapping",
+          "description": "We analyse your brand's core audience, values, and cultural positioning to identify which partner categories will create maximum resonance — not just reach.",
+          "iconName": "Map",
+          "iconUrl": ""
+        },
+        {
+          "id": "card-cm-2",
+          "title": "Partner Identification & Vetting",
+          "description": "We research, score, and shortlist ideal collaboration partners across sectors — sports, lifestyle, tech, media, or retail — based on audience overlap and brand alignment.",
+          "iconName": "Search",
+          "iconUrl": ""
+        },
+        {
+          "id": "card-cm-3",
+          "title": "Deal Structure & Negotiation",
+          "description": "From revenue share frameworks to co-ownership of content assets, we structure deals that protect your interests while creating compelling incentives for your partner.",
+          "iconName": "FileSignature",
+          "iconUrl": ""
+        },
+        {
+          "id": "card-cm-4",
+          "title": "Co-Branded Campaign Execution",
+          "description": "We produce and launch multi-channel co-branded campaigns — social, digital, OOH, events — that blend both brand identities seamlessly into one powerful narrative.",
+          "iconName": "Megaphone",
+          "iconUrl": ""
+        },
+        {
+          "id": "card-cm-5",
+          "title": "Ambassador & Influencer Bridge",
+          "description": "We connect cross-brand partnerships with the right ambassadors and influencers who authentically straddle both brand communities and accelerate audience adoption.",
+          "iconName": "Star",
+          "iconUrl": ""
+        },
+        {
+          "id": "card-cm-6",
+          "title": "Performance Analytics & Reporting",
+          "description": "We track every KPI from co-brand awareness lift to incremental revenue, providing both partners with transparent, real-time dashboards and quarterly reviews.",
+          "iconName": "BarChart3",
+          "iconUrl": ""
+        }
+      ]
+    },
+    {
+      "id": "sec-scrollable-sectors-cross-marketing",
+      "type": "scrollable-cards",
+      "isActive": true,
+      "title": "Industries We Connect Through Cross Marketing",
+      "content": "Powerful brand collaborations happen when the right sectors collide.",
+      "cards": [
+        {
+          "id": "sector-1",
+          "title": "Sports × Lifestyle",
+          "description": "Apparel and footwear brands partnering with sports clubs, leagues, and athletes to embed their identity into fan culture.",
+          "iconName": "Trophy",
+          "iconUrl": "",
+          "linkUrl": ""
+        },
+        {
+          "id": "sector-2",
+          "title": "Tech × Entertainment",
+          "description": "Tech platforms co-creating premium content experiences with media companies, studios, and streaming services.",
+          "iconName": "Tv2",
+          "iconUrl": "",
+          "linkUrl": ""
+        },
+        {
+          "id": "sector-3",
+          "title": "Food & Beverage × Events",
+          "description": "Beverage brands owning music festivals, extreme sports, and cultural events as marketing channels rather than sponsors.",
+          "iconName": "UtensilsCrossed",
+          "iconUrl": "",
+          "linkUrl": ""
+        },
+        {
+          "id": "sector-4",
+          "title": "Fashion × Art & Culture",
+          "description": "Designer collaborations with museums, artists, and cultural institutions to build aspirational brand equity.",
+          "iconName": "Palette",
+          "iconUrl": "",
+          "linkUrl": ""
+        },
+        {
+          "id": "sector-5",
+          "title": "Finance × Loyalty Programs",
+          "description": "Credit card and fintech brands partnering with airlines, hotels, and retailers to build integrated reward ecosystems.",
+          "iconName": "CreditCard",
+          "iconUrl": "",
+          "linkUrl": ""
+        },
+        {
+          "id": "sector-6",
+          "title": "Health × Wellness Tech",
+          "description": "Pharma, nutrition, and health brands partnering with wearable tech and wellness apps for data-driven co-marketing.",
+          "iconName": "HeartPulse",
+          "iconUrl": "",
+          "linkUrl": ""
+        },
+        {
+          "id": "sector-7",
+          "title": "Automotive × Adventure",
+          "description": "Vehicle brands embedding in outdoor, adventure, and travel experiences to shift brand perception beyond utility.",
+          "iconName": "Car",
+          "iconUrl": "",
+          "linkUrl": ""
+        },
+        {
+          "id": "sector-8",
+          "title": "Education × Corporate",
+          "description": "Universities and EdTech platforms co-branding certification programs with employers who prioritise their graduates.",
+          "iconName": "GraduationCap",
+          "iconUrl": "",
+          "linkUrl": ""
+        }
+      ]
+    },
+    {
+      "id": "sec-how-we-do-it-cross-marketing",
+      "type": "how-we-do-it",
+      "isActive": true,
+      "title": "How We Execute a Cross Marketing Alliance",
+      "content": "From first brief to live campaign, Lumora runs a disciplined six-phase partnership playbook that has been proven across sports, FMCG, tech, and lifestyle brands. Every phase has defined outputs, measurable milestones, and clear accountability.",
+      "mediaUrl": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200",
+      "cards": [
+        {
+          "id": "hw-cm-1",
+          "title": "Brand & Audience Diagnosis",
+          "description": "We audit your brand positioning, existing audience data, channel performance, and cultural relevance to establish a clear collaboration profile."
+        },
+        {
+          "id": "hw-cm-2",
+          "title": "Partner Universe Mapping",
+          "description": "We map every viable partner brand in your identified sectors, scoring each on audience overlap, brand alignment, commercial potential, and market timing."
+        },
+        {
+          "id": "hw-cm-3",
+          "title": "Outreach & Relationship Build",
+          "description": "We open doors, initiate conversations, and build relationships with decision-makers at target partner brands using our established network and proven outreach frameworks."
+        },
+        {
+          "id": "hw-cm-4",
+          "title": "Deal Architecture & Legal Review",
+          "description": "We structure the commercial agreement — including IP rights, campaign budgets, revenue share, exclusivity clauses, and performance benchmarks."
+        },
+        {
+          "id": "hw-cm-5",
+          "title": "Co-Campaign Production & Launch",
+          "description": "Our creative and media teams produce all co-branded assets and orchestrate a coordinated multi-channel launch across both brands' channels simultaneously."
+        },
+        {
+          "id": "hw-cm-6",
+          "title": "Performance Tracking & Optimisation",
+          "description": "We monitor KPIs in real-time, optimise live campaigns, and deliver bi-weekly performance reports to both partners with strategic recommendations."
+        }
+      ]
+    },
+    {
+      "id": "sec-case-study-cross-marketing",
+      "type": "case-study",
+      "isActive": true,
+      "title": "Cross Marketing in Action — Real Results",
+      "content": "See how strategic brand alliances we architected delivered exponential growth for brands across sports, lifestyle, and tech sectors.",
+      "caseStudies": [
+        {
+          "id": "cs-cm-1",
+          "title": "Footwear Brand × Premier League Club — 4.2M New Audience Reached",
+          "bgImageUrl": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200",
+          "description": "A premium athletic footwear brand (similar positioning to Nike) engaged Lumora to engineer a cross-marketing alliance with a top-tier Premier League football club. We identified that the club's 6.8M social following had a 67% overlap with the brand's target demographic of 18-34 year old sports-lifestyle enthusiasts. Lumora structured a multi-season co-marketing deal covering training kit branding, co-branded limited edition shoe drops, joint digital content (behind-the-scenes training footage), and co-activation at matchday events. The result: 4.2M new brand impressions from the club's audience in the first 90 days, a limited-edition shoe drop that sold out in 48 hours, and a 31% uplift in brand search volume in the club's primary cities.",
+          "points": [
+            { "id": "p1", "title": "4.2M New Audience Reached", "iconName": "Users" },
+            { "id": "p2", "title": "Shoe Drop Sold Out in 48hrs", "iconName": "ShoppingBag" },
+            { "id": "p3", "title": "31% Brand Search Uplift", "iconName": "TrendingUp" },
+            { "id": "p4", "title": "67% Audience Overlap Match", "iconName": "Target" }
+          ]
+        },
+        {
+          "id": "cs-cm-2",
+          "title": "Energy Drink × Esports Team — Sponsorship That Became a Movement",
+          "bgImageUrl": "https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1200",
+          "description": "An energy drink brand looking to break into the Gen-Z gaming market partnered with a top-ranked esports organisation through Lumora's cross-marketing framework. Rather than a passive logo placement, we designed an immersive brand integration: co-branded tournaments, team-branded limited edition drinks, live-streamed gaming sessions featuring the drink as cultural currency, and a joint merchandise line. The campaign generated 12M livestream views across Twitch and YouTube, 280K new social followers for the brand, and a 220% spike in energy drink sales in the 18-24 demographic during the tournament month.",
+          "points": [
+            { "id": "p1", "title": "12M Livestream Views", "iconName": "Play" },
+            { "id": "p2", "title": "280K New Social Followers", "iconName": "Heart" },
+            { "id": "p3", "title": "220% Sales Spike (18-24 Demo)", "iconName": "BarChart3" },
+            { "id": "p4", "title": "Joint Merch Sell-Out in 3 Days", "iconName": "Package" }
+          ]
+        },
+        {
+          "id": "cs-cm-3",
+          "title": "Luxury Watch Brand × Formula 1 Team — Prestige by Association",
+          "bgImageUrl": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?q=80&w=1200",
+          "description": "A Swiss-heritage luxury watch brand sought to connect with ultra-high-net-worth audiences through sport. Lumora identified Formula 1 as the optimal vehicle — a sport watched by 1.5B globally with a highly concentrated luxury consumer profile. We negotiated a multi-year official timing partnership, co-designed a limited team edition watch collection, and produced a premium documentary series on the relationship between precision engineering in watchmaking and F1 performance. The collaboration elevated the brand's ESG perception score by 18 points, drove a 340% increase in enquiries from Middle East HNW markets, and the limited collection achieved a 9x return on ad spend through organic media pickup.",
+          "points": [
+            { "id": "p1", "title": "340% HNW Enquiry Growth", "iconName": "ArrowUpRight" },
+            { "id": "p2", "title": "9x ROAS on Limited Edition", "iconName": "Gem" },
+            { "id": "p3", "title": "+18pts Brand Prestige Score", "iconName": "Star" },
+            { "id": "p4", "title": "Multi-Year F1 Partnership", "iconName": "Flag" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "faq-cross-marketing",
+      "type": "faq",
+      "isActive": true,
+      "title": "Frequently Asked Questions",
+      "content": "Everything you need to know before launching your first brand collaboration.",
+      "cards": [
+        {
+          "id": "faq-cm-1",
+          "title": "What makes cross marketing different from a standard sponsorship?",
+          "description": "A sponsorship is a one-way transaction — you pay for visibility. Cross marketing is a strategic alliance where both brands actively promote each other, share audiences, co-create content, and build joint commercial value. The key difference is mutual investment and genuine audience benefit, rather than passive logo placement."
+        },
+        {
+          "id": "faq-cm-2",
+          "title": "Do both brands need to be a similar size to collaborate?",
+          "description": "No. In fact, some of the most effective cross-marketing partnerships are asymmetric — a challenger brand gaining credibility from an established partner, while the established brand gains cultural relevance or access to a younger demographic from the challenger. We assess brand equity, not just company size."
+        },
+        {
+          "id": "faq-cm-3",
+          "title": "How do you find and approach potential partner brands?",
+          "description": "We use a proprietary audience-overlap and brand-affinity framework to identify ideal partners. We then approach them through warm introductions via our established network, or via structured cold outreach to the right decision-makers. We handle all relationship building on your behalf."
+        },
+        {
+          "id": "faq-cm-4",
+          "title": "How do you protect our brand if a partnership goes wrong?",
+          "description": "Every collaboration deal we structure includes brand safety guardrails — IP ownership clauses, exit provisions, content approval rights, crisis communication protocols, and performance benchmarks that allow either party to exit if KPIs aren't met. We work with legal counsel to ensure your brand is protected at every stage."
+        },
+        {
+          "id": "faq-cm-5",
+          "title": "What does a cross marketing engagement typically cost?",
+          "description": "Our cross marketing engagements are scoped based on the complexity of the partnership, the number of partner targets, and the campaign execution scope. Engagements typically range from a strategy-only diagnostic to a full end-to-end partnership execution retainer. Book a consultation to receive a tailored proposal."
+        },
+        {
+          "id": "faq-cm-6",
+          "title": "How long does it take to launch a cross marketing campaign?",
+          "description": "From initial brief to live campaign, a standard cross-marketing alliance takes 8 to 16 weeks — covering diagnosis, partner identification, outreach, deal negotiation, and campaign production. Campaigns with existing partner relationships or pre-approved deals can be activated in as little as 4 weeks."
+        }
+      ]
+    }
+  ]
 }
 ];

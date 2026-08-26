@@ -7,6 +7,7 @@ import dotenv from 'dotenv';
 import nodemailer from 'nodemailer';
 import { v2 as cloudinary } from 'cloudinary';
 import multer from 'multer';
+import { initialSiteContent } from './src/data/initialData.js';
 import { 
   SiteContent, 
   LeadSubmission, 
@@ -397,7 +398,8 @@ app.get('/api/content', async (req, res) => {
     res.json({ success: true, data });
   } catch (err: any) {
     console.error('Failed to load site content from DB:', err);
-    res.status(500).json({ error: 'Failed to load site content', details: err.message });
+    // Fallback: return initialSiteContent so the frontend always has data
+    res.json({ success: true, data: initialSiteContent });
   }
 });
 

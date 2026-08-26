@@ -122,34 +122,44 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
 
             {digitalMarketingOpen && (
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[900px] max-w-[95vw] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 p-6">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-4">
-                  {(services || [])
-                    .filter((s: any) => s.position === 'Header' || s.position === 'Both' || !s.position)
-                    .map((item, i) => {
-                    const IconComponent = (LucideIcons as any)[item.iconName || 'CheckCircle'] || LucideIcons.CheckCircle;
-                    
-                    return (
-                    <button
-                      key={item.id || i}
-                      onClick={() => {
-                        if (window.location.pathname !== '/') {
-                          onGoHome();
-                          setTimeout(() => {
+                {/* Scrollable container — shows 3 rows, scrolls for more */}
+                <div
+                  className="overflow-y-auto pr-1"
+                  style={{
+                    maxHeight: '168px', /* ~3 rows × 48px item height + 2 × 12px gap */
+                    scrollbarWidth: 'thin',
+                    scrollbarColor: '#cbd5e1 transparent',
+                  }}
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-x-6 gap-y-3">
+                    {(services || [])
+                      .filter((s: any) => s.position === 'Header' || s.position === 'Both' || !s.position)
+                      .map((item, i) => {
+                      const IconComponent = (LucideIcons as any)[item.iconName || 'CheckCircle'] || LucideIcons.CheckCircle;
+                      
+                      return (
+                      <button
+                        key={item.id || i}
+                        onClick={() => {
+                          if (window.location.pathname !== '/') {
+                            onGoHome();
+                            setTimeout(() => {
+                              onNavSection?.(item.slug || item.id || '');
+                            }, 300);
+                          } else {
                             onNavSection?.(item.slug || item.id || '');
-                          }, 300);
-                        } else {
-                          onNavSection?.(item.slug || item.id || '');
-                        }
-                        setDigitalMarketingOpen(false);
-                      }}
-                      className="text-left text-sm font-medium text-slate-600 hover:text-[#5B8EE2] transition-colors flex items-center gap-3 group p-2 -ml-2 rounded-xl hover:bg-slate-50"
-                    >
-                      <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-white group-hover:shadow-sm flex items-center justify-center shrink-0 transition-all border border-transparent group-hover:border-[#5B8EE2]/20">
-                        <IconComponent className="w-4 h-4 text-slate-500 group-hover:text-[#5B8EE2] transition-colors" />
-                      </div>
-                      <span className="truncate">{item.title}</span>
-                    </button>
-                  )})}
+                          }
+                          setDigitalMarketingOpen(false);
+                        }}
+                        className="text-left text-sm font-medium text-slate-600 hover:text-[#5B8EE2] transition-colors flex items-center gap-3 group p-2 -ml-2 rounded-xl hover:bg-slate-50"
+                      >
+                        <div className="w-8 h-8 rounded-lg bg-slate-100 group-hover:bg-white group-hover:shadow-sm flex items-center justify-center shrink-0 transition-all border border-transparent group-hover:border-[#5B8EE2]/20">
+                          <IconComponent className="w-4 h-4 text-slate-500 group-hover:text-[#5B8EE2] transition-colors" />
+                        </div>
+                        <span className="truncate">{item.title}</span>
+                      </button>
+                    )})}
+                  </div>
                 </div>
               </div>
             )}
