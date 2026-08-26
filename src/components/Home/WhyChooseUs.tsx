@@ -331,7 +331,7 @@ export const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ content, openConsultat
                   onClick={() => setActiveTab(tab.id)}
                   className={`px-5 py-2.5 rounded-full text-sm font-bold transition-all duration-300 whitespace-nowrap ${
                     activeTab === tab.id
-                      ? 'bg-gradient-to-r from-[#5B8EE2] to-[#729EE6] text-white shadow-lg shadow-blue-500/25 scale-105 ring-1 ring-white/20'
+                      ? 'bg-[#EC4899]/10 text-[#EC4899] shadow-sm scale-105 ring-1 ring-[#EC4899]/20'
                       : 'bg-white text-slate-600 hover:bg-slate-50 border border-slate-200 hover:text-slate-900'
                   }`}
                 >
