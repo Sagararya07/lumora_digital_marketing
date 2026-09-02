@@ -32,11 +32,15 @@ import {
   Mail,
   Phone,
   Clock,
+  Target,
+  Crosshair,
 } from 'lucide-react';
 import { SiteContent, DynamicPage } from '../../types';
 import { TABLE_CONFIGS, SECTION_SETTINGS, FieldConfig } from './adminConfig';
 import { LumoraLogo } from '../common/LumoraLogo';
 import { DynamicPageEditor } from './DynamicPageEditor';
+import { IcpSubmissionsView } from './IcpSubmissionsView';
+import { IcpDiscoveryView } from './IcpDiscoveryView';
 
 interface AdminDashboardProps {
   onExitAdmin: () => void;
@@ -211,6 +215,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     {
       title: 'CRM & LEADS',
       items: [
+        { id: 'icp_submissions', label: 'ICP Qualifications', icon: Target },
+        { id: 'icp_discovery', label: 'Discovery Forms (Step 2)', icon: Crosshair },
         { id: 'consultation_submissions', label: 'Leads Inbox', icon: Inbox },
         { id: 'first_time_visitors', label: 'First Time Visitor Data', icon: Inbox }
       ],
@@ -380,6 +386,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
             <TableCrudManager tableName={activeMenu} config={TABLE_CONFIGS[activeMenu]} onSaved={handleContentSaved} />
           )}
           {activeMenu === 'consultation_submissions' && <LeadsManager onSaved={handleContentSaved} />}
+          {activeMenu === 'icp_submissions' && <IcpSubmissionsView />}
+          {activeMenu === 'icp_discovery' && <IcpDiscoveryView />}
         </div>
       </main>
     </div>
@@ -952,6 +960,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         slug: newSlug,
         meta_title: p.seo?.metaTitle || p.title,
         meta_description: p.seo?.metaDescription || '',
+        meta_keywords: p.seo?.keywords || '',
         hero_badge: String(pageAny.heroBadge || ''),
         hero_heading: String(pageAny.heroHeading || p.title),
         hero_subheading: String(pageAny.heroSubheading || ''),
@@ -987,6 +996,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
         slug: editingPage.slug,
         meta_title: editingPage.metaTitle,
         meta_description: editingPage.metaDescription,
+        meta_keywords: editingPage.metaKeywords,
         hero_badge: editingPage.heroBadge,
         hero_heading: editingPage.heroHeading,
         hero_subheading: editingPage.heroSubheading,
@@ -1022,6 +1032,7 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
               heroImage: template.heroImage || '',
               metaTitle: template.seo?.metaTitle || '',
               metaDescription: template.seo?.metaDescription || '',
+              metaKeywords: template.seo?.keywords || '',
               heroBadge: template.heroBadge || '',
               heroHeading: template.heroHeading || 'New Strategy Page',
               heroSubheading: template.heroSubheading || '',
@@ -1075,6 +1086,16 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
             />
           </div>
           <div>
+            <label className="block text-xs font-bold text-[#111827] mb-1">Meta Keywords (SEO)</label>
+            <textarea
+              rows={2}
+              value={editingPage.metaKeywords || ''}
+              onChange={(e) => setEditingPage({ ...editingPage, metaKeywords: e.target.value })}
+              className="w-full p-3 bg-white border border-[#E5E7EB] rounded-xl text-xs text-[#111827]"
+              placeholder="e.g. digital marketing, seo, lead generation (comma separated)"
+            />
+          </div>
+          <div>
             <label className="block text-xs font-bold text-[#111827] mb-1">Sort Order</label>
             <input
               type="number"
@@ -1120,7 +1141,12 @@ const DynamicPagesManager = ({ dynamicPages, onRefresh }: { dynamicPages: Dynami
                   Duplicate
                 </button>
                 <button
-                  onClick={() => setEditingPage(p)}
+                  onClick={() => setEditingPage({
+                    ...p,
+                    metaTitle: p.seo?.metaTitle || '',
+                    metaDescription: p.seo?.metaDescription || '',
+                    metaKeywords: p.seo?.keywords || '',
+                  })}
                   className="p-2 rounded-xl bg-[#F2F6FC] text-[#5B8EE2] hover:bg-blue-100 transition-colors"
                 >
                   <Edit className="w-4 h-4" />

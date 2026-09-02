@@ -600,7 +600,7 @@ app.post('/api/send-otp', async (req, res) => {
 });
 
 app.post('/api/first-time-visitors', async (req, res) => {
-  const { name, email, number, industry, message, otp } = req.body;
+  const { name, email, number, company_name, industry, message, otp } = req.body;
   
   if (!email || !otp) {
     return res.status(400).json({ error: 'Email and OTP are required.' });
@@ -625,9 +625,9 @@ app.post('/api/first-time-visitors', async (req, res) => {
 
   try {
     const result = await pool.query(
-      `INSERT INTO first_time_visitors (name, email, number, industry, message, created_at)
-       VALUES ($1, $2, $3, $4, $5, NOW()) RETURNING *`,
-      [name, email, number, industry, message]
+      `INSERT INTO first_time_visitors (name, email, number, company_name, industry, message, created_at)
+       VALUES ($1, $2, $3, $4, $5, $6, NOW()) RETURNING *`,
+      [name, email, number, company_name, industry, message]
     );
 
     // Optionally trigger the same email notification logic
@@ -635,7 +635,7 @@ app.post('/api/first-time-visitors', async (req, res) => {
       name,
       email,
       phone: number,
-      companyName: industry,
+      companyName: company_name || industry,
       message: message + " (First Time Visitor Form - Email Verified)",
       sourcePage: 'First Time Visitor Popup'
     }).catch(err => console.error("Email notification failed", err));
@@ -725,6 +725,7 @@ app.get('/api/pages', async (req, res) => {
       seo: {
         metaTitle: r.meta_title || '',
         metaDescription: r.meta_description || '',
+        keywords: parsedContent.metaKeywords || '',
         canonicalUrl: r.canonical_url || '',
         ogTitle: r.og_title || '',
         ogDescription: r.og_description || '',
@@ -754,32 +755,57 @@ app.post('/api/pages', async (req, res) => {
   const cleanSlug = p.slug.toLowerCase().replace(/[^a-z0-9-/]/g, '-').replace(/^-+|-+$/g, '');
 
   try {
-    const check = await pool.query('SELECT id FROM pages WHERE slug = $1', [cleanSlug]);
-    if (check.rows.length > 0) return res.status(400).json({ error: `Slug "${cleanSlug}" exists.` });
+    const metaTitle = p.meta_title || p.seo?.metaTitle || `${p.title} | Lumora`;
+    const metaDesc = p.meta_description || p.seo?.metaDescription || '';
+    const metaKwd = p.meta_keywords || p.seo?.keywords || '';
+    const canonicalUrl = p.canonical_url || p.seo?.canonicalUrl || `https://lumora.expert/${cleanSlug}`;
 
     const content = {
-      heroImage: p.heroImage,
+      heroImage: p.heroImage || p.hero_image,
+      overviewContent: p.overviewContent || p.overview_content,
+      heroBadge: p.heroBadge || p.hero_badge,
+      serviceFeatures: p.serviceFeatures,
+      serviceDeliverables: p.serviceDeliverables,
+      serviceRecommendedFor: p.serviceRecommendedFor,
       sections: p.sections || [{ type: 'hero', title: p.title, content: 'Targeted strategies.' }],
-      position: p.position || 'Both'
+      position: p.position || 'Both',
+      metaKeywords: metaKwd
     };
-    
-    await pool.query(
-      `INSERT INTO pages (
-        title, slug, content, is_published, template_type, city_placeholder, country_placeholder,
-        meta_title, meta_description, canonical_url, robots, sort_order, created_at, updated_at
-      ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 'index, follow', $11, NOW(), NOW())`,
-      [
-        p.title, cleanSlug, JSON.stringify(content), p.isPublished ?? true, p.pageType || 'landing',
-        p.cityName || '', p.countryName || '',
-        p.seo?.metaTitle || `${p.title} | Lumora`, 
-        p.seo?.metaDescription || '', 
-        p.seo?.canonicalUrl || `https://lumora.expert/${cleanSlug}`,
-        p.sortOrder || 0
-      ]
-    );
 
-    res.json({ success: true, message: 'Page created successfully' });
+    // Check if a page with this slug already exists
+    const existing = await pool.query('SELECT id FROM pages WHERE slug = $1', [cleanSlug]);
+
+    let savedId: number;
+    if (existing.rows.length > 0) {
+      // Page exists in DB — do an UPDATE instead of INSERT
+      savedId = existing.rows[0].id;
+      await pool.query(
+        `UPDATE pages SET
+          title=$1, meta_title=$2, meta_description=$3, content=$4,
+          is_published=$5, sort_order=$6, updated_at=NOW()
+         WHERE id=$7`,
+        [p.title, metaTitle, metaDesc, JSON.stringify(content), p.isPublished ?? true, p.sortOrder || 0, savedId]
+      );
+    } else {
+      // New page — INSERT
+      const result = await pool.query(
+        `INSERT INTO pages (
+          title, slug, content, is_published, template_type, city_placeholder, country_placeholder,
+          meta_title, meta_description, canonical_url, robots, sort_order, created_at, updated_at
+        ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, 'index, follow', $11, NOW(), NOW()) RETURNING id`,
+        [
+          p.title, cleanSlug, JSON.stringify(content), p.isPublished ?? true, p.pageType || 'service',
+          p.cityName || '', p.countryName || '',
+          metaTitle, metaDesc, canonicalUrl,
+          p.sortOrder || 0
+        ]
+      );
+      savedId = result.rows[0].id;
+    }
+
+    res.json({ success: true, message: 'Page saved successfully', id: savedId });
   } catch (err: any) {
+    console.error('POST /api/pages error:', err);
     res.status(500).json({ error: 'Failed to create page', details: err.message });
   }
 });
@@ -795,15 +821,20 @@ app.put('/api/pages/:id', async (req, res) => {
       if (check.rows.length > 0) return res.status(400).json({ error: `Slug "${cleanSlug}" exists.` });
     }
 
+    const metaTitle = p.meta_title || p.seo?.metaTitle || p.title;
+    const metaDesc = p.meta_description || p.seo?.metaDescription || '';
+    const metaKwd = p.meta_keywords || p.seo?.keywords || '';
+
     const content = {
-      heroImage: p.heroImage,
-      overviewContent: p.overviewContent,
-      heroBadge: p.heroBadge,
+      heroImage: p.heroImage || p.hero_image,
+      overviewContent: p.overviewContent || p.overview_content,
+      heroBadge: p.heroBadge || p.hero_badge,
       serviceFeatures: p.serviceFeatures,
       serviceDeliverables: p.serviceDeliverables,
       serviceRecommendedFor: p.serviceRecommendedFor,
       sections: p.sections || [],
-      position: p.position || 'Both'
+      position: p.position || 'Both',
+      metaKeywords: metaKwd
     };
 
     if (cleanSlug) {
@@ -811,19 +842,20 @@ app.put('/api/pages/:id', async (req, res) => {
         `UPDATE pages SET 
           title=$1, slug=$2, meta_title=$3, meta_description=$4, content=$5, is_published=$6, sort_order=$7, updated_at=NOW()
          WHERE id=$8`,
-        [p.title, cleanSlug, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, p.sortOrder || 0, id]
+        [p.title, cleanSlug, metaTitle, metaDesc, JSON.stringify(content), p.isPublished ?? true, p.sortOrder || 0, id]
       );
     } else {
       await pool.query(
         `UPDATE pages SET 
           title=$1, meta_title=$2, meta_description=$3, content=$4, is_published=$5, sort_order=$6, updated_at=NOW()
          WHERE id=$7`,
-        [p.title, p.seo?.metaTitle, p.seo?.metaDescription, JSON.stringify(content), p.isPublished, p.sortOrder || 0, id]
+        [p.title, metaTitle, metaDesc, JSON.stringify(content), p.isPublished ?? true, p.sortOrder || 0, id]
       );
     }
     res.json({ success: true });
   } catch (err: any) {
-    res.status(500).json({ error: 'Failed to update page', details: err.message });
+    console.error('PUT /api/pages error:', err);
+    res.status(500).json({ error: 'Failed to update page', details: err.message, stack: err.stack });
   }
 });
 
@@ -1124,6 +1156,99 @@ app.delete('/api/faqs/:id', async (req, res) => {
   try {
     await pool.query('DELETE FROM faqs WHERE id=$1', [req.params.id]);
     res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+// --- ICP Submissions ---
+app.get('/api/icp-submissions', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM icp_submissions ORDER BY created_at DESC');
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.post('/api/icp-submissions', async (req, res) => {
+  try {
+    const { company_name, email, website, contact_name, role, business_model, industry, monthly_budget, primary_goal } = req.body;
+    const result = await pool.query(
+      'INSERT INTO icp_submissions (company_name, email, website, contact_name, role, business_model, industry, monthly_budget, primary_goal) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
+      [company_name, email, website, contact_name, role, business_model, industry, monthly_budget, primary_goal]
+    );
+    res.json({ success: true, data: result.rows[0] });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+app.patch('/api/icp-submissions/:id', async (req, res) => {
+  try {
+    const { status } = req.body;
+    const result = await pool.query(
+      'UPDATE icp_submissions SET status=$1 WHERE id=$2 RETURNING *',
+      [status, req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.post('/api/icp-submissions/:id/send-discovery', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM icp_submissions WHERE id=$1', [req.params.id]);
+    const lead = result.rows[0];
+    if (!lead) return res.status(404).json({ error: 'Lead not found' });
+    if (!lead.email) return res.status(400).json({ error: 'Lead has no email address' });
+
+    const targetUrl = `${req.protocol}://${req.get('host')}/discovery/${lead.id}`;
+    
+    const transporter = nodemailer.createTransport({
+      host: process.env.SMTP_HOST || 'smtp.gmail.com',
+      port: Number(process.env.SMTP_PORT) || 587,
+      secure: process.env.SMTP_SECURE === 'true',
+      auth: {
+        user: process.env.SMTP_USER || process.env.GMAIL_USER || '',
+        pass: process.env.SMTP_PASS || process.env.GMAIL_PASS || '',
+      },
+    });
+
+    await transporter.sendMail({
+      from: `"Lumora Strategy Team" <${process.env.SMTP_USER || process.env.GMAIL_USER || 'no-reply@lumora.expert'}>`,
+      to: lead.email,
+      subject: 'Next Step: Discovering Your Growth Potential',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; padding: 20px;">
+          <h2>Hi ${lead.contact_name},</h2>
+          <p>Thank you for submitting your details. Our strategy team has reviewed your profile and we'd love to learn more about ${lead.company_name}.</p>
+          <p>Please take 2 minutes to fill out the deep-dive discovery form so we can prepare a tailored strategy for you.</p>
+          <a href="${targetUrl}" style="display: inline-block; padding: 12px 24px; background-color: #2563eb; color: white; text-decoration: none; border-radius: 6px; margin: 20px 0;">Complete Discovery Form</a>
+          <p>Best,<br>The Lumora Team</p>
+        </div>
+      `
+    });
+
+    res.json({ success: true });
+  } catch (err) {
+    console.error('Error sending discovery email:', err);
+    res.status(500).json({ error: 'Failed to send email' });
+  }
+});
+
+// --- Discovery Submissions ---
+app.get('/api/discovery-submissions', async (req, res) => {
+  try {
+    const result = await pool.query(`
+      SELECT d.*, i.company_name, i.contact_name 
+      FROM icp_discovery_submissions d
+      JOIN icp_submissions i ON d.icp_id = i.id
+      ORDER BY d.created_at DESC
+    `);
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.post('/api/discovery-submissions', async (req, res) => {
+  try {
+    const { icp_id, primary_product, avg_deal_size, sales_cycle, pain_points, competitors, marketing_challenges } = req.body;
+    const result = await pool.query(
+      'INSERT INTO icp_discovery_submissions (icp_id, primary_product, avg_deal_size, sales_cycle, pain_points, competitors, marketing_challenges) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+      [icp_id, primary_product, avg_deal_size, sales_cycle, pain_points, competitors, marketing_challenges]
+    );
+    res.json({ success: true, data: result.rows[0] });
   } catch (err) { res.status(500).json({ error: 'Database error' }); }
 });
 

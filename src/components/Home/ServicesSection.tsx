@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import * as LucideIcons from 'lucide-react';
 import {
   TrendingUp, Users, Target, Bot, Globe, Search, ArrowRight, Sparkles,
@@ -10,7 +11,7 @@ import { getFallbackServiceDetails } from '../../data/serviceDetails';
 interface ServicesProps {
   services?: ServiceItem[];
   onSelectService: (service: ServiceItem) => void;
-  openConsultationModal: () => void;
+  openConsultationModal: (source?: string) => void;
 }
 
 const mockSolutions = [
@@ -93,6 +94,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
   onSelectService,
   openConsultationModal,
 }) => {
+  const navigate = useNavigate();
   const [visibleCount, setVisibleCount] = useState(4);
   const displayItems = services.length >= 6 ? services : mockSolutions;
   const currentItems = displayItems.slice(0, visibleCount);
@@ -247,27 +249,20 @@ export const ServicesSection: React.FC<ServicesProps> = ({
                     <button
                       onClick={() => {
                         const baseSlug = (item as any).slug || fallback.id;
-                        const defaultData = getFallbackServiceDetails(baseSlug, item.title || fallback.title);
-                        onSelectService({
-                          ...item,
-                          slug: baseSlug,
-                          features: item.features?.length ? item.features : defaultData.features,
-                          deliverables: item.deliverables?.length ? item.deliverables : defaultData.deliverables,
-                          recommendedFor: item.recommendedFor || defaultData.recommendedFor,
-                          fullDescription: (item as any).fullDescription || defaultData.fullDescription,
-                        });
+                        navigate(`/${baseSlug}`);
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] text-white text-xs font-extrabold tracking-wide uppercase shadow-lg shadow-blue-500/20 hover:shadow-blue-500/40 hover:-translate-y-0.5 transition-all duration-200 font-['Plus_Jakarta_Sans',sans-serif]"
                     >
-                      Full Strategy & Details
+                      Read More
                       <ArrowRight className="w-3.5 h-3.5 transform group-hover:translate-x-1 transition-transform" />
                     </button>
 
                     <button
-                      onClick={openConsultationModal}
+                      onClick={() => openConsultationModal(`Service Card: ${title}`)}
                       className="inline-flex items-center gap-2 text-[#5B8EE2] font-bold text-xs tracking-wide uppercase hover:text-[#4676C2] transition-colors"
                     >
-                      Get a Consultation
+                      Request For Services
                       <ArrowRight className="w-3.5 h-3.5" />
                     </button>
                   </div>

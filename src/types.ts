@@ -274,6 +274,9 @@ export interface DynamicPage {
   seo: SEOMetadata;
   headerCss?: string;
   heroImage?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  metaKeywords?: string;
   sections: DynamicPageSection[];
   isPublished: boolean;
   sortOrder?: number;

@@ -23,6 +23,7 @@ import { ServiceDetailModal } from './components/Modals/ServiceDetailModal';
 import { CaseStudyModal } from './components/Modals/CaseStudyModal';
 import { LegalModal } from './components/Modals/LegalModal';
 import { FirstTimeVisitorModal } from './components/Modals/FirstTimeVisitorModal';
+import { IcpFormModal } from './components/Modals/IcpFormModal';
 
 import { ConsultationPage } from './components/Pages/ConsultationPage';
 import { ServiceDetailPage } from './components/Pages/ServiceDetailPage';
@@ -32,6 +33,7 @@ import { AdminDashboard } from './components/Admin/AdminDashboard';
 import { AboutPage } from './components/Pages/AboutPage';
 import { PortfolioPage } from './components/Pages/PortfolioPage';
 import { RndPage } from './components/Pages/RndPage';
+import { DiscoveryFormPage } from './components/Pages/DiscoveryFormPage';
 
 import { initialSiteContent, initialDynamicPages } from './data/initialData';
 import { SiteContent, DynamicPage, ServiceItem, AchievementItem, CaseStudyItem } from './types';
@@ -73,10 +75,17 @@ export function App() {
 
   // Modal States
   const [isConsultationModalOpen, setIsConsultationModalOpen] = useState<boolean>(false);
+  const [consultationSourcePage, setConsultationSourcePage] = useState<string>('Header Modal');
   const [selectedService, setSelectedService] = useState<ServiceItem | null>(null);
+
+  const handleOpenConsultation = (source?: any) => {
+    setConsultationSourcePage(typeof source === 'string' ? source : 'Header Modal');
+    setIsConsultationModalOpen(true);
+  };
   const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudyItem | null>(null);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | 'refund' | null>(null);
   const [isFirstTimeVisitorModalOpen, setIsFirstTimeVisitorModalOpen] = useState<boolean>(false);
+  const [isIcpModalOpen, setIsIcpModalOpen] = useState<boolean>(false);
 
   const handleSelectCaseStudy = (item: any) => {
     if (item.clientName) {
@@ -217,7 +226,7 @@ export function App() {
         <LeftSidebar
           currentTab={location.pathname === '/' ? 'home' : (activeDynamicSlug || 'admin')}
           setCurrentTab={handleNavTabClick}
-          openConsultationModal={() => setIsConsultationModalOpen(true)}
+          openConsultationModal={handleOpenConsultation}
           isOpenMobile={isOpenMobileNav}
           setIsOpenMobile={setIsOpenMobileNav}
           dynamicPages={dynamicPages}
@@ -236,7 +245,7 @@ export function App() {
         {!isAdminRoute && (
           <TopHeader
             onOpenMobileNav={() => setIsOpenMobileNav(true)}
-            openConsultationModal={() => setIsConsultationModalOpen(true)}
+            openConsultationModal={handleOpenConsultation}
             dynamicPages={dynamicPages}
             services={dynamicServices}
             onSelectDynamicPage={handleSelectDynamicPage}
@@ -271,7 +280,7 @@ export function App() {
                 <AboutPage
                   siteContent={siteContent}
                   onGoHome={handleGoHome}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
               )
             } />
@@ -281,7 +290,7 @@ export function App() {
                 <PortfolioPage
                   siteContent={siteContent}
                   onGoHome={handleGoHome}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                   onSelectCaseStudy={handleSelectCaseStudy}
                 />
               )
@@ -292,7 +301,7 @@ export function App() {
                 <RndPage
                   siteContent={siteContent}
                   onGoHome={handleGoHome}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
               )
             } />
@@ -319,9 +328,11 @@ export function App() {
               <ServiceDetailPage
                 siteContent={siteContent}
                 onOpenLegalModal={(type) => setLegalModalType(type)}
-                onOpenConsultationModal={() => setIsConsultationModalOpen(true)}
+                onOpenConsultationModal={handleOpenConsultation}
               />
             } />
+
+            <Route path="/discovery/:icpId" element={<DiscoveryFormPage />} />
 
             {/* Dynamic CMS Page Renderer */}
             <Route path="/:slug" element={
@@ -332,6 +343,7 @@ export function App() {
                 setIsConsultationModalOpen={setIsConsultationModalOpen}
                 onOpenLegalModal={(type) => setLegalModalType(type)}
                 onSelectDynamicPage={handleSelectDynamicPage}
+                handleOpenConsultation={handleOpenConsultation}
               />
             } />
             <Route path="/:slug/:subslug" element={
@@ -342,6 +354,7 @@ export function App() {
                 setIsConsultationModalOpen={setIsConsultationModalOpen}
                 onOpenLegalModal={(type) => setLegalModalType(type)}
                 onSelectDynamicPage={handleSelectDynamicPage}
+                handleOpenConsultation={handleOpenConsultation}
               />
             } />
 
@@ -351,7 +364,7 @@ export function App() {
                 {/* Section 1: Hero Section */}
                 <HeroSection
                   content={siteContent.hero}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                   onNavigateToServices={() => scrollToSection('services-section')}
                 />
 
@@ -361,26 +374,26 @@ export function App() {
                 {/* Section 2: What is Digital Marketing? */}
                 <WhatIsDigitalMarketing
                   content={siteContent.whatIs}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
 
                 {/* Section 3: Who Should Use Digital Marketing? */}
                 <WhoShouldUseSection
                   items={siteContent.whoShouldUse}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
 
                 {/* Section 4: Our Digital Marketing Services */}
                 <ServicesSection
                   services={dynamicServices}
                   onSelectService={(svc) => setSelectedService(svc)}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
 
                 {/* Section 5: Why Choose Lumora? */}
                 <WhyChooseUs
                   content={siteContent.whyChoose}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
 
                 {/* Global Key Stats */}
@@ -391,19 +404,19 @@ export function App() {
                   achievements={siteContent.achievements}
                   caseStudiesList={siteContent.caseStudiesList}
                   onSelectCaseStudy={handleSelectCaseStudy}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
 
                 {/* Section 7: Our Process */}
                 <ProcessSection
                   steps={siteContent.process}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
 
                 {/* Section 8: Industries We Serve */}
                 <IndustriesSection
                   industries={siteContent.industries}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
 
                 {/* Client Testimonials */}
@@ -414,7 +427,7 @@ export function App() {
                 {/* Section 9: FAQ Module */}
                 <FAQSection
                   faqs={siteContent.faqs}
-                  openConsultationModal={() => setIsConsultationModalOpen(true)}
+                  openConsultationModal={handleOpenConsultation}
                 />
 
                 {/* Section 10: Consultation Section Form */}
@@ -434,7 +447,7 @@ export function App() {
             contactInfo={siteContent.contactInfo}
             services={dynamicServices}
             industries={siteContent.industries}
-            onOpenConsultation={() => setIsConsultationModalOpen(true)}
+            onOpenConsultation={handleOpenConsultation}
             onOpenLegalModal={(type) => setLegalModalType(type)}
             dynamicPages={dynamicPages}
             onSelectDynamicPage={handleSelectDynamicPage}
@@ -448,6 +461,7 @@ export function App() {
       <ConsultationModal
         isOpen={isConsultationModalOpen}
         onClose={() => setIsConsultationModalOpen(false)}
+        sourcePage={consultationSourcePage}
       />
 
       <ServiceDetailModal
@@ -476,7 +490,21 @@ export function App() {
 
       <FirstTimeVisitorModal
         isOpen={isFirstTimeVisitorModalOpen}
-        onClose={() => setIsFirstTimeVisitorModalOpen(false)}
+        onClose={() => {
+          setIsFirstTimeVisitorModalOpen(false);
+          const hasSeenIcp = localStorage.getItem('hasSeenIcpModal');
+          if (!hasSeenIcp) {
+            setTimeout(() => {
+              setIsIcpModalOpen(true);
+              localStorage.setItem('hasSeenIcpModal', 'true');
+            }, 3000);
+          }
+        }}
+      />
+      
+      <IcpFormModal
+        isOpen={isIcpModalOpen}
+        onClose={() => setIsIcpModalOpen(false)}
       />
 
     </div>
@@ -490,6 +518,7 @@ const DynamicPageWrapper: React.FC<{
   setIsConsultationModalOpen: (open: boolean) => void;
   onOpenLegalModal: (type: 'privacy' | 'terms' | 'refund') => void;
   onSelectDynamicPage: (slug: string) => void;
+  handleOpenConsultation: (source?: string) => void;
 }> = ({
   dynamicPages,
   onGoHome,
@@ -497,6 +526,7 @@ const DynamicPageWrapper: React.FC<{
   setIsConsultationModalOpen,
   onOpenLegalModal,
   onSelectDynamicPage,
+  handleOpenConsultation,
 }) => {
   const { slug, subslug } = useParams<{ slug: string; subslug?: string }>();
   const fullSlug = subslug ? `${slug}/${subslug}` : slug;
@@ -522,7 +552,7 @@ const DynamicPageWrapper: React.FC<{
       <DynamicPageViewer
         page={page}
         onGoHome={onGoHome}
-        openConsultationModal={() => setIsConsultationModalOpen(true)}
+        openConsultationModal={handleOpenConsultation}
         contactInfo={siteContent.contactInfo}
         consultationHeading={siteContent.siteMeta?.consultationHeading}
         consultationSubheading={siteContent.siteMeta?.consultationSubheading}

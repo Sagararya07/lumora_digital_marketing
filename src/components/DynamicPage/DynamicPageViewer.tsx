@@ -107,7 +107,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
     'from-rose-500 to-pink-600',
   ];
 
-  const visibleSections = page.sections.filter(sec => sec.isActive !== false);
+  const visibleSections = (page.sections || []).filter(sec => sec.isActive !== false);
 
   // Format Page Hero Title with Gradient Text
   const pageTitle = replacePlaceholders(page.title);

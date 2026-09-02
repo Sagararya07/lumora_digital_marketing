@@ -35,6 +35,7 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
   const [slug, setSlug] = useState<string>('');
   const [metaTitle, setMetaTitle] = useState<string>('');
   const [metaDescription, setMetaDescription] = useState<string>('');
+  const [metaKeywords, setMetaKeywords] = useState<string>('');
   const [heroImage, setHeroImage] = useState<string>('');
   const [isUploading, setIsUploading] = useState(false);
   const [sections, setSections] = useState<DynamicPageSection[]>([]);
@@ -59,6 +60,7 @@ export const DynamicPageEditor: React.FC<DynamicPageEditorProps> = ({
       setSlug(targetPage.slug);
       setMetaTitle(targetPage.seo?.metaTitle || targetPage.title);
       setMetaDescription(targetPage.seo?.metaDescription || '');
+      setMetaKeywords(targetPage.seo?.keywords || '');
       setHeroImage(targetPage.heroImage || '');
       setOverviewContent(targetPage.overviewContent || '');
       setHeroBadge(targetPage.heroBadge || '');
@@ -354,6 +356,7 @@ const handleAddSection = () => {
       seo: {
         metaTitle: metaTitle || title,
         metaDescription: metaDescription || '',
+        keywords: metaKeywords || '',
         canonicalUrl: `https://lumora.ai/${slug}`,
         ogTitle: metaTitle || title,
         ogDescription: metaDescription || '',
@@ -373,8 +376,10 @@ const handleAddSection = () => {
     };
 
     try {
-      const url = id ? `/api/pages/${id}` : '/api/pages';
-      const method = id ? 'PUT' : 'POST';
+      // If id is a real numeric DB id, PUT. Otherwise POST to create it.
+      const isRealDbId = id && /^\d+$/.test(String(id));
+      const url = isRealDbId ? `/api/pages/${id}` : '/api/pages';
+      const method = isRealDbId ? 'PUT' : 'POST';
 
       const res = await fetch(url, {
         method,
@@ -383,6 +388,11 @@ const handleAddSection = () => {
       });
 
       if (res.ok) {
+        const responseData = await res.json().catch(() => ({}));
+        // If we just created it, update our local id so future saves do PUT
+        if (!isRealDbId && responseData.id) {
+          setId(String(responseData.id));
+        }
         setSavedSuccess(true);
         onRefresh();
         setTimeout(() => setSavedSuccess(false), 4000);
@@ -578,6 +588,19 @@ const handleAddSection = () => {
                 onChange={(e) => setMetaDescription(e.target.value)}
                 className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100 leading-relaxed"
                 placeholder="SEO Description"
+              />
+            </div>
+            
+            <div className="md:col-span-2">
+              <label className="block text-xs font-extrabold text-[#111827] uppercase tracking-wider mb-2 font-['Plus_Jakarta_Sans',sans-serif]">
+                Meta Keywords
+              </label>
+              <textarea
+                rows={2}
+                value={metaKeywords}
+                onChange={(e) => setMetaKeywords(e.target.value)}
+                className="w-full p-3.5 bg-white border border-[#E5E7EB] rounded-2xl text-xs font-normal text-[#111827] focus:border-[#5B8EE2] focus:outline-none focus:ring-4 focus:ring-blue-100 leading-relaxed"
+                placeholder="e.g. digital marketing, seo, lead generation (comma separated)"
               />
             </div>
           </div>
