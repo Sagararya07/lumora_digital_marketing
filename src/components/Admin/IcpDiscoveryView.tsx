@@ -80,14 +80,14 @@ export const IcpDiscoveryView: React.FC = () => {
           ).map((sub) => (
             <div key={sub.id} className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden transition-all hover:shadow-md">
               <div 
-                className="p-6 cursor-pointer flex justify-between items-center bg-slate-50 hover:bg-slate-100 transition-colors"
+                className="p-4 sm:p-6 cursor-pointer flex flex-col sm:flex-row justify-between sm:items-center gap-3 sm:gap-0 bg-slate-50 hover:bg-slate-100 transition-colors"
                 onClick={() => setExpandedId(expandedId === sub.id ? null : sub.id)}
               >
                 <div>
                   <h3 className="text-lg font-extrabold text-slate-900">{sub.company_name}</h3>
-                  <p className="text-xs text-slate-500">Contact: {sub.contact_name} • Submitted: {new Date(sub.created_at).toLocaleDateString()}</p>
+                  <p className="text-xs text-slate-500 mt-0.5">Contact: {sub.contact_name} • Submitted: {new Date(sub.created_at).toLocaleDateString()}</p>
                 </div>
-                <div className="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1.5 rounded-full border border-purple-100">
+                <div className="text-xs font-bold text-purple-600 bg-purple-50 px-3 py-1.5 rounded-full border border-purple-100 w-fit">
                   {expandedId === sub.id ? 'Close Details' : 'View Deep-Dive'}
                 </div>
               </div>

@@ -66,7 +66,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   const [loginError, setLoginError] = useState('');
 
   const [activeMenu, setActiveMenu] = useState('dashboard');
-  const [isSidebarOpen, setIsSidebarOpen] = useState(true);
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({});
 
   const handleLogin = (e: React.FormEvent) => {
@@ -245,8 +245,8 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
     <div className="flex h-screen bg-[#F8FAFC] text-[#111827] font-['Inter',sans-serif] overflow-hidden">
       
       {/* Mobile Backdrop */}
-      {!isSidebarOpen && (
-        <div className="fixed inset-0 bg-slate-900/40 z-40 lg:hidden backdrop-blur-xs" onClick={() => setIsSidebarOpen(true)} />
+      {isSidebarOpen && (
+        <div className="fixed inset-0 bg-slate-900/40 z-40 lg:hidden backdrop-blur-xs" onClick={() => setIsSidebarOpen(false)} />
       )}
 
       {/* Sidebar Container */}
