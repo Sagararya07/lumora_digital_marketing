@@ -531,7 +531,7 @@ const TableCrudManager = ({
     }
   };
 
-  const handleDelete = async (id: number) => {
+  const handleDelete = async (id: string | number) => {
     if (!confirm('Delete this item?')) return;
     await fetch(`/api/admin/table/${tableName}/${id}`, { method: 'DELETE' });
     fetchData();
@@ -624,7 +624,7 @@ const TableCrudManager = ({
                       <Edit className="w-4 h-4" />
                     </button>
                     <button
-                      onClick={() => handleDelete(Number(item.id))}
+                      onClick={() => handleDelete(item.id as string | number)}
                       className="p-2 rounded-xl bg-rose-50 text-rose-600 hover:bg-rose-100 transition-colors"
                       title="Delete"
                     >

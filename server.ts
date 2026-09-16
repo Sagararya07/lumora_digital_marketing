@@ -600,28 +600,11 @@ app.post('/api/send-otp', async (req, res) => {
 });
 
 app.post('/api/first-time-visitors', async (req, res) => {
-  const { name, email, number, company_name, industry, message, otp } = req.body;
+  const { name, email, number, company_name, industry, message } = req.body;
   
-  if (!email || !otp) {
-    return res.status(400).json({ error: 'Email and OTP are required.' });
+  if (!email || !number) {
+    return res.status(400).json({ error: 'Email and Phone number are required.' });
   }
-
-  const cachedOtp = otpCache.get(email);
-  if (!cachedOtp) {
-    return res.status(400).json({ error: 'No OTP requested for this email or it has expired.' });
-  }
-  
-  if (Date.now() > cachedOtp.expiresAt) {
-    otpCache.delete(email);
-    return res.status(400).json({ error: 'OTP has expired. Please request a new one.' });
-  }
-
-  if (cachedOtp.code !== otp) {
-    return res.status(400).json({ error: 'Invalid OTP code.' });
-  }
-
-  // OTP verified, remove from cache
-  otpCache.delete(email);
 
   try {
     const result = await pool.query(
@@ -636,7 +619,7 @@ app.post('/api/first-time-visitors', async (req, res) => {
       email,
       phone: number,
       companyName: company_name || industry,
-      message: message + " (First Time Visitor Form - Email Verified)",
+      message: message ? message + " (First Time Visitor Form)" : "(First Time Visitor Form)",
       sourcePage: 'First Time Visitor Popup'
     }).catch(err => console.error("Email notification failed", err));
 
@@ -872,14 +855,14 @@ app.delete('/api/pages/:id', async (req, res) => {
 // Generic Admin CMS Updates
 app.get('/api/admin/table/:tableName', async (req, res) => {
   const { tableName } = req.params;
-  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'about_hero_section', 'rnd_modules', 'team_members'];
+  const allowedTables = ['hero_section', 'services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'about_hero_section', 'rnd_modules', 'team_members', 'first_time_visitors'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {
     let orderClause = 'ORDER BY created_at DESC';
     if (tableName === 'hero_section') {
       orderClause = 'ORDER BY updated_at DESC';
-    } else if (tableName === 'about_hero_section') {
+    } else if (tableName === 'about_hero_section' || tableName === 'first_time_visitors') {
       orderClause = 'ORDER BY created_at DESC';
     } else {
       orderClause = 'ORDER BY sort_order ASC NULLS LAST, created_at DESC';
@@ -970,7 +953,7 @@ app.post('/api/admin/table/:tableName', async (req, res) => {
 
 app.delete('/api/admin/table/:tableName/:id', async (req, res) => {
   const { tableName, id } = req.params;
-  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'rnd_modules'];
+  const allowedTables = ['services', 'industries', 'faqs', 'achievements', 'why_choose_us', 'process_steps', 'digital_marketing_content', 'target_audience', 'partner_logos', 'trusted_logos', 'case_studies', 'testimonials', 'about_mission_cards', 'about_core_pillars', 'rnd_modules', 'first_time_visitors'];
   if (!allowedTables.includes(tableName)) return res.status(403).json({ error: 'Invalid table name' });
 
   try {
@@ -1222,9 +1205,9 @@ app.post('/api/icp-submissions/:id/send-discovery', async (req, res) => {
     });
 
     res.json({ success: true });
-  } catch (err) {
+  } catch (err: any) {
     console.error('Error sending discovery email:', err);
-    res.status(500).json({ error: 'Failed to send email' });
+    res.status(500).json({ error: 'Failed to send email. SMTP Error: ' + err.message });
   }
 });
 

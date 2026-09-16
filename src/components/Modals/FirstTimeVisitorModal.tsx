@@ -19,40 +19,13 @@ export const FirstTimeVisitorModal: React.FC<FirstTimeVisitorModalProps> = ({
     message: ''
   });
 
-  const [otpMode, setOtpMode] = useState(false);
-  const [otp, setOtp] = useState('');
-
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
   if (!isOpen) return null;
 
-  const handleSendOtp = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setLoading(true);
-    setError(null);
-
-    try {
-      const res = await fetch('/api/send-otp', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email: formData.email })
-      });
-      const data = await res.json();
-      if (res.ok && data.success) {
-        setOtpMode(true);
-      } else {
-        setError(data.error || 'Failed to send verification code.');
-      }
-    } catch (err) {
-      setError('Network connection error.');
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  const handleVerifyAndSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
@@ -61,13 +34,13 @@ export const FirstTimeVisitorModal: React.FC<FirstTimeVisitorModalProps> = ({
       const res = await fetch('/api/first-time-visitors', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...formData, otp })
+        body: JSON.stringify(formData)
       });
       const data = await res.json();
       if (res.ok && data.success) {
         setSuccess(true);
       } else {
-        setError(data.error || 'Failed to verify OTP or submit request.');
+        setError(data.error || 'Failed to submit request.');
       }
     } catch (err) {
       setError('Network connection error.');
@@ -95,83 +68,17 @@ export const FirstTimeVisitorModal: React.FC<FirstTimeVisitorModalProps> = ({
             </div>
             <h3 className="text-2xl font-bold text-slate-900">Welcome Aboard!</h3>
             <p className="text-sm text-slate-600 max-w-sm mx-auto">
-              Your email has been successfully verified! We'll be in touch with you shortly.
+              Your details have been successfully submitted! We'll be in touch with you shortly.
             </p>
             <button
               onClick={() => {
                 setSuccess(false);
-                setOtpMode(false);
                 onClose();
               }}
               className="px-6 py-2.5 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-sm shadow-md transition-colors"
             >
               Close Window
             </button>
-          </div>
-        ) : otpMode ? (
-          <div>
-            <div className="mb-6 space-y-1">
-              <button 
-                onClick={() => setOtpMode(false)}
-                className="text-xs font-bold text-slate-400 hover:text-slate-600 flex items-center gap-1 mb-4 transition-colors"
-              >
-                <ArrowLeft className="w-3.5 h-3.5" /> Back
-              </button>
-              <span className="text-xs font-bold uppercase tracking-wider text-[#5B8EE2] flex items-center gap-1">
-                <Mail className="w-3.5 h-3.5" /> Email Verification
-              </span>
-              <h3 className="text-2xl font-extrabold text-slate-900">
-                Enter Verification Code
-              </h3>
-              <p className="text-xs text-slate-500">
-                We've sent a 6-digit code to <span className="font-semibold text-slate-700">{formData.email}</span>. Please enter it below to confirm your identity.
-              </p>
-            </div>
-
-            {error && (
-              <div className="mb-4 p-3 rounded-lg bg-rose-50 border border-rose-200 text-rose-700 text-xs flex items-center gap-2">
-                <AlertCircle className="w-4 h-4 flex-shrink-0" />
-                <span>{error}</span>
-              </div>
-            )}
-
-            <form onSubmit={handleVerifyAndSubmit} className="space-y-4">
-              <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">
-                  6-Digit OTP *
-                </label>
-                <input
-                  type="text"
-                  required
-                  maxLength={6}
-                  placeholder="e.g. 123456"
-                  value={otp}
-                  onChange={(e) => setOtp(e.target.value.replace(/\D/g, ''))}
-                  className="w-full px-4 py-3 bg-white border border-slate-200 rounded-xl text-center tracking-[0.5em] text-2xl font-bold text-slate-900 focus:outline-none focus:border-[#729EE6] shadow-sm"
-                />
-              </div>
-
-              <div className="pt-2">
-                <button
-                  type="submit"
-                  disabled={loading || otp.length !== 6}
-                  className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-sm shadow-md transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
-                >
-                  {loading ? 'Verifying...' : 'Verify & Submit'}
-                </button>
-              </div>
-              
-              <div className="text-center pt-2">
-                <button
-                  type="button"
-                  onClick={handleSendOtp}
-                  disabled={loading}
-                  className="text-xs font-bold text-[#5B8EE2] hover:text-blue-700 disabled:opacity-50"
-                >
-                  Didn't receive the code? Resend
-                </button>
-              </div>
-            </form>
           </div>
         ) : (
           <div>
@@ -194,7 +101,7 @@ export const FirstTimeVisitorModal: React.FC<FirstTimeVisitorModalProps> = ({
               </div>
             )}
 
-            <form onSubmit={handleSendOtp} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="block text-xs font-bold text-slate-700 mb-1">
                   Full Name *
@@ -283,7 +190,7 @@ export const FirstTimeVisitorModal: React.FC<FirstTimeVisitorModalProps> = ({
                   disabled={loading}
                   className="w-full flex items-center justify-center gap-2 py-3 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-sm shadow-md transition-colors disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  {loading ? 'Sending Code...' : 'Verify Email & Submit'}
+                  {loading ? 'Submitting...' : 'Submit Details'}
                 </button>
               </div>
             </form>

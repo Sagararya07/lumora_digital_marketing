@@ -185,6 +185,7 @@ export const TABLE_CONFIGS: Record<string, TableConfig> = {
       { key: 'name', label: 'Name', type: 'text' },
       { key: 'email', label: 'Email', type: 'text' },
       { key: 'number', label: 'Number', type: 'text' },
+      { key: 'company_name', label: 'Company Name', type: 'text' },
       { key: 'industry', label: 'Industry', type: 'text' },
       { key: 'message', label: 'Message', type: 'textarea', colSpan: 2 },
     ],

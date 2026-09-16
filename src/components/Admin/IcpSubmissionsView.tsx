@@ -58,7 +58,7 @@ export const IcpSubmissionsView: React.FC = () => {
       if (res.ok) {
         alert('Discovery email sent successfully!');
       } else {
-        alert('Failed to send discovery email. Does the lead have an email address?');
+        alert('Failed to send discovery email. Please check the server logs (SMTP credentials might be invalid).');
       }
     } catch (err) {
       console.error('Failed to send email', err);
