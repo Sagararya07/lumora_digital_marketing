@@ -1640,36 +1640,39 @@ export const initialDynamicPages: DynamicPage[] = [
       {
         "id": "sec-overview-paid-advertising-campaigns",
         "type": "overview",
-        "title": "Strategic Paid Media for Immediate ROI.",
-        "content": "Paid advertising is the fastest way to scale your revenue—but without precise execution, it's the fastest way to burn your budget. We don't just 'run ads'; we build highly engineered paid media ecosystems across search, social, and programmatic networks. By combining relentless A/B testing with advanced algorithmic bidding, we eliminate wasted spend and drive a predictable, scalable pipeline of qualified leads and direct sales.",
+        "title": "Scale Your Revenue Instantly with Precision Paid Media",
+        "content": "Stop burning budget on guesswork. We engineer high-performance paid ad ecosystems across Google, Meta, and programmatic networks that turn clicks into customers. By leveraging advanced algorithmic bidding and relentless A/B testing, we eliminate wasted spend and deliver a predictable, scalable pipeline of high-intent leads and direct sales right to your door. Ready to dominate your market?",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
         "bullets": []
       },
       {
         "id": "sec-ads-we-manage-paid-advertising-campaigns",
         "type": "scrollable-cards",
-        "title": "Ads We Manage",
-        "content": "Dominating intent and capturing attention across the entire digital ecosystem.",
+        "title": "Dominate Every Channel. Capture Every Lead.",
+        "content": "We deploy aggressive, high-converting campaigns across the platforms where your buyers are actively searching.",
         "cards": [
-          { "id": "card-1", "title": "Google Ads", "description": "Search, Display, Shopping, Performance Max & YouTube Ads", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg", "linkUrl": "paid-advertising-campaigns/google-ads" },
-          { "id": "card-2", "title": "Meta Ads", "description": "Facebook & Instagram Ads that build brand, leads & sales", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", "linkUrl": "paid-advertising-campaigns/meta-ads" },
-          { "id": "card-3", "title": "YouTube Ads", "description": "Video Ads that increase brand awareness and drive conversions", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg", "linkUrl": "paid-advertising-campaigns/youtube-ads" },
-          { "id": "card-4", "title": "LinkedIn Ads", "description": "B2B Leads, Brand Building & Targeted Outreach for Professionals", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png", "linkUrl": "paid-advertising-campaigns/linkedin-ads" },
-          { "id": "card-5", "title": "Twitter Ads", "description": "Promote your brand and engage with your target audience on Twitter", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg", "linkUrl": "paid-advertising-campaigns/twitter-ads" }
+          { "id": "card-1", "title": "Google Ads", "description": "Capture high-intent searchers ready to buy right now.", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/c7/Google_Ads_logo.svg", "linkUrl": "paid-advertising-campaigns/google-ads" },
+          { "id": "card-2", "title": "Meta Ads", "description": "Engage and convert users across Facebook and Instagram.", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg", "linkUrl": "paid-advertising-campaigns/meta-ads" },
+          { "id": "card-3", "title": "YouTube Ads", "description": "Drive action with thumb-stopping video ad placements.", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/0/09/YouTube_full-color_icon_%282017%29.svg", "linkUrl": "paid-advertising-campaigns/youtube-ads" },
+          { "id": "card-4", "title": "LinkedIn Ads", "description": "Target key decision-makers and fill your B2B sales pipeline.", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/c/ca/LinkedIn_logo_initials.png", "linkUrl": "paid-advertising-campaigns/linkedin-ads" },
+          { "id": "card-5", "title": "Twitter Ads", "description": "Spark conversations and drive traffic from trending topics.", "iconUrl": "https://upload.wikimedia.org/wikipedia/commons/6/6f/Logo_of_Twitter.svg", "linkUrl": "paid-advertising-campaigns/twitter-ads" }
         ]
       },
       {
         "id": "sec-how-we-do-it-paid-advertising-campaigns",
         "type": "how-we-do-it",
-        "title": "The Campaign Architecture",
-        "content": "A mathematically rigorous approach to scaling ad spend profitably.",
+        "title": "Engineered for Maximum ROI",
+        "content": "We don't guess. We use a mathematically rigorous execution plan to scale your ad spend profitably.",
         "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "buttonText": "Get a Free Audit",
+        "overlaySubtitle": "Scale Faster with",
+        "overlayTitle": "PREDICTABLE ROI",
         "cards": [
-          { "id": "hw-1", "title": "Profitability Audit", "description": "Analyzing your historical ad account data to instantly identify and cut wasted spend." },
-          { "id": "hw-2", "title": "Funnel Mapping", "description": "Architecting the exact ad sequence from the very first click to the final conversion." },
-          { "id": "hw-3", "title": "Creative Production", "description": "Designing thumb-stopping, psychology-driven ad creatives built explicitly for conversion." },
-          { "id": "hw-4", "title": "Algorithmic Bidding", "description": "Deploying your campaigns with smart-bidding strategies to maximize machine learning." },
-          { "id": "hw-5", "title": "Relentless Optimization", "description": "Daily monitoring, continuous A/B testing, and ruthless budget reallocation." }
+          { "id": "hw-1", "title": "Stop Wasting Spend", "description": "We audit your historical data to instantly cut bleeding campaigns and reallocate budget to winners." },
+          { "id": "hw-2", "title": "Map the Conversion Path", "description": "We architect the exact ad sequence needed to push prospects from a cold click to a closed sale." },
+          { "id": "hw-3", "title": "Launch High-Converting Creative", "description": "We deploy psychology-driven, thumb-stopping ad creatives designed solely to drive immediate action." },
+          { "id": "hw-4", "title": "Leverage AI Bidding", "description": "We train ad algorithms with smart-bidding strategies to acquire leads at the lowest possible cost." },
+          { "id": "hw-5", "title": "Optimize Relentlessly", "description": "We monitor daily, run continuous A/B tests, and ruthlessly scale the ads that generate the most profit." }
         ]
       },
       {
@@ -1683,10 +1686,11 @@ export const initialDynamicPages: DynamicPage[] = [
             "title": "E-Commerce ROAS Scaling",
             "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
             "description": "We took a DTC brand from a stagnant 1.5x to a 4.2x Return on Ad Spend (ROAS) within 90 days by completely restructuring their Google Shopping feeds and deploying dynamic creative testing on Meta.",
+            "resultsText": "By implementing this aggressive optimization strategy, the campaign radically outperformed initial KPIs. We orchestrated a data-driven approach that connected direct response advertising to core profitability goals, generating a massive surge in sales volume while strictly controlling customer acquisition costs.",
             "points": [
-              { "id": "p1", "title": "4.2x ROAS", "iconName": "TrendingUp" },
-              { "id": "p2", "title": "90 Day Scale", "iconName": "Clock" },
-              { "id": "p3", "title": "Feed Optimized", "iconName": "Settings" }
+              { "id": "p1", "title": "4.2x ROAS", "description": "Achieved an unprecedented 4.2x Return on Ad Spend through continuous algorithmic bid optimization.", "iconName": "TrendingUp" },
+              { "id": "p2", "title": "90 Day Scale", "description": "Rapidly scaled daily ad spend while maintaining profitability within a strict 90-day window.", "iconName": "Clock" },
+              { "id": "p3", "title": "Feed Optimized", "description": "Completely restructured Google Shopping feeds to capture high-intent long-tail search queries.", "iconName": "Settings" }
             ]
           },
           {
@@ -1694,10 +1698,11 @@ export const initialDynamicPages: DynamicPage[] = [
             "title": "B2B SaaS Lead Generation",
             "bgImageUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
             "description": "A software company was overpaying for unqualified leads. We shifted their budget into hyper-targeted LinkedIn ABM campaigns and intent-based Google Ads, slashing their CPA by 45% while doubling lead volume.",
+            "resultsText": "The restructured campaigns delivered immediate pipeline impact. By eliminating wasted spend and focusing entirely on high-intent decision-makers, we filled the sales pipeline with qualified prospects and dramatically reduced the overall cost per acquisition, giving the sales team exactly what they needed to close deals.",
             "points": [
-              { "id": "p1", "title": "45% Lower CPA", "iconName": "ArrowDown" },
-              { "id": "p2", "title": "2x Lead Volume", "iconName": "Users" },
-              { "id": "p3", "title": "High Intent", "iconName": "Target" }
+              { "id": "p1", "title": "45% Lower CPA", "description": "Slashed Cost Per Acquisition by eliminating wasted spend on broad, unqualified search terms.", "iconName": "ArrowDown" },
+              { "id": "p2", "title": "2x Lead Volume", "description": "Doubled the volume of inbound leads by expanding reach into hyper-targeted LinkedIn ABM campaigns.", "iconName": "Users" },
+              { "id": "p3", "title": "High Intent", "description": "Focused exclusively on intent-based Google Ads to ensure every click had a high probability of converting.", "iconName": "Target" }
             ]
           }
         ]
@@ -1710,18 +1715,51 @@ export const initialDynamicPages: DynamicPage[] = [
         "cards": [
           {
             "id": "faq-1",
-            "title": "How much should I spend on ads?",
-            "description": "We recommend starting with a budget that allows for statistically significant testing—usually a minimum of $3,000 to $5,000 per month, depending heavily on the CPCs in your specific industry."
+            "title": "What platforms do you manage?",
+            "description": "We manage campaigns across Google Ads, Meta (Facebook/Instagram), LinkedIn Ads, YouTube Ads, and programmatic networks to capture intent wherever your audience is.",
+            "category": "General"
           },
           {
             "id": "faq-2",
-            "title": "How long does it take to see a positive ROI?",
-            "description": "While leads and sales can start flowing on day one, achieving true algorithmic optimization and a stabilized, predictable ROI typically requires 30 to 60 days of active management."
+            "title": "Do you create the ad graphics and videos?",
+            "description": "Yes. Our performance creative team designs all ad visuals and writes all copy specifically engineered to maximize click-through rates (CTR) and conversion rates (CVR).",
+            "category": "General"
           },
           {
             "id": "faq-3",
-            "title": "Do you create the ad graphics and videos?",
-            "description": "Yes. Our performance creative team designs all ad visuals and writes all copy specifically engineered to maximize click-through rates (CTR) and conversion rates (CVR)."
+            "title": "How much should I spend on ads?",
+            "description": "We recommend starting with a budget that allows for statistically significant testing—usually a minimum of $3,000 to $5,000 per month, depending heavily on the CPCs in your specific industry.",
+            "category": "Pricing"
+          },
+          {
+            "id": "faq-4",
+            "title": "What is your management fee structure?",
+            "description": "Our fee is typically a hybrid structure: a flat monthly retainer plus a performance-based percentage of ad spend once spend exceeds a certain threshold. This ensures our incentives are perfectly aligned with your growth.",
+            "category": "Pricing"
+          },
+          {
+            "id": "faq-5",
+            "title": "How do you track and attribute conversions?",
+            "description": "We implement advanced server-side tracking, custom UTM parameters, and robust CRM integrations (like HubSpot or Salesforce) to ensure every lead and sale is accurately attributed to the exact ad and keyword.",
+            "category": "Process"
+          },
+          {
+            "id": "faq-6",
+            "title": "How often do you communicate and report?",
+            "description": "We provide a live, real-time analytics dashboard, send weekly performance summaries, and hold bi-weekly or monthly strategy calls to review metrics, A/B test results, and next steps.",
+            "category": "Process"
+          },
+          {
+            "id": "faq-7",
+            "title": "How long does it take to see a positive ROI?",
+            "description": "While leads and sales can start flowing on day one, achieving true algorithmic optimization and a stabilized, predictable ROI typically requires 30 to 60 days of active management.",
+            "category": "Results"
+          },
+          {
+            "id": "faq-8",
+            "title": "What metrics do you use to measure success?",
+            "description": "We optimize ruthlessly for bottom-line metrics: Cost Per Acquisition (CPA), Return on Ad Spend (ROAS), and Marketing Qualified Leads (MQLs), rather than just vanity metrics like clicks and impressions.",
+            "category": "Results"
           }
         ]
       }
@@ -1735,6 +1773,7 @@ export const initialDynamicPages: DynamicPage[] = [
     "pageType": "service",
     "isPublished": true,
     "sortOrder": 6,
+    "overviewContent": "We don't just hope for results; we guarantee accountability. By obsessing over hard metrics like CPA and ROAS, we build highly tuned growth engines that scale your revenue profitably, predictably, and aggressively.",
     "sections": [
       {
         "id": "sec-overview-performance-marketing",
@@ -1749,6 +1788,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Performance Capabilities",
         "content": "The tactical execution behind mathematically sound growth.",
+        "mediaUrl": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?q=80&w=1200",
         "cards": [
           { "id": "card-1", "title": "Conversion Optimization", "description": "Rigorous A/B testing of landing pages and funnels to maximize lead capture.", "iconName": "MousePointerClick" },
           { "id": "card-2", "title": "Multi-Touch Attribution", "description": "Tracking the exact customer journey to properly attribute revenue to the right channels.", "iconName": "Share2" },
@@ -1762,7 +1802,10 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "The Growth Engine Process",
         "content": "A systematic methodology for finding and exploiting profitable acquisition channels.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1526628953301-3e589a6a8b74?q=80&w=1200",
+        "buttonText": "Launch Growth Engine",
+        "overlaySubtitle": "Predictable Scale requires",
+        "overlayTitle": "DATA INTEGRITY",
         "cards": [
           { "id": "hw-1", "title": "The Growth Model", "description": "Building a mathematical model of your entire acquisition funnel to identify bottlenecks." },
           { "id": "hw-2", "title": "Tracking Infrastructure", "description": "Setting up pixel-perfect, server-side tracking to ensure absolute data integrity." },
@@ -1782,10 +1825,11 @@ export const initialDynamicPages: DynamicPage[] = [
             "title": "E-Commerce Aggressive Scaling",
             "bgImageUrl": "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1200",
             "description": "By implementing strict server-side tracking and multi-touch attribution, we scaled a DTC brand's monthly ad spend from $50k to $250k while maintaining a 3.5x ROAS and actually improving their LTV/CAC ratio by 20%.",
+            "resultsText": "Our rigorous mathematical modeling allowed us to identify the most profitable customer segments. By heavily weighting budget towards these cohorts, we achieved massive top-line growth without sacrificing bottom-line margins.",
             "points": [
-              { "id": "p1", "title": "$250k/mo Spend", "iconName": "DollarSign" },
-              { "id": "p2", "title": "Maintained 3.5x ROAS", "iconName": "TrendingUp" },
-              { "id": "p3", "title": "Improved LTV", "iconName": "Activity" }
+              { "id": "p1", "title": "$250k/mo Spend", "description": "Aggressively scaled budget into winning campaigns while suppressing wasted spend.", "iconName": "DollarSign" },
+              { "id": "p2", "title": "Maintained 3.5x ROAS", "description": "Held strong profitability metrics despite a 500% increase in ad spend.", "iconName": "TrendingUp" },
+              { "id": "p3", "title": "Improved LTV", "description": "Focused acquisition on cohorts with historically high lifetime value.", "iconName": "Activity" }
             ]
           },
           {
@@ -1793,10 +1837,11 @@ export const initialDynamicPages: DynamicPage[] = [
             "title": "Lead Gen Profitability",
             "bgImageUrl": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1200",
             "description": "A financial services firm was struggling with high acquisition costs. Through aggressive landing page CRO and eliminating wasted spend identified by our attribution model, we reduced their cost per qualified lead by 60%.",
+            "resultsText": "By fixing tracking blind spots and continuously A/B testing the user journey, we transformed their lead pipeline. The client went from bleeding budget on generic terms to dominating high-intent market segments at a fraction of the cost.",
             "points": [
-              { "id": "p1", "title": "60% Lower CPL", "iconName": "ArrowDown" },
-              { "id": "p2", "title": "CRO Focused", "iconName": "MousePointerClick" },
-              { "id": "p3", "title": "Higher Lead Quality", "iconName": "CheckCircle" }
+              { "id": "p1", "title": "60% Lower CPL", "description": "Dramatically reduced Cost Per Lead by eliminating inefficiencies.", "iconName": "ArrowDown" },
+              { "id": "p2", "title": "CRO Focused", "description": "Redesigned landing pages to maximize conversion rates from paid traffic.", "iconName": "MousePointerClick" },
+              { "id": "p3", "title": "Higher Lead Quality", "description": "Utilized enhanced server-side tracking to optimize algorithms for lead quality, not just volume.", "iconName": "CheckCircle" }
             ]
           }
         ]
@@ -1810,17 +1855,38 @@ export const initialDynamicPages: DynamicPage[] = [
           {
             "id": "faq-1",
             "title": "What is the difference between Performance Marketing and Paid Ads?",
-            "description": "Paid advertising is simply a channel. Performance Marketing is the overarching methodology of running those channels (and others) strictly based on data, ROI, and measurable business outcomes."
+            "description": "Paid advertising is simply a channel. Performance Marketing is the overarching methodology of running those channels strictly based on data, ROI, and measurable business outcomes.",
+            "category": "General"
           },
           {
             "id": "faq-2",
             "title": "How do you handle tracking in a post-cookie world?",
-            "description": "We implement robust server-side tracking (like Facebook Conversion API), 1st-party data collection strategies, and advanced probabilistic attribution modeling to ensure data accuracy despite iOS updates."
+            "description": "We implement robust server-side tracking (like Facebook Conversion API), 1st-party data collection strategies, and advanced probabilistic attribution modeling to ensure data accuracy despite iOS updates.",
+            "category": "Process"
           },
           {
             "id": "faq-3",
             "title": "Do you work on a performance basis?",
-            "description": "For select, highly vetted partners that meet strict criteria regarding historical data and product-market fit, we do occasionally offer hybrid performance-based compensation models."
+            "description": "For select, highly vetted partners that meet strict criteria regarding historical data and product-market fit, we do occasionally offer hybrid performance-based compensation models.",
+            "category": "Pricing"
+          },
+          {
+            "id": "faq-4",
+            "title": "What tools do you use for A/B testing?",
+            "description": "We utilize enterprise tools like VWO, Optimizely, and Google Optimize, combined with custom-built landing page frameworks to run high-tempo conversion rate optimization sprints.",
+            "category": "Process"
+          },
+          {
+            "id": "faq-5",
+            "title": "How do you measure Customer Lifetime Value (LTV)?",
+            "description": "We analyze your CRM and historical sales data to map out retention rates, average order values, and repeat purchase frequency to establish a baseline LTV for each acquisition cohort.",
+            "category": "Results"
+          },
+          {
+            "id": "faq-6",
+            "title": "Do you guarantee results?",
+            "description": "While we cannot guarantee specific financial returns due to market variables, we do guarantee a mathematically rigorous, data-driven process that relentlessly pursues profitability.",
+            "category": "General"
           }
         ]
       }

@@ -237,6 +237,7 @@ export interface DynamicPageSection {
     iconUrl?: string;
     iconName?: string;
     linkUrl?: string;
+    category?: 'General' | 'Pricing' | 'Process' | 'Results';
   }[];
   caseStudy?: {
     clientName: string;
@@ -249,9 +250,11 @@ export interface DynamicPageSection {
     title: string;
     description: string;
     bgImageUrl?: string;
+    resultsText?: string;
     points: {
       id: string;
       title: string;
+      description?: string;
       iconName?: string;
     }[];
   }[];
@@ -262,6 +265,9 @@ export interface DynamicPageSection {
       items: string[];
     }[];
   };
+  buttonText?: string;
+  overlaySubtitle?: string;
+  overlayTitle?: string;
 }
 
 export interface DynamicPage {

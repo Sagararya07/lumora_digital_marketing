@@ -249,7 +249,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
               id: card.id || `faq-${i}`,
               question: card.title || '',
               answer: card.description || '',
-              category: 'General' as const,
+              category: (card.category || 'General') as 'General' | 'Pricing' | 'Process' | 'Results',
             })) || [];
             
             if (mappedFaqs.length === 0) return null;
@@ -372,9 +372,9 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
             const dynamicTitle = `How we do ${pageName}`;
 
             // Auto-detect the best, most meaningful image for this specific page
-            let bestImage = page.heroImage;
+            let bestImage = sec.mediaUrl || page.heroImage;
             if (!bestImage) {
-              const secWithMedia = page.sections.find((s: any) => s.mediaUrl && s.type !== 'how-we-do-it');
+              const secWithMedia = page.sections.find((s: any) => s.mediaUrl);
               if (secWithMedia) bestImage = secWithMedia.mediaUrl;
             }
             
@@ -410,7 +410,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                       onClick={openConsultationModal}
                       className="group inline-flex items-center gap-2 bg-[#0B1026] hover:bg-blue-700 text-white px-8 py-3.5 text-sm font-bold tracking-widest transition-all rounded-full uppercase shadow-lg shadow-blue-900/20"
                     >
-                      Request for Service
+                      {sec.buttonText || "Request for Service"}
                       <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                     </button>
                   </div>
@@ -447,10 +447,10 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                          ))}
                       </div>
                       <h3 className="text-2xl sm:text-3xl font-['Plus_Jakarta_Sans',sans-serif] font-medium italic mb-2">
-                        Great Strategy is
+                        {sec.overlaySubtitle || "Great Strategy is"}
                       </h3>
                       <h2 className="text-4xl sm:text-5xl font-black font-['Plus_Jakarta_Sans',sans-serif] tracking-tight uppercase drop-shadow-md">
-                        GOOD BUSINESS
+                        {sec.overlayTitle || "GOOD BUSINESS"}
                       </h2>
                     </div>
                   </div>
@@ -725,7 +725,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                         </div>
                         <div>
                           <span className="text-sm font-bold text-slate-800 leading-snug">{pt.title}</span>
-                          <p className="text-xs text-slate-500 mt-1">Targeted delivery and implementation of {pt.title.toLowerCase()}.</p>
+                          <p className="text-xs text-slate-500 mt-1">{pt.description || `Targeted delivery and implementation of ${pt.title.toLowerCase()}.`}</p>
                         </div>
                       </div>
                     ))}
@@ -735,7 +735,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                 <div className="p-6 bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl border border-blue-100">
                   <h4 className="text-lg font-bold text-slate-800 mb-2 font-['Plus_Jakarta_Sans',sans-serif]">Results & Impact</h4>
                   <p className="text-slate-600 text-sm leading-relaxed">
-                    By implementing the strategic initiatives outlined above, the campaign significantly out-performed initial KPIs. Our team was able to orchestrate a data-driven approach that connected {activeModalStudy.title.toLowerCase()} directly to the core business objectives, generating sustainable pipeline and measurable brand equity.
+                    {activeModalStudy.resultsText || `By implementing the strategic initiatives outlined above, the campaign significantly out-performed initial KPIs. Our team was able to orchestrate a data-driven approach that connected ${activeModalStudy.title.toLowerCase()} directly to the core business objectives, generating sustainable pipeline and measurable brand equity.`}
                   </p>
                 </div>
               </div>
