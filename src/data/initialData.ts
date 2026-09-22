@@ -1995,10 +1995,12 @@ export const initialDynamicPages: DynamicPage[] = [
     "id": "page-lead-generation",
     "slug": "lead-generation",
     "title": "High-Velocity Lead Generation",
-    "heroBadge": "Users",
+    "heroBadge": "SPECIALIZED RESOURCE PAGE",
     "pageType": "service",
     "isPublished": true,
     "sortOrder": 8,
+    "heroImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+    "heroDescription": "Turn cold traffic into booked appointments. We build high-velocity acquisition engines that systematically attract, nurture, and convert highly qualified prospects at scale.",
     "sections": [
       {
         "id": "sec-overview-lead-generation",
@@ -2055,7 +2057,7 @@ export const initialDynamicPages: DynamicPage[] = [
           {
             "id": "cs-2",
             "title": "Local Service Domination",
-            "bgImageUrl": "https://images.unsplash.com/photo-1556761175-5973dc0f32d7?q=80&w=1200",
+            "bgImageUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200",
             "description": "By overhauling their localized landing pages and implementing strict geo-targeting on Google Ads, we reduced the Cost-Per-Lead (CPL) by 55% for a national home services franchise.",
             "points": [
               { "id": "p1", "title": "55% Lower CPL", "iconName": "ArrowDown" },

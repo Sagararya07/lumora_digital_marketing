@@ -26,13 +26,31 @@ export const fallbackServiceDetails: Record<string, {
     image: '/images/services/seo_marketing_1785498386235.png'
   },
   'performance-marketing': {
-    shortDescription: 'AI-optimized ad campaigns across Google, Meta, and LinkedIn laser-focused on ROI, sales, and conversions.',
-    fullDescription: 'Maximize your return on ad spend with precision-targeted campaigns. We leverage data and AI to deliver the right message to the right audience at the perfect time.',
-    features: ['Omnichannel ad campaigns (Google, Meta, LinkedIn)', 'A/B testing of ad copy & creatives', 'Advanced audience targeting', 'Conversion Rate Optimization (CRO)', 'Real-time bid adjustments'],
-    deliverables: ['Custom ad creatives & copywriting', 'Campaign setup & structuring', 'Weekly ROI & ROAS reports', 'Landing page optimization recommendations', 'Pixel setup & conversion tracking'],
+    shortDescription: 'We engineer mathematically rigorous campaigns across Google, Meta, and LinkedIn to scale your ad spend profitably and aggressively.',
+    fullDescription: 'Traditional marketing hopes for results; we guarantee accountability. We align every marketing dollar directly with your bottom line, obsessing over hard metrics like CPA and ROAS to build highly tuned growth engines.',
+    features: ['Omnichannel precision targeting', 'High-tempo A/B testing', 'Pixel-perfect attribution tracking', 'Ruthless LTV/CAC optimization', 'Aggressive budget scaling'],
+    deliverables: ['Advanced tracking & attribution setup', 'High-converting creative assets', 'Real-time live analytics dashboard', 'Weekly tactical scaling reports'],
     recommendedFor: 'E-commerce brands, SaaS companies, and high-ticket service providers looking for immediate, scalable revenue.',
-    badge: 'Paid Ads',
+    badge: 'Performance',
     image: '/images/services/performance_marketing_1785498399389.png'
+  },
+  'paid-advertising-campaigns': {
+    shortDescription: 'We don\'t guess. We use a mathematically rigorous execution plan to scale your ad spend profitably.',
+    fullDescription: 'Stop wasting budget on bleeding campaigns. We architect the exact ad sequence needed to push prospects from a cold click to a closed sale across Google, Meta, and LinkedIn.',
+    features: ['Search Intent Capture (Google Ads)', 'Scroll-Stopping Creative (Meta)', 'Precision B2B Targeting (LinkedIn)', 'Continuous A/B Testing', 'Smart Bidding & AI Optimization'],
+    deliverables: ['Deep historical data audits', 'High-converting ad creatives', 'Daily campaign monitoring & adjustments', 'Weekly ROAS & performance dashboards'],
+    recommendedFor: 'Businesses looking for immediate, measurable return on ad spend through highly optimized paid channels.',
+    badge: 'Paid Ads',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200'
+  },
+  'enterprise-demand-generation': {
+    shortDescription: 'Architect high-velocity revenue pipelines that capture, educate, and convert elite B2B prospects at scale.',
+    fullDescription: 'Stop relying on unpredictable referrals and outbound spam. We build sophisticated, multi-touch demand generation engines that position your brand as the undisputed category leader and fill your pipeline with high-value, sales-ready accounts.',
+    features: ['Account-Based Marketing (ABM) Frameworks', 'High-Value Content Syndication', 'Elite B2B Prospect Nurturing', 'Omnichannel Brand Authority', 'Predictive Lead Scoring Models'],
+    deliverables: ['Total Addressable Market (TAM) mapping', 'Custom ABM campaign execution', 'Multi-touch prospect nurture sequences', 'Executive-level pipeline reporting'],
+    recommendedFor: 'Enterprise B2B companies, complex SaaS products, and high-ticket service providers requiring sophisticated, multi-stakeholder sales cycles.',
+    badge: 'Enterprise',
+    image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?q=80&w=1200'
   },
   'lead-generation': {
     shortDescription: 'Predictable multi-channel B2B & B2C acquisition funnels that generate qualified, sales-ready inquiries.',
@@ -60,6 +78,15 @@ export const fallbackServiceDetails: Record<string, {
     recommendedFor: 'Scaling businesses, sales teams, and marketing departments looking to save time and convert leads 24/7 without manual effort.',
     badge: 'Automation',
     image: '/images/services/ai_marketing_1785498439194.png'
+  },
+  'marketing-diagnosis-audit': {
+    shortDescription: 'Uncover hidden revenue leaks and forensic bottlenecks across your entire digital ecosystem.',
+    fullDescription: 'Stop guessing why your campaigns aren\'t scaling. We conduct a mathematically rigorous, forensic audit of your ad accounts, funnels, and tracking infrastructure to identify precise friction points. We then deliver a surgical roadmap to plug revenue leaks and unlock immediate growth.',
+    features: ['Paid Media Forensic Audits', 'Conversion Funnel Analysis', 'Technical SEO Tracking', 'Competitor Movement Tracking', 'Attribution & Analytics Health Check'],
+    deliverables: ['Executive Strategy Briefing', 'Algorithmic Diagnostics', 'Actionable Fix Roadmap', 'Monthly Advisory Call'],
+    recommendedFor: 'Companies with in-house teams or multiple agency partners wanting an objective, data-driven second opinion.',
+    badge: 'Marketing',
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200'
   }
 };
 
@@ -79,6 +106,9 @@ export function getFallbackServiceDetails(slug: string, title?: string) {
   if (searchString.includes('performance') || searchString.includes('ads') || searchString.includes('paid')) {
     return fallbackServiceDetails['performance-marketing'];
   }
+  if (searchString.includes('demand') || searchString.includes('enterprise')) {
+    return fallbackServiceDetails['enterprise-demand-generation'];
+  }
   if (searchString.includes('lead') || searchString.includes('acquisition') || searchString.includes('funnel')) {
     return fallbackServiceDetails['lead-generation'];
   }
@@ -87,6 +117,9 @@ export function getFallbackServiceDetails(slug: string, title?: string) {
   }
   if (searchString.includes('ai') || searchString.includes('automation') || searchString.includes('bot')) {
     return fallbackServiceDetails['ai-marketing-automation'];
+  }
+  if (searchString.includes('audit') || searchString.includes('diagnosis')) {
+    return fallbackServiceDetails['marketing-diagnosis-audit'];
   }
   
   // Generic fallback if absolutely nothing matches
