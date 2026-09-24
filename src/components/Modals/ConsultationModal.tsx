@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { X, Send, CheckCircle2, Phone, AlertCircle } from 'lucide-react';
 
 interface ConsultationModalProps {
@@ -12,6 +13,7 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
   onClose,
   sourcePage = 'Header Modal'
 }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: '',
     companyName: '',
@@ -75,12 +77,31 @@ export const ConsultationModal: React.FC<ConsultationModalProps> = ({
             </p>
             <button
               onClick={() => {
+                // Save to localStorage to simulate a database for the mockups
+                const clientRecord = {
+                  id: `CLI-${Math.floor(1000 + Math.random() * 9000)}`,
+                  name: formData.companyName || formData.name || 'Unknown Company',
+                  contactName: formData.name || 'Client',
+                  industry: 'Unknown', // Consultation form doesn't capture industry
+                  status: 'Onboarding',
+                  date: new Date().toLocaleDateString(),
+                  details: formData
+                };
+                
+                // Save as current active client for the Portal
+                localStorage.setItem('currentClient', JSON.stringify(clientRecord));
+                
+                // Add to all clients for the CRM Admin
+                const existingClients = JSON.parse(localStorage.getItem('allClients') || '[]');
+                localStorage.setItem('allClients', JSON.stringify([clientRecord, ...existingClients]));
+
                 setSuccess(false);
                 onClose();
+                navigate('/portal');
               }}
               className="px-6 py-2.5 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-xs shadow-md shadow-blue-200"
             >
-              Close Window
+              Enter Client Portal
             </button>
           </div>
         ) : (

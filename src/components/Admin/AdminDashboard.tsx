@@ -41,6 +41,8 @@ import { LumoraLogo } from '../common/LumoraLogo';
 import { DynamicPageEditor } from './DynamicPageEditor';
 import { IcpSubmissionsView } from './IcpSubmissionsView';
 import { IcpDiscoveryView } from './IcpDiscoveryView';
+import { CrmAdminDashboard } from '../CRM/CrmAdminDashboard';
+import { ClientDetailsAdmin } from './ClientDetailsAdmin';
 
 interface AdminDashboardProps {
   onExitAdmin: () => void;
@@ -66,6 +68,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
   const [loginError, setLoginError] = useState('');
 
   const [activeMenu, setActiveMenu] = useState('dashboard');
+  const [selectedClientId, setSelectedClientId] = useState<string | null>(null);
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
   const [expandedMenus, setExpandedMenus] = useState<Record<string, boolean>>({});
 
@@ -213,6 +216,12 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
       ],
     },
     {
+      title: 'CLIENT ONBOARDING',
+      items: [
+        { id: 'client_accounts', label: 'Active Clients CRM', icon: Users },
+      ],
+    },
+    {
       title: 'CRM & LEADS',
       items: [
         { id: 'icp_submissions', label: 'ICP Qualifications', icon: Target },
@@ -268,7 +277,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
         {/* Sidebar Nav Links */}
         <div className="p-4 overflow-y-auto h-[calc(100vh-89px)] custom-scrollbar">
           <button
-            onClick={() => setActiveMenu('dashboard')}
+            onClick={() => { setActiveMenu('dashboard'); setSelectedClientId(null); }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-2xl text-sm font-extrabold transition-all mb-4 ${
               activeMenu === 'dashboard'
                 ? 'bg-[#F2F6FC] text-[#5B8EE2] border border-blue-200 shadow-xs'
@@ -296,7 +305,7 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
                   return (
                     <button
                       key={item.id}
-                      onClick={() => setActiveMenu(item.id)}
+                      onClick={() => { setActiveMenu(item.id); setSelectedClientId(null); }}
                       className={`w-full flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
                         isActive
                           ? 'bg-[#F2F6FC] text-[#5B8EE2] border border-blue-200 shadow-xs font-extrabold'
@@ -388,6 +397,13 @@ export const AdminDashboard: React.FC<AdminDashboardProps> = ({
           {activeMenu === 'consultation_submissions' && <LeadsManager onSaved={handleContentSaved} />}
           {activeMenu === 'icp_submissions' && <IcpSubmissionsView />}
           {activeMenu === 'icp_discovery' && <IcpDiscoveryView />}
+          {activeMenu === 'client_accounts' && (
+            selectedClientId ? (
+              <ClientDetailsAdmin clientId={selectedClientId} onBack={() => setSelectedClientId(null)} />
+            ) : (
+              <CrmAdminDashboard onClientSelect={(id) => setSelectedClientId(id)} />
+            )
+          )}
         </div>
       </main>
     </div>

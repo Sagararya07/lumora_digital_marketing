@@ -66,10 +66,29 @@ export const IcpSubmissionsView: React.FC = () => {
     }
   };
 
+  const convertToClient = async (id: string) => {
+    try {
+      const res = await fetch(`/api/clients/convert/${id}`, { method: 'POST' });
+      if (res.ok) {
+        alert(`Successfully converted to a Client Account! An invitation email has been sent.`);
+        fetchSubmissions(); // refresh the list
+      } else {
+        const errorData = await res.json();
+        alert(`Failed to convert to client: ${errorData.error || 'Unknown error'}`);
+        fetchSubmissions(); // refresh in case it was auto-converted
+      }
+    } catch (err) {
+      console.error('Failed to convert to client', err);
+      alert('Network error converting to client.');
+    }
+  };
+
   const getStatusBadge = (status: string) => {
     switch (status) {
       case 'Qualified':
         return <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200"><CheckCircle2 className="w-3.5 h-3.5" /> Qualified</span>;
+      case 'Converted':
+        return <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200"><CheckCircle2 className="w-3.5 h-3.5" /> Converted</span>;
       case 'Rejected':
         return <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold bg-rose-50 text-rose-700 border border-rose-200"><XCircle className="w-3.5 h-3.5" /> Rejected</span>;
       default:
@@ -205,12 +224,20 @@ export const IcpSubmissionsView: React.FC = () => {
                             Mark Qualified
                           </button>
                           {sub.status === 'Qualified' && (
-                            <button
-                              onClick={() => sendDiscoveryEmail(sub.id)}
-                              className="w-full text-left px-4 py-2 text-xs font-semibold text-blue-600 hover:bg-slate-50 flex items-center justify-between"
-                            >
-                              Send Step 2 Email <Send className="w-3 h-3" />
-                            </button>
+                            <>
+                              <button
+                                onClick={() => sendDiscoveryEmail(sub.id)}
+                                className="w-full text-left px-4 py-2 text-xs font-semibold text-blue-600 hover:bg-slate-50 flex items-center justify-between"
+                              >
+                                Send Step 2 Email <Send className="w-3 h-3" />
+                              </button>
+                              <button
+                                onClick={() => convertToClient(sub.id)}
+                                className="w-full text-left px-4 py-2 text-xs font-semibold text-emerald-700 hover:bg-slate-50 flex items-center justify-between bg-emerald-50/50"
+                              >
+                                Convert to Client
+                              </button>
+                            </>
                           )}
                           <button
                             onClick={() => updateStatus(sub.id, 'Rejected')}

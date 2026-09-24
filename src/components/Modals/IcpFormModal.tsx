@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { X, CheckCircle2, AlertCircle, Briefcase, Target, Building2, DollarSign } from 'lucide-react';
 
 interface IcpFormModalProps {
@@ -10,6 +11,7 @@ export const IcpFormModal: React.FC<IcpFormModalProps> = ({
   isOpen,
   onClose,
 }) => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     company_name: '',
     email: '',
@@ -75,12 +77,31 @@ export const IcpFormModal: React.FC<IcpFormModalProps> = ({
             </p>
             <button
               onClick={() => {
+                // Save to localStorage to simulate a database for the mockups
+                const clientRecord = {
+                  id: `CLI-${Math.floor(1000 + Math.random() * 9000)}`,
+                  name: formData.company_name || 'Unknown Company',
+                  contactName: formData.contact_name || 'Client',
+                  industry: formData.industry || 'Unknown',
+                  status: 'Onboarding',
+                  date: new Date().toLocaleDateString(),
+                  details: formData
+                };
+                
+                // Save as current active client for the Portal
+                localStorage.setItem('currentClient', JSON.stringify(clientRecord));
+                
+                // Add to all clients for the CRM Admin
+                const existingClients = JSON.parse(localStorage.getItem('allClients') || '[]');
+                localStorage.setItem('allClients', JSON.stringify([clientRecord, ...existingClients]));
+
                 setSuccess(false);
                 onClose();
+                navigate('/portal');
               }}
               className="mt-6 px-8 py-3 rounded-xl bg-[#5B8EE2] hover:bg-blue-700 text-white font-bold text-sm shadow-md transition-colors"
             >
-              Continue to Website
+              Enter Client Portal Workspace
             </button>
           </div>
         ) : (

@@ -35,6 +35,15 @@ import { PortfolioPage } from './components/Pages/PortfolioPage';
 import { RndPage } from './components/Pages/RndPage';
 import { DiscoveryFormPage } from './components/Pages/DiscoveryFormPage';
 
+import { ClientPortalLayout } from './components/Portal/ClientPortalLayout';
+import { ClientDashboard } from './components/Portal/ClientDashboard';
+import { ClientProposals } from './components/Portal/ClientProposals';
+import { ClientTasks } from './components/Portal/ClientTasks';
+import { ClientMessages } from './components/Portal/ClientMessages';
+import { ClientMeetings } from './components/Portal/ClientMeetings';
+import { ClientDocuments } from './components/Portal/ClientDocuments';
+import { CrmAdminDashboard } from './components/CRM/CrmAdminDashboard';
+
 import { initialSiteContent, initialDynamicPages } from './data/initialData';
 import { SiteContent, DynamicPage, ServiceItem, AchievementItem, CaseStudyItem } from './types';
 import { useTheme } from './hooks/useTheme';
@@ -194,8 +203,8 @@ export function App() {
     }
   };
 
-  const isAdminRoute = location.pathname.startsWith('/admin');
-  const activeDynamicSlug = location.pathname === '/' || location.pathname === '/admin' ? null : location.pathname.slice(1);
+  const isAppRoute = location.pathname.startsWith('/admin') || location.pathname.startsWith('/crm') || location.pathname.startsWith('/portal');
+  const activeDynamicSlug = location.pathname === '/' || isAppRoute ? null : location.pathname.slice(1);
 
   const dynamicServices = dynamicPages
     .filter(dp => dp.isPublished && !dp.slug?.includes('/') && dp.position !== 'None')
@@ -222,7 +231,7 @@ export function App() {
     <div className="min-h-screen bg-white text-slate-900 font-['Inter',sans-serif] selection:bg-[#5B8EE2] selection:text-white transition-colors duration-300">
       
       {/* 1. Left Navigation Menu Drawer */}
-      {!isAdminRoute && (
+      {!isAppRoute && (
         <LeftSidebar
           currentTab={location.pathname === '/' ? 'home' : (activeDynamicSlug || 'admin')}
           setCurrentTab={handleNavTabClick}
@@ -242,7 +251,7 @@ export function App() {
       <div className="flex flex-col min-h-screen transition-all">
         
         {/* 2. Top Horizontal Header */}
-        {!isAdminRoute && (
+        {!isAppRoute && (
           <TopHeader
             onOpenMobileNav={() => setIsOpenMobileNav(true)}
             openConsultationModal={handleOpenConsultation}
@@ -273,6 +282,18 @@ export function App() {
                 />
               </ErrorBoundary>
             } />
+
+
+            {/* Client Portal */}
+            <Route path="/portal" element={<ClientPortalLayout />}>
+              <Route index element={<ClientDashboard />} />
+              <Route path="proposals" element={<ClientProposals clientId={localStorage.getItem('activeClientSession') ? JSON.parse(localStorage.getItem('activeClientSession')!).client_id : ''} />} />
+              <Route path="tasks" element={<ClientTasks clientId={localStorage.getItem('activeClientSession') ? JSON.parse(localStorage.getItem('activeClientSession')!).client_id : ''} />} />
+              <Route path="meetings" element={<ClientMeetings clientId={localStorage.getItem('activeClientSession') ? JSON.parse(localStorage.getItem('activeClientSession')!).client_id : ''} />} />
+              <Route path="messages" element={<ClientMessages clientId={localStorage.getItem('activeClientSession') ? JSON.parse(localStorage.getItem('activeClientSession')!).client_id : ''} />} />
+              <Route path="documents" element={<ClientDocuments />} />
+              <Route path="*" element={<ClientDashboard />} />
+            </Route>
 
             {/* Dedicated Full Pages for Menu Drawer Options */}
             <Route path="/about" element={
@@ -442,7 +463,7 @@ export function App() {
           </Routes>
         </main>
 
-        {!isAdminRoute && (
+        {!isAppRoute && (
           <Footer
             contactInfo={siteContent.contactInfo}
             services={dynamicServices}

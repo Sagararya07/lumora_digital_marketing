@@ -4,6 +4,7 @@ import path from 'path';
 import { GoogleGenAI } from '@google/genai';
 import { Pool } from 'pg';
 import dotenv from 'dotenv';
+import crypto from 'crypto';
 import nodemailer from 'nodemailer';
 import { v2 as cloudinary } from 'cloudinary';
 import multer from 'multer';
@@ -36,6 +37,15 @@ cloudinary.config({
   cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
   api_key: process.env.CLOUDINARY_API_KEY,
   api_secret: process.env.CLOUDINARY_API_SECRET,
+});
+
+// Nodemailer Configuration
+const transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: process.env.GMAIL_USER,
+    pass: process.env.GMAIL_PASS
+  }
 });
 
 // Multer setup for in-memory uploads
@@ -1232,6 +1242,510 @@ app.post('/api/discovery-submissions', async (req, res) => {
       [icp_id, primary_product, avg_deal_size, sales_cycle, pain_points, competitors, marketing_challenges]
     );
     res.json({ success: true, data: result.rows[0] });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+// --- Client Lifecycle Management ---
+
+app.get('/api/admin/stats', async (req, res) => {
+  try {
+    const clientsRes = await pool.query('SELECT COUNT(*) FROM clients');
+    const projectsRes = await pool.query("SELECT COUNT(DISTINCT client_id) FROM client_tasks WHERE is_completed = false");
+    const proposalsRes = await pool.query("SELECT COUNT(*) FROM client_proposals WHERE status = 'Pending'");
+    const activityRes = await pool.query("SELECT COUNT(*) FROM client_messages WHERE created_at > NOW() - INTERVAL '24 HOURS'");
+    
+    res.json({
+      totalClients: clientsRes.rows[0].count,
+      activeProjects: projectsRes.rows[0].count,
+      pendingProposals: proposalsRes.rows[0].count,
+      recentActivity: activityRes.rows[0].count
+    });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.get('/api/clients', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM clients ORDER BY created_at DESC');
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.get('/api/clients/:id', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM clients WHERE client_id=$1', [req.params.id]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Client not found' });
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.delete('/api/clients/:id', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM client_messages WHERE client_id=$1', [req.params.id]);
+    await pool.query('DELETE FROM client_tasks WHERE client_id=$1', [req.params.id]);
+    const result = await pool.query('DELETE FROM clients WHERE client_id=$1 RETURNING *', [req.params.id]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Client not found' });
+    res.json({ success: true, deleted: result.rows[0] });
+  } catch (err: any) {
+    console.error(err);
+    res.status(500).json({ error: 'Database error', details: err.message });
+  }
+});
+
+app.post('/api/clients/convert/:icpId', async (req, res) => {
+  try {
+    const icpRes = await pool.query('SELECT * FROM icp_submissions WHERE id=$1', [req.params.icpId]);
+    const lead = icpRes.rows[0];
+    if (!lead) return res.status(404).json({ error: 'Lead not found' });
+    if (lead.status === 'Converted') return res.status(400).json({ error: 'Lead already converted' });
+
+    // Check if client with this email already exists
+    const existingClient = await pool.query('SELECT * FROM clients WHERE email=$1', [lead.email]);
+    if (existingClient.rows.length > 0) {
+      // If client already exists, just update this ICP submission to Converted to get it off the board
+      await pool.query("UPDATE icp_submissions SET status='Converted' WHERE id=$1", [req.params.icpId]);
+      return res.status(400).json({ error: 'A client with this email already exists.' });
+    }
+
+    const clientCountRes = await pool.query('SELECT COUNT(*) FROM clients');
+    const count = parseInt(clientCountRes.rows[0].count) + 1;
+    const clientId = `CLI-${count.toString().padStart(4, '0')}`;
+
+    const result = await pool.query(
+      `INSERT INTO clients (client_id, company_name, contact_name, email, industry, business_model, details, status)
+       VALUES ($1, $2, $3, $4, $5, $6, $7, 'Onboarding') RETURNING *`,
+      [clientId, lead.company_name, lead.contact_name, lead.email, lead.industry, lead.business_model, JSON.stringify(lead)]
+    );
+
+    // Update ICP submission status so it can't be converted again
+    await pool.query("UPDATE icp_submissions SET status='Converted' WHERE id=$1", [req.params.icpId]);
+
+    // Send real email
+    const setupLink = `${process.env.APP_URL || 'http://localhost:3000'}/portal?setup=true&email=${encodeURIComponent(lead.email)}`;
+    
+    try {
+      await transporter.sendMail({
+        from: `"Lumora Admin" <${process.env.GMAIL_USER}>`,
+        to: lead.email,
+        subject: 'Welcome to your Client Portal - Setup Your Account',
+        html: `
+          <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
+            <h2 style="color: #111827;">Welcome to Lumora, ${lead.contact_name}!</h2>
+            <p style="color: #4b5563; line-height: 1.5;">Your client account has been successfully created. You can now access your dedicated workspace to view proposals, manage tasks, and communicate directly with our team.</p>
+            <div style="text-align: center; margin: 30px 0;">
+              <a href="${setupLink}" style="background-color: #5B8EE2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">Setup Your Password</a>
+            </div>
+            <p style="color: #6b7280; font-size: 12px; margin-top: 40px;">If the button doesn't work, copy and paste this link into your browser:<br>${setupLink}</p>
+          </div>
+        `
+      });
+      console.log(`Setup email sent to ${lead.email}`);
+    } catch (emailErr) {
+      console.error('Failed to send email. Check your GMAIL_USER and GMAIL_PASS in .env', emailErr);
+    }
+
+    res.json({ success: true, client: result.rows[0] });
+  } catch (err: any) { 
+    console.error(err);
+    res.status(500).json({ error: 'Database error', details: err.message }); 
+  }
+});
+
+app.get('/api/clients/:id/messages', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM client_messages WHERE client_id=$1 ORDER BY created_at ASC', [req.params.id]);
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.post('/api/clients/:id/messages', async (req, res) => {
+  try {
+    const { sender, message } = req.body;
+    let shouldNotify = false;
+
+    if (sender === 'admin') {
+      // Check if there are any unread messages that we ALREADY sent a notification for.
+      // If none exist, we will send an email for THIS message, and mark it as notification_sent = true.
+      const notifiedCheck = await pool.query(
+        "SELECT id FROM client_messages WHERE client_id=$1 AND sender='admin' AND is_read=FALSE AND notification_sent=TRUE LIMIT 1", 
+        [req.params.id]
+      );
+      if (notifiedCheck.rows.length === 0) {
+        shouldNotify = true;
+      }
+    }
+
+    const result = await pool.query(
+      'INSERT INTO client_messages (client_id, sender, message, notification_sent) VALUES ($1, $2, $3, $4) RETURNING *',
+      [req.params.id, sender, message, shouldNotify]
+    );
+
+    if (shouldNotify) {
+      const clientRes = await pool.query('SELECT contact_name, email FROM clients WHERE client_id=$1', [req.params.id]);
+      if (clientRes.rows.length > 0) {
+        const client = clientRes.rows[0];
+        const portalLink = `${process.env.VITE_APP_URL || 'http://localhost:3000'}/portal/messages`;
+        
+        try {
+          await transporter.sendMail({
+            from: `"Lumora Admin" <${process.env.GMAIL_USER}>`,
+            to: client.email,
+            subject: 'New Message from Lumora Team',
+            html: `
+              <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
+                <h2 style="color: #111827;">New Message, ${client.contact_name}</h2>
+                <p style="color: #4b5563; line-height: 1.5;">You have received a new message regarding your project.</p>
+                <div style="text-align: center; margin: 30px 0;">
+                  <a href="${portalLink}" style="background-color: #5B8EE2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Messages</a>
+                </div>
+              </div>
+            `
+          });
+        } catch (err) { console.error('Email failed:', err); }
+      }
+    }
+
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.put('/api/clients/:id/messages/read', async (req, res) => {
+  try {
+    // When client reads, mark all admin messages as read
+    await pool.query("UPDATE client_messages SET is_read=TRUE WHERE client_id=$1 AND sender='admin'", [req.params.id]);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.post('/api/clients/:id/messages/notify', async (req, res) => {
+  try {
+    const clientRes = await pool.query('SELECT contact_name, email FROM clients WHERE client_id=$1', [req.params.id]);
+    if (clientRes.rows.length > 0) {
+      const client = clientRes.rows[0];
+      const portalLink = `${process.env.VITE_APP_URL || 'http://localhost:3000'}/portal/messages`;
+      try {
+        await transporter.sendMail({
+          from: `"Lumora Admin" <${process.env.GMAIL_USER}>`,
+          to: client.email,
+          subject: 'Reminder: Unread Messages from Lumora',
+          html: `
+            <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
+              <h2 style="color: #111827;">Hello ${client.contact_name},</h2>
+              <p style="color: #4b5563; line-height: 1.5;">This is a friendly reminder that you have unread messages waiting in your client portal.</p>
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="${portalLink}" style="background-color: #5B8EE2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Messages</a>
+              </div>
+            </div>
+          `
+        });
+      } catch (err) { console.error('Email failed:', err); }
+    }
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.put('/api/clients/messages/:id', async (req, res) => {
+  try {
+    const { message } = req.body;
+    const result = await pool.query(
+      'UPDATE client_messages SET message=$1, is_edited=TRUE WHERE id=$2 RETURNING *',
+      [message, req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.delete('/api/clients/messages/:id', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM client_messages WHERE id=$1', [req.params.id]);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+// --- Meetings ---
+app.get('/api/clients/:id/meetings', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM client_meetings WHERE client_id=$1 ORDER BY created_at DESC', [req.params.id]);
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.post('/api/clients/:id/meetings', async (req, res) => {
+  try {
+    const { title, description, option1, option2, option3 } = req.body;
+    const result = await pool.query(
+      'INSERT INTO client_meetings (client_id, title, description, option1, option2, option3) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
+      [req.params.id, title, description, option1, option2, option3]
+    );
+    
+    // Fetch client email to send notification
+    const clientRes = await pool.query('SELECT contact_name, email FROM clients WHERE client_id=$1', [req.params.id]);
+    if (clientRes.rows.length > 0) {
+      const client = clientRes.rows[0];
+      const portalLink = `${process.env.VITE_APP_URL || 'http://localhost:3000'}/portal/meetings`;
+      try {
+        await transporter.sendMail({
+          from: `"Lumora Admin" <${process.env.GMAIL_USER}>`,
+          to: client.email,
+          subject: `Meeting Proposed: ${title}`,
+          html: `
+            <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
+              <h2 style="color: #111827;">Hello ${client.contact_name},</h2>
+              <p style="color: #4b5563; line-height: 1.5;">We have proposed a new meeting regarding: <strong>${title}</strong></p>
+              <p style="color: #4b5563; line-height: 1.5;">Please review the proposed times and select the one that works best for you.</p>
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="${portalLink}" style="background-color: #5B8EE2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">Select Meeting Time</a>
+              </div>
+            </div>
+          `
+        });
+      } catch (err) { console.error('Email failed:', err); }
+    }
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.put('/api/clients/meetings/:id/select', async (req, res) => {
+  try {
+    const { selected_option } = req.body;
+    const result = await pool.query(
+      "UPDATE client_meetings SET selected_option=$1, status='Scheduled' WHERE id=$2 RETURNING *",
+      [selected_option, req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.delete('/api/clients/meetings/:id', async (req, res) => {
+  try {
+    await pool.query('DELETE FROM client_meetings WHERE id=$1', [req.params.id]);
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.put('/api/clients/meetings/:id/complete', async (req, res) => {
+  try {
+    const result = await pool.query(
+      "UPDATE client_meetings SET status='Completed' WHERE id=$1 RETURNING *",
+      [req.params.id]
+    );
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+
+app.get('/api/clients/:id/tasks', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM client_tasks WHERE client_id=$1 ORDER BY created_at ASC', [req.params.id]);
+    res.json(result.rows);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.post('/api/clients/:id/tasks', async (req, res) => {
+  try {
+    const { title, description, start_date, end_date } = req.body;
+    const result = await pool.query(
+      'INSERT INTO client_tasks (client_id, title, description, start_date, end_date) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [req.params.id, title, description, start_date || null, end_date || null]
+    );
+
+    // Fetch client email to send notification
+    const clientRes = await pool.query('SELECT contact_name, email FROM clients WHERE client_id=$1', [req.params.id]);
+    if (clientRes.rows.length > 0) {
+      const client = clientRes.rows[0];
+      const portalLink = `${process.env.VITE_APP_URL || 'http://localhost:3000'}/portal/tasks`;
+      
+      try {
+        await transporter.sendMail({
+          from: `"Lumora Admin" <${process.env.GMAIL_USER}>`,
+          to: client.email,
+          subject: `New Goal Assigned: ${title}`,
+          html: `
+            <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
+              <h2 style="color: #111827;">New Goal Added, ${client.contact_name}</h2>
+              <p style="color: #4b5563; line-height: 1.5;">Our team has assigned a new goal/task to your project: <strong>"${title}"</strong>.</p>
+              ${description ? `<p style="color: #4b5563; line-height: 1.5;"><em>${description}</em></p>` : ''}
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="${portalLink}" style="background-color: #5B8EE2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Your Goals</a>
+              </div>
+            </div>
+          `
+        });
+      } catch (emailErr) {
+        console.error('Failed to send task email', emailErr);
+      }
+    }
+
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.put('/api/clients/tasks/:taskId', async (req, res) => {
+  try {
+    // Determine which fields are provided to update
+    const { title, description, start_date, end_date, is_completed } = req.body;
+    
+    // Build dynamic query
+    let queryArgs: any[] = [];
+    let setClauses = [];
+    
+    if (title !== undefined) {
+      queryArgs.push(title);
+      setClauses.push(`title = $${queryArgs.length}`);
+    }
+    if (description !== undefined) {
+      queryArgs.push(description);
+      setClauses.push(`description = $${queryArgs.length}`);
+    }
+    if (start_date !== undefined) {
+      queryArgs.push(start_date || null);
+      setClauses.push(`start_date = $${queryArgs.length}`);
+    }
+    if (end_date !== undefined) {
+      queryArgs.push(end_date || null);
+      setClauses.push(`end_date = $${queryArgs.length}`);
+    }
+    if (is_completed !== undefined) {
+      queryArgs.push(is_completed);
+      setClauses.push(`is_completed = $${queryArgs.length}`);
+    }
+    
+    if (setClauses.length === 0) return res.json({ success: true });
+    
+    queryArgs.push(req.params.taskId);
+    const query = `UPDATE client_tasks SET ${setClauses.join(', ')} WHERE id = $${queryArgs.length} RETURNING *`;
+    
+    const result = await pool.query(query, queryArgs);
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+function hashPassword(password: string) {
+  return crypto.createHash('sha256').update(password).digest('hex');
+}
+
+app.post('/api/clients/set-password', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const hashed = hashPassword(password);
+    const result = await pool.query(
+      'UPDATE clients SET password_hash=$1 WHERE email=$2 RETURNING *',
+      [hashed, email]
+    );
+    if (result.rows.length === 0) return res.status(404).json({ error: 'Client not found.' });
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.post('/api/clients/login', async (req, res) => {
+  try {
+    const { email, password } = req.body;
+    const result = await pool.query('SELECT * FROM clients WHERE email=$1', [email]);
+    if (result.rows.length === 0) return res.status(404).json({ error: 'No client account found for this email.' });
+    
+    const client = result.rows[0];
+    if (!client.password_hash) {
+      return res.status(400).json({ error: 'Account not set up. Please use your setup link.' });
+    }
+    
+    if (client.password_hash !== hashPassword(password)) {
+      return res.status(401).json({ error: 'Invalid password.' });
+    }
+    
+    res.json({ success: true, client });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+// --- Proposals Routes ---
+app.get('/api/clients/:id/proposals', async (req, res) => {
+  try {
+    const result = await pool.query('SELECT * FROM client_proposals WHERE client_id=$1 ORDER BY created_at DESC', [req.params.id]);
+    res.json({ proposals: result.rows });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.post('/api/clients/:id/proposals', async (req, res) => {
+  try {
+    const { title, file_url, amount, status } = req.body;
+    const result = await pool.query(
+      'INSERT INTO client_proposals (client_id, title, file_url, amount, status) VALUES ($1, $2, $3, $4, $5) RETURNING *',
+      [req.params.id, title, file_url, amount, status || 'Pending']
+    );
+
+    // Fetch client email to send notification
+    const clientRes = await pool.query('SELECT contact_name, email FROM clients WHERE client_id=$1', [req.params.id]);
+    if (clientRes.rows.length > 0) {
+      const client = clientRes.rows[0];
+      const portalLink = `${process.env.VITE_APP_URL || 'http://localhost:3000'}/portal/proposals`;
+      
+      try {
+        await transporter.sendMail({
+          from: `"Lumora Admin" <${process.env.GMAIL_USER}>`,
+          to: client.email,
+          subject: `New Proposal/Invoice: ${title}`,
+          html: `
+            <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
+              <h2 style="color: #111827;">New Proposal Received, ${client.contact_name}</h2>
+              <p style="color: #4b5563; line-height: 1.5;">A new proposal/invoice titled <strong>"${title}"</strong> for the amount of <strong>$${amount}</strong> has been uploaded to your client portal.</p>
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="${portalLink}" style="background-color: #5B8EE2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Proposal & Pay</a>
+              </div>
+              <p style="color: #6b7280; font-size: 12px; margin-top: 40px;">If the button doesn't work, copy and paste this link into your browser:<br>${portalLink}</p>
+            </div>
+          `
+        });
+        console.log(`Proposal email sent to ${client.email}`);
+      } catch (emailErr) {
+        console.error('Failed to send proposal email', emailErr);
+      }
+    }
+
+    res.json({ success: true, proposal: result.rows[0] });
+  } catch (err) { 
+    console.error(err);
+    res.status(500).json({ error: 'Database error' }); 
+  }
+});
+
+app.post('/api/clients/proposals/:id/notify', async (req, res) => {
+  try {
+    const proposalRes = await pool.query('SELECT * FROM client_proposals WHERE id=$1', [req.params.id]);
+    if (proposalRes.rows.length === 0) return res.status(404).json({ error: 'Proposal not found' });
+    const proposal = proposalRes.rows[0];
+
+    const clientRes = await pool.query('SELECT contact_name, email FROM clients WHERE client_id=$1', [proposal.client_id]);
+    if (clientRes.rows.length > 0) {
+      const client = clientRes.rows[0];
+      const portalLink = `${process.env.VITE_APP_URL || 'http://localhost:3000'}/portal/proposals`;
+      
+      try {
+        await transporter.sendMail({
+          from: `"Lumora Admin" <${process.env.GMAIL_USER}>`,
+          to: client.email,
+          subject: `Reminder: Action Required on Proposal "${proposal.title}"`,
+          html: `
+            <div style="font-family: sans-serif; max-w: 600px; margin: 0 auto; padding: 20px; border: 1px solid #e5e7eb; border-radius: 8px;">
+              <h2 style="color: #111827;">Hello ${client.contact_name},</h2>
+              <p style="color: #4b5563; line-height: 1.5;">This is a friendly reminder that you have a pending proposal (<strong>${proposal.title}</strong>) waiting for your review.</p>
+              <div style="text-align: center; margin: 30px 0;">
+                <a href="${portalLink}" style="background-color: #5B8EE2; color: white; padding: 12px 24px; text-decoration: none; border-radius: 6px; font-weight: bold;">View Proposal</a>
+              </div>
+            </div>
+          `
+        });
+      } catch (err) { console.error('Email failed:', err); }
+    }
+    res.json({ success: true });
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
+app.put('/api/clients/proposals/:id', async (req, res) => {
+  try {
+    const { status } = req.body;
+    const result = await pool.query(
+      'UPDATE client_proposals SET status=$1 WHERE id=$2 RETURNING *',
+      [status, req.params.id]
+    );
+    res.json({ success: true, proposal: result.rows[0] });
   } catch (err) { res.status(500).json({ error: 'Database error' }); }
 });
 
