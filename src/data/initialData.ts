@@ -83,8 +83,9 @@ export const initialSiteContent: SiteContent = {
       "id": "diagnose-marketing",
       "title": "Diagnose Marketing",
       "shortDescription": "Identify growth blockers, wasted ad spend, and hidden revenue opportunities.",
-      "fullDescription": "Before scaling your marketing efforts, you need to know exactly what is working, what is wasting budget, and where your hidden growth opportunities lie. Our Marketing Diagnosis process dissects your entire digital footprint—from technical SEO and paid ad performance to conversion funnels and competitor gaps.",
+      "fullDescription": "Problem: Scaling without clarity leads to wasted budget, stalled growth, and missed opportunities hidden within your own data.\n\nSolution: We conduct a forensic Marketing Diagnosis of your entire digital footprint—from technical SEO and paid ad performance to conversion funnels and competitor gaps.\n\nAction: Stop guessing and start scaling with a clear, prioritized action plan based on hard data.",
       "iconName": "Activity",
+      "image": "/images/services/diagnose_marketing.png",
       "features": ["Technical SEO Audits", "Paid Media Spend Analysis", "Conversion Rate Optimization (CRO)", "Competitor Benchmarking"],
       "deliverables": ["Comprehensive Audit Report", "Prioritized Action Plan", "Tech Stack Review", "Strategy Alignment Session"],
       "recommendedFor": "Businesses experiencing stagnant growth or inefficient ad spend",
@@ -94,8 +95,9 @@ export const initialSiteContent: SiteContent = {
       "id": "target-audience-reach",
       "title": "Target Audience Reach",
       "shortDescription": "Identify, isolate, and engage your exact demographic with surgical precision.",
-      "fullDescription": "Broad, untargeted marketing is a massive drain on your budget. Target Audience Reach is about identifying and engaging the exact demographic, firmographic, and psychographic profiles most likely to buy your product. We leverage advanced data modeling and programmatic networks to put your brand directly in front of the right people—locally, nationally, or globally.",
+      "fullDescription": "Problem: Broad, untargeted marketing is a massive drain on your budget. Showing ads to people who will never buy your product drives up costs and destroys your ROI.\n\nSolution: We use advanced data modeling and programmatic networks to identify, isolate, and engage the exact demographic, firmographic, and psychographic profiles most likely to convert.\n\nAction: Stop paying for empty impressions and put your brand directly in front of highly qualified buyers—locally, nationally, or globally.",
       "iconName": "Crosshair",
+      "image": "/images/services/strategy_creation.png",
       "features": ["Persona & Intent Mapping", "Programmatic ABM Targeting", "Geo-Fencing & Local Targeting", "Cross-Device Retargeting"],
       "deliverables": ["Audience Intelligence Report", "Custom Audience Building", "Programmatic Media Plan", "Cost-Per-Acquisition Optimization"],
       "recommendedFor": "B2B Enterprises, Niche Retailers, and Event Promoters",
@@ -105,8 +107,9 @@ export const initialSiteContent: SiteContent = {
       "id": "search-engine-optimization",
       "title": "Search Engine Optimization (SEO)",
       "shortDescription": "Dominate search results and capture high-intent, revenue-generating organic traffic.",
-      "fullDescription": "Being on the second page of Google is the same as not existing. We build robust, technically sound, and content-rich SEO strategies that drive sustainable organic traffic. Our approach goes beyond vanity metrics; we focus on ranking for the revenue-generating keywords that your ideal customers are actively searching for.",
+      "fullDescription": "Problem: Being on the second page of Google is the same as not existing. You are losing high-intent customers to competitors simply because they rank higher than you.\n\nSolution: We build robust, technically sound, and content-rich SEO strategies that drive sustainable organic traffic. We ignore vanity metrics and focus solely on revenue-generating keywords.\n\nAction: Dominate search results, establish absolute topical authority, and capture buyers exactly when they are searching for your solution.",
       "iconName": "Search",
+      "image": "/images/services/seo_marketing_1785498386235.png",
       "features": ["Technical SEO Audits", "On-Page & Keyword Strategy", "Topical Authority Content", "High-Authority Link Building"],
       "deliverables": ["Keyword Mapping Blueprint", "Technical Remediation Plan", "Monthly Link Reports", "Organic Traffic Dashboards"],
       "recommendedFor": "B2B SaaS, E-commerce, and high-growth startups",
@@ -116,8 +119,9 @@ export const initialSiteContent: SiteContent = {
       "id": "social-media-marketing",
       "title": "Social Media Marketing",
       "shortDescription": "Build brand authority, foster trust, and drive active audience engagement.",
-      "fullDescription": "Social media is no longer just a branding exercise; it is a primary driver of customer acquisition and retention. We build dynamic, platform-specific strategies that turn passive scrollers into active brand advocates. From high-production video content to community management, we ensure your brand voice cuts through the noise and drives measurable business impact.",
+      "fullDescription": "Problem: Most brands treat social media as an afterthought, posting generic content that gets ignored by passive scrollers and yields zero ROI.\n\nSolution: We build dynamic, platform-specific strategies that capture attention. From high-production short-form video to authoritative B2B content, we engineer every post to drive engagement.\n\nAction: Turn passive scrollers into active brand advocates and generate measurable business impact through a commanding social presence.",
       "iconName": "Share2",
+      "image": "/images/services/social_media_marketing_1785498376145.png",
       "features": ["Short-Form Video Production", "B2B LinkedIn Authority", "Community Management", "Influencer Partnerships"],
       "deliverables": ["Social Strategy Playbook", "Monthly Content Calendar", "Video & Graphic Assets", "Engagement & Growth Reports"],
       "recommendedFor": "DTC E-commerce, B2B Thought Leaders, and SaaS Brands",
@@ -127,8 +131,9 @@ export const initialSiteContent: SiteContent = {
       "id": "paid-advertising-campaigns",
       "title": "Paid Advertising Campaigns",
       "shortDescription": "Highly engineered paid media ecosystems that drive immediate, measurable ROI.",
-      "fullDescription": "Paid advertising is the fastest way to scale your revenue—if executed correctly. We don't just 'run ads'; we build highly engineered paid media ecosystems across search, social, and programmatic networks. By combining relentless A/B testing with advanced bidding algorithms, we eliminate wasted spend and drive highly qualified leads and direct sales.",
+      "fullDescription": "Problem: Brands often treat paid ads like a lottery—throwing budget at generic search terms and hoping for conversions, leading to exhausted budgets and minimal return.\n\nSolution: We engineer high-precision paid media ecosystems across search, social, and programmatic networks. By combining relentless A/B testing with advanced bidding algorithms, we eliminate wasted spend.\n\nAction: Dominate your market with highly qualified leads and direct sales driven by measurable ROI.",
       "iconName": "Megaphone",
+      "image": "/images/services/paid_advertising_new.jpg",
       "features": ["Google & Bing Search Ads", "Paid Social Campaigns", "Programmatic Display", "E-Commerce Shopping Ads"],
       "deliverables": ["Funnel Architecture Map", "Ad Creative & Copy", "Algorithmic Bidding Strategy", "Daily ROAS Monitoring"],
       "recommendedFor": "Aggressive Growth Companies and Performance-Driven E-Commerce",
@@ -137,11 +142,12 @@ export const initialSiteContent: SiteContent = {
     {
       "id": "performance-marketing",
       "title": "Performance Marketing",
-      "shortDescription": "Data-driven marketing that strictly aligns every dollar spent with bottom-line revenue.",
-      "fullDescription": "Traditional marketing hopes for results; Performance Marketing guarantees accountability. We align every marketing dollar spent directly with your bottom line. By obsessing over metrics like Cost Per Acquisition (CPA), Customer Lifetime Value (LTV), and Return on Ad Spend (ROAS), we build growth engines that scale profitably and predictably.",
+      "shortDescription": "Engineer mathematically rigorous, global campaigns across major networks to scale your international ad spend profitably and aggressively.",
+      "fullDescription": "Problem: Global brands often lose massive amounts of capital by deploying generic, unoptimized campaigns across diverse international markets, resulting in low ROI and wasted spend.\n\nSolution: We replace guesswork with data science. We build highly tuned, multi-region growth engines that obsess over hard metrics like CPA and ROAS, ensuring every dollar is aligned with your bottom line.\n\nAction: Deploy aggressive, predictable scaling strategies and dominate your global market with absolute mathematical certainty.",
       "iconName": "Target",
-      "features": ["Conversion Rate Optimization", "Multi-Touch Attribution", "Affiliate Marketing", "LTV/CAC Optimization"],
-      "deliverables": ["Performance Growth Model", "Server-Side Tracking Setup", "A/B Testing Roadmap", "Cohort Analysis Reports"],
+      "image": "/images/services/performance_marketing_1785498399389.png",
+      "features": ["Global Omnichannel Targeting", "High-Tempo International A/B Testing", "Borderless Attribution Tracking", "Aggressive Global Budget Scaling"],
+      "deliverables": ["Global Tracking & Attribution Setup", "Culturally-Adapted Creative Assets", "Real-time Global Analytics Dashboard", "Weekly International Scaling Reports"],
       "recommendedFor": "Scale-Ups, E-Commerce Brands, and Data-Driven Enterprises",
       "badge": "Scalable Growth"
     },
@@ -149,8 +155,9 @@ export const initialSiteContent: SiteContent = {
       "id": "demand-generation",
       "title": "Demand Generation",
       "shortDescription": "Create awareness, educate your market, and build a sustainable pipeline of high-intent buyers.",
-      "fullDescription": "Stop competing solely for the 3% of the market that is ready to buy today. Our Demand Generation strategies educate, engage, and nurture the remaining 97% of your total addressable market. By distributing high-value content and building omnipresent brand authority, we ensure that when prospects are ready to buy, you are their only logical choice.",
+      "fullDescription": "Problem: Most businesses compete solely for the 3% of the market ready to buy today, ignoring the massive revenue potential of the remaining 97%.\n\nSolution: We build omnipresent brand authority by distributing high-value educational content across multiple channels. We engage and nurture your total addressable market long before they realize they need you.\n\nAction: Become the undisputed industry authority so that when prospects are finally ready to buy, you are their only logical choice.",
       "iconName": "TrendingUp",
+      "image": "/images/services/demand_generation.png",
       "features": ["Omnichannel Content Distribution", "Account-Based Marketing (ABM)", "Webinar & Event Marketing", "Dark Social Strategies"],
       "deliverables": ["Demand Gen Strategy Playbook", "Content Amplification Funnels", "Sales & Marketing Alignment", "Brand Awareness Metrics"],
       "recommendedFor": "B2B Enterprises, SaaS, and high-ticket service providers",
@@ -160,8 +167,9 @@ export const initialSiteContent: SiteContent = {
       "id": "lead-generation",
       "title": "Lead Generation",
       "shortDescription": "Build a predictable pipeline of high-intent, qualified sales prospects.",
-      "fullDescription": "Traffic means nothing if it doesn't convert into sales conversations. Our Lead Generation services are ruthlessly focused on one thing: filling your sales pipeline with qualified prospects who have an immediate need for your solution. We optimize the entire conversion journey to ensure maximum lead velocity at the lowest possible cost.",
+      "fullDescription": "Problem: Traffic means nothing if it doesn't convert. Companies waste thousands driving visitors to their site, only to see them leave without ever starting a sales conversation.\n\nSolution: We build high-velocity acquisition funnels ruthlessly focused on conversion. We optimize the entire journey—from the initial click to the final form submission—ensuring maximum lead velocity.\n\nAction: Fill your sales pipeline with qualified prospects who have an immediate need for your solution, at the lowest possible cost.",
       "iconName": "Users",
+      "image": "/images/services/lead_generation_1785498418027.png",
       "features": ["Inbound Lead Funnels", "Outbound Automation", "Lead Magnet Creation", "Automated Lead Scoring"],
       "deliverables": ["Conversion-Optimized Landing Pages", "CRM Integration Setup", "Email Nurture Sequences", "Cost-Per-Lead (CPL) Tracking"],
       "recommendedFor": "B2B Services, Consultancies, and High-Ticket Local Services",
@@ -171,8 +179,9 @@ export const initialSiteContent: SiteContent = {
       "id": "retargeting-marketing",
       "title": "Retargeting Marketing",
       "shortDescription": "Recapture lost traffic and turn hesitant visitors into high-value customers.",
-      "fullDescription": "97% of your website visitors will leave without taking action. If you aren't bringing them back, you are leaving massive amounts of revenue on the table. Our Retargeting Marketing services deploy highly personalized, cross-channel campaigns that follow your high-intent prospects across the web, reminding them why they need your solution and giving them the exact push they need to convert.",
+      "fullDescription": "Problem: 97% of your website visitors will leave without taking action. If you aren't actively bringing them back, you are abandoning massive amounts of hard-earned revenue to your competitors.\n\nSolution: We deploy highly personalized, cross-channel retargeting campaigns that track your high-intent prospects across the web, overcoming objections and reminding them why they need you.\n\nAction: Recapture lost traffic and turn hesitant visitors into high-value customers with the exact push they need to finally convert.",
       "iconName": "RotateCcw",
+      "image": "/images/services/retargeting_marketing_1785498428208.png",
       "features": ["Dynamic E-Commerce Retargeting", "Cross-Channel Pixel Tracking", "Cart Abandonment Sequences", "Sequential Ad Storytelling"],
       "deliverables": ["Omnipresence Pixel Setup", "Dynamic Ad Creative", "Audience Segmentation Strategy", "Recovery Revenue Dashboard"],
       "recommendedFor": "E-Commerce, SaaS, and High-Consideration B2B Buyers",
@@ -182,8 +191,9 @@ export const initialSiteContent: SiteContent = {
       "id": "influencer-marketing",
       "title": "Influencer Marketing",
       "shortDescription": "Partner with highly trusted creators to drive massive authentic brand awareness.",
-      "fullDescription": "Consumers trust people, not logos. Influencer Marketing is no longer about vanity metrics or generic endorsements; it is about partnering with highly trusted creators who can authentically integrate your product into their audience's daily lives. We manage the entire lifecycle—from creator discovery and rigorous contract negotiation to campaign execution and strict ROI tracking.",
+      "fullDescription": "Problem: Consumers no longer trust corporate logos or generic ads. If your brand relies solely on traditional advertising, you are missing out on the massive influence of creator-led recommendations.\n\nSolution: We partner your brand with highly trusted creators who can authentically integrate your product into their audience's daily lives. We handle everything from discovery and negotiation to strict ROI tracking.\n\nAction: Bypass ad blockers and skepticism by borrowing the trust of authentic influencers to drive massive, targeted brand awareness and sales.",
       "iconName": "Star",
+      "image": "/images/services/influencer_marketing_new.jpg",
       "features": ["Micro-Influencer Campaigns", "B2B Thought Leader Collabs", "User-Generated Content (UGC)", "Affiliate Creator Networks"],
       "deliverables": ["Creator Discovery & Vetting", "Creative Briefs & Contracts", "Product Seeding Logistics", "Promo Code ROI Tracking"],
       "recommendedFor": "DTC Brands, App Developers, and B2B SaaS Innovators",
@@ -193,8 +203,9 @@ export const initialSiteContent: SiteContent = {
       "id": "business-branding",
       "title": "Business Branding",
       "shortDescription": "Build a distinctive business identity, command premium pricing, and secure lasting brand loyalty.",
-      "fullDescription": "Your brand is more than just a logo; it is the psychological relationship between your company and your consumers. We build robust Business Branding strategies that articulate your unique value proposition, establish market authority, and create memorable visual and verbal identities that resonate with your target audience.",
+      "fullDescription": "Problem: If your brand looks and sounds like every other competitor in your space, you are forced to compete purely on price, killing your profit margins.\n\nSolution: We build robust, psychologically-driven Business Branding strategies that articulate a completely unique value proposition, establishing unshakeable market authority.\n\nAction: Build a distinctive corporate identity that commands premium pricing, secures lasting loyalty, and makes your competitors utterly irrelevant.",
       "iconName": "Briefcase",
+      "image": "/images/services/brand_management_hero.jpg",
       "features": ["Brand Strategy & Positioning", "Visual Identity Design", "Brand Voice & Messaging", "Comprehensive Corporate Guidelines"],
       "deliverables": ["Brand Architecture Blueprint", "Logo & Typography Suites", "Brand Tone of Voice Document", "Complete Brand Book"],
       "recommendedFor": "Startups, enterprises scaling up, and legacy brands seeking a refresh",
@@ -204,8 +215,9 @@ export const initialSiteContent: SiteContent = {
       "id": "personal-branding",
       "title": "Personal Branding",
       "shortDescription": "Become the recognized authority in your industry and monetize your personal brand.",
-      "fullDescription": "In the modern digital economy, people buy from people they trust. A strong personal brand elevates you from a commodity to an industry thought leader. We help founders, executives, and industry experts build, scale, and monetize their personal brands through targeted content, PR, and strategic positioning.",
+      "fullDescription": "Problem: People buy from people they trust, not faceless entities. If you lack a strong personal brand, you are missing out on inbound leads, speaking opportunities, and industry influence.\n\nSolution: We help founders, executives, and experts build, scale, and monetize their personal brands through highly targeted ghostwriting, PR, and strategic positioning.\n\nAction: Elevate yourself from a commodity to the recognized thought leader in your industry and turn your reputation into a revenue-generating asset.",
       "iconName": "User",
+      "image": "/images/services/personal_branding_hero.jpg",
       "features": ["Executive Positioning", "LinkedIn Thought Leadership", "Digital PR & Media Features", "Content Creation & Video"],
       "deliverables": ["Personal Brand Strategy", "Ghostwritten Content", "Media Kit", "Speaking Engagement Outreach"],
       "recommendedFor": "Founders, C-Level Executives, and Industry Experts",
@@ -215,8 +227,9 @@ export const initialSiteContent: SiteContent = {
       "id": "brand-management",
       "title": "Brand Management",
       "shortDescription": "Protect your digital reputation, ensure brand consistency, and track equity over time.",
-      "fullDescription": "A brand is not built in a day, but its reputation can be damaged in seconds. Comprehensive Brand Management goes beyond visual consistency; it's about actively monitoring sentiment, protecting digital equity, and ensuring brand compliance across all touchpoints. We serve as the guardians of your brand's integrity.",
+      "fullDescription": "Problem: A brand takes years to build, but a fragmented digital presence or a single PR crisis can destroy its equity in seconds.\n\nSolution: We act as the vigilant guardians of your brand's integrity, actively monitoring sentiment, enforcing strict compliance across all touchpoints, and managing your digital assets.\n\nAction: Protect your hard-earned reputation, ensure flawless consistency at scale, and track your growing market equity with bulletproof brand management.",
       "iconName": "Shield",
+      "image": "/images/services/brand_management_new.jpg",
       "features": ["Reputation Management", "Brand Compliance", "Digital Asset Management", "Sentiment Analysis"],
       "deliverables": ["Brand Monitoring Dashboard", "Crisis Response Playbook", "Asset Library Setup", "Quarterly Equity Reports"],
       "recommendedFor": "Established enterprises, public figures, and scaling organizations",
@@ -226,8 +239,9 @@ export const initialSiteContent: SiteContent = {
       "id": "ai-marketing-automation",
       "title": "AI Marketing Automation",
       "shortDescription": "Hyper-personalize customer journeys, predict buying behaviors, and automate complex workflows at scale.",
-      "fullDescription": "Stop relying on manual, error-prone tasks. AI Marketing Automation allows you to scale your efforts exponentially without scaling your headcount. From AI-driven email sequencing and dynamic ad creative to intelligent chatbots and CRM syncing, we implement the technology that allows your team to do more with less while driving higher conversions.",
+      "fullDescription": "Problem: Relying on manual, error-prone tasks severely caps your growth. If you are doing everything by hand, you are burning cash on inefficiencies and losing prospects to faster competitors.\n\nSolution: We integrate cutting-edge AI Marketing Automation that predicts buying behaviors, triggers hyper-personalized email sequences, and deploys intelligent 24/7 chatbots.\n\nAction: Exponentially scale your marketing output and dramatically increase conversion rates without ever needing to scale your headcount.",
       "iconName": "Cpu",
+      "image": "/images/services/ai_marketing_1785498439194.png",
       "features": ["Predictive Lead Scoring", "Conversational AI Chatbots", "Dynamic Email Sequences", "Programmatic Ad Buying"],
       "deliverables": ["Automation Architecture Blueprint", "CRM & API Integrations", "Custom Chatbot Deployment", "Machine Learning Optimization"],
       "recommendedFor": "Data-driven companies, E-Commerce, and high-volume B2B sales teams",
@@ -237,8 +251,9 @@ export const initialSiteContent: SiteContent = {
       "id": "expert-monthly-audit",
       "title": "Expert Monthly Audit",
       "shortDescription": "Continuous oversight, forensic analysis, and strategic alignment for your digital ecosystem.",
-      "fullDescription": "The digital landscape changes daily—what worked last month might be wasting budget today. Our Expert Monthly Audit service provides ongoing, rigorous oversight of your entire marketing ecosystem. We act as an external board of advisors, evaluating your team's execution, auditing ad accounts for inefficiencies, and ensuring your strategy stays aligned with your revenue goals.",
+      "fullDescription": "Problem: What worked last month might be wasting budget today. Without objective, expert oversight, hidden inefficiencies will silently drain your ROI and slow your growth.\n\nSolution: We act as your external board of advisors, providing rigorous monthly audits of your entire ecosystem to catch technical errors, stop wasted ad spend, and evaluate your team's execution.\n\nAction: Protect your budget and maximize your performance with a forensic deep-dive that ensures your overarching strategy stays perfectly aligned with your revenue goals.",
       "iconName": "FileSearch",
+      "image": "/images/services/monthly_audit.png",
       "features": ["Paid Media Forensic Audits", "Technical SEO Tracking", "Conversion Funnel Analysis", "Competitor Movement Tracking"],
       "deliverables": ["Executive Strategy Briefing", "Actionable Fix Roadmap", "Monthly Advisory Call", "Algorithmic Diagnostics"],
       "recommendedFor": "Companies with in-house teams or multiple agency partners",
@@ -1245,7 +1260,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-diagnose-marketing",
         "type": "overview",
         "title": "Stop Guessing. Start Scaling with a Data-Driven Marketing Diagnosis.",
-        "content": "Before investing heavily in new campaigns, you need absolute clarity on your current performance. Our Marketing Diagnosis process dissects your entire digital ecosystem—identifying technical roadblocks, wasted advertising budget, broken conversion funnels, and untapped market opportunities. We provide a clear, actionable roadmap to turn inefficiencies into profitable growth.",
+        "content": "Problem: Before investing heavily in new campaigns, most brands lack absolute clarity on their current performance, leading to wasted advertising budget and broken conversion funnels.\n\nSolution: Our Marketing Diagnosis process dissects your entire digital ecosystem—identifying technical roadblocks and untapped market opportunities to stop the bleeding.\n\nAction: We provide a clear, actionable roadmap to turn inefficiencies into profitable growth.",
         "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
         "bullets": []
       },
@@ -1254,12 +1269,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "What We Analyze",
         "content": "A 360-degree deep dive into your digital marketing ecosystem.",
+        "mediaUrl": "/images/services/diagnose_marketing.png",
         "cards": [
-          { "id": "card-1", "title": "SEO & Organic Traffic", "description": "Checking indexability, keyword gaps, backlink health, and content relevancy.", "iconName": "Search" },
-          { "id": "card-2", "title": "Paid Media & Advertising", "description": "Auditing ROAS, Cost-Per-Acquisition, bidding strategies, and campaign structure.", "iconName": "MousePointerClick" },
-          { "id": "card-3", "title": "Conversion Rate (CRO)", "description": "Analyzing user journeys, landing page friction, and lead capture forms.", "iconName": "TrendingUp" },
-          { "id": "card-4", "title": "Competitor Benchmarking", "description": "Identifying gaps in your market positioning and uncovering their strategies.", "iconName": "Crosshair" },
-          { "id": "card-5", "title": "Tech Stack & Analytics", "description": "Ensuring tracking pixels, GA4, and CRMs are accurately aligned and firing.", "iconName": "Settings" }
+          { "id": "card-1", "title": "SEO & Organic Traffic", "description": "Uncover hidden keyword opportunities and technical fixes to dominate search rankings.", "iconName": "Search" },
+          { "id": "card-2", "title": "Paid Media & Advertising", "description": "Identify wasted ad spend and optimize bidding strategies to maximize your ROAS.", "iconName": "MousePointerClick" },
+          { "id": "card-3", "title": "Conversion Rate (CRO)", "description": "Eliminate landing page friction and streamline user journeys to capture more leads.", "iconName": "TrendingUp" },
+          { "id": "card-4", "title": "Competitor Benchmarking", "description": "Reverse-engineer your top competitors to steal market share and outperform them.", "iconName": "Crosshair" },
+          { "id": "card-5", "title": "Tech Stack & Analytics", "description": "Ensure perfect data accuracy across tracking pixels and CRMs for confident decision-making.", "iconName": "Settings" }
         ]
       },
       {
@@ -1267,13 +1283,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "Our Diagnostic Process",
         "content": "We use a proven, data-first approach to uncover inefficiencies and map out a strategic recovery and growth plan.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Discovery & Data Collection", "description": "We gather historical data, gain access to your platforms, and align on business goals." },
-          { "id": "hw-2", "title": "Technical Deep Dive", "description": "Our experts manually audit your ad accounts, website code, and tracking systems." },
-          { "id": "hw-3", "title": "Competitor & Market Analysis", "description": "We evaluate your positioning against top industry competitors to find strategic gaps." },
-          { "id": "hw-4", "title": "Strategic Roadmapping", "description": "We compile our findings into a prioritized, actionable growth roadmap." },
-          { "id": "hw-5", "title": "Implementation Handoff", "description": "We review the plan with you and seamlessly transition into execution mode." }
+          { "id": "hw-1", "title": "Discovery & Data Collection", "description": "We extract raw data from your platforms to establish an absolute baseline of truth for your business." },
+          { "id": "hw-2", "title": "Technical Deep Dive", "description": "We forensically audit your ad accounts and code to pinpoint exactly where you are losing money." },
+          { "id": "hw-3", "title": "Competitor & Market Analysis", "description": "We decode your competitors' top-performing strategies to reveal vulnerabilities you can exploit." },
+          { "id": "hw-4", "title": "Strategic Roadmapping", "description": "We build a step-by-step, mathematically sound execution plan designed for immediate ROI recovery." },
+          { "id": "hw-5", "title": "Implementation Handoff", "description": "We align your team and ours to immediately deploy fixes and stop your revenue bleed." }
         ]
       },
       {
@@ -1344,7 +1360,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-target-audience-reach",
         "type": "overview",
         "title": "Precision Targeting. Global Scale.",
-        "content": "Broad, 'spray and pray' marketing is a massive drain on your budget. Target Audience Reach is about identifying, isolating, and engaging the exact demographic, firmographic, and psychographic profiles most likely to buy your product. We leverage advanced 1st-party data modeling and programmatic networks to put your brand directly in front of the right decision-makers—whether they are a mile away or across the globe.",
+        "content": "Problem: Broad, 'spray and pray' marketing is a massive drain on your budget. Serving ads to people who will never buy your product drives up acquisition costs and destroys ROI.\n\nSolution: We use advanced 1st-party data modeling and programmatic networks to identify, isolate, and engage the exact profiles most likely to buy your product.\n\nAction: Stop paying for empty impressions and put your brand directly in front of the right decision-makers—whether they are a mile away or across the globe.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
         "bullets": []
       },
@@ -1353,12 +1369,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Audience Reach Capabilities",
         "content": "How we find and engage your ideal buyers across the digital landscape.",
+        "mediaUrl": "/images/services/strategy_creation.png",
         "cards": [
-          { "id": "card-1", "title": "Persona Mapping", "description": "Creating hyper-accurate buyer profiles based on real-world data and intent signals.", "iconName": "Users" },
-          { "id": "card-2", "title": "Programmatic Display", "description": "Targeting users across millions of premium sites in real-time.", "iconName": "Monitor" },
-          { "id": "card-3", "title": "Geo-Fencing", "description": "Hyper-local mobile targeting for physical events, competitors, or storefronts.", "iconName": "MapPin" },
-          { "id": "card-4", "title": "Account-Based Targeting", "description": "Isolating C-level decision-makers at specific target companies.", "iconName": "Briefcase" },
-          { "id": "card-5", "title": "Cross-Device Retargeting", "description": "Following high-intent users seamlessly across mobile, desktop, and CTV.", "iconName": "Smartphone" }
+          { "id": "card-1", "title": "Persona Mapping", "description": "Eliminate guesswork by building hyper-accurate buyer profiles based on real-world intent signals.", "iconName": "Users" },
+          { "id": "card-2", "title": "Programmatic Display", "description": "Dominate your industry by placing your brand on millions of premium sites exactly when buyers are active.", "iconName": "Monitor" },
+          { "id": "card-3", "title": "Geo-Fencing", "description": "Steal foot traffic by deploying hyper-local mobile targeting around your competitors' physical locations.", "iconName": "MapPin" },
+          { "id": "card-4", "title": "Account-Based Targeting", "description": "Bypass gatekeepers and land enterprise deals by isolating C-level decision-makers at specific companies.", "iconName": "Briefcase" },
+          { "id": "card-5", "title": "Cross-Device Retargeting", "description": "Stay top-of-mind and drive conversions by following high-intent users seamlessly across all their screens.", "iconName": "Smartphone" }
         ]
       },
       {
@@ -1366,13 +1383,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "The Targeting Methodology",
         "content": "A scientific approach to eliminating wasted ad impressions.",
-        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Audience Intelligence", "description": "Analyzing your 1st-party CRM data to understand who your best customers actually are." },
-          { "id": "hw-2", "title": "Lookalike Modeling", "description": "Using machine learning algorithms to find new users who match your best buyers." },
-          { "id": "hw-3", "title": "Platform Selection", "description": "Choosing the right digital networks based on B2B vs B2C intent and media consumption habits." },
-          { "id": "hw-4", "title": "Creative Personalization", "description": "Dynamically adapting ad messaging to speak directly to specific audience segments." },
-          { "id": "hw-5", "title": "Performance Optimization", "description": "Continuously trimming wasted impressions to lower your overall Cost Per Acquisition." }
+          { "id": "hw-1", "title": "Audience Intelligence", "description": "We mine your CRM data to identify the exact traits of your most profitable customers." },
+          { "id": "hw-2", "title": "Lookalike Modeling", "description": "We train advanced machine learning algorithms to hunt down and acquire new users who perfectly match your best buyers." },
+          { "id": "hw-3", "title": "Platform Selection", "description": "We deploy your budget only on the specific networks where your target audience actively consumes media." },
+          { "id": "hw-4", "title": "Creative Personalization", "description": "We engineer dynamic ad variants that speak directly to the unique pain points of each hyper-segmented audience." },
+          { "id": "hw-5", "title": "Performance Optimization", "description": "We ruthlessly cut underperforming segments daily to guarantee a constantly decreasing Cost Per Acquisition." }
         ]
       },
       {
@@ -1443,7 +1460,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-search-engine-optimization",
         "type": "overview",
         "title": "Dominate Search Results and Capture High-Intent Demand.",
-        "content": "Being on the second page of Google is the same as not existing. We build robust, technically sound, and content-rich SEO strategies that drive sustainable, high-converting organic traffic. Our approach goes beyond vanity metrics; we focus entirely on ranking for the revenue-generating keywords that your ideal customers are actively searching for when they are ready to buy.",
+        "content": "Problem: Being on the second page of Google is the same as not existing. While you struggle to rank, your competitors are capturing all the high-intent, ready-to-buy search traffic.\n\nSolution: We build robust, technically sound, and content-rich SEO strategies that drive sustainable organic traffic. We ignore vanity metrics and focus entirely on ranking for the keywords that generate actual revenue.\n\nAction: Dominate search results, build topical authority, and capture your ideal customers precisely when they are actively looking for your solution.",
         "mediaUrl": "https://images.unsplash.com/photo-1432888117426-1d3744957e84?q=80&w=1200",
         "bullets": []
       },
@@ -1452,12 +1469,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Our SEO Architecture",
         "content": "A multi-disciplinary approach to climbing the search rankings.",
+        "mediaUrl": "/images/services/seo_marketing_1785498386235.png",
         "cards": [
-          { "id": "card-1", "title": "Technical SEO", "description": "Optimizing site architecture, crawlability, and Core Web Vitals for maximum speed.", "iconName": "Settings" },
-          { "id": "card-2", "title": "On-Page Strategy", "description": "Keyword targeting, internal link siloing, and meta data optimization.", "iconName": "FileText" },
-          { "id": "card-3", "title": "Content Authority", "description": "Building long-form pillar pages to establish dominance in your topical niche.", "iconName": "BookOpen" },
-          { "id": "card-4", "title": "Off-Page & PR", "description": "Acquiring high-authority backlinks and executing Digital PR campaigns.", "iconName": "Link" },
-          { "id": "card-5", "title": "Local & Global SEO", "description": "Scaling your visibility in specific regional markets or dominating internationally.", "iconName": "Globe" }
+          { "id": "card-1", "title": "Technical SEO", "description": "Ensure search engines can instantly crawl and index your site by fixing hidden code errors.", "iconName": "Settings" },
+          { "id": "card-2", "title": "On-Page Strategy", "description": "Optimize your content and metadata so you rank for the high-intent keywords your buyers use.", "iconName": "FileText" },
+          { "id": "card-3", "title": "Content Authority", "description": "Establish undeniable industry dominance by building in-depth pillar pages that outrank competitors.", "iconName": "BookOpen" },
+          { "id": "card-4", "title": "Off-Page & PR", "description": "Boost your domain's trust and authority by acquiring high-quality backlinks from premium publications.", "iconName": "Link" },
+          { "id": "card-5", "title": "Local & Global SEO", "description": "Command your local map pack or scale your visibility internationally to capture global market share.", "iconName": "Globe" }
         ]
       },
       {
@@ -1465,13 +1483,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "The Ranking Methodology",
         "content": "How we take websites from obscurity to industry dominance.",
-        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Comprehensive Audit", "description": "Identifying severe technical blockers and uncovering low-hanging keyword fruit." },
-          { "id": "hw-2", "title": "Intent Mapping", "description": "Aligning your most valuable keywords with the specific stages of the buyer's journey." },
-          { "id": "hw-3", "title": "Technical Remediation", "description": "Fixing code, server responses, and UX issues that are holding your rankings back." },
-          { "id": "hw-4", "title": "Content Engine Activation", "description": "Deploying our writers to publish highly authoritative, search-optimized assets." },
-          { "id": "hw-5", "title": "Continuous Outreach", "description": "Running ongoing link-building sprints to continually increase your Domain Authority." }
+          { "id": "hw-1", "title": "Comprehensive Audit", "description": "We identify and eliminate the severe technical blockers that are actively sabotaging your current rankings." },
+          { "id": "hw-2", "title": "Intent Mapping", "description": "We align your SEO strategy strictly with commercial-intent keywords to guarantee organic traffic converts into sales." },
+          { "id": "hw-3", "title": "Technical Remediation", "description": "We overhaul your site architecture and code to ensure lightning-fast load times and perfect indexability." },
+          { "id": "hw-4", "title": "Content Engine Activation", "description": "We deploy industry-expert writers to produce authoritative content that forces Google to recognize you as the market leader." },
+          { "id": "hw-5", "title": "Continuous Outreach", "description": "We execute aggressive, white-hat link building campaigns to continually steal Domain Authority from your competitors." }
         ]
       },
       {
@@ -1542,7 +1560,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-social-media-marketing",
         "type": "overview",
         "title": "Build Brand Authority and Drive Engagement.",
-        "content": "Social media is no longer just a top-of-funnel branding exercise; it is a primary driver of customer acquisition, retention, and loyalty. We build dynamic, highly targeted social media strategies that turn passive scrollers into active brand advocates. From high-retention video production to meticulous community management, we ensure your brand voice cuts through the algorithmic noise and drives measurable revenue.",
+        "content": "Problem: Most brands treat social media as an afterthought, posting generic content that gets ignored by passive scrollers and yields zero ROI.\n\nSolution: We build dynamic, platform-specific strategies that capture attention. From high-production short-form video to authoritative B2B content, we engineer every post to drive engagement.\n\nAction: Turn passive scrollers into active brand advocates and generate measurable business impact through a commanding social presence.",
         "mediaUrl": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200",
         "bullets": []
       },
@@ -1551,12 +1569,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Social Media Capabilities",
         "content": "A full-suite approach to dominating the social landscape.",
+        "mediaUrl": "/images/services/social_media_marketing_1785498376145.png",
         "cards": [
-          { "id": "card-1", "title": "Social Strategy", "description": "Defining your unique voice, content pillars, and platform-specific tactics.", "iconName": "Target" },
-          { "id": "card-2", "title": "Video Production", "description": "High-retention, native short-form video for TikTok, Reels, and YouTube Shorts.", "iconName": "Video" },
-          { "id": "card-3", "title": "Community Management", "description": "Active community engagement, comment moderation, and crisis response.", "iconName": "MessageCircle" },
-          { "id": "card-4", "title": "LinkedIn Authority", "description": "Executive ghostwriting and B2B corporate page scaling.", "iconName": "Briefcase" },
-          { "id": "card-5", "title": "Creator Partnerships", "description": "Sourcing and negotiating with high-impact influencers in your niche.", "iconName": "Users" }
+          { "id": "card-1", "title": "Social Strategy", "description": "Stand out in crowded feeds by defining a unique voice, engaging content pillars, and platform-specific tactics.", "iconName": "Target" },
+          { "id": "card-2", "title": "Video Production", "description": "Stop the scroll with high-retention, native short-form video designed specifically for TikTok, Reels, and Shorts.", "iconName": "Video" },
+          { "id": "card-3", "title": "Community Management", "description": "Foster intense brand loyalty through active community engagement, hyper-responsive moderation, and crisis response.", "iconName": "MessageCircle" },
+          { "id": "card-4", "title": "LinkedIn Authority", "description": "Establish absolute B2B dominance through executive ghostwriting and high-growth corporate page scaling.", "iconName": "Briefcase" },
+          { "id": "card-5", "title": "Creator Partnerships", "description": "Borrow authority and trust by sourcing and negotiating with high-impact, authentic influencers in your exact niche.", "iconName": "Users" }
         ]
       },
       {
@@ -1564,13 +1583,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "The Content Engine",
         "content": "How we produce, publish, and scale your social presence.",
-        "mediaUrl": "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1557838923-2985c318be48?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "The Brand Voice Audit", "description": "We establish a distinct tone, visual identity, and operational guidelines for your brand." },
-          { "id": "hw-2", "title": "Calendar Creation", "description": "Planning a monthly mix of educational, entertaining, and promotional content." },
-          { "id": "hw-3", "title": "Asset Production", "description": "Our in-house team designs graphics and edits trend-matching, high-retention video." },
-          { "id": "hw-4", "title": "Publishing & Engagement", "description": "Deploying content at algorithmically optimal times and actively driving conversation." },
-          { "id": "hw-5", "title": "Analytics & Iteration", "description": "Measuring engagement rates weekly to double-down on the creative that actually works." }
+          { "id": "hw-1", "title": "The Brand Voice Audit", "description": "We establish a distinct, magnetic tone and visual identity that ensures your brand is instantly recognizable." },
+          { "id": "hw-2", "title": "Calendar Creation", "description": "We engineer a strategic monthly mix of content designed specifically to educate, entertain, and convert." },
+          { "id": "hw-3", "title": "Asset Production", "description": "Our in-house creatives design stunning graphics and edit trend-matching video that retains viewer attention to the last second." },
+          { "id": "hw-4", "title": "Publishing & Engagement", "description": "We deploy content at algorithmically optimal times and actively drive conversation to push your posts viral." },
+          { "id": "hw-5", "title": "Analytics & Iteration", "description": "We rigorously measure engagement data weekly, allowing us to rapidly double-down on the creative angles that actually drive revenue." }
         ]
       },
       {
@@ -1636,12 +1655,13 @@ export const initialDynamicPages: DynamicPage[] = [
     "pageType": "service",
     "isPublished": true,
     "sortOrder": 5,
+    "overviewContent": "We deploy mathematically rigorous, cross-border ad strategies across Google, Meta, and LinkedIn to scale your global ad spend profitably.",
     "sections": [
       {
         "id": "sec-overview-paid-advertising-campaigns",
         "type": "overview",
-        "title": "Scale Your Revenue Instantly with Precision Paid Media",
-        "content": "Stop burning budget on guesswork. We engineer high-performance paid ad ecosystems across Google, Meta, and programmatic networks that turn clicks into customers. By leveraging advanced algorithmic bidding and relentless A/B testing, we eliminate wasted spend and deliver a predictable, scalable pipeline of high-intent leads and direct sales right to your door. Ready to dominate your market?",
+        "title": "Scale Global Revenue with Precision Cross-Border Paid Media.",
+        "content": "Problem: Businesses expanding internationally burn through ad budgets on poorly localized campaigns, fragmented tracking, and guesswork — leading to spiraling CPAs and zero visibility into true global ROAS.\n\nSolution: We architect precision-engineered, multi-market paid advertising systems across Google, Meta, and LinkedIn. From geo-specific search intent capture to culturally-adapted creative, every campaign is built for borderless scale with pixel-perfect attribution.\n\nAction: Stop bleeding budget on underperforming ads and start driving predictable, profitable revenue across every key international market.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
         "bullets": []
       },
@@ -1773,7 +1793,8 @@ export const initialDynamicPages: DynamicPage[] = [
     "pageType": "service",
     "isPublished": true,
     "sortOrder": 6,
-    "overviewContent": "We don't just hope for results; we guarantee accountability. By obsessing over hard metrics like CPA and ROAS, we build highly tuned growth engines that scale your revenue profitably, predictably, and aggressively.",
+    "heroDescription": "We replace guesswork with data science. Our performance marketing team builds mathematically rigorous, multi-region growth engines obsessed with CPA, ROAS, and LTV — ensuring every dollar you invest delivers aggressive, predictable, and globally scalable revenue growth.",
+    "overviewContent": "Problem: Global brands often lose massive amounts of capital by deploying generic, unoptimized campaigns across diverse international markets, resulting in low ROI and wasted spend.\n\nSolution: We replace guesswork with data science. We build highly tuned, multi-region growth engines that obsess over hard metrics like CPA and ROAS, ensuring every dollar is aligned with your bottom line.\n\nAction: Deploy aggressive, predictable scaling strategies and dominate your global market with absolute mathematical certainty.",
     "sections": [
       {
         "id": "sec-overview-performance-marketing",
@@ -1900,40 +1921,42 @@ export const initialDynamicPages: DynamicPage[] = [
     "pageType": "service",
     "isPublished": true,
     "sortOrder": 7,
+    "overviewContent": "Architect globally scalable revenue pipelines that capture, educate, and convert elite international B2B prospects.",
     "sections": [
       {
         "id": "sec-overview-demand-generation",
         "type": "overview",
-        "title": "Don't Just Capture Demand. Create It.",
-        "content": "Most companies fight fiercely over the 3% of the market that is ready to buy today, leading to skyrocketing acquisition costs and diminishing returns. Lumora's Demand Generation strategies shift the paradigm by actively educating, engaging, and nurturing the other 97%. Through high-value content distribution, omnipresent branding, and strategic market positioning, we make sure that when your prospects enter the buying cycle, you are the only logical choice.",
+        "title": "Solve the Global ABM Challenge. Create Global Demand.",
+        "content": "Problem: Global B2B markets are highly fragmented. Fighting for the tiny percentage of active buyers across different time zones, languages, and cultures leads to exhausted ad budgets and low conversion rates.\n\nSolution: We shift the paradigm from local lead chasing to global demand creation. By deploying intelligent, multi-region Account-Based Marketing (ABM) and content syndication, we educate and nurture the 97% of your total addressable worldwide market before they even start looking for a vendor.\n\nAction: Establish undeniable international authority so that when global buying committees are ready to purchase, your enterprise is the only logical choice.",
         "mediaUrl": "https://images.unsplash.com/photo-1557804506-669a67965ba0?q=80&w=1200",
         "bullets": []
       },
       {
         "id": "sec-services-demand-generation",
         "type": "services-grid",
-        "title": "Demand Generation Channels",
-        "content": "We deploy an omnipresent strategy across the platforms where your buyers learn and engage.",
+        "title": "Global Demand Creation Channels",
+        "content": "We deploy a cohesive, multi-region strategy that reaches your enterprise buyers no matter where they are in the world.",
+        "mediaUrl": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1200",
         "cards": [
-          { "id": "card-1", "title": "Content Amplification", "description": "Distributing whitepapers, case studies, and insights across social networks to build undeniable authority.", "iconName": "Share2" },
-          { "id": "card-2", "title": "Account-Based Marketing", "description": "Deploying hyper-targeted, personalized campaigns to high-value enterprise accounts.", "iconName": "Briefcase" },
-          { "id": "card-3", "title": "Webinars & Live Events", "description": "Building interactive, value-driven virtual events that foster trust and rapid engagement.", "iconName": "Video" },
-          { "id": "card-4", "title": "Dark Social Strategy", "description": "Leveraging communities, podcasts, and untrackable word-of-mouth channels to drive organic demand.", "iconName": "Users" },
-          { "id": "card-5", "title": "Nurture Workflows", "description": "Automated email and retargeting sequences that keep your brand top-of-mind over long sales cycles.", "iconName": "Mail" }
+          { "id": "card-1", "title": "Global ABM Orchestration", "description": "Executing hyper-personalized campaigns tailored to high-value international enterprise accounts.", "iconName": "Briefcase" },
+          { "id": "card-2", "title": "Cross-Border Content Syndication", "description": "Translating and distributing authoritative insights across global networks.", "iconName": "Share2" },
+          { "id": "card-3", "title": "International Virtual Events", "description": "Hosting multi-timezone webinars and live sessions that foster trust and rapid global engagement.", "iconName": "Video" },
+          { "id": "card-4", "title": "Multi-Region Dark Social", "description": "Infiltrating localized communities and peer networks to drive untrackable, organic worldwide demand.", "iconName": "Users" },
+          { "id": "card-5", "title": "Unified Nurture Workflows", "description": "Automating localized email and retargeting sequences to keep your brand top-of-mind globally.", "iconName": "Mail" }
         ]
       },
       {
         "id": "sec-how-we-do-it-demand-generation",
         "type": "how-we-do-it",
         "title": "Our Demand Creation Process",
-        "content": "A systematic approach to turning cold prospects into brand advocates and eventually, loyal customers.",
-        "mediaUrl": "https://images.unsplash.com/photo-1542744094-24638ea0b3b5?q=80&w=1200",
+        "content": "A rigorous, multi-region framework for turning cold international prospects into global brand advocates and loyal enterprise customers.",
+        "mediaUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Audience Intelligence", "description": "Mapping your Total Addressable Market and identifying key pain points." },
-          { "id": "hw-2", "title": "Content Strategy", "description": "Developing un-gated, highly actionable content that solves your buyers' immediate problems." },
-          { "id": "hw-3", "title": "Omnichannel Distribution", "description": "Pushing content natively through LinkedIn, industry PR, YouTube, and targeted display networks." },
-          { "id": "hw-4", "title": "Engagement Tracking", "description": "Monitoring account-level engagement (ABM) to identify surging buyer intent." },
-          { "id": "hw-5", "title": "Sales Alignment", "description": "Seamlessly passing highly-educated, warm prospects to your sales team with full context." }
+          { "id": "hw-1", "title": "Global Market Intelligence", "description": "Mapping worldwide TAM and localizing key international pain points." },
+          { "id": "hw-2", "title": "Cross-Cultural Content Strategy", "description": "Developing actionable, localized content that solves diverse global buyer problems." },
+          { "id": "hw-3", "title": "Worldwide Omnichannel Distribution", "description": "Pushing campaigns natively through global enterprise networks and local PR." },
+          { "id": "hw-4", "title": "Global Intent Tracking", "description": "Monitoring account-level ABM engagement across time zones to identify surging buyer intent." },
+          { "id": "hw-5", "title": "Borderless Sales Alignment", "description": "Seamlessly passing highly-educated international prospects to regional sales teams with full context." }
         ]
       },
       {
@@ -2001,12 +2024,13 @@ export const initialDynamicPages: DynamicPage[] = [
     "sortOrder": 8,
     "heroImage": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
     "heroDescription": "Turn cold traffic into booked appointments. We build high-velocity acquisition engines that systematically attract, nurture, and convert highly qualified prospects at scale.",
+    "overviewContent": "Architect high-velocity, borderless acquisition funnels that consistently generate qualified, sales-ready inquiries globally.",
     "sections": [
       {
         "id": "sec-overview-lead-generation",
         "type": "overview",
-        "title": "Build a Predictable Pipeline of Qualified Buyers.",
-        "content": "Website traffic means nothing if it doesn't convert into actual sales conversations. Our Lead Generation services are ruthlessly focused on one single metric: filling your sales pipeline with highly qualified prospects who have an immediate need for your solution. By optimizing the entire conversion journey—from thumb-stopping ad creative to frictionless landing pages—we ensure maximum lead velocity at the lowest possible Cost-Per-Lead (CPL).",
+        "title": "Build a High-Velocity, Global Pipeline of Qualified Buyers.",
+        "content": "Problem: Scaling businesses often waste significant capital on fragmented, localized lead generation efforts that yield low-quality prospects and unpredictable sales cycles.\n\nSolution: We build intelligent, globally scalable acquisition engines. By leveraging advanced data enrichment, multi-region outreach, and predictive scoring, we eliminate the friction of borderless customer acquisition.\n\nAction: Stop chasing cold leads and start filling your calendar with high-converting, international sales appointments on autopilot.",
         "mediaUrl": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200",
         "bullets": []
       },
@@ -2027,14 +2051,14 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-how-we-do-it-lead-generation",
         "type": "how-we-do-it",
         "title": "The Conversion Journey",
-        "content": "How we turn cold traffic into booked sales appointments.",
-        "mediaUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200",
+        "content": "How we transform fragmented local outreach into a borderless, high-converting acquisition machine.",
+        "mediaUrl": "https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Offer Creation", "description": "Developing an irresistible hook or lead magnet that demands your prospect's attention." },
-          { "id": "hw-2", "title": "Traffic Acquisition", "description": "Deploying highly targeted paid and organic campaigns to drive the right users to the offer." },
-          { "id": "hw-3", "title": "Conversion Mechanics", "description": "Building lightning-fast, high-converting landing pages tailored to the ad creative." },
-          { "id": "hw-4", "title": "Nurture Sequences", "description": "Deploying automated email and SMS drips to warm up leads who aren't ready to buy yet." },
-          { "id": "hw-5", "title": "Sales Integration", "description": "Pushing scored, qualified leads directly into your CRM in real-time for immediate follow-up." }
+          { "id": "hw-1", "title": "Global Offer Engineering", "description": "Crafting irresistible, culturally-adapted lead magnets that resonate across international markets." },
+          { "id": "hw-2", "title": "Multi-Region Traffic Acquisition", "description": "Deploying geo-targeted paid and organic campaigns to attract the right buyers in every key market." },
+          { "id": "hw-3", "title": "Localized Conversion Funnels", "description": "Building lightning-fast, region-specific landing pages optimized for local buyer behavior." },
+          { "id": "hw-4", "title": "Cross-Border Nurture Sequences", "description": "Automating multi-lingual email and SMS drips to warm up international prospects at scale." },
+          { "id": "hw-5", "title": "Global CRM Integration", "description": "Pushing scored, qualified leads directly into regional sales teams' CRMs for immediate follow-up." }
         ]
       },
       {
@@ -2105,7 +2129,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-retargeting-marketing",
         "type": "overview",
         "title": "Recapture Lost Revenue and Maximize ROI.",
-        "content": "Most users don't buy on their first visit. In fact, 97% of your website traffic will bounce without taking a single action. If you aren't actively bringing them back, you are effectively subsidizing your competitors' marketing. Our precision retargeting campaigns deploy highly personalized, cross-channel ads that follow your highest-intent prospects across the web, reminding them why they need your solution and delivering the exact offer they need to finally convert.",
+        "content": "Problem: Most users don't buy on their first visit. In fact, 97% of your website traffic will bounce without taking a single action. If you aren't actively bringing them back, you are effectively subsidizing your competitors' marketing.\n\nSolution: Our precision retargeting campaigns deploy highly personalized, cross-channel ads that follow your highest-intent prospects across the web, reminding them why they need your solution.\n\nAction: Build an inescapable brand presence and deliver the exact offer hesitant buyers need to finally convert, recovering massive amounts of lost revenue.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
         "bullets": []
       },
@@ -2114,12 +2138,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Retargeting Capabilities",
         "content": "Strategies to stay top-of-mind and force the conversion.",
+        "mediaUrl": "/images/services/retargeting_marketing_1785498428208.png",
         "cards": [
-          { "id": "card-1", "title": "Dynamic Retargeting", "description": "Showing e-commerce users the exact products they viewed or added to cart.", "iconName": "ShoppingCart" },
-          { "id": "card-2", "title": "Cross-Channel Tracking", "description": "Following users seamlessly from Facebook to Google Display to YouTube.", "iconName": "Monitor" },
-          { "id": "card-3", "title": "Account Retargeting", "description": "Staying hyper-visible to B2B enterprise buyers during long, complex sales cycles.", "iconName": "Briefcase" },
-          { "id": "card-4", "title": "Cart Abandonment", "description": "Deploying urgent email, SMS, and ad sequences to recover lost checkouts.", "iconName": "AlertCircle" },
-          { "id": "card-5", "title": "Sequential Storytelling", "description": "Moving users through an ad sequence of awareness, logic, and urgency.", "iconName": "Film" }
+          { "id": "card-1", "title": "Dynamic Retargeting", "description": "Trigger immediate conversions by showing e-commerce users ads containing the exact products they just viewed.", "iconName": "ShoppingCart" },
+          { "id": "card-2", "title": "Cross-Channel Tracking", "description": "Create an inescapable brand presence by seamlessly following users from Facebook to Google Display to YouTube.", "iconName": "Monitor" },
+          { "id": "card-3", "title": "Account Retargeting", "description": "Accelerate B2B deal velocity by staying hyper-visible to enterprise buyers during long, complex sales cycles.", "iconName": "Briefcase" },
+          { "id": "card-4", "title": "Cart Abandonment", "description": "Instantly recover lost checkouts by deploying urgent, automated email, SMS, and ad sequences.", "iconName": "AlertCircle" },
+          { "id": "card-5", "title": "Sequential Storytelling", "description": "Systematically overcome objections by moving users through an ad sequence of awareness, logic, and urgency.", "iconName": "Film" }
         ]
       },
       {
@@ -2127,13 +2152,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "The Omnipresence Strategy",
         "content": "How we build a web of inescapable, high-converting touchpoints.",
-        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Audience Segmentation", "description": "Dividing visitors by behavior, time-on-site, and specific pages viewed to gauge intent." },
-          { "id": "hw-2", "title": "The Omnipresence Pixel", "description": "Deploying global tracking via Server-Side APIs to bypass ad-blockers and iOS restrictions." },
-          { "id": "hw-3", "title": "Dynamic Creative", "description": "Designing ad creatives that automatically adapt based on the user's previous on-site actions." },
-          { "id": "hw-4", "title": "Frequency Capping", "description": "Strictly managing how often ads are shown so your brand stays helpful, not annoying." },
-          { "id": "hw-5", "title": "Offer Escalation", "description": "Introducing strategic discounts or bonuses exactly when a buyer is hesitating the most." }
+          { "id": "hw-1", "title": "Audience Segmentation", "description": "We identify your most valuable prospects by strictly dividing visitors based on behavior, time-on-site, and specific pages viewed." },
+          { "id": "hw-2", "title": "The Omnipresence Pixel", "description": "We future-proof your tracking by deploying Server-Side APIs to completely bypass ad-blockers and iOS data restrictions." },
+          { "id": "hw-3", "title": "Dynamic Creative", "description": "We drastically increase click-through rates by designing ad creatives that automatically adapt based on the user's exact on-site actions." },
+          { "id": "hw-4", "title": "Frequency Capping", "description": "We rigorously manage ad frequency so your brand stays top-of-mind without ever crossing the line into annoying." },
+          { "id": "hw-5", "title": "Offer Escalation", "description": "We force the final conversion by introducing strategic, time-sensitive discounts exactly when a buyer is hesitating the most." }
         ]
       },
       {
@@ -2204,7 +2229,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-influencer-marketing",
         "type": "overview",
         "title": "Leverage Authentic Voices to Drive Massive Scale.",
-        "content": "Consumers inherently trust people, not faceless logos. True Influencer Marketing is no longer about buying vanity metrics or posting generic endorsements; it is about partnering with highly trusted creators who can authentically integrate your product into their audience's daily lives. We manage the entire lifecycle—from strategic creator discovery and rigorous contract negotiation to campaign execution and strict ROI tracking—ensuring your brand message is delivered by the voices your market actually listens to.",
+        "content": "Problem: Consumers inherently distrust faceless logos and traditional ads. If you rely solely on corporate messaging, you are missing out on the massive conversion power of peer-to-peer recommendations.\n\nSolution: We partner your brand with highly trusted creators who authentically integrate your product into their audience's daily lives, managing the entire lifecycle from discovery to contract negotiation.\n\nAction: Bypass consumer skepticism and drive massive, authentic brand awareness by putting your message in the mouths of the voices your market actually listens to.",
         "mediaUrl": "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1200",
         "bullets": []
       },
@@ -2213,12 +2238,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Influencer & Creator Solutions",
         "content": "Building trust at scale across every tier of influence.",
+        "mediaUrl": "/images/services/influencer_marketing_new.jpg",
         "cards": [
-          { "id": "card-1", "title": "Micro-Influencer Campaigns", "description": "Leveraging highly engaged niche creators for maximum conversion rates.", "iconName": "Users" },
-          { "id": "card-2", "title": "Macro & Celebrity Partnerships", "description": "Driving massive, overnight brand awareness and cultural impact.", "iconName": "Star" },
-          { "id": "card-3", "title": "B2B Thought Leaders", "description": "Partnering with industry experts and executives on LinkedIn and podcasts.", "iconName": "Briefcase" },
-          { "id": "card-4", "title": "UGC Creation", "description": "Sourcing authentic, lo-fi video assets to fuel your own paid ad campaigns.", "iconName": "Video" },
-          { "id": "card-5", "title": "Affiliate Programs", "description": "Structuring performance-based compensation based on actual sales driven.", "iconName": "Percent" }
+          { "id": "card-1", "title": "Micro-Influencer Campaigns", "description": "Drive exceptionally high conversion rates by activating intensely loyal, niche creator communities.", "iconName": "Users" },
+          { "id": "card-2", "title": "Macro & Celebrity Partnerships", "description": "Achieve overnight cultural relevance and massive scale by partnering with industry giants.", "iconName": "Star" },
+          { "id": "card-3", "title": "B2B Thought Leaders", "description": "Establish immediate corporate credibility by collaborating with respected executives and podcasters.", "iconName": "Briefcase" },
+          { "id": "card-4", "title": "UGC Creation", "description": "Dramatically lower your ad costs by sourcing highly authentic, lo-fi video assets to fuel your paid media.", "iconName": "Video" },
+          { "id": "card-5", "title": "Affiliate Programs", "description": "Eliminate risk by structuring performance-based creator compensation tied directly to the actual sales they drive.", "iconName": "Percent" }
         ]
       },
       {
@@ -2226,13 +2252,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "The Creator Management Lifecycle",
         "content": "How we execute flawless campaigns across dozens of creators simultaneously.",
-        "mediaUrl": "https://images.unsplash.com/photo-1611926653458-09294b3142bf?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Audience Matching", "description": "Using deep data analytics to ensure a creator's following matches your exact target demographic." },
-          { "id": "hw-2", "title": "Vetting & Negotiation", "description": "Filtering out fake followers and negotiating strict deliverables, timelines, and usage rights." },
-          { "id": "hw-3", "title": "Creative Briefing", "description": "Providing creators with brand guardrails while allowing space for their authentic expression." },
-          { "id": "hw-4", "title": "Campaign Orchestration", "description": "Managing product shipping, content review, and live scheduling across the entire roster." },
-          { "id": "hw-5", "title": "ROI Measurement", "description": "Tracking exact sales, clicks, and impressions via custom promo codes and dedicated UTM links." }
+          { "id": "hw-1", "title": "Audience Matching", "description": "We guarantee relevance by using deep data analytics to ensure a creator's following exactly matches your target buyer." },
+          { "id": "hw-2", "title": "Vetting & Negotiation", "description": "We protect your budget by brutally filtering out fake followers and negotiating strict, legally binding deliverables." },
+          { "id": "hw-3", "title": "Creative Briefing", "description": "We engineer briefs that provide essential brand guardrails while giving creators the freedom to be authentic." },
+          { "id": "hw-4", "title": "Campaign Orchestration", "description": "We remove the headache of influencer management by handling all product seeding, content reviews, and launch logistics." },
+          { "id": "hw-5", "title": "ROI Measurement", "description": "We prove exactly what you paid for by tracking hard sales, clicks, and impressions via custom promo codes." }
         ]
       },
       {
@@ -2303,7 +2329,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-business-branding",
         "type": "overview",
         "title": "Build a Brand That Commands Authority and Loyalty.",
-        "content": "A logo is not a brand. A brand is the psychological relationship and set of expectations established between your business and your customers. Lumora builds comprehensive, robust Business Branding strategies that articulate your unique value proposition, establish market dominance, and create memorable visual and verbal identities that deeply resonate with your target demographic. We craft brands that can charge premium pricing and survive market shifts.",
+        "content": "Problem: If your brand looks and sounds like every other competitor in your space, you are forced to compete purely on price, killing your profit margins and stunting growth.\n\nSolution: We build robust, psychologically-driven Business Branding strategies that articulate a completely unique value proposition, establishing unshakeable market authority.\n\nAction: Build a distinctive corporate identity that commands premium pricing, secures lasting loyalty, and makes your competitors utterly irrelevant.",
         "mediaUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200",
         "bullets": []
       },
@@ -2312,12 +2338,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Brand Development Pillars",
         "content": "Everything you need to stand out, look premium, and sound authentic.",
+        "mediaUrl": "/images/services/brand_management_hero.jpg",
         "cards": [
-          { "id": "card-1", "title": "Brand Strategy & Positioning", "description": "Defining your mission, vision, core values, and precise market positioning.", "iconName": "Compass" },
-          { "id": "card-2", "title": "Visual Identity Design", "description": "Crafting premium logos, color palettes, typography, and visual assets.", "iconName": "Palette" },
-          { "id": "card-3", "title": "Brand Voice & Messaging", "description": "Establishing a unique tone of voice, key messages, and elevator pitches.", "iconName": "MessageCircle" },
-          { "id": "card-4", "title": "Corporate Guidelines", "description": "Creating comprehensive Brand Books to ensure consistency across all touchpoints.", "iconName": "BookOpen" },
-          { "id": "card-5", "title": "Rebranding & Refresh", "description": "Modernizing legacy brands without losing existing customer equity.", "iconName": "RefreshCw" }
+          { "id": "card-1", "title": "Brand Strategy & Positioning", "description": "Escape the price war by defining a precise market position where your brand can lead unopposed.", "iconName": "Compass" },
+          { "id": "card-2", "title": "Visual Identity Design", "description": "Instantly convey premium quality and build trust with stunning logos, color palettes, and typography.", "iconName": "Palette" },
+          { "id": "card-3", "title": "Brand Voice & Messaging", "description": "Capture attention and drive action with a unique tone of voice and magnetic elevator pitches.", "iconName": "MessageCircle" },
+          { "id": "card-4", "title": "Corporate Guidelines", "description": "Ensure absolute consistency across every single touchpoint with comprehensive, strict Brand Books.", "iconName": "BookOpen" },
+          { "id": "card-5", "title": "Rebranding & Refresh", "description": "Modernize legacy businesses to capture new market share without alienating your existing customer base.", "iconName": "RefreshCw" }
         ]
       },
       {
@@ -2325,13 +2352,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "Our Branding Methodology",
         "content": "We don't just design; we strategically engineer your brand identity from the ground up.",
-        "mediaUrl": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744094-3a31f272c490?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Discovery & Audit", "description": "Immersing ourselves in your industry, interviewing stakeholders, and auditing current assets." },
-          { "id": "hw-2", "title": "Market Positioning", "description": "Identifying the 'white space' in your industry where your brand can lead unopposed." },
-          { "id": "hw-3", "title": "Concept Creation", "description": "Presenting diverse visual and verbal directions based on the approved strategy." },
-          { "id": "hw-4", "title": "Refinement", "description": "Iterating on the chosen concept to achieve perfection down to the smallest detail." },
-          { "id": "hw-5", "title": "Rollout & Activation", "description": "Delivering all assets, guidelines, and launch strategies to introduce the brand to the world." }
+          { "id": "hw-1", "title": "Discovery & Audit", "description": "We uncover exactly what is holding your current brand back by aggressively auditing your existing assets and market presence." },
+          { "id": "hw-2", "title": "Market Positioning", "description": "We strategically engineer your brand to occupy the exact 'white space' in the market that your competitors are ignoring." },
+          { "id": "hw-3", "title": "Concept Creation", "description": "We present powerful visual and verbal directions specifically designed to psychologically resonate with high-value buyers." },
+          { "id": "hw-4", "title": "Refinement", "description": "We ruthlessly iterate on the chosen concept to ensure absolute perfection across every single customer touchpoint." },
+          { "id": "hw-5", "title": "Rollout & Activation", "description": "We deliver a comprehensive launch strategy and all required assets to introduce your dominant new identity to the world." }
         ]
       },
       {
@@ -2402,7 +2429,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-personal-branding",
         "type": "overview",
         "title": "Become the Recognized Authority in Your Industry.",
-        "content": "In today's digital-first economy, people don't just buy from companies—they buy from people they trust. A powerful personal brand elevates you from a commodity to an industry thought leader, opening doors to new partnerships, speaking engagements, and inbound revenue. We help founders, executives, and subject matter experts build, scale, and monetize their personal brands through highly strategic content, PR, and positioning.",
+        "content": "Problem: In today's digital-first economy, people don't buy from companies—they buy from people they trust. If you are invisible online, you are losing massive opportunities to competitors who are actively building their personal authority.\n\nSolution: We help founders, executives, and subject matter experts build, scale, and monetize their personal brands through highly strategic ghostwriting, PR, and elite positioning.\n\nAction: Elevate yourself from a commodity to the undeniable industry thought leader, opening doors to lucrative new partnerships, speaking engagements, and inbound revenue.",
         "mediaUrl": "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=1200",
         "bullets": []
       },
@@ -2411,12 +2438,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Personal Brand Pillars",
         "content": "A multi-channel approach to establishing you as the go-to expert.",
+        "mediaUrl": "/images/services/personal_branding_hero.jpg",
         "cards": [
-          { "id": "card-1", "title": "Executive Positioning", "description": "Defining your unique angle, core values, and industry expertise.", "iconName": "UserCheck" },
-          { "id": "card-2", "title": "LinkedIn Thought Leadership", "description": "Professional ghostwriting and network growth strategies on LinkedIn.", "iconName": "MessageSquare" },
-          { "id": "card-3", "title": "Digital PR & Features", "description": "Securing podcast interviews, article placements, and media mentions.", "iconName": "Mic" },
-          { "id": "card-4", "title": "Content & Video Production", "description": "High-quality, short-form video content to humanize your brand.", "iconName": "Video" },
-          { "id": "card-5", "title": "Monetization Strategy", "description": "Turning your growing audience into a tangible, revenue-generating asset.", "iconName": "DollarSign" }
+          { "id": "card-1", "title": "Executive Positioning", "description": "Command instant respect by clearly defining your unique angle, core values, and industry expertise.", "iconName": "UserCheck" },
+          { "id": "card-2", "title": "LinkedIn Thought Leadership", "description": "Generate inbound leads effortlessly with professional ghostwriting and aggressive network growth.", "iconName": "MessageSquare" },
+          { "id": "card-3", "title": "Digital PR & Features", "description": "Rapidly build credibility by securing high-profile podcast interviews, article placements, and media mentions.", "iconName": "Mic" },
+          { "id": "card-4", "title": "Content & Video Production", "description": "Build deep parasocial relationships with high-quality, short-form video content that humanizes your expertise.", "iconName": "Video" },
+          { "id": "card-5", "title": "Monetization Strategy", "description": "Create new income streams by turning your growing audience into a tangible, revenue-generating asset.", "iconName": "DollarSign" }
         ]
       },
       {
@@ -2424,13 +2452,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "How We Build Your Brand",
         "content": "A turnkey solution for busy executives who want maximum impact with minimal time commitment.",
-        "mediaUrl": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "The Expert Audit", "description": "We assess your current digital footprint and identify your most valuable knowledge." },
-          { "id": "hw-2", "title": "The Narrative Blueprint", "description": "We craft your unique story, content pillars, and distinctive voice." },
-          { "id": "hw-3", "title": "Omnichannel Production", "description": "Our team ghostwrites, designs, and produces a steady pipeline of content for you." },
-          { "id": "hw-4", "title": "Audience Growth", "description": "We execute proven engagement strategies to rapidly grow your targeted following." },
-          { "id": "hw-5", "title": "Authority Scaling", "description": "We leverage your growing audience to secure high-tier speaking gigs and PR." }
+          { "id": "hw-1", "title": "The Expert Audit", "description": "We extract your most valuable knowledge and unique perspectives through rapid, intensive interview sessions." },
+          { "id": "hw-2", "title": "The Narrative Blueprint", "description": "We architect a compelling personal story and distinct tone of voice that makes you absolutely unforgettable." },
+          { "id": "hw-3", "title": "Omnichannel Production", "description": "We handle 100% of the heavy lifting—ghostwriting, designing, and producing a steady pipeline of elite content." },
+          { "id": "hw-4", "title": "Audience Growth", "description": "We exponentially expand your reach by executing aggressive engagement strategies to attract your ideal followers." },
+          { "id": "hw-5", "title": "Authority Scaling", "description": "We monetize your newfound influence by leveraging your audience to secure high-tier speaking gigs and PR." }
         ]
       },
       {
@@ -2501,7 +2529,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-brand-management",
         "type": "overview",
         "title": "Protect, Monitor, and Evolve Your Most Valuable Asset.",
-        "content": "A brand's reputation is its most powerful revenue driver—but as your company scales, maintaining consistency and positive sentiment becomes increasingly complex. Comprehensive Brand Management is the active, ongoing process of protecting your digital equity, ensuring strict compliance across all internal and external touchpoints, and strategically evolving your narrative as market dynamics shift. We serve as the vigilant guardians of your brand's integrity.",
+        "content": "Problem: As your company scales, maintaining absolute consistency and positive sentiment across scattered channels becomes nearly impossible, leaving your reputation vulnerable to dilution or crisis.\n\nSolution: We deploy comprehensive Brand Management protocols to actively protect your digital equity, enforce strict compliance across all internal and external touchpoints, and strategically evolve your narrative.\n\nAction: Secure your most valuable asset by partnering with vigilant guardians who will protect your integrity, monitor sentiment, and track your growing market equity.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
         "bullets": []
       },
@@ -2510,12 +2538,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Brand Guardianship Pillars",
         "content": "A proactive suite of services to secure and grow your market position.",
+        "mediaUrl": "/images/services/brand_management_new.jpg",
         "cards": [
-          { "id": "card-1", "title": "Reputation Management", "description": "Active monitoring of brand sentiment, reviews, and rapid crisis response.", "iconName": "ShieldAlert" },
-          { "id": "card-2", "title": "Brand Compliance", "description": "Ensuring visual and verbal consistency across teams, affiliates, and vendors.", "iconName": "CheckSquare" },
-          { "id": "card-3", "title": "Digital Asset Management", "description": "Organizing and distributing brand collateral securely and efficiently.", "iconName": "FolderLock" },
-          { "id": "card-4", "title": "Equity Tracking", "description": "Measuring brand awareness, share of voice, and perceived market value over time.", "iconName": "BarChart2" },
-          { "id": "card-5", "title": "Brand Evolution", "description": "Strategic, incremental refreshes to keep the brand modern without losing core identity.", "iconName": "RefreshCw" }
+          { "id": "card-1", "title": "Reputation Management", "description": "Prevent crises before they escalate with 24/7 active monitoring of brand sentiment and reviews.", "iconName": "ShieldAlert" },
+          { "id": "card-2", "title": "Brand Compliance", "description": "Eliminate brand dilution by strictly enforcing visual and verbal consistency across all teams and vendors.", "iconName": "CheckSquare" },
+          { "id": "card-3", "title": "Digital Asset Management", "description": "Streamline operations with a secure, centralized hub for organizing and distributing all approved collateral.", "iconName": "FolderLock" },
+          { "id": "card-4", "title": "Equity Tracking", "description": "Prove your brand's financial worth by accurately measuring awareness, share of voice, and perceived value.", "iconName": "BarChart2" },
+          { "id": "card-5", "title": "Brand Evolution", "description": "Stay aggressively competitive through strategic, incremental refreshes that modernize without losing core identity.", "iconName": "RefreshCw" }
         ]
       },
       {
@@ -2523,13 +2552,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "The Management Process",
         "content": "How we take control of your brand ecosystem to ensure flawless execution.",
-        "mediaUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Baseline Audit", "description": "Assessing current brand perception, identifying inconsistencies, and mapping vulnerabilities." },
-          { "id": "hw-2", "title": "Asset Centralization", "description": "Creating a single source of truth for all logos, fonts, and approved messaging." },
-          { "id": "hw-3", "title": "Proactive Monitoring", "description": "Deploying advanced social listening and sentiment analysis tools 24/7." },
-          { "id": "hw-4", "title": "Enforcement & Training", "description": "Educating internal teams and partners on strict adherence to brand guidelines." },
-          { "id": "hw-5", "title": "Quarterly Equity Reviews", "description": "Measuring the ROI of brand activities and adjusting strategies for growth." }
+          { "id": "hw-1", "title": "Baseline Audit", "description": "We immediately map vulnerabilities by aggressively auditing your current brand perception and inconsistencies." },
+          { "id": "hw-2", "title": "Asset Centralization", "description": "We eliminate confusion by creating a single, locked-down source of truth for all approved messaging and logos." },
+          { "id": "hw-3", "title": "Proactive Monitoring", "description": "We protect your reputation in real-time by deploying advanced social listening and sentiment analysis tools 24/7." },
+          { "id": "hw-4", "title": "Enforcement & Training", "description": "We guarantee flawless execution by educating internal teams and aggressively enforcing strict brand guidelines." },
+          { "id": "hw-5", "title": "Quarterly Equity Reviews", "description": "We prove the exact ROI of our brand management by delivering concrete metrics on market growth." }
         ]
       },
       {
@@ -2600,7 +2629,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-ai-marketing-automation",
         "type": "overview",
         "title": "Scale Your Marketing Efforts with Artificial Intelligence.",
-        "content": "Stop relying on manual, error-prone tasks. AI Marketing Automation allows you to hyper-personalize customer journeys at scale, predict buying behaviors before they happen, and automate complex workflows. From AI-driven email sequencing and dynamic ad creative to intelligent chatbots and seamless CRM syncing, we implement the cutting-edge technology that empowers your team to do more with less while significantly driving up conversion rates.",
+        "content": "Problem: Relying on manual, error-prone marketing tasks severely caps your growth. If you are executing campaigns by hand, you are burning cash on inefficiencies and losing high-intent prospects to faster, more automated competitors.\n\nSolution: We integrate cutting-edge AI Marketing Automation that accurately predicts buying behaviors, triggers hyper-personalized email sequences, and deploys intelligent 24/7 chatbots seamlessly linked to your CRM.\n\nAction: Exponentially scale your marketing output, achieve hyper-personalization, and dramatically increase your conversion rates without ever needing to scale your headcount.",
         "mediaUrl": "https://images.unsplash.com/photo-1677442136019-21780ecad995?q=80&w=1200",
         "bullets": []
       },
@@ -2609,12 +2638,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Automation Capabilities",
         "content": "Deploying machine learning to optimize every stage of your funnel.",
+        "mediaUrl": "/images/services/ai_marketing_1785498439194.png",
         "cards": [
-          { "id": "card-1", "title": "AI-Driven Email Sequences", "description": "Predictive send times and dynamic content tailored to individual user behavior.", "iconName": "Mail" },
-          { "id": "card-2", "title": "Conversational AI", "description": "Intelligent chatbots capable of 24/7 lead qualification and customer support.", "iconName": "MessageCircle" },
-          { "id": "card-3", "title": "CRM & Data Sync", "description": "Eliminating manual data entry through seamless API and webhook integrations.", "iconName": "Database" },
-          { "id": "card-4", "title": "Programmatic Bidding", "description": "AI algorithms optimizing your ad spend and bid strategies in real-time.", "iconName": "MousePointerClick" },
-          { "id": "card-5", "title": "Predictive Lead Scoring", "description": "Using historical data to identify exactly which prospects are ready to buy right now.", "iconName": "Target" }
+          { "id": "card-1", "title": "AI-Driven Email Sequences", "description": "Maximize open and click rates with predictive send times and dynamic content tailored to individual behavior.", "iconName": "Mail" },
+          { "id": "card-2", "title": "Conversational AI", "description": "Never miss a lead with intelligent chatbots capable of 24/7 autonomous qualification and customer support.", "iconName": "MessageCircle" },
+          { "id": "card-3", "title": "CRM & Data Sync", "description": "Eliminate manual data entry and human error through seamless, automated API and webhook integrations.", "iconName": "Database" },
+          { "id": "card-4", "title": "Programmatic Bidding", "description": "Slash acquisition costs with AI algorithms that optimize your ad spend and bid strategies in real-time.", "iconName": "MousePointerClick" },
+          { "id": "card-5", "title": "Predictive Lead Scoring", "description": "Close deals faster by using historical data to identify exactly which prospects are ready to buy right now.", "iconName": "Target" }
         ]
       },
       {
@@ -2624,11 +2654,11 @@ export const initialDynamicPages: DynamicPage[] = [
         "content": "A rigorous, phased approach to integrating AI into your marketing ecosystem securely.",
         "mediaUrl": "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Workflow Audit", "description": "We map out your current manual processes to identify high-impact automation opportunities." },
-          { "id": "hw-2", "title": "Tech Stack Integration", "description": "Connecting your CRMs, analytics APIs, and marketing platforms into one cohesive brain." },
-          { "id": "hw-3", "title": "Logic & Trigger Setup", "description": "Building the complex 'if/then' rules and machine learning parameters for your campaigns." },
-          { "id": "hw-4", "title": "Testing & QA", "description": "Running extensive simulations to ensure flawless execution across all possible user journeys." },
-          { "id": "hw-5", "title": "Continuous Learning", "description": "Monitoring the AI's performance and training the models to improve conversion rates over time." }
+          { "id": "hw-1", "title": "Workflow Audit", "description": "We identify massive cost-saving opportunities by thoroughly mapping out your current manual, inefficient processes." },
+          { "id": "hw-2", "title": "Tech Stack Integration", "description": "We eliminate data silos by flawlessly connecting your CRMs, analytics APIs, and marketing platforms." },
+          { "id": "hw-3", "title": "Logic & Trigger Setup", "description": "We engineer the complex 'if/then' rules and machine learning parameters that will run your campaigns autonomously." },
+          { "id": "hw-4", "title": "Testing & QA", "description": "We guarantee flawless execution by running extensive simulations across thousands of possible user journeys." },
+          { "id": "hw-5", "title": "Continuous Learning", "description": "We continuously drive down acquisition costs by monitoring the AI and training models to improve over time." }
         ]
       },
       {
@@ -2699,7 +2729,7 @@ export const initialDynamicPages: DynamicPage[] = [
         "id": "sec-overview-expert-monthly-audit",
         "type": "overview",
         "title": "Continuous Oversight for Peak Performance.",
-        "content": "The digital landscape changes daily—what worked last month might be bleeding your budget today. Our Expert Monthly Audit service provides rigorous, objective oversight of your entire marketing ecosystem. We act as your external board of advisors, evaluating your internal team's execution, auditing ad accounts for hidden inefficiencies, and ensuring your overarching strategy stays perfectly aligned with your revenue goals.",
+        "content": "Problem: The digital landscape changes daily—what worked last month might be silently bleeding your budget today. Without objective, high-level oversight, internal teams often miss hidden inefficiencies or technical errors that destroy ROI.\n\nSolution: We act as your external board of advisors, providing rigorous, unbiased monthly audits of your entire ecosystem to evaluate execution, catch errors early, and kill wasted ad spend.\n\nAction: Protect your budget and guarantee peak performance with forensic analysis that ensures your strategy stays perfectly aligned with your revenue goals.",
         "mediaUrl": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1200",
         "bullets": []
       },
@@ -2708,12 +2738,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "services-grid",
         "title": "Monthly Audit Deliverables",
         "content": "A forensic deep-dive into the health of your digital presence.",
+        "mediaUrl": "/images/services/monthly_audit.png",
         "cards": [
-          { "id": "card-1", "title": "Paid Media Forensics", "description": "Deep dive into Ad spend, ROAS, wasted keywords, and bidding inefficiencies.", "iconName": "DollarSign" },
-          { "id": "card-2", "title": "Technical SEO Tracking", "description": "Monthly checks for crawl errors, Core Web Vitals drops, and indexation issues.", "iconName": "Search" },
-          { "id": "card-3", "title": "Funnel Analysis", "description": "Tracking user drop-offs and friction points across your primary conversion paths.", "iconName": "TrendingDown" },
-          { "id": "card-4", "title": "Competitor Movement", "description": "Monitoring new competitor campaigns, keyword shifts, and positioning changes.", "iconName": "Eye" },
-          { "id": "card-5", "title": "Executive Briefing", "description": "A concise, no-fluff strategic report tailored for C-level leadership.", "iconName": "Briefcase" }
+          { "id": "card-1", "title": "Paid Media Forensics", "description": "Stop bleeding money by instantly identifying wasted keywords, poor ROAS, and bidding inefficiencies.", "iconName": "DollarSign" },
+          { "id": "card-2", "title": "Technical SEO Tracking", "description": "Prevent ranking drops with proactive monthly checks for crawl errors and indexation issues.", "iconName": "Search" },
+          { "id": "card-3", "title": "Funnel Analysis", "description": "Plug the leaks in your revenue by pinpointing exact user drop-offs and friction points.", "iconName": "TrendingDown" },
+          { "id": "card-4", "title": "Competitor Movement", "description": "Stay steps ahead by tracking new competitor campaigns, keyword shifts, and positioning changes.", "iconName": "Eye" },
+          { "id": "card-5", "title": "Executive Briefing", "description": "Get clarity immediately with a concise, no-fluff strategic report tailored for C-level action.", "iconName": "Briefcase" }
         ]
       },
       {
@@ -2721,13 +2752,13 @@ export const initialDynamicPages: DynamicPage[] = [
         "type": "how-we-do-it",
         "title": "The Monthly Cadence",
         "content": "How we maintain relentless accountability and optimization.",
-        "mediaUrl": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200",
+        "mediaUrl": "https://images.unsplash.com/photo-1542744173-05336fcc7ad4?q=80&w=1200",
         "cards": [
-          { "id": "hw-1", "title": "Data Aggregation", "description": "Pulling metrics from all your platforms into one unified, un-biased source of truth." },
-          { "id": "hw-2", "title": "Algorithmic Diagnostics", "description": "Running automated, proprietary tools to catch obvious technical errors instantly." },
-          { "id": "hw-3", "title": "Senior Expert Review", "description": "Manual, nuanced analysis conducted exclusively by our top-tier marketing veterans." },
-          { "id": "hw-4", "title": "The Action Plan", "description": "Detailing exactly what needs to be fixed, what to kill, and what to scale." },
-          { "id": "hw-5", "title": "The Advisory Call", "description": "A high-impact, 1-hour strategic alignment call with your marketing leadership." }
+          { "id": "hw-1", "title": "Data Aggregation", "description": "We cut through the noise by pulling metrics from all platforms into one unified, un-biased source of truth." },
+          { "id": "hw-2", "title": "Algorithmic Diagnostics", "description": "We proactively catch massive technical errors instantly by running automated, proprietary scanning tools." },
+          { "id": "hw-3", "title": "Senior Expert Review", "description": "You receive elite, nuanced analysis conducted exclusively by our top-tier marketing veterans—not juniors." },
+          { "id": "hw-4", "title": "The Action Plan", "description": "We remove all guesswork by detailing exactly what needs to be fixed, what to kill, and what to scale." },
+          { "id": "hw-5", "title": "The Advisory Call", "description": "We ensure absolute strategic alignment through a high-impact, 1-hour call with your leadership team." }
         ]
       },
       {
@@ -6069,7 +6100,7 @@ export const initialDynamicPages: DynamicPage[] = [
   "createdAt": "2026-08-26T00:00:00.000Z",
   "updatedAt": "2026-08-26T00:00:00.000Z",
   "heroImage": "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1400",
-  "overviewContent": "Cross marketing is the art of connecting two complementary brands — amplifying each other's audiences, distribution channels, and credibility. Think Nike partnering with FC Barcelona, Red Bull owning extreme sports, or Spotify collaborating with Starbucks. We architect, negotiate, and execute these brand alliances from strategy to signed deal.",
+  "overviewContent": "Problem: Trying to acquire new customers entirely on your own is expensive and slow. Without leveraging established audiences, your growth is bottlenecked by rising ad costs.\n\nSolution: We engineer high-value cross-marketing campaigns and strategic alliances that connect complementary brands to multiply reach and credibility.\n\nAction: Dominate new markets instantly by tapping into your partner's loyal audience and unlocking massive, highly-profitable revenue streams.",
   "serviceFeatures": [
     "Brand Partnership Strategy",
     "Cross-Sector Audience Mapping",
@@ -6114,7 +6145,7 @@ export const initialDynamicPages: DynamicPage[] = [
       "type": "overview",
       "isActive": true,
       "title": "What Is Cross Marketing?",
-      "content": "Cross marketing — also called brand collaboration or co-marketing — is a strategic alliance between two or more complementary brands to jointly promote products, services, or experiences to each other's audiences. It's more than a logo on a jersey. It's a precisely designed distribution play that multiplies trust, reach, and revenue simultaneously.\n\nConsider Nike's alliance with FC Barcelona. Nike doesn't just get visibility — they get permission from millions of football fans to be part of their identity. Consider Red Bull's ownership of extreme sports culture — they don't sponsor events, they are the event. These are calculated cross-marketing architectures. That's exactly what Lumora designs for brands ready to grow beyond their category.",
+      "content": "Problem: Trying to acquire new customers entirely on your own is increasingly expensive and slow. Without leveraging established, overlapping audiences, your growth is severely bottlenecked by rising ad costs and market saturation.\n\nSolution: We engineer high-value cross-marketing campaigns and strategic brand alliances that connect complementary brands to multiply reach, distribution channels, and credibility.\n\nAction: Dominate new markets instantly by tapping into a trusted partner's loyal audience, turning a shared demographic into a massive, highly-profitable revenue stream for both brands.",
       "mediaUrl": "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1200",
       "bullets": []
     },
@@ -6249,37 +6280,37 @@ export const initialDynamicPages: DynamicPage[] = [
       "isActive": true,
       "title": "How We Execute a Cross Marketing Alliance",
       "content": "From first brief to live campaign, Lumora runs a disciplined six-phase partnership playbook that has been proven across sports, FMCG, tech, and lifestyle brands. Every phase has defined outputs, measurable milestones, and clear accountability.",
-      "mediaUrl": "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1200",
+      "mediaUrl": "https://images.unsplash.com/photo-1552581234-26160f608093?q=80&w=1200",
       "cards": [
         {
           "id": "hw-cm-1",
           "title": "Brand & Audience Diagnosis",
-          "description": "We audit your brand positioning, existing audience data, channel performance, and cultural relevance to establish a clear collaboration profile."
+          "description": "We establish an impenetrable foundation by aggressively auditing your audience data to find exactly what a partner brand would value most."
         },
         {
           "id": "hw-cm-2",
           "title": "Partner Universe Mapping",
-          "description": "We map every viable partner brand in your identified sectors, scoring each on audience overlap, brand alignment, commercial potential, and market timing."
+          "description": "We guarantee high-ROI alignments by scientifically scoring potential partners on audience overlap, commercial upside, and brand safety."
         },
         {
           "id": "hw-cm-3",
           "title": "Outreach & Relationship Build",
-          "description": "We open doors, initiate conversations, and build relationships with decision-makers at target partner brands using our established network and proven outreach frameworks."
+          "description": "We bypass gatekeepers and initiate high-level conversations directly with decision-makers using our exclusive, established network."
         },
         {
           "id": "hw-cm-4",
-          "title": "Deal Architecture & Legal Review",
-          "description": "We structure the commercial agreement — including IP rights, campaign budgets, revenue share, exclusivity clauses, and performance benchmarks."
+          "title": "Deal Architecture & Legal",
+          "description": "We secure your commercial interests by structuring ironclad agreements that cover IP rights, revenue shares, and exclusivity clauses."
         },
         {
           "id": "hw-cm-5",
-          "title": "Co-Campaign Production & Launch",
-          "description": "Our creative and media teams produce all co-branded assets and orchestrate a coordinated multi-channel launch across both brands' channels simultaneously."
+          "title": "Co-Campaign Launch",
+          "description": "We maximize impact by producing elite co-branded assets and orchestrating a flawless, simultaneous launch across both brands."
         },
         {
           "id": "hw-cm-6",
-          "title": "Performance Tracking & Optimisation",
-          "description": "We monitor KPIs in real-time, optimise live campaigns, and deliver bi-weekly performance reports to both partners with strategic recommendations."
+          "title": "Performance Tracking",
+          "description": "We ensure accountability and scale success by monitoring real-time KPIs and delivering strict performance optimisation reports."
         }
       ]
     },
@@ -6293,7 +6324,7 @@ export const initialDynamicPages: DynamicPage[] = [
         {
           "id": "cs-cm-1",
           "title": "Footwear Brand × Premier League Club — 4.2M New Audience Reached",
-          "bgImageUrl": "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?q=80&w=1200",
+          "bgImageUrl": "https://images.unsplash.com/photo-1522778119026-d647f0596c20?q=80&w=1200",
           "description": "A premium athletic footwear brand (similar positioning to Nike) engaged Lumora to engineer a cross-marketing alliance with a top-tier Premier League football club. We identified that the club's 6.8M social following had a 67% overlap with the brand's target demographic of 18-34 year old sports-lifestyle enthusiasts. Lumora structured a multi-season co-marketing deal covering training kit branding, co-branded limited edition shoe drops, joint digital content (behind-the-scenes training footage), and co-activation at matchday events. The result: 4.2M new brand impressions from the club's audience in the first 90 days, a limited-edition shoe drop that sold out in 48 hours, and a 31% uplift in brand search volume in the club's primary cities.",
           "points": [
             { "id": "p1", "title": "4.2M New Audience Reached", "iconName": "Users" },

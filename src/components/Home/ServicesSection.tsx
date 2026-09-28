@@ -7,6 +7,7 @@ import {
 } from 'lucide-react';
 import { ServiceItem } from '../../types';
 import { getFallbackServiceDetails } from '../../data/serviceDetails';
+import { initialSiteContent } from '../../data/initialData';
 
 interface ServicesProps {
   services?: ServiceItem[];
@@ -42,26 +43,26 @@ const mockSolutions = [
   {
     id: 'performance-marketing',
     title: 'Performance Paid Advertising',
-    shortDescription: 'We engineer mathematically rigorous campaigns across Google, Meta, and LinkedIn to scale your ad spend profitably and aggressively.',
-    fullDescription: 'Traditional marketing hopes for results; we guarantee accountability. We align every marketing dollar directly with your bottom line, obsessing over hard metrics like CPA and ROAS to build highly tuned growth engines.',
+    shortDescription: 'Engineer mathematically rigorous, global campaigns across major networks to scale your international ad spend profitably and aggressively.',
+    fullDescription: 'Problem: Global brands often lose massive amounts of capital by deploying generic, unoptimized campaigns across diverse international markets, resulting in low ROI and wasted spend.\n\nSolution: We replace guesswork with data science. We build highly tuned, multi-region growth engines that obsess over hard metrics like CPA and ROAS, ensuring every dollar is aligned with your bottom line.\n\nAction: Deploy aggressive, predictable scaling strategies and dominate your global market with absolute mathematical certainty.',
     icon: 'Target',
     gradient: 'from-pink-500 to-rose-600',
     tag: '05 / PERFORMANCE',
     image: '/images/services/performance_marketing_1785498399389.png',
-    features: ['Omnichannel precision targeting', 'High-tempo A/B testing', 'Pixel-perfect attribution tracking', 'Ruthless LTV/CAC optimization', 'Aggressive budget scaling'],
-    deliverables: ['Advanced tracking & attribution setup', 'High-converting creative assets', 'Real-time live analytics dashboard', 'Weekly tactical scaling reports'],
+    features: ['Global Omnichannel Targeting', 'High-Tempo International A/B Testing', 'Borderless Attribution Tracking', 'Multi-Market LTV/CAC Optimization', 'Aggressive Global Budget Scaling'],
+    deliverables: ['Global Tracking & Attribution Setup', 'Culturally-Adapted Creative Assets', 'Real-time Global Analytics Dashboard', 'Weekly International Scaling Reports'],
   },
   {
     id: 'lead-generation',
     title: 'Lead Generation',
-    shortDescription: 'Predictable multi-channel B2B & B2C acquisition funnels that generate qualified, sales-ready inquiries.',
-    fullDescription: 'Stop chasing cold leads. We build intelligent, automated funnels that attract, educate, and convert high-quality prospects into ready-to-buy clients. From cold outreach to nurture sequences, every touchpoint is engineered to lower your Customer Acquisition Cost and shorten your sales cycle.',
+    shortDescription: 'Architect high-velocity, borderless acquisition funnels that consistently generate qualified, sales-ready inquiries globally.',
+    fullDescription: 'Problem: Scaling businesses often waste significant capital on fragmented, localized lead generation efforts that yield low-quality prospects and unpredictable sales cycles.\n\nSolution: We build intelligent, globally scalable acquisition engines. By leveraging advanced data enrichment, multi-region outreach, and predictive scoring, we eliminate the friction of borderless customer acquisition.\n\nAction: Stop chasing cold leads and start filling your calendar with high-converting, international sales appointments on autopilot.',
     icon: 'Users',
     gradient: 'from-emerald-500 to-teal-600',
     tag: '04 / ACQUISITION',
     image: '/images/services/lead_generation_1785498418027.png',
-    features: ['Multi-channel acquisition funnels', 'B2B cold outreach campaigns', 'Lead magnet creation', 'Automated follow-up sequences', 'Account-Based Marketing (ABM)'],
-    deliverables: ['Qualified sales appointments', 'Verified lead lists', 'Automated email sequences', 'High-converting landing pages'],
+    features: ['Borderless Acquisition Funnels', 'Multi-Region B2B Outreach', 'Culturally-Nuanced Lead Magnets', 'AI-Driven Follow-Up Sequences', 'Global Data Enrichment'],
+    deliverables: ['High-Intent Sales Appointments', 'Verified International Lead Lists', 'Localized Conversion Landing Pages', 'Global CRM Pipeline Integration'],
   },
   {
     id: 'retargeting-marketing',
@@ -96,14 +97,14 @@ export const ServicesSection: React.FC<ServicesProps> = ({
 }) => {
   const navigate = useNavigate();
   const [visibleCount, setVisibleCount] = useState(4);
-  const displayItems = services.length >= 6 ? services : mockSolutions;
+  const displayItems = services.length >= 6 ? services : initialSiteContent.services;
   const currentItems = displayItems.slice(0, visibleCount);
 
   useEffect(() => {
     const handleNavToService = (e: CustomEvent) => {
       const targetId = e.detail;
       const index = displayItems.findIndex((item, idx) => {
-        const fallback = mockSolutions[idx % mockSolutions.length];
+        const fallback = initialSiteContent.services[idx % initialSiteContent.services.length];
         return (item.slug || item.id || fallback.id) === targetId;
       });
       if (index >= visibleCount) {
@@ -139,15 +140,23 @@ export const ServicesSection: React.FC<ServicesProps> = ({
         {/* Zig-Zag Alternating Layout */}
         <div className="space-y-20 sm:space-y-28">
           {currentItems.map((item, idx) => {
-            const fallback = mockSolutions[idx % mockSolutions.length];
-            const title = item.title || fallback.title;
-            const shortDesc = item.shortDescription || fallback.shortDescription;
-            const fullDesc = (item as any).fullDescription || fallback.fullDescription;
-            const image = (item as any).imageUrl || (item as any).image_url || (item as any).image || fallback.image;
-            const features = (item.features?.length ? item.features : fallback.features) || [];
-            const deliverables = (item.deliverables?.length ? item.deliverables : fallback.deliverables) || [];
-            const iconName = (item as any).iconName || fallback.icon || 'CheckCircle';
-            const gradient = fallback.gradient;
+            const initialMatch = initialSiteContent.services.find(m => 
+              m.id === item.id || 
+              m.id === item.id?.replace('page-', '') ||
+              m.title === item.title ||
+              (item.title && m.title && item.title.toLowerCase().includes(m.title.toLowerCase()))
+            );
+            const fallback = initialMatch || mockSolutions.find(m => m.id === item.id);
+            const title = item.title || fallback?.title || 'Service';
+            
+            // Prioritize initialMatch/fallback curated content over generic DB fields
+            const shortDesc = fallback?.shortDescription || item.shortDescription || '';
+            const fullDesc = fallback?.fullDescription || (item as any).fullDescription || '';
+            const image = fallback?.image || (item as any).imageUrl || (item as any).image_url || (item as any).image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1200';
+            const features = (fallback?.features?.length ? fallback.features : item.features) || [];
+            const deliverables = (fallback?.deliverables?.length ? fallback.deliverables : item.deliverables) || [];
+            const iconName = (item as any).iconName || fallback?.iconName || fallback?.icon || 'CheckCircle';
+            const gradient = fallback?.gradient || 'from-gray-500 to-slate-600';
             const tag = `${String(idx + 1).padStart(2, '0')} / ${title.split(' ')[0].toUpperCase()}`;
             const isEven = idx % 2 === 0;
 
@@ -207,7 +216,7 @@ export const ServicesSection: React.FC<ServicesProps> = ({
                   </p>
 
                   {/* Full Description */}
-                  <p className="text-base text-[#6B7280] leading-relaxed">
+                  <p className="text-base text-[#6B7280] leading-relaxed whitespace-pre-line">
                     {fullDesc}
                   </p>
 

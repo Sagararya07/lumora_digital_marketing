@@ -22,6 +22,7 @@ import { FAQSection } from '../Home/FAQSection';
 import { useViewMore } from '../../hooks/useViewMore';
 import { ViewMoreButton } from '../common/ViewMoreButton';
 import { ParticleMorph } from './ParticleMorph';
+import { initialSiteContent } from '../../data/initialData';
 
 interface DynamicPageViewerProps {
   page: DynamicPage;
@@ -109,6 +110,12 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
 
   const visibleSections = (page.sections || []).filter(sec => sec.isActive !== false);
 
+  // Look up matching curated service for shortDescription
+  const matchedService = initialSiteContent.services.find(s => 
+    s.id === page.slug || 
+    (page.title && s.title && page.title.toLowerCase().includes(s.title.toLowerCase()))
+  );
+
   // Format Page Hero Title with Gradient Text
   const pageTitle = replacePlaceholders(page.title);
   const titleWords = pageTitle.trim().split(' ');
@@ -148,9 +155,9 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
               </span>
             </h1>
 
-            {(page.seo?.metaDescription || page.overviewContent) && (
+            {(page.heroDescription || matchedService?.shortDescription || page.seo?.metaDescription || page.overviewContent) && (
               <p className="text-base sm:text-lg text-[#6B7280] max-w-xl mx-auto lg:mx-0 leading-relaxed font-normal">
-                {replacePlaceholders(page.seo?.metaDescription || page.overviewContent || '')}
+                {replacePlaceholders(page.heroDescription || matchedService?.shortDescription || page.seo?.metaDescription || page.overviewContent || '')}
               </p>
             )}
 
@@ -284,7 +291,7 @@ export const DynamicPageViewer: React.FC<DynamicPageViewerProps> = ({
                       </span>
                     </h2>
                     <div>
-                      <p className="text-[#4B5563] text-lg sm:text-xl leading-relaxed font-medium">
+                      <p className="text-[#4B5563] text-lg sm:text-xl leading-relaxed font-medium whitespace-pre-line">
                         {replacePlaceholders(sec.content)}
                       </p>
                     </div>

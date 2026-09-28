@@ -133,8 +133,18 @@ export function App() {
       if (res.ok && data.data) {
         const mergedData = { ...data.data };
         
-        // Merge initialSiteContent services that might not be in DB yet
+        // Merge initialSiteContent services that might not be in DB yet, and enrich existing ones
         if (mergedData.services && initialSiteContent.services) {
+          mergedData.services = mergedData.services.map((dbService: any) => {
+            const initialMatch = initialSiteContent.services.find(s => s.id === dbService.id || s.slug === dbService.slug);
+            if (initialMatch) {
+              return {
+                ...initialMatch,
+                ...dbService, // DB overwrites initial, but missing DB fields (like image) are preserved
+              };
+            }
+            return dbService;
+          });
           const dbSlugs = new Set(mergedData.services.map((s: any) => s.slug));
           const missingServices = initialSiteContent.services.filter(s => !dbSlugs.has(s.slug));
           mergedData.services = [...mergedData.services, ...missingServices];
