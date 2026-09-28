@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Calendar, CheckCircle2, Clock } from 'lucide-react';
+import { Calendar, CheckCircle2, Clock, Download } from 'lucide-react';
 
 interface ClientMeetingsProps {
   clientId: string;
@@ -72,6 +72,14 @@ export const ClientMeetings: React.FC<ClientMeetingsProps> = ({ clientId }) => {
                 <div key={m.id} className="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm border-l-4 border-l-amber-500">
                   <h4 className="font-bold text-lg text-slate-900">{m.title}</h4>
                   {m.description && <p className="text-sm text-slate-600 mt-1">{m.description}</p>}
+                  {m.document_url && (
+                    <div className="mt-3">
+                      <a href={m.document_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-bold transition-colors">
+                        <Download className="w-4 h-4" />
+                        {m.document_name || 'Download Attached Document'}
+                      </a>
+                    </div>
+                  )}
                   
                   <div className="mt-6">
                     <p className="text-sm font-bold text-slate-700 mb-3">Please select one of the following times:</p>
@@ -113,8 +121,16 @@ export const ClientMeetings: React.FC<ClientMeetingsProps> = ({ clientId }) => {
                   <div>
                     <h4 className="font-bold text-lg text-slate-900">{m.title}</h4>
                     {m.description && <p className="text-sm text-slate-600 mt-1">{m.description}</p>}
-                    <div className="mt-3 inline-block px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold text-slate-700">
-                      🗓️ {new Date(m[`option${m.selected_option}`]).toLocaleString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                    <div className="mt-3 flex flex-wrap gap-2">
+                      <div className="inline-block px-3 py-1.5 bg-slate-100 rounded-lg text-sm font-bold text-slate-700">
+                        🗓️ {new Date(m[`option${m.selected_option}`]).toLocaleString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                      </div>
+                      {m.document_url && (
+                        <a href={m.document_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-bold transition-colors">
+                          <Download className="w-4 h-4" />
+                          {m.document_name || 'Download Document'}
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -138,6 +154,14 @@ export const ClientMeetings: React.FC<ClientMeetingsProps> = ({ clientId }) => {
                   <div>
                     <h4 className="font-bold text-lg text-slate-900 line-through text-slate-500">{m.title}</h4>
                     {m.description && <p className="text-sm text-slate-500 mt-1">{m.description}</p>}
+                    {m.document_url && (
+                      <div className="mt-2">
+                        <a href={m.document_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-3 py-1 bg-slate-50 hover:bg-slate-100 text-slate-600 rounded text-xs font-bold transition-colors">
+                          <Download className="w-3.5 h-3.5" />
+                          {m.document_name || 'Download Document'}
+                        </a>
+                      </div>
+                    )}
                     <div className="mt-3 inline-block px-3 py-1.5 bg-slate-50 border border-slate-100 rounded-lg text-xs font-bold text-slate-400">
                       Completed: {new Date(m[`option${m.selected_option}`]).toLocaleString([], { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
                     </div>

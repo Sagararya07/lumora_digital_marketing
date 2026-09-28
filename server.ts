@@ -1277,6 +1277,42 @@ app.get('/api/clients/:id', async (req, res) => {
     res.json(result.rows[0]);
   } catch (err) { res.status(500).json({ error: 'Database error' }); }
 });
+app.put('/api/clients/:id', async (req, res) => {
+  try {
+    const { 
+      company_name, contact_name, email, industry, business_model, details, status,
+      location, company_website, company_social_links, company_contact, 
+      employees_count, revenue, founder_name, cxo_name, cxo_contact, 
+      cxo_social_media, cxo_other, enriched_date 
+    } = req.body;
+
+    const fields = { 
+      company_name, contact_name, email, industry, business_model, details, status,
+      location, company_website, company_social_links, company_contact, 
+      employees_count, revenue, founder_name, cxo_name, cxo_contact, 
+      cxo_social_media, cxo_other, enriched_date 
+    };
+
+    let queryArgs: any[] = [];
+    let setClauses = [];
+    
+    for (const [key, value] of Object.entries(fields)) {
+      if (value !== undefined) {
+        queryArgs.push(value);
+        setClauses.push(`${key} = $${queryArgs.length}`);
+      }
+    }
+    
+    if (setClauses.length === 0) return res.json({ success: true });
+    
+    queryArgs.push(req.params.id);
+    const query = `UPDATE clients SET ${setClauses.join(', ')} WHERE client_id = $${queryArgs.length} RETURNING *`;
+    
+    const result = await pool.query(query, queryArgs);
+    res.json(result.rows[0]);
+  } catch (err) { res.status(500).json({ error: 'Database error' }); }
+});
+
 
 app.delete('/api/clients/:id', async (req, res) => {
   try {
@@ -1471,10 +1507,10 @@ app.get('/api/clients/:id/meetings', async (req, res) => {
 
 app.post('/api/clients/:id/meetings', async (req, res) => {
   try {
-    const { title, description, option1, option2, option3 } = req.body;
+    const { title, description, option1, option2, option3, document_url, document_name } = req.body;
     const result = await pool.query(
-      'INSERT INTO client_meetings (client_id, title, description, option1, option2, option3) VALUES ($1, $2, $3, $4, $5, $6) RETURNING *',
-      [req.params.id, title, description, option1, option2, option3]
+      'INSERT INTO client_meetings (client_id, title, description, option1, option2, option3, document_url, document_name) VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING *',
+      [req.params.id, title, description, option1, option2, option3, document_url || null, document_name || null]
     );
     
     // Fetch client email to send notification
@@ -1542,10 +1578,10 @@ app.get('/api/clients/:id/tasks', async (req, res) => {
 
 app.post('/api/clients/:id/tasks', async (req, res) => {
   try {
-    const { title, description, start_date, end_date } = req.body;
+    const { title, description, start_date, end_date, report_url, report_name } = req.body;
     const result = await pool.query(
-      'INSERT INTO client_tasks (client_id, title, description, start_date, end_date) VALUES ($1, $2, $3, $4, $5) RETURNING *',
-      [req.params.id, title, description, start_date || null, end_date || null]
+      'INSERT INTO client_tasks (client_id, title, description, start_date, end_date, report_url, report_name) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
+      [req.params.id, title, description, start_date || null, end_date || null, report_url || null, report_name || null]
     );
 
     // Fetch client email to send notification
@@ -1582,7 +1618,7 @@ app.post('/api/clients/:id/tasks', async (req, res) => {
 app.put('/api/clients/tasks/:taskId', async (req, res) => {
   try {
     // Determine which fields are provided to update
-    const { title, description, start_date, end_date, is_completed } = req.body;
+    const { title, description, start_date, end_date, is_completed, report_url, report_name } = req.body;
     
     // Build dynamic query
     let queryArgs: any[] = [];
@@ -1607,6 +1643,14 @@ app.put('/api/clients/tasks/:taskId', async (req, res) => {
     if (is_completed !== undefined) {
       queryArgs.push(is_completed);
       setClauses.push(`is_completed = $${queryArgs.length}`);
+    }
+    if (report_url !== undefined) {
+      queryArgs.push(report_url);
+      setClauses.push(`report_url = $${queryArgs.length}`);
+    }
+    if (report_name !== undefined) {
+      queryArgs.push(report_name);
+      setClauses.push(`report_name = $${queryArgs.length}`);
     }
     
     if (setClauses.length === 0) return res.json({ success: true });

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { ArrowLeft, Send, CheckCircle2, FileText, User, Briefcase, Activity, AlertCircle, MessageSquare, Bell, Edit2, Trash2, X, Calendar } from 'lucide-react';
+import { ArrowLeft, Send, CheckCircle2, FileText, User, Briefcase, Activity, AlertCircle, MessageSquare, Bell, Edit2, Trash2, X, Calendar, Paperclip, Download, Edit3 } from 'lucide-react';
 
 interface ClientDetailsAdminProps {
   clientId: string;
@@ -29,6 +29,9 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
   const [newTaskDesc, setNewTaskDesc] = useState('');
   const [newTaskStartDate, setNewTaskStartDate] = useState('');
   const [newTaskEndDate, setNewTaskEndDate] = useState('');
+  const [newTaskReportUrl, setNewTaskReportUrl] = useState('');
+  const [newTaskReportName, setNewTaskReportName] = useState('');
+  const [uploadingTaskReport, setUploadingTaskReport] = useState(false);
 
   // Task edit state
   const [editingTaskId, setEditingTaskId] = useState<number | null>(null);
@@ -36,6 +39,9 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
   const [editTaskDesc, setEditTaskDesc] = useState('');
   const [editTaskStartDate, setEditTaskStartDate] = useState('');
   const [editTaskEndDate, setEditTaskEndDate] = useState('');
+  const [editTaskReportUrl, setEditTaskReportUrl] = useState('');
+  const [editTaskReportName, setEditTaskReportName] = useState('');
+  const [uploadingEditTaskReport, setUploadingEditTaskReport] = useState(false);
 
   // Meeting state
   const [meetingTitle, setMeetingTitle] = useState('');
@@ -43,8 +49,15 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
   const [meetingOpt1, setMeetingOpt1] = useState('');
   const [meetingOpt2, setMeetingOpt2] = useState('');
   const [meetingOpt3, setMeetingOpt3] = useState('');
+  const [meetingReportUrl, setMeetingReportUrl] = useState('');
+  const [meetingReportName, setMeetingReportName] = useState('');
+  const [uploadingMeetingReport, setUploadingMeetingReport] = useState(false);
 
   const [loading, setLoading] = useState(true);
+
+  // Edit Info state
+  const [isEditingInfo, setIsEditingInfo] = useState(false);
+  const [editInfo, setEditInfo] = useState<any>({});
 
   useEffect(() => {
     fetchClientData();
@@ -60,7 +73,11 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
         fetch(`/api/clients/${clientId}/proposals`),
         fetch(`/api/clients/${clientId}/meetings`)
       ]);
-      if (clientRes.ok) setClient(await clientRes.json());
+      if (clientRes.ok) {
+        const data = await clientRes.json();
+        setClient(data);
+        setEditInfo(data);
+      }
       if (msgsRes.ok) setMessages(await msgsRes.json());
       if (tasksRes.ok) setTasks(await tasksRes.json());
       if (meetingsRes.ok) setMeetings(await meetingsRes.json());
@@ -72,6 +89,26 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
       console.error(err);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleSaveInfo = async (e: React.FormEvent) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(`/api/clients/${clientId}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(editInfo)
+      });
+      if (res.ok) {
+        setIsEditingInfo(false);
+        fetchClientData();
+      } else {
+        alert('Failed to save details');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Failed to save details');
     }
   };
 
@@ -190,7 +227,9 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
           description: meetingDesc, 
           option1: meetingOpt1, 
           option2: meetingOpt2, 
-          option3: meetingOpt3 
+          option3: meetingOpt3,
+          document_url: meetingReportUrl,
+          document_name: meetingReportName
         })
       });
       if (res.ok) {
@@ -199,6 +238,8 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
         setMeetingOpt1('');
         setMeetingOpt2('');
         setMeetingOpt3('');
+        setMeetingReportUrl('');
+        setMeetingReportName('');
         alert('Meeting proposal sent to client!');
         fetchClientData();
       }
@@ -234,7 +275,9 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
           title: newTaskTitle, 
           description: newTaskDesc,
           start_date: newTaskStartDate,
-          end_date: newTaskEndDate
+          end_date: newTaskEndDate,
+          report_url: newTaskReportUrl,
+          report_name: newTaskReportName
         })
       });
       if (res.ok) {
@@ -242,6 +285,8 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
         setNewTaskDesc('');
         setNewTaskStartDate('');
         setNewTaskEndDate('');
+        setNewTaskReportUrl('');
+        setNewTaskReportName('');
         fetchClientData();
       }
     } catch (err) {
@@ -258,7 +303,9 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
           title: editTaskTitle, 
           description: editTaskDesc,
           start_date: editTaskStartDate,
-          end_date: editTaskEndDate
+          end_date: editTaskEndDate,
+          report_url: editTaskReportUrl,
+          report_name: editTaskReportName
         })
       });
       if (res.ok) {
@@ -276,6 +323,8 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
     setEditTaskDesc(t.description || '');
     setEditTaskStartDate(t.start_date ? t.start_date.split('T')[0] : '');
     setEditTaskEndDate(t.end_date ? t.end_date.split('T')[0] : '');
+    setEditTaskReportUrl(t.report_url || '');
+    setEditTaskReportName(t.report_name || '');
   };
 
   const toggleTaskCompletion = async (taskId: number, currentStatus: boolean) => {
@@ -327,6 +376,72 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
     { id: 'tasks', label: 'Tasks & Goals', icon: CheckCircle2 },
     { id: 'meetings', label: 'Meetings', icon: Calendar }
   ];
+  const handleUploadTaskReport = async (e: React.ChangeEvent<HTMLInputElement>, isEdit: boolean) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    const file = e.target.files[0];
+    
+    if (isEdit) setUploadingEditTaskReport(true);
+    else setUploadingTaskReport(true);
+
+    const formData = new FormData();
+    formData.append('image', file);
+
+    try {
+      const uploadRes = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (uploadRes.ok) {
+        const { url } = await uploadRes.json();
+        if (isEdit) {
+          setEditTaskReportUrl(url);
+          setEditTaskReportName(file.name);
+        } else {
+          setNewTaskReportUrl(url);
+          setNewTaskReportName(file.name);
+        }
+      } else {
+        alert('Upload failed');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Upload failed');
+    } finally {
+      if (isEdit) setUploadingEditTaskReport(false);
+      else setUploadingTaskReport(false);
+    }
+  };
+
+  const handleUploadMeetingReport = async (e: React.ChangeEvent<HTMLInputElement>) => {
+    if (!e.target.files || e.target.files.length === 0) return;
+    const file = e.target.files[0];
+    
+    setUploadingMeetingReport(true);
+
+    const formData = new FormData();
+    formData.append('image', file);
+
+    try {
+      const uploadRes = await fetch('/api/upload', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (uploadRes.ok) {
+        const { url } = await uploadRes.json();
+        setMeetingReportUrl(url);
+        setMeetingReportName(file.name);
+      } else {
+        alert('Upload failed');
+      }
+    } catch (err) {
+      console.error(err);
+      alert('Upload failed');
+    } finally {
+      setUploadingMeetingReport(false);
+    }
+  };
 
   return (
     <div className="bg-white rounded-3xl border border-[#E5E7EB] shadow-sm overflow-hidden flex flex-col h-[calc(100vh-120px)]">
@@ -370,31 +485,109 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
       <div className="flex-1 overflow-y-auto bg-slate-50/50 p-6 custom-scrollbar relative">
         
         {activeTab === 'info' && (
-          <div className="space-y-6 max-w-3xl animate-in fade-in">
-            <div className="grid grid-cols-2 gap-4">
-              <div className="bg-white p-5 rounded-2xl border border-slate-200">
-                <span className="text-xs font-bold text-slate-400 uppercase">Contact Email</span>
-                <p className="font-semibold text-slate-900 mt-1">{client.email}</p>
-              </div>
-              <div className="bg-white p-5 rounded-2xl border border-slate-200">
-                <span className="text-xs font-bold text-slate-400 uppercase">Industry</span>
-                <p className="font-semibold text-slate-900 mt-1">{client.industry}</p>
-              </div>
-            </div>
-            
-            <div className="bg-white p-6 rounded-2xl border border-slate-200 space-y-4">
-              <h3 className="font-bold text-slate-900 text-lg border-b border-slate-100 pb-2">Business Requirement</h3>
-              <div>
-                <span className="text-xs font-bold text-slate-400 uppercase">Business Model</span>
-                <p className="text-sm text-slate-700 mt-1">{client.business_model || 'Not provided'}</p>
-              </div>
-              <div>
-                <span className="text-xs font-bold text-slate-400 uppercase">Details</span>
-                <div className="text-sm text-slate-700 mt-1 bg-slate-50 p-4 rounded-xl">
-                  {client.details?.primary_goal || 'No specific goals written in form.'}
+          <div className="space-y-6 max-w-4xl animate-in fade-in">
+            {isEditingInfo ? (
+              <form onSubmit={handleSaveInfo} className="bg-white p-6 rounded-2xl border border-slate-200 space-y-6">
+                <div className="flex items-center justify-between border-b border-slate-100 pb-4">
+                  <h3 className="font-bold text-slate-900 text-lg">Edit Company Details</h3>
+                  <div className="flex items-center gap-2">
+                    <button type="button" onClick={() => { setIsEditingInfo(false); setEditInfo(client); }} className="px-3 py-1.5 text-sm font-bold text-slate-600 bg-slate-100 rounded-lg hover:bg-slate-200">Cancel</button>
+                    <button type="submit" className="px-3 py-1.5 text-sm font-bold text-white bg-[#5B8EE2] rounded-lg hover:bg-blue-600">Save Changes</button>
+                  </div>
                 </div>
-              </div>
-            </div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Company Name</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.company_name || ''} onChange={e => setEditInfo({...editInfo, company_name: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Industry</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.industry || ''} onChange={e => setEditInfo({...editInfo, industry: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Location</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.location || ''} onChange={e => setEditInfo({...editInfo, location: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Company Website</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.company_website || ''} onChange={e => setEditInfo({...editInfo, company_website: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Company Contact</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.company_contact || ''} onChange={e => setEditInfo({...editInfo, company_contact: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Company Social Links</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.company_social_links || ''} onChange={e => setEditInfo({...editInfo, company_social_links: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Number of Employees</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.employees_count || ''} onChange={e => setEditInfo({...editInfo, employees_count: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Revenue</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.revenue || ''} onChange={e => setEditInfo({...editInfo, revenue: e.target.value})} /></div>
+                </div>
+                
+                <div className="border-t border-slate-100 pt-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Founder Name</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.founder_name || ''} onChange={e => setEditInfo({...editInfo, founder_name: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">CXO Name</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.cxo_name || ''} onChange={e => setEditInfo({...editInfo, cxo_name: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">CXO Contact</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.cxo_contact || ''} onChange={e => setEditInfo({...editInfo, cxo_contact: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">CXO Social Media</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.cxo_social_media || ''} onChange={e => setEditInfo({...editInfo, cxo_social_media: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">CXO Other Details</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.cxo_other || ''} onChange={e => setEditInfo({...editInfo, cxo_other: e.target.value})} /></div>
+                  <div><label className="block text-xs font-bold text-slate-500 mb-1">Enriched Date</label><input type="text" className="w-full px-3 py-2 border rounded-lg text-sm" value={editInfo.enriched_date || ''} onChange={e => setEditInfo({...editInfo, enriched_date: e.target.value})} /></div>
+                </div>
+
+                <div className="border-t border-slate-100 pt-4">
+                  <label className="block text-xs font-bold text-slate-500 mb-1">Business Model</label>
+                  <input type="text" className="w-full px-3 py-2 border rounded-lg text-sm mb-4" value={editInfo.business_model || ''} onChange={e => setEditInfo({...editInfo, business_model: e.target.value})} />
+                  
+                  <label className="block text-xs font-bold text-slate-500 mb-1">Requirement / Details</label>
+                  <textarea className="w-full px-3 py-2 border rounded-lg text-sm h-32" value={typeof editInfo.details === 'string' ? editInfo.details : editInfo.details?.primary_goal || JSON.stringify(editInfo.details) || ''} onChange={e => setEditInfo({...editInfo, details: e.target.value})}></textarea>
+                </div>
+              </form>
+            ) : (
+              <>
+                <div className="flex justify-end mb-[-1rem] relative z-10">
+                  <button onClick={() => setIsEditingInfo(true)} className="flex items-center gap-2 px-3 py-1.5 bg-white border border-slate-200 text-slate-700 text-sm font-bold rounded-lg hover:bg-slate-50 shadow-sm transition-colors">
+                    <Edit3 className="w-4 h-4" /> Edit Details
+                  </button>
+                </div>
+
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                  <div className="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                    <h3 className="font-bold text-slate-900 text-lg">Company Overview</h3>
+                  </div>
+                  <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div><span className="text-xs font-bold text-slate-400 uppercase">Industry</span><p className="font-medium text-slate-900 mt-1">{client.industry || '-'}</p></div>
+                    <div><span className="text-xs font-bold text-slate-400 uppercase">Location</span><p className="font-medium text-slate-900 mt-1">{client.location || '-'}</p></div>
+                    <div><span className="text-xs font-bold text-slate-400 uppercase">Employees</span><p className="font-medium text-slate-900 mt-1">{client.employees_count || '-'}</p></div>
+                    <div><span className="text-xs font-bold text-slate-400 uppercase">Revenue</span><p className="font-medium text-slate-900 mt-1">{client.revenue ? (client.revenue.length > 8 ? '$'+(parseInt(client.revenue)/1000000).toFixed(1)+'M' : '$'+client.revenue) : '-'}</p></div>
+                    <div className="col-span-full"><span className="text-xs font-bold text-slate-400 uppercase">Website</span><p className="font-medium text-[#5B8EE2] mt-1">{client.company_website ? <a href={client.company_website} target="_blank" rel="noreferrer" className="hover:underline">{client.company_website}</a> : '-'}</p></div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                  <div className="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                    <h3 className="font-bold text-slate-900 text-lg">Key Contacts</h3>
+                  </div>
+                  <div className="p-6 grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                      <span className="text-xs font-bold text-slate-400 uppercase">Primary Contact</span>
+                      <p className="font-medium text-slate-900 mt-1">{client.contact_name || '-'}</p>
+                      <p className="text-sm text-slate-500 mt-0.5">{client.email}</p>
+                      <p className="text-sm text-slate-500 mt-0.5">{client.company_contact}</p>
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-slate-400 uppercase">Founder / CEO</span>
+                      <p className="font-medium text-slate-900 mt-1">{client.founder_name || '-'}</p>
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-slate-400 uppercase">CXO Name</span>
+                      <p className="font-medium text-slate-900 mt-1">{client.cxo_name || '-'}</p>
+                      <p className="text-sm text-slate-500 mt-0.5">{client.cxo_contact}</p>
+                      {client.cxo_social_media && <a href={client.cxo_social_media} target="_blank" rel="noreferrer" className="text-sm text-[#5B8EE2] hover:underline mt-0.5 inline-block">LinkedIn</a>}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden">
+                  <div className="bg-slate-50 px-6 py-4 border-b border-slate-200">
+                    <h3 className="font-bold text-slate-900 text-lg">Business Requirement</h3>
+                  </div>
+                  <div className="p-6 space-y-4">
+                    <div>
+                      <span className="text-xs font-bold text-slate-400 uppercase">Business Model</span>
+                      <p className="text-sm font-medium text-slate-900 mt-1">{client.business_model || 'Not provided'}</p>
+                    </div>
+                    <div>
+                      <span className="text-xs font-bold text-slate-400 uppercase">Details</span>
+                      <div className="text-sm text-slate-700 mt-1 bg-slate-50 p-4 rounded-xl leading-relaxed whitespace-pre-wrap">
+                        {typeof client.details === 'string' ? client.details : (client.details?.primary_goal || 'No specific goals written in form.')}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </>
+            )}
           </div>
         )}
 
@@ -523,7 +716,6 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
             </div>
           </div>
         )}
-
         {activeTab === 'tasks' && (
           <div className="animate-in fade-in flex flex-col gap-6">
             <form onSubmit={handleCreateTask} className="bg-slate-50 border border-slate-200 rounded-2xl p-6">
@@ -543,6 +735,17 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
                   <div>
                     <label className="block text-xs font-bold text-slate-500 mb-1">End Date (Optional)</label>
                     <input type="date" value={newTaskEndDate} onChange={e => setNewTaskEndDate(e.target.value)} className="w-full px-4 py-2 rounded-lg border border-slate-200 text-sm outline-none" />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-xs font-bold text-slate-500 mb-1">Attach Report/Document (Optional)</label>
+                  <div className="flex items-center gap-4">
+                    <label className={`flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm cursor-pointer hover:bg-slate-50 ${uploadingTaskReport ? 'opacity-50 pointer-events-none' : ''}`}>
+                      <Paperclip className="w-4 h-4" />
+                      {uploadingTaskReport ? 'Uploading...' : 'Upload File'}
+                      <input type="file" className="hidden" onChange={(e) => handleUploadTaskReport(e, false)} disabled={uploadingTaskReport} />
+                    </label>
+                    {newTaskReportName && <span className="text-sm text-emerald-600 flex items-center gap-1"><CheckCircle2 className="w-4 h-4" /> {newTaskReportName}</span>}
                   </div>
                 </div>
                 <button type="submit" className="px-4 py-2 bg-[#5B8EE2] text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-colors">
@@ -565,6 +768,19 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
                         <input type="date" value={editTaskStartDate} onChange={e => setEditTaskStartDate(e.target.value)} className="px-3 py-2 rounded border border-slate-200 text-sm" />
                         <input type="date" value={editTaskEndDate} onChange={e => setEditTaskEndDate(e.target.value)} className="px-3 py-2 rounded border border-slate-200 text-sm" />
                       </div>
+                      <div className="flex items-center gap-4">
+                        <label className={`flex items-center gap-2 px-3 py-2 bg-white border border-slate-200 rounded text-sm cursor-pointer hover:bg-slate-50 ${uploadingEditTaskReport ? 'opacity-50 pointer-events-none' : ''}`}>
+                          <Paperclip className="w-4 h-4" />
+                          {uploadingEditTaskReport ? 'Uploading...' : 'Update Attachment'}
+                          <input type="file" className="hidden" onChange={(e) => handleUploadTaskReport(e, true)} disabled={uploadingEditTaskReport} />
+                        </label>
+                        {editTaskReportName && (
+                          <div className="flex items-center gap-2 text-sm text-slate-600">
+                            <span>{editTaskReportName}</span>
+                            <button onClick={() => { setEditTaskReportUrl(''); setEditTaskReportName(''); }} className="text-red-500 hover:text-red-700"><X className="w-4 h-4" /></button>
+                          </div>
+                        )}
+                      </div>
                       <div className="flex gap-2">
                         <button onClick={() => handleUpdateTask(t.id)} className="px-3 py-1.5 bg-[#5B8EE2] text-white text-xs font-bold rounded">Save</button>
                         <button onClick={() => setEditingTaskId(null)} className="px-3 py-1.5 bg-slate-200 text-slate-700 text-xs font-bold rounded">Cancel</button>
@@ -584,6 +800,14 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
                         {(t.start_date || t.end_date) && (
                           <div className="text-[11px] font-bold text-slate-400 mt-2 bg-slate-100 inline-block px-2 py-1 rounded">
                             {t.start_date ? new Date(t.start_date).toLocaleDateString() : '???'} - {t.end_date ? new Date(t.end_date).toLocaleDateString() : '???'}
+                          </div>
+                        )}
+                        {t.report_url && (
+                          <div className="mt-3 flex items-center gap-2">
+                            <a href={t.report_url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 px-3 py-1.5 bg-blue-50 text-blue-600 rounded-md text-xs font-bold hover:bg-blue-100 transition-colors">
+                              <Download className="w-3.5 h-3.5" />
+                              {t.report_name || 'Download Report'}
+                            </a>
                           </div>
                         )}
                       </div>
@@ -611,8 +835,18 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
                     <input type="datetime-local" value={meetingOpt3} onChange={e => setMeetingOpt3(e.target.value)} required className="w-full px-4 py-2 rounded-lg border border-slate-200 text-sm outline-none" />
                   </div>
                 </div>
-
-                <button type="submit" className="px-4 py-2 bg-[#5B8EE2] text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-colors">
+                <div>
+                  <label className="block text-xs font-bold text-slate-500 mb-1">Attach Document (Optional)</label>
+                  <div className="flex items-center gap-4">
+                    <label className={`flex items-center gap-2 px-4 py-2 bg-white border border-slate-200 rounded-lg text-sm cursor-pointer hover:bg-slate-50 ${uploadingMeetingReport ? 'opacity-50 pointer-events-none' : ''}`}>
+                      <Paperclip className="w-4 h-4" />
+                      {uploadingMeetingReport ? 'Uploading...' : 'Upload Document'}
+                      <input type="file" className="hidden" onChange={handleUploadMeetingReport} disabled={uploadingMeetingReport} />
+                    </label>
+                    {meetingReportName && <span className="text-sm text-emerald-600 flex items-center gap-1"><CheckCircle2 className="w-4 h-4" /> {meetingReportName}</span>}
+                  </div>
+                </div>
+                <button type="submit" className="px-4 py-2 bg-[#5B8EE2] text-white text-sm font-bold rounded-lg hover:bg-blue-600 transition-colors w-fit">
                   Propose Meeting
                 </button>
               </div>
@@ -640,6 +874,14 @@ export const ClientDetailsAdmin: React.FC<ClientDetailsAdminProps> = ({ clientId
                     {m.selected_option && (
                       <div className="text-xs font-bold text-[#5B8EE2] mt-2 bg-blue-50 inline-block px-2 py-1 rounded">
                         Confirmed for: {new Date(m[`option${m.selected_option}`]).toLocaleString()}
+                      </div>
+                    )}
+                    {m.document_url && (
+                      <div className="mt-2">
+                        <a href={m.document_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1.5 px-2 py-1 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded text-xs font-bold transition-colors">
+                          <Download className="w-3 h-3" />
+                          {m.document_name || 'Attached Document'}
+                        </a>
                       </div>
                     )}
                   </div>

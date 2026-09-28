@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { CheckCircle2, Circle } from 'lucide-react';
+import { CheckCircle2, Circle, Download } from 'lucide-react';
 
 interface ClientTasksProps {
   clientId: string;
@@ -66,6 +66,14 @@ export const ClientTasks: React.FC<ClientTasksProps> = ({ clientId }) => {
                       </span>
                     )}
                   </div>
+                  {t.report_url && (
+                    <div className="mt-4">
+                      <a href={t.report_url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 rounded-lg text-sm font-bold transition-colors shadow-sm">
+                        <Download className="w-4 h-4" />
+                        {t.report_name || 'Download Report Document'}
+                      </a>
+                    </div>
+                  )}
                 </div>
               </div>
             </div>
