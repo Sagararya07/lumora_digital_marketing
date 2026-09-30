@@ -29,6 +29,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
             {highlight}
           </span>
+          {' '}
+          <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
+            &amp; Branding
+          </span>
           {parts.slice(1).join(highlight)}
         </>
       );
