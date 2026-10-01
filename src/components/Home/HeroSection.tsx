@@ -18,8 +18,8 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
   onNavigateToServices,
 }) => {
   const renderHeadline = () => {
-    const main = content?.headlineMain || 'We Build Intelligent Growth Systems That Drive Real Business Impact.';
-    const highlight = content?.headlineHighlight || 'Growth Systems';
+    const main = content?.headlineMain || 'Position Your Brand. Expand Your Market. Accelerate Growth.';
+    const highlight = content?.headlineHighlight || 'Accelerate Growth.';
     
     if (main.includes(highlight)) {
       const parts = main.split(highlight);
@@ -28,10 +28,6 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
           {parts[0]}
           <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
             {highlight}
-          </span>
-          {' '}
-          <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
-            &amp; Branding
           </span>
           {parts.slice(1).join(highlight)}
         </>
@@ -68,7 +64,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({
 
             {/* Subheadline */}
             <p className="text-slate-600 text-base sm:text-lg lg:text-xl leading-relaxed max-w-2xl font-normal whitespace-pre-wrap">
-              {content?.subheadline || 'Lumora combines AI, marketing, automation and data to help businesses attract the right customers, convert more leads and scale revenue predictably.'}
+              {(() => {
+                const sub = content?.subheadline || 'Strategic Marketing & Branding designed to build authority, reach the right audience, and create sustainable business growth.';
+                const keyword = 'Marketing & Branding';
+                if (sub.includes(keyword)) {
+                  const parts = sub.split(keyword);
+                  return (
+                    <>
+                      {parts[0]}
+                      <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent font-semibold">
+                        {keyword}
+                      </span>
+                      {parts.slice(1).join(keyword)}
+                    </>
+                  );
+                }
+                return sub;
+              })()}
             </p>
 
             {/* CTA Buttons */}

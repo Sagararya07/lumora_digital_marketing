@@ -342,6 +342,7 @@ export function App() {
                 <ConsultationPage
                   siteContent={siteContent}
                   onGoHome={handleGoHome}
+                  openConsultationModal={handleOpenConsultation}
                 />
               )
             } />
@@ -351,6 +352,7 @@ export function App() {
                 <ConsultationPage
                   siteContent={siteContent}
                   onGoHome={handleGoHome}
+                  openConsultationModal={handleOpenConsultation}
                 />
               )
             } />

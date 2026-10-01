@@ -4,9 +4,9 @@ import { SiteContent, DynamicPage } from '../types';
 export const initialSiteContent: SiteContent = {
   "hero": {
     "badgeText": "Local | National and Global Reach",
-    "headlineMain": "Grow Your Business with Local, National & Global",
-    "headlineHighlight": "Digital Marketing",
-    "subheadline": "Drive qualified leads, increase brand visibility, and scale your global presence with data-driven digital marketing strategies tailored for modern growth.",
+    "headlineMain": "Position Your Brand. Expand Your Market. Accelerate Growth.",
+    "headlineHighlight": "Accelerate Growth.",
+    "subheadline": "Strategic Marketing & Branding designed to build authority, reach the right audience, and create sustainable business growth.",
     "ctaPrimaryText": "Explore Services",
     "ctaSecondaryText": "Talk to an Expert",
     "statNumber": "+342%",
