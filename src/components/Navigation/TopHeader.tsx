@@ -124,7 +124,7 @@ export const TopHeader: React.FC<TopHeaderProps> = ({
               <div className="absolute top-full left-1/2 -translate-x-1/2 mt-3 w-[900px] max-w-[95vw] bg-white border border-slate-200 rounded-2xl shadow-2xl z-50 animate-in fade-in slide-in-from-top-2 p-6">
                 <div className="mb-4 pb-3 border-b border-slate-100 text-center">
                   <h3 className="text-base sm:text-lg font-bold bg-gradient-to-r from-[#5B8EE2] to-[#EC4899] bg-clip-text text-transparent inline-block">
-                    Our specialists will assist you to clarify and optimize your demand and marketing strategy
+                    Our specialists assist you in clarifying your demand, identifying growth opportunities, and optimizing your marketing strategy.
                   </h3>
                 </div>
                 {/* Scrollable container — shows 3 rows, scrolls for more */}
