@@ -25,7 +25,17 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
   onGoHome,
 }) => {
   const [searchParams] = useSearchParams();
-  const serviceParam = searchParams.get('service');
+  const serviceSlug = searchParams.get('service');
+
+  // Try to find the service by slug to get the proper title
+  const serviceObj = siteContent.services?.find(s => s.slug === serviceSlug || s.id === serviceSlug);
+  
+  // Use the title if found, otherwise format the slug nicely
+  const serviceTitle = serviceObj 
+    ? serviceObj.title 
+    : serviceSlug 
+      ? serviceSlug.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
+      : null;
 
   return (
     <div className="min-h-screen bg-white text-[#111827] font-['Inter',sans-serif]">
@@ -39,16 +49,16 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
           <div>
             <span className="inline-flex items-center gap-2 text-[#5B8EE2] font-extrabold text-xs tracking-widest uppercase px-4 py-2 rounded-full border border-blue-200 bg-[#F2F6FC]/80 shadow-xs font-['Plus_Jakarta_Sans',sans-serif]">
               <Calendar className="w-3.5 h-3.5 text-[#5B8EE2] animate-pulse" />
-              <span>{serviceParam ? 'SERVICE REQUEST' : 'STRATEGY CONSULTATION BOOKING'}</span>
+              <span>{serviceTitle ? 'SERVICE REQUEST' : 'STRATEGY CONSULTATION BOOKING'}</span>
             </span>
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#111827] tracking-tight font-['Plus_Jakarta_Sans',sans-serif] leading-tight">
-            {serviceParam ? (
+            {serviceTitle ? (
               <>
                 Request for{' '}
                 <span className="bg-gradient-to-r from-[#5B8EE2] via-[#D6A67B] to-[#EC4899] bg-clip-text text-transparent">
-                  {serviceParam}
+                  {serviceTitle}
                 </span>
               </>
             ) : (
@@ -62,8 +72,8 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
           </h1>
 
           <p className="text-base sm:text-lg text-[#6B7280] max-w-2xl mx-auto leading-relaxed font-normal">
-            {serviceParam
-              ? `Fill out the form below to request our ${serviceParam} service. Our team will get back to you within 24 hours.`
+            {serviceTitle
+              ? `Fill out the form below to request our ${serviceTitle} service. Our team will get back to you within 24 hours.`
               : 'Discover how our data-backed PPC, SEO, and AI funnel automation can scale your pipeline revenue. No sales pitch—just actionable growth roadmap insights.'}
           </p>
         </div>
@@ -72,7 +82,7 @@ export const ConsultationPage: React.FC<ConsultationPageProps> = ({
       {/* 3. Main Embedded Detailed Form */}
       <div className="px-4 relative z-20">
         <DetailedConsultationForm 
-          sourcePage={serviceParam ? `Service Request: ${serviceParam}` : 'Dedicated Consultation Page'}
+          sourcePage={serviceTitle ? `Service Request: ${serviceTitle}` : 'Dedicated Consultation Page'}
         />
       </div>
 

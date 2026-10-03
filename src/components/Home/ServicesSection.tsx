@@ -269,7 +269,8 @@ export const ServicesSection: React.FC<ServicesProps> = ({
 
                     <button
                       onClick={() => {
-                        navigate(`/get-a-consultation?service=${encodeURIComponent(title)}`);
+                        const baseSlug = (item as any).slug || fallback.id;
+                        navigate(`/get-a-consultation?service=${baseSlug}`);
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
                       className="inline-flex items-center gap-2 text-[#5B8EE2] font-bold text-xs tracking-wide uppercase hover:text-[#4676C2] transition-colors"
