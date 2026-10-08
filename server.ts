@@ -458,7 +458,7 @@ const sendLeadEmailNotification = async (leadData: {
   message?: string;
   sourcePage?: string;
 }) => {
-  const targetEmails = 'cypherswiftinfotech@gmail.com, support@lumora.expert, digitalmarketing@lumora.expert, consult@lumora.expert';
+  const targetEmails = 'cypherswiftinfotech@gmail.com, support@lumora.expert, digitalmarketing@lumora.expert, consult@lumora.expert, ahanaaura1@gmail.com';
 
   const transporter = nodemailer.createTransport({
     host: process.env.SMTP_HOST || 'smtp.gmail.com',
@@ -1166,6 +1166,15 @@ app.post('/api/icp-submissions', async (req, res) => {
       'INSERT INTO icp_submissions (company_name, email, website, contact_name, role, business_model, industry, monthly_budget, primary_goal) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING *',
       [company_name, email, website, contact_name, role, business_model, industry, monthly_budget, primary_goal]
     );
+    sendLeadEmailNotification({
+      name: contact_name || 'ICP Lead',
+      email: email,
+      companyName: company_name,
+      budget: monthly_budget,
+      message: `Role: ${role || 'N/A'} | Business: ${business_model || 'N/A'} | Industry: ${industry || 'N/A'} | Website: ${website || 'N/A'} | Goal: ${primary_goal || 'N/A'}`,
+      sourcePage: 'ICP Qualification Form'
+    }).catch(err => console.error("ICP email notification failed", err));
+
     res.json({ success: true, data: result.rows[0] });
   } catch (err) { res.status(500).json({ error: 'Database error' }); }
 });
@@ -1241,6 +1250,14 @@ app.post('/api/discovery-submissions', async (req, res) => {
       'INSERT INTO icp_discovery_submissions (icp_id, primary_product, avg_deal_size, sales_cycle, pain_points, competitors, marketing_challenges) VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING *',
       [icp_id, primary_product, avg_deal_size, sales_cycle, pain_points, competitors, marketing_challenges]
     );
+    sendLeadEmailNotification({
+      name: `Discovery Lead (ICP #${icp_id || 'N/A'})`,
+      email: 'Registered ICP Lead',
+      companyName: `ICP #${icp_id || 'N/A'}`,
+      message: `Product: ${primary_product || 'N/A'} | Deal Size: ${avg_deal_size || 'N/A'} | Cycle: ${sales_cycle || 'N/A'} | Pains: ${pain_points || 'N/A'} | Competitors: ${competitors || 'N/A'} | Challenges: ${marketing_challenges || 'N/A'}`,
+      sourcePage: 'Deep-Dive Discovery Form'
+    }).catch(err => console.error("Discovery email notification failed", err));
+
     res.json({ success: true, data: result.rows[0] });
   } catch (err) { res.status(500).json({ error: 'Database error' }); }
 });
