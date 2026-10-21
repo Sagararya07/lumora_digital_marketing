@@ -1,0 +1,60 @@
+# ==========================================================
+# Lumora (lumoro-website-testing.vercel.app) - Official robots.txt
+# Configured for Search Engines & AI Search Crawlers
+# ==========================================================
+
+# 1. Default Rules for General Crawlers
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+Allow: /images/
+
+# 2. Permissions for AI Search Engines & LLM Discovery Crawlers
+# OpenAI / ChatGPT Web Search & Discovery
+User-agent: GPTBot
+Allow: /
+Disallow: /admin/
+Disallow: /api/
+
+User-agent: OAI-SearchBot
+Allow: /
+Disallow: /admin/
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Perplexity AI Search Crawler
+User-agent: PerplexityBot
+Allow: /
+Disallow: /admin/
+
+# Anthropic / Claude Web Crawler
+User-agent: ClaudeBot
+Allow: /
+Disallow: /admin/
+
+User-agent: anthropic-ai
+Allow: /
+Disallow: /admin/
+
+# Google AI & Gemini Overviews
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+Disallow: /admin/
+
+# Microsoft Bing & Copilot Crawler
+User-agent: Bingbot
+Allow: /
+Disallow: /admin/
+
+# Apple Search & AI Intelligence
+User-agent: Applebot
+Allow: /
+Disallow: /admin/
+
+# 3. Discovery Sitemaps & LLM Context
+Sitemap: https://lumoro-website-testing.vercel.app/sitemap.xml
