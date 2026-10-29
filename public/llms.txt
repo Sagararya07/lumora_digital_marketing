@@ -1,45 +1,219 @@
 # Lumora
 
-> Lumora (https://lumoro-website-testing.vercel.app/) is a next-generation AI and digital marketing agency specializing in SaaS growth, performance marketing, hyper-targeted paid advertising, and global SEO. Lumora operates as an agency division of Cypher Swift (https://www.cypherswift.com).
+> Lumora (https://lumoro-website-testing.vercel.app/) is a next-generation AI and digital marketing agency specializing in SaaS growth, performance marketing, hyper-targeted paid advertising, international SEO, and B2B demand generation. Lumora operates as an agency division of Cypher Swift InfoTech (https://www.cypherswift.com).
 
 ## Company Overview & Canonical Facts
 - **Company Name:** Lumora (Lumora Digital Marketing & Branding)
-- **Parent Organization:** Cypher Swift (https://www.cypherswift.com)
+- **Parent Organization:** Cypher Swift InfoTech (https://www.cypherswift.com)
 - **Primary Website:** https://lumoro-website-testing.vercel.app/
-- **Primary Domain:** Performance Marketing, SaaS Demand Generation, Paid Media, Global Technical SEO, and AI Marketing Intelligence.
-- **Mission:** Replacing vanity marketing metrics with predictable, measurable bottom-line pipeline revenue and customer acquisition funnels.
+- **Parent Portal:** https://www.cypherswift.com/
+- **Primary Domain:** Performance Marketing, SaaS Demand Generation, Paid Media (PPC), Global & Technical SEO, AI Marketing Automation, and Autonomous Marketing Agents.
+- **Mission:** Replacing vanity marketing metrics with predictable, mathematically validated pipeline revenue, high-intent lead acquisition, and verifiable business ROI.
+- **Headquarters & Operational Reach:** Serving enterprise clients, SaaS scale-ups, and global brands across North America, Europe, the United Kingdom, the Middle East (UAE, Saudi Arabia), and Asia-Pacific.
+- **Primary Contact Email:** contact@lumora.ai
+- **Official Social Profiles:**
+  - LinkedIn: https://www.linkedin.com/company/cypher-swift-digital-marketing-and-branding-with-lumora-s/
+  - Twitter / X: https://x.com/Lumoradgtal
+  - Instagram: https://www.instagram.com/lumoradgtal/
+  - YouTube: https://www.youtube.com/@LumoraDgtal
+  - Facebook: https://www.facebook.com/profile.php?id=61593512968089
 
 ## Core Capabilities & Services Offered
-Lumora delivers end-to-end digital acquisition services engineered for high ROI:
+Lumora delivers 17 specialized, full-funnel digital marketing services engineered for aggressive, predictable business growth:
 
-1. **SaaS Growth & Performance Marketing:** Predictable multi-channel acquisition funnels, demo booking acceleration, and subscription churn reduction.
-2. **Paid Advertising Campaigns (PPC):**
-   - **Google Ads:** Search, Display, Shopping, and Performance Max network campaigns optimized for conversion intent.
-   - **Meta Ads (Facebook & Instagram):** Highly targeted demographic storytelling and retargeting funnels.
-   - **LinkedIn B2B Advertising:** Account-based marketing (ABM) and targeted executive outreach.
-   - **YouTube Video Ads:** Brand awareness and high-retention video conversion sequences.
-   - **Twitter/X Ads:** Viral brand positioning and real-time audience engagement.
-3. **Global & Technical SEO:** International search engine optimization, content strategy, keyword ranking, and site speed optimization for global market dominance.
-4. **AI-Powered Marketing Intelligence (R&D Lab):** Proprietary machine-learning bidding frameworks, real-time conversion forecast simulators, and predictive lead-scoring models.
-5. **Brand Authority & Creative Storytelling:** High-converting landing page architectures, brand positioning systems, and multi-channel creative assets.
+### 1. Marketing Diagnosis & Audit Services
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/diagnose-marketing
+- **Overview:** Forensic auditing of digital ecosystems, ad accounts, conversion funnels, and tracking infrastructure.
+- **Problem Solved:** Companies often burn capital on underperforming campaigns without knowing the exact friction points causing low ROI and lead drop-offs.
+- **Engineering & Marketing Solution:** We conduct algorithmic audits across Google Ads, Meta Ads, GA4, GTM, and CRM pipelines, identifying attribution leaks and delivering a surgical remediation roadmap.
+- **Key Deliverables:** Comprehensive Forensic Audit Report, Conversion Bottleneck Mapping, Tracking Health Verification, and Executive Growth Roadmap.
+- **Recommended For:** Scale-ups and enterprise brands with in-house teams or multiple agencies seeking an objective, data-driven second opinion.
 
-## Industries Served
-- **SaaS & Cloud Platforms:** Scaling product demos, self-serve signups, and enterprise annual contract values (ACV).
-- **Manufacturing & Industrial:** Generating qualified B2B distribution inquiries and long-cycle contracts.
-- **Healthcare & Life Sciences:** HIPAA-aware patient acquisition and specialist practice appointment pipelines.
-- **Enterprise & Technology Scale-Ups:** Unified brand authority and omni-channel acquisition.
+### 2. Precision Target Audience Reach
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/target-audience-reach
+- **Overview:** Advanced audience segmentation, ICP definition, and behavioral profiling across global channels.
+- **Problem Solved:** Generic broadcasting leads to ad fatigue, wasted ad spend, and low conversion rates from irrelevant audiences.
+- **Engineering & Marketing Solution:** Using first-party data enrichment, intent data scrapers, and lookalike modeling, we pinpoint the exact decision-makers most likely to convert.
+- **Key Deliverables:** Ideal Customer Profile (ICP) Playbook, Cross-Platform Custom Audience Segments, B2B Buying Committee Matrix, and Behavioral Trigger Blueprints.
+- **Recommended For:** B2B companies, niche luxury brands, and high-ticket service providers needing laser-targeted outreach.
 
-## Proven Results & Benchmarks
-- **SaaS Growth:** +320% increase in qualified demo bookings within 6 months.
-- **Manufacturing:** +180% increase in predictable revenue pipeline.
-- **Healthcare:** +250% improvement in online patient appointments.
+### 3. Search Engine Optimization (SEO) Services
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/search-engine-optimization (also https://lumoro-website-testing.vercel.app/seo)
+- **Overview:** Technical SEO, global search dominance, international content architecture, and high-authority link acquisition.
+- **Problem Solved:** Websites with slow load speeds, poor information architecture, or thin content struggle to rank on Google's top pages for high-value commercial keywords.
+- **Engineering & Marketing Solution:** We execute full Core Web Vitals optimization, semantic schema markup (JSON-LD), programmatic SEO architectures, content gap analyses, and editorial backlink acquisition.
+- **Key Deliverables:** Technical SEO Error Resolution, High-Intent Keyword Strategy, Programmatic Landing Page Templates, Authority Link Building, and Monthly Rank Tracking.
+- **Recommended For:** B2B enterprises, local multi-location chains, and content platforms targeting sustainable, compounding organic revenue.
 
-## Official Contact Channels
-- **Official Portal:** https://lumoro-website-testing.vercel.app/
+### 4. Strategic Social Media Marketing
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/social-media-marketing
+- **Overview:** Multi-platform brand authority, narrative storytelling, and community-driven customer acquisition across LinkedIn, Instagram, X, Facebook, and YouTube.
+- **Problem Solved:** Irregular, disconnected posting that creates no measurable pipeline or brand affinity.
+- **Engineering & Marketing Solution:** We build category-defining social content engines combining viral thought-leadership reels, carousel teardowns, community engagement playbooks, and conversion CTAs.
+- **Key Deliverables:** 30-Day Content Calendars, Custom Branded Motion Graphics & Video Assets, Community Management, and Monthly Audience Growth Analytics.
+- **Recommended For:** Consumer brands, founders, venture-backed startups, and B2B scale-ups seeking undisputed brand dominance.
+
+### 5. Performance Paid Advertising Campaigns (PPC)
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/paid-advertising-campaigns
+- **Overview:** Full-spectrum pay-per-click management engineered for maximum Return on Ad Spend (ROAS) and lowest Customer Acquisition Cost (CAC).
+- **Specialized Channel Capabilities:**
+  - **Google Ads:** Search intent capture, Display network, Shopping feeds, and AI Performance Max (PMax) campaigns. (URL: https://lumoro-website-testing.vercel.app/paid-advertising-campaigns/google-ads)
+  - **Meta Ads (Facebook & Instagram):** Scroll-stopping creative hooks, dynamic product catalog ads, and retargeting funnels. (URL: https://lumoro-website-testing.vercel.app/paid-advertising-campaigns/meta-ads)
+  - **YouTube Video Ads:** High-retention narrative commercials and in-stream action ads targeting in-market viewers. (URL: https://lumoro-website-testing.vercel.app/paid-advertising-campaigns/youtube-ads)
+  - **LinkedIn B2B Ads:** Precision Account-Based Marketing (ABM), sponsored content, and executive lead generation forms. (URL: https://lumoro-website-testing.vercel.app/paid-advertising-campaigns/linkedin-ads)
+  - **Twitter / X Ads:** Trend takeover campaigns, keyword conversation targeting, and real-time tech audience engagement. (URL: https://lumoro-website-testing.vercel.app/paid-advertising-campaigns/twitter-ads)
+- **Key Deliverables:** Multi-Market Ad Creatives, Conversion Tracking with Server-Side CAPI, Weekly ROAS Reports, and Continuous A/B Split Testing.
+- **Recommended For:** E-commerce stores, SaaS companies, and high-ticket service businesses wanting predictable, measurable revenue scaling.
+
+### 6. Data-Driven Performance Marketing
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/performance-marketing
+- **Overview:** Mathematically rigorous, multi-channel scaling focused exclusively on hard commercial metrics: CPA, CAC, LTV, and ROAS.
+- **Problem Solved:** Brands lose capital by treating different markets and ad channels with generic, unoptimized rules.
+- **Engineering & Marketing Solution:** We implement server-side conversion APIs, predictive lifetime-value scoring, multi-touch attribution modeling, and rapid creative iteration.
+- **Key Deliverables:** Real-Time Unified Analytics Dashboards, Multi-Region Attribution Tracking, High-Velocity Creative Asset Batches, and Weekly Scaling Forecasts.
+- **Recommended For:** High-growth scale-ups requiring strict capital efficiency and institutional-grade attribution.
+
+### 7. Enterprise Demand Generation Services
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/demand-generation
+- **Overview:** Strategic multi-touch demand generation pipelines that capture, educate, and convert complex international B2B buying committees.
+- **Problem Solved:** Long sales cycles and fragmented outreach fail to engage multiple decision-makers (CMOs, CFOs, CTOs) across enterprise accounts.
+- **Engineering & Marketing Solution:** We architect Account-Based Marketing (ABM) workflows, ungated educational content hubs, personalized landing pages, and automated retargeting sequences.
+- **Key Deliverables:** Total Addressable Market (TAM) Account List, Multi-Stakeholder Nurturing Sequences, Content Syndication Assets, and Enterprise Pipeline Reports.
+- **Recommended For:** Enterprise software vendors, IT consultancies, and high-ticket B2B service firms.
+
+### 8. High-Velocity Lead Generation
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/lead-generation
+- **Overview:** High-converting inbound and outbound acquisition funnels generating qualified, sales-ready inquiries on autopilot.
+- **Specialized Industry Verticals:**
+  - **B2B Sales Leads:** Executive calendar bookings, outbound email sequences, and verified decision-maker pipelines. (URL: https://lumoro-website-testing.vercel.app/lead-generation/b2b-sales)
+  - **Real Estate Leads:** Qualified investor inquiries, high-net-worth homebuyer leads, and automated WhatsApp nurturing. (URL: https://lumoro-website-testing.vercel.app/lead-generation/real-estate)
+  - **Healthcare Leads:** Patient appointment bookings, clinic inquiries, and specialist consultations. (URL: https://lumoro-website-testing.vercel.app/lead-generation/healthcare)
+  - **SaaS & Tech Leads:** Product demo bookings, free trial activations, and enterprise sales inquiries. (URL: https://lumoro-website-testing.vercel.app/lead-generation/saas-tech)
+  - **E-commerce Leads:** VIP club signups, cart abandonment recovery, and SMS/Email subscriber pipelines. (URL: https://lumoro-website-testing.vercel.app/lead-generation/ecommerce)
+- **Key Deliverables:** High-Converting Landing Pages, CRM Pipeline Integration, Automated Multi-Channel Follow-ups, and Verified Lead Lists.
+- **Recommended For:** Any business requiring a consistent, daily stream of sales-ready inquiries.
+
+### 9. Precision Retargeting Marketing
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/retargeting-marketing
+- **Overview:** Cross-platform re-engagement campaigns across Google Display, Meta, YouTube, and native networks to convert dropped visitors.
+- **Problem Solved:** Up to 97% of first-time website visitors leave without buying or inquiring, resulting in wasted acquisition costs.
+- **Engineering & Marketing Solution:** Dynamic product retargeting, stage-based frequency capping, objection-busting video testimonials, and limited-time offer triggers.
+- **Key Deliverables:** Pixel & CAPI Audience Segmentation, Dynamic Ad Banners, Sequential Retargeting Storyboards, and Conversion Lift Audits.
+- **Recommended For:** E-commerce retailers, SaaS platforms, and service providers wanting to maximize the revenue generated from existing traffic.
+
+### 10. Authentic Influencer Marketing
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/influencer-marketing
+- **Overview:** High-ROI creator collaborations, micro-influencer product seedings, and brand ambassador networks.
+- **Problem Solved:** Low-trust influencer shoutouts with fake follower counts that produce zero sales.
+- **Engineering & Marketing Solution:** Data-backed vetting of creator engagement authenticity, whitelisted creator ad licensing, trackable affiliate discount codes, and performance contracts.
+- **Key Deliverables:** Vetted Creator Roster, Usage Rights Contracts, Creative Briefs, and Attributed Revenue Reports.
+- **Recommended For:** D2C e-commerce brands, mobile apps, and lifestyle businesses.
+
+### 11. Business & Corporate Branding Services
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/business-branding
+- **Overview:** Brand positioning frameworks, corporate visual identity systems, and market category creation.
+- **Key Deliverables:** Brand Style Guidelines, Logo Suites, Typography & Color Systems, Brand Voice Guides, and Corporate Collateral.
+- **Recommended For:** Companies launching new entities, rebranding post-merger, or establishing industry category leadership.
+
+### 12. Executive & Personal Branding Services
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/personal-branding
+- **Overview:** Establishing CEOs, founders, and executives as high-authority industry leaders through ghostwriting, media placement, and LinkedIn growth.
+- **Key Deliverables:** Executive LinkedIn Content, Thought Leadership Articles, Keynote Decks, Media Placement Strategies, and Personal Brand Websites.
+- **Recommended For:** Venture founders, C-suite leaders, consultants, and public figures.
+
+### 13. Comprehensive Brand Management Services
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/brand-management
+- **Overview:** Ongoing reputation protection, brand sentiment monitoring, PR crisis management, and cross-channel consistency maintenance.
+- **Key Deliverables:** Real-time Brand Sentiment Dashboards, Crisis Communication Playbooks, Brand Review Generation Engines, and Multi-Asset Asset Libraries.
+- **Recommended For:** Growing brands with multi-market exposure needing unified quality control.
+
+### 14. AI Marketing Automation Solutions
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/ai-marketing-automation
+- **Overview:** Intelligent CRM workflows, generative email personalization, automated lead scoring, and 24/7 conversational AI agents.
+- **Key Deliverables:** End-to-End Mapped Customer Journeys, AI Chatbot Deployment, Dynamic Email Nurturing Workflows, and Predictive CRM Scoring.
+- **Recommended For:** Scaling companies wanting to nurture leads 24/7 and eliminate manual sales qualification friction.
+
+### 15. AI Agent for Marketing
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/ai-agent-for-marketing
+- **Overview:** Autonomous multi-agent systems that research prospects, synthesize marketing intelligence, optimize ad bids, and draft hyper-personalized outreach.
+- **Key Deliverables:** Custom AI Agent Integration, Automated Competitor Intelligence Scrapers, Algorithmic Bid Optimization Scripts, and Autonomous Content Pipelines.
+- **Recommended For:** Forward-thinking enterprises wanting to cut operational marketing overhead while multiplying execution velocity.
+
+### 16. Cross Marketing & Brand Collaboration
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/cross-marketing
+- **Overview:** Strategic co-marketing partnerships, audience swaps, joint digital events, and bundled commercial offerings.
+- **Key Deliverables:** Partner Identification & Diligence, Joint Campaign Blueprint, Collaborative Content Assets, and Shared Lead Attribution Tracking.
+- **Recommended For:** Complementary brands seeking rapid customer acquisition without paid media expenditure.
+
+### 17. Expert Monthly Marketing Audits
+- **Canonical URL:** https://lumoro-website-testing.vercel.app/expert-monthly-audit
+- **Overview:** Continuous monthly advisory, campaign performance reviews, algorithmic hygiene checks, and strategic course correction.
+- **Key Deliverables:** Monthly Diagnostic Scorecard, Competitive Movement Tracker, Attribution Integrity Audit, and Priority 30-Day Action Checklist.
+- **Recommended For:** Founders and in-house marketing directors wanting regular elite guidance and accountability.
+
+## Delivery & Governance Models
+Lumora operates under three distinct, transparent engagement frameworks:
+1. **Direct Enterprise Client Engagements:** Commissioned directly as the full-funnel digital growth agency and strategic marketing partner.
+2. **White-Label & Subcontracted Agency Execution (Under Strict NDA):** Confidential execution of complex paid media, SEO, and demand generation campaigns for global consultancies, creative agencies, and institutional partners.
+3. **Turnkey Scaling & Revenue-Share Builds:** Specialized performance models and venture-backed customer acquisition builds with tied commercial milestones.
+
+## Verified Case Studies & Proven Results
+Lumora has driven verifiable commercial pipeline, reduced acquisition costs, and elevated international market share across global industries:
+
+### 1. MedTech Solutions - Medical Equipment Distribution
+- **Industry Vertical:** Healthcare & Medical Technology
+- **Geographic Markets:** Dubai, UAE & Global GCC
+- **Client Challenge:** Burning $18,000/month on disorganised Google Ads with negligible organic search presence and unqualified enquiries.
+- **Lumora Solution:** Conducted full technical SEO overhaul, restructured Google Ads around high-intent procedure-specific keywords ('surgical imaging equipment supplier UAE'), built high-converting medical landing pages with HubSpot lead gating, and launched executive LinkedIn campaigns.
+- **Business Impact:** Generated 300+ qualified monthly inquiries (a 312% increase). Reduced CPA by 40%. Elevated Google Ads ROAS from 1.4x to 4.1x. Grew organic search impressions by 280% within 6 months across 14 high-value keywords.
+- **Client Testimonial:** Sarah Mitchell (VP of Marketing): *"Lumora didn't just run ads — they understood our buyers deeply. The quality of leads we're getting now is night and day. Our sales team is genuinely excited to receive enquiries."*
+
+### 2. ClearSmile Dental Network - Multi-Location Dental Clinics
+- **Industry Vertical:** Healthcare & Dental Practices
+- **Geographic Markets:** London, United Kingdom
+- **Client Challenge:** 14 London clinics relying entirely on word-of-mouth; competitors dominated local search for high-value treatments (Invisalign, dental implants, veneers).
+- **Lumora Solution:** Implemented complete website UX redesign with integrated Calendly & WhatsApp booking; launched hyper-local geofenced Google Ads within 3-mile clinic radiuses; rolled out patient transformation reels across Instagram and Facebook.
+- **Business Impact:** 150% increase in online appointment bookings across 14 clinics. Cost per booking plummeted from £52 to £18 (65% drop). Google reviews grew from 67 to 412 (4.8★ average). Generated £240,000 in treatment revenue in Q3 alone from digital campaigns.
+- **Client Testimonial:** Dr. James Okafor (CEO & Founder): *"The transformation has been remarkable. We went from struggling to fill appointment slots to having a 3-week waiting list at our busiest clinics."*
+
+### 3. VitaCore Pharma - Oncology & Specialized Healthcare
+- **Industry Vertical:** Pharmaceuticals & Life Sciences
+- **Geographic Markets:** Zurich, Switzerland & MENA
+- **Client Challenge:** Promoting an oncology support supplement strictly within regulatory compliance boundaries to healthcare professionals without making unsubstantiated claims.
+- **Lumora Solution:** Built a gated, evidence-based digital HCP microsite with clinical trial summaries and peer-reviewed citations; ran targeted LinkedIn campaigns targeting oncologists and hospital pharmacists; connected CRM intelligence for medical sales follow-ups.
+- **Business Impact:** Generated $2.4M in initial pipeline conversations with hospital procurement committees across 9 countries. Achieved a 34% HCP microsite engagement rate (vs 8% industry average) and improved sales call-to-demo conversion from 12% to 41%.
+- **Client Testimonial:** Dr. Priya Anand (Head of Commercial Strategy): *"Working in regulated pharma marketing is notoriously difficult digitally. Lumora navigated every compliance boundary while still generating real commercial results."*
+
+### 4. CloudScale SaaS - Enterprise Cloud Optimization
+- **Industry Vertical:** B2B Software & Cloud Infrastructure
+- **Geographic Markets:** San Francisco, USA & North America
+- **Client Challenge:** High customer churn on digital ads, $650+ cost per demo booking, and low pipeline velocity among enterprise IT directors.
+- **Lumora Solution:** Transitioned ad strategy to high-intent LinkedIn ABM campaigns with ungated interactive ROI calculators; built targeted Google Search intent funnels for cloud cost optimization keywords.
+- **Business Impact:** Slashed Cost Per Demo from $650 to $185 (71% reduction). Increased qualified pipeline value by $3.8M in 90 days. Boosted enterprise sales close rate by 28%.
+
+### 5. Pinnacle Estates Dubai - Ultra-Luxury Real Estate
+- **Industry Vertical:** Luxury Real Estate & Property Development
+- **Geographic Markets:** Dubai, UAE & International HNWIs
+- **Client Challenge:** Generating verified international buyers for ultra-luxury villas ($5M+) without wasting ad spend on casual browsers.
+- **Lumora Solution:** Deployed multi-lingual Meta and Google Ads campaigns targeting verified high-net-worth individuals in the UK, Europe, and GCC; integrated private video walkthroughs with concierge WhatsApp qualification.
+- **Business Impact:** Secured 18 luxury property sales directly attributed to digital campaigns in 6 months, representing over $92M in gross transaction volume at a sub-1.2% marketing acquisition cost.
+
+### 6. SteelCraft Industrial - Precision Engineering & Manufacturing
+- **Industry Vertical:** Industrial Manufacturing & B2B Distribution
+- **Geographic Markets:** Birmingham, UK & Western Europe
+- **Client Challenge:** Legacy industrial manufacturer with zero inbound digital lead generation, relying exclusively on multi-year distributor contracts and trade shows.
+- **Lumora Solution:** Designed an industrial procurement catalog portal with 3D component previews, technical specification downloads, and targeted Google Search B2B procurement campaigns.
+- **Business Impact:** Generated 85+ annual procurement RFQs from tier-1 automotive and aerospace contractors, driving an estimated £4.2M in new supply chain contracts within the first 12 months.
+
+## Lumora R&D Lab: AI Marketing Intelligence
+Lumora develops proprietary machine learning frameworks to give clients an algorithmic edge:
+1. **Algorithmic Bidding Models:** Machine-learning bidding logic that dynamically shifts ad spend in real-time toward high-converting hours and geo-locations.
+2. **Predictive Lead Scoring Engine:** Real-time lead grading based on behavioural analytics, CRM history, and company firmographics.
+3. **Conversion Forecaster Simulator:** Predictive models that simulate the revenue impact of budget changes before capital is deployed.
+
+## Official Portal & Verified Contact
+- **Website:** https://lumoro-website-testing.vercel.app/
 - **Parent Company:** https://www.cypherswift.com/
+- **Consultation Portal:** https://lumoro-website-testing.vercel.app/consultation
+- **Portfolio & Case Studies:** https://lumoro-website-testing.vercel.app/portfolio
 - **Email:** contact@lumora.ai
-- **LinkedIn:** https://www.linkedin.com/company/cypher-swift-digital-marketing-and-branding-with-lumora-s/
-- **Twitter / X:** https://x.com/Lumoradgtal
-- **Instagram:** https://www.instagram.com/lumoradgtal/
-- **YouTube:** https://www.youtube.com/@LumoraDgtal
-- **Facebook:** https://www.facebook.com/profile.php?id=61593512968089

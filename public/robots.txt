@@ -7,6 +7,7 @@
 User-agent: *
 Allow: /
 Disallow: /admin/
+Disallow: /portal/
 Disallow: /api/
 Allow: /images/
 
@@ -15,11 +16,13 @@ Allow: /images/
 User-agent: GPTBot
 Allow: /
 Disallow: /admin/
+Disallow: /portal/
 Disallow: /api/
 
 User-agent: OAI-SearchBot
 Allow: /
 Disallow: /admin/
+Disallow: /portal/
 
 User-agent: ChatGPT-User
 Allow: /
@@ -28,15 +31,18 @@ Allow: /
 User-agent: PerplexityBot
 Allow: /
 Disallow: /admin/
+Disallow: /portal/
 
 # Anthropic / Claude Web Crawler
 User-agent: ClaudeBot
 Allow: /
 Disallow: /admin/
+Disallow: /portal/
 
 User-agent: anthropic-ai
 Allow: /
 Disallow: /admin/
+Disallow: /portal/
 
 # Google AI & Gemini Overviews
 User-agent: Google-Extended
@@ -45,16 +51,17 @@ Allow: /
 User-agent: Googlebot
 Allow: /
 Disallow: /admin/
+Disallow: /portal/
 
 # Microsoft Bing & Copilot Crawler
 User-agent: Bingbot
 Allow: /
 Disallow: /admin/
+Disallow: /portal/
 
 # Apple Search & AI Intelligence
 User-agent: Applebot
 Allow: /
-Disallow: /admin/
 
 # 3. Discovery Sitemaps & LLM Context
 Sitemap: https://lumoro-website-testing.vercel.app/sitemap.xml
