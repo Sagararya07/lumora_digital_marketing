@@ -158,3 +158,80 @@ h1, h2, h3, h4, h5, h6, .heading-font {
   animation: fadeInUp 0.5s ease-out forwards;
   opacity: 0;
 }
+
+/* Scroll-Driven Opposite-Side Slide Animations */
+@keyframes slideInFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-40px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(40px) scale(0.98);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+.animate-slide-in-left {
+  animation: slideInFromLeft 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Continuous Lottery Reel & Slot Machine Animation */
+@keyframes lotteryReel {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-lottery-reel {
+  display: flex;
+  width: max-content;
+  animation: lotteryReel 28s linear infinite;
+}
+
+.animate-lottery-reel:hover {
+  animation-play-state: paused;
+}
+
+@keyframes jackpotGlow {
+  0%, 100% {
+    box-shadow: 0 0 18px rgba(91, 142, 226, 0.3), inset 0 0 15px rgba(91, 142, 226, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(236, 72, 153, 0.4), inset 0 0 20px rgba(214, 166, 123, 0.2);
+  }
+}
+
+.animate-jackpot-glow {
+  animation: jackpotGlow 4s ease-in-out infinite;
+}
+
+@keyframes lotteryChaser {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-lottery-chaser {
+  animation: lotteryChaser 3s ease-in-out infinite;
+}
