@@ -1382,44 +1382,7 @@ export const ManpowerOutsourcingPage: React.FC<ManpowerOutsourcingPageProps> = (
           </div>
         </div>
 
-        {/* 5. Luxury Trust Callout Dock at End of Section */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-14 pt-6 relative z-20">
-          <div className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 shadow-md shadow-slate-200/40 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-            
-            <div className="flex items-center gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-blue-50 text-[#5B8EE2] flex items-center justify-center shrink-0 shadow-2xs">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-xs font-extrabold text-slate-950 font-['Plus_Jakarta_Sans',sans-serif]">99% Secure Deployment</div>
-                <div className="text-[11px] text-slate-500">1% space for natural onboarding adjustments</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3.5 border-t md:border-t-0 md:border-l border-slate-100 pt-4 md:pt-0 md:pl-6">
-              <div className="w-11 h-11 rounded-2xl bg-amber-50 text-[#D6A67B] flex items-center justify-center shrink-0 shadow-2xs">
-                <Award className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-xs font-extrabold text-slate-950 font-['Plus_Jakarta_Sans',sans-serif]">Trained &amp; Eligible Bench</div>
-                <div className="text-[11px] text-slate-500">Tested with international executive protocols</div>
-              </div>
-            </div>
-
-            <div className="flex items-center gap-3.5 border-t md:border-t-0 md:border-l border-slate-100 pt-4 md:pt-0 md:pl-6">
-              <div className="w-11 h-11 rounded-2xl bg-pink-50 text-[#EC4899] flex items-center justify-center shrink-0 shadow-2xs">
-                <Clock className="w-6 h-6" />
-              </div>
-              <div>
-                <div className="text-xs font-extrabold text-slate-950 font-['Plus_Jakarta_Sans',sans-serif]">Standby Continuity</div>
-                <div className="text-[11px] text-slate-500">Guaranteed backup talent on instant standby</div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </section>
+        </section>
 
       {/* =========================================================================
           SECTION 3: WHY CHOOSE LUMORA (INTERACTIVE CONNECTED PROCESS DESIGN)
